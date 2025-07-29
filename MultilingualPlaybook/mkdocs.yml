@@ -11,15 +11,14 @@ theme:
     - content.code.annotate
     - search.suggest
     - navigation.sections
+    - content.footnote.tooltips
   palette:
     - scheme: default
       primary: indigo
       accent: blue
 
-
 nav:
   - Home: index.md
-  - Overview: overview.md
   - Interactive Flowchart: interactive/flowchart.md
   - Playbook:
       - Introduction: chapters/00-introduction.md
@@ -41,6 +40,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+  - footnotes
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js
