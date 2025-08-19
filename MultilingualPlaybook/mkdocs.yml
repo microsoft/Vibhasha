@@ -28,9 +28,13 @@ nav:
       - Fine-tuning LLMs: chapters/04-fine-tuning.md
       - Conclusion: chapters/99-conclusion.md
 
+plugins:
+  - search
+  - glightbox
 
 
 markdown_extensions:
+  - attr_list
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
