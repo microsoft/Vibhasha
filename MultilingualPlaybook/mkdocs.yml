@@ -15,11 +15,20 @@ theme:
   palette:
     - scheme: default
       primary: indigo
-      accent: blue
+      accent: indigo
+      toggle:
+        icon: material/weather-night   # 🌙 icon for dark mode
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny   # ☀️ icon for light mode
+        name: Switch to light mode
+
 
 nav:
   - Home: index.md
-  - Interactive Flowchart: interactive/flowchart.md
   - Playbook:
       - Introduction: chapters/00-introduction.md
       - Evaluation: chapters/01-evaluation.md
@@ -27,6 +36,7 @@ nav:
       - Off-the-shelf LLMs: chapters/03-off-the-shelf.md
       - Fine-tuning LLMs: chapters/04-fine-tuning.md
       - Conclusion: chapters/99-conclusion.md
+  - Interactive Flowchart: interactive/flowchart.md
 
 plugins:
   - search
@@ -35,6 +45,12 @@ plugins:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -44,6 +60,7 @@ markdown_extensions:
   - admonition
   - toc:
       permalink: true
+      toc_depth: 2-4
   - footnotes
 
 extra_javascript:

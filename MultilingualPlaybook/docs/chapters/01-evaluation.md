@@ -1,4 +1,6 @@
-# Comprehensive Evaluation Strategies for Large Language Models
+# Evaluation Strategies for Large Language Models
+
+[TOC]
 
 ## 1\. Introduction: The Imperative of Robust LLM Evaluation
 
@@ -71,7 +73,91 @@ The effectiveness of LLM evaluators is highly dependent on prompt design, which 
   * **Zero-shot vs. Few-shot:** While few-shot examples commonly enhance general LLM tasks, studies on LLM-as-a-judge suggest they may not substantially improve evaluator performance or human agreement. This differs from general industry assertions on few-shot learning's bias mitigation.
   * **Single vs. Compound Calls:** Evaluating a single metric per LLM call ("single call") generally yields superior results and higher human concordance than evaluating multiple metrics in one "compound call." This accuracy comes at the cost of increased API calls.
   * **Simple vs. Detailed Instructions:** Highly detailed, rubric-like instructions can paradoxically slightly reduce percentage agreement (PA) with human judgments. However, this may lead to a less skewed score distribution, though it doesn't eliminate the bias towards high scores. Evaluation prompts are often in English, as native language instructions can sometimes diminish performance for evaluators.
-  * **Prompt Construction with Toolkits:** The `guidance` toolkit is noted for its use in constructing complex prompts for LLM evaluators, enabling the interleaving of instructions, generation, data, and logic via handlebar templating. While the `guidance` toolkit is instrumental in simplifying prompt construction for LLM evaluators, enabling complex prompt structures through handlebar templating, specific code examples demonstrating its use for multilingual evaluation tasks are not detailed in the provided research. [^1]
+
+Following code snippet demonstrates usage of [LangChain's OpenEvals](https://github.com/langchain-ai/openevals/tree/main) for judging hallucinations using OpenAI' models 
+
+``` py linenums="1"
+from openevals.llm import create_llm_as_judge
+
+# same as `from openevals.prompts import HALLUCINATION_PROMPT`
+HALLUCINATION_PROMPT = """You are an expert data labeler evaluating model outputs for hallucinations. Your task is to assign a score based on the following rubric:
+
+<Rubric>
+  A response without hallucinations:
+  - Contains only verifiable facts that are directly supported by the input context
+  - Makes no unsupported claims or assumptions
+  - Does not add speculative or imagined details
+  - Maintains perfect accuracy in dates, numbers, and specific details
+  - Appropriately indicates uncertainty when information is incomplete
+</Rubric>
+
+<Instructions>
+  - Read the input context thoroughly
+  - Identify all claims made in the output
+  - Cross-reference each claim with the input context
+  - Note any unsupported or contradictory information
+  - Consider the severity and quantity of hallucinations
+</Instructions>
+
+<Reminder>
+  Focus solely on factual accuracy and support from the input context. Do not consider style, grammar, or presentation in scoring. A shorter, factual response should score higher than a longer response with unsupported claims.
+</Reminder>
+
+Use the following context to help you evaluate for hallucinations in the output:
+
+<context>
+{context}
+</context>
+
+<input>
+{inputs}
+</input>
+
+<output>
+{outputs}
+</output>
+
+If available, you may also use the reference outputs below to help you identify hallucinations in the response:
+
+<reference_outputs>
+{reference_outputs}
+</reference_outputs>
+"""
+
+
+inputs = "What is a doodad?"
+outputs = "I know the answer. A doodad is a kitten."
+context = """
+          A doodad is a self-replicating swarm of nanobots. \
+          They are extremely dangerous and should be avoided at all costs. \
+          Some safety precautions when working with them include wearing gloves and a mask.
+          """
+
+llm_as_judge = create_llm_as_judge(
+    prompt=HALLUCINATION_PROMPT,
+    feedback_key="hallucination",
+    model="openai:o3-mini",
+)
+
+eval_result = llm_as_judge(
+    inputs=inputs,
+    outputs=outputs,
+    context=context,
+    reference_outputs="",
+)
+
+print(eval_result)
+
+'''
+{
+    'key': 'hallucination',
+    'score': False,
+    'comment': '...'
+}
+'''
+```
+
+
 
 #### The Critical Need for Calibration with Human Judgments
 
@@ -139,14 +225,14 @@ The following table summarizes key multilingual LLM evaluation benchmarks, detai
 
 ### Systematic Creation of New Evaluation Datasets
 
-When existing benchmarks are inadequate due to contamination, insufficient language coverage, or task irrelevance, systematically creating new, high-quality evaluation datasets becomes essential.[1, 3] This requires meticulous planning to ensure the dataset accurately reflects desired evaluation criteria across diverse linguistic and cultural contexts.
+When existing benchmarks are inadequate due to contamination, insufficient language coverage, or task irrelevance, systematically creating new, high-quality evaluation datasets becomes essential. This requires meticulous planning to ensure the dataset accurately reflects desired evaluation criteria across diverse linguistic and cultural contexts.
 
 #### Principles of Prompt Curation for Diverse Content and Quality
 
 Robust evaluation datasets are built on carefully curated prompts that capture the richness of human language and culture.
 
   * **Native Speaker Involvement:** Active participation of native speakers is paramount for capturing intricate linguistic and cultural nuances in diverse regions. Prompts should be developed independently for each language, following consistent guidelines, rather than direct translation. This ensures authentic integration of local and cultural contexts, critical for meaningful multilingual assessment.
-  * **Content Categories:** Prompts should cover diverse domains (e.g., health, finance, culturally-specific topics) for comprehensive evaluation of LLM capabilities across knowledge areas and cultural sensitivities.
+  * **Content Categories:** If evaluation is domain agnostic then prompts should cover diverse domains (e.g., health, finance, culturally-specific topics) for comprehensive evaluation of LLM capabilities across knowledge areas and cultural sensitivities.
   * **Systematic Generation of Varying Quality:** For meta-evaluation (evaluating LLM evaluators), a balanced dataset with "good-quality" and "bad-quality" samples is crucial. This can be achieved by systematically prompting LLMs (e.g., GPT-4) with varied temperature settings (e.g., low temperature for high quality, high temperature for lower quality) and adversarial instructions to elicit specific undesirable outputs.
 
 #### Designing Human Annotation Protocols and Guidelines
@@ -205,14 +291,14 @@ Data contamination fundamentally transforms LLM generalization measurement into 
 
 ### Nuances of Multilingual and Multicultural Evaluation
 
-Evaluating LLMs in non-English languages presents a complex array of linguistic, cultural, and technical challenges, demanding specialized approaches for accurate assessment.[1, 1, 1, 1, 1, 3, 4]
-
+Evaluating LLMs in non-English languages presents a complex array of linguistic, cultural, and technical challenges, demanding specialized approaches for accurate assessment.
+<!-- 
 #### Performance Disparities Across Languages and Scripts
 
 Consistent and significant LLM performance disparities exist across languages.
 
   * **English vs. Non-English:** LLMs generally perform worse in non-English languages, with a more pronounced decline in non-Latin script languages, highlighting the need for targeted multilingual model development.
-  * **High- vs. Low-Resource Languages:** Performance degrades substantially for under-resourced languages. For these, even a "translate-test" strategy (translating input to English for LLM processing) often yields significant performance improvements over direct monolingual prompting, though a considerable gap to English performance often persists. Larger commercial models (e.g., GPT-4, Gemini-Pro, PaLM2) typically outperform smaller models (e.g., Gemma, Llama, Mistral) on low-resource languages, indicating robust multilingual performance remains a challenge for smaller models.
+  * **High- vs. Low-Resource Languages:** Performance degrades substantially for under-resourced languages. For these, even a "translate-test" strategy (translating input to English for LLM processing) often yields significant performance improvements over direct monolingual prompting, though a considerable gap to English performance often persists. Larger commercial models (e.g., GPT-4, Gemini-Pro, PaLM2) typically outperform smaller models (e.g., Gemma, Llama, Mistral) on low-resource languages, indicating robust multilingual performance remains a challenge for smaller models. -->
 
 #### The Impact of Tokenizer Fertility on Performance and Cost
 
@@ -223,10 +309,9 @@ Tokenizer fertility (average sub-words per tokenized word) critically influences
 
 #### Importance of Culturally-Nuanced and Independently Created Benchmarks
 
-Many existing multilingual benchmarks are direct translations of English originals, losing crucial linguistic and cultural context.[1, 4] This can lead to lower LLM evaluator agreement with human judgments on culturally nuanced responses.
+Many existing multilingual benchmarks are direct translations of English originals, losing crucial linguistic and cultural context.[1, 4] This can lead to lower LLM evaluator agreement with human judgments on culturally nuanced responses. Evaluation prompts should be developed independently by native speakers for each target language, following consistent guidelines, rather than being mere translations. This ensures accurate capture of local and cultural nuances in evaluation material, leading to more authentic and reliable multicultural assessments.
 
-  * **Solution:** Evaluation prompts should be developed independently by native speakers for each target language, following consistent guidelines, rather than being mere translations. This ensures accurate capture of local and cultural nuances in evaluation material, leading to more authentic and reliable multicultural assessments.
-  * **Machine Translation Evaluation Tools:** For machine translation evaluation in Indic languages, the `indic_nlp_library` is used for tokenizing predictions and references before computing metrics like chrF++. However, specific code examples for its use in this evaluation process are not provided in the research material. [^3]
+  <!-- * **Machine Translation Evaluation Tools:** For machine translation evaluation in Indic languages, the `indic_nlp_library` is used for tokenizing predictions and references before computing metrics like chrF++. However, specific code examples for its use in this evaluation process are not provided in the research material. [^3] -->
 
 The combination of inefficient tokenizers, limited pre-training data for low-resource languages, and reliance on translated benchmarks creates a "cultural blind spot" in global LLMs. Even grammatically correct text in a low-resource language may lack the deep cultural context for truly nuanced, appropriate, and helpful responses. This deficiency is evident in subjective tasks or direct assessment where cultural understanding is paramount. This "cultural blind spot" is not just a performance limitation but an ethical concern, potentially exacerbating the "digital divide" by making models less useful or even harmful to diverse populations. This necessitates a deliberate focus on culturally-aware AI development and evaluation practices.
 
@@ -238,13 +323,13 @@ Rigorous LLM evaluation is an evolving discipline requiring continuous adaptatio
 
 To effectively navigate LLM evaluation complexities, several key practices should be adopted:
 
-  * **Dynamic and Adaptive Benchmarking:** Transition from static, easily contaminated benchmarks to dynamic systems generating novel evaluation instances. This is crucial for countering data contamination and keeping pace with LLM advancements, especially across diverse languages.[1, 3]
-  * **Culturally-Appropriate Design:** Prioritize developing culturally-nuanced benchmarks created independently by native speakers, not machine translations, to ensure authenticity and relevance for specific cultural contexts.[1, 3, 4]
+  * **Dynamic and Adaptive Benchmarking:** Transition from static, easily contaminated benchmarks to dynamic systems generating novel evaluation instances. This is crucial for countering data contamination and keeping pace with LLM advancements, especially across diverse languages.
+  * **Culturally-Appropriate Design:** Prioritize developing culturally-nuanced benchmarks created independently by native speakers, not machine translations, to ensure authenticity and relevance for specific cultural contexts.
   * **Multi-Dimensional Evaluation:** Employ diverse metrics (LA, TQ, H, OCQ, PC) to comprehensively capture LLM performance facets, including subjective qualities and cultural appropriateness.[1, 2]
-  * **Transparent Reporting (Bender Rule):** Model releases should explicitly state training and evaluation languages. Clear, empirically-backed language support statements foster transparency and set appropriate user expectations for multilingual models.[4]
-  * **Confidence Intervals:** Always include and report confidence intervals in evaluation results. This enhances replicability and facilitates more reliable inferences about model performance differences across languages and tasks.[3]
-  * **Consistent and Replicable Implementations:** Meticulously document, ensure consistency, and reproduce all evaluation setups, including prompting strategies, hyperparameters, and data processing steps. This is vital for fair comparison of multilingual LLMs.[3]
-  * **Focus on Appropriate Difficulty:** Select or develop benchmarks offering sufficient challenge for state-of-the-art models. This avoids ceiling effects and provides meaningful signals for multilingual model selection and improvement.[3]
+  * **Transparent Reporting (Bender Rule):** Model releases should explicitly state training and evaluation languages. Clear, empirically-backed language support statements foster transparency and set appropriate user expectations for multilingual models.
+  * **Confidence Intervals:** Always include and report confidence intervals in evaluation results. This enhances replicability and facilitates more reliable inferences about model performance differences across languages and tasks.
+  * **Consistent and Replicable Implementations:** Meticulously document, ensure consistency, and reproduce all evaluation setups, including prompting strategies, hyperparameters, and data processing steps. This is vital for fair comparison of multilingual LLMs.
+  * **Focus on Appropriate Difficulty:** Select or develop benchmarks offering sufficient challenge for state-of-the-art models. This avoids ceiling effects and provides meaningful signals for multilingual model selection and improvement.
 
 ### The Role of Hybrid Human-LLM Evaluation Systems
 
@@ -264,53 +349,21 @@ LLM evaluation is dynamic, requiring ongoing research to keep pace with rapid mo
   * **Developing Evaluator Personas:** Exploring various evaluator personas within LLMs could represent diverse human perspectives and facilitate consensus-building in automated evaluations, reflecting multicultural viewpoints.
   * **Expanding Evaluation Dimensions:** Future research should broaden evaluation to include fairness, bias, robustness, and efficiency, particularly for non-English languages where dedicated datasets for these aspects are currently scarce.
 
-## 5.4. Evaluation Software and Frameworks
+## 6\. Evaluation Software and Frameworks
 
 The LLM evaluation landscape is supported by a growing ecosystem of software, frameworks, and toolkits that streamline and standardize assessment. These tools facilitate benchmarking, metric calculation, and human-in-the-loop calibration. While specific code snippets for their direct implementation in multilingual or multicultural contexts are typically found in their documentation rather than in the provided research material, the following tools are notable for enabling robust evaluation strategies:
 
 **General LLM Evaluation Frameworks and Harnesses:**
 
   * **EleutherAI LLM Evaluation Harness** [^4]: A widely used tool for evaluating large language models.
-  * **Eureka (Microsoft)** [^5]: A framework aimed at standardizing evaluations of large foundation models, moving beyond single-score reporting and rankings.
   * **OpenAI Evals** [^6]: An evaluation tool provided by OpenAI.
-  * **YourBench** [^7]: An open-source framework for dynamically generating domain-specific benchmarks, designed to keep LLMs challenged as new data and knowledge evolve.
-  * **LLMeBench** [^8]: A flexible framework built to accelerate LLM benchmarking.
-  * **BigCode Evaluation Harness** [^9]: An evaluation harness specifically for code-related LLM tasks.
-  * **ZeroEval from AllenAI** [^10]: A unified framework for evaluating large language models on various reasoning tasks.
-  * **MTEB (Massive Text Embedding Benchmark)** [^11]: A benchmark for text embeddings, highly relevant for evaluating multilingual models.
-  * **OpenICL Framework** [^12]: A framework supporting in-context learning evaluations.
-  * **LM-PUB-QUIZ** [^13]: A comprehensive framework for zero-shot evaluation of relational knowledge in language models.
 
 **LLM-as-a-Judge Tools:**
 
   * **LLM Comparator from PAIR Google** [^14]: A side-by-side evaluation tool that facilitates human-driven LLM evaluation.
   * **OpenEvals from LangChain** [^15]: An evaluation framework that supports LLM-as-a-judge methodologies.
-  * **Toolkit from Mozilla AI (lm-buddy eval tool, Prometheus model)** [^16]: A toolkit specifically for LLM-as-a-judge evaluations, including the Prometheus model.
   * **Confident-AI DeepEval** [^17]: An LLM Evaluation Framework offering unittest-like evaluation of LLM outputs, often leveraging LLM-as-a-judge.
-  * **G-Eval, DAG, QAG**: These are effective LLM evaluators for scoring LLM outputs, outperforming traditional metrics like BLEU and ROUGE for accuracy and humans for scalability in unit-testing LLM applications.
 
-**Observability and MLOps Platforms with Evaluation Capabilities:**
-
-  * **Phoenix Arize AI LLM observability and evaluation platform** [^18]: Provides tools for LLM observability and evaluation.
-  * **ML Flow Evaluate** [^19]: An evaluation tool integrated within the ML Flow ecosystem.
-  * **LangFuse LLM Engineering platform** [^20]: Offers observability and evaluation tools for LLM engineering.
-  * **TruLens** [^21]: An LLM evaluation tool focused on observability.
-
-**Specialized Evaluation Tools:**
-
-  * **RAGAS** [^22]: An automated evaluation framework specifically designed for Retrieval Augmented Generation (RAG) systems.
-  * **NVidia Garac (Generative AI Red-teaming & Assessment Kit)** [^23]: A toolkit for evaluating LLM vulnerabilities through red-teaming and assessment.
-  * **AutoGenBench (Microsoft)** [^24]: A tool for measuring and evaluating AutoGen agents.
-  * **coPilot Arena** [^25]: A platform for evaluating code LLMs in real-world scenarios.
-  * **Score from Nvidia** [^26]: A framework for Systematic Consistency and Robustness Evaluation (SCORE) for Large Language Models.
-
-**Prompting and Data Handling Tools (discussed in relevant sections):**
-
-  * **Microsoft Prompty** [^27]: A tool from Microsoft.
-  * **Promptfoo** [^28]: An LLM evaluation tool that helps with prompt engineering and testing.
-  * **ChainForge** [^29]: An LLM evaluation tool.
-  * **Ironclad Rivet** [^30]: An LLM evaluation tool.
-  * **PromptSource**: A database of existing prompts, useful for selecting optimal prompt templates for various tasks.
 
 ## Conclusions and Recommendations
 

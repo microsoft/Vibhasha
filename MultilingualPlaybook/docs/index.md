@@ -1,6 +1,6 @@
 # Multilingual LLM Playbook
 
-Welcome to the **Multilingual LLM Playbook** — a practical guide for building language model applications in multilingual and multicultural settings, especially in **low-resource**, **underrepresented**, or **complex sociolinguistic** environments. This playbook serves as a bridge, transforming complex technical systems and processes into understandable and actionable knowledge. 
+Welcome to the **Multilingual LLM Playbook** — a practical guide for building language model applications in multilingual and multicultural settings, especially in **low-resource**, **underrepresented**, or **complex sociolinguistic** environments. This playbook serves as a bridge, transforming complex technical systems and processes into understandable and actionable knowledge.   
 
 
 ## 👥 Who is this for?
