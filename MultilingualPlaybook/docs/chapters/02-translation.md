@@ -1,5 +1,24 @@
 # Translation
 
+
+Notes from  Lost in Translation: Large Language Models in Non-English Content Analysis [@intrator-etal-2024-breaking].
+
+While PaLM2-L clearly performs better using direct inference for the majority of languages, pre-translation shows consistent superiority (across benchmarks) for 7 languages: Bambara, Cusco-Collao Quechua, Lingala, Oromo, Punjabi, Tigrinya, and Tsonga. All 7 are LRL, 4 out of 7 are African, with Lingala, the largest, spoken by over 40 million people. Interestingly, the majority (85%) of LRL benefit from direct inference with PaLM2.
+
+
+In depends on the following criteria
+- model size
+- langauge - its percentage in the pretraining data
+- translator's proficiency in that language
+
+Evaluation
+- evaluation with GT in source language
+- evaluation with GT translated to English
+
+
+
+
+
 ## Overview
 
 One common strategy for multilingual deployment is to use **automatic translation**:

@@ -40,7 +40,16 @@ nav:
 
 plugins:
   - search
+  - print-site:
+      path_to_pdf: "assets/playbook.pdf"
+  - to-pdf
   - glightbox
+  - bibtex:
+      bib_file: docs/references.bib     # or a list of .bib files
+      # optional:
+      # csl_file: docs/ieee.csl
+      # bib_by_default: true            # auto-append refs on every page
+
 
 
 markdown_extensions:
