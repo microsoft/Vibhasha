@@ -1,4 +1,4 @@
-site_name: Multilingual LLM Playbook
+site_name: Multilingual Playbook
 
 theme:
   name: material
@@ -32,10 +32,11 @@ nav:
   - Playbook:
       - Introduction: chapters/00-introduction.md
       - Evaluation: chapters/01-evaluation.md
-      - Translation: chapters/02-translation.md
-      - Off-the-shelf LLMs: chapters/03-off-the-shelf.md
+      - Using LLMs Off-the-shelf: chapters/02-translation.md
+      # - Off-the-shelf LLMs: chapters/03-off-the-shelf.md
       - Fine-tuning LLMs: chapters/04-fine-tuning.md
       - Conclusion: chapters/99-conclusion.md
+      - ToDos: chapters/ToDos.md
   - Interactive Flowchart: interactive/flowchart.md
 
 plugins:
@@ -53,6 +54,10 @@ plugins:
 
 
 markdown_extensions:
+  - admonition
+  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
