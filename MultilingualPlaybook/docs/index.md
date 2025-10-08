@@ -7,7 +7,6 @@ Welcome to the **Multilingual LLM Playbook** — a practical guide for building 
 
 This playbook is designed for:
 
-- Researchers in NLP, HCI, and Responsible AI
 - Engineers and developers building LLM-powered products (chatbots, copilots, etc.)
 - Practitioners working with **non-English** or **low-resource** languages
 - Anyone interested in the **intersection of language, technology, and inclusion**

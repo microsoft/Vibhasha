@@ -12,7 +12,7 @@
         <link rel="prev" href="../01-evaluation/">
       
       
-        <link rel="next" href="../03-off-the-shelf/">
+        <link rel="next" href="../04-fine-tuning/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Translation - Multilingual LLM Playbook</title>
+        <title>Using LLMs Off-the-shelf - Multilingual Playbook</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#introduction-the-english-centric-reality-of-llms" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Multilingual LLM Playbook" class="md-header__button md-logo" aria-label="Multilingual LLM Playbook" data-md-component="logo">
+    <a href="../.." title="Multilingual Playbook" class="md-header__button md-logo" aria-label="Multilingual Playbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -113,13 +113,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Multilingual LLM Playbook
+            Multilingual Playbook
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Translation
+              Using LLMs Off-the-shelf
             
           </span>
         </div>
@@ -298,13 +298,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Multilingual LLM Playbook" class="md-nav__button md-logo" aria-label="Multilingual LLM Playbook" data-md-component="logo">
+    <a href="../.." title="Multilingual Playbook" class="md-nav__button md-logo" aria-label="Multilingual Playbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Multilingual LLM Playbook
+    Multilingual Playbook
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -444,7 +444,7 @@
   
   
   <span class="md-ellipsis">
-    Translation
+    Using LLMs Off-the-shelf
     
   </span>
   
@@ -457,7 +457,7 @@
   
   
   <span class="md-ellipsis">
-    Translation
+    Using LLMs Off-the-shelf
     
   </span>
   
@@ -478,82 +478,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#introduction-the-english-centric-reality-of-llms" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Introduction: The English-Centric Reality of LLMs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use" class="md-nav__link">
+  <a href="#the-strategic-crossroads-direct-inference-vs-pre-translation" class="md-nav__link">
     <span class="md-ellipsis">
-      When to Use
+      The Strategic Crossroads: Direct Inference vs. Pre-translation
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pros
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cons" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cons
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-strategies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Translation Strategies">
+    <nav class="md-nav" aria-label="The Strategic Crossroads: Direct Inference vs. Pre-translation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#full-translation" class="md-nav__link">
+  <a href="#the-default-the-case-for-direct-inference" class="md-nav__link">
     <span class="md-ellipsis">
-      Full Translation
+      The Default: The Case for Direct Inference
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#selective-translation" class="md-nav__link">
+  <a href="#the-exception-when-pre-translation-prevails" class="md-nav__link">
     <span class="md-ellipsis">
-      Selective Translation
+      The Exception: When Pre-translation Prevails
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#scratchpad-techniques" class="md-nav__link">
+  <a href="#a-data-driven-decision-framework-key-performance-determinants" class="md-nav__link">
     <span class="md-ellipsis">
-      Scratchpad Techniques
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fine-tuning-translators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-Tuning Translators
+      A Data-Driven Decision Framework: Key Performance Determinants
     </span>
   </a>
   
@@ -565,18 +529,210 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#risks-caveats" class="md-nav__link">
+  <a href="#advanced-translation-architectures-from-full-to-selective-implementation" class="md-nav__link">
     <span class="md-ellipsis">
-      Risks &amp; Caveats
+      Advanced Translation Architectures: From Full to Selective Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Translation Architectures: From Full to Selective Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-pre-translation-the-baseline-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full Pre-translation: The Baseline Approach
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selective-pre-translation-a-modular-and-superior-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selective Pre-translation: A Modular and Superior Strategy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#off-the-shelf-prompting-the-power-of-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Off-the-Shelf Prompting: The Power of Prompt Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Off-the-Shelf Prompting: The Power of Prompt Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-off-the-shelf-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to Use Off-the-Shelf Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-and-cons-of-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pros and Cons of Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-prompting-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Prompting Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-considerations-for-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Considerations for Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancing-performance-through-system-adaptation-and-error-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancing Performance through System Adaptation and Error Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhancing Performance through System Adaptation and Error Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning-translation-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-Tuning Translation Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigating-error-propagation-in-the-llm-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigating Error Propagation in the LLM Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-and-quality-assurance-in-multilingual-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation and Quality Assurance in Multilingual Workflows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation and Quality Assurance in Multilingual Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#establishing-ground-truth-a-fundamental-dilemma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Establishing Ground Truth: A Fundamental Dilemma
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-survey-of-automated-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Survey of Automated Evaluation Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-indispensable-role-of-human-in-the-loop-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Indispensable Role of Human-in-the-Loop Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inherent-risks-managing-the-loss-of-cultural-nuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherent Risks: Managing the Loss of Cultural Nuance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inherent Risks: Managing the Loss of Cultural Nuance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-lost-in-translation-problem-what-machines-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "Lost in Translation" Problem: What Machines Miss
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-mitigation-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strategic Mitigation and Best Practices
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-strategic-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Strategic Recommendations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      References
     </span>
   </a>
   
@@ -586,29 +742,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03-off-the-shelf/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Off-the-shelf LLMs
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -650,6 +783,29 @@
   
   <span class="md-ellipsis">
     Conclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ToDos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ToDos
     
   </span>
   
@@ -705,64 +861,533 @@
 
 
 
-<h1 id="translation">Translation<a class="headerlink" href="#translation" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>One common strategy for multilingual deployment is to use <strong>automatic translation</strong>:</p>
+<h1 id="translation-strategies-for-multilingual-llm-deployment">Translation Strategies for Multilingual LLM Deployment<a class="headerlink" href="#translation-strategies-for-multilingual-llm-deployment" title="Permanent link">&para;</a></h1>
+<h2 id="introduction-the-english-centric-reality-of-llms">Introduction: The English-Centric Reality of LLMs<a class="headerlink" href="#introduction-the-english-centric-reality-of-llms" title="Permanent link">&para;</a></h2>
+<p>The development of Large Language Models (LLMs) has been overwhelmingly dominated by the English language. The vast majority of research, development, and, most critically, pretraining data is English-centric.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> For instance, English tokens constituted approximately 92.65% of the GPT-3 training corpus and 89.70% for Llama 2.<sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup> This "hegemony of English data"<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> has created a profound "resourcedness gap"<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup><sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> and a systemic "language gap in AI".<sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup> The direct consequence is that state-of-the-art models exhibit a sharp degradation in performance when applied to non-English tasks, a problem that is particularly acute for low-resource languages (LRLs) that lack substantial digital corpora for training.<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref3:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup><sup id="fnref:10"><a class="footnote-ref" href="#fn:10">10</a></sup></p>
+<p>This imbalance means that the automated systems increasingly mediating global online interactions—from content moderation platforms and search engines to customer support chatbots—are designed for and function far more effectively in English than in the world's other 7,000 languages.<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup> This disparity is not merely a technical limitation; it perpetuates and amplifies existing biases, reflecting Anglo-centric and North American cultural perspectives while marginalizing others.<sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:11"><a class="footnote-ref" href="#fn:11">11</a></sup></p>
+<p>In this context, automatic translation emerges as a pragmatic, powerful, and often necessary strategy to bridge this capability gap. By translating non-English inputs into English using either dedicated machine translation (MT) services (like Google Translate or Azure Translate) or the translation capabilities of other LLMs, practitioners can leverage the formidable reasoning and generation capabilities of English-dominant models for global applications before translating the output back to the source language.<sup id="fnref:12"><a class="footnote-ref" href="#fn:12">12</a></sup><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:13"><a class="footnote-ref" href="#fn:13">13</a></sup> However, this approach is not a universal solution. It introduces its own complex set of trade-offs, including the risk of propagating translation errors and the potential for significant loss of cultural and idiomatic meaning.<sup id="fnref3:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:10"><a class="footnote-ref" href="#fn:10">10</a></sup> This chapter provides a comprehensive framework for navigating these challenges, offering a detailed analysis of when and how to deploy translation-based strategies for multilingual LLM applications.</p>
+<h2 id="the-strategic-crossroads-direct-inference-vs-pre-translation">The Strategic Crossroads: Direct Inference vs. Pre-translation<a class="headerlink" href="#the-strategic-crossroads-direct-inference-vs-pre-translation" title="Permanent link">&para;</a></h2>
+<p>The foundational decision for any multilingual workflow is whether to engage the LLM directly in the source language or to first translate the query into English. This choice is not static; it depends on the specific capabilities of the model, the characteristics of the language, and the quality of available translation tools.</p>
+<h3 id="the-default-the-case-for-direct-inference">The Default: The Case for Direct Inference<a class="headerlink" href="#the-default-the-case-for-direct-inference" title="Permanent link">&para;</a></h3>
+<p>Modern multilingual LLMs are engineered with cross-lingual transfer capabilities. During pretraining on vast, multilingual corpora, they learn to infer connections between languages, allowing them to apply grammatical structures and semantic associations from high-resource languages like English to lower-resource ones.<sup id="fnref3:10"><a class="footnote-ref" href="#fn:10">10</a></sup> This intrinsic ability means that for many applications, the most effective approach is <em>direct inference</em>—prompting the model directly in the non-English source language.</p>
+<p>Recent empirical studies have validated this approach, showing that for tasks like Question Answering (QA), direct inference frequently outperforms strategies that rely on pre-translation.<sup id="fnref4:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:14"><a class="footnote-ref" href="#fn:14">14</a></sup> Analysis of PaLM2-L performance across a wide range of languages revealed that a significant majority—approximately 85%—of low-resource languages benefit from direct inference [User Query]. This finding establishes direct inference as the strong default strategy, particularly when the underlying model has demonstrated at least moderate capability in the target language.</p>
+<h3 id="the-exception-when-pre-translation-prevails">The Exception: When Pre-translation Prevails<a class="headerlink" href="#the-exception-when-pre-translation-prevails" title="Permanent link">&para;</a></h3>
+<p>Despite the general superiority of direct inference, a consistent and important exception exists. Pre-translation demonstrates clear and superior performance for a specific subset of LRLs. Research with PaLM2-L identified seven such languages where a pre-translation workflow is consistently more effective: <strong>Bambara, Cusco-Collao Quechua, Lingala, Oromo, Punjabi, Tigrinya, and Tsonga</strong> [User Query]. Notably, four of these seven are African languages, which may indicate regional patterns in data representation or linguistic typologies that challenge current model architectures [User Query].</p>
+<p>The outperformance of pre-translation in these cases is not arbitrary but is rooted in the fundamental limitations of LLMs. For these specific languages, the combined inefficiency and error rate of direct processing by the LLM are greater than the information loss incurred by a round-trip translation. This creates a "tipping point" where it becomes more effective to offload the initial comprehension to a specialized machine translation (MT) system, such as a dedicated service like Azure Translator or a powerful LLM.<sup id="fnref2:12"><a class="footnote-ref" href="#fn:12">12</a></sup> The underlying causes for this phenomenon are multifaceted:</p>
 <ul>
-<li>Translate non-English input to English</li>
-<li>Use an English-centric LLM</li>
-<li>Translate the output back to the original language</li>
+<li><strong>Severe Underrepresentation in Pretraining Data:</strong> These languages are likely so sparsely represented in the pretraining corpus that the model's internal representations are too weak to support complex reasoning or generation directly.<sup id="fnref5:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref2:15"><a class="footnote-ref" href="#fn:15">15</a></sup><sup id="fnref:16"><a class="footnote-ref" href="#fn:16">16</a></sup></li>
+<li><strong>Tokenization Inefficiency:</strong> Standard tokenizers, often optimized for Latin scripts and major world languages, can be highly inefficient for other languages. This results in longer, more expensive, and less semantically coherent token sequences, which degrades model performance and increases operational costs.<sup id="fnref5:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li><strong>Linguistic Divergence:</strong> Languages that are typologically and structurally distant from English may benefit less from the model's cross-lingual transfer capabilities, making the explicit "bridge" of translation a more reliable pathway to a high-quality English representation that the model can effectively process.</li>
 </ul>
-<p>This approach leverages the strength of English-dominant LLMs without requiring native multilingual support.</p>
-<h2 id="when-to-use">When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
+<h3 id="a-data-driven-decision-framework-key-performance-determinants">A Data-Driven Decision Framework: Key Performance Determinants<a class="headerlink" href="#a-data-driven-decision-framework-key-performance-determinants" title="Permanent link">&para;</a></h3>
+<p>The strategic choice between direct inference and pre-translation should be guided by a careful, data-driven evaluation of three interconnected factors. It is crucial to recognize that this framework is dynamic; the optimal strategy is not a fixed property of a language but a shifting outcome based on the specific model being used. As new models with more diverse pretraining data become available, the set of languages that benefit from pre-translation will likely shrink, necessitating continuous re-evaluation of this choice.<sup id="fnref4:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<ol>
+<li>
+<p><strong>Model Size:</strong> Larger models generally possess more robust multilingual capabilities, making them better candidates for direct inference. While translation quality also tends to improve with model size, this is often a result of greater exposure to the language during pretraining rather than a fundamental improvement in in-context learning ability.<sup id="fnref:17"><a class="footnote-ref" href="#fn:17">17</a></sup><sup id="fnref:18"><a class="footnote-ref" href="#fn:18">18</a></sup><sup id="fnref:19"><a class="footnote-ref" href="#fn:19">19</a></sup> However, size is not a panacea, and even the largest models exhibit significant performance disparities across languages.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">20</a></sup></p>
+</li>
+<li>
+<p><strong>Language Representation in Pretraining Data:</strong> This is arguably the most critical determinant of performance. A strong, positive correlation exists between the proportion of a language in an LLM's pretraining corpus and the model's performance in that language.<sup id="fnref4:6"><a class="footnote-ref" href="#fn:6">6</a></sup><sup id="fnref:15"><a class="footnote-ref" href="#fn:15">15</a></sup><sup id="fnref:21"><a class="footnote-ref" href="#fn:21">21</a></sup> The greater the representation, the more likely direct inference will be the superior strategy.</p>
+</li>
+<li>
+<p><strong>Translator Proficiency:</strong> The success of a pre-translation workflow is fundamentally dependent on the quality of the machine translation (MT) system used, whether it's a dedicated service like DeepL or an LLM-based API.<sup id="fnref4:12"><a class="footnote-ref" href="#fn:12">12</a></sup><sup id="fnref:22"><a class="footnote-ref" href="#fn:22">22</a></sup> High-fidelity translation is a prerequisite. A poor-quality MT system will introduce errors, ambiguity, and semantic drift that will propagate through the workflow, leading to a degraded final output regardless of the LLM's capabilities.<sup id="fnref3:13"><a class="footnote-ref" href="#fn:13">13</a></sup><sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup><sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup> If the available MT service is weak, direct inference, even if suboptimal, may present the less risky path.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Strategy</th>
+<th style="text-align: left;">Best For (Language Profile)</th>
+<th style="text-align: left;">Best For (Task Type)</th>
+<th style="text-align: left;">Key Dependencies</th>
+<th style="text-align: left;">Primary Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Direct Inference</strong></td>
+<td style="text-align: left;">High- and Medium-Resource Languages; Majority of Low-Resource Languages.</td>
+<td style="text-align: left;">All Tasks</td>
+<td style="text-align: left;">A robust, genuinely multilingual LLM with strong cross-lingual transfer capabilities.</td>
+<td style="text-align: left;">Suboptimal performance or failure if the model's native support for the language is weak.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Full Pre-translation</strong></td>
+<td style="text-align: left;">Very Low-Resource Languages with poor native LLM support (e.g., Bambara, Quechua).</td>
+<td style="text-align: left;">General tasks where cultural nuance is not critical.</td>
+<td style="text-align: left;">A high-quality, reliable Machine Translation (MT) API.</td>
+<td style="text-align: left;">High potential for loss of cultural nuance and propagation of translation errors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Selective Pre-translation</strong></td>
+<td style="text-align: left;">All non-English languages, especially Low- and Medium-Resource.</td>
+<td style="text-align: left;">Extractive and Generative tasks where precision and nuance are important.</td>
+<td style="text-align: left;">A high-quality MT API and a well-structured prompt architecture.</td>
+<td style="text-align: left;">Increased implementation complexity compared to other methods.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-translation-architectures-from-full-to-selective-implementation">Advanced Translation Architectures: From Full to Selective Implementation<a class="headerlink" href="#advanced-translation-architectures-from-full-to-selective-implementation" title="Permanent link">&para;</a></h2>
+<p>Once the decision to use translation has been made, practitioners face a second choice: <em>how</em> to integrate translation into the workflow. The strategies range from a simple, full-translation pipeline to highly sophisticated, modular approaches that treat translation as a dynamic component of the reasoning process itself.</p>
+<h3 id="full-pre-translation-the-baseline-approach">Full Pre-translation: The Baseline Approach<a class="headerlink" href="#full-pre-translation-the-baseline-approach" title="Permanent link">&para;</a></h3>
+<p>The most straightforward and common implementation of a translation-based strategy is full pre-translation. This workflow involves three distinct steps:</p>
+<ol>
+<li>Translate the entire non-English input prompt into English.</li>
+<li>Process the resulting English prompt using a powerful, English-centric LLM.</li>
+<li>Translate the English output from the LLM back into the original source language.<sup id="fnref8:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:13"><a class="footnote-ref" href="#fn:13">13</a></sup><sup id="fnref7:14"><a class="footnote-ref" href="#fn:14">14</a></sup></li>
+</ol>
+<p>This method is fast to set up using off-the-shelf components like commercial translation APIs (e.g., Google Translate, Azure Translate) and English-centric LLMs.<sup id="fnref3:12"><a class="footnote-ref" href="#fn:12">12</a></sup> It is a viable option when native LLM support for a language is particularly weak or non-existent [User Query]. However, this approach is a blunt instrument. It carries a high risk of losing critical information, cultural nuance, and idiomatic meaning.<sup id="fnref5:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref4:10"><a class="footnote-ref" href="#fn:10">10</a></sup> Furthermore, it introduces two distinct points of failure—the input and output translation steps—where errors can be introduced and then propagated or even amplified by the LLM.<sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup></p>
+<h3 id="selective-pre-translation-a-modular-and-superior-strategy">Selective Pre-translation: A Modular and Superior Strategy<a class="headerlink" href="#selective-pre-translation-a-modular-and-superior-strategy" title="Permanent link">&para;</a></h3>
+<p>A more advanced and effective approach is selective pre-translation. This strategy is based on the understanding that an LLM prompt is not a monolithic block of text but a modular entity composed of distinct functional components: the <strong>Instruction</strong>, the <strong>Context</strong>, the in-context <strong>Examples</strong>, and the desired <strong>Output</strong> format.<sup id="fnref6:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref2:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> Instead of translating the entire prompt, this method involves surgically translating only specific components while keeping others in the source language.</p>
+<p>Empirical evidence from comprehensive studies demonstrates that selective pre-translation <strong>consistently and significantly outperforms both full pre-translation and direct inference</strong> across a wide variety of tasks and languages.<sup id="fnref3:14"><a class="footnote-ref" href="#fn:14">14</a></sup><sup id="fnref2:27"><a class="footnote-ref" href="#fn:27">27</a></sup> The performance improvements are particularly dramatic for LRLs, where relative gains can exceed 100% or even 200% compared to baseline methods.<sup id="fnref4:14"><a class="footnote-ref" href="#fn:14">14</a></sup> This strategy functions as a form of precision risk management. It allows a practitioner to surgically isolate the prompt components most vulnerable to information loss (such as context containing culturally specific terminology) and protect their integrity by keeping them in the source language. Simultaneously, it leverages the LLM's strength by translating the parts where English-language reasoning is most beneficial (such as the instruction). This minimizes the "attack surface" for translation errors while still accessing the superior reasoning capabilities of the English-centric model.</p>
+<p>The optimal configuration is highly dependent on the nature of the task:</p>
 <ul>
-<li>Your language has <strong>reliable machine translation</strong> to/from English</li>
-<li>You lack resources to fine-tune models</li>
-<li><strong>Accuracy</strong> is more important than <strong>cultural fluency</strong></li>
+<li><strong>For Extractive Tasks (e.g., Question Answering, Named Entity Recognition):</strong> In these tasks, the model's goal is to identify and extract information directly from the provided text. The integrity of this text is paramount. Therefore, it is critical to <strong>keep the Context and any in-context Examples in the source language</strong>. Translating the context risks altering, omitting, or corrupting the very facts the model needs to analyze. Models have proven to be highly effective at following an English-language instruction while operating on source-language context.<sup id="fnref7:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref5:14"><a class="footnote-ref" href="#fn:14">14</a></sup></li>
+<li><strong>For Generative and Abstractive Tasks (e.g., Summarization, Content Creation):</strong> For tasks that require deep reasoning, synthesis, and fluent generation, the model's inherent linguistic capabilities are the most important factor. In these cases, it is often more effective to have the model <strong>generate its output in English</strong>, its strongest and most fluent language. This leverages the model's superior coherence and reasoning abilities. The final English output can then be translated back to the source language as a final step.<sup id="fnref6:14"><a class="footnote-ref" href="#fn:14">14</a></sup></li>
 </ul>
-<h2 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Prompt Component</th>
+<th style="text-align: left;">Extractive QA</th>
+<th style="text-align: left;">Named Entity Recognition (NER)</th>
+<th style="text-align: left;">Abstractive Summarization</th>
+<th style="text-align: left;">Natural Language Inference (NLI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Instruction</strong></td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">English</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Context</strong></td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">English or Source Language</td>
+<td style="text-align: left;">English or Source Language</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Examples</strong></td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">English</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Output Format</strong></td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">Source Language</td>
+<td style="text-align: left;">English (with back-translation)</td>
+<td style="text-align: left;">English</td>
+</tr>
+</tbody>
+</table>
+<!-- ### Scratchpad and Chain-of-Translation Prompting (CoTR)
+
+The most advanced strategies integrate translation not as a pre-processing step but as an internal component of the LLM's reasoning process. This approach is particularly powerful for very low-resource languages where even standard methods may fall short.[^28][^29][^30][^31] This signifies a conceptual shift from viewing translation as a pipeline element to viewing it as a reasoning tool. Instead of relying on external systems, these techniques teach the LLM to use its own internal translation capabilities to deconstruct and solve a more complex multilingual problem.
+
+The **Chain-of-Translation (CoTR)** prompting technique exemplifies this paradigm. CoTR restructures a single, complex prompt to instruct the model to follow a series of steps:
+
+1.  First, translate the provided low-resource language input into a high-resource language like English.
+2.  Next, perform the specified task (e.g., classification, generation) on the newly generated English translation.
+3.  Finally, if required, translate the result back into the original language.
+
+All of these operations are executed within the model's "chain of thought" in response to a single prompt.[^32][^33][^34][^35] This method explicitly forces the model to reason and operate in English, its language of greatest strength, which has been shown to significantly improve accuracy for tasks like sentiment analysis and hate speech detection in LRLs such as Marathi.[^32][^34] It effectively combines the benefits of pre-translation with the reasoning-eliciting power of chain-of-thought prompting. -->
+
+<h2 id="off-the-shelf-prompting-the-power-of-prompt-engineering">Off-the-Shelf Prompting: The Power of Prompt Engineering<a class="headerlink" href="#off-the-shelf-prompting-the-power-of-prompt-engineering" title="Permanent link">&para;</a></h2>
+<p>An alternative to translation-centric workflows is to engage directly with a model's inherent multilingual capabilities through sophisticated prompt engineering.<sup id="fnref:36"><a class="footnote-ref" href="#fn:36">36</a></sup> This strategy involves using pretrained, general-purpose LLMs (e.g., GPT-4, Claude, Llama) without any additional training or fine-tuning.<sup id="fnref:37"><a class="footnote-ref" href="#fn:37">37</a></sup> Success hinges entirely on the ability to design effective prompts that can elicit the desired multilingual or multicultural behavior from the model.<sup id="fnref:38"><a class="footnote-ref" href="#fn:38">38</a></sup></p>
+<h3 id="when-to-use-off-the-shelf-prompting">When to Use Off-the-Shelf Prompting<a class="headerlink" href="#when-to-use-off-the-shelf-prompting" title="Permanent link">&para;</a></h3>
+<p>This approach is particularly well-suited for specific scenarios:</p>
 <ul>
-<li>Works with <strong>off-the-shelf translators</strong> and English LLMs</li>
-<li>Fast to set up</li>
-<li>Useful when <strong>native-language LLM support is weak</strong></li>
+<li><strong>Rapid Prototyping:</strong> When the goal is to quickly develop a proof-of-concept or prototype, prompting offers the fastest path to a working model without the overhead of data collection and training.<sup id="fnref4:39"><a class="footnote-ref" href="#fn:39">39</a></sup></li>
+<li><strong>Well-Supported Languages:</strong> The strategy is most effective when the target language is reasonably well-represented in the LLM's training data. Performance degrades significantly for low-resource languages where the model's internal representations are weak.<sup id="fnref3:37"><a class="footnote-ref" href="#fn:37">37</a></sup></li>
+<li><strong>Resource Allocation:</strong> It is ideal for teams that can invest time in iterative prompt design, including the creation of few-shot examples or the integration of retrieval-augmented generation (RAG) systems, rather than investing in costly fine-tuning infrastructure.<sup id="fnref3:40"><a class="footnote-ref" href="#fn:40">40</a></sup><sup id="fnref3:41"><a class="footnote-ref" href="#fn:41">41</a></sup></li>
 </ul>
-<h2 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h2>
+<h3 id="pros-and-cons-of-prompting">Pros and Cons of Prompting<a class="headerlink" href="#pros-and-cons-of-prompting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>No training required:</strong> Enables rapid time-to-market with lower initial cost and engineering effort.<sup id="fnref3:39"><a class="footnote-ref" href="#fn:39">39</a></sup><sup id="fnref:42"><a class="footnote-ref" href="#fn:42">42</a></sup></td>
+<td style="text-align: left;"><strong>Fragile and Sensitive:</strong> Performance can vary widely with small, seemingly innocuous changes to prompt wording, structure, or even the order of information.<sup id="fnref:43"><a class="footnote-ref" href="#fn:43">43</a></sup><sup id="fnref:44"><a class="footnote-ref" href="#fn:44">44</a></sup><sup id="fnref2:45"><a class="footnote-ref" href="#fn:45">45</a></sup><sup id="fnref2:46"><a class="footnote-ref" href="#fn:46">46</a></sup><sup id="fnref:47"><a class="footnote-ref" href="#fn:47">47</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Broad Language Support:</strong> Works reasonably well across many mid- to high-resource languages that have sufficient representation in pretraining data.<sup id="fnref2:48"><a class="footnote-ref" href="#fn:48">48</a></sup></td>
+<td style="text-align: left;"><strong>Inconsistent in LRLs:</strong> Behavior in low-resource languages is often unpredictable, with models frequently exhibiting "language confusion" by responding in the wrong language.<sup id="fnref:49"><a class="footnote-ref" href="#fn:49">49</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flexible Cultural Framing:</strong> Easy to experiment with cultural nuances by instructing the model to adopt specific personas, tones, or cultural contexts.<sup id="fnref2:50"><a class="footnote-ref" href="#fn:50">50</a></sup><sup id="fnref:51"><a class="footnote-ref" href="#fn:51">51</a></sup><sup id="fnref2:52"><a class="footnote-ref" href="#fn:52">52</a></sup><sup id="fnref3:53"><a class="footnote-ref" href="#fn:53">53</a></sup><sup id="fnref:54"><a class="footnote-ref" href="#fn:54">54</a></sup><sup id="fnref2:55"><a class="footnote-ref" href="#fn:55">55</a></sup><sup id="fnref:56"><a class="footnote-ref" href="#fn:56">56</a></sup></td>
+<td style="text-align: left;"><strong>Difficult to Control:</strong> Maintaining a consistent tone, style, and persona over long or complex conversations can be challenging and requires sophisticated prompt management.<sup id="fnref2:40"><a class="footnote-ref" href="#fn:40">40</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Effective for In-Context Learning:</strong> Well-suited for zero-shot and few-shot tasks where the model learns from instructions and examples provided directly in the prompt.<sup id="fnref:40"><a class="footnote-ref" href="#fn:40">40</a></sup></td>
+<td style="text-align: left;"><strong>Underperforms on Specialized Tasks:</strong> May not achieve the required accuracy or reliability for highly sensitive or domain-specific tasks compared to a fine-tuned model.<sup id="fnref2:39"><a class="footnote-ref" href="#fn:39">39</a></sup><sup id="fnref2:57"><a class="footnote-ref" href="#fn:57">57</a></sup></td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced-prompting-techniques">Advanced Prompting Techniques<a class="headerlink" href="#advanced-prompting-techniques" title="Permanent link">&para;</a></h3>
+<p>Effective off-the-shelf prompting is an iterative science that relies on a portfolio of techniques to steer model behavior.</p>
 <ul>
-<li><strong>Cultural nuance</strong> may be lost</li>
-<li>Translation errors can <strong>propagate</strong> to final output</li>
-<li>Limited <strong>personalization</strong> (e.g., forms of address, dialects)</li>
+<li><strong>Prompt Sensitivity Analysis:</strong> Given that LLMs are highly sensitive to prompt phrasing, a key practice is to systematically test how different phrasings, formats, and structures affect performance for a specific task and language.<sup id="fnref:45"><a class="footnote-ref" href="#fn:45">45</a></sup> Even minor perturbations can lead to significant variations in output quality.<sup id="fnref:46"><a class="footnote-ref" href="#fn:46">46</a></sup></li>
+<li><strong>Multilingual Prompting Strategies:</strong> The choice of language for the prompt itself is a critical variable. While prompting in English can sometimes yield higher accuracy on complex reasoning tasks due to the model's training data imbalance, prompting in the target language often produces more natural and contextually appropriate responses.<sup id="fnref2:37"><a class="footnote-ref" href="#fn:37">37</a></sup><sup id="fnref:58"><a class="footnote-ref" href="#fn:58">58</a></sup> Hybrid approaches, such as providing instructions in English but examples in the target language, or using multilingual prompts with cultural cues, can activate a broader range of the model's embedded knowledge.<sup id="fnref:59"><a class="footnote-ref" href="#fn:59">59</a></sup></li>
+<li><strong>Cultural Prompting:</strong> This involves explicitly instructing the model to adopt a specific cultural perspective or persona to improve cultural alignment. Techniques include sociodemographic prompting (e.g., "Answer as a journalist from Japan") and providing cultural cues within the prompt to activate the model's latent cultural knowledge.<sup id="fnref:50"><a class="footnote-ref" href="#fn:50">50</a></sup><sup id="fnref:52"><a class="footnote-ref" href="#fn:52">52</a></sup><sup id="fnref:53"><a class="footnote-ref" href="#fn:53">53</a></sup><sup id="fnref:55"><a class="footnote-ref" href="#fn:55">55</a></sup> This can help mitigate the default Western-centric bias found in many models and reduce hallucinations about culturally-specific information.<sup id="fnref2:53"><a class="footnote-ref" href="#fn:53">53</a></sup><sup id="fnref2:59"><a class="footnote-ref" href="#fn:59">59</a></sup></li>
+<li><strong>Prompt Programming Frameworks:</strong> To manage the complexity of prompt design and testing, developers can use prompt engineering frameworks. These frameworks (such as COSTAR or RACE) provide structure, templates, version control, and a shared vocabulary, enabling teams to iterate on and test prompts more systematically.<sup id="fnref:60"><a class="footnote-ref" href="#fn:60">60</a></sup></li>
 </ul>
-<h2 id="translation-strategies">Translation Strategies<a class="headerlink" href="#translation-strategies" title="Permanent link">&para;</a></h2>
-<h3 id="full-translation">Full Translation<a class="headerlink" href="#full-translation" title="Permanent link">&para;</a></h3>
-<p>Translate entire input and output to/from English.</p>
-<h3 id="selective-translation">Selective Translation<a class="headerlink" href="#selective-translation" title="Permanent link">&para;</a></h3>
-<p>Translate only parts of the prompt:</p>
+<h3 id="key-considerations-for-implementation">Key Considerations for Implementation<a class="headerlink" href="#key-considerations-for-implementation" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Keep examples or instructions in original language</li>
-<li>Translate only the query or expected output</li>
+<li><strong>Language Coverage:</strong> Before committing to a prompting-based strategy, it is essential to verify the target language's support level in the chosen LLM. Many model providers do not offer detailed breakdowns of language performance, and capabilities can vary significantly even between model versions.<sup id="fnref:48"><a class="footnote-ref" href="#fn:48">48</a></sup><sup id="fnref:61"><a class="footnote-ref" href="#fn:61">61</a></sup></li>
+<li><strong>Latency &amp; Cost:</strong> Prompting with large, general-purpose models can be more expensive and have higher latency at inference time compared to using a smaller, fine-tuned model for a specific task. For applications with high traffic or strict performance requirements, the cost-benefit analysis often shifts in favor of fine-tuning.<sup id="fnref:39"><a class="footnote-ref" href="#fn:39">39</a></sup></li>
+<li><strong>Domain Fit:</strong> General-purpose LLMs may lack the specialized knowledge required for niche domains. While prompting techniques like providing context via RAG can help, they may not match the performance of a model fine-tuned on domain-specific data.<sup id="fnref2:41"><a class="footnote-ref" href="#fn:41">41</a></sup><sup id="fnref:57"><a class="footnote-ref" href="#fn:57">57</a></sup></li>
 </ul>
-<p>This modular approach helps balance <strong>fidelity</strong> and <strong>model compatibility</strong>.</p>
-<h3 id="scratchpad-techniques">Scratchpad Techniques<a class="headerlink" href="#scratchpad-techniques" title="Permanent link">&para;</a></h3>
-<p>Use translation as an internal reasoning tool:</p>
+<h2 id="enhancing-performance-through-system-adaptation-and-error-mitigation">Enhancing Performance through System Adaptation and Error Mitigation<a class="headerlink" href="#enhancing-performance-through-system-adaptation-and-error-mitigation" title="Permanent link">&para;</a></h2>
+<p>A translation-based workflow is a complex system with multiple components. Optimizing performance and ensuring reliability requires proactive adaptation of these components and robust strategies for mitigating the inevitable errors that arise. A mature multilingual system architecture treats its translation component not as a static, black-box API, but as a first-class, adaptable model that is integral to the MLOps lifecycle.</p>
+<h3 id="fine-tuning-translation-systems">Fine-Tuning Translation Systems<a class="headerlink" href="#fine-tuning-translation-systems" title="Permanent link">&para;</a></h3>
+<p>Off-the-shelf MT systems—whether they are dedicated services like Amazon Translate or general-purpose LLMs—are general-purpose tools.<sup id="fnref:41"><a class="footnote-ref" href="#fn:41">41</a></sup> For applications requiring specialized terminology, specific stylistic conventions, or a consistent brand voice (e.g., in corporate, legal, or medical domains), their performance can be substantially improved through fine-tuning.<sup id="fnref:62"><a class="footnote-ref" href="#fn:62">62</a></sup><sup id="fnref:63"><a class="footnote-ref" href="#fn:63">63</a></sup><sup id="fnref:64"><a class="footnote-ref" href="#fn:64">64</a></sup></p>
 <ul>
-<li>Translate input to English, reason in English, then translate back</li>
-<li>Effective in <strong>very low-resource</strong> languages</li>
+<li><strong>Instruction Fine-Tuning (IFT):</strong> This involves training the MT model on a curated dataset of examples that demonstrate precisely how it should handle specific terms, tones, and styles. It is a supervised process that adapts the general-purpose model to a specialized task.<sup id="fnref2:62"><a class="footnote-ref" href="#fn:62">62</a></sup></li>
+<li><strong>Parameter-Efficient Fine-Tuning (PEFT):</strong> Techniques like <strong>Low-Rank Adaptation (LoRA)</strong> offer a computationally and resource-efficient method for fine-tuning. Instead of retraining the entire model, LoRA involves training only a small set of additional parameters, or "adapters." This makes it feasible to develop and deploy multiple domain-specific translator adapters (e.g., one for marketing, one for technical documentation) that can be loaded on top of a single base model as needed.<sup id="fnref2:63"><a class="footnote-ref" href="#fn:63">63</a></sup><sup id="fnref:65"><a class="footnote-ref" href="#fn:65">65</a></sup><sup id="fnref:66"><a class="footnote-ref" href="#fn:66">66</a></sup></li>
+<li><strong>Synthetic Data Generation:</strong> In many LRL or specialized domain scenarios, high-quality parallel data for fine-tuning is scarce. LLMs can be employed to generate synthetic training data, although this requires careful quality control to avoid introducing and reinforcing model biases.<sup id="fnref2:26"><a class="footnote-ref" href="#fn:26">26</a></sup><sup id="fnref:67"><a class="footnote-ref" href="#fn:67">67</a></sup></li>
 </ul>
-<h3 id="fine-tuning-translators">Fine-Tuning Translators<a class="headerlink" href="#fine-tuning-translators" title="Permanent link">&para;</a></h3>
-<p>Train or adapt translation systems:</p>
+<h3 id="mitigating-error-propagation-in-the-llm-workflow">Mitigating Error Propagation in the LLM Workflow<a class="headerlink" href="#mitigating-error-propagation-in-the-llm-workflow" title="Permanent link">&para;</a></h3>
+<p>In a translation-based system, errors are not isolated; they cascade. A mistake in the initial translation step can be misinterpreted and amplified by the LLM, leading to a final output that is severely flawed [User Query]. Modern approaches to error mitigation are shifting from simple post-processing to building correction mechanisms directly into the generation workflow, creating more robust and autonomous systems.</p>
 <ul>
-<li>Generate <strong>synthetic data</strong> to expand training</li>
-<li>Use <strong>instruction fine-tuning (IFT)</strong> with LoRA</li>
-<li>Post-process outputs to improve fluency and tone</li>
+<li><strong>Glossary for Domain Terms:</strong> To combat errors stemming from a lack of specialized knowledge, a glossary provides a powerful, proactive solution. A domain-specific knowledge base—such as a glossary of approved technical terms, product names, or legal definitions—is created. When a query is received, the system first retrieves relevant entries from this knowledge base and provides them to the LLM as part of the prompt context. This grounds the LLM's generation in factual, approved data, significantly reducing the risk of hallucinations and the use of incorrect terminology.<sup id="fnref:68"><a class="footnote-ref" href="#fn:68">68</a></sup><sup id="fnref:69"><a class="footnote-ref" href="#fn:69">69</a></sup></li>
+<li><strong>Iterative Debugging Loops:</strong> For complex, multi-step tasks, an iterative correction loop can be implemented. This involves a cycle of "simulation-error localization-correction." The LLM's initial output is passed to an automated verification step (e.g., a code simulator, a set of rule-based checks, or even another LLM call tasked with validation). If an error is detected, structured feedback is provided to the LLM in a subsequent prompt, instructing it to revise its previous output based on the identified error.<sup id="fnref2:68"><a class="footnote-ref" href="#fn:68">68</a></sup></li>
 </ul>
-<h2 id="risks-caveats">Risks &amp; Caveats<a class="headerlink" href="#risks-caveats" title="Permanent link">&para;</a></h2>
+<h2 id="evaluation-and-quality-assurance-in-multilingual-workflows">Evaluation and Quality Assurance in Multilingual Workflows<a class="headerlink" href="#evaluation-and-quality-assurance-in-multilingual-workflows" title="Permanent link">&para;</a></h2>
+<p>Measuring the success of a multilingual, translation-based system is a non-trivial challenge. It requires a multi-stage evaluation framework that can diagnose issues at different points in the pipeline and account for qualitative aspects of language that automated metrics often miss.</p>
+<h3 id="establishing-ground-truth-a-fundamental-dilemma">Establishing Ground Truth: A Fundamental Dilemma<a class="headerlink" href="#establishing-ground-truth-a-fundamental-dilemma" title="Permanent link">&para;</a></h3>
+<p>A critical decision in the evaluation process is the choice of the ground truth (GT), or human-created reference, against which the system's output is compared. There are two primary approaches, and the choice between them reflects the core objective of the system.</p>
+<ol>
+<li><strong>Evaluation with Ground Truth in the Source Language:</strong> The final, user-facing output (which has been translated back into the source language) is compared directly against a human-created reference in that same language. This method provides the most holistic measure of the end-to-end user experience. However, it conflates potential errors from the LLM's reasoning with errors from the back-translation step, making it difficult to isolate the source of a problem.</li>
+<li><strong>Evaluation with Ground Truth Translated to English:</strong> The intermediate English-language output from the LLM is compared against a human reference that has also been professionally translated into English. This approach effectively isolates and measures the performance of the core reasoning step (LLM processing) and the input translation. Its limitation is that it does not assess the quality of the final back-translation that the user will actually see.</li>
+</ol>
+<p>A mature evaluation strategy must be multi-stage, employing both methods. Using a translated GT is an intrinsic, system-internal measure ideal for optimizing the core LLM and prompt engineering, while using a source-language GT is an extrinsic, user-centric measure essential for validating the final product quality.<sup id="fnref:72"><a class="footnote-ref" href="#fn:72">72</a></sup><sup id="fnref:73"><a class="footnote-ref" href="#fn:73">73</a></sup></p>
+<h3 id="a-survey-of-automated-evaluation-metrics">A Survey of Automated Evaluation Metrics<a class="headerlink" href="#a-survey-of-automated-evaluation-metrics" title="Permanent link">&para;</a></h3>
+<p>Automated metrics provide a scalable way to track performance during development, but it is crucial to understand their limitations.</p>
 <ul>
-<li><strong>Dependency on translation quality</strong></li>
-<li>Loss of <strong>idiomatic</strong> or <strong>culturally embedded</strong> meaning</li>
-<li>Introduces <strong>two points of failure</strong> (input and output)</li>
+<li><strong>Lexical Overlap Metrics (e.g., BLEU, ROUGE):</strong> These metrics operate by measuring the overlap of n-grams (sequences of words) between the machine output and a reference translation. They are fast and simple to compute but are fundamentally flawed for evaluating modern, fluent translation systems. They are poor at capturing semantic meaning and unfairly penalize valid paraphrasing and stylistic variations.<sup id="fnref2:73"><a class="footnote-ref" href="#fn:73">73</a></sup><sup id="fnref:74"><a class="footnote-ref" href="#fn:74">74</a></sup><sup id="fnref:75"><a class="footnote-ref" href="#fn:75">75</a></sup></li>
+<li><strong>Embedding-Based Metrics (e.g., BERTScore, COMET):</strong> These state-of-the-art metrics leverage contextual embeddings from language models to measure the semantic similarity between the output and the reference. They correlate much more strongly with human judgment and are better able to assess the preservation of meaning.<sup id="fnref2:74"><a class="footnote-ref" href="#fn:74">74</a></sup><sup id="fnref2:75"><a class="footnote-ref" href="#fn:75">75</a></sup><sup id="fnref2:76"><a class="footnote-ref" href="#fn:76">76</a></sup></li>
 </ul>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>Translation is a powerful strategy — especially when paired with robust English LLMs — but requires careful design and evaluation to preserve meaning, tone, and cultural context.</p>
+<p>Despite their sophistication, even advanced metrics can create a "fluency illusion." Modern LLMs are exceptionally good at producing fluent, grammatically correct, and plausible-sounding text.<sup id="fnref:76"><a class="footnote-ref" href="#fn:76">76</a></sup> Metrics like COMET, which are themselves based on LLMs, can be biased towards this fluency. They may assign high scores to translations that are beautifully written but are factually incorrect, semantically divergent, or contain subtle hallucinations. This makes human oversight more critical than ever, not less, as only a human with real-world knowledge can reliably detect these nuanced failures.<sup id="fnref2:72"><a class="footnote-ref" href="#fn:72">72</a></sup><sup id="fnref:77"><a class="footnote-ref" href="#fn:77">77</a></sup></p>
+<h3 id="the-indispensable-role-of-human-in-the-loop-evaluation">The Indispensable Role of Human-in-the-Loop Evaluation<a class="headerlink" href="#the-indispensable-role-of-human-in-the-loop-evaluation" title="Permanent link">&para;</a></h3>
+<p>Given the limitations of automated metrics, human evaluation remains the gold standard for assessing translation quality, especially for high-stakes or user-facing content. Automated metrics cannot reliably measure cultural appropriateness, tone, formality, or the preservation of subtle meaning.<sup id="fnref3:72"><a class="footnote-ref" href="#fn:72">72</a></sup><sup id="fnref:78"><a class="footnote-ref" href="#fn:78">78</a></sup><sup id="fnref:79"><a class="footnote-ref" href="#fn:79">79</a></sup> A robust human evaluation process involves native speakers judging outputs based on well-defined criteria:</p>
+<ul>
+<li><strong>Fluency:</strong> Is the output grammatically correct, well-formed, and natural-sounding to a native speaker of the target language? <sup id="fnref4:72"><a class="footnote-ref" href="#fn:72">72</a></sup></li>
+<li><strong>Adequacy:</strong> Does the output accurately preserve the essential meaning and intent of the original source text? <sup id="fnref5:72"><a class="footnote-ref" href="#fn:72">72</a></sup></li>
+<li><strong>Cultural Appropriateness:</strong> Does the translation respect local customs, social norms, and sensitivities, avoiding potentially offensive or confusing language? <sup id="fnref8:79"><a class="footnote-ref" href="#fn:79">79</a></sup><sup id="fnref3:80"><a class="footnote-ref" href="#fn:80">80</a></sup></li>
+</ul>
+<h2 id="inherent-risks-managing-the-loss-of-cultural-nuance">Inherent Risks: Managing the Loss of Cultural Nuance<a class="headerlink" href="#inherent-risks-managing-the-loss-of-cultural-nuance" title="Permanent link">&para;</a></h2>
+<p>The most significant and insidious risk in any automated translation workflow is the degradation of meaning that goes beyond simple factual inaccuracy. Machine translation systems, whether dedicated NMT models or general-purpose LLMs, operate on statistical patterns derived from text. They lack the "lived experience" and embodied understanding necessary to grasp the deep cultural context embedded within human language.<sup id="fnref:80"><a class="footnote-ref" href="#fn:80">80</a></sup><sup id="fnref:81"><a class="footnote-ref" href="#fn:81">81</a></sup></p>
+<h3 id="the-lost-in-translation-problem-what-machines-miss">The "Lost in Translation" Problem: What Machines Miss<a class="headerlink" href="#the-lost-in-translation-problem-what-machines-miss" title="Permanent link">&para;</a></h3>
+<p>This lack of cultural grounding leads to the consistent loss of several key linguistic elements, which can have severe consequences. Famous marketing blunders, such as KFC's slogan "Finger-Lickin' Good" being translated in China as "Eat Your Fingers Off" or Pepsi's slogan becoming "Pepsi brings your ancestors back from the dead," are classic examples.<sup id="fnref2:79"><a class="footnote-ref" href="#fn:79">79</a></sup><sup id="fnref2:81"><a class="footnote-ref" href="#fn:81">81</a></sup> Beyond commercial embarrassment, such errors can have serious real-world impacts, as evidenced by a mistranslated "good morning" post on Facebook that was rendered as "attack them" in Hebrew, leading to a wrongful arrest.<sup id="fnref2:80"><a class="footnote-ref" href="#fn:80">80</a></sup></p>
+<p>Key areas of failure include:</p>
+<ul>
+<li><strong>Idiomatic Expressions and Slang:</strong> Phrases whose meanings are not deducible from their literal words (e.g., "kick the bucket," "break a leg") are frequently translated literally, resulting in nonsensical or bizarre outputs.<sup id="fnref2:78"><a class="footnote-ref" href="#fn:78">78</a></sup><sup id="fnref4:79"><a class="footnote-ref" href="#fn:79">79</a></sup><sup id="fnref:82"><a class="footnote-ref" href="#fn:82">82</a></sup><sup id="fnref:83"><a class="footnote-ref" href="#fn:83">83</a></sup></li>
+<li><strong>Formality and Tone:</strong> The crucial distinction between formal and informal modes of address (e.g., "vous" vs. "tu" in French, or Keigo in Japanese) is often lost. This can lead to outputs that are perceived as disrespectful, overly familiar, or simply inappropriate for the context.<sup id="fnref5:79"><a class="footnote-ref" href="#fn:79">79</a></sup><sup id="fnref2:82"><a class="footnote-ref" href="#fn:82">82</a></sup></li>
+<li><strong>Humor and Wordplay:</strong> Humor is intensely culture-specific and relies on shared references, puns, and social conventions that rarely survive literal translation.<sup id="fnref3:78"><a class="footnote-ref" href="#fn:78">78</a></sup><sup id="fnref6:79"><a class="footnote-ref" href="#fn:79">79</a></sup></li>
+<li><strong>Culturally Embedded Concepts:</strong> Ideas that are deeply rooted in a specific cultural philosophy, such as the Japanese concept of <em>wabi-sabi</em> (the beauty of imperfection) or the importance of "saving face" in many Asian cultures, have no direct one-to-one equivalent and cannot be captured by simple translation.<sup id="fnref3:81"><a class="footnote-ref" href="#fn:81">81</a></sup><sup id="fnref3:82"><a class="footnote-ref" href="#fn:82">82</a></sup></li>
+<li><strong>Non-Textual Nuance:</strong> Cultural adaptation extends beyond text. A holistic multilingual strategy must also account for visual and modal elements. For example, color symbolism varies dramatically (white signifies purity in many Western cultures but is associated with mourning in China), and hand gestures depicted in images can be neutral in one culture and highly offensive in another.<sup id="fnref7:79"><a class="footnote-ref" href="#fn:79">79</a></sup></li>
+</ul>
+<h3 id="strategic-mitigation-and-best-practices">Strategic Mitigation and Best Practices<a class="headerlink" href="#strategic-mitigation-and-best-practices" title="Permanent link">&para;</a></h3>
+<p>Preserving cultural nuance requires a deliberate, multi-pronged strategy that goes beyond simple translation accuracy. The architectural choices made in the workflow design are the primary defense against the qualitative failures that automated metrics cannot detect.</p>
+<ul>
+<li><strong>Embrace Selective Pre-translation:</strong> As detailed previously, strategically keeping culturally rich components of a prompt (such as user-generated context or examples containing idioms) in their original source language is the most effective architectural defense against nuance loss. This allows the LLM to reason about the culturally specific information directly, even if it cannot be perfectly translated.</li>
+<li><strong>Utilize Glossaries and Style Guides:</strong> Forcing the translation system to use pre-approved, human-vetted translations for key brand terms, product names, and industry-specific jargon is essential for maintaining consistency and preventing common, brand-damaging errors.<sup id="fnref2:64"><a class="footnote-ref" href="#fn:64">64</a></sup><sup id="fnref:84"><a class="footnote-ref" href="#fn:84">84</a></sup></li>
+<li><strong>Employ Contextual Prompting:</strong> Provide the LLM with explicit instructions regarding the cultural context, intended audience, and desired level of formality. For example, a prompt can be augmented with metadata like: <code>"Translate this customer support response. The target audience is German business professionals. Ensure the tone is formal and uses the 'Sie' form of address."</code>.<sup id="fnref:85"><a class="footnote-ref" href="#fn:85">85</a></sup></li>
+<li><strong>Prioritize Transcreation over Translation for High-Value Content:</strong> For creative and persuasive content like marketing campaigns or advertising slogans, the objective is not to translate the literal words but to <em>recreate the intended emotional impact and persuasive effect</em> for a new cultural audience. This process, known as "transcreation," is a creative endeavor that requires the expertise of human linguists and cultural specialists.<sup id="fnref3:79"><a class="footnote-ref" href="#fn:79">79</a></sup></li>
+</ul>
+<h2 id="summary-and-strategic-recommendations">Summary and Strategic Recommendations<a class="headerlink" href="#summary-and-strategic-recommendations" title="Permanent link">&para;</a></h2>
+<p>Leveraging translation to unlock the power of English-centric LLMs for global applications is a potent but complex strategy. A successful implementation requires a nuanced understanding of the trade-offs between direct inference and pre-translation, a sophisticated approach to workflow architecture, and a rigorous commitment to evaluation and cultural adaptation. The following strategic recommendations synthesize the key findings for practitioners building multilingual systems.</p>
+<ul>
+<li>
+<p><strong>Adopt a Dynamic, Tiered Strategy:</strong> There is no single "best" approach for all languages and tasks. Begin with <strong>direct inference</strong> as the default strategy. For languages that demonstrate poor performance, particularly LRLs like the seven identified in research (Bambara, Quechua, etc.), pivot to a translation-based workflow. Continuously re-evaluate this choice as more capable multilingual models become available.</p>
+</li>
+<li>
+<p><strong>Prioritize Selective Pre-translation:</strong> Whenever a translation-based approach is necessary, avoid the blunt instrument of full pre-translation. Instead, adopt a <strong>modular prompt architecture</strong>, separating instructions, context, examples, and output. Use selective translation, tailoring which components are translated into English based on the specific task type (e.g., keep context in the source language for extractive tasks, generate output in English for abstractive tasks).</p>
+</li>
+<li>
+<p><strong>Treat Translation as a Core, Adaptable Component:</strong> Do not treat your MT system as a static, external dependency. Invest in <strong>fine-tuning translation models</strong> using techniques like LoRA for key business domains and use cases. Integrate the translation component fully into your MLOps lifecycle, with dedicated processes for training, versioning, and evaluation.</p>
+</li>
+<li>
+<p><strong>Implement Multi-Stage, Hybrid Evaluation:</strong> Relying solely on automated metrics is insufficient. Combine scalable metrics like <strong>COMET</strong> for continuous performance tracking with rigorous <strong>human-in-the-loop review</strong> to validate for adequacy, fluency, and, most importantly, cultural nuance. Evaluate both intermediate English outputs and final source-language outputs to diagnose the entire pipeline effectively.</p>
+</li>
+<li>
+<p><strong>Architect for Resilience and Self-Correction:</strong> Proactively mitigate the risk of error propagation. Implement <strong>RAG with domain-specific knowledge bases</strong> to ground model outputs in factual data and prevent terminological errors. Design workflows with <strong>iterative debugging loops</strong> that can identify and correct errors in-process rather than relying solely on costly human post-editing.</p>
+</li>
+<li>
+<p><strong>Never Underestimate Cultural Context:</strong> For any user-facing application, the preservation of cultural meaning is paramount. The most damaging errors are often those that automated metrics cannot detect. Use selective translation to protect culturally rich content, provide explicit contextual cues in prompts, and engage human <strong>transcreation</strong> experts for high-value creative content to ensure your message resonates correctly and respectfully with a global audience.</p>
+</li>
+</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>(https://www.researchgate.net/publication/371536976_Lost_in_Translation_Large_Language_Models_in_Non-English_Content_Analysis)&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://aclanthology.org/2025.loresmt-1.9.pdf">https://aclanthology.org/2025.loresmt-1.9.pdf</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>(https://www.researchgate.net/publication/371536976_Lost_in_Translation_Large_Language_Models_in_Non-English_Content_Analysis)&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://cohere.com/research/papers/the-ai-language-gap.pdf">https://cohere.com/research/papers/the-ai-language-gap.pdf</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://arxiv.org/html/2502.09331v1">https://arxiv.org/html/2502.09331v1</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://arxiv.org/html/2404.11553v1">https://arxiv.org/html/2404.11553v1</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://hai-production.s3.amazonaws.com/files/hai-taf-pretoria-white-paper-mind-the-language-gap.pdf">https://hai-production.s3.amazonaws.com/files/hai-taf-pretoria-white-paper-mind-the-language-gap.pdf</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://www.business-humanrights.org/en/latest-news/new-report-highlights-the-shortcomings-of-large-language-models-in-analysing-non-english-content/">https://www.business-humanrights.org/en/latest-news/new-report-highlights-the-shortcomings-of-large-language-models-in-analysing-non-english-content/</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://www.scribd.com/document/696326882/2306-07377">https://www.scribd.com/document/696326882/2306-07377</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://policycommons.net/artifacts/4779416/kbyr-fy-thlyl-lmhtw-gyr-lfshl-fy-lttbyq/5615712/">https://policycommons.net/artifacts/4779416/kbyr-fy-thlyl-lmhtw-gyr-lfshl-fy-lttbyq/5615712/</a>&#160;<a class="footnote-backref" href="#fnref:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:10" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://cohere.com/research/papers/translating-safety.pdf">https://cohere.com/research/papers/translating-safety.pdf</a>&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:12">
+<p><a href="https://www.science.co.jp/en/nmt/blog/39708/">https://www.science.co.jp/en/nmt/blog/39708/</a>&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://lfaidata.foundation/blog/2024/05/21/translation-augmented-generation-breaking-language-barriers-in-llm-ecosystem/">https://lfaidata.foundation/blog/2024/05/21/translation-augmented-generation-breaking-language-barriers-in-llm-ecosystem/</a>&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:13" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:14">
+<p><a href="https://aclanthology.org/2025.loresmt-1.9.pdf">https://aclanthology.org/2025.loresmt-1.9.pdf</a>&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:15">
+<p><a href="https://arxiv.org/html/2402.11537v3">https://arxiv.org/html/2402.11537v3</a>&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:16">
+<p>(https://www.google.com/search?q=https://openreview.net/pdf%3Fid%3DmpTIzK4Zca)&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p><a href="https://arxiv.org/html/2406.15625v1">https://arxiv.org/html/2406.15625v1</a>&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11783891/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11783891/</a>&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p><a href="https://www.leewayhertz.com/comparison-of-llms/">https://www.leewayhertz.com/comparison-of-llms/</a>&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>(https://medium.com/@vbsowmya/multilingual-evaluations-in-llms-a-comparison-1d58b0fd9848)&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p><a href="https://aclanthology.org/2024.findings-acl.559/">https://aclanthology.org/2024.findings-acl.559/</a>&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p><a href="https://www.g2.com/compare/azure-translator-text-api-vs-deepl">https://www.g2.com/compare/azure-translator-text-api-vs-deepl</a>&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p><a href="https://arxiv.org/abs/2402.04177">https://arxiv.org/abs/2402.04177</a>&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>(<a href="https://openreview.net/forum?id=vPOMTkmSiu">https://openreview.net/forum?id=vPOMTkmSiu</a>)&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>(https://openreview.net/pdf?id=vPOMTkmSiu)&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:26">
+<p><a href="https://arxiv.org/html/2508.05266v1">https://arxiv.org/html/2508.05266v1</a>&#160;<a class="footnote-backref" href="#fnref:26" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:27">
+<p><a href="https://arxiv.org/html/2502.09331v1">https://arxiv.org/html/2502.09331v1</a>&#160;<a class="footnote-backref" href="#fnref:27" title="Jump back to footnote 27 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:28">
+<p><a href="https://aclanthology.org/2024.americasnlp-1.25.pdf">https://aclanthology.org/2024.americasnlp-1.25.pdf</a>&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>(https://medium.com/@vishal025/investigating-techniques-for-adapting-llms-to-work-effectively-in-low-resource-languages-and-ba3037b2567b)&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:30">
+<p><a href="https://arxiv.org/html/2411.11295v1">https://arxiv.org/html/2411.11295v1</a>&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:31">
+<p><a href="https://aclanthology.org/2024.lrec-main.1362.pdf">https://aclanthology.org/2024.lrec-main.1362.pdf</a>&#160;<a class="footnote-backref" href="#fnref:31" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p><a href="https://arxiv.org/html/2409.04512v1">https://arxiv.org/html/2409.04512v1</a>&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:33">
+<p><a href="https://arxiv.org/abs/2409.04512">https://arxiv.org/abs/2409.04512</a>&#160;<a class="footnote-backref" href="#fnref:33" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p><a href="https://slator.com/translating-input-in-prompts-improves-llm-performance-for-low-resource-languages/">https://slator.com/translating-input-in-prompts-improves-llm-performance-for-low-resource-languages/</a>&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p><a href="https://aclanthology.org/2023.emnlp-main.163.pdf">https://aclanthology.org/2023.emnlp-main.163.pdf</a>&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn:36">
+<p>(https://www.researchgate.net/publication/391878863_Multilingual_Prompt_Engineering_in_Large_Language_Models_A_Survey_Across_NLP_Tasks)&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn:37">
+<p><a href="https://www.researchgate.net/publication/386436285_Multilingual_Prompting_in_LLMs_Investigating_the_Accuracy_and_Performance">https://www.researchgate.net/publication/386436285_Multilingual_Prompting_in_LLMs_Investigating_the_Accuracy_and_Performance</a>&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:37" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:37" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn:38">
+<p><a href="https://www.promptingguide.ai/">https://www.promptingguide.ai/</a>&#160;<a class="footnote-backref" href="#fnref:38" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn:39">
+<p><a href="https://www.educative.io/blog/prompt-engineering-vs-fine-tuning">https://www.educative.io/blog/prompt-engineering-vs-fine-tuning</a>&#160;<a class="footnote-backref" href="#fnref:39" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:39" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:39" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:39" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn:40">
+<p><a href="https://lilt.com/blog/tips-to-write-effective-llm-prompts-and-generate-multilingual-content">https://lilt.com/blog/tips-to-write-effective-llm-prompts-and-generate-multilingual-content</a>&#160;<a class="footnote-backref" href="#fnref:40" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:40" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:40" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+<li id="fn:41">
+<p><a href="https://aws.amazon.com/blogs/machine-learning/evaluate-large-language-models-for-your-machine-translation-tasks-on-aws/">https://aws.amazon.com/blogs/machine-learning/evaluate-large-language-models-for-your-machine-translation-tasks-on-aws/</a>&#160;<a class="footnote-backref" href="#fnref:41" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:41" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:41" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn:42">
+<p><a href="https://aws.amazon.com/what-is/prompt-engineering/">https://aws.amazon.com/what-is/prompt-engineering/</a>&#160;<a class="footnote-backref" href="#fnref:42" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn:43">
+<p><a href="https://openreview.net/pdf/e05ca9c349ec663d29b9130dd3c9b74469b2bb2e.pdf">https://openreview.net/pdf/e05ca9c349ec663d29b9130dd3c9b74469b2bb2e.pdf</a>&#160;<a class="footnote-backref" href="#fnref:43" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn:44">
+<p><a href="https://aclanthology.org/2024.findings-emnlp.108.pdf">https://aclanthology.org/2024.findings-emnlp.108.pdf</a>&#160;<a class="footnote-backref" href="#fnref:44" title="Jump back to footnote 44 in the text">&#8617;</a></p>
+</li>
+<li id="fn:45">
+<p><a href="https://aclanthology.org/2023.paclic-1.1.pdf">https://aclanthology.org/2023.paclic-1.1.pdf</a>&#160;<a class="footnote-backref" href="#fnref:45" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:45" title="Jump back to footnote 45 in the text">&#8617;</a></p>
+</li>
+<li id="fn:46">
+<p><a href="https://arxiv.org/html/2502.04134v2">https://arxiv.org/html/2502.04134v2</a>&#160;<a class="footnote-backref" href="#fnref:46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:46" title="Jump back to footnote 46 in the text">&#8617;</a></p>
+</li>
+<li id="fn:47">
+<p><a href="https://arxiv.org/html/2505.11665v1">https://arxiv.org/html/2505.11665v1</a>&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 47 in the text">&#8617;</a></p>
+</li>
+<li id="fn:48">
+<p><a href="https://www.ibm.com/think/topics/large-language-models">https://www.ibm.com/think/topics/large-language-models</a>&#160;<a class="footnote-backref" href="#fnref:48" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:48" title="Jump back to footnote 48 in the text">&#8617;</a></p>
+</li>
+<li id="fn:49">
+<p>(https://www.youtube.com/watch?v=H0FMsRZ7f_A)&#160;<a class="footnote-backref" href="#fnref:49" title="Jump back to footnote 49 in the text">&#8617;</a></p>
+</li>
+<li id="fn:50">
+<p><a href="https://aclanthology.org/2024.acl-long.671.pdf">https://aclanthology.org/2024.acl-long.671.pdf</a>&#160;<a class="footnote-backref" href="#fnref:50" title="Jump back to footnote 50 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:50" title="Jump back to footnote 50 in the text">&#8617;</a></p>
+</li>
+<li id="fn:51">
+<p><a href="https://academic.oup.com/pnasnexus/article/3/9/pgae346/7756548">https://academic.oup.com/pnasnexus/article/3/9/pgae346/7756548</a>&#160;<a class="footnote-backref" href="#fnref:51" title="Jump back to footnote 51 in the text">&#8617;</a></p>
+</li>
+<li id="fn:52">
+<p><a href="https://mbzuai.ac.ae/news/what-llms-get-wrong-about-culture-and-how-to-fix-them-two-studies-from-naacl/">https://mbzuai.ac.ae/news/what-llms-get-wrong-about-culture-and-how-to-fix-them-two-studies-from-naacl/</a>&#160;<a class="footnote-backref" href="#fnref:52" title="Jump back to footnote 52 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:52" title="Jump back to footnote 52 in the text">&#8617;</a></p>
+</li>
+<li id="fn:53">
+<p><a href="https://arxiv.org/html/2505.15229v1">https://arxiv.org/html/2505.15229v1</a>&#160;<a class="footnote-backref" href="#fnref:53" title="Jump back to footnote 53 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:53" title="Jump back to footnote 53 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:53" title="Jump back to footnote 53 in the text">&#8617;</a></p>
+</li>
+<li id="fn:54">
+<p><a href="https://mbzuai.ac.ae/news/culture-and-bias-in-llms-defining-the-challenge-and-mitigating-risks/">https://mbzuai.ac.ae/news/culture-and-bias-in-llms-defining-the-challenge-and-mitigating-risks/</a>&#160;<a class="footnote-backref" href="#fnref:54" title="Jump back to footnote 54 in the text">&#8617;</a></p>
+</li>
+<li id="fn:55">
+<p><a href="https://arxiv.org/html/2407.16891">https://arxiv.org/html/2407.16891</a>&#160;<a class="footnote-backref" href="#fnref:55" title="Jump back to footnote 55 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:55" title="Jump back to footnote 55 in the text">&#8617;</a></p>
+</li>
+<li id="fn:56">
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11097685/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11097685/</a>&#160;<a class="footnote-backref" href="#fnref:56" title="Jump back to footnote 56 in the text">&#8617;</a></p>
+</li>
+<li id="fn:57">
+<p>(https://www.neurology.org/doi/10.1212/WNL.0000000000209497)&#160;<a class="footnote-backref" href="#fnref:57" title="Jump back to footnote 57 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:57" title="Jump back to footnote 57 in the text">&#8617;</a></p>
+</li>
+<li id="fn:58">
+<p><a href="https://www.reddit.com/r/LocalLLaMA/comments/1fbkbu6/prompting_in_multilingual_models/">https://www.reddit.com/r/LocalLLaMA/comments/1fbkbu6/prompting_in_multilingual_models/</a>&#160;<a class="footnote-backref" href="#fnref:58" title="Jump back to footnote 58 in the text">&#8617;</a></p>
+</li>
+<li id="fn:59">
+<p><a href="https://arxiv.org/html/2403.02567v1">https://arxiv.org/html/2403.02567v1</a>&#160;<a class="footnote-backref" href="#fnref:59" title="Jump back to footnote 59 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:59" title="Jump back to footnote 59 in the text">&#8617;</a></p>
+</li>
+<li id="fn:60">
+<p><a href="https://www.parloa.com/knowledge-hub/prompt-engineering-frameworks/">https://www.parloa.com/knowledge-hub/prompt-engineering-frameworks/</a>&#160;<a class="footnote-backref" href="#fnref:60" title="Jump back to footnote 60 in the text">&#8617;</a></p>
+</li>
+<li id="fn:61">
+<p><a href="https://arxiv.org/html/2406.01771v1">https://arxiv.org/html/2406.01771v1</a>&#160;<a class="footnote-backref" href="#fnref:61" title="Jump back to footnote 61 in the text">&#8617;</a></p>
+</li>
+<li id="fn:62">
+<p><a href="https://www.superannotate.com/blog/llm-fine-tuning">https://www.superannotate.com/blog/llm-fine-tuning</a>&#160;<a class="footnote-backref" href="#fnref:62" title="Jump back to footnote 62 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:62" title="Jump back to footnote 62 in the text">&#8617;</a></p>
+</li>
+<li id="fn:63">
+<p><a href="https://developer.nvidia.com/blog/improving-translation-quality-with-domain-specific-fine-tuning-and-nvidia-nim/">https://developer.nvidia.com/blog/improving-translation-quality-with-domain-specific-fine-tuning-and-nvidia-nim/</a>&#160;<a class="footnote-backref" href="#fnref:63" title="Jump back to footnote 63 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:63" title="Jump back to footnote 63 in the text">&#8617;</a></p>
+</li>
+<li id="fn:64">
+<p>(https://medium.com/@hastur/embracing-ai-in-localization-a-2025-2028-roadmap-a5e9c4cd67b0)&#160;<a class="footnote-backref" href="#fnref:64" title="Jump back to footnote 64 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:64" title="Jump back to footnote 64 in the text">&#8617;</a></p>
+</li>
+<li id="fn:65">
+<p><a href="https://www.datacamp.com/tutorial/fine-tuning-large-language-models">https://www.datacamp.com/tutorial/fine-tuning-large-language-models</a>&#160;<a class="footnote-backref" href="#fnref:65" title="Jump back to footnote 65 in the text">&#8617;</a></p>
+</li>
+<li id="fn:66">
+<p><a href="https://www.mdpi.com/2227-7390/12/19/3149">https://www.mdpi.com/2227-7390/12/19/3149</a>&#160;<a class="footnote-backref" href="#fnref:66" title="Jump back to footnote 66 in the text">&#8617;</a></p>
+</li>
+<li id="fn:67">
+<p><a href="https://aclanthology.org/2024.acl-long.192/">https://aclanthology.org/2024.acl-long.192/</a>&#160;<a class="footnote-backref" href="#fnref:67" title="Jump back to footnote 67 in the text">&#8617;</a></p>
+</li>
+<li id="fn:68">
+<p>(https://www.jmir.org/2025/1/e71521/PDF)&#160;<a class="footnote-backref" href="#fnref:68" title="Jump back to footnote 68 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:68" title="Jump back to footnote 68 in the text">&#8617;</a></p>
+</li>
+<li id="fn:69">
+<p><a href="https://arxiv.org/html/2411.11295v1">https://arxiv.org/html/2411.11295v1</a>&#160;<a class="footnote-backref" href="#fnref:69" title="Jump back to footnote 69 in the text">&#8617;</a></p>
+</li>
+<li id="fn:70">
+<p><a href="https://arxiv.org/abs/2410.07054">https://arxiv.org/abs/2410.07054</a>&#160;<a class="footnote-backref" href="#fnref:70" title="Jump back to footnote 70 in the text">&#8617;</a></p>
+</li>
+<li id="fn:71">
+<p><a href="https://aclanthology.org/2024.emnlp-main.879.pdf">https://aclanthology.org/2024.emnlp-main.879.pdf</a>&#160;<a class="footnote-backref" href="#fnref:71" title="Jump back to footnote 71 in the text">&#8617;</a></p>
+</li>
+<li id="fn:72">
+<p><a href="https://www.cs.cmu.edu/~alavie/papers/GALE-book-Ch5.pdf">https://www.cs.cmu.edu/\~alavie/papers/GALE-book-Ch5.pdf</a>&#160;<a class="footnote-backref" href="#fnref:72" title="Jump back to footnote 72 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:72" title="Jump back to footnote 72 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:72" title="Jump back to footnote 72 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:72" title="Jump back to footnote 72 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:72" title="Jump back to footnote 72 in the text">&#8617;</a></p>
+</li>
+<li id="fn:73">
+<p><a href="https://aclanthology.org/2023.acl-long.730.pdf">https://aclanthology.org/2023.acl-long.730.pdf</a>&#160;<a class="footnote-backref" href="#fnref:73" title="Jump back to footnote 73 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:73" title="Jump back to footnote 73 in the text">&#8617;</a></p>
+</li>
+<li id="fn:74">
+<p><a href="https://arxiv.org/html/2306.13041v2">https://arxiv.org/html/2306.13041v2</a>&#160;<a class="footnote-backref" href="#fnref:74" title="Jump back to footnote 74 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:74" title="Jump back to footnote 74 in the text">&#8617;</a></p>
+</li>
+<li id="fn:75">
+<p><a href="https://aclanthology.org/2024.emnlp-main.214.pdf">https://aclanthology.org/2024.emnlp-main.214.pdf</a>&#160;<a class="footnote-backref" href="#fnref:75" title="Jump back to footnote 75 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:75" title="Jump back to footnote 75 in the text">&#8617;</a></p>
+</li>
+<li id="fn:76">
+<p><a href="https://imminent.translated.com/llm-based-machine-translation">https://imminent.translated.com/llm-based-machine-translation</a>&#160;<a class="footnote-backref" href="#fnref:76" title="Jump back to footnote 76 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:76" title="Jump back to footnote 76 in the text">&#8617;</a></p>
+</li>
+<li id="fn:77">
+<p><a href="https://arxiv.org/html/2502.14338v4">https://arxiv.org/html/2502.14338v4</a>&#160;<a class="footnote-backref" href="#fnref:77" title="Jump back to footnote 77 in the text">&#8617;</a></p>
+</li>
+<li id="fn:78">
+<p><a href="https://alwaseemtranslation.com/cultural-nuances-in-translation/">https://alwaseemtranslation.com/cultural-nuances-in-translation/</a>&#160;<a class="footnote-backref" href="#fnref:78" title="Jump back to footnote 78 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:78" title="Jump back to footnote 78 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:78" title="Jump back to footnote 78 in the text">&#8617;</a></p>
+</li>
+<li id="fn:79">
+<p><a href="https://unbabel.com/5-cultural-nuances-when-writing-for-machine-translation/">https://unbabel.com/5-cultural-nuances-when-writing-for-machine-translation/</a>&#160;<a class="footnote-backref" href="#fnref:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:79" title="Jump back to footnote 79 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:79" title="Jump back to footnote 79 in the text">&#8617;</a></p>
+</li>
+<li id="fn:80">
+<p><a href="https://www.appen.com/blog/ai-translation-preserving-cultural-nuance">https://www.appen.com/blog/ai-translation-preserving-cultural-nuance</a>&#160;<a class="footnote-backref" href="#fnref:80" title="Jump back to footnote 80 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:80" title="Jump back to footnote 80 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:80" title="Jump back to footnote 80 in the text">&#8617;</a></p>
+</li>
+<li id="fn:81">
+<p><a href="https://translated.com/resources/the-impact-of-cultural-nuances-on-machine-translation/">https://translated.com/resources/the-impact-of-cultural-nuances-on-machine-translation/</a>&#160;<a class="footnote-backref" href="#fnref:81" title="Jump back to footnote 81 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:81" title="Jump back to footnote 81 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:81" title="Jump back to footnote 81 in the text">&#8617;</a></p>
+</li>
+<li id="fn:82">
+<p><a href="https://ad-astrainc.com/blog/the-impact-of-cultural-nuances-on-translation-accuracy">https://ad-astrainc.com/blog/the-impact-of-cultural-nuances-on-translation-accuracy</a>&#160;<a class="footnote-backref" href="#fnref:82" title="Jump back to footnote 82 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:82" title="Jump back to footnote 82 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:82" title="Jump back to footnote 82 in the text">&#8617;</a></p>
+</li>
+<li id="fn:83">
+<p><a href="https://www.richtmann.org/journal/index.php/ajis/article/download/13705/13265/47218">https://www.richtmann.org/journal/index.php/ajis/article/download/13705/13265/47218</a>&#160;<a class="footnote-backref" href="#fnref:83" title="Jump back to footnote 83 in the text">&#8617;</a></p>
+</li>
+<li id="fn:84">
+<p><a href="https://www.scheduleinterpreter.com/ai-translation-white-papers.html">https://www.scheduleinterpreter.com/ai-translation-white-papers.html</a>&#160;<a class="footnote-backref" href="#fnref:84" title="Jump back to footnote 84 in the text">&#8617;</a></p>
+</li>
+<li id="fn:85">
+<p><a href="https://www.reddit.com/r/LocalLLaMA/comments/1lklzav/tips_that_might_help_you_using_your_llm_to_do/">https://www.reddit.com/r/LocalLLaMA/comments/1lklzav/tips_that_might_help_you_using_your_llm_to_do/</a>&#160;<a class="footnote-backref" href="#fnref:85" title="Jump back to footnote 85 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

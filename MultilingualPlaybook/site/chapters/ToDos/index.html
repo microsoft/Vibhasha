@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../99-conclusion/">
+      
+      
+        <link rel="next" href="../../interactive/flowchart/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Off-the-Shelf Prompting - Multilingual Playbook</title>
+        <title>ToDos - Multilingual Playbook</title>
       
     
     
@@ -80,11 +84,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#overview" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -115,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Off-the-Shelf Prompting
+              ToDos
             
           </span>
         </div>
@@ -233,10 +232,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../00-introduction/" class="md-tabs__link">
           
   
@@ -329,26 +330,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -361,7 +367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Playbook
@@ -487,10 +493,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ToDos/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -501,6 +514,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -551,56 +565,46 @@
 
 
 
-<h1 id="off-the-shelf-prompting">Off-the-Shelf Prompting<a class="headerlink" href="#off-the-shelf-prompting" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This strategy involves using <strong>pretrained general-purpose LLMs</strong> (e.g., GPT-4, Claude, Phi, Llama) without additional training — relying instead on smart <strong>prompt engineering</strong> to handle multilingual or multicultural requirements.</p>
-<h2 id="when-to-use">When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">&para;</a></h2>
-<ul>
-<li>You need a <strong>fast prototype</strong> or <strong>proof-of-concept</strong></li>
-<li>The target language is <strong>reasonably supported</strong> by the model</li>
-<li>You can invest in <strong>prompt design</strong>, <strong>few-shot examples</strong>, or <strong>retrieval augmentation</strong></li>
+  <h1>ToDos</h1>
+
+<details class="note" open="open">
+<summary>Experimental ToDos</summary>
+<ul class="task-list">
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> present a dashboard of different tokenizers and their fertility scores</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> fertility scores for different languages</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> fertility scores for different domains - medical, legal, general, etc.</li>
 </ul>
-<h2 id="pros">Pros<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>No training or labeling needed</strong> — rapid time-to-market</li>
-<li>Works across many <strong>mid- to high-resource languages</strong></li>
-<li>Easy to experiment with <strong>cultural framing</strong> (e.g., personas, tones)</li>
-<li>Effective for <strong>zero-shot</strong> and <strong>few-shot</strong> tasks</li>
-</ul>
-<h2 id="cons">Cons<a class="headerlink" href="#cons" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Prompting is fragile</strong> — performance can vary widely</li>
-<li><strong>Inconsistent behavior</strong> in low-resource languages</li>
-<li>Hard to control <strong>tone and style</strong> over long conversations</li>
-<li>May underperform on <strong>sensitive or domain-specific tasks</strong></li>
-</ul>
-<h2 id="prompting-techniques">Prompting Techniques<a class="headerlink" href="#prompting-techniques" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Prompt Sensitivity</strong>: test how different phrasings affect performance</li>
-<li>
-<p><strong>Multilingual Prompting</strong>:</p>
 </li>
-<li>
-<p>Prompt in English or native language</p>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> evaluations of different multilingual LLMs on different tasks in lm-eval harness across different language and language families — extend MEGA, MEGAVERSE</p>
 </li>
-<li>Use hybrid prompts</li>
-<li>
-<p><strong>Cultural Prompting</strong>:</p>
-</li>
-<li>
-<p>Frame answers using local context</p>
-</li>
-<li>e.g., "Answer as if you're a journalist from Japan"</li>
-<li>Use <strong>prompt programming frameworks</strong> to iterate and test</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> interactive dashboard for llm-as-judge</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> are there multilingual datasets which have human evaluations?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> if so, a interactive dashboard to compare llm-as-judge with human evaluations</li>
 </ul>
-<h2 id="key-considerations">Key Considerations<a class="headerlink" href="#key-considerations" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Language Coverage</strong>: which languages does the LLM support reliably?</li>
-<li><strong>Latency &amp; Cost</strong>: does your setup require real-time responses?</li>
-<li><strong>Domain Fit</strong>: how well does the LLM generalize to your task?</li>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> some scripts make sample LLM calls - for demo I have used free endpoints in OpenRouter - we can add azure endpoints for different models.</p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LabelStudio demo for annotations - for human evaluations - they lready have a "Deply to Azure" option on their github. can we build a image which would contain some of the example tasks and let users play around?</p>
+</li>
 </ul>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>Prompting off-the-shelf LLMs is a fast, versatile approach for multilingual tasks — especially when infrastructure is limited. However, the effectiveness hinges on thoughtful prompt design, language support, and robust testing.</p>
+</details>
+<details class="note" open="open">
+<summary>Improvements To-Do</summary>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> refer to the code snippets in src and interactive folders in the playbook chapters</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> update interactive flowchat</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> file organization - remove unnecessary nesting of  ~/MultilingualLLM_Playbook/MultilingualPlaybook </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> use uv for package mangement and installation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> pip install and run elements of src</li>
+</ul>
+</details>
 
 
 
