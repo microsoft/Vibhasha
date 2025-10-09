@@ -35,6 +35,8 @@ nav:
       - Using LLMs Off-the-shelf: chapters/02-translation.md
       # - Off-the-shelf LLMs: chapters/03-off-the-shelf.md
       - Fine-tuning LLMs: chapters/04-fine-tuning.md
+      - Safety : chapters/05-safety.md
+      - Synthetic Data : chapters/06-synthetic-data.md
       - Conclusion: chapters/99-conclusion.md
       - ToDos: chapters/ToDos.md
   - Interactive Flowchart: interactive/flowchart.md
