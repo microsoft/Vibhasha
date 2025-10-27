@@ -660,6 +660,10 @@ For open-source models, the "Black Box test" (Oren et al., 2023) offers a statis
 
 Data contamination fundamentally transforms LLM generalization measurement into memorization reflection. This leaves LLM capabilities a "known unknown," especially for tasks with exceptionally high reported performance. The widespread nature of contamination across commercial and open-source models points to a systemic issue in the LLM development ecosystem. The emphasis on high benchmark scores often overlooks evaluation integrity. This challenges trust in reported scores and necessitates dynamic, contamination-aware evaluation strategies, coupled with greater transparency from model developers on training data composition, particularly for multilingual datasets.
 
+#### Toolkits for Contamination Detection
+
+  * [**OpLLMSanitize:** Library for contamination detection in NLP datasets and Large Language Models.](https://github.com/ntunlp/LLMSanitize)
+
 ### Nuances of Multilingual and Multicultural Evaluation
 
 Evaluating LLMs in non-English languages presents a complex array of linguistic, cultural, and technical challenges, demanding specialized approaches for accurate assessment.
