@@ -1,5 +1,5 @@
 
-# MultilingualPlaybook
+# Vibhasha - The Multilingual Playbook
 
 Build using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
 

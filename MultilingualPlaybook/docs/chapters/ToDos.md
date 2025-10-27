@@ -16,7 +16,7 @@
     
 
 ???+ note "Improvements To-Do"
-    - [ ] refer to the code snippets in src and interactive folders in the playbook chapters
+    - [ ] refer to the code snippets in src and interactive folders in the Vibhasha playbook chapters
     - [ ] update interactive flowchat
     - [ ] file organization - remove unnecessary nesting of  ~/MultilingualLLM_Playbook/MultilingualPlaybook 
     - [ ] use uv for package mangement and installation

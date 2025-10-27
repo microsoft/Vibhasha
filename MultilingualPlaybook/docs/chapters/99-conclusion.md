@@ -4,7 +4,7 @@
 
 Designing multilingual and culturally sensitive LLM systems is a complex challenge, particularly in settings with limited resources, fragmented datasets, and underrepresented languages.
 
-This playbook has offered **three core strategies** — Translation, Off-the-Shelf Prompting, and Fine-Tuning — each suited to different scenarios depending on language support, data availability, technical capacity, and deployment goals.
+**Vibhasha - The Multilingual Playbook** has offered **three core strategies** — Translation, Off-the-Shelf Prompting, and Fine-Tuning — each suited to different scenarios depending on language support, data availability, technical capacity, and deployment goals.
 
 ## Choosing the Right Path
 

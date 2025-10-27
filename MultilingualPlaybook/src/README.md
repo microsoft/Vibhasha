@@ -1,6 +1,6 @@
-# Multilingual LLM Playbook - Source Code
+# Vibhasha - The Multilingual Playbook - Source Code
 
-This directory contains the source code and notebooks that support the Multilingual Playbook.
+This directory contains the source code and notebooks that support **Vibhasha - The Multilingual Playbook**.
 
 ## Purpose of this Material
 
