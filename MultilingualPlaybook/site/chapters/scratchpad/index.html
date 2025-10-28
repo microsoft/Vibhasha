@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../06-synthetic-data/">
-      
-      
-        <link rel="next" href="../ToDos/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Conclusion - Vibhasha - The Multilingual Playbook</title>
+        <title>Safety Assessments - Vibhasha - The Multilingual Playbook</title>
       
     
     
@@ -81,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#final-thoughts" class="md-skip">
+        <a href="#taxonomy-of-model-safety" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conclusion
+              Safety Assessments
             
           </span>
         </div>
@@ -233,12 +229,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../00-introduction/" class="md-tabs__link">
           
   
@@ -331,31 +325,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -368,7 +357,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Playbook
@@ -517,30 +506,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Conclusion
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../99-conclusion/" class="md-nav__link">
         
   
   
@@ -551,69 +520,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Final Thoughts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      Choosing the Right Path
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checklist
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#beyond-the-playbook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Beyond the Playbook
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acknowledgments
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -687,35 +593,60 @@
 
 
 
-<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
-<h2 id="final-thoughts">Final Thoughts<a class="headerlink" href="#final-thoughts" title="Permanent link">&para;</a></h2>
-<p>Designing multilingual and culturally sensitive LLM systems is a complex challenge, particularly in settings with limited resources, fragmented datasets, and underrepresented languages.</p>
-<p><strong>Vibhasha - The Multilingual Playbook</strong> has offered <strong>three core strategies</strong> — Translation, Off-the-Shelf Prompting, and Fine-Tuning — each suited to different scenarios depending on language support, data availability, technical capacity, and deployment goals.</p>
-<h2 id="choosing-the-right-path">Choosing the Right Path<a class="headerlink" href="#choosing-the-right-path" title="Permanent link">&para;</a></h2>
-<p>Use this decision framework to:</p>
+<h1 id="safety-assessments">Safety Assessments<a class="headerlink" href="#safety-assessments" title="Permanent link">&para;</a></h1>
+<h2 id="taxonomy-of-model-safety">Taxonomy of Model Safety<a class="headerlink" href="#taxonomy-of-model-safety" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code>  Jailbreaking attacks - Work on designing adversarial prompts to bypass refusal safety guardrails or detecting jailbreaking attacks
+
+  Toxicity and bias -  Work on toxic content and stereotypical bias in training data and output generations
+
+  Factuality and hallucination -  Work on nonsensical, unfaithful, and factually in correct content generated by LLMs
+
+  AI privacy - Work on memorization, private data leakage, and unlearning
+
+  Policy -  Work on governance frameworks, regulatory approaches, and ethical guidelines for responsible AI deployment
+
+  LLM alignment -  Work that spans multiple subtopics above or is related to other LLM safety subtopics such as RLHF alignment algorithms
+
+  &lt;!-- @misc{yong2025statemultilingualllmsafety,
+        title={The State of Multilingual LLM Safety Research: From Measuring the Language Gap to Mitigating It}, 
+        author={Zheng-Xin Yong and Beyza Ermis and Marzieh Fadaee and Stephen H. Bach and Julia Kreutzer},
+        year={2025},
+        eprint={2505.24119},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2505.24119}, 
+  }  --&gt;
+</code></pre></div>
+<p><a class="glightbox" href="../../assets/01_evaluation/TaxonomyEthicalSocialRisks_Widingeretal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Taxonomy of Ethical and Social Risks" src="../../assets/01_evaluation/TaxonomyEthicalSocialRisks_Widingeretal.png" /></a></p>
+<div class="language-text highlight"><pre><span></span><code>  &lt;!-- @misc{weidinger2021ethicalsocialrisksharm,
+        title={Ethical and social risks of harm from Language Models}, 
+        author={Laura Weidinger and John Mellor and Maribeth Rauh and Conor Griffin and Jonathan Uesato and Po-Sen Huang and Myra Cheng and Mia Glaese and Borja Balle and Atoosa Kasirzadeh and Zac Kenton and Sasha Brown and Will Hawkins and Tom Stepleton and Courtney Biles and Abeba Birhane and Julia Haas and Laura Rimell and Lisa Anne Hendricks and William Isaac and Sean Legassick and Geoffrey Irving and Iason Gabriel},
+        year={2021},
+        eprint={2112.04359},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2112.04359}, 
+  } --&gt;
+</code></pre></div>
+<h2 id="dataset-creation-process">Dataset Creation Process<a class="headerlink" href="#dataset-creation-process" title="Permanent link">&para;</a></h2>
+<h2 id="multilingual-safety-datasets">Multilingual Safety Datasets<a class="headerlink" href="#multilingual-safety-datasets" title="Permanent link">&para;</a></h2>
+<p>RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios? - multilingual dataset of toxic prompts transcreated from RTP</p>
+<p>PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models. -  native toxic content, providing a valuable resource to study naturally occurring toxicity in 17 languages</p>
+<p>Multilingual Jailbreak Challenges in Large Language Models - jailbreaking LLMs in 10 languages, highlighting the vulnerability of cross-lingual safety mechanisms</p>
+<p>Multilingual Jailbreak Challenges in Large Language Models - benchmark for evaluating multilingual safety in 10 languages, also using translated data</p>
+<p>The Multilingual Alignment Prism: Aligning Global and Local Preferences to Reduce Harm - https://huggingface.co/datasets/CohereLabs/aya_redteaming?not-for-all-audiences=true</p>
+<p>ALM Bench - https://github.com/mbzuai-oryx/ALM-Bench - Multilingual &amp; Multimodel VQA Benchmark</p>
+<h2 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Evaluate trade-offs between speed, quality, cost, and cultural fidelity</li>
-<li>Choose approaches aligned with your domain and audience</li>
-<li>Consider evaluation, data, and infrastructure from the outset</li>
+<li>
+<p>garak - https://docs.garak.ai/garak</p>
+</li>
+<li>
+<p>deepeval - https://www.trydeepteam.com/docs/red-teaming-introduction</p>
+</li>
 </ul>
-<h2 id="checklist">Checklist<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h2>
-<p>✅ Do you have a reliable evaluation setup (benchmark or custom)?</p>
-<p>✅ Is translation sufficient or does your application demand cultural grounding?</p>
-<p>✅ Can prompting alone meet your accuracy and customization needs?</p>
-<p>✅ Do you have the data and compute for fine-tuning a small model?</p>
-<h2 id="beyond-the-playbook">Beyond the Playbook<a class="headerlink" href="#beyond-the-playbook" title="Permanent link">&para;</a></h2>
-<p>This guide is not exhaustive. It reflects the state of practice and research as of now. The multilingual NLP ecosystem is rapidly evolving, and we expect continued improvements in:</p>
-<ul>
-<li>Open-source multilingual models</li>
-<li>Language-specific datasets</li>
-<li>Cultural alignment techniques</li>
-<li>Evaluation frameworks and tooling</li>
-</ul>
-<h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
-<p>Inspired by deployments, research prototypes, and community discussions across academia and industry.</p>
-<p>We hope this playbook helps you make <strong>strategic, culturally thoughtful, and resource-aware</strong> choices.</p>
-<hr />
-<p><em>If you found this helpful or would like to contribute, we welcome feedback and collaboration.</em></p>
+<p>https://github.com/Libr-AI/do-not-answer/tree/main/notebooks</p>
+<p>https://llm-guardrails-security.github.io/presentations/ACL_2025_Tutorial_LLM_Guardrails_Security_Multilingual_Safety.pdf</p>
 
 
 
