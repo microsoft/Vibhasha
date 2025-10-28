@@ -43,9 +43,9 @@ nav:
 
 plugins:
   - search
-  - print-site:
-      path_to_pdf: "assets/playbook.pdf"
-  - to-pdf
+  # - print-site:
+  #     path_to_pdf: "assets/playbook.pdf"
+  # - to-pdf
   - glightbox
   - bibtex:
       bib_file: docs/references.bib     # or a list of .bib files
@@ -61,6 +61,9 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -78,6 +81,8 @@ markdown_extensions:
       permalink: true
       toc_depth: 2-4
   - footnotes
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js

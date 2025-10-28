@@ -1,26 +1,366 @@
 # Introduction
 
-## Why This Playbook?
+!!! quote "The Global Language Gap"
+    While the world speaks **7,000+ languages**, modern LLMs are trained on corpora that are **~90% English**. This fundamental imbalance creates systematic disadvantages for billions of people.
 
-In **multilingual and multicultural environments** – especially those with limited data or infrastructure – developers face complex trade-offs when designing LLM-based applications (chatbots, coding copilots, etc.). Major LLMs today are highly English-centric (for example, only about 7% of GPT-3’s training tokens were non-English)[^1], leaving many of the world’s 7,000+ languages under-served. Choosing the right approach for a new language or region is rarely straightforward: it requires balancing performance, cost, and cultural relevance. Without guidance, one risks deploying an AI that **performs poorly for certain languages** (often those with scarce training data)[^2] or that misinterprets cultural context. **Vibhasha** offers a **structured decision-making framework** to navigate these choices. Whether you are an ML engineer, NLP researcher, or app-builder, goal of this playbook is to help you make **informed, resource-aware, and context-sensitive** design decisions. The framework is grounded in current research and real-world deployments, providing actionable criteria, clear trade-offs, and practical guidance for building multilingual/multicultural LLM systems.
+---
 
-## Common Pitfalls
+## The Multilingual AI Challenge
 
-A common development pitfall is relying on **trial-and-error** experimentation without clear criteria. Teams often test various methods (e.g. translating inputs vs. direct prompting) in an ad hoc way, hoping something will work. This can lead to wasted effort and *missed alternatives*. Crucially, an approach that succeeds for one language or task may fail for another due to underlying model biases and data gaps. For instance, neither always translating everything into English nor always using the source language is guaranteed to yield optimal results across the board. Without a principled strategy, developers may stick with suboptimal settings or overlook methods that better handle specific languages, dialects, or domains. In short, a lack of systematic guidance can cause inconsistent results and **reinforce the digital divides** we aim to bridge. **Vibhasha** addresses these pitfalls by laying out clear strategies and evaluation measures, so you can avoid guesswork and proceed with confidence.
+When building LLM-powered applications for global audiences, developers face a fundamental disconnect: while the world speaks over 7,000 languages, modern LLMs are overwhelmingly optimized for English. Approximately **92.65% of GPT-3's training corpus** and **89.70% of Llama 2's pretraining data** is English[^1], creating what researchers call a "resourcedness gap" that systematically disadvantages speakers of most languages—especially those with limited digital presence.
 
-## Three Core Strategies
+!!! danger "The Real-World Impact"
+    This imbalance isn't just a technical inconvenience. It manifests in three critical ways:
+    
+    - **📉 Degraded Performance**: Non-English tasks show dramatically lower accuracy
+    - **🌍 Cultural Misalignment**: AI systems fail to capture local context and norms
+    - **⚠️ Safety Vulnerabilities**: Harmful content filters that work in English fail catastrophically in other languages—sometimes by a **factor of 3× or more**[^2]
 
-We organize **Vibhasha** around **three principal strategies** that have emerged in both research and practice:
+For developers building chatbots, customer support systems, content moderation tools, or coding assistants, this creates a complex web of decisions: Should you translate everything to English? Use models directly in the target language? Fine-tune your own model? **The wrong choice wastes resources, delivers poor user experiences, or worse, causes harm.**
 
-1. **Translate to English** – *Bridge through a dominant language.* In this approach, you convert non-English input into English, process it using an English-centric LLM, and then translate the output back to the target language. This leverages the robustness of models trained on huge English corpora. Many practitioners adopt this as a quick fix because it taps into the model’s strongest language. However, translation can introduce **information loss and distortion**. Nuances like idioms or culturally specific references might be lost in translation, impacting the fidelity of the response. Moreover, this approach assumes high-quality machine translation is available for the language pair; if not, errors compound. It also may not be **uniformly effective across languages or tasks** – especially for content requiring region-specific knowledge or cultural sensitivity. We will discuss when this strategy makes sense (e.g. rapid prototyping for well-supported languages) and when its limitations (like cultural misalignment) become critical, and what are the various criteria to consider while using this approach.
+---
 
-2. **Off-the-Shelf Prompting** – *Leverage multilingual capability as-is.* Here, you use a general-purpose LLM (e.g. GPT-4 or an open multilingual model) directly in the input’s language, possibly with careful prompt design to elicit the desired output. The appeal is that state-of-the-art models **can handle dozens of languages** out of the box, thanks to training on multilingual data. This strategy avoids an external translation step, preserving the original phrasing and potentially retaining more cultural nuance in the prompt. **Prompt engineering** can help guide the model’s behavior in a target language. However, performance with off-the-shelf prompting is highly variable. LLMs tend to excel in languages present abundantly in their training data and struggle in low-resource languages. In fact, even advanced models have shown *significantly weaker results* for under-represented languages; for example, prompting GPT-3.5 in several African languages (especially those with non-Latin scripts) yielded poor accuracy on a basic task. This highlights that relying on a model’s built-in multilingualism can fail for languages it wasn’t adequately trained on. We will outline best practices for this strategy – such as prompt phrasing, examples, or instructing the model to respond in the desired language – and discuss when it’s sufficient versus when you might need more tailored solutions.
+## Why You Need a Structured Framework
 
-3. **Fine-Tune a Small Language Model** – *Customize a lightweight model for your needs.* This approach involves taking an open-source LLM (typically a smaller model that is feasible to retrain) and adapting it on domain-specific **multilingual data**. By fine-tuning on relevant texts (e.g. a customer support dataset in Arabic and Hindi, or legal documents in multiple languages), you imbue the model with **domain knowledge and local language proficiency** beyond what general LLMs offer. The fine-tuned model can be deployed on your own infrastructure, which is beneficial if data privacy or latency is a concern. Crucially, this strategy can ensure **cultural fidelity**: the model learns terminology and styles from the actual language context of your application, rather than relying on an English proxy. The trade-offs are non-trivial. Fine-tuning requires obtaining sufficient high-quality data in each target language and domain, which is often challenging for low-resource languages. It also demands computational resources and expertise, though techniques like parameter-efficient fine-tuning (e.g. LoRA) can mitigate this by updating only small portions of the model’s weights. Indeed, fine-tuning is **resource-intensive but achievable** with careful methods, and it often yields superior accuracy on specialized, multilingual tasks. Key challenges include managing data imbalance (models might over-fit to high-resource languages if not careful) and evaluating performance across languages (since standard benchmarks are usually English-centric). In **Vibhasha**, we will guide you through when fine-tuning is worth the effort – for instance, when you need **precise control, domain expertise, or support for a language that big models underserve –** and how to do it efficiently given limited infrastructure.
+The typical development approach—trying various methods through trial and error—is both inefficient and risky. Teams often experiment with translating inputs, changing prompt languages, or switching models without understanding the underlying trade-offs. 
 
-Each of these strategies comes with distinct **pros and cons**. The optimal choice depends on your context: the language(s) you need to support, the availability of data and computing resources, and the importance of preserving cultural nuances. In the chapters that follow, we will dive into each approach in depth, providing criteria to help you decide which strategy (or combination of strategies) suits your scenario. We then discuss **evaluation methods** for multilingual systems – how to reliably compare performance across languages and ensure fairness – and conclude with practical guidance on **deploying culturally aware** multilingual LLM systems. By approaching the design space methodically, you can move beyond guesswork and build applications that are both effective *and* inclusive in our increasingly global AI landscape.
+### Common Development Pitfalls
 
+!!! failure "What Goes Wrong Without a Framework"
+    
+    **❌ Inconsistent results**  
+    What works for French may fail completely for Swahili or Tamil
+    
+    **💸 Hidden costs**  
+    Translation pipelines that seem simple multiply API costs and latency
+    
+    **🎭 Cultural blindness**  
+    Systems that technically "work" but produce outputs that are awkward, offensive, or miss local context entirely
+    
+    **🔓 Safety gaps**  
+    Models that refuse harmful requests in English but comply in other languages
+    
+    **🔄 Wasted iterations**  
+    Testing approaches without clear success criteria or understanding when to pivot
+
+!!! success "The Vibhasha Solution"
+    **Vibhasha** provides a **principled decision-making framework** grounded in empirical research and real-world deployments. Rather than offering one-size-fits-all solutions, this playbook helps you understand:
+    
+    - ✅ When each approach excels
+    - ✅ What resources it requires
+    - ✅ What trade-offs you're accepting
+    
+    **Goal**: Move from guesswork to informed strategy, ensuring your multilingual LLM system is effective, culturally appropriate, and aligned with your resource constraints.
+
+---
+
+## Three Implementation Strategies
+
+Based on empirical research and production deployments, multilingual LLM applications typically adopt one of three core implementation strategies. Each represents a distinct approach to bridging the gap between English-optimized models and global users.
+
+!!! note "Strategy 1: 🌐 Translation-Based Approaches"
+    
+    **Leverage translation as a bridge to English-centric model capabilities**
+    
+    Translate inputs to English, process with powerful models, translate outputs back. Modern approaches use **selective translation** for optimal results.
+    
+    **Best for:** Quick prototyping, well-supported languages
+    
+    [→ Learn more](02-translation.md)
+
+!!! note "Strategy 2: 💬 Off-the-Shelf Prompting"
+    
+    **Use pretrained multilingual models through strategic prompt engineering**
+    
+    Leverage built-in multilingual capabilities through careful prompt design, few-shot examples, and cultural framing.
+    
+    **Best for:** Rapid iteration, mid-to-high resource languages
+    
+    [→ Learn more](03-off-the-shelf.md)
+
+!!! note "Strategy 3: ⚙️ Fine-Tuning Specialized Models"
+    
+    **Adapt lightweight models on domain-specific, culturally relevant data**
+    
+    Customize open-source LLMs with your own data for maximum control and cultural fidelity.
+    
+    **Best for:** Domain-specific apps, low-resource languages
+    
+    [→ Learn more](04-fine-tuning.md)
+
+---
+
+### 1. Translation-Based Approaches
+
+!!! tip "Core Concept"
+    Leverage translation as a bridge to English-centric model capabilities.
+
+The most straightforward approach involves translating non-English input to English, processing it with a powerful English-optimized LLM, and translating the output back. However, modern translation strategies have evolved far beyond this simple pipeline. 
+
+!!! success "Key Research Finding"
+    **Selective translation**—where you strategically choose which parts of your prompt to translate—consistently outperforms both full translation and direct prompting, often by **100-200%** for low-resource languages[^3].
+
+**Strategic Nuances:**
+
+- **For extractive tasks** (Q&A, NER): Keep context in source language, translate only instructions
+- **For generative tasks** (summarization): Generate in English, then translate back
+- **Direct inference**: Sometimes prompting in source language outperforms any translation
+
+| Scenario | Recommended Approach | Why |
+|----------|---------------------|-----|
+| Low-resource language (Bambara, Quechua, Lingala) | Full or selective translation | LLM's native support is too weak |
+| Extractive task (Q&A) | Keep context in source, translate instruction | Prevents information loss |
+| Generative task (summarization) | Generate in English, translate back | Leverages strongest capabilities |
+| Mid-resource language | Direct inference first | Built-in multilingual capability often sufficient |
+
+??? example "When to Use Translation"
+    ✅ Quick prototyping  
+    ✅ Well-supported languages with quality MT services  
+    ✅ Specific low-resource languages where empirical evidence shows translation wins  
+    
+    ⚠️ **Trade-offs**: Cultural nuance loss, compounding errors, increased latency/cost
+
+[→ Deep dive into Translation Strategies](02-translation.md){ .md-button }
+
+### 2. Off-the-Shelf Prompting
+
+!!! tip "Core Concept"
+    Use pretrained multilingual models directly through strategic prompt engineering.
+
+Modern LLMs like GPT-4, Claude, and open models like Llama have multilingual capabilities built-in from pretraining on diverse corpora. This strategy leverages those capabilities through careful prompt design—using few-shot examples, cultural framing, persona-based prompts, or retrieval-augmented generation (RAG) to elicit appropriate multilingual behavior without any model training.
+
+**Key Advantages:**
+
+- ⚡ **Fastest to deploy** - No training infrastructure needed
+- 🔄 **Rapid iteration** - Test different prompt phrasings quickly
+- 🎭 **Cultural adaptation** - Embed cultural context through prompts alone
+- 🌐 **Works well** for mid-to-high resource languages
+
+**Key Limitations:**
+
+- 📉 **Performance degrades sharply** for low-resource languages
+- 🎲 **Inherently fragile** - Small wording changes = dramatic differences
+- 🎯 **Hard to control** - Difficult to maintain consistent tone/style
+- 🔒 **No persistent learning** - Each interaction starts fresh
+
+??? example "When to Use Off-the-Shelf Prompting"
+    ✅ Rapid prototyping or proof-of-concept  
+    ✅ Mid-to-high resource languages (Spanish, French, Hindi, etc.)  
+    ✅ Can invest in prompt iteration but lack training infrastructure  
+    ✅ Cultural framing can be embedded in prompts  
+    
+    ⚠️ **Trade-offs**: Inconsistent across languages, limited for low-resource scenarios
+
+[→ Explore Prompting Techniques](03-off-the-shelf.md){ .md-button }
+
+### 3. Fine-Tuning Specialized Models
+
+!!! tip "Core Concept"
+    Adapt lightweight open-source models on domain-specific, culturally relevant data.
+
+Fine-tuning involves taking a smaller, open-source LLM (e.g., Mistral, Phi, Gemma) and retraining it on curated multilingual data specific to your domain and culture. This enables deep customization—the model learns domain terminology, local idioms, cultural norms, and appropriate responses for your specific context. 
+
+!!! info "Modern Efficiency"
+    Parameter-efficient fine-tuning techniques like **LoRA** make this feasible even with limited compute by updating only a small fraction of model weights.
+
+**Maximum Control & Cultural Fidelity:**
+
+- 🎯 **Deep customization** - Captures domain-specific nuances
+- 🏛️ **Cultural alignment** - Learns from local language context
+- 🔐 **Privacy & control** - Deploy in air-gapped environments
+- 💰 **Long-term cost savings** - Lower API costs after initial investment
+
+**Upfront Investment Required:**
+
+- 📊 **Quality training data** (or synthetic data generation)
+- 💻 **Training infrastructure** and expertise
+- 🧪 **Evaluation frameworks** across languages
+- ⚠️ **Smaller models** may struggle with complex reasoning
+
+| Use Case | Why Fine-Tuning Wins |
+|----------|---------------------|
+| Domain-specific (legal, medical) | Learns specialized terminology & context |
+| Low-resource languages | General models underperform significantly |
+| Privacy-sensitive deployments | Full control over data & infrastructure |
+| Cultural value alignment | Trains on culturally appropriate responses |
+| Local dialects | Captures linguistic variations |
+
+??? example "When to Use Fine-Tuning"
+    ✅ Domain-specific applications (customer support, legal, medical)  
+    ✅ Low-resource languages underserved by general models  
+    ✅ Privacy-sensitive deployments  
+    ✅ Need precise cultural alignment or value representation  
+    
+    ⚠️ **Trade-offs**: Data collection, infrastructure needs, expertise required
+
+[→ Master Fine-Tuning Strategies](04-fine-tuning.md){ .md-button }
+
+---
+
+## Cross-Cutting Concerns: Evaluation and Safety
+
+!!! warning "Critical: These Apply to ALL Strategies"
+    Regardless of which implementation strategy you choose, robust evaluation and safety assessments are **non-negotiable** for production multilingual systems.
+
+### 📊 Robust Multilingual Evaluation
+
+Standard English-centric benchmarks fail to capture the true performance of multilingual systems. Evaluation becomes particularly challenging when:
+
+<div class="grid" markdown>
+
+!!! failure "Evaluation Challenges"
+    
+    **📚 Data Contamination**  
+    Benchmark datasets may be in the model's training data
+    
+    **📊 Inadequate Metrics**  
+    BLEU/ROUGE fail to capture subjective quality
+    
+    **👥 Human Evaluation**  
+    Requires native speakers for each language
+    
+    **📉 Performance Variance**  
+    Dramatic differences between high/low-resource languages
+
+!!! success "Evaluation Solutions"
+    
+    **⚖️ Pairwise Comparison**  
+    Elo ratings for relative model ranking
+    
+    **✅ Direct Assessment**  
+    Linguistic acceptability, task quality, hallucination detection
+    
+    **🤖 LLM-as-a-Judge**  
+    Scalable evaluation (when validated against humans)
+    
+    **🎯 Custom Metrics**  
+    Domain-specific evaluation frameworks
+
+</div>
+
+[→ Complete Evaluation Framework](01-evaluation.md){ .md-button .md-button--primary }
+
+---
+
+### 🛡️ Multilingual Safety Assessments
+
+!!! danger "The 3× Safety Risk"
+    Safety mechanisms trained primarily on English data create **dangerous blind spots** in other languages. Harmful content rates can be **3× higher** in low-resource languages, and multilingual jailbreaking attacks achieve:
+    
+    - **80.92% success rate** on ChatGPT
+    - **40.71% success rate** on GPT-4[^2]
+
+**Safety Failure Modes:**
+
+| Failure Type | Description | Impact |
+|--------------|-------------|--------|
+| 🔓 **Unintentional Bypass** | Users in low-resource languages inadvertently receive policy violations | Widespread harm to vulnerable populations |
+| 🎯 **Intentional Attacks** | Cross-lingual jailbreaking exploits safety gaps | Malicious use, reputational damage |
+| 💭 **Hallucination Toxicity** | Factual errors in low-resource languages introduce toxic content | Misinformation + harm combined |
+| 🌐 **Inconsistent Policies** | Different safety responses across languages | Unfair user experiences |
+
+**What You Must Do:**
+
+- ✅ Test safety across all target languages (especially low-resource)
+- ✅ Use multilingual adversarial benchmarks
+- ✅ Implement cross-lingual safety filters
+- ✅ Monitor for cultural context-specific harms
+
+[→ Comprehensive Safety Assessments](05-safety.md){ .md-button .md-button--primary }
+
+---
+
+## Addressing Data Scarcity: Synthetic Data Generation
+
+!!! question "The Low-Resource Language Problem"
+    A recurring challenge across all strategies: **scarcity of high-quality data** in low-resource languages for evaluation, prompting, and training.
+
+Whether you need evaluation datasets, few-shot examples for prompting, or training data for fine-tuning, creating **synthetic data** has emerged as a practical solution.
+
+**What Synthetic Data Enables:**
+
+| Use Case | Description |
+|----------|-------------|
+| 🧪 **Evaluation Datasets** | Generate test cases for languages lacking benchmarks |
+| 💡 **Few-Shot Examples** | Create in-context examples for prompt engineering |
+| 📚 **Training Data** | Build instruction-following datasets for fine-tuning |
+| 🌍 **Cultural Grounding** | Adapt examples to reflect local context and norms |
+
+**Systematic Framework:**
+
+1. **Generation Strategies** - Translate English datasets, use LLMs to generate multilingual content
+2. **Quality Checks** - Automatic metrics + human-in-the-loop validation
+3. **Cultural Adaptation** - Ensure examples reflect local values and context
+4. **Downstream Evaluation** - Verify synthetic data actually improves model performance
+
+!!! tip "Practical Application"
+    Translate and culturally adapt English instruction-following datasets (e.g., Alpaca, Dolly) to create training data for underrepresented languages.
+
+[→ Synthetic Data Generation Framework](06-synthetic-data.md){ .md-button }
+
+---
+
+## How to Navigate This Playbook
+
+!!! info "Choose Your Path"
+    This playbook is designed for different reading paths depending on your immediate needs.
+
+### 🚀 Just Starting Out?
+
+Explore the [Interactive Flowchart](../interactive/flowchart.md)
+
+Perfect for understanding the landscape.
+
+### ⚡ Need Quick Results?
+
+- [Translation](02-translation.md) for leveraging existing MT services
+- [Off-the-Shelf Prompting](03-off-the-shelf.md) for rapid prototyping
+
+Get a working prototype fast.
+
+### 🏭 Building for Production?
+
+1. Read [Evaluation](01-evaluation.md) first
+2. Then [Safety](05-safety.md)
+3. Choose your implementation strategy
+
+Understand success criteria & risks upfront.
+
+### 🎯 Have Specialized Needs?
+
+- [Fine-Tuning](04-fine-tuning.md) for maximum customization
+- [Synthetic Data](06-synthetic-data.md) for data scarcity
+
+Deep dive into advanced techniques.
+
+### Reading Strategy
+
+!!! tip "How Chapters Are Structured"
+    
+    **📖 Independent but Interconnected**  
+    Each chapter can be read standalone with cross-references where concepts connect
+    
+    **🔬 Research-Grounded**  
+    Concrete examples and empirical evidence from academic research and industry deployments
+    
+    **📊 Decision Matrices**  
+    Clear frameworks mapping your context to recommended strategies
+    
+    **⚙️ Practical Implementation**  
+    Step-by-step guidance, not just theory
+
+!!! quote "Our Philosophy"
+    We don't prescribe a single "best" approach. Instead, we equip you with the knowledge to make **informed decisions** for your specific multilingual context.
+
+---
+
+**Ready to dive in?** Choose your path above, or start with the [Interactive Flowchart](../interactive/flowchart.md) for personalized guidance.
+
+
+---
 
 [^1]: Mondshine, I., Paz-Argaman, T., & Tsarfaty, R. (2025). Beyond english: The impact of prompt translation strategies across languages and tasks in multilingual llms. arXiv preprint arXiv:2502.09331.
 
 [^2]: Kazemi, S., Gerhardt, G., Katz, J., Kuria, C. I., Pan, E., & Prabhakar, U. (2024). Cultural fidelity in large-language models: an evaluation of online language resources as a driver of model performance in value representation. arXiv preprint arXiv:2410.10489.
+
+[^3]: Empirical findings from translation strategy research showing selective pre-translation outperforms full translation and direct inference across multiple tasks and languages.
