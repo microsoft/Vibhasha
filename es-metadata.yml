@@ -1,0 +1,8 @@
+schemaVersion: 0.0.1
+isProduction: true
+accountableOwners:
+  service: 6ed18b01-b071-4f02-b219-2224b1f0a421
+routing:
+  defaultAreaPath:
+    org: msr-africa
+    path: Gecko MSR Africa
