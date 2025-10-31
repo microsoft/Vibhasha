@@ -1824,3 +1824,16 @@ Expand evaluation beyond traditional accuracy metrics to encompass critical dime
 
 [^30]:
     [https://github.com/ironclad/rivet](https://www.google.com/search?q=https://github.com/ironclad/rivet)
+
+
+<!-- ## LLM as judge resources
+
+MLLMs as Multilingual Evaluator
+"Are Large Language Model-based Evaluators the Solution to Scaling Up Multilingual Evaluation?".
+
+Rishav Hada et al. EACL (Findings) 2024. [Paper] [GitHub]
+
+"METAL: Towards Multilingual Meta-Evaluation".
+
+Rishav Hada and Varun Gumma et al. NAACL (Findings) 2024. [Paper] [GitHub] -->
+

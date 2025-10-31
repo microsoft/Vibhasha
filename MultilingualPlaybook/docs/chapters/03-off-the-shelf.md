@@ -46,3 +46,6 @@ This strategy involves using **pretrained general-purpose LLMs** (e.g., GPT-4, C
 ## Summary
 
 Prompting off-the-shelf LLMs is a fast, versatile approach for multilingual tasks — especially when infrastructure is limited. However, the effectiveness hinges on thoughtful prompt design, language support, and robust testing.
+
+
+When natural language is not enough: The limits of in-context learning demonstrations in multilingual reasoning - https://aclanthology.org/2025.findings-naacl.412/

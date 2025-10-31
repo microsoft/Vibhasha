@@ -25,3 +25,7 @@
 
 
 https://github.com/wasiahmad/Awesome-LLM-Synthetic-Data
+
+## Papers
+Synthetic Data for Multilingual NLP: a Survey ( Meet Doshi and Pushpak Bhattacharyya) : https://www.cfilt.iitb.ac.in/resources/surveys/2024/Survey%20Meet%20SyntheticData%202024.pdf
+

@@ -378,3 +378,57 @@ Once vulnerabilities are identified by ART, these frameworks and patterns provid
 
 
 
+<!-- Multilingual Alignment Evaluation
+Multilingual Ethics Evaluation
+"Ethical Reasoning and Moral Value Alignment of LLMs Depend on the Language we Prompt them in".
+
+Utkarsh Agarwal, Kumar Tanmay, and Aditi Khandelwal et al. LREC-COLING 2024. [Paper]
+
+Multilingual Toxicity Evaluation
+"RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?".
+
+Adrian de Wynter et al. arXiv 2024. [Paper] [GitHub]
+
+"PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models".
+
+Devansh Jain and Priyanshu Kumar et al. COLM 2024. [Paper] [GitHub]
+
+Multilingual Bias Evaluation
+"On Evaluating and Mitigating Gender Biases in Multilingual Settings".
+
+Aniket Vashishtha and Kabir Ahuja et al. ACL (Findings) 2021. [Paper] [GitHub]
+
+Multilingual Safety Evaluation
+Multilingual Safety Benchmarks
+"All Languages Matter: On the Multilingual Safety of LLMs".
+
+Wenxuan Wang et al. ACL (Findings) 2024. [Paper] [GitHub]
+
+Multilingual Jailbreaking/Red-Teaming
+"Low-Resource Languages Jailbreak GPT-4".
+
+Zheng-Xin Yong et al. NeurIPS (Workshop) 2023. [Paper]
+
+"Multilingual Jailbreak Challenges in Large Language Models".
+
+Yue Deng et al. ICLR 2024. [Paper] [GitHub]
+
+"A Cross-Language Investigation into Jailbreak Attacks in Large Language Models".
+
+Jie Li et al. arXiv 2024. [Paper] 
+
+"The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts".
+
+Lingfeng Shen et al. ACL Findings 2024. [Paper] [Github]
+
+SHADES: Towards a Multilingual Assessment of Stereotypes in Large Language Models - https://aclanthology.org/2025.naacl-long.600/
+
+Towards Understanding the Fragility of Multilingual LLMs against Fine-Tuning Attacks - https://aclanthology.org/2025.findings-naacl.126/
+
+Multilingual Blending: Large Language Model Safety Alignment Evaluation with Language Mixture - https://aclanthology.org/2025.findings-naacl.191/
+
+The Multilingual Divide and Its Impact on Global AI Safety - https://arxiv.org/pdf/2505.21344
+
+
+-->
+
