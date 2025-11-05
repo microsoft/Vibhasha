@@ -1,0 +1,9 @@
+# Evolution of Automatic Speech Recognition Models
+
+Early systems in the 1970s through the 1990s relied on [Hidden Markov Models (HMMs)](https://ieeexplore.ieee.org/document/18626) combined with Gaussian Mixture Models (GMMs) to capture the temporal and acoustic properties of speech. While effective for structured tasks, these models depended heavily on handcrafted features like Mel-Frequency Cepstral Coefficients (MFCCs) and struggled with variability in speakers, accents, and noise.
+
+In the 2000s, the introduction of Deep Neural Networks (DNNs) for acoustic modelling produced [hybrid HMM-DNN](https://archive.org/details/connectionistspe00bour) architectures that significantly improved accuracy and scalability, laying the groundwork for neural ASR.
+
+The 2010s marked a shift toward end-to-end models, beginning with [Connectionist Temporal Classification (CTC)](https://www.cs.toronto.edu/~graves/icml_2006.pdf) approaches such as [Deep Speech](https://arxiv.org/abs/1412.5567) and attention-based sequence-to-sequence models like [Listen, Attend and Spell](https://arxiv.org/abs/1508.01211). These unified frameworks reduced reliance on separate alignment stages, though they were often unstable and data hungry.
+
+The late 2010s brought Transformers and Conformers, enabling stronger long-range modelling and advances in self-supervised learning with models like [wav2vec 2.0](https://arxiv.org/abs/2006.11477). Since 2022, ASR has entered the foundation model era, exemplified by OpenAI’s [Whisper](https://arxiv.org/pdf/2212.04356) and Meta’s [SeamlessM4T](https://arxiv.org/abs/2308.11596), which leverage hundreds of thousands of hours of multilingual, noisy, and real-world speech data. In parallel, multi-modal Large Language Models (LLMs) have become integral to ASR, enhancing transcription quality, contextual understanding, and downstream tasks such as summarization, translation, and speaker attribution.

@@ -1,0 +1,3 @@
+### Full Fine-Tuning
+
+Full fine-tuning involves updating all parameters of the pretrained model on the target dataset. It is best applied when working with large, high-quality datasets and sufficient computational resources. This approach allows the model to fully adapt to domain- or language-specific characteristics, often achieving the highest possible performance. However, it is computationally intensive and more prone to overfitting, especially when data is limited. In practice, full fine-tuning should be reserved for cases with substantial domain shifts or when parameter-efficient methods such as LoRA or partial fine-tuning do not provide adequate results.
