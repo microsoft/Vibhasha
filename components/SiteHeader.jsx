@@ -19,7 +19,7 @@ export default function SiteHeader({ theme, toggleTheme }) {
             <p className="home-subtitle" style={{ opacity: .8 }}>Navigation · Theme · Explore</p>
           )}
           <nav className="header-nav" aria-label="Primary navigation" style={{ marginTop: 18 }}>
-            <NavLink to="/playbook" className={({isActive}) => isActive ? 'nav-link active nav-playbook' : 'nav-link nav-playbook'}>Playbook</NavLink>
+            <NavLink to="playbook/01-intro" className={({isActive}) => isActive ? 'nav-link active nav-playbook' : 'nav-link nav-playbook'}>Playbook</NavLink>
           </nav>
         </div>
       </div>
