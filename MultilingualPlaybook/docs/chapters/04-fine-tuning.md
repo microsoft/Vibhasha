@@ -117,25 +117,6 @@ Complete parameter retraining is resource-intensive but necessary in specific sc
     - **Extreme Domain Shifts**: Fundamental model knowledge requires reshaping
     - **Cultural Realignment**: Correcting severe inherent biases demands complete model transformation
 
-### Catastrophic Forgetting Mitigation
-
-!!! danger "The Forgetting Problem"
-    **Challenge**: Task-specific tuning on new languages can erase the model's cross-lingual generalization abilities
-    
-    **Solution**: Less-forgetting Multi-lingual Fine-tuning (LF-MLF)
-
-#### LF-MLF Framework
-
-The LF-MLF framework provides a mathematically rigorous solution by recasting multilingual fine-tuning as a **constrained multi-objective optimization problem**.
-
-!!! info "LF-MLF Mathematical Foundation"
-    **Objective**: Minimize the norm squared of accumulated and current weighted gradients to control forgetting
-    
-    **Constraint**: Ensure gradient updates are common descent directions for all source language losses
-    
-    **Implementation**: Convert to Quadratic Programming (QP) problem for optimal, least-disruptive gradient updates
-    
-    **Result**: Simultaneous improvement across all languages while preserving generalization
 
 ---
 
@@ -155,14 +136,6 @@ Data quality and cultural authenticity are paramount for successful multilingual
     **3. Cultural Grounding Data**  
     Local stories, FAQs, proverbs, and contextual information for value alignment
 
-### Low-Resource Language Optimization
-
-!!! success "Strategic Data Injection"
-    **Research Finding**: Highly specific, domain-focused data led to **117% relative BLEU gain** for Irish-English translation
-    
-    **Performance Asymmetry**: Translation FROM low-resource languages often significantly outperforms translation INTO them
-    
-    **Strategic Focus**: Prioritize improving generation INTO the low-resource language through targeted data augmentation
 
 ### Synthetic Data Generation Strategies
 

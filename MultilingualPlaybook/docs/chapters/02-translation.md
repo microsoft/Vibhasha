@@ -1,4 +1,4 @@
-# Translation Strategies for Multilingual LLM Deployment
+# Translation Strategies & Prompting for Multilingual LLM Deployment
 
 !!! quote "The Translation Dilemma"
     While translation can unlock powerful English-centric LLM capabilities for global use, it's a double-edged sword: you gain reasoning power but risk losing cultural nuance and propagating errors.

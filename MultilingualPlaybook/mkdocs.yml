@@ -37,6 +37,7 @@ nav:
       - Fine-tuning LLMs: chapters/04-fine-tuning.md
       - Safety : chapters/05-safety.md
       - Synthetic Data : chapters/06-synthetic-data.md
+      - Culture and Multilinguality: chapters/07-culture.md
       - Conclusion: chapters/99-conclusion.md
       - ToDos: chapters/ToDos.md
   - Interactive Flowchart: interactive/flowchart.md
