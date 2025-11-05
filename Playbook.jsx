@@ -1,8 +1,6 @@
 import React from 'react'
 import { useNavigate, Outlet, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
-import MicPng from './assets/Paza-Illustration-ASR.png'
-import SpeakerPng from './assets/Paza-Illustration-TTS.png'
 import IntroDoc from './components/docs/01-intro'
 
 export default function Playbook() {
