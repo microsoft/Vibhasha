@@ -1,5 +1,5 @@
 
-## II. Curating for diversity
+## Curating data for diversity
 
 - While the read-aloud method of dataset collection is common, it frequently fails to represent authentic language use.
 - In the context of low-resource languages, oral communication—often conversational rather than written—dominates everyday usage.
