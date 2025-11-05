@@ -1,4 +1,4 @@
-### Dataset Preprocessing for ASR
+## Dataset Preprocessing for ASR
 
 #### General Formats & Structures
 The recommended format for storing ASR datasets is **Parquet**, as it efficiently handles large audio and text data while preserving schema consistency. Each audio recording should be saved with a unique identifier, and the corresponding transcription or translation should reference the same ID to maintain alignment. A **CSV or Excel file** should be used to store metadata such as the audio file path, transcription text, translation, speaker information, language, and other relevant attributes. The **Hugging Face Datasets** framework is recommended, as it supports streaming and memory-efficient access to Parquet files.

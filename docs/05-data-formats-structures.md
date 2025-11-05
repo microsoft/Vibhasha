@@ -1,4 +1,4 @@
-### Dataset Formats & Structure
+## Dataset Formats & Structure
 
 #### Sampling Frequency
 For ASR datasets, audio should be recorded at a sampling frequency of **16 kHz** in single-channel (mono) format. This setup is widely supported by modern speech recognition models and helps maintain consistency across datasets.

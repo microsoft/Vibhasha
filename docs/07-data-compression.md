@@ -1,5 +1,5 @@
 
-### Dataset Compression
+## Dataset Compression
 Audio compression is used to reduce the storage requirements and transmission bandwidth of audio data. It mostly involves psychoacoustics which exploit characteristics of human perception (e.g., mp3) to achieve high compression rates while attempting to maintain signal quality.
 
 #### Impact of Compression on Downstream Tasks

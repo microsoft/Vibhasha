@@ -1,4 +1,4 @@
-### Parameter-Efficient Methods: Layer Freezing and LoRA Techniques
+## Parameter-Efficient Methods: Layer Freezing and LoRA Techniques
 
 Parameter-efficient methods enable large models to adapt effectively without retraining the entire network. The focus here is on reducing the number of trainable parameters or selectively unfreezing layers in pretrained foundational models.
 

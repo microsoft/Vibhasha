@@ -1,4 +1,4 @@
-### Common ASR Finetuning Challenges 
+## Common ASR Finetuning Challenges 
 
 Here are some common finetuning challenges you may encounter and how to resolve them. Some are well documented in specific model community forums. 
 

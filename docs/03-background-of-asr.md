@@ -10,7 +10,7 @@ Another significant challenge is **code-switching and multilinguality** ([Oreolu
 
 **Acoustic variability** is an additional obstacle. Speech collected from mobile phones, messaging applications, or rural environments often contains channel noise, reverberation, and non-speech events, which current models do not handle well without targeted augmentation.
 
-**Computational constraints** further hinder progress; training and decoding large-scale models (e.g., Whisper-Large) require significant resources, and on-device or offline deployment demands parameter-efficient adaptations and lightweight decoders.
+**Computational constraints** further hinder progress; training and decoding large-scale models requires significant resources, and on-device or offline deployment demands parameter-efficient adaptations and lightweight decoders.
 
 **Orthographic and standardisation issues** also pose challenges. Non-standard spellings, inconsistent or omitted diacritics, and evolving orthographies complicate the construction of lexicons, grapheme-to-phoneme models, and evaluation pipelines ([AfricaNLP, 2025](https://aclanthology.org/2025.africanlp-1.13.pdf)).
 
