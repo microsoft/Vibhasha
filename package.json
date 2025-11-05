@@ -1,0 +1,29 @@
+{
+  "name": "paza-speech-playbook",
+  "version": "1.0.0",
+  "description": "Interactive speech playbook",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "vite.config.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm run build",
+    "dev": "vite",
+    "build": "vite build",
+    "start": "serve -s dist",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "6.14.1",
+    "react-syntax-highlighter": "^16.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.3",
+    "vite": "^7.1.6"
+  }
+}
