@@ -43,6 +43,7 @@ git add MultilingualPlaybook/site/*
 git add MultilingualPlaybook/mkdocs.yml
 git add MultilingualPlaybook/create_webapp.sh
 git add MultilingualPlaybook/requirements.txt
+git add MultilingualPlaybook/site.zip
 git commit 
 git push
 
