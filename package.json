@@ -1,8 +1,8 @@
 {
-  "name": "paza-speech-playbook",
+  "name": "playbook-template",
   "version": "1.0.0",
-  "description": "Interactive speech playbook",
-  "license": "ISC",
+  "description": "Interactive Gecko playbook template",
+  "license": "MIT",
   "author": "",
   "type": "commonjs",
   "main": "vite.config.js",
