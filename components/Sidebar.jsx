@@ -4,50 +4,123 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 const sections = [
   {
-    heading: null,
-    items: [
-      // { to: '/playbook', label: 'Playbook Overview', end: true },
-      { to: '/playbook/01-intro', label: 'Playbook Intro' },
-      { to: '/playbook/02-evolution-of-asr', label: 'Evolution of ASR' },
-      { to: '/playbook/03-background-of-asr', label: 'Background of ASR' }
-    ]
-  },
-  {
-    heading: 'Dataset Creation',
-    items: [
-      { to: '/playbook/04-dataset-creation-guidelines', label: 'Guidelines' },
-      { to: '/playbook/04-i-metadata', label: 'Metadata', sub: true },
-      { to: '/playbook/04-ii-curation-for-diverty', label: 'Curation for Diversity', sub: true },
-      { to: '/playbook/04-iii-generalization-vs-domain', label: 'Generalization vs Domain', sub: true },
-      { to: '/playbook/04-iv-quality-control', label: 'Quality Control', sub: true }
-    ]
-  },
-  {
-    heading: null,
-    items: [
-      { to: '/playbook/05-data-formats-structures', label: 'Data Formats & Structures' },
-      { to: '/playbook/06-data-preprocessing', label: 'Data Preprocessing' },
-      { to: '/playbook/07-data-compression', label: 'Data Compression' }
-    ]
-  },
-  {
-    heading: 'Model Finetuning',
-    items: [
-      { to: '/playbook/08-model-finetuning-intro', label: 'Finetuning Intro' },
-      { to: '/playbook/08-i-model-selection', label: 'Model Selection' },
-      { to: '/playbook/08-ii-full-finetuning', label: 'Full Finetuning' },
-      { to: '/playbook/08-iii-peft', label: 'PEFT' },
-      { to: '/playbook/08-iv-decision-matrix', label: 'Decision Matrix' }
-    ]
-  },
-  {
-    heading: null,
-    items: [
-      { to: '/playbook/09-inference', label: 'Inference', end: true },
-      { to: '/playbook/10-data-augmentation', label: 'Data Augmentation' },
-      { to: '/playbook/11-common-finetuning-challenges', label: 'Common Finetuning Challenges' },
-      { to: '/playbook/12-conclusion', label: 'Conclusion' },
-      { to: '/playbook/13-coming-soon', label: 'Coming Soon' }
+    "heading": null,
+    "items": [
+      {
+        to: "/playbook/01-intro",
+        label: "Intro",
+        sub: false
+      },
+      {
+        to: "/playbook/02-evolution-of-asr",
+        label: "Evolution Of ASR",
+        sub: false
+      },
+      {
+        to: "/playbook/03-background-of-asr",
+        label: "Background Of ASR",
+        sub: false
+      },
+      {
+        to: "/playbook/04-dataset-creation-guidelines",
+        label: "Dataset Creation Guidelines",
+        sub: false
+      },
+      {
+        to: "/playbook/04-i-metadata",
+        label: "Metadata",
+        sub: true
+      },
+      {
+        to: "/playbook/04-ii-curation-for-diversity",
+        label: "Curation For Diversity",
+        sub: true
+      },
+      {
+        to: "/playbook/04-iii-generalization-vs-domain",
+        label: "Generalization Vs Domain",
+        sub: true
+      },
+      {
+        to: "/playbook/04-iv-quality-control",
+        label: "Quality Control",
+        sub: true
+      },
+      {
+        to: "/playbook/05-data-formats-structures",
+        label: "Data Formats Structures",
+        sub: false
+      },
+      {
+        to: "/playbook/06-data-preprocessing",
+        label: "Data Preprocessing",
+        sub: false
+      },
+      {
+        to: "/playbook/07-data-compression",
+        label: "Data Compression",
+        sub: false
+      },
+      {
+        to: "/playbook/08-i-model-selection",
+        label: "Model Selection",
+        sub: true
+      },
+      {
+        to: "/playbook/08-ii-full-finetuning",
+        label: "Full Finetuning",
+        sub: true
+      },
+      {
+        to: "/playbook/08-iii-peft",
+        label: "Peft",
+        sub: true
+      },
+      {
+        to: "/playbook/08-iv-decision-matrix",
+        label: "Decision Matrix",
+        sub: true
+      },
+      {
+        to: "/playbook/08-model-finetuning-intro",
+        label: "Model Finetuning Intro",
+        sub: false
+      },
+      {
+        to: "/playbook/09-inference",
+        label: "Inference",
+        sub: false
+      },
+      {
+        to: "/playbook/10-data-augmentation",
+        label: "Data Augmentation",
+        sub: false
+      },
+      {
+        to: "/playbook/11-common-finetuning-challenges",
+        label: "Common Finetuning Challenges",
+        sub: false
+      },
+      {
+        to: "/playbook/12-conclusion",
+        label: "Conclusion",
+        sub: false
+      },
+      {
+        to: "/playbook/13-coming-soon",
+        label: "Coming Soon",
+        sub: false
+      },
+      {
+        to: "/playbook/14-attribution",
+        label: "Attribution",
+        sub: false
+      },
+      {
+        to: "/playbook/15-references",
+        label: "References",
+        sub: false
+      }
     ]
   }
 ];
