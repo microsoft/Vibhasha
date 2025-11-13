@@ -1,4 +1,4 @@
 import MarkdownPage from './MarkdownPage';
 export default function DataCompressionDoc() {
-  return <MarkdownPage filePath="../../docs/07-data-compression.md" />;
+  return <MarkdownPage filePath="../../chapters/07-data-compression.md" />;
 }
