@@ -13,15 +13,8 @@ export default function SiteHeader({ theme, toggleTheme }) {
       <div className="home-header-left">
         <div className="paza-logo" aria-label="Paza"><span aria-hidden>💬</span> PAZA</div>
         <div className="home-tagline">
-          <h1 className="home-title">Speech Models Playbook</h1>
-          {isHome ? (
-            <p className="home-subtitle">Practical guidance for dataset creation, finetuning & inference.</p>
-          ) : (
-            <p className="home-subtitle" style={{ opacity: .8 }}>Navigation · Theme · Explore</p>
-          )}
-          <nav className="header-nav" aria-label="Primary navigation" style={{ marginTop: 18 }}>
-            <NavLink to="playbook/01-intro" className={({isActive}) => isActive ? 'nav-link active nav-playbook' : 'nav-link nav-playbook'}>Playbook</NavLink>
-          </nav>
+          <h1 className="home-title">Template Playbook</h1>
+            <p className="home-subtitle" style={{ opacity: 1 }}>Practical guidance for dataset creation, finetuning & inference.</p>
         </div>
       </div>
       <div className="home-header-right">

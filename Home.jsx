@@ -1,4 +1,5 @@
 import React from 'react';
+import CardGrid from './components/CardGrid';
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
           playbook pages for deep section jumps, or the next/previous buttons at the bottom of each page to read linearly.
         </p>
         <p style={{ fontSize: '.9rem', opacity: .75 }}>Tip: Toggle the theme for a different viewing experience.</p>
+      </section>
+      <section style={{ maxWidth: 980, margin: '24px auto 0' }}>
+        <CardGrid />
       </section>
     </div>
   );

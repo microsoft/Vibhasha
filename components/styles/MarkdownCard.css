@@ -11,3 +11,25 @@ body.dark .md-card{ background:#091a34; box-shadow:0 4px 16px rgba(2,6,23,0.7); 
 .md-card-footer{ margin-top:auto; display:flex; justify-content:flex-end; }
 .md-card-toggle{ background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#fff; border:none; border-radius:8px; padding:6px 12px; font-size:.65rem; cursor:pointer; font-weight:600; letter-spacing:.5px; }
 @media (max-width:640px){ .qc-card-grid{ grid-template-columns:1fr; } }
+
+/* Simple card-grid and card styles (used by CardGrid.jsx) */
+.card-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px; margin:18px 0 36px; }
+.card{ background: var(--surface); border:1px solid var(--card-border); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:10px; box-shadow:0 6px 18px rgba(16,24,40,0.06); overflow:hidden; transition:transform 160ms, box-shadow 160ms, border-color 160ms; }
+.card:focus{ outline:2px solid rgba(59,130,246,0.25); }
+.card:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(16,24,40,0.12); }
+.card-icon{ display:flex; align-items:center; justify-content:center; }
+.card h3{ margin:0; font-size:1.05rem; }
+.card p{ margin:0; font-size:.9rem; color:var(--muted); }
+
+/* Large visual card variant that uses a background image to fill the card */
+.card--large{ min-height:260px; position:relative; padding:0; background-size:cover; background-position:center; border-radius:14px; }
+.card--large .card-content{ position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:20px; background: linear-gradient(180deg, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.45) 100%); color:#fff; }
+.card--large h3{ color:#fff; margin-bottom:6px; }
+.card--large p{ color:rgba(255,255,255,0.9); margin-bottom:10px; }
+.card--large .card-actions{ display:flex; justify-content:flex-end; }
+.card--large .btn-primary{ background: rgba(255,255,255,0.9); color: #0b1220; border: none; padding:8px 12px; border-radius:8px; font-weight:600; }
+
+@media (max-width:640px){
+	.card--large{ min-height:180px; }
+	.card-grid{ grid-template-columns:1fr; }
+}
