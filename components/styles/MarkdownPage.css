@@ -1,0 +1,17 @@
+/* MarkdownPage styles (doc layout, table of contents, markdown tables) */
+.doc-layout{ display:grid; grid-template-columns: 1fr 280px; gap:28px; align-items:start; }
+.doc-main{ max-width:760px; }
+.doc-toc{ position:sticky; top:104px; align-self:start; }
+.doc-toc-inner{ background:transparent; padding:12px 12px 8px; border-radius:10px; }
+.doc-toc-title{ display:block; margin-bottom:8px; color:var(--muted); font-weight:700; font-size:.85rem; }
+.doc-toc ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.doc-toc li.toc-sub{ margin-left:8px; }
+.doc-toc button{ background:transparent; border:none; text-align:left; padding:6px 8px; border-radius:8px; color:var(--muted); cursor:pointer; font-size:.92rem; }
+.doc-toc button.active{ background:transparent; color:var(--text); font-weight:700; box-shadow:none; }
+@media (max-width:980px){ .doc-layout{ grid-template-columns: 1fr; } .doc-toc{ display:none; } }
+
+.markdown-body table{ width:100%; border-collapse:collapse; margin:24px 0; font-size:.85rem; }
+.markdown-body thead tr{ background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#fff; }
+.markdown-body th, .markdown-body td{ padding:10px 12px; border:1px solid rgba(16,24,40,0.12); text-align:left; vertical-align:top; }
+.markdown-body tbody tr:nth-child(even){ background:rgba(16,24,40,0.03); }
+.markdown-body tbody tr:hover{ background:rgba(124,58,237,0.08); }

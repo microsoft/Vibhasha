@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './styles/Sidebar.css'
 import { NavLink, useLocation } from 'react-router-dom'
 
 const sections = [

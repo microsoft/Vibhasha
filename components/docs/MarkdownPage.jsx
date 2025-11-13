@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/MarkdownPage.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
@@ -34,8 +35,13 @@ const docOrder = [
 
 export default function MarkdownPage({ filePath }) {
   const [content, setContent] = useState('');
+  const [headings, setHeadings] = useState([]);
+  const [activeId, setActiveId] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // derive whether to show a right-hand TOC for long documents
+  const showToc = headings.length >= 4 || content.length > 2200;
 
   useEffect(() => {
     let cancelled = false;
@@ -77,8 +83,49 @@ export default function MarkdownPage({ filePath }) {
   const prev = idx > 0 ? docOrder[idx - 1] : null;
   const next = idx >= 0 && idx < docOrder.length - 1 ? docOrder[idx + 1] : null;
 
+  // Extract headings (h2/h3) from raw markdown so we can render a TOC
+  useEffect(() => {
+    if (!content) return;
+    const list = [];
+    const re = /^(#{2,3})\s+(.*)$/gm;
+    let m;
+    while ((m = re.exec(content)) !== null) {
+      const lvl = m[1].length; // 2 for h2, 3 for h3
+      const text = m[2].trim();
+      const id = slugify(text);
+      list.push({ id, text, level: lvl });
+    }
+    setHeadings(list);
+  }, [content]);
+
+  // Scroll-spy: observe headings in the rendered DOM and update activeId
+  useEffect(() => {
+    if (!headings || headings.length === 0) return;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) setActiveId(e.target.id);
+        });
+      },
+      { root: null, rootMargin: '0px 0px -65% 0px', threshold: 0.1 }
+    );
+    headings.forEach(h => {
+      const el = document.getElementById(h.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [headings, content]);
+
+  function scrollToId(id){
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // update hash without jumping
+    if (history && history.replaceState) history.replaceState(null, '', `#${id}`);
+  }
+
   return (
-    <div className="markdown-body" style={{ maxWidth: 900, margin: '0 auto', padding: 24 }}>
+    <div className="doc-layout" style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
+      <main className="doc-main markdown-body" style={{ paddingRight: 12 }}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -116,6 +163,24 @@ export default function MarkdownPage({ filePath }) {
           {next ? next.label : 'The End'}
         </button>
       </nav>
+      </main>
+
+      {showToc && (
+        <aside className="doc-toc" aria-label="Table of contents">
+          <div className="doc-toc-inner">
+            <strong className="doc-toc-title">On this page</strong>
+            <ul>
+              {headings.map(h => (
+                <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
+                  <button onClick={() => scrollToId(h.id)} className={activeId === h.id ? 'active' : ''}>
+                    {h.text}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      )}
     </div>
   );
 }

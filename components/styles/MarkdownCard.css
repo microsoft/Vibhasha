@@ -1,0 +1,13 @@
+/* MarkdownCard and card-grid styles */
+.qc-card-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:20px; margin:24px 0 40px; }
+.md-card{ background: var(--surface); border:1px solid var(--card-border); border-radius:14px; padding:14px 16px 12px; display:flex; flex-direction:column; box-shadow:0 4px 14px rgba(16,24,40,0.05); transition: box-shadow 160ms, transform 160ms, border-color 160ms; }
+body.dark .md-card{ background:#091a34; box-shadow:0 4px 16px rgba(2,6,23,0.7); }
+.md-card:hover{ transform:translateY(-4px); box-shadow:0 8px 22px rgba(16,24,40,0.12); border-color:rgba(124,58,237,0.25); }
+.md-card.expanded{ border-color:var(--accent); box-shadow:0 10px 26px rgba(124,58,237,0.25); }
+.md-card-header{ margin-bottom:4px; }
+.md-card-title{ font-size:1rem; font-weight:600; text-decoration:none; color:var(--text); display:inline-block; }
+.md-card-excerpt{ font-size:.72rem; line-height:1.05rem; opacity:.8; margin:0 0 8px; }
+.md-card-body{ font-size:.75rem; line-height:1.08rem; margin:6px 0 4px; max-height:300px; overflow:auto; padding-right:4px; scrollbar-width: thin; }
+.md-card-footer{ margin-top:auto; display:flex; justify-content:flex-end; }
+.md-card-toggle{ background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#fff; border:none; border-radius:8px; padding:6px 12px; font-size:.65rem; cursor:pointer; font-weight:600; letter-spacing:.5px; }
+@media (max-width:640px){ .qc-card-grid{ grid-template-columns:1fr; } }

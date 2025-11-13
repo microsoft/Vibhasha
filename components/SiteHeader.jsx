@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import NotebookPng from '../assets/Paza-Illustration-Playbook.png';
+import './styles/SiteHeader.css';
 
 export default function SiteHeader({ theme, toggleTheme }) {
   const location = useLocation();
@@ -34,7 +35,6 @@ export default function SiteHeader({ theme, toggleTheme }) {
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
           <button
             className="btn-primary home-cta"
-            openNewTab={true}
             onClick={() => navigate('/playbook')}
             aria-label="Explore ASR Models"
             style={isHome ? undefined : { padding: '10px 16px', fontSize: '.85rem' }}

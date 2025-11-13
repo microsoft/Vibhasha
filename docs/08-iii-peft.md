@@ -2,7 +2,7 @@
 
 Parameter-efficient methods enable large models to adapt effectively without retraining the entire network. The focus here is on reducing the number of trainable parameters or selectively unfreezing layers in pretrained foundational models.
 
-#### Layer Freezing
+### Layer Freezing
 
 Layer freezing (or partial fine-tuning) is used when the pretrained model already provides strong representations. Most layers are kept frozen while only the output projection or top encoder layers are trained. This reduces computational cost and memory usage, making it well-suited for domain adaptation tasks or scenarios with limited training data.
 
@@ -10,7 +10,7 @@ Layer freezing (or partial fine-tuning) is used when the pretrained model alread
 - **Wav2Vec 2.0:** Layer freezing is commonly used to retain the powerful self-supervised audio representations learned during pretraining. Fine-tuning only the final transformer layers or the output classifier significantly reduces training time and overfitting, especially when labelled data is scarce.
 - **Whisper:** Layer freezing is useful, especially when adapting to new domains or accents. By freezing the encoder and decoder layers and fine-tuning only the final projection or language-specific heads, Whisper can be efficiently adapted to new ASR domains or accents while preserving its robust multilingual and multitask capabilities.
 
-#### LoRA
+### LoRA
 
 [Low-Rank Adaptation (LoRA)](https://arxiv.org/abs/2106.09685) and adapter-based methods allow rapid adaptation across domains or languages by freezing the base model and introducing a small number of trainable parameters, such as low-rank matrices or lightweight bottleneck layers. These techniques retain the advantages of the pretrained model while enabling efficient fine-tuning, making them particularly useful for multilingual ASR and resource-constrained environments.
 
