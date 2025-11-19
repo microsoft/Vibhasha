@@ -26,7 +26,7 @@ export default function CardGrid(){
               <h3 id={`title-${c.id}`}>{c.title}</h3>
               <p>{c.description}</p>
               <div className="card-actions">
-                <button className="btn-primary" onClick={() => navigate('/playbook')}>Explore playbook</button>
+                <button className="btn-primary" onClick={() => navigate('/playbook/01-intro')}>Explore playbook</button>
               </div>
             </div>
           ) : (

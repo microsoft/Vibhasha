@@ -130,8 +130,8 @@ export default function MarkdownPage({ filePath }) {
   }
 
   return (
-    <div className="doc-layout" style={{ maxWidth: 1200, margin: '0 auto', padding: 24 }}>
-      <main className="doc-main markdown-body" style={{ paddingRight: 12 }}>
+    <div className="doc-layout doc-container">
+      <main className="doc-main markdown-body doc-main-inner">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -151,24 +151,29 @@ export default function MarkdownPage({ filePath }) {
       >
         {content}
       </ReactMarkdown>
-      <nav className="prev-next-nav" style={{ display: 'flex', justifyContent: 'space-between', marginTop: 48, gap: '1rem' }} aria-label="Page navigation">
-        <button
-          disabled={!prev}
-          onClick={() => prev && navigate(prev.path)}
-          className="btn-primary"
-          style={{ opacity: prev ? 1 : .45 }}
-        >
-          {prev ? prev.label : "Start"}
-        </button>
-        <button
-          disabled={!next}
-          onClick={() => next && navigate(next.path)}
-          className="btn-primary"
-          style={{ opacity: next ? 1 : .45 }}
-        >
-          {next ? next.label : 'The End'}
-        </button>
-      </nav>
+      {(prev || next) && (
+        <nav className="prev-next-nav" aria-label="Page navigation">
+          {prev ? (
+            <button
+              onClick={() => navigate(prev.path)}
+              className="btn-primary"
+              style={{ opacity: 1 }}
+            >
+              {'< ' + prev.label}
+            </button>
+          ) : <div />}
+
+          {next ? (
+            <button
+              onClick={() => navigate(next.path)}
+              className="btn-primary"
+              style={{ opacity: 1 }}
+            >
+              {next.label + ' >'}
+            </button>
+          ) : <div />}
+        </nav>
+      )}
       </main>
 
       {showToc && (
