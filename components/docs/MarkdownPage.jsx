@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 
 // Preload all markdown files using Vite's glob import (raw content)
-const mdModules = import.meta.glob('/docs/*.md', { as: 'raw' });
+const mdModules = import.meta.glob('/public/chapters/*.md', { as: 'raw' });
 
 function slugify(str=''){ return str.toLowerCase().replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').slice(0,80); }
 
@@ -47,22 +47,28 @@ export default function MarkdownPage({ filePath }) {
     let cancelled = false;
 
     async function load() {
-      // Support absolute /docs/... paths (as used in components)
-      if (filePath && filePath.startsWith('/docs/')) {
-        const loader = mdModules[filePath];
-        if (loader) {
-          try {
-            const raw = await loader();
-            if (!cancelled) setContent(raw);
-            return;
-          } catch (e) {
-            // fall through to fetch
-          }
+      // Normalize filePath so it matches the keys produced by import.meta.glob
+      // (which are absolute like `/public/01-intro.md`). Components sometimes
+      // pass relative paths like `../../public/01-intro.md` which prevents the
+      // Vite loader from being used and forces a network fetch. Convert any
+      // incoming path that contains `/public/` to the absolute `/public/...` form.
+      if (!filePath) return;
+      const normalized = filePath.includes('/public/') ? filePath.replace(/.*\/public\//, '/public/') : filePath;
+
+      const loader = mdModules[normalized];
+      if (loader) {
+        try {
+          const raw = await loader();
+          if (!cancelled) setContent(raw);
+          return;
+        } catch (e) {
+          // fall through to fetch fallback
         }
       }
+
       // Fallback: network fetch (works if files are served from public)
       try {
-        const res = await fetch(filePath);
+        const res = await fetch(normalized);
         if (res.ok) {
           const txt = await res.text();
           if (!cancelled) setContent(txt);
