@@ -1,4 +1,4 @@
 import MarkdownPage from './MarkdownPage';
 export default function InferenceDoc() {
-  return <MarkdownPage filePath="../../chapters/09-inference.md" />;
+  return <MarkdownPage filePath="/public/chapters/09-inference.md" />;
 }
