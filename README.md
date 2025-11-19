@@ -28,7 +28,7 @@ npm install
 
 To add or update chapters, follow these steps in order:
 
-1. Add or edit Markdown files in the `chapters/` folder (e.g. `chapters/02-new-chapter.md`).
+1. Add or edit Markdown files in the `public/chapters/` folder (e.g. `public/chapters/02-new-chapter.md`).
 
 2. Generate (or update) the React wrapper files for each Markdown file. This will create `components/docs/*.jsx` files that the app imports:
 
