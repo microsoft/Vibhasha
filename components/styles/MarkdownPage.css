@@ -105,15 +105,32 @@
     margin: 0 auto;
     padding: 24px;
 }
+
 .doc-main-inner {
     padding-right: 12px;
 }
+
 .prev-next-nav {
     display: flex;
     justify-content: space-between;
     margin-top: 48px;
     gap: 1rem;
 }
+
 .prev-next-nav .btn-primary {
     opacity: 1;
+}
+
+/* Icon sizing for prev/next buttons */
+.nav-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+.prev-next-nav .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }

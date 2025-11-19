@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 // Preload all markdown files using Vite's glob import (raw content)
 const mdModules = import.meta.glob('/public/chapters/*.md', { as: 'raw' });
 
-function slugify(str=''){ return str.toLowerCase().replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-').slice(0,80); }
+function slugify(str = '') { return str.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 80); }
 
 const docOrder = [
   { path: '/playbook/01-intro', label: 'Playbook Intro' },
@@ -15,7 +15,7 @@ const docOrder = [
   { path: '/playbook/03-background-of-asr', label: 'Background of ASR' },
   { path: '/playbook/04-dataset-creation-guidelines', label: 'Guidelines' },
   { path: '/playbook/04-i-metadata', label: 'Metadata' },
-  { path: '/playbook/04-ii-curation-for-diverty', label: 'Curation for Diversity' },
+  { path: '/playbook/04-ii-curation-for-diversity', label: 'Curation for Diversity' },
   { path: '/playbook/04-iii-generalization-vs-domain', label: 'Generalization vs Domain' },
   { path: '/playbook/04-iv-quality-control', label: 'Quality Control' },
   { path: '/playbook/05-data-formats-structures', label: 'Data Formats & Structures' },
@@ -122,7 +122,7 @@ export default function MarkdownPage({ filePath }) {
     return () => observer.disconnect();
   }, [headings, content]);
 
-  function scrollToId(id){
+  function scrollToId(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     // update hash without jumping
@@ -132,48 +132,52 @@ export default function MarkdownPage({ filePath }) {
   return (
     <div className="doc-layout doc-container">
       <main className="doc-main markdown-body doc-main-inner">
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          h1: ({node, ...props}) => {
-            const id = slugify(String(props.children));
-            return <h1 id={id} {...props}>{props.children}</h1>;
-          },
-          h2: ({node, ...props}) => {
-            const id = slugify(String(props.children));
-            return <h2 id={id} {...props}>{props.children}</h2>;
-          },
-          h3: ({node, ...props}) => {
-            const id = slugify(String(props.children));
-            return <h3 id={id} {...props}>{props.children}</h3>;
-          }
-        }}
-      >
-        {content}
-      </ReactMarkdown>
-      {(prev || next) && (
-        <nav className="prev-next-nav" aria-label="Page navigation">
-          {prev ? (
-            <button
-              onClick={() => navigate(prev.path)}
-              className="btn-primary"
-              style={{ opacity: 1 }}
-            >
-              {'< ' + prev.label}
-            </button>
-          ) : <div />}
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            h1: ({ node, ...props }) => {
+              const id = slugify(String(props.children));
+              return <h1 id={id} {...props}>{props.children}</h1>;
+            },
+            h2: ({ node, ...props }) => {
+              const id = slugify(String(props.children));
+              return <h2 id={id} {...props}>{props.children}</h2>;
+            },
+            h3: ({ node, ...props }) => {
+              const id = slugify(String(props.children));
+              return <h3 id={id} {...props}>{props.children}</h3>;
+            }
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+        {(prev || next) && (
+          <nav className="prev-next-nav" aria-label="Page navigation">
+            {prev ? (
+              <button
+                onClick={() => navigate(prev.path)}
+                className="btn-primary"
+              >
+                <svg className="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                  <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span>{prev.label}</span>
+              </button>
+            ) : <div />}
 
-          {next ? (
-            <button
-              onClick={() => navigate(next.path)}
-              className="btn-primary"
-              style={{ opacity: 1 }}
-            >
-              {next.label + ' >'}
-            </button>
-          ) : <div />}
-        </nav>
-      )}
+            {next ? (
+              <button
+                onClick={() => navigate(next.path)}
+                className="btn-primary"
+              >
+                <span>{next.label}</span>
+                <svg className="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                  <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            ) : <div />}
+          </nav>
+        )}
       </main>
 
       {showToc && (
