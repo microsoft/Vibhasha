@@ -4,13 +4,13 @@ theme:
   name: material
   language: en
   features:
-    - navigation.tabs
-    - navigation.top
-    - toc.integrate
+    - navigation.sections
+    - navigation.instant.progress
+    - navigation.expand
+    - navigation.footer
     - content.code.copy
     - content.code.annotate
     - search.suggest
-    - navigation.sections
     - content.footnote.tooltips
   palette:
     - scheme: default
@@ -31,15 +31,54 @@ nav:
   - Home: index.md
   - Playbook:
       - Introduction: chapters/00-introduction.md
-      - Evaluation: chapters/01-evaluation.md
-      - Using LLMs Off-the-shelf: chapters/02-translation.md
+      - Evaluation:
+          - Overview: chapters/01_evaluation/01-overview.md
+          - Core Methodologies: chapters/01_evaluation/02-methodologies.md
+          - MT in Low-Resource Settings: chapters/01_evaluation/03-low-resource.md
+          - MT Evaluation Advisory: chapters/01_evaluation/04-advisory.md
+          - MT Specific Scenarios: chapters/01_evaluation/05-scenarios.md
+          - Dataset Discovery: chapters/01_evaluation/06-datasets.md
+          - Critical Challenges: chapters/01_evaluation/07-challenges.md
+      - Using LLMs Off-the-shelf:
+          - Overview: chapters/02_translation/01-overview.md
+          - Strategic Crossroads: chapters/02_translation/02-strategic-crossroads.md
+          - Translation Architectures: chapters/02_translation/03-architectures.md
+          - System Adaptation: chapters/02_translation/04-adaptation.md
+          - Quality Assurance: chapters/02_translation/05-quality-assurance.md
+          - Cultural Nuance: chapters/02_translation/06-cultural-nuance.md
+          - Recommendations: chapters/02_translation/07-recommendations.md
       # - Off-the-shelf LLMs: chapters/03-off-the-shelf.md
-      - Fine-tuning LLMs: chapters/04-fine-tuning.md
-      - Safety : chapters/05-safety.md
-      - Synthetic Data : chapters/06-synthetic-data.md
-      - Culture and Multilinguality: chapters/07-culture.md
+      - Fine-tuning LLMs:
+          - Overview: chapters/04_fine-tuning/01-overview.md
+          - Pipeline: chapters/04_fine-tuning/02-pipeline.md
+          - Methodologies: chapters/04_fine-tuning/03-methodologies.md
+          - Data Engineering: chapters/04_fine-tuning/04-data-engineering.md
+          - Cultural Alignment: chapters/04_fine-tuning/05-alignment.md
+          - Quality Assurance: chapters/04_fine-tuning/06-quality.md
+          - Implementation: chapters/04_fine-tuning/07-implementation.md
+      - Safety:
+          - Overview: chapters/05_safety/01-overview.md
+          - Vulnerabilities: chapters/05_safety/02-vulnerabilities.md
+          - Benchmarks: chapters/05_safety/03-benchmarks.md
+          - Red Teaming: chapters/05_safety/04-red-teaming.md
+          - Toolkits: chapters/05_safety/05-toolkits.md
+      - Synthetic Data:
+          - Overview: chapters/06_synthetic-data/01-overview.md
+          - Approaches: chapters/06_synthetic-data/02-approaches.md
+          - Quality Assurance: chapters/06_synthetic-data/03-quality.md
+          - Evaluation: chapters/06_synthetic-data/04-evaluation.md
+          - Case Study: chapters/06_synthetic-data/05-case-study.md
+          - Implementation: chapters/06_synthetic-data/06-implementation.md
+      - Culture and Multilinguality:
+          - Overview: chapters/07_culture/01-overview.md
+          - Frameworks: chapters/07_culture/02-frameworks.md
+          - Data & Benchmarks: chapters/07_culture/03-data-benchmarks.md
+          - Modeling Strategies: chapters/07_culture/04-modeling.md
+          - Prompt Engineering: chapters/07_culture/05-prompt-engineering.md
+          - Evaluation: chapters/07_culture/06-evaluation.md
+          - Conclusion: chapters/07_culture/07-conclusion.md
       - Conclusion: chapters/99-conclusion.md
-      - ToDos: chapters/ToDos.md
+      # - ToDos: chapters/ToDos.md
   - Interactive Flowchart: interactive/flowchart.md
 
 plugins:
@@ -87,3 +126,18 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/microsoft
+      link: https://www.microsoft.com
+      name: Microsoft
+  generator: false
+
+copyright: >
+  © 2025 Microsoft |
+  <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a> |
+  <a href="https://go.microsoft.com/fwlink/?linkid=2259814" target="_blank">Consumer Health Privacy</a> |
+  <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of Use</a> |
+  <a href="https://www.microsoft.com/trademarks" target="_blank">Trademarks</a>
+
