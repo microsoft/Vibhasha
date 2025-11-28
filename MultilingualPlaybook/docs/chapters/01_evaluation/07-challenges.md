@@ -1,4 +1,4 @@
-## Addressing Critical Challenges in LLM Evaluation
+## Critical Challenges in LLM Evaluation
 
 LLM evaluation faces significant challenges beyond methodological design, including pervasive data contamination and the complexities of multilingual and multicultural assessment.
 

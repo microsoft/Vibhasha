@@ -24,7 +24,7 @@ This imbalance means that automated systems increasingly mediating global online
 
 ### Translation as a Bridge Strategy
 
-In this context, automatic translation emerges as a **pragmatic, powerful, and often necessary strategy** to bridge this capability gap. By translating non-English inputs into English using either dedicated machine translation (MT) services (like Google Translate or Azure Translate) or the translation capabilities of other LLMs, practitioners can leverage the formidable reasoning and generation capabilities of English-dominant models for global applications before translating the output back to the source language.[^12][^2][^13]
+In this context, automatic translation emerges as a **pragmatic, powerful, and often necessary strategy** to bridge this capability gap. By translating non-English inputs into English using either dedicated machine translation (MT) services (like Azure Translate) or the translation capabilities of other LLMs, practitioners can leverage the formidable reasoning and generation capabilities of English-dominant models for global applications before translating the output back to the source language.[^12][^2][^13]
 
 !!! warning "The Trade-offs"
     Translation is **not a universal solution**. It introduces complex trade-offs:

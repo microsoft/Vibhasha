@@ -1,0 +1,2437 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../04-advisory/">
+      
+      
+        <link rel="next" href="../06-datasets/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>MT Specific Scenarios - Vibhasha - The Multilingual Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#challenges-in-mt-evaluation-for-specific-scenarios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Vibhasha - The Multilingual Playbook" class="md-header__button md-logo" aria-label="Vibhasha - The Multilingual Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vibhasha - The Multilingual Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MT Specific Scenarios
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Vibhasha - The Multilingual Playbook" class="md-nav__button md-logo" aria-label="Vibhasha - The Multilingual Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vibhasha - The Multilingual Playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Playbook
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Playbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-low-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT in Low-Resource Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-advisory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT Evaluation Advisory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MT Specific Scenarios
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT Specific Scenarios
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-mt-evaluation-for-specific-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in MT Evaluation for Specific Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenges in MT Evaluation for Specific Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#long-form-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Form Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-specific-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain-Specific Terminology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-implementation-code-snippets-for-automated-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Implementation: Code Snippets for Automated Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Implementation: Code Snippets for Automated Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up the Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-gram-overlap-metrics-implementation-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      N-gram Overlap Metrics Implementation (BLEU)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-based-metrics-implementation-bertscore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedding-based Metrics Implementation (BERTScore)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moverscore-conceptual-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoverScore (Conceptual Setup)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-framework-for-llm-as-judge-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptual Framework for LLM-as-Judge Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusions-and-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusions and Recommendations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dataset Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Critical Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Using LLMs Off-the-shelf
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Using LLMs Off-the-shelf
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/02-strategic-crossroads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strategic Crossroads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/03-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Translation Architectures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/04-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Adaptation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/05-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/06-cultural-nuance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cultural Nuance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/07-recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fine-tuning LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fine-tuning LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/02-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/03-methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/04-data-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/05-alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cultural Alignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/06-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/07-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Safety
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Safety
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/02-vulnerabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/03-benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/04-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Teaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/05-toolkits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Toolkits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Synthetic Data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Synthetic Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/02-approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Approaches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/03-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/04-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/05-case-study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Case Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/06-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Culture and Multilinguality
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Culture and Multilinguality
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/02-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/03-data-benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data & Benchmarks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/04-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modeling Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/05-prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/06-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/07-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interactive/flowchart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Flowchart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-mt-evaluation-for-specific-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in MT Evaluation for Specific Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenges in MT Evaluation for Specific Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#long-form-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long-Form Translation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-specific-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain-Specific Terminology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-implementation-code-snippets-for-automated-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Implementation: Code Snippets for Automated Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Implementation: Code Snippets for Automated Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up the Environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-gram-overlap-metrics-implementation-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      N-gram Overlap Metrics Implementation (BLEU)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-based-metrics-implementation-bertscore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedding-based Metrics Implementation (BERTScore)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moverscore-conceptual-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoverScore (Conceptual Setup)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conceptual-framework-for-llm-as-judge-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptual Framework for LLM-as-Judge Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusions-and-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusions and Recommendations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>MT Specific Scenarios</h1>
+
+<h2 id="challenges-in-mt-evaluation-for-specific-scenarios">Challenges in MT Evaluation for Specific Scenarios<a class="headerlink" href="#challenges-in-mt-evaluation-for-specific-scenarios" title="Permanent link">&para;</a></h2>
+<p>Beyond general evaluation considerations, specific translation scenarios introduce unique complexities that demand tailored evaluation approaches.</p>
+<h3 id="long-form-translation">Long-Form Translation<a class="headerlink" href="#long-form-translation" title="Permanent link">&para;</a></h3>
+<p>Translating long-form content such as documents, articles, or books poses distinct challenges for MT systems that require specialized evaluation approaches.</p>
+<div class="admonition warning">
+<p class="admonition-title">Document-Level Challenges</p>
+<p><strong>Coherence Across Sentences</strong><br />
+Maintaining consistent terminology, discourse markers, logical flow, and overall narrative coherence across sentences and paragraphs—sentence-level metrics are ill-equipped to capture these errors</p>
+<p><strong>Global Contextual Understanding</strong><br />
+MT systems often lack the necessary understanding to correctly translate ambiguous words/phrases whose meaning is determined by surrounding text across an entire document</p>
+<p><strong>Coreference Resolution</strong><br />
+Accurately resolving pronouns and maintaining coreference chains throughout long text is a persistent and complex challenge, extremely difficult to evaluate automatically</p>
+<p><strong>Stylistic Consistency</strong><br />
+Maintaining consistent tone, style, and register across an entire document is crucial for professional translations but often overlooked by automated metrics</p>
+</div>
+<h4 id="evaluation-approaches-for-long-form-content">Evaluation Approaches for Long-Form Content<a class="headerlink" href="#evaluation-approaches-for-long-form-content" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Human Review (Essential)</label><label for="__tabbed_1_2">Emerging Automated Metrics</label><label for="__tabbed_1_3">Specialized Error Annotation</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Focus</strong>: Document-level quality attributes</p>
+<ul>
+<li>Overall coherence</li>
+<li>Logical consistency</li>
+<li>Stylistic appropriateness</li>
+<li>Global readability</li>
+</ul>
+<p><strong>Key</strong>: Annotators must evaluate text as a whole, not just isolated sentences</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Status</strong>: Research actively exploring development</p>
+<ul>
+<li>Cross-sentence phenomena evaluation</li>
+<li>Discourse-level quality assessment</li>
+</ul>
+<p><strong>Reality</strong>: Not yet widely adopted or robust for general use</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Training</strong>: Annotators specifically trained to identify and categorize:</p>
+<ul>
+<li>Errors spanning multiple sentences</li>
+<li>Issues affecting overall document structure</li>
+<li>Problems with document-level meaning</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">The Document-Level Evaluation Gap</p>
+<p>The vast majority of current automated MT metrics (BLEU, BERTScore) are designed to operate at the <strong>sentence level</strong>. However, long-form translation quality critically depends on <strong>document-level attributes</strong> such as:</p>
+<ul>
+<li>Overall coherence</li>
+<li>Consistency of terminology</li>
+<li>Global contextual understanding</li>
+</ul>
+<p><strong>The Critical Problem</strong>: A high score on sentence-level metrics <strong>does not guarantee</strong> high-quality long-form translation. An MT system might translate individual sentences flawlessly but fail to connect them meaningfully, leading to a fragmented, inconsistent, or confusing overall output.</p>
+<p><strong>This is analogous to seeing the trees (individual sentences) but missing the forest (the coherent document).</strong></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Current State &amp; Future Needs</p>
+<p>This highlights a significant and persistent gap in current automated evaluation capabilities for practical, real-world MT applications involving continuous text.</p>
+<p><strong>It necessitates:</strong></p>
+<ul>
+<li>Greater reliance on human evaluation for long-form content</li>
+<li>Urgent need for new research into document-level automated metrics</li>
+<li>Development of LLM-as-judge approaches specifically designed to assess coherence and consistency across entire texts</li>
+</ul>
+</div>
+<h3 id="domain-specific-terminology">Domain-Specific Terminology<a class="headerlink" href="#domain-specific-terminology" title="Permanent link">&para;</a></h3>
+<p>In specialized fields (technical, medical, legal domains), accurate and consistent translation of specific terminology is <strong>paramount</strong>—errors can have severe, even dangerous, consequences.</p>
+<div class="admonition danger">
+<p class="admonition-title">High-Stakes Domain Translation</p>
+<p><strong>Critical Accuracy Requirement</strong><br />
+Errors in domain-specific terms can lead to:</p>
+<ul>
+<li>Legal liabilities</li>
+<li>Medical misdiagnosis</li>
+<li>Safety hazards</li>
+<li>Operational failures</li>
+</ul>
+</div>
+<div class="grid">
+<div class="admonition failure">
+<p class="admonition-title">MT System Challenges</p>
+<p><strong>Rare/Specialized Vocabulary</strong><br />
+Struggle with highly specialized or ambiguous vocabulary without proper domain adaptation</p>
+<p><strong>Polysemy Issues</strong><br />
+Domain-specific terms may have different meanings in general language, leading to mistranslations</p>
+<p><strong>Glossary Adherence</strong><br />
+Ensuring adherence to client-specific glossaries, term bases, or style guides poses significant challenges</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Evaluation Solutions</p>
+<p><strong>Domain-Representative Test Sets</strong><br />
+Assess MT performance using test sets highly representative of specific domains</p>
+<p><strong>Subject Matter Experts</strong><br />
+Involve human evaluators who are domain experts for accurate assessment</p>
+<p><strong>Specialized Metrics</strong><br />
+Develop metrics focusing on correct translation and consistent usage of predefined key terms</p>
+</div>
+</div>
+<h4 id="evaluation-framework-for-domain-specific-mt">Evaluation Framework for Domain-Specific MT<a class="headerlink" href="#evaluation-framework-for-domain-specific-mt" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Evaluation Component</th>
+<th>Requirement</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Test Sets</strong></td>
+<td>Domain-representative with domain-specific glossaries/term bases</td>
+<td>Accurate validation of terminology usage</td>
+</tr>
+<tr>
+<td><strong>Human Evaluators</strong></td>
+<td>Subject matter experts in specific domain</td>
+<td>Assess terminology correctness and contextual appropriateness</td>
+</tr>
+<tr>
+<td><strong>Automated Metrics</strong></td>
+<td>Custom metrics focused on key term translation</td>
+<td>Extract and verify presence/accuracy of critical terms</td>
+</tr>
+<tr>
+<td><strong>Error Analysis</strong></td>
+<td>Detailed classification of terminology errors</td>
+<td>Identify patterns and guide improvements</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">From Quality Check to Risk Management</p>
+<p>Evaluation in domain-specific settings is not merely about general linguistic quality—it is fundamentally about <strong>critical accuracy and risk mitigation</strong>.</p>
+<p>A seemingly minor linguistic error in a technical term could render:</p>
+<ul>
+<li>A medical report <strong>unusable</strong></li>
+<li>A legal document <strong>unenforceable</strong></li>
+<li>A safety manual <strong>dangerous</strong></li>
+</ul>
+<p>This elevates evaluation from a general quality check to a <strong>crucial part of a risk management framework</strong>.</p>
+</div>
+<p><strong>Implications for High-Stakes Applications:</strong></p>
+<p>For high-stakes domain-specific MT applications, the evaluation strategy must be far more rigorous:</p>
+<ul>
+<li>✅ Mandatory domain expert review</li>
+<li>✅ Creation of highly specialized test sets</li>
+<li>✅ Potentially custom metrics focused on terminology and guideline adherence</li>
+</ul>
+<p>The perceived cost of human evaluation, while high, becomes a <strong>necessary investment to mitigate significant operational, financial, or safety risks</strong> associated with inaccurate domain translations.</p>
+<h3 id="formatting-issues">Formatting Issues<a class="headerlink" href="#formatting-issues" title="Permanent link">&para;</a></h3>
+<p>MT systems frequently struggle to correctly handle and preserve non-textual elements—a challenge often overlooked but critical for functional translation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common Formatting Challenges</p>
+<p><strong>Non-Textual Elements</strong><br />
+Internal tags (XML, HTML, DTP), placeholders (variables, product codes), numbers, dates, currencies, units—often treated as plain text and inadvertently translated, altered, or omitted</p>
+<p><strong>Structural Integrity</strong><br />
+Maintaining document structure including line breaks, paragraph breaks, bullet points, numbering, bolding, italics, and other formatting attributes</p>
+<p><strong>Functional Impact</strong><br />
+Errors in formatting can lead to an unusable output, even if the linguistic translation is otherwise correct</p>
+</div>
+<h4 id="evaluation-strategies-for-formatting">Evaluation Strategies for Formatting<a class="headerlink" href="#evaluation-strategies-for-formatting" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Automated Validation</label><label for="__tabbed_2_2">Visual Inspection</label><label for="__tabbed_2_3">Custom Scripts</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Implementation</strong>: Scripts to validate preservation of:</p>
+<ul>
+<li>Tags and placeholders</li>
+<li>Other non-textual elements</li>
+<li>Structural components</li>
+</ul>
+<p><strong>Method</strong>: Compare source and target documents' structural elements</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Human Review</strong>: Critical visual inspection of formatted output</p>
+<ul>
+<li>Verify structural elements correctly rendered</li>
+<li>Check layout and non-textual components integrated properly</li>
+<li>Often requires specialized tools (DTP, CMS)</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><strong>Tailored Validation</strong>: Custom scripts for specific:</p>
+<ul>
+<li>Document types</li>
+<li>Tag sets</li>
+<li>Critical formatting elements</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">The Hidden Functional Barrier</p>
+<p>Standard MT evaluation metrics primarily focus on <strong>linguistic quality</strong> (fluency, adequacy, semantic similarity). However, MT systems frequently struggle with preserving non-textual elements and maintaining document formatting.</p>
+<p><strong>The Critical Problem</strong>: Even a machine translation that is <strong>linguistically perfect</strong> can be rendered <strong>completely unusable</strong> or require extensive manual rework if its formatting or structural elements are corrupted.</p>
+<p>This creates a hidden, yet critical, barrier to practical deployment that traditional linguistic metrics fail to detect. The translation might be "good" linguistically but "bad" functionally.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Comprehensive Evaluation Framework</p>
+<p>A comprehensive MT evaluation framework must extend significantly beyond mere linguistic quality to include <strong>"usability"</strong> and <strong>"fidelity to source format"</strong> as explicit evaluation criteria.</p>
+<p><strong>Best Practice</strong>: Automated checks for formatting integrity and non-textual element preservation should be a <strong>standard, mandatory part</strong> of the evaluation pipeline, potentially even acting as a basic pass/fail criterion for functional translation before deeper linguistic assessment.</p>
+</div>
+<hr />
+<h2 id="practical-implementation-code-snippets-for-automated-evaluation">Practical Implementation: Code Snippets for Automated Evaluation<a class="headerlink" href="#practical-implementation-code-snippets-for-automated-evaluation" title="Permanent link">&para;</a></h2>
+<p>This section provides practical code examples for implementing automated MT evaluation metrics, along with setup instructions.</p>
+<h3 id="setting-up-the-environment">Setting Up the Environment<a class="headerlink" href="#setting-up-the-environment" title="Permanent link">&para;</a></h3>
+<p>To run the following code snippets, ensure Python (version 3.8+ recommended) is installed. It is best practice to create a virtual environment to manage dependencies:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>mt_eval_env
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span>mt_eval_env/bin/activate<span class="w"> </span><span class="c1"># On Windows: .\mt_eval_env\Scripts\activate</span>
+</span></code></pre></div>
+<p>Install the necessary libraries:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>sacrebleu<span class="w"> </span>transformers<span class="w"> </span>evaluate<span class="w"> </span>torch<span class="w"> </span>scipy<span class="w"> </span>numpy
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># For MoverScore, you might need: pip install moverscore_v2</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p><code>torch</code> is a dependency for <code>transformers</code> when using models like BERT.</p>
+</div>
+<h3 id="n-gram-overlap-metrics-implementation-bleu">N-gram Overlap Metrics Implementation (BLEU)<a class="headerlink" href="#n-gram-overlap-metrics-implementation-bleu" title="Permanent link">&para;</a></h3>
+<p>The BLEU score is a widely used metric for evaluating the quality of machine-translated text. It measures similarity between the machine translation and high-quality human reference translations by counting n-gram overlaps. The <code>sacrebleu</code> library provides a standardized and robust implementation.</p>
+<div class="admonition warning">
+<p class="admonition-title">Low-Resource Consideration</p>
+<p>In low-resource settings, a single reference can lead to lower scores even for good translations, as valid lexical variations are penalized.</p>
+</div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sacrebleu</span><span class="w"> </span><span class="kn">import</span> <span class="n">corpus_bleu</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Candidate translation (MT output)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">candidate_sentences</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s2">&quot;A cat sat on the mat.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s2">&quot;The quick brown fox jumps.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s2">&quot;Apples are delicious to eat.&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">]</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Reference translations (can be multiple lists for better robustness)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Each inner list corresponds to a different reference for all candidate sentences</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">reference_sentences</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="p">[</span><span class="s2">&quot;A feline rested on the rug.&quot;</span><span class="p">,</span> <span class="s2">&quot;The swift fox leaps.&quot;</span><span class="p">,</span> <span class="s2">&quot;Apples are tasty.&quot;</span><span class="p">],</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="p">[</span><span class="s2">&quot;A cat sat on the rug.&quot;</span><span class="p">,</span> <span class="s2">&quot;Apples are good to eat.&quot;</span><span class="p">]</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">]</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># For low-resource settings, often only one reference is available:</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">single_reference_sentences</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="s2">&quot;A feline rested on the rug.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="s2">&quot;A quick fox runs.&quot;</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="s2">&quot;Apples are a good fruit to consume.&quot;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">]</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="c1"># Calculate BLEU score with multiple references</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="n">bleu_score_multi_ref</span> <span class="o">=</span> <span class="n">corpus_bleu</span><span class="p">(</span><span class="n">candidate_sentences</span><span class="p">,</span> <span class="n">reference_sentences</span><span class="p">)</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BLEU score (multi-reference): </span><span class="si">{</span><span class="n">bleu_score_multi_ref</span><span class="o">.</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1"># Calculate BLEU score with a single reference (common in low-resource)</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="n">bleu_score_single_ref</span> <span class="o">=</span> <span class="n">corpus_bleu</span><span class="p">(</span><span class="n">candidate_sentences</span><span class="p">,</span> <span class="p">[</span><span class="n">single_reference_sentences</span><span class="p">])</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BLEU score (single reference): </span><span class="si">{</span><span class="n">bleu_score_single_ref</span><span class="o">.</span><span class="n">score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="c1"># Explanation: A lower score with single reference, even for good translations,</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="c1"># highlights BLEU&#39;s sensitivity to reference diversity and its limitations in low-resource settings.</span>
+</span></code></pre></div>
+<h3 id="embedding-based-metrics-implementation-bertscore">Embedding-based Metrics Implementation (BERTScore)<a class="headerlink" href="#embedding-based-metrics-implementation-bertscore" title="Permanent link">&para;</a></h3>
+<p>Embedding-based metrics like BERTScore overcome the limitations of n-gram overlap metrics by assessing semantic similarity using contextual word embeddings. They are particularly valuable in low-resource settings because they can capture valid paraphrases and synonyms, providing a more robust measure of quality even when exact lexical matches are scarce.</p>
+<p>The <code>evaluate</code> library provides a convenient interface for BERTScore:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">evaluate</span><span class="w"> </span><span class="kn">import</span> <span class="n">load</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Load the BERTScore metric</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">bertscore</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="s2">&quot;bertscore&quot;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Example candidate and reference sentences</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">candidate_sentences</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="s2">&quot;A cat sat on the mat.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="s2">&quot;The quick brown fox jumps.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="s2">&quot;Apples are delicious to eat.&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">]</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">reference_sentences</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="s2">&quot;A feline rested on the rug.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="s2">&quot;A swift fox leaps.&quot;</span><span class="p">,</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="s2">&quot;Apples taste great.&quot;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">]</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1"># Calculate BERTScore</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># model_type can be changed, e.g., &quot;bert-base-multilingual-cased&quot; for multilingual tasks</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="n">results</span> <span class="o">=</span> <span class="n">bertscore</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">predictions</span><span class="o">=</span><span class="n">candidate_sentences</span><span class="p">,</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="n">references</span><span class="o">=</span><span class="n">reference_sentences</span><span class="p">,</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="n">model_type</span><span class="o">=</span><span class="s2">&quot;bert-base-uncased&quot;</span><span class="p">,</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="n">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>  <span class="c1"># Specify language for better performance</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>    <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span>  <span class="c1"># Use &quot;cuda&quot; if GPU is available</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="p">)</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="c1"># BERTScore returns precision, recall, and F1 scores for each sentence.</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="c1"># The F1 score is often used as a balanced measure.</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">BERTScore F1 scores: </span><span class="si">{</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average BERTScore F1: </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="c1"># Explanation: Notice how the second candidate sentence, while lexically different,</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c1"># might still get a reasonable BERTScore due to semantic similarity.</span>
+</span></code></pre></div>
+<h3 id="moverscore-conceptual-setup">MoverScore (Conceptual Setup)<a class="headerlink" href="#moverscore-conceptual-setup" title="Permanent link">&para;</a></h3>
+<p>MoverScore, based on Word Mover's Distance, is excellent at capturing semantic distance even with low n-gram overlap by considering the "cost" of transforming one set of word embeddings into another. Its implementation is slightly more involved than BLEU or BERTScore as it often requires pre-computing IDF weights and managing embedding extraction.</p>
+<p>The following provides a conceptual setup, as a full runnable example requires more boilerplate code for tokenization and embedding:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Conceptual MoverScore calculation (requires &#39;moverscore_v2&#39; library setup)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># pip install moverscore_v2</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># pip install transformers</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># from moverscore_v2 import get_idf_dict, word_moverscore</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># from transformers import AutoTokenizer, AutoModel</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- MoverScore Conceptual Setup ---&quot;</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MoverScore assesses semantic distance using contextual embeddings, robust to low n-gram overlap.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A full implementation involves:&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Loading a pre-trained language model (e.g., BERT) and its tokenizer.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Tokenizing sentences and extracting contextual embeddings.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Computing Inverse Document Frequency (IDF) weights for words (get_idf_dict).&quot;</span><span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Calculating the Word Mover&#39;s Distance using the embeddings and IDF weights (word_moverscore).&quot;</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Example usage with the &#39;moverscore_v2&#39; library (pseudo-code):&quot;</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tokenizer = AutoTokenizer.from_pretrained(&#39;bert-base-uncased&#39;)&quot;</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;model = AutoModel.from_pretrained(&#39;bert-base-uncased&#39;)&quot;</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;candidate_tokens = [tokenizer.tokenize(s) for s in candidate_sentences]&quot;</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;reference_tokens = [tokenizer.tokenize(s) for s in reference_sentences]&quot;</span><span class="p">)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;idf_dict_ref = get_idf_dict(reference_tokens)&quot;</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;idf_dict_cand = get_idf_dict(candidate_tokens)&quot;</span><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;scores = word_moverscore(references=reference_tokens, hypotheses=candidate_tokens, </span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;              idf_dict_ref=idf_dict_ref, idf_dict_hyp=idf_dict_cand, model=model, tokenizer=tokenizer)&quot;</span><span class="p">)</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MoverScore typically returns a distance (lower is better) or a similarity score (higher is better).&quot;</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="conceptual-framework-for-llm-as-judge-setup">Conceptual Framework for LLM-as-Judge Setup<a class="headerlink" href="#conceptual-framework-for-llm-as-judge-setup" title="Permanent link">&para;</a></h3>
+<p>Leveraging LLMs as judges offers a powerful way to obtain human-like quality assessments at scale. The core idea involves crafting a detailed prompt that guides the LLM to perform the evaluation task. This framework outlines the general workflow, emphasizing the critical role of prompt engineering and the need to address potential biases.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>  <span class="c1"># Assuming OpenAI API, but adaptable to other LLMs (e.g., Anthropic, Google)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_mt_with_llm</span><span class="p">(</span><span class="n">source_text</span><span class="p">,</span> <span class="n">mt_output</span><span class="p">,</span> <span class="n">reference_text</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    Evaluates Machine Translation output using an LLM as a judge.</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">    Emphasizes prompt engineering for quality and bias control.</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="c1"># 1. Define the prompt template (critical for quality and bias control)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">prompt_template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="s2">You are an expert linguist and a highly critical machine translation evaluator. Your task is to assess the quality</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="s2">of a machine translation from a given source text.</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="s2">Source Text:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="s2">&quot;</span><span class="si">{source}</span><span class="s2">&quot;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="s2">Machine Translation:</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="s2">&quot;</span><span class="si">{mt_output}</span><span class="s2">&quot;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">if</span> <span class="n">reference_text</span><span class="p">:</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="n">prompt_template</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Human Reference Translation (for context, not strict adherence):&quot;</span> \
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>                           <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n\&quot;</span><span class="si">{</span><span class="n">reference_text</span><span class="si">}</span><span class="se">\&quot;\n</span><span class="s2">&quot;</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="n">prompt_template</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="s2">Evaluate the Machine Translation based on the following criteria:</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="s2">1.  **Fluency (0-5):** How grammatically correct, natural, and readable is the MT output? Is it free of awkward phrasing or errors?</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="s2">2.  **Adequacy (0-5):** How much of the meaning from the source text is preserved in the MT output? Is anything missing, added, or mistranslated?</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="s2">3.  **Coherence (0-5):** (Applicable for multi-sentence outputs) Does the MT flow logically and consistently?</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="s2">4.  **Terminology Accuracy (0-5):** (If applicable, focus on domain-specific terms) Are key terms translated correctly and consistently?</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="s2">Provide a score for each criterion (0=Very Poor, 5=Excellent).</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="s2">Then, provide a brief, concise justification for each score, highlighting specific examples of strengths or weaknesses.</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="s2">Finally, provide an overall quality score (0-100) and a summary assessment.</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="s2">Format your response strictly as follows:</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="s2">Fluency: /5</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="s2">Fluency Justification: </span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="s2">Adequacy: /5</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="s2">Adequacy Justification: </span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="s2">Coherence: /5</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="s2">Coherence Justification: </span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="s2">Terminology Accuracy: /5</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="s2">Terminology Accuracy Justification: </span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="s2">Overall Score: /100</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="s2">Summary Assessment: [Overall summary and actionable feedback]</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>    <span class="c1"># 2. Format the prompt with actual content</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>    <span class="n">formatted_prompt</span> <span class="o">=</span> <span class="n">prompt_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">source_text</span><span class="p">,</span> <span class="n">mt_output</span><span class="o">=</span><span class="n">mt_output</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="n">reference_text</span><span class="p">)</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>    <span class="c1"># 3. Make API call to the LLM</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>        <span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">OpenAI</span><span class="p">()</span>  <span class="c1"># Assumes OpenAI API key is set as environment variable</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>        <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a>            <span class="n">model</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a>            <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">formatted_prompt</span><span class="p">}],</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>            <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>  <span class="c1"># Lower temperature for more deterministic output</span>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a>            <span class="n">max_tokens</span><span class="o">=</span><span class="mi">500</span>  <span class="c1"># Adjust as needed</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a>        <span class="p">)</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>        <span class="n">llm_response_content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a>        <span class="k">return</span> <span class="n">llm_response_content</span>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error calling LLM API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a>        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="c1"># Example Usage (conceptual)</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="n">source_example</span> <span class="o">=</span> <span class="s2">&quot;The quick brown fox jumps over the lazy dog.&quot;</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a><span class="n">mt_example_good</span> <span class="o">=</span> <span class="s2">&quot;Der schnelle braune Fuchs springt über den faulen Hund.&quot;</span>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="n">mt_example_bad</span> <span class="o">=</span> <span class="s2">&quot;Schnell braun Fuchs springt faul Hund.&quot;</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="c1"># Evaluate a good translation</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- Evaluating Good Translation ---&quot;</span><span class="p">)</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="n">evaluation_good</span> <span class="o">=</span> <span class="n">evaluate_mt_with_llm</span><span class="p">(</span><span class="n">source_example</span><span class="p">,</span> <span class="n">mt_example_good</span><span class="p">)</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="k">if</span> <span class="n">evaluation_good</span><span class="p">:</span>
+</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">evaluation_good</span><span class="p">)</span>
+</span><span id="__span-5-78"><a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a>
+</span><span id="__span-5-79"><a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a><span class="c1"># Evaluate a bad translation</span>
+</span><span id="__span-5-80"><a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Evaluating Bad Translation ---&quot;</span><span class="p">)</span>
+</span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="n">evaluation_bad</span> <span class="o">=</span> <span class="n">evaluate_mt_with_llm</span><span class="p">(</span><span class="n">source_example</span><span class="p">,</span> <span class="n">mt_example_bad</span><span class="p">)</span>
+</span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="k">if</span> <span class="n">evaluation_bad</span><span class="p">:</span>
+</span><span id="__span-5-83"><a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">evaluation_bad</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Important Considerations for LLM-as-Judge</p>
+<p><strong>Prompt Engineering</strong><br />
+This is the most critical aspect. Iteratively refine the prompt, scoring rubrics, and examples to guide the LLM effectively and reduce biases.</p>
+<p><strong>Bias Mitigation</strong><br />
+Actively test for and address biases like length preference, position bias, or preference for certain MT models. Techniques include A/B testing, pairwise comparisons, and diverse few-shot examples.</p>
+<p><strong>Validation</strong><br />
+Always validate LLM judgments against a small, high-quality human evaluation set to ensure the LLM's scores align with human perception of quality.</p>
+<p><strong>Cost Management</strong><br />
+Monitor API usage and costs, especially for large-scale evaluations.</p>
+</div>
+<hr />
+<h2 id="6-conclusions-and-recommendations">6. Conclusions and Recommendations<a class="headerlink" href="#6-conclusions-and-recommendations" title="Permanent link">&para;</a></h2>
+<p>Evaluating machine translation quality, particularly in low-resource settings, is a multifaceted challenge that demands a sophisticated and adaptive approach. The inherent scarcity of parallel data in these environments profoundly impacts both MT model training and the reliability of evaluation metrics, creating a cycle where data limitations hinder both development and assessment.[1, 2]</p>
+<p>Traditional n-gram overlap metrics, while computationally efficient, demonstrate significant limitations in low-resource contexts due to their reliance on exact lexical matches and the scarcity of diverse human references.[7, 8, 10, 11] This can lead to misleading scores that do not accurately reflect true translation quality.[4, 8] Therefore, for meaningful progress tracking and system comparison in data-scarce environments, a fundamental shift towards semantic embedding-based metrics like BERTScore and MoverScore is necessary.[14] These metrics offer superior capabilities in capturing meaning and are more robust to lexical variations, providing a more reliable assessment of quality.[10, 12, 13, 14]</p>
+<p>The emergence of LLM-as-judge evaluation offers a promising avenue for scalable, nuanced quality assessment, providing human-like feedback that traditional automated metrics cannot.[17, 18] However, its application in low-resource settings requires extreme caution due to the potential for inherent biases and a high dependency on meticulous prompt engineering.[17, 19, 20] Without rigorous calibration and validation against human judgments, LLM-generated scores might merely reflect internal biases rather than true translation quality.[19, 20]</p>
+<p>Human evaluation remains the gold standard for assessing translation quality, capable of capturing nuances, cultural appropriateness, and stylistic elements that automated metrics often miss.[5, 11, 22] In low-resource settings, where automated metrics are less reliable, human evaluation should be viewed as a strategic investment rather than merely a cost.[11, 22] Even limited, targeted human review can provide invaluable qualitative analysis, validate automated metrics, and guide development efforts effectively.[3]</p>
+<p>Furthermore, specific translation scenarios introduce unique evaluation complexities. Long-form translation necessitates a focus on document-level coherence and consistency, which current sentence-level automated metrics largely fail to capture, highlighting a critical gap that requires greater reliance on human review and future research into discourse-aware metrics.[27, 28] Domain-specific terminology demands highly accurate and consistent translation, where errors can have severe consequences.[24, 25] Evaluation in these high-stakes domains must involve domain expert review and specialized test sets, treating evaluation as a critical risk mitigation strategy.[24] Finally, formatting issues and the preservation of non-textual elements, often overlooked by linguistic metrics, can render an otherwise good translation unusable.[30] Comprehensive evaluation must extend to these "usability" aspects, incorporating automated checks for structural integrity.[30, 32]</p>
+<p><strong>Recommendations for MT Evaluation in Low-Resource Settings:</strong></p>
+<ol>
+<li><strong>Prioritize Semantic Metrics:</strong> Shift from primary reliance on n-gram metrics to embedding-based metrics (e.g., BERTScore, MoverScore) as the default automated choice for tracking progress and comparing MT systems.[14]</li>
+<li><strong>Strategic Human Evaluation:</strong> Allocate resources for targeted human evaluation, even if limited. Use it to calibrate automated metrics, perform in-depth error analysis, and provide final quality assurance, especially for critical content.[5, 11, 22]</li>
+<li><strong>Meticulous Data Curation:</strong> Invest significant effort in creating and curating high-quality, representative test sets and reference translations, acknowledging their status as scarce and strategic resources.[3] Prioritize quality over quantity.[23]</li>
+<li><strong>Cautious LLM-as-Judge Adoption:</strong> Explore LLM-as-judge for scalability, but only after rigorous prompt engineering, proactive bias detection and mitigation, and thorough validation against human benchmarks.[17, 19, 20]</li>
+<li><strong>Tailored Evaluation for Specific Scenarios:</strong><ul>
+<li>For <strong>long-form content</strong>, emphasize human review for document-level coherence and consistency.[28]</li>
+<li>For <strong>domain-specific terminology</strong>, engage subject matter experts and create specialized test sets focusing on terminology accuracy.[23, 24, 25]</li>
+<li>For <strong>formatting issues</strong>, implement automated pre- and post-processing checks and incorporate visual inspection into human review workflows to ensure functional usability.[30, 32, 33]</li>
+</ul>
+</li>
+<li><strong>Adopt a Hybrid Approach:</strong> Combine the efficiency of automated metrics for large-scale screening with the diagnostic power of targeted human evaluation for nuanced insights.[5, 22] No single metric provides a complete picture.[5, 22]</li>
+</ol>
+<p>By adopting these recommendations, researchers and practitioners can navigate the complexities of MT evaluation in low-resource settings, leading to more accurate assessments and ultimately, more effective and useful machine translation systems.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-advisory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MT Evaluation Advisory">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                MT Evaluation Advisory
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-datasets/" class="md-footer__link md-footer__link--next" aria-label="Next: Dataset Discovery">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Dataset Discovery
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Microsoft | <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a> | <a href="https://go.microsoft.com/fwlink/?linkid=2259814" target="_blank">Consumer Health Privacy</a> | <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of Use</a> | <a href="https://www.microsoft.com/trademarks" target="_blank">Trademarks</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.microsoft.com" target="_blank" rel="noopener" title="Microsoft" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32h214.6v214.6H0zm233.4 0H448v214.6H233.4zM0 265.4h214.6V480H0zm233.4 0H448V480H233.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.instant.progress", "navigation.expand", "navigation.footer", "content.code.copy", "content.code.annotate", "search.suggest", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

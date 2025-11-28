@@ -1,0 +1,2241 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01-overview/">
+      
+      
+        <link rel="next" href="../03-low-resource/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Core Methodologies - Vibhasha - The Multilingual Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-methodologies-for-llm-evaluation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Vibhasha - The Multilingual Playbook" class="md-header__button md-logo" aria-label="Vibhasha - The Multilingual Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vibhasha - The Multilingual Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Core Methodologies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Vibhasha - The Multilingual Playbook" class="md-nav__button md-logo" aria-label="Vibhasha - The Multilingual Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vibhasha - The Multilingual Playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Playbook
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Playbook
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Core Methodologies
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Methodologies
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-methodologies-for-llm-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Methodologies for LLM Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Methodologies for LLM Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-main-approaches-to-llm-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three Main Approaches to LLM Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-benchmark-evaluation-standardized-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Benchmark Evaluation: Standardized Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-centric-evaluation-the-gold-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human-Centric Evaluation: The Gold Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-a-judge-a-scalable-paradigm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-a-Judge: A Scalable Paradigm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-low-resource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT in Low-Resource Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-advisory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT Evaluation Advisory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MT Specific Scenarios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dataset Discovery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Critical Challenges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Using LLMs Off-the-shelf
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Using LLMs Off-the-shelf
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/02-strategic-crossroads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strategic Crossroads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/03-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Translation Architectures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/04-adaptation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Adaptation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/05-quality-assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/06-cultural-nuance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cultural Nuance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_translation/07-recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fine-tuning LLMs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Fine-tuning LLMs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/02-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pipeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/03-methodologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/04-data-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/05-alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cultural Alignment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/06-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_fine-tuning/07-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Safety
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Safety
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/02-vulnerabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vulnerabilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/03-benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Benchmarks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/04-red-teaming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Red Teaming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_safety/05-toolkits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Toolkits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Synthetic Data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Synthetic Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/02-approaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Approaches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/03-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/04-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/05-case-study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Case Study
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_synthetic-data/06-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Culture and Multilinguality
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Culture and Multilinguality
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/01-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/02-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/03-data-benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data & Benchmarks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/04-modeling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modeling Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/05-prompt-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/06-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_culture/07-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../99-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interactive/flowchart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Flowchart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-methodologies-for-llm-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Methodologies for LLM Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Methodologies for LLM Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-main-approaches-to-llm-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Three Main Approaches to LLM Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-benchmark-evaluation-standardized-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Benchmark Evaluation: Standardized Assessment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-centric-evaluation-the-gold-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human-Centric Evaluation: The Gold Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-as-a-judge-a-scalable-paradigm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LLM-as-a-Judge: A Scalable Paradigm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Core Methodologies</h1>
+
+<h2 id="core-methodologies-for-llm-evaluation">Core Methodologies for LLM Evaluation<a class="headerlink" href="#core-methodologies-for-llm-evaluation" title="Permanent link">&para;</a></h2>
+<p>Assessing LLMs requires a multifaceted approach that combines the irreplaceable insights of human judgment with the scalability of automated systems. This section delineates the primary methodologies for LLM evaluation, highlighting their strengths, practical considerations, and inherent complexities in multilingual and multicultural settings.</p>
+<h3 id="three-main-approaches-to-llm-evaluation">Three Main Approaches to LLM Evaluation<a class="headerlink" href="#three-main-approaches-to-llm-evaluation" title="Permanent link">&para;</a></h3>
+<p>There are three fundamental approaches to evaluating large language models, each with distinct strengths and limitations:</p>
+<div class="admonition info">
+<p class="admonition-title">Evaluation Approaches Overview</p>
+<p><strong>1. Automated Benchmarking</strong></p>
+<p>Automated benchmarking involves evaluating models on well-defined tasks using datasets with predefined metrics (e.g., accuracy, F1 score). This approach provides standardized, reproducible scores but can suffer from contamination (when evaluation data appears in training sets) and may not capture broader capabilities or generalize well to abstract qualities like "reasoning" or "helpfulness."</p>
+<p><strong>2. Human-as-a-Judge</strong></p>
+<p>Human evaluation leverages human annotators to assess model outputs through direct scoring or pairwise comparisons. This approach captures nuanced qualities and correlates well with human preference, but faces challenges including high costs, potential psychological biases (e.g., preference for assertive or sycophantic responses), and difficulty maintaining consistency across annotators—especially at scale with crowdsourced evaluations.</p>
+<p><strong>3. Model-as-a-Judge</strong></p>
+<p>Using LLMs to evaluate other LLMs' outputs offers scalability and cost-effectiveness compared to human evaluation. However, this approach introduces subtle biases (self-preference, verbosity bias, position bias) and lacks interpretability. The correlations with human judgments must be rigorously validated, particularly for factuality-critical tasks and across different languages and cultures.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Learn More</p>
+<p>For an in-depth exploration of these evaluation paradigms and their philosophical implications, see <a href="https://huggingface.co/blog/clefourrier/llm-evaluation">LLM Evaluation: Why, What, and How</a> by Clémentine Fourrier at Hugging Face.</p>
+</div>
+<h3 id="automated-benchmark-evaluation-standardized-assessment">Automated Benchmark Evaluation: Standardized Assessment<a class="headerlink" href="#automated-benchmark-evaluation-standardized-assessment" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Why Automated Benchmarks Matter</p>
+<p>Automated benchmarks provide <strong>standardized, reproducible, and scalable</strong> evaluation of LLM performance across well-defined tasks. They enable consistent comparison across models and are essential for tracking training progress and non-regression testing.</p>
+</div>
+<p>Automated benchmarking evaluates models on predefined datasets with established metrics, offering objective performance measurements across various capabilities—from question answering and reasoning to language understanding and generation.</p>
+<h4 id="discovering-datasets-for-your-language-and-domain">Discovering Datasets for Your Language and Domain<a class="headerlink" href="#discovering-datasets-for-your-language-and-domain" title="Permanent link">&para;</a></h4>
+<p>Finding appropriate evaluation datasets is the first critical step in automated benchmarking, especially for multilingual and domain-specific applications.</p>
+<div class="admonition tip">
+<p class="admonition-title">Starting Point: LM Evaluation Harness</p>
+<p>The <a href="https://github.com/EleutherAI/lm-evaluation-harness"><strong>EleutherAI LM Evaluation Harness</strong></a> <a href="https://github.com/huggingface/lighteval">Hugging Face LightEval</a> are excellent starting point for discovering and running benchmarks. <a href="https://huggingface.co/spaces/OpenEvals/open_benchmark_index">Open Benchmark Index</a> is a good starting point for discovering evaluation datasets by language, task, and domain. </p>
+</div>
+<h4 id="setting-up-your-evaluation-pipeline">Setting Up Your Evaluation Pipeline<a class="headerlink" href="#setting-up-your-evaluation-pipeline" title="Permanent link">&para;</a></h4>
+<p>Once you've identified relevant datasets, establishing a robust evaluation setup ensures consistent and reliable results.</p>
+<h5 id="multiple-choice-question-mcq-evaluation">Multiple-Choice Question (MCQ) Evaluation<a class="headerlink" href="#multiple-choice-question-mcq-evaluation" title="Permanent link">&para;</a></h5>
+<p>MCQ evaluation typically uses one of two approaches: <strong>log-likelihood scoring</strong> or <strong>answer generation</strong>.</p>
+<p><strong>1. Log-Likelihood Scoring (Recommended for MCQs)</strong></p>
+<p>This approach compares the model's predicted probabilities for each answer option:
+- For each question with options A, B, C, D, the model computes log-likelihood for each option
+- The option with highest likelihood is selected as the answer
+- This method is more reliable for multiple-choice as it directly assesses model's confidence in each choice</p>
+<p><strong>2. Answer Generation Approach</strong></p>
+<p>Alternatively, generate the answer and match it against the correct option.</p>
+<div class="admonition warning">
+<p class="admonition-title">MCQ Evaluation Considerations</p>
+<ul>
+<li><strong>Position bias</strong>: Models may favor certain positions (e.g., option A). Evaluate with shuffled options if possible.</li>
+<li><strong>Language of options</strong>: Ensure option labels (A/B/C/D) match your prompt format.</li>
+<li><strong>Few-shot examples</strong>: Number and selection of examples can significantly impact scores.</li>
+</ul>
+</div>
+<h5 id="generative-task-evaluation">Generative Task Evaluation<a class="headerlink" href="#generative-task-evaluation" title="Permanent link">&para;</a></h5>
+<p>For open-ended generation tasks, evaluation requires comparing generated text with reference answers. However, assesing similarity between generated text and reference answers is not straight forward. N-gram overlap metrics (BLEU, ROUGE etc) are easy to implement metrics but do not consider semantics</p>
+<h3 id="human-centric-evaluation-the-gold-standard">Human-Centric Evaluation: The Gold Standard<a class="headerlink" href="#human-centric-evaluation-the-gold-standard" title="Permanent link">&para;</a></h3>
+<div class="admonition success">
+<p class="admonition-title">Why Human Evaluation Matters</p>
+<p>Human evaluation remains the <strong>gold standard</strong> for assessing LLM quality. It uniquely captures subtle nuances of language, context, and subjective quality often missed by automated metrics—particularly for complex, open-ended text generation and diverse cultural expressions.</p>
+</div>
+<h4 id="pairwise-comparison-and-elo-ratings">Pairwise Comparison and Elo Ratings<a class="headerlink" href="#pairwise-comparison-and-elo-ratings" title="Permanent link">&para;</a></h4>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-5v2h5v13l-5-6v9h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 15H5l5-6m0-9H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h5v2h2V1h-2z"/></svg></span> <strong>Pairwise Comparison</strong></p>
+<hr />
+<p>Present annotators with two responses from different models for the same prompt, asking them to select the superior response or indicate a tie</p>
+<p><a href="#pairwise-details"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Implementation Details</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm14 0h-2V4h2z"/></svg></span> <strong>Elo Rating System</strong></p>
+<hr />
+<p>Adapted from chess, Elo ratings rank models based on pairwise comparison outcomes, providing robust relative performance measures</p>
+<p><a href="#elo-calculation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Calculate Elo Scores</a></p>
+</li>
+</ul>
+</div>
+<p>This comparative approach directly assesses relative performance. The process involves generating comparisons, including duplicates with flipped response orders to verify annotator consistency and detect positional biases.</p>
+<div class="admonition example">
+<p class="admonition-title">Real-World Application: PARIKSHA Study</p>
+<p>The PARIKSHA study conducted <strong>90,000 human evaluations</strong> across 10 Indic languages using a pairwise comparison setting (inspired by LMSys ChatbotArena) to systematically compare 30 models.</p>
+</div>
+<p><strong>Resources for Implementation:</strong></p>
+<ul>
+<li><a href="https://lmsys.org/blog/2023-05-25-leaderboard/">LMSYS Org's Chatbot Arena Leaderboard</a> - Methodology and implementation</li>
+<li><a href="../../src/elo/Chatbot_Arena_Elo_Rating_Calculation_(July_17,_2023).ipynb">Archived Elo Rating Calculation Notebook</a> - Reference implementation</li>
+</ul>
+<p><strong>Annotation Guidelines Example:</strong></p>
+<p>Clear guidelines are essential for effective pairwise comparisons. The image below shows task instructions from the PARIKSHA study:</p>
+<p><a class="glightbox" href="../../../assets/01_evaluation/Guidelines_PairWiseEvaluations.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Task instructions provided to the annotators for pair wise comparisons." src="../../../assets/01_evaluation/Guidelines_PairWiseEvaluations.png" width="480" /></a></p>
+<h4 id="direct-assessment-metric-based-scoring">Direct Assessment (Metric-based Scoring)<a class="headerlink" href="#direct-assessment-metric-based-scoring" title="Permanent link">&para;</a></h4>
+<p>Direct assessment involves human annotators rating a single query-response pair against predefined metrics, providing granular understanding of model performance across quality dimensions.</p>
+<p><strong>Key Evaluation Metrics:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linguistic Acceptability (LA)</strong></td>
+<td>Evaluates if text sounds natural to a native speaker, checking for mechanical translation or non-idiomatic expressions</td>
+</tr>
+<tr>
+<td><strong>Task Quality (TQ)</strong></td>
+<td>Measures adherence to prompt instructions and incorporation of key input information</td>
+</tr>
+<tr>
+<td><strong>Hallucination (H)</strong></td>
+<td>Assesses factual grounding in input and consistency with general knowledge, identifying fabricated or counterfactual claims</td>
+</tr>
+<tr>
+<td><strong>Output Content Quality (OCQ)</strong></td>
+<td>Evaluates overall content standard, checking for repetition, non-native elements, or scraped text</td>
+</tr>
+<tr>
+<td><strong>Problematic Content (PC)</strong></td>
+<td>Identifies offensive, inappropriate, or harmful content</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">PARIKSHA Direct Assessment</p>
+<p>The study involved direct assessment of <strong>8,640 data points</strong> by human annotators scoring responses on LA, TQ, and H using a comprehensive rubric across multiple languages.</p>
+</div>
+<p><strong>Annotation Guidelines Example:</strong></p>
+<p><a class="glightbox" href="../../../assets/01_evaluation/Instructions_DirectAssessment.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Task instructions provided to the annotators for direct assessments." src="../../../assets/01_evaluation/Instructions_DirectAssessment.png" width="480" /></a></p>
+<h4 id="ethical-considerations-in-human-annotation">Ethical Considerations in Human Annotation<a class="headerlink" href="#ethical-considerations-in-human-annotation" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Critical Ethical Requirements</p>
+<p>Human evaluation is resource-intensive, requiring significant financial investment and time. <strong>Ethical considerations are paramount</strong>, especially with diverse cultural groups.</p>
+</div>
+<p><strong>Essential Ethical Practices:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Consideration</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fair Compensation</strong></td>
+<td>Annotators must receive fair compensation, often above local minimum wage, ensuring dignified digital labor</td>
+</tr>
+<tr>
+<td><strong>Annotator Demographics</strong></td>
+<td>Must be native speakers of assessed languages; understanding demographics is crucial for identifying/mitigating biases</td>
+</tr>
+<tr>
+<td><strong>Training &amp; Guidelines</strong></td>
+<td>Rigorous training and clear, detailed guidelines essential; refined through pilot studies for cultural sensitivity</td>
+</tr>
+<tr>
+<td><strong>Annotator Safety</strong></td>
+<td>For toxic/sensitive content, protect annotators; LLM evaluators can perform preliminary safety assessments</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">The Evaluation Paradox</p>
+<p>Achieving high-quality, ethical, and scalable human-centric evaluation is inherently challenging. Human evaluation is precise but costly and time-consuming. This tension necessitates <strong>hybrid evaluation systems</strong> and LLM-as-a-judge approaches—which must be rigorously validated against human performance and adhere to strict ethical guidelines.</p>
+</div>
+<h3 id="llm-as-a-judge-a-scalable-paradigm">LLM-as-a-Judge: A Scalable Paradigm<a class="headerlink" href="#llm-as-a-judge-a-scalable-paradigm" title="Permanent link">&para;</a></h3>
+<p>LLMs capable of evaluating other LLMs' outputs offer significant advancements in evaluation scalability and cost-effectiveness, making them particularly appealing for broad multilingual assessments.</p>
+<div class="admonition tip">
+<p class="admonition-title">Key Advantages</p>
+<ul>
+<li><strong>Enhanced Scalability</strong>: Evaluate large datasets without prohibitive human annotation costs</li>
+<li><strong>Subjective Criteria</strong>: Quantify coherence, relevance, tone, and helpfulness beyond traditional metrics</li>
+<li><strong>Cost Reduction</strong>: Significantly lower costs compared to human evaluation at scale</li>
+</ul>
+</div>
+<h4 id="prompting-strategies-for-llm-evaluators">Prompting Strategies for LLM Evaluators<a class="headerlink" href="#prompting-strategies-for-llm-evaluators" title="Permanent link">&para;</a></h4>
+<p>The effectiveness of LLM evaluators is highly dependent on prompt design, which can significantly alter performance across languages and cultures.</p>
+<div class="grid">
+<div class="admonition note">
+<p class="admonition-title">Zero-shot vs. Few-shot</p>
+<p>While few-shot examples commonly enhance general LLM tasks, studies on LLM-as-a-judge suggest they <strong>may not substantially improve</strong> evaluator performance or human agreement—differing from general industry assertions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Single vs. Compound Calls</p>
+<p>Evaluating a <strong>single metric per LLM call</strong> generally yields superior results and higher human concordance than evaluating multiple metrics in one "compound call." Accuracy comes at the cost of increased API calls.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Simple vs. Detailed Instructions</p>
+<p>Highly detailed, rubric-like instructions can <strong>paradoxically slightly reduce</strong> percentage agreement with human judgments, though they may lead to less skewed score distributions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Language Consideration</p>
+<p>Evaluation prompts are often in <strong>English</strong>, as native language instructions can sometimes diminish performance for evaluators.</p>
+</div>
+</div>
+<h4 id="implementation-example-openevals-for-hallucination-detection">Implementation Example: OpenEvals for Hallucination Detection<a class="headerlink" href="#implementation-example-openevals-for-hallucination-detection" title="Permanent link">&para;</a></h4>
+<p>The following code demonstrates using <a href="https://github.com/langchain-ai/openevals/tree/main">LangChain's OpenEvals</a> for judging hallucinations with OpenAI models:</p>
+<div class="language-py highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span>
+<span class="normal"><a href="#__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#__codelineno-0-63">63</a></span>
+<span class="normal"><a href="#__codelineno-0-64">64</a></span>
+<span class="normal"><a href="#__codelineno-0-65">65</a></span>
+<span class="normal"><a href="#__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#__codelineno-0-67">67</a></span>
+<span class="normal"><a href="#__codelineno-0-68">68</a></span>
+<span class="normal"><a href="#__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#__codelineno-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openevals.llm</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_llm_as_judge</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># Hallucination detection prompt</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">HALLUCINATION_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;You are an expert data labeler evaluating model outputs for hallucinations. Your task is to assign a score based on the following rubric:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="s2">&lt;Rubric&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="s2">  A response without hallucinations:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="s2">  - Contains only verifiable facts that are directly supported by the input context</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="s2">  - Makes no unsupported claims or assumptions</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="s2">  - Does not add speculative or imagined details</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="s2">  - Maintains perfect accuracy in dates, numbers, and specific details</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="s2">  - Appropriately indicates uncertainty when information is incomplete</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="s2">&lt;/Rubric&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="s2">&lt;Instructions&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="s2">  - Read the input context thoroughly</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="s2">  - Identify all claims made in the output</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="s2">  - Cross-reference each claim with the input context</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="s2">  - Note any unsupported or contradictory information</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="s2">  - Consider the severity and quantity of hallucinations</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="s2">&lt;/Instructions&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="s2">&lt;Reminder&gt;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="s2">  Focus solely on factual accuracy and support from the input context. Do not consider style, grammar, or presentation in scoring. A shorter, factual response should score higher than a longer response with unsupported claims.</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="s2">&lt;/Reminder&gt;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="s2">Use the following context to help you evaluate for hallucinations in the output:</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="s2">&lt;context&gt;</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="si">{context}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="s2">&lt;/context&gt;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="s2">&lt;input&gt;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="si">{inputs}</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="s2">&lt;/input&gt;</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="s2">&lt;output&gt;</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="si">{outputs}</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="s2">&lt;/output&gt;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="s2">If available, you may also use the reference outputs below to help you identify hallucinations in the response:</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="s2">&lt;reference_outputs&gt;</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="si">{reference_outputs}</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="s2">&lt;/reference_outputs&gt;</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="c1"># Example usage</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="n">inputs</span> <span class="o">=</span> <span class="s2">&quot;What is a doodad?&quot;</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="n">outputs</span> <span class="o">=</span> <span class="s2">&quot;I know the answer. A doodad is a kitten.&quot;</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="n">context</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="s2">          A doodad is a self-replicating swarm of nanobots. </span><span class="se">\</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="s2">          They are extremely dangerous and should be avoided at all costs. </span><span class="se">\</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="s2">          Some safety precautions when working with them include wearing gloves and a mask.</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="s2">          &quot;&quot;&quot;</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="n">llm_as_judge</span> <span class="o">=</span> <span class="n">create_llm_as_judge</span><span class="p">(</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a>    <span class="n">prompt</span><span class="o">=</span><span class="n">HALLUCINATION_PROMPT</span><span class="p">,</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a>    <span class="n">feedback_key</span><span class="o">=</span><span class="s2">&quot;hallucination&quot;</span><span class="p">,</span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;openai:o3-mini&quot;</span><span class="p">,</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="p">)</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">llm_as_judge</span><span class="p">(</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a>    <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a>    <span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">,</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a>    <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a>    <span class="n">reference_outputs</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="p">)</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="nb">print</span><span class="p">(</span><span class="n">eval_result</span><span class="p">)</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="c1"># Output: {&#39;key&#39;: &#39;hallucination&#39;, &#39;score&#39;: False, &#39;comment&#39;: &#39;...&#39;}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="the-critical-need-for-calibration-with-human-judgments">The Critical Need for Calibration with Human Judgments<a class="headerlink" href="#the-critical-need-for-calibration-with-human-judgments" title="Permanent link">&para;</a></h4>
+<div class="admonition danger">
+<p class="admonition-title">Calibration is Non-Negotiable</p>
+<p>Despite their scalability, LLM evaluators' reliability <strong>hinges on rigorous calibration</strong> against human judgments. This is crucial in multilingual settings and for low-resource languages, where linguistic and cultural nuances significantly impact accuracy.</p>
+</div>
+<p>LLM judgments can be inconsistent and susceptible to various influences. <strong>Calibration involves comparing LLM scores with aggregated human scores</strong> using metrics like:</p>
+<ul>
+<li><strong>Percentage Agreement (PA)</strong>: Raw agreement proportion</li>
+<li><strong>Fleiss' Kappa (κ)</strong>: Chance-adjusted agreement measure</li>
+<li><strong>Kendall's Tau (τ)</strong>: Correlation between rankings</li>
+</ul>
+<p>This ensures LLM evaluations reflect human perception across languages.</p>
+<h4 id="identifying-and-mitigating-biases-in-llm-as-a-judge">Identifying and Mitigating Biases in LLM-as-a-Judge<a class="headerlink" href="#identifying-and-mitigating-biases-in-llm-as-a-judge" title="Permanent link">&para;</a></h4>
+<p>LLM evaluators are prone to systemic biases that compromise assessment integrity, especially in diverse linguistic and cultural contexts.</p>
+<div class="admonition warning">
+<p class="admonition-title">Common LLM Evaluator Biases</p>
+</div>
+<p><strong>Positive Score Bias (Over-optimistic Nature)</strong></p>
+<p>LLMs often assign higher scores in direct assessment than humans. They may fail to detect hallucinations accurately and assign high LA and TQ scores even when human annotators deem quality unsatisfactory. <strong>This bias is more pronounced in non-Latin script and low-resource languages.</strong></p>
+<p><strong>Self-Bias</strong></p>
+<p>LLMs can favor their own outputs or those from their architectural family. GPT-based evaluators, for instance, consistently rank GPT's outputs more favorably.</p>
+<p><strong>Verbosity Bias</strong></p>
+<p>Both human and LLM evaluators may favor longer responses, particularly for moderate length differences (40-100 words). This bias typically diminishes with excessively long responses containing irrelevant content.</p>
+<p><strong>Position Bias</strong></p>
+<p>Response order can influence LLM judgments. However, some studies report low position bias when options are flipped.</p>
+<p><strong>Decisiveness (Fewer Ties)</strong></p>
+<p>LLM evaluators are more definitive, choosing fewer "tie" outcomes than humans in pairwise comparisons. They are also more likely to select a response even if both options contain hallucinations (e.g., 87% for LLMs vs. 53% for humans in one study).</p>
+<p><strong>Cultural Nuance Bias</strong></p>
+<p>LLM evaluators show lower agreement with human judgments on culturally nuanced responses. This suggests <strong>insufficient cultural context</strong>, particularly evident in direct assessment for languages like Bengali and Odia.</p>
+<div class="admonition danger">
+<p class="admonition-title">The Illusion of Competence</p>
+<p>The biases of LLM-as-a-judge—such as overly positive scoring and reduced hallucination detection—can create a <strong>misleading perception of superior performance</strong>. An LLM might confidently assign high scores, implying strong quality, even if content is questionable or human evaluators disagree.</p>
+<p>This is exacerbated in multilingual and culturally nuanced contexts where LLMs may lack deep understanding. The inconsistency of few-shot learning's utility in LLM evaluation further indicates that common LLM optimization strategies may not apply to nuanced evaluation tasks.</p>
+<p><strong>This risk of misrepresentation necessitates stringent and continuous calibration</strong> against human judgments, particularly in critical applications, ensuring scalability does not compromise reliability.</p>
+</div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-low-resource/" class="md-footer__link md-footer__link--next" aria-label="Next: MT in Low-Resource Settings">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MT in Low-Resource Settings
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2025 Microsoft | <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank">Privacy & Cookies</a> | <a href="https://go.microsoft.com/fwlink/?linkid=2259814" target="_blank">Consumer Health Privacy</a> | <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank">Terms of Use</a> | <a href="https://www.microsoft.com/trademarks" target="_blank">Trademarks</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.microsoft.com" target="_blank" rel="noopener" title="Microsoft" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32h214.6v214.6H0zm233.4 0H448v214.6H233.4zM0 265.4h214.6V480H0zm233.4 0H448V480H233.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.instant.progress", "navigation.expand", "navigation.footer", "content.code.copy", "content.code.annotate", "search.suggest", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

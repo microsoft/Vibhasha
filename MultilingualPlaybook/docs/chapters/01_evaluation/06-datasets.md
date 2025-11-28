@@ -1,4 +1,4 @@
-## Strategic Dataset Discovery and Creation
+## Dataset Discovery and Creation
 
 !!! quote "The Foundation of Evaluation"
     Effective LLM evaluation relies on high-quality, representative datasets. This section explores leveraging existing benchmarks and systematically creating new ones, with special emphasis on multilingual and multicultural contexts.
