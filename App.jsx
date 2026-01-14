@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import SiteHeader from './components/SiteHeader.jsx'
 import SiteFooter from './components/SiteFooter.jsx'
+import pkg from './package.json'
 
-export default function App(){
+export default function App() {
   const [theme, setTheme] = useState(() => {
     try {
       return localStorage.getItem('paza_theme') || 'light'
@@ -19,26 +20,28 @@ export default function App(){
     try { localStorage.setItem('paza_theme', theme) } catch (e) {}
   }, [theme])
 
-  function toggleTheme(){
+  function toggleTheme() {
     setTheme(t => t === 'light' ? 'dark' : 'light')
   }
 
   // Determine current page for dynamic logo colors
   const location = useLocation();
-  const pageKey = (location.pathname.split('/')[1] || 'home').toLowerCase();
-  const logoColors = {
-    home: ['#7c3aed', '#06b6d4'],
-    sr: ['#F8A277', '#F59B6C'],
-    tts: ['#BEBBFF', '#8E8AFF'],
-    bench: ['#B2E5FF', '#92D7FC'],
-    playbook: ['#99F2B3', '#78EB97']
-  };
-  const [c1, c2] = logoColors[pageKey] || logoColors.home;
-  const logoStyle = { '--logo-bg': `linear-gradient(135deg, ${c1}, ${c2})` };
+
+  // Derive brand from the app name (package.json) instead of pageKey
+  const appName = (pkg && pkg.name) ? pkg.name.toLowerCase() : 'playbook-template'
+  const appBrandMap = {
+    "playbook-template": 'teal',
+    vibhasha: 'pink',
+    paza: 'teal',
+    atlas: 'indigo',
+  }
+  // find matching key in appName (allows names like "playbook-template")
+  const brandKey = Object.keys(appBrandMap).find(k => appName.includes(k))
+  const brand = appBrandMap[brandKey] || 'teal'
 
   return (
     <div className="app-root">
-      <SiteHeader theme={theme} toggleTheme={toggleTheme} />
+      <SiteHeader theme={theme} toggleTheme={toggleTheme} brand={brand} />
       <main className="app-main">
         <Outlet />
       </main>
