@@ -79,8 +79,8 @@
 }
 
 .markdown-body thead tr {
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    color: #fff;
+    background: var(--color-header-bg);
+    color: var(--color-header-text);
 }
 
 .markdown-body th,
@@ -96,7 +96,7 @@
 }
 
 .markdown-body tbody tr:hover {
-    background: rgba(124, 58, 237, 0.08);
+    background: rgba(16, 24, 40, 0.06);
 }
 
 /* Layout helpers previously inline in MarkdownPage.jsx */
