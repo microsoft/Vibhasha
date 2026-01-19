@@ -2,8 +2,8 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
-import Home from './Home'
 import Playbook from './Playbook'
+import PlaybookIntro from './components/PlaybookIntro'
 import './styles.css'
 
 // Docs markdown components
@@ -36,33 +36,39 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="playbook" element={<Playbook />}>
-            {/* Docs markdown routes */}
-            <Route path="01-intro" element={<IntroDoc />} />
-            <Route path="02-evolution-of-asr" element={<EvolutionOfASRDoc />} />
-            <Route path="03-background-of-asr" element={<BackgroundOfASRDoc />} />
-            <Route path="04-dataset-creation-guidelines" element={<DatasetCreationGuidelinesDoc />} />
-            <Route path="04-i-metadata" element={<IMetadataDoc />} />
-            <Route path="04-ii-curation-for-diversity" element={<IiCurationForDiversityDoc />} />
-            <Route path="04-iii-generalization-vs-domain" element={<IiiGeneralizationVsDomainDoc />} />
-            <Route path="04-iv-quality-control" element={<IvQualityControlDoc />} />
-            <Route path="05-data-formats-structures" element={<DataFormatsStructuresDoc />} />
-            <Route path="06-data-preprocessing" element={<DataPreprocessingDoc />} />
-            <Route path="07-data-compression" element={<DataCompressionDoc />} />
-            <Route path="08-i-model-selection" element={<IModelSelectionDoc />} />
-            <Route path="08-ii-full-finetuning" element={<IiFullFinetuningDoc />} />
-            <Route path="08-iii-peft" element={<IiiPeftDoc />} />
-            <Route path="08-iv-decision-matrix" element={<IvDecisionMatrixDoc />} />
-            <Route path="08-model-finetuning-intro" element={<ModelFinetuningIntroDoc />} />
-            <Route path="09-inference" element={<InferenceDoc />} />
-            <Route path="10-data-augmentation" element={<DataAugmentationDoc />} />
-            <Route path="11-common-finetuning-challenges" element={<CommonFinetuningChallengesDoc />} />
-            <Route path="12-conclusion" element={<ConclusionDoc />} />
-            <Route path="13-coming-soon" element={<ComingSoonDoc />} />
-            <Route path="14-attribution" element={<AttributionDoc />} />
-            <Route path="15-references" element={<ReferencesDoc />} />
+          {/* Always wrap content with Playbook layout to show Sidebar */}
+          <Route element={<Playbook />}>
+            {/* Root shows PlaybookIntro with sidebar */}
+            <Route index element={<PlaybookIntro />} />
 
+            {/* Keep existing /playbook/* routes under the same layout */}
+            <Route path="playbook">
+              <Route index element={<PlaybookIntro />} />
+              {/* Docs markdown routes */}
+              <Route path="01-intro" element={<IntroDoc />} />
+              <Route path="02-evolution-of-asr" element={<EvolutionOfASRDoc />} />
+              <Route path="03-background-of-asr" element={<BackgroundOfASRDoc />} />
+              <Route path="04-dataset-creation-guidelines" element={<DatasetCreationGuidelinesDoc />} />
+              <Route path="04-i-metadata" element={<IMetadataDoc />} />
+              <Route path="04-ii-curation-for-diversity" element={<IiCurationForDiversityDoc />} />
+              <Route path="04-iii-generalization-vs-domain" element={<IiiGeneralizationVsDomainDoc />} />
+              <Route path="04-iv-quality-control" element={<IvQualityControlDoc />} />
+              <Route path="05-data-formats-structures" element={<DataFormatsStructuresDoc />} />
+              <Route path="06-data-preprocessing" element={<DataPreprocessingDoc />} />
+              <Route path="07-data-compression" element={<DataCompressionDoc />} />
+              <Route path="08-i-model-selection" element={<IModelSelectionDoc />} />
+              <Route path="08-ii-full-finetuning" element={<IiFullFinetuningDoc />} />
+              <Route path="08-iii-peft" element={<IiiPeftDoc />} />
+              <Route path="08-iv-decision-matrix" element={<IvDecisionMatrixDoc />} />
+              <Route path="08-model-finetuning-intro" element={<ModelFinetuningIntroDoc />} />
+              <Route path="09-inference" element={<InferenceDoc />} />
+              <Route path="10-data-augmentation" element={<DataAugmentationDoc />} />
+              <Route path="11-common-finetuning-challenges" element={<CommonFinetuningChallengesDoc />} />
+              <Route path="12-conclusion" element={<ConclusionDoc />} />
+              <Route path="13-coming-soon" element={<ComingSoonDoc />} />
+              <Route path="14-attribution" element={<AttributionDoc />} />
+              <Route path="15-references" element={<ReferencesDoc />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
