@@ -10,7 +10,7 @@ export default function SiteHeader() {
   const brandClass = brand ? ` site-header--brand-${brand}` : '';
 
   return (
-    <header className={`app-header${brandClass}`} role="banner" style={{ backgroundColor: colors.headerBg, color: colors.headerText }}>
+    <header className={`app-header${brandClass}`} role="banner">
       <div className="header-segment header-segment--left" onClick={() => navigate('/playbook')}> 
           <AppIcon fontSize={24} />
         <div className="segment-text">

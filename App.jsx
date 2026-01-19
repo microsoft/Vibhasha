@@ -14,7 +14,7 @@ export default function App() {
     <ThemeProvider initialAppName={appName}>
       <div className="app-root">
         <SiteHeader />
-        <main className="app-main" style={{ background: 'var(--color-page-bg)', color: 'var(--color-page-text)' }}>
+        <main className="app-main">
           <Outlet />
         </main>
         <SiteFooter />

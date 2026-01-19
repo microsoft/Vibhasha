@@ -40,8 +40,6 @@ createRoot(document.getElementById('root')).render(
           <Route element={<Playbook />}>
             {/* Root shows PlaybookIntro with sidebar */}
             <Route index element={<PlaybookIntro />} />
-
-            {/* Keep existing /playbook/* routes under the same layout */}
             <Route path="playbook">
               <Route index element={<PlaybookIntro />} />
               {/* Docs markdown routes */}

@@ -5,6 +5,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
 }
 
 .header-left {

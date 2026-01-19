@@ -14,7 +14,7 @@ import { useTheme } from '../theme/ThemeContext.jsx'
 export default function Hero({ title, subtitle, imageSrc, imageAlt = '', rightContent }){
   const { colors } = useTheme();
   return (
-    <section className="hero" style={{ backgroundColor: colors.headerBg, color: colors.headerText }}>
+    <section className="hero">
       <div className="hero-inner">
         <div className="hero-text">
           {title && <h1 className="hero-title">{title}</h1>}

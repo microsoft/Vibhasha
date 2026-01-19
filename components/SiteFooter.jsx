@@ -14,7 +14,7 @@ export default function SiteFooter() {
 
   return (
     <div className="promo-footer" role="contentinfo">
-      <div className="promo-bar" style={{ backgroundColor: colors.footerBg, color: colors.pageText }}>
+      <div className="promo-bar">
         <div className="promo-left">
           <span className="promo-lead">Learn about the Microsoft Research work behind our playbooks</span>
           <a
@@ -34,11 +34,11 @@ export default function SiteFooter() {
             const pal = brandPalettes[p.brand] || brandPalettes.teal;
             const c = pal[theme] || pal.light;
             const Icon = iconByBrand[p.brand] || iconByBrand.teal;
+            const brandClass = p.brand ? `promo-cta promo-cta--${p.brand}` : 'promo-cta';
             return (
               <button
                 key={p.key}
-                className="promo-cta"
-                style={{ backgroundColor: c.headerBg, color: c.headerText }}
+                className={brandClass}
                 onClick={(e) => {
                   e.preventDefault();
                   setAppName(p.key);

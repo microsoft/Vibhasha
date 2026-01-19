@@ -3,6 +3,8 @@
     padding: 22px;
     margin: 12px 0 22px;
     min-height: 220px;
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
 }
 
 .hero-inner {

@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import { docOrder as generatedDocOrder, docEntries } from './docIndex';
 import Hero from '../Hero';
+import PageSearch from '../PageSearch';
 import { useTheme } from '../../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular } from '@fluentui/react-icons'
 
@@ -142,11 +143,11 @@ export default function MarkdownPage({ filePath }) {
   }
 
   return (
-    <div className="doc-layout doc-container">
-      <main className="doc-main markdown-body doc-main-inner">
+    <>
+      <div className="doc-toolbar">
         {groupInfo && (
-          <div className="subchapter-menu" style={{ display:'flex', alignItems:'center', gap:8, marginBottom:12 }}>
-            <select id="subchapter-select" onChange={onSelectSub} defaultValue={location.pathname} style={{ padding:'8px 10px', borderRadius:8 }}>
+          <div className="subchapter-menu">
+            <select id="subchapter-select" onChange={onSelectSub} defaultValue={location.pathname}>
               {groupInfo.root && (
                 <option key={groupInfo.root.path} value={groupInfo.root.path}>{groupInfo.root.label}</option>
               )}
@@ -156,70 +157,74 @@ export default function MarkdownPage({ filePath }) {
             </select>
           </div>
         )}
-        {/* Themed hero at top of each page */}
-        <Hero title={heroTitle} subtitle={heroSubtitle} />
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({ node, ...props }) => {
-              const id = slugify(String(props.children));
-              return <h1 id={id} {...props}>{props.children}</h1>;
-            },
-            h2: ({ node, ...props }) => {
-              const id = slugify(String(props.children));
-              return <h2 id={id} {...props}>{props.children}</h2>;
-            },
-            h3: ({ node, ...props }) => {
-              const id = slugify(String(props.children));
-              return <h3 id={id} {...props}>{props.children}</h3>;
-            }
-          }}
-        >
-          {content}
-        </ReactMarkdown>
-        {(prev || next) && (
-          <nav className="prev-next-nav" aria-label="Page navigation">
-            {prev ? (
-              <button
-                onClick={() => navigate(prev.path)}
-                className="btn-primary"
-                style={{ backgroundColor: colors.headerBg, color: colors.headerText }}
-              >
-                <ChevronLeft24Regular />
-                <span>{prev.label}</span>
-              </button>
-            ) : <div />}
-
-            {next ? (
-              <button
-                onClick={() => navigate(next.path)}
-                className="btn-primary"
-                style={{ backgroundColor: colors.headerBg, color: colors.headerText }}
-              >
-                <span>{next.label}</span>
-                <ChevronRight24Regular />
-              </button>
-            ) : <div />}
-          </nav>
-        )}
-      </main>
-
-      {showToc && (
-        <aside className="doc-toc" aria-label="Table of contents">
-          <div className="doc-toc-inner">
-            <strong className="doc-toc-title">On this page</strong>
-            <ul>
-              {headings.map(h => (
-                <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
-                  <button onClick={() => scrollToId(h.id)} className={activeId === h.id ? 'active' : ''}>
-                    {h.text}
+        <PageSearch containerSelector=".doc-main-inner" placeholder="Search" />
+      </div>
+      <div className="doc-container">
+        <div className="doc-layout">
+          <main className="doc-main markdown-body doc-main-inner">
+            <Hero title={heroTitle} subtitle={heroSubtitle} />
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                h1: ({ node, ...props }) => {
+                  const id = slugify(String(props.children));
+                  return <h1 id={id} {...props}>{props.children}</h1>;
+                },
+                h2: ({ node, ...props }) => {
+                  const id = slugify(String(props.children));
+                  return <h2 id={id} {...props}>{props.children}</h2>;
+                },
+                h3: ({ node, ...props }) => {
+                  const id = slugify(String(props.children));
+                  return <h3 id={id} {...props}>{props.children}</h3>;
+                }
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+            {(prev || next) && (
+              <nav className="prev-next-nav" aria-label="Page navigation">
+                {prev ? (
+                  <button
+                    onClick={() => navigate(prev.path)}
+                    className="btn-primary"
+                  >
+                    <ChevronLeft24Regular />
+                    <span>{prev.label}</span>
                   </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
-      )}
-    </div>
+                ) : <div />}
+
+                {next ? (
+                  <button
+                    onClick={() => navigate(next.path)}
+                    className="btn-primary"
+                  >
+                    <span>{next.label}</span>
+                    <ChevronRight24Regular />
+                  </button>
+                ) : <div />}
+              </nav>
+            )}
+          </main>
+
+          {showToc && (
+            <aside className="doc-toc" aria-label="Table of contents">
+              <div className="doc-toc-inner">
+                <strong className="doc-toc-title">On this page</strong>
+                <ul>
+                  {headings.map(h => (
+                    <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
+                      <button onClick={() => scrollToId(h.id)} className={activeId === h.id ? 'active' : ''}>
+                        {h.text}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
+          )}
+        </div>
+      </div>
+    </>
   );
 }

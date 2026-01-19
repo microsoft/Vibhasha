@@ -1,13 +1,9 @@
 /* MarkdownPage styles (doc layout, table of contents, markdown tables) */
 .doc-layout {
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 80% 20%;
     gap: 28px;
     align-items: start;
-}
-
-.doc-main {
-    max-width: 760px;
 }
 
 .doc-toc {
@@ -99,15 +95,29 @@
     background: rgba(16, 24, 40, 0.06);
 }
 
-/* Layout helpers previously inline in MarkdownPage.jsx */
 .doc-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px;
+    padding: 16px;
 }
 
 .doc-main-inner {
     padding-right: 12px;
+}
+
+.doc-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 16px 8px;
+}
+.doc-toolbar .subchapter-menu {
+    flex: 0 0 auto;
+}
+.doc-toolbar .hero-search {
+    margin-left: auto;
+    width: 468px;
+    height: 40px;
+    justify-content: flex-end;
 }
 
 .prev-next-nav {
@@ -133,4 +143,14 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+}
+
+.doc-toolbar #subchapter-select {
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.prev-next-nav .btn-primary {
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
 }
