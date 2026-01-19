@@ -1,41 +1,49 @@
 import React from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { MicSparkle24Regular, Open24Regular } from '@fluentui/react-icons';
+import { useNavigate } from 'react-router-dom';
 import './styles/SiteHeader.css';
+import { useTheme } from '../theme/ThemeContext.jsx';
+import { Open24Regular } from '@fluentui/react-icons';
 
-export default function SiteHeader({ theme, toggleTheme, brand }) {
-  const location = useLocation();
+export default function SiteHeader() {
   const navigate = useNavigate();
-  const isHome = location.pathname === '/';
+  const { colors, brand, appName, appSubtitle, AppIcon } = useTheme();
 
   const go = (to) => (e) => {
     e.preventDefault();
-    navigate(to);
+    if (typeof to === 'string' && /^https?:\/\//.test(to)) {
+      window.open(to, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(to);
+    }
   };
 
   const brandClass = brand ? ` site-header--brand-${brand}` : '';
 
   return (
-    <header className={`app-header${brandClass}`} role="banner">
-      <div className="header-segment header-segment--left" onClick={go('/')}> 
-          <MicSparkle24Regular fontSize={40} />
+    <header className={`app-header${brandClass}`} role="banner" style={{ backgroundColor: colors.headerBg, color: colors.headerText }}>
+      <div className="header-segment header-segment--left" onClick={go('/playbook')}> 
+          <AppIcon fontSize={24} />
         <div className="segment-text">
-          <div className="segment-title">Paza</div>
-          <div className="segment-subtitle">Speech Models Playbook</div>
+          <div className="segment-title">{appName}</div>
+          <div className="segment-subtitle">{appSubtitle}</div>
         </div>
       </div>
-      <div className="header-segment header-segment--middle" onClick={go('/playbook')}>
-        <div className="segment-text center">
-          <div className="segment-title">Paza Models</div>
+      {appName && appName.toLowerCase() === 'paza' && (
+        <div className="header-segment-right-group">
+          <div className="header-segment header-segment--middle" onClick={go('https://huggingface.co/collections/microsoft/paza')}>
+            <div className="segment-text">
+              <div className="segment-title">{appName} Models</div>
+            </div>
+            <Open24Regular />
+          </div>
+          <div className="header-segment header-segment--right" onClick={go('https://huggingface.co/spaces/microsoft/paza-bench')}>
+            <div className="segment-text">
+              <div className="segment-title">PazaBench</div>
+            </div>
+            <Open24Regular />
+          </div>
         </div>
-          <Open24Regular />
-      </div>
-      <div className="header-segment header-segment--right" onClick={go('/leaderboard')}>
-        <div className="segment-text">
-          <div className="segment-title">Leaderboard</div>
-        </div>
-          <Open24Regular />
-      </div>
+      )}
     </header>
   );
 }
