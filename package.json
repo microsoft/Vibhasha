@@ -1,7 +1,7 @@
 {
-  "name": "playbook-template",
+  "name": "paza",
   "version": "1.0.0",
-  "description": "Interactive Gecko playbook template",
+  "description": "Interactive playbook template",
   "license": "MIT",
   "author": "",
   "type": "commonjs",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.3",
+    "baseline-browser-mapping": "^2.9.15",
     "vite": "^7.1.6"
   }
 }
