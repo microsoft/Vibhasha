@@ -1,129 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './styles/Sidebar.css'
 import { NavLink, useLocation } from 'react-router-dom'
-
-const sections = [
-  {
-    "heading": null,
-    "items": [
-      {
-        to: "/playbook/01-intro",
-        label: "Intro",
-        sub: false
-      },
-      {
-        to: "/playbook/02-evolution-of-asr",
-        label: "Evolution Of ASR",
-        sub: false
-      },
-      {
-        to: "/playbook/03-background-of-asr",
-        label: "Background Of ASR",
-        sub: false
-      },
-      {
-        to: "/playbook/04-dataset-creation-guidelines",
-        label: "Dataset Creation Guidelines",
-        sub: false
-      },
-      {
-        to: "/playbook/04-i-metadata",
-        label: "Metadata",
-        sub: true
-      },
-      {
-        to: "/playbook/04-ii-curation-for-diversity",
-        label: "Curation For Diversity",
-        sub: true
-      },
-      {
-        to: "/playbook/04-iii-generalization-vs-domain",
-        label: "Generalization Vs Domain",
-        sub: true
-      },
-      {
-        to: "/playbook/04-iv-quality-control",
-        label: "Quality Control",
-        sub: true
-      },
-      {
-        to: "/playbook/05-data-formats-structures",
-        label: "Data Formats Structures",
-        sub: false
-      },
-      {
-        to: "/playbook/06-data-preprocessing",
-        label: "Data Preprocessing",
-        sub: false
-      },
-      {
-        to: "/playbook/07-data-compression",
-        label: "Data Compression",
-        sub: false
-      },
-      {
-        to: "/playbook/08-i-model-selection",
-        label: "Model Selection",
-        sub: true
-      },
-      {
-        to: "/playbook/08-ii-full-finetuning",
-        label: "Full Finetuning",
-        sub: true
-      },
-      {
-        to: "/playbook/08-iii-peft",
-        label: "Peft",
-        sub: true
-      },
-      {
-        to: "/playbook/08-iv-decision-matrix",
-        label: "Decision Matrix",
-        sub: true
-      },
-      {
-        to: "/playbook/08-model-finetuning-intro",
-        label: "Model Finetuning Intro",
-        sub: false
-      },
-      {
-        to: "/playbook/09-inference",
-        label: "Inference",
-        sub: false
-      },
-      {
-        to: "/playbook/10-data-augmentation",
-        label: "Data Augmentation",
-        sub: false
-      },
-      {
-        to: "/playbook/11-common-finetuning-challenges",
-        label: "Common Finetuning Challenges",
-        sub: false
-      },
-      {
-        to: "/playbook/12-conclusion",
-        label: "Conclusion",
-        sub: false
-      },
-      {
-        to: "/playbook/13-coming-soon",
-        label: "Coming Soon",
-        sub: false
-      },
-      {
-        to: "/playbook/14-attribution",
-        label: "Attribution",
-        sub: false
-      },
-      {
-        to: "/playbook/15-references",
-        label: "References",
-        sub: false
-      }
-    ]
-  }
-];
+import SidebarIcon from './SidebarIcon'
+import { docEntries } from './docs/docIndex'
 
 export default function Sidebar(){
   const [visibleHeading, setVisibleHeading] = useState(null);
@@ -159,33 +38,40 @@ export default function Sidebar(){
 
   return (
     <nav className="sidebar" aria-label="Playbook navigation">
-      <ul className="sidebar-list" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-        {sections.map((section, si) => (
-          <React.Fragment key={si}>
-            {section.heading && (
-              <li className="sidebar-section-heading" style={{ marginTop: '1.25rem', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.05em', opacity: .7 }}>
-                {section.heading}
-              </li>
-            )}
-            {section.items.map(item => (
-              <li key={item.to} className={item.sub ? 'sidebar-sub-item' : 'sidebar-item'} style={{ margin: 0 }}>
-                <NavLink
-                  to={item.to}
-                  end={item.end}
-                  className={({isActive}) => {
-                    let cls = 'sidebar-link';
-                    if (isActive) cls += ' active';
-                    if (item.sub) cls += ' sidebar-link--sub';
-                    if (!isActive && isScrollActive(item)) cls += ' scroll-active';
-                    return cls;
-                  }}
-                  style={{ display: 'block', padding: '.45rem .6rem', borderRadius: 4, position: 'relative' }}
-                >
-                  {item.label}
-                </NavLink>
-              </li>
-            ))}
-          </React.Fragment>
+      <ul className="sidebar-list">
+        {/* Overview */}
+        <li className={'sidebar-item'}>
+          <NavLink
+            to="/playbook"
+            end
+            className={({isActive}) => {
+              let cls = 'sidebar-link';
+              if (isActive) cls += ' active';
+              if (!isActive && isScrollActive({ label: 'Overview' })) cls += ' scroll-active';
+              return cls;
+            }}
+          >
+            <SidebarIcon name="Home24" active={location.pathname === '/playbook'} />
+            <span>Overview</span>
+          </NavLink>
+        </li>
+
+        {/* Auto-generated root chapters within docIndex */}
+        {docEntries.filter(e => !e.isSub).map(e => (
+          <li key={e.path} className={'sidebar-item'}>
+            <NavLink
+              to={e.path}
+              className={({isActive}) => {
+                let cls = 'sidebar-link';
+                if (isActive) cls += ' active';
+                if (!isActive && isScrollActive({ label: e.label })) cls += ' scroll-active';
+                return cls;
+              }}
+            >
+              <SidebarIcon name={e.icon} active={location.pathname === e.path} />
+              <span>{e.label}</span>
+            </NavLink>
+          </li>
         ))}
       </ul>
     </nav>
