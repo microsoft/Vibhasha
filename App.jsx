@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import SiteHeader from './components/SiteHeader.jsx'
 import SiteFooter from './components/SiteFooter.jsx'
-import PromoFooter from './components/PromoFooter.jsx'
+import BaseFooter from './components/BaseFooter.jsx'
 import { ThemeProvider } from './theme/ThemeContext.jsx'
 import pkg from './package.json'
 
@@ -17,8 +17,8 @@ export default function App() {
         <main className="app-main" style={{ background: 'var(--color-page-bg)', color: 'var(--color-page-text)' }}>
           <Outlet />
         </main>
-        <PromoFooter />
         <SiteFooter />
+        <BaseFooter />
       </div>
     </ThemeProvider>
   )
