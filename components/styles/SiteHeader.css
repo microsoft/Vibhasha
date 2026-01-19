@@ -26,6 +26,12 @@
     padding: 0 10px;
     cursor: pointer;
     user-select: none;
+    color: inherit; 
+    text-decoration: none;
+    .header-segment:hover,
+    .header-segment:focus {
+        text-decoration: none;
+    }
 }
 
 .header-segment--left {
