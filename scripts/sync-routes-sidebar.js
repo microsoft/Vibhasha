@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const chaptersDir = path.join(root, 'chapters');
+const chaptersDir = path.join(root, 'public', 'chapters');
 const docsDir = path.join(root, 'components', 'docs');
+const docIndexFile = path.join(docsDir, 'docIndex.js');
 const mainFile = path.join(root, 'main.jsx');
-const sidebarFile = path.join(root, 'components', 'Sidebar.jsx');
 
 if (!fs.existsSync(chaptersDir)) {
   console.error('chapters directory not found:', chaptersDir);
@@ -16,34 +16,39 @@ if (!fs.existsSync(mainFile)) {
   console.error('main.jsx not found:', mainFile);
   process.exit(1);
 }
-if (!fs.existsSync(sidebarFile)) {
-  console.error('Sidebar.jsx not found:', sidebarFile);
-  process.exit(1);
-}
 
-function titleize(str){
-  return str.split(/[-_]/).map(s=> s.replace(/\b\w/g,ch=>ch.toUpperCase())).join(' ').replace(/\bAsr\b/i,'ASR');
+function titleize(str) {
+  return str.split(/[-_]/).map(s => s.replace(/\b\w/g, ch => ch.toUpperCase())).join(' ').replace(/\bAsr\b/i, 'ASR');
 }
 
 // Read chapters
-const mdFiles = fs.readdirSync(chaptersDir).filter(f=>f.endsWith('.md'))
-  .sort((a,b)=>{
+const mdFiles = fs.readdirSync(chaptersDir).filter(f => f.endsWith('.md'))
+  .sort((a, b) => {
     // sort by leading numeric prefix then filename
     const na = a.match(/^([0-9]+)-/); const nb = b.match(/^([0-9]+)-/);
-    const ia = na ? parseInt(na[1],10) : 9999;
-    const ib = nb ? parseInt(nb[1],10) : 9999;
+    const ia = na ? parseInt(na[1], 10) : 9999;
+    const ib = nb ? parseInt(nb[1], 10) : 9999;
     if (ia !== ib) return ia - ib;
     return a.localeCompare(b);
   });
 
-if (mdFiles.length === 0){
+if (mdFiles.length === 0) {
   console.log('No chapters found.');
   process.exit(0);
 }
 
 // Build entries
-const ACRONYMS = ['ASR','NLP','API','HTTP','URL','ID'];
-const entries = mdFiles.map(f=>{
+const ACRONYMS = ['ASR', 'NLP', 'API', 'HTTP', 'URL', 'ID'];
+// Default icon map for common roots (can be edited later in docIndex)
+const DEFAULT_ICON_BY_BASE = {
+  '02-evolution-of-asr': 'Branch24Regular',
+  '04-dataset-creation-guidelines': 'Add24Regular',
+  '08-model-finetuning-intro': 'Options24Regular',
+  '09-inference': 'PlugConnected24Regular',
+  '10-data-augmentation': 'Wand24Regular'
+};
+
+const entries = mdFiles.map(f => {
   const base = f.replace(/\.md$/, '');
   // label: remove leading digits and dash
   const labelPart = base.replace(/^[0-9]+-/, '');
@@ -57,7 +62,11 @@ const entries = mdFiles.map(f=>{
     return s.charAt(0).toUpperCase() + s.slice(1);
   });
   const compName = (pascalParts.join('') || 'Doc') + 'Doc';
-  return { file: f, base, route: `/playbook/${base}`, compName, label, sub: /^\d+-(?:i|ii|iii|iv|v)-/.test(base) };
+  const prefixMatch = base.match(/^(\d{2})-/);
+  const prefix = prefixMatch ? prefixMatch[1] : null;
+  const isSub = /^\d+-(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)-/.test(base);
+  const icon = !isSub ? (DEFAULT_ICON_BY_BASE[base] || 'Document24Regular') : null;
+  return { file: f, base, route: `/playbook/${base}`, compName, label, isSub, prefix, icon };
 });
 
 // Generate import block and route block for main.jsx
@@ -70,7 +79,7 @@ const importMarker = '// Docs markdown components';
 const createRootIdx = mainSrc.indexOf('createRoot(');
 if (createRootIdx === -1) { console.error('createRoot not found in main.jsx'); process.exit(1); }
 const importMarkerIdx = mainSrc.indexOf(importMarker);
-if (importMarkerIdx === -1){
+if (importMarkerIdx === -1) {
   console.error('Import marker not found in main.jsx:', importMarker);
   process.exit(1);
 }
@@ -83,10 +92,10 @@ mainSrc = before + '\n' + importLines + '\n\n' + after;
 // Replace routes inside the playbook Route: find the docs routes marker
 const routesMarker = '{/* Docs markdown routes */}';
 const routesIdx = mainSrc.indexOf(routesMarker);
-if (routesIdx === -1){ console.error('Routes marker not found in main.jsx'); process.exit(1); }
+if (routesIdx === -1) { console.error('Routes marker not found in main.jsx'); process.exit(1); }
 // find the end of the playbook route: the next line that matches "          </Route>" after routesIdx
 const closingPlaybook = mainSrc.indexOf('\n          </Route>', routesIdx);
-if (closingPlaybook === -1){ console.error('Cannot find closing </Route> for playbook in main.jsx'); process.exit(1); }
+if (closingPlaybook === -1) { console.error('Cannot find closing </Route> for playbook in main.jsx'); process.exit(1); }
 const routesStart = routesIdx + routesMarker.length;
 const routesEnd = closingPlaybook;
 mainSrc = mainSrc.slice(0, routesStart) + '\n' + routeLines + '\n' + mainSrc.slice(routesEnd);
@@ -94,24 +103,10 @@ mainSrc = mainSrc.slice(0, routesStart) + '\n' + routeLines + '\n' + mainSrc.sli
 fs.writeFileSync(mainFile, mainSrc, 'utf8');
 console.log('Updated main.jsx with', entries.length, 'routes.');
 
-// Generate sidebar sections: single section with all items in order, mark sub items
-const items = entries.map(e => ({ to: e.route, label: e.label, sub: e.sub }));
-const sidebarSections = [ { heading: null, items } ];
-
-// Prepare JS text for sections
-const sectionsJson = JSON.stringify(sidebarSections, null, 2).replace(/"to":/g,'to:').replace(/"label":/g,'label:').replace(/"sub":/g,'sub:');
-const sectionsText = `const sections = ${sectionsJson};\n`;
-
-// Read sidebar and replace the existing const sections = [...] block
-let sideSrc = fs.readFileSync(sidebarFile, 'utf8');
-const sectionsStart = sideSrc.indexOf('const sections =');
-if (sectionsStart === -1){ console.error('const sections = not found in Sidebar.jsx'); process.exit(1); }
-const sectionsEnd = sideSrc.indexOf('];', sectionsStart);
-if (sectionsEnd === -1){ console.error('Cannot find end of sections array in Sidebar.jsx'); process.exit(1); }
-// find the index after the closing bracket of the array
-const afterSectionsEnd = sideSrc.indexOf('\n', sectionsEnd) + 1;
-sideSrc = sideSrc.slice(0, sectionsStart) + sectionsText + sideSrc.slice(afterSectionsEnd);
-fs.writeFileSync(sidebarFile, sideSrc, 'utf8');
-console.log('Updated Sidebar.jsx with', entries.length, 'items.');
-
-console.log('Sync complete.');
+// Generate docIndex.js for Sidebar and MarkdownPage consumption
+const docEntries = entries.map(e => ({ path: e.route, label: e.label, base: e.base, prefix: e.prefix, isSub: e.isSub, icon: e.icon }));
+const docOrder = docEntries.map(e => ({ path: e.path, label: e.label }));
+const indexSrc = `// Auto-generated by scripts/sync-routes-sidebar.js\n// Do not edit manually; run the sync script after changing chapters.\n\nexport const docEntries = ${JSON.stringify(docEntries, null, 2)};\n\nexport const docOrder = ${JSON.stringify(docOrder, null, 2)};\n`;
+fs.writeFileSync(docIndexFile, indexSrc, 'utf8');
+console.log('Wrote doc index:', docIndexFile);
+console.log('Sidebar uses docIndex dynamically. Sync complete.');

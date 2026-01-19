@@ -2,20 +2,20 @@
 const fs = require('fs');
 const path = require('path');
 
-const chaptersDir = path.resolve(__dirname, '..', 'chapters');
+const chaptersDir = path.resolve(__dirname, '..', 'public', 'chapters');
 const docsDir = path.resolve(__dirname, '..', 'components', 'docs');
 
-if (!fs.existsSync(chaptersDir)){
+if (!fs.existsSync(chaptersDir)) {
   console.error('chapters directory not found:', chaptersDir);
   process.exit(1);
 }
-if (!fs.existsSync(docsDir)){
+if (!fs.existsSync(docsDir)) {
   console.error('components/docs directory not found:', docsDir);
   process.exit(1);
 }
 
 const files = fs.readdirSync(chaptersDir).filter(f => f.endsWith('.md'));
-if (files.length === 0){
+if (files.length === 0) {
   console.log('No markdown files found in', chaptersDir);
   process.exit(0);
 }
@@ -27,7 +27,7 @@ files.forEach(file => {
   // convert to a safe JSX filename: keep original base and append .jsx
   const jsxName = `${base}.jsx`;
   const targetPath = path.join(docsDir, jsxName);
-  if (fs.existsSync(targetPath)){
+  if (fs.existsSync(targetPath)) {
     console.log('Skipping existing wrapper:', jsxName);
     return;
   }
@@ -39,7 +39,7 @@ files.forEach(file => {
   const componentName = (pascal ? pascal : 'Doc') + 'Doc';
 
   // Use the same relative path style as existing wrappers (../../chapters/01-intro.md)
-  const content = `import MarkdownPage from './MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="../../chapters/${file}" />;\n}\n`;
+  const content = `import MarkdownPage from './MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="/public/chapters/${file}" />;\n}\n`;
 
   fs.writeFileSync(targetPath, content, { encoding: 'utf8' });
   console.log('Created wrapper:', jsxName);
@@ -50,7 +50,7 @@ files.forEach(file => {
 const existingWrappers = fs.readdirSync(docsDir).filter(f => f.endsWith('.jsx') && f !== 'MarkdownPage.jsx');
 existingWrappers.forEach(w => {
   const mdName = `${w.replace(/\.jsx$/, '.md')}`;
-  if (!files.includes(mdName)){
+  if (!files.includes(mdName)) {
     const p = path.join(docsDir, w);
     try {
       fs.unlinkSync(p);
