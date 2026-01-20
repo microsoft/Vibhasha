@@ -22,15 +22,7 @@ function titleize(str) {
 }
 
 // Read chapters
-const mdFiles = fs.readdirSync(chaptersDir).filter(f => f.endsWith('.md'))
-  .sort((a, b) => {
-    // sort by leading numeric prefix then filename
-    const na = a.match(/^([0-9]+)-/); const nb = b.match(/^([0-9]+)-/);
-    const ia = na ? parseInt(na[1], 10) : 9999;
-    const ib = nb ? parseInt(nb[1], 10) : 9999;
-    if (ia !== ib) return ia - ib;
-    return a.localeCompare(b);
-  });
+const mdFiles = fs.readdirSync(chaptersDir).filter(f => f.endsWith('.md'));
 
 if (mdFiles.length === 0) {
   console.log('No chapters found.');
@@ -48,7 +40,7 @@ const DEFAULT_ICON_BY_BASE = {
   '10-data-augmentation': 'Wand24Regular'
 };
 
-const entries = mdFiles.map(f => {
+let entries = mdFiles.map(f => {
   const base = f.replace(/\.md$/, '');
   // label: remove leading digits and dash
   const labelPart = base.replace(/^[0-9]+-/, '');
@@ -67,6 +59,24 @@ const entries = mdFiles.map(f => {
   const isSub = /^\d+-(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)-/.test(base);
   const icon = !isSub ? (DEFAULT_ICON_BY_BASE[base] || 'Document24Regular') : null;
   return { file: f, base, route: `/playbook/${base}`, compName, label, isSub, prefix, icon };
+});
+
+// Ensure ordering places root chapter before its sub-items and respects roman order
+const ROMAN_ORDER = ['i','ii','iii','iv','v','vi','vii','viii','ix','x'];
+function romanIndex(base) {
+  const m = base.match(/^\d+-(i|ii|iii|iv|v|vi|vii|viii|ix|x)-/);
+  return m ? ROMAN_ORDER.indexOf(m[1]) : -1;
+}
+entries = entries.sort((a, b) => {
+  const pa = a.prefix ? parseInt(a.prefix, 10) : 9999;
+  const pb = b.prefix ? parseInt(b.prefix, 10) : 9999;
+  if (pa !== pb) return pa - pb;
+  if (a.isSub !== b.isSub) return a.isSub ? 1 : -1; // root first
+  if (!a.isSub && !b.isSub) return a.base.localeCompare(b.base);
+  const ra = romanIndex(a.base);
+  const rb = romanIndex(b.base);
+  if (ra !== rb) return ra - rb;
+  return a.base.localeCompare(b.base);
 });
 
 // Generate import block and route block for main.jsx

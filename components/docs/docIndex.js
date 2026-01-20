@@ -91,6 +91,14 @@ export const docEntries = [
     "icon": "Document24Regular"
   },
   {
+    "path": "/playbook/08-model-finetuning-intro",
+    "label": "Model Finetuning Intro",
+    "base": "08-model-finetuning-intro",
+    "prefix": "08",
+    "isSub": false,
+    "icon": "Options24Regular"
+  },
+  {
     "path": "/playbook/08-i-model-selection",
     "label": "Model Selection",
     "base": "08-i-model-selection",
@@ -121,14 +129,6 @@ export const docEntries = [
     "prefix": "08",
     "isSub": true,
     "icon": null
-  },
-  {
-    "path": "/playbook/08-model-finetuning-intro",
-    "label": "Model Finetuning Intro",
-    "base": "08-model-finetuning-intro",
-    "prefix": "08",
-    "isSub": false,
-    "icon": "Options24Regular"
   },
   {
     "path": "/playbook/09-inference",
@@ -234,6 +234,10 @@ export const docOrder = [
     "label": "Data Compression"
   },
   {
+    "path": "/playbook/08-model-finetuning-intro",
+    "label": "Model Finetuning Intro"
+  },
+  {
     "path": "/playbook/08-i-model-selection",
     "label": "Model Selection"
   },
@@ -248,10 +252,6 @@ export const docOrder = [
   {
     "path": "/playbook/08-iv-decision-matrix",
     "label": "Decision Matrix"
-  },
-  {
-    "path": "/playbook/08-model-finetuning-intro",
-    "label": "Model Finetuning Intro"
   },
   {
     "path": "/playbook/09-inference",

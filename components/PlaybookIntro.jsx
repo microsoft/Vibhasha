@@ -18,9 +18,9 @@ export default function PlaybookIntro(){
 
 
   return (
-    <div>
+  <div  className="intro-root">
     <PageSearch containerSelector=".intro-root" />
-    <div className="intro-root">
+    <div>
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
@@ -51,6 +51,6 @@ export default function PlaybookIntro(){
         </div>
       </section>
     </div>
-        </div>
+  </div>
   );
 }

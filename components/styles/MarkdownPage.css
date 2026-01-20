@@ -174,7 +174,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 0 16px 8px;
+    padding: 16px 60px;
 }
 
 .doc-toolbar .subchapter-menu {
@@ -214,8 +214,17 @@
 }
 
 .doc-toolbar #subchapter-select {
-    padding: 8px 10px;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 6px;
+    min-width: 276px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    width: auto;
 }
 
 .prev-next-nav .btn-primary {
