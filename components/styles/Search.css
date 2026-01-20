@@ -1,0 +1,24 @@
+/* Highlight styles for PageSearch */
+.search-highlight {
+  background: rgba(255, 220, 0, 0.45);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.search-highlight.active {
+  outline: 2px solid rgba(255, 180, 0, 0.9);
+}
+.search-meta {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.hero-search {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  margin-left: auto; /* right align in container */
+  width: 468px;
+  height: 40px;
+  border-color: var(--color-header-bg);
+  justify-content: flex-end;
+}
