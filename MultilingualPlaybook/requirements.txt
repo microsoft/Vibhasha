@@ -102,7 +102,7 @@ tzdata==2025.2
 urllib3==2.5.0
 validators==0.35.0
 watchdog==6.0.0
-weasyprint==62.3
+weasyprint==68.0
 webencodings==0.5.1
 yarl==1.20.1
 zipp==3.23.0
