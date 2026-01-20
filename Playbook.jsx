@@ -6,7 +6,7 @@ import './components/styles/Playbook.css'
 export default function Playbook() {
   return (
     <div className="playbook-page">
-      <aside>
+      <aside className="sidebar">
         <Sidebar />
       </aside>
       <div className="playbook-content">
