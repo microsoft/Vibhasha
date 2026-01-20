@@ -7,7 +7,7 @@ import { docOrder as generatedDocOrder, docEntries } from './docIndex';
 import Hero from '../Hero';
 import PageSearch from '../PageSearch';
 import { useTheme } from '../../theme/ThemeContext.jsx'
-import { ChevronLeft24Regular, ChevronRight24Regular } from '@fluentui/react-icons'
+import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
 
 // Preload all markdown files using Vite's glob import (raw content)
 const mdModules = import.meta.glob('/public/chapters/*.md', { as: 'raw' });
@@ -97,6 +97,20 @@ export default function MarkdownPage({ filePath }) {
     return () => { cancelled = true; };
   }, [filePath]);
 
+  // Always scroll to top when the route (page) changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
+
+  // On new page, default TOC active to the first heading
+  useEffect(() => {
+    if (headings && headings.length > 0) {
+      setActiveId(headings[0].id);
+    } else {
+      setActiveId(null);
+    }
+  }, [location.pathname, headings]);
+
   // Prev/Next calculation
   const idx = docOrder.findIndex(d => d.path === location.pathname);
   const prev = idx > 0 ? docOrder[idx - 1] : null;
@@ -122,9 +136,12 @@ export default function MarkdownPage({ filePath }) {
     if (!headings || headings.length === 0) return;
     const observer = new IntersectionObserver(
       entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) setActiveId(e.target.id);
-        });
+        const visible = entries.filter(e => e.isIntersecting);
+        if (visible.length > 0) {
+          // Pick the heading closest to the top of the viewport
+          visible.sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
+          setActiveId(visible[0].target.id);
+        }
       },
       { root: null, rootMargin: '0px 0px -65% 0px', threshold: 0.1 }
     );
@@ -140,7 +157,33 @@ export default function MarkdownPage({ filePath }) {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     // update hash without jumping
     if (history && history.replaceState) history.replaceState(null, '', `#${id}`);
+    setActiveId(id);
   }
+
+  // Render headings (h1-h3) with clickable anchors
+  const renderHeading = (Tag) => ({ node, ...props }) => {
+    const id = slugify(String(props.children));
+    return (
+      <Tag id={id} {...props}>
+        <a
+          href={`#${id}`}
+          className="heading-anchor"
+          onClick={(e) => { e.preventDefault(); scrollToId(id); }}
+        >
+          {props.children}
+          <span className="heading-link-icon" aria-hidden="true">
+            <Link16Regular />
+          </span>
+        </a>
+      </Tag>
+    );
+  };
+
+  const mdHeadingComponents = {
+    h1: renderHeading('h1'),
+    h2: renderHeading('h2'),
+    h3: renderHeading('h3'),
+  };
 
   return (
     <>
@@ -165,20 +208,7 @@ export default function MarkdownPage({ filePath }) {
             <Hero title={heroTitle} subtitle={heroSubtitle} />
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              components={{
-                h1: ({ node, ...props }) => {
-                  const id = slugify(String(props.children));
-                  return <h1 id={id} {...props}>{props.children}</h1>;
-                },
-                h2: ({ node, ...props }) => {
-                  const id = slugify(String(props.children));
-                  return <h2 id={id} {...props}>{props.children}</h2>;
-                },
-                h3: ({ node, ...props }) => {
-                  const id = slugify(String(props.children));
-                  return <h3 id={id} {...props}>{props.children}</h3>;
-                }
-              }}
+              components={mdHeadingComponents}
             >
               {content}
             </ReactMarkdown>
@@ -214,8 +244,13 @@ export default function MarkdownPage({ filePath }) {
                 <ul>
                   {headings.map(h => (
                     <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
-                      <button onClick={() => scrollToId(h.id)} className={activeId === h.id ? 'active' : ''}>
-                        {h.text}
+                      <button
+                        onClick={() => scrollToId(h.id)}
+                        className={activeId === h.id ? 'active' : ''}
+                        aria-current={activeId === h.id ? 'true' : undefined}
+                      >
+                        <span>{h.text}</span>
+                        {activeId === h.id && <Checkmark16Regular className="toc-active-icon" />}
                       </button>
                     </li>
                   ))}

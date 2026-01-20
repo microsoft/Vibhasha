@@ -8,6 +8,7 @@
   align-items: center;
   min-height: 112px;
   gap: 10px;
+  background: var(--color-footer-bg);
 }
 
 .promo-left {
@@ -43,9 +44,9 @@
 .promo-cta {
   width: 300px;
   border: none;
-  font-size: 24px;
+  font-size: 22px;
   padding: 12px 16px;
-  font-weight: 600;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
