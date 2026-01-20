@@ -7,25 +7,35 @@ This repository is a small, Vite + React template for interactive playbooks or d
 
 Follow these steps to fork this template and generate your own playbook app from Markdown files only.
 
-1) Fork the repo on GitHub
-- Click "Fork" to create a copy under your account.
-- Optional: rename your fork to match your project.
+1) Fork the repo on Azure Devops
+- Click "Fork" to create a copy under the same devops org.
+
+OR
 
 2) Clone and set up locally
 - Clone your fork and install dependencies:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
+git clone https://msr-africa@dev.azure.com/msr-africa/Gecko%20Playbooks/_git/playbook-ui-template
 cd <your-repo>
+
+```
+
+3. Install Node
+- Node.js 18+ recommended and npm installed.
+- Install dependencies once after cloning:
+```bash
 npm install
 ```
 
-3) Add your chapters (Markdown only)
-- Place `.md` files in `public/chapters/` (e.g., `public/chapters/01-intro.md`, `04-i-metadata.md`).
+4. Rename your App on `package.json` to match your playbook name i.e Atlas, Paza or Vibhasha
+
+5) Add your chapters (Markdown only)
+- Replace `.md` files in `public/chapters/` with your own files (e.g., `public/chapters/01-intro.md`, `04-i-metadata.md`).
 - Use numeric prefixes to control order; sub-pages follow roman prefixes (`i`, `ii`, `iii`, `iv`), e.g., `04-i-...`, `04-ii-...`.
 
-4) Generate wrappers and routes
-- Create JSX wrappers for each markdown file:
+6) Generate wrappers and routes
+- Create JSX wrappers for each markdown file by running this script:
 
 ```bash
 npm run sync-docs
@@ -37,18 +47,17 @@ npm run sync-docs
 npm run sync-routes
 ```
 
-5) Run the app
+7) Run the app
 
 ```bash
 npm run dev
 ```
 
-6) Brand and theme (optional)
-- Update app name, subtitle, colors, and favicon via `theme/ThemeContext.jsx`.
+8) Brand and theme
+- Validate that the app name, subtitle, colors, and favicon match the [Playbook Design](https://www.figma.com/design/4ft7lDctSrvhxGTxCbKs7I/Playbooks-Template?node-id=5-322&t=cJ5nUWCtTDm5b6I9-0).
 - The Overview page (root `/playbook`) lists chapters dynamically from the sidebar tabs.
 
-7) Commit and push
-
+9) Commit and push
 ```bash
 git add -A
 git commit -m "Add chapters and sync routes"
@@ -56,42 +65,7 @@ git push origin main
 ```
 
 ## Updating Your Playbook Content
-- Use this template to store a sequence of Markdown-based chapters and the template will display them based on the theme settings. To add or update your playbook chapters:
-
-Use this template to store a sequence of Markdown-based chapters; the site will render them automatically once wrappers and routes are in place. Before running the sync scripts below, make sure your environment is prepared:
-
-### Prerequisites
-
-- Node.js 18+ recommended and npm installed.
-- Install dependencies once after cloning:
-
-```bash
-npm install
-```
-
-To add or update chapters, follow these steps in order:
-
-1. Add or edit Markdown files in the `public/chapters/` folder (e.g. `public/chapters/02-new-chapter.md`).
-
-2. Generate (or update) the React wrapper files for each Markdown file. This will create `components/docs/*.jsx` files that the app imports:
-
-```bash
-npm run sync-docs
-```
-
-3. Update the app routes and sidebar navigation to match the chapter order. This updates `main.jsx` and `components/docs/docIndex.js` based on numeric prefixes and roman sub-ordering:
-
-```bash
-npm run sync-routes
-```
-
-4. Start the dev server and verify the site shows your new content:
-
-```bash
-npm run dev
-```
-
-Tip: keep filenames consistent and use numeric prefixes (for example `01-`, `02-`, `04-i-`) to control ordering. Sub-pages like `04-i-metadata.md` are treated as sub-items in the sidebar when the filename follows that pattern.
+Use this template to store a sequence of markdown-based chapters; the site will render them automatically once wrappers and routes are in place.
 
 
 ### Build for production:
@@ -105,8 +79,6 @@ Serve the built site locally (example using npx):
 ```bash
 npx serve -s dist
 ```
-
-Note: the `package.json` includes a `start` script that runs `serve -s dist`. If you prefer, install `serve` globally (`npm i -g serve`) or use the `npx` command above.
 
 Available scripts (from `package.json`):
 
@@ -149,4 +121,4 @@ If you change the way Markdown is parsed or rendered, check `react-markdown` and
 
 ## License
 
-This template does not include a license by default. Add a `LICENSE` file and update `package.json` if you intend to publish the project.
+This template does not include a license by default. Add a `LICENSE` file and update `package.json` before you publish the repository externally.
