@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import '../styles/MarkdownPage.css'
+import './styles/MarkdownPage.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
-import { docOrder as generatedDocOrder, docEntries } from './docIndex';
-import Hero from '../Hero';
-import PageSearch from '../PageSearch';
-import { useTheme } from '../../theme/ThemeContext.jsx'
+import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
+import Hero from './Hero.jsx';
+import PageSearch from './PageSearch.jsx';
+import { useTheme } from '../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
 
 // Preload all markdown files using Vite's glob import (raw content)
