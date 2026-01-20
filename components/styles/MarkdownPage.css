@@ -67,6 +67,26 @@
     }
 }
 
+.markdown-body {
+    color: var(--color-page-text);
+}
+
+.markdown-body .hero h1 {
+    color: var(--color-header-text)
+}
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    color: #1a1a1a
+}
+
+.markdown-body a {
+    color: var(--color-sidebar-text);
+    text-decoration: underline;
+}
+
 .markdown-body table {
     width: 100%;
     border-collapse: collapse;
@@ -95,6 +115,13 @@
     background: rgba(16, 24, 40, 0.06);
 }
 
+.markdown-body caption {
+    caption-side: bottom;
+    font-size: .7rem;
+    color: var(--muted);
+    padding-top: 6px;
+}
+
 .doc-container {
     padding: 16px;
 }
@@ -110,9 +137,11 @@
     gap: 12px;
     padding: 0 16px 8px;
 }
+
 .doc-toolbar .subchapter-menu {
     flex: 0 0 auto;
 }
+
 .doc-toolbar .hero-search {
     margin-left: auto;
     width: 468px;
