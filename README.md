@@ -16,7 +16,7 @@ OR
 - Clone your fork and install dependencies:
 
 ```bash
-git clone https://msr-africa@dev.azure.com/msr-africa/Gecko%20Playbooks/_git/playbook-ui-template
+git clone https://msr-africa@dev.azure.com/msr-africa/Gecko%20Playbooks/_git/vibhasha-playbook
 cd <your-repo>
 
 ```
