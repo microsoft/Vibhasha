@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 10px;
   width: 190px;
+  align-items: anchor-center;
   background: var(--color-sidebar-bg);
 }
 
@@ -13,7 +14,7 @@
   list-style: none;
   flex-direction: column;
   gap: 6px;
-
+  width: 128px;
   padding: 0;
   margin-top: 32px;
 }
@@ -32,12 +33,11 @@
   gap: 6px;
   padding: 0.65rem 0.6rem;
   border-radius: 8px;
-  position: relative;
   text-align: center;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 14px;
   color: #1A1A1A; /* default text */
 }
 
