@@ -4,18 +4,17 @@ import { useTheme } from '../theme/ThemeContext.jsx';
 import './styles/PlaybookIntro.css';
 import Hero from './Hero';
 import PageSearch from './PageSearch';
+import SidebarIcon from './SidebarIcon';
+import { docEntries } from './docs/docIndex';
 
 export default function PlaybookIntro(){
   const { appName, appSubtitle, colors, brandImage } = useTheme();
   const navigate = useNavigate();
 
-  const chapters = useMemo(() => ([
-    { label: 'Evolution of ASR', to: '/playbook/02-evolution-of-asr' },
-    { label: 'Dataset Creation', to: '/playbook/04-dataset-creation-guidelines' },
-    { label: 'Model Finetuning', to: '/playbook/08-model-finetuning-intro' },
-    { label: 'Inference', to: '/playbook/09-inference' },
-    { label: 'Dataset Augmentation', to: '/playbook/10-data-augmentation' },
-  ]), []);
+  // Build overview from sidebar tabs
+  const overviewChapters = useMemo(() => (
+    docEntries.filter(e => !e.isSub).map(e => ({ label: e.label, to: e.path, icon: e.icon }))
+  ), []);
 
 
   return (
@@ -36,13 +35,16 @@ export default function PlaybookIntro(){
           generalization, and deployment considerations. Explore the chapters below or use the sidebar for section jumps.
         </p>
         <div className="intro-chapters">
-          {chapters.map(c => (
+          {overviewChapters.map(c => (
             <button
               key={c.to}
               className="chapter-btn"
               onClick={(e)=>{e.preventDefault(); navigate(c.to);}}
             >
-              {c.label}
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <SidebarIcon name={c.icon} />
+                {c.label}
+              </span>
               <span className="chapter-arrow" aria-hidden>›</span>
             </button>
           ))}
