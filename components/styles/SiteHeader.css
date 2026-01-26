@@ -1,5 +1,9 @@
-/* SiteHeader component styles (extracted from main stylesheet) */
 .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
     min-height: 112px;
     display: flex;
     justify-content: space-between;
@@ -7,6 +11,36 @@
     gap: 16px;
     background-color: var(--color-header-bg);
     color: var(--color-header-text);
+}
+
+.header-menu-btn {
+    display: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 22px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    .header-menu-btn {
+        display: inline-block;
+    }
+    .header-segment-right-group {display: none;}
+    .header-segment--middle {display: none;}
+    .header-segment--right {display: none;}
+
+    .header-segment--left {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .segment-text {
+        text-align: center;
+        align-items: center;
+    }
 }
 
 .header-left {
@@ -20,7 +54,6 @@
     height: -webkit-fill-available;
 }
 
-/* Segmented header layout (left/logo, middle/link, right/leaderboard) */
 .header-segment {
     display: inline-flex;
     align-items: center;
