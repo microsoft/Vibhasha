@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import './styles/Sidebar.css'
 import { NavLink, useLocation } from 'react-router-dom'
+import { useUI } from '../theme/UIContext.jsx'
 import SidebarIcon from './SidebarIcon'
 import { docEntries } from './docs/docIndex'
 
 export default function Sidebar(){
   const [visibleHeading, setVisibleHeading] = useState(null);
   const location = useLocation();
+  const { closeSidebar } = useUI();
 
   useEffect(() => {
-    // Scroll spy only on playbook doc pages
     const container = document.querySelector('.playbook-page');
     if (!container) return;
     const headings = container.querySelectorAll('.markdown-body h1, .markdown-body h2, .markdown-body h3');
     if (!headings.length) return;
     const observer = new IntersectionObserver((entries) => {
-      // Find first fully / mostly visible heading
       const visible = entries
         .filter(e => e.isIntersecting)
         .sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
@@ -30,7 +30,6 @@ export default function Sidebar(){
 
   function isScrollActive(item){
     if (!visibleHeading) return false;
-    // Simple match: heading text contains item label words (case-insensitive)
     const normHead = visibleHeading.toLowerCase();
     const normLabel = item.label.toLowerCase();
     return normHead.includes(normLabel) && !location.pathname.endsWith('/playbook');
@@ -39,11 +38,11 @@ export default function Sidebar(){
   return (
     <nav className="sidebar" aria-label="Playbook navigation">
       <ul className="sidebar-list">
-        {/* Overview */}
         <li className={'sidebar-item'}>
           <NavLink
             to="/playbook"
             end
+            onClick={closeSidebar}
             className={({isActive}) => {
               let cls = 'sidebar-link';
               if (isActive) cls += ' active';
@@ -56,11 +55,12 @@ export default function Sidebar(){
           </NavLink>
         </li>
 
-        {/* Auto-generated root chapters within docIndex */}
+        {/* Root chapters within docIndex */}
         {docEntries.filter(e => !e.isSub).map(e => (
           <li key={e.path} className={'sidebar-item'}>
             <NavLink
               to={e.path}
+              onClick={closeSidebar}
               className={({isActive}) => {
                 let cls = 'sidebar-link';
                 if (isActive) cls += ' active';

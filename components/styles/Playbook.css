@@ -1,9 +1,16 @@
-/* Playbook layout container */
 .playbook-page {
   display: flex;
 }
 
-/* Main content area beside the sidebar */
 .playbook-content {
   flex: 1;
+}
+
+@media (max-width: 980px) {
+  .playbook-page {
+    display: block;
+  }
+  .playbook-content {
+    width: 100%;
+  }
 }

@@ -5,6 +5,7 @@ import App from './App'
 import Playbook from './Playbook'
 import PlaybookIntro from './components/PlaybookIntro'
 import './styles.css'
+import { UIProvider } from './theme/UIContext'
 
 // Docs markdown components
 import IntroductionDoc from './components/docs/00-introduction'
@@ -55,66 +56,62 @@ import ToDosDoc from './components/docs/ToDos'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          {/* Always wrap content with Playbook layout to show Sidebar */}
-          <Route element={<Playbook />}>
-            {/* Root shows PlaybookIntro with sidebar */}
-            <Route index element={<PlaybookIntro />} />
-            <Route path="playbook">
+    <UIProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="playbook" element={<Playbook />}>
               <Route index element={<PlaybookIntro />} />
               {/* Docs markdown routes */}
-            <Route path="00-introduction" element={<IntroductionDoc />} />
-            <Route path="01-evaluation-overview" element={<EvaluationOverviewDoc />} />
-            <Route path="01-i-methodologies" element={<IMethodologiesDoc />} />
-            <Route path="01-ii-low-resource" element={<IiLowResourceDoc />} />
-            <Route path="01-iii-advisory" element={<IiiAdvisoryDoc />} />
-            <Route path="01-iv-scenarios" element={<IvScenariosDoc />} />
-            <Route path="01-v-datasets" element={<VDatasetsDoc />} />
-            <Route path="01-vi-challenges" element={<ViChallengesDoc />} />
-            <Route path="02-translation-overview" element={<TranslationOverviewDoc />} />
-            <Route path="02-i-strategic-crossroads" element={<IStrategicCrossroadsDoc />} />
-            <Route path="02-ii-architectures" element={<IiArchitecturesDoc />} />
-            <Route path="02-iii-adaptation" element={<IiiAdaptationDoc />} />
-            <Route path="02-iv-quality-assurance" element={<IvQualityAssuranceDoc />} />
-            <Route path="02-v-cultural-nuance" element={<VCulturalNuanceDoc />} />
-            <Route path="02-vi-recommendations" element={<ViRecommendationsDoc />} />
-            <Route path="04-fine-tuning-overview" element={<FineTuningOverviewDoc />} />
-            <Route path="04-i-pipeline" element={<IPipelineDoc />} />
-            <Route path="04-ii-methodologies" element={<IiMethodologiesDoc />} />
-            <Route path="04-iii-data-engineering" element={<IiiDataEngineeringDoc />} />
-            <Route path="04-iv-alignment" element={<IvAlignmentDoc />} />
-            <Route path="04-v-quality" element={<VQualityDoc />} />
-            <Route path="04-vi-implementation" element={<ViImplementationDoc />} />
-            <Route path="05-safety-overview" element={<SafetyOverviewDoc />} />
-            <Route path="05-i-vulnerabilities" element={<IVulnerabilitiesDoc />} />
-            <Route path="05-ii-benchmarks" element={<IiBenchmarksDoc />} />
-            <Route path="05-iii-red-teaming" element={<IiiRedTeamingDoc />} />
-            <Route path="05-iv-toolkits" element={<IvToolkitsDoc />} />
-            <Route path="06-synthetic-data-overview" element={<SyntheticDataOverviewDoc />} />
-            <Route path="06-i-approaches" element={<IApproachesDoc />} />
-            <Route path="06-ii-quality" element={<IiQualityDoc />} />
-            <Route path="06-iii-evaluation" element={<IiiEvaluationDoc />} />
-            <Route path="06-iv-case-study" element={<IvCaseStudyDoc />} />
-            <Route path="06-v-implementation" element={<VImplementationDoc />} />
-            <Route path="07-culture-overview" element={<CultureOverviewDoc />} />
-            <Route path="07-i-frameworks" element={<IFrameworksDoc />} />
-            <Route path="07-ii-data-benchmarks" element={<IiDataBenchmarksDoc />} />
-            <Route path="07-iii-modeling" element={<IiiModelingDoc />} />
-            <Route path="07-iv-prompt-engineering" element={<IvPromptEngineeringDoc />} />
-            <Route path="07-v-evaluation" element={<VEvaluationDoc />} />
-            <Route path="07-vi-conclusion" element={<ViConclusionDoc />} />
-            <Route path="99-conclusion" element={<ConclusionDoc />} />
-            <Route path="paperslist" element={<PaperslistDoc />} />
-            <Route path="safety-2" element={<Safety2Doc />} />
-            <Route path="scratchpad" element={<ScratchpadDoc />} />
-            <Route path="ToDos" element={<ToDosDoc />} />
-
+        <Route path="/playbook/00-introduction" element={<IntroductionDoc />} />
+        <Route path="/playbook/01-evaluation-overview" element={<EvaluationOverviewDoc />} />
+        <Route path="/playbook/01-i-methodologies" element={<IMethodologiesDoc />} />
+        <Route path="/playbook/01-ii-low-resource" element={<IiLowResourceDoc />} />
+        <Route path="/playbook/01-iii-advisory" element={<IiiAdvisoryDoc />} />
+        <Route path="/playbook/01-iv-scenarios" element={<IvScenariosDoc />} />
+        <Route path="/playbook/01-v-datasets" element={<VDatasetsDoc />} />
+        <Route path="/playbook/01-vi-challenges" element={<ViChallengesDoc />} />
+        <Route path="/playbook/02-translation-overview" element={<TranslationOverviewDoc />} />
+        <Route path="/playbook/02-i-strategic-crossroads" element={<IStrategicCrossroadsDoc />} />
+        <Route path="/playbook/02-ii-architectures" element={<IiArchitecturesDoc />} />
+        <Route path="/playbook/02-iii-adaptation" element={<IiiAdaptationDoc />} />
+        <Route path="/playbook/02-iv-quality-assurance" element={<IvQualityAssuranceDoc />} />
+        <Route path="/playbook/02-v-cultural-nuance" element={<VCulturalNuanceDoc />} />
+        <Route path="/playbook/02-vi-recommendations" element={<ViRecommendationsDoc />} />
+        <Route path="/playbook/04-fine-tuning-overview" element={<FineTuningOverviewDoc />} />
+        <Route path="/playbook/04-i-pipeline" element={<IPipelineDoc />} />
+        <Route path="/playbook/04-ii-methodologies" element={<IiMethodologiesDoc />} />
+        <Route path="/playbook/04-iii-data-engineering" element={<IiiDataEngineeringDoc />} />
+        <Route path="/playbook/04-iv-alignment" element={<IvAlignmentDoc />} />
+        <Route path="/playbook/04-v-quality" element={<VQualityDoc />} />
+        <Route path="/playbook/04-vi-implementation" element={<ViImplementationDoc />} />
+        <Route path="/playbook/05-safety-overview" element={<SafetyOverviewDoc />} />
+        <Route path="/playbook/05-i-vulnerabilities" element={<IVulnerabilitiesDoc />} />
+        <Route path="/playbook/05-ii-benchmarks" element={<IiBenchmarksDoc />} />
+        <Route path="/playbook/05-iii-red-teaming" element={<IiiRedTeamingDoc />} />
+        <Route path="/playbook/05-iv-toolkits" element={<IvToolkitsDoc />} />
+        <Route path="/playbook/06-synthetic-data-overview" element={<SyntheticDataOverviewDoc />} />
+        <Route path="/playbook/06-i-approaches" element={<IApproachesDoc />} />
+        <Route path="/playbook/06-ii-quality" element={<IiQualityDoc />} />
+        <Route path="/playbook/06-iii-evaluation" element={<IiiEvaluationDoc />} />
+        <Route path="/playbook/06-iv-case-study" element={<IvCaseStudyDoc />} />
+        <Route path="/playbook/06-v-implementation" element={<VImplementationDoc />} />
+        <Route path="/playbook/07-culture-overview" element={<CultureOverviewDoc />} />
+        <Route path="/playbook/07-i-frameworks" element={<IFrameworksDoc />} />
+        <Route path="/playbook/07-ii-data-benchmarks" element={<IiDataBenchmarksDoc />} />
+        <Route path="/playbook/07-iii-modeling" element={<IiiModelingDoc />} />
+        <Route path="/playbook/07-iv-prompt-engineering" element={<IvPromptEngineeringDoc />} />
+        <Route path="/playbook/07-v-evaluation" element={<VEvaluationDoc />} />
+        <Route path="/playbook/07-vi-conclusion" element={<ViConclusionDoc />} />
+        <Route path="/playbook/99-conclusion" element={<ConclusionDoc />} />
+        <Route path="/playbook/paperslist" element={<PaperslistDoc />} />
+        <Route path="/playbook/safety-2" element={<Safety2Doc />} />
+        <Route path="/playbook/scratchpad" element={<ScratchpadDoc />} />
+        <Route path="/playbook/ToDos" element={<ToDosDoc />} />
+            </Route>
           </Route>
-          </Route>
-          </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </UIProvider>
   </React.StrictMode>
 );

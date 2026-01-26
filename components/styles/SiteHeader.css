@@ -1,5 +1,9 @@
-/* SiteHeader component styles (extracted from main stylesheet) */
 .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
     min-height: 112px;
     display: flex;
     justify-content: space-between;
@@ -9,10 +13,41 @@
     color: var(--color-header-text);
 }
 
+.header-menu-btn {
+    display: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 22px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    .header-menu-btn {
+        display: inline-block;
+    }
+    .header-segment-right-group {display: none;}
+    .header-segment--middle {display: none;}
+    .header-segment--right {display: none;}
+
+    .header-segment--left {
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+    .segment-text {
+        text-align: center;
+        align-items: center;
+    }
+}
+
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px
+    gap: 12px;
+    padding: 0 16px;
 }
 
 .header-segment-right-group {
@@ -20,7 +55,6 @@
     height: -webkit-fill-available;
 }
 
-/* Segmented header layout (left/logo, middle/link, right/leaderboard) */
 .header-segment {
     display: inline-flex;
     align-items: center;
@@ -88,6 +122,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .header-segment--middle .segment-text,
@@ -100,20 +135,25 @@
     font-size: 20px;
     font-weight: 500;
     font-style: normal;
-    margin-left: 10px;
 }
 
-@media (max-width:700px) {
+@media (max-width:980px) {
+    .app-header {
+        padding: 0 16px;
+    }
     .header-segment--middle {
         display: none;
     }
     .header-segment--right {
         display: none;
     }
-    .segment-subtitle {
-        display: none;
-    }
     .header-segment {
       justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+   .segment-subtitle {
+        display: none;
     }
 }
