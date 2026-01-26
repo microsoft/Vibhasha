@@ -15,8 +15,6 @@
 .hero-search {
   display: flex;
   gap: 8px;
-  margin-top: 8px;
-  margin-left: auto; /* right align in container */
   max-width: 468px;
   height: 40px;
   border-color: var(--color-header-bg);
