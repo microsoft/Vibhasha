@@ -5,6 +5,7 @@ import App from './App'
 import Playbook from './Playbook'
 import PlaybookIntro from './components/PlaybookIntro'
 import './styles.css'
+import { UIProvider } from './theme/UIContext.jsx'
 
 // Docs markdown components
 import IntroDoc from './components/docs/01-intro'
@@ -33,16 +34,14 @@ import ReferencesDoc from './components/docs/15-references'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          {/* Always wrap content with Playbook layout to show Sidebar */}
-          <Route element={<Playbook />}>
-            {/* Root shows PlaybookIntro with sidebar */}
-            <Route index element={<PlaybookIntro />} />
-            <Route path="playbook">
+    <UIProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route element={<Playbook />}>
               <Route index element={<PlaybookIntro />} />
-              {/* Docs markdown routes */}
+              <Route path="playbook">
+                <Route index element={<PlaybookIntro />} />
             <Route path="01-intro" element={<IntroDoc />} />
             <Route path="02-evolution-of-asr" element={<EvolutionOfASRDoc />} />
             <Route path="03-background-of-asr" element={<BackgroundOfASRDoc />} />
@@ -66,10 +65,11 @@ createRoot(document.getElementById('root')).render(
             <Route path="13-coming-soon" element={<ComingSoonDoc />} />
             <Route path="14-attribution" element={<AttributionDoc />} />
             <Route path="15-references" element={<ReferencesDoc />} />
-          </Route>
-          </Route>
-          </Route>
-      </Routes>
-    </BrowserRouter>
+            </Route>
+            </Route>
+            </Route>
+        </Routes>
+      </BrowserRouter>
+    </UIProvider>
   </React.StrictMode>
 );
