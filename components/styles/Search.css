@@ -17,7 +17,7 @@
   gap: 8px;
   margin-top: 8px;
   margin-left: auto; /* right align in container */
-  width: 468px;
+  max-width: 468px;
   height: 40px;
   border-color: var(--color-header-bg);
   justify-content: flex-end;
