@@ -3,186 +3,362 @@
 
 export const docEntries = [
   {
-    "path": "/playbook/01-intro",
-    "label": "Intro",
-    "base": "01-intro",
+    "path": "/playbook/00-introduction",
+    "label": "Introduction",
+    "base": "00-introduction",
+    "prefix": "00",
+    "isSub": false,
+    "icon": "Document24Regular"
+  },
+  {
+    "path": "/playbook/01-evaluation-overview",
+    "label": "Evaluation Overview",
+    "base": "01-evaluation-overview",
     "prefix": "01",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/02-evolution-of-asr",
-    "label": "Evolution Of ASR",
-    "base": "02-evolution-of-asr",
-    "prefix": "02",
-    "isSub": false,
-    "icon": "Branch24Regular"
+    "path": "/playbook/01-i-methodologies",
+    "label": "Methodologies",
+    "base": "01-i-methodologies",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
   },
   {
-    "path": "/playbook/03-background-of-asr",
-    "label": "Background Of ASR",
-    "base": "03-background-of-asr",
-    "prefix": "03",
+    "path": "/playbook/01-ii-low-resource",
+    "label": "Low Resource",
+    "base": "01-ii-low-resource",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-iii-advisory",
+    "label": "Advisory",
+    "base": "01-iii-advisory",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-iv-scenarios",
+    "label": "Scenarios",
+    "base": "01-iv-scenarios",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-v-datasets",
+    "label": "V Datasets",
+    "base": "01-v-datasets",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-vi-challenges",
+    "label": "Vi Challenges",
+    "base": "01-vi-challenges",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-translation-overview",
+    "label": "Translation Overview",
+    "base": "02-translation-overview",
+    "prefix": "02",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/04-dataset-creation-guidelines",
-    "label": "Dataset Creation Guidelines",
-    "base": "04-dataset-creation-guidelines",
+    "path": "/playbook/02-i-strategic-crossroads",
+    "label": "Strategic Crossroads",
+    "base": "02-i-strategic-crossroads",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-ii-architectures",
+    "label": "Architectures",
+    "base": "02-ii-architectures",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-iii-adaptation",
+    "label": "Adaptation",
+    "base": "02-iii-adaptation",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-iv-quality-assurance",
+    "label": "Quality Assurance",
+    "base": "02-iv-quality-assurance",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-v-cultural-nuance",
+    "label": "V Cultural Nuance",
+    "base": "02-v-cultural-nuance",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/02-vi-recommendations",
+    "label": "Vi Recommendations",
+    "base": "02-vi-recommendations",
+    "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/04-fine-tuning-overview",
+    "label": "Fine Tuning Overview",
+    "base": "04-fine-tuning-overview",
     "prefix": "04",
     "isSub": false,
-    "icon": "Add24Regular"
+    "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/04-i-metadata",
-    "label": "Metadata",
-    "base": "04-i-metadata",
+    "path": "/playbook/04-i-pipeline",
+    "label": "Pipeline",
+    "base": "04-i-pipeline",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/04-ii-curation-for-diversity",
-    "label": "Curation For Diversity",
-    "base": "04-ii-curation-for-diversity",
+    "path": "/playbook/04-ii-methodologies",
+    "label": "Methodologies",
+    "base": "04-ii-methodologies",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/04-iii-generalization-vs-domain",
-    "label": "Generalization Vs Domain",
-    "base": "04-iii-generalization-vs-domain",
+    "path": "/playbook/04-iii-data-engineering",
+    "label": "Data Engineering",
+    "base": "04-iii-data-engineering",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/04-iv-quality-control",
-    "label": "Quality Control",
-    "base": "04-iv-quality-control",
+    "path": "/playbook/04-iv-alignment",
+    "label": "Alignment",
+    "base": "04-iv-alignment",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/05-data-formats-structures",
-    "label": "Data Formats Structures",
-    "base": "05-data-formats-structures",
+    "path": "/playbook/04-v-quality",
+    "label": "V Quality",
+    "base": "04-v-quality",
+    "prefix": "04",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/04-vi-implementation",
+    "label": "Vi Implementation",
+    "base": "04-vi-implementation",
+    "prefix": "04",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/05-safety-overview",
+    "label": "Safety Overview",
+    "base": "05-safety-overview",
     "prefix": "05",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/06-data-preprocessing",
-    "label": "Data Preprocessing",
-    "base": "06-data-preprocessing",
+    "path": "/playbook/05-i-vulnerabilities",
+    "label": "Vulnerabilities",
+    "base": "05-i-vulnerabilities",
+    "prefix": "05",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/05-ii-benchmarks",
+    "label": "Benchmarks",
+    "base": "05-ii-benchmarks",
+    "prefix": "05",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/05-iii-red-teaming",
+    "label": "Red Teaming",
+    "base": "05-iii-red-teaming",
+    "prefix": "05",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/05-iv-toolkits",
+    "label": "Toolkits",
+    "base": "05-iv-toolkits",
+    "prefix": "05",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/06-synthetic-data-overview",
+    "label": "Synthetic Data Overview",
+    "base": "06-synthetic-data-overview",
     "prefix": "06",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/07-data-compression",
-    "label": "Data Compression",
-    "base": "07-data-compression",
+    "path": "/playbook/06-i-approaches",
+    "label": "Approaches",
+    "base": "06-i-approaches",
+    "prefix": "06",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/06-ii-quality",
+    "label": "Quality",
+    "base": "06-ii-quality",
+    "prefix": "06",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/06-iii-evaluation",
+    "label": "Evaluation",
+    "base": "06-iii-evaluation",
+    "prefix": "06",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/06-iv-case-study",
+    "label": "Case Study",
+    "base": "06-iv-case-study",
+    "prefix": "06",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/06-v-implementation",
+    "label": "V Implementation",
+    "base": "06-v-implementation",
+    "prefix": "06",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/07-culture-overview",
+    "label": "Culture Overview",
+    "base": "07-culture-overview",
     "prefix": "07",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/08-model-finetuning-intro",
-    "label": "Model Finetuning Intro",
-    "base": "08-model-finetuning-intro",
-    "prefix": "08",
-    "isSub": false,
-    "icon": "Options24Regular"
-  },
-  {
-    "path": "/playbook/08-i-model-selection",
-    "label": "Model Selection",
-    "base": "08-i-model-selection",
-    "prefix": "08",
+    "path": "/playbook/07-i-frameworks",
+    "label": "Frameworks",
+    "base": "07-i-frameworks",
+    "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/08-ii-full-finetuning",
-    "label": "Full Finetuning",
-    "base": "08-ii-full-finetuning",
-    "prefix": "08",
+    "path": "/playbook/07-ii-data-benchmarks",
+    "label": "Data Benchmarks",
+    "base": "07-ii-data-benchmarks",
+    "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/08-iii-peft",
-    "label": "Peft",
-    "base": "08-iii-peft",
-    "prefix": "08",
+    "path": "/playbook/07-iii-modeling",
+    "label": "Modeling",
+    "base": "07-iii-modeling",
+    "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/08-iv-decision-matrix",
-    "label": "Decision Matrix",
-    "base": "08-iv-decision-matrix",
-    "prefix": "08",
+    "path": "/playbook/07-iv-prompt-engineering",
+    "label": "Prompt Engineering",
+    "base": "07-iv-prompt-engineering",
+    "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/09-inference",
-    "label": "Inference",
-    "base": "09-inference",
-    "prefix": "09",
-    "isSub": false,
-    "icon": "PlugConnected24Regular"
+    "path": "/playbook/07-v-evaluation",
+    "label": "V Evaluation",
+    "base": "07-v-evaluation",
+    "prefix": "07",
+    "isSub": true,
+    "icon": null
   },
   {
-    "path": "/playbook/10-data-augmentation",
-    "label": "Data Augmentation",
-    "base": "10-data-augmentation",
-    "prefix": "10",
-    "isSub": false,
-    "icon": "Wand24Regular"
+    "path": "/playbook/07-vi-conclusion",
+    "label": "Vi Conclusion",
+    "base": "07-vi-conclusion",
+    "prefix": "07",
+    "isSub": true,
+    "icon": null
   },
   {
-    "path": "/playbook/11-common-finetuning-challenges",
-    "label": "Common Finetuning Challenges",
-    "base": "11-common-finetuning-challenges",
-    "prefix": "11",
-    "isSub": false,
-    "icon": "Document24Regular"
-  },
-  {
-    "path": "/playbook/12-conclusion",
+    "path": "/playbook/99-conclusion",
     "label": "Conclusion",
-    "base": "12-conclusion",
-    "prefix": "12",
+    "base": "99-conclusion",
+    "prefix": "99",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/13-coming-soon",
-    "label": "Coming Soon",
-    "base": "13-coming-soon",
-    "prefix": "13",
+    "path": "/playbook/paperslist",
+    "label": "Paperslist",
+    "base": "paperslist",
+    "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/14-attribution",
-    "label": "Attribution",
-    "base": "14-attribution",
-    "prefix": "14",
+    "path": "/playbook/safety-2",
+    "label": "Safety 2",
+    "base": "safety-2",
+    "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/15-references",
-    "label": "References",
-    "base": "15-references",
-    "prefix": "15",
+    "path": "/playbook/scratchpad",
+    "label": "Scratchpad",
+    "base": "scratchpad",
+    "prefix": null,
+    "isSub": false,
+    "icon": "Document24Regular"
+  },
+  {
+    "path": "/playbook/ToDos",
+    "label": "ToDos",
+    "base": "ToDos",
+    "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"
   }
@@ -190,95 +366,183 @@ export const docEntries = [
 
 export const docOrder = [
   {
-    "path": "/playbook/01-intro",
-    "label": "Intro"
+    "path": "/playbook/00-introduction",
+    "label": "Introduction"
   },
   {
-    "path": "/playbook/02-evolution-of-asr",
-    "label": "Evolution Of ASR"
+    "path": "/playbook/01-evaluation-overview",
+    "label": "Evaluation Overview"
   },
   {
-    "path": "/playbook/03-background-of-asr",
-    "label": "Background Of ASR"
+    "path": "/playbook/01-i-methodologies",
+    "label": "Methodologies"
   },
   {
-    "path": "/playbook/04-dataset-creation-guidelines",
-    "label": "Dataset Creation Guidelines"
+    "path": "/playbook/01-ii-low-resource",
+    "label": "Low Resource"
   },
   {
-    "path": "/playbook/04-i-metadata",
-    "label": "Metadata"
+    "path": "/playbook/01-iii-advisory",
+    "label": "Advisory"
   },
   {
-    "path": "/playbook/04-ii-curation-for-diversity",
-    "label": "Curation For Diversity"
+    "path": "/playbook/01-iv-scenarios",
+    "label": "Scenarios"
   },
   {
-    "path": "/playbook/04-iii-generalization-vs-domain",
-    "label": "Generalization Vs Domain"
+    "path": "/playbook/01-v-datasets",
+    "label": "V Datasets"
   },
   {
-    "path": "/playbook/04-iv-quality-control",
-    "label": "Quality Control"
+    "path": "/playbook/01-vi-challenges",
+    "label": "Vi Challenges"
   },
   {
-    "path": "/playbook/05-data-formats-structures",
-    "label": "Data Formats Structures"
+    "path": "/playbook/02-translation-overview",
+    "label": "Translation Overview"
   },
   {
-    "path": "/playbook/06-data-preprocessing",
-    "label": "Data Preprocessing"
+    "path": "/playbook/02-i-strategic-crossroads",
+    "label": "Strategic Crossroads"
   },
   {
-    "path": "/playbook/07-data-compression",
-    "label": "Data Compression"
+    "path": "/playbook/02-ii-architectures",
+    "label": "Architectures"
   },
   {
-    "path": "/playbook/08-model-finetuning-intro",
-    "label": "Model Finetuning Intro"
+    "path": "/playbook/02-iii-adaptation",
+    "label": "Adaptation"
   },
   {
-    "path": "/playbook/08-i-model-selection",
-    "label": "Model Selection"
+    "path": "/playbook/02-iv-quality-assurance",
+    "label": "Quality Assurance"
   },
   {
-    "path": "/playbook/08-ii-full-finetuning",
-    "label": "Full Finetuning"
+    "path": "/playbook/02-v-cultural-nuance",
+    "label": "V Cultural Nuance"
   },
   {
-    "path": "/playbook/08-iii-peft",
-    "label": "Peft"
+    "path": "/playbook/02-vi-recommendations",
+    "label": "Vi Recommendations"
   },
   {
-    "path": "/playbook/08-iv-decision-matrix",
-    "label": "Decision Matrix"
+    "path": "/playbook/04-fine-tuning-overview",
+    "label": "Fine Tuning Overview"
   },
   {
-    "path": "/playbook/09-inference",
-    "label": "Inference"
+    "path": "/playbook/04-i-pipeline",
+    "label": "Pipeline"
   },
   {
-    "path": "/playbook/10-data-augmentation",
-    "label": "Data Augmentation"
+    "path": "/playbook/04-ii-methodologies",
+    "label": "Methodologies"
   },
   {
-    "path": "/playbook/11-common-finetuning-challenges",
-    "label": "Common Finetuning Challenges"
+    "path": "/playbook/04-iii-data-engineering",
+    "label": "Data Engineering"
   },
   {
-    "path": "/playbook/12-conclusion",
+    "path": "/playbook/04-iv-alignment",
+    "label": "Alignment"
+  },
+  {
+    "path": "/playbook/04-v-quality",
+    "label": "V Quality"
+  },
+  {
+    "path": "/playbook/04-vi-implementation",
+    "label": "Vi Implementation"
+  },
+  {
+    "path": "/playbook/05-safety-overview",
+    "label": "Safety Overview"
+  },
+  {
+    "path": "/playbook/05-i-vulnerabilities",
+    "label": "Vulnerabilities"
+  },
+  {
+    "path": "/playbook/05-ii-benchmarks",
+    "label": "Benchmarks"
+  },
+  {
+    "path": "/playbook/05-iii-red-teaming",
+    "label": "Red Teaming"
+  },
+  {
+    "path": "/playbook/05-iv-toolkits",
+    "label": "Toolkits"
+  },
+  {
+    "path": "/playbook/06-synthetic-data-overview",
+    "label": "Synthetic Data Overview"
+  },
+  {
+    "path": "/playbook/06-i-approaches",
+    "label": "Approaches"
+  },
+  {
+    "path": "/playbook/06-ii-quality",
+    "label": "Quality"
+  },
+  {
+    "path": "/playbook/06-iii-evaluation",
+    "label": "Evaluation"
+  },
+  {
+    "path": "/playbook/06-iv-case-study",
+    "label": "Case Study"
+  },
+  {
+    "path": "/playbook/06-v-implementation",
+    "label": "V Implementation"
+  },
+  {
+    "path": "/playbook/07-culture-overview",
+    "label": "Culture Overview"
+  },
+  {
+    "path": "/playbook/07-i-frameworks",
+    "label": "Frameworks"
+  },
+  {
+    "path": "/playbook/07-ii-data-benchmarks",
+    "label": "Data Benchmarks"
+  },
+  {
+    "path": "/playbook/07-iii-modeling",
+    "label": "Modeling"
+  },
+  {
+    "path": "/playbook/07-iv-prompt-engineering",
+    "label": "Prompt Engineering"
+  },
+  {
+    "path": "/playbook/07-v-evaluation",
+    "label": "V Evaluation"
+  },
+  {
+    "path": "/playbook/07-vi-conclusion",
+    "label": "Vi Conclusion"
+  },
+  {
+    "path": "/playbook/99-conclusion",
     "label": "Conclusion"
   },
   {
-    "path": "/playbook/13-coming-soon",
-    "label": "Coming Soon"
+    "path": "/playbook/paperslist",
+    "label": "Paperslist"
   },
   {
-    "path": "/playbook/14-attribution",
-    "label": "Attribution"
+    "path": "/playbook/safety-2",
+    "label": "Safety 2"
   },
   {
-    "path": "/playbook/15-references",
-    "label": "References"
+    "path": "/playbook/scratchpad",
+    "label": "Scratchpad"
+  },
+  {
+    "path": "/playbook/ToDos",
+    "label": "ToDos"
   }
 ];

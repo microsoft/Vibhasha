@@ -38,8 +38,8 @@ files.forEach(file => {
   const pascal = parts.map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('');
   const componentName = (pascal ? pascal : 'Doc') + 'Doc';
 
-  // Use the same relative path style as existing wrappers (../../chapters/01-intro.md)
-  const content = `import MarkdownPage from './MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="/public/chapters/${file}" />;\n}\n`;
+  // Use the correct relative path to MarkdownPage in parent directory
+  const content = `import MarkdownPage from '../MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="/public/chapters/${file}" />;\n}\n`;
 
   fs.writeFileSync(targetPath, content, { encoding: 'utf8' });
   console.log('Created wrapper:', jsxName);
