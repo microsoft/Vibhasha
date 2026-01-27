@@ -39,7 +39,7 @@ files.forEach(file => {
   const componentName = (pascal ? pascal : 'Doc') + 'Doc';
 
   // Use the same relative path style as existing wrappers (../../chapters/01-intro.md)
-  const content = `import MarkdownPage from './MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="/public/chapters/${file}" />;\n}\n`;
+  const content = `import MarkdownPage from '../MarkdownPage';\n\nexport default function ${componentName}() {\n  return <MarkdownPage filePath="/public/chapters/${file}" />;\n}\n`;
 
   fs.writeFileSync(targetPath, content, { encoding: 'utf8' });
   console.log('Created wrapper:', jsxName);
