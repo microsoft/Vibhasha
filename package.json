@@ -12,6 +12,7 @@
     "dev": "vite",
     "build": "vite build",
     "sync-docs": "node scripts/generate-doc-wrappers.js",
+    "sync-index": "node scripts/sync-index.js",
     "sync-routes": "node scripts/sync-routes-sidebar.js",
     "start": "serve -s dist",
     "preview": "vite preview"
