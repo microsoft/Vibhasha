@@ -1,13 +1,33 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './styles/MarkdownPage.css'
+import './styles/MkDocsMaterial.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import ReactMarkdown from 'react-markdown';
 import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
 import Hero from './Hero.jsx';
 import PageSearch from './PageSearch.jsx';
 import { useTheme } from '../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
+
+// MkDocs Material syntax transformers
+import { preprocessAdmonitions } from '../plugins/remark-admonitions.js';
+import { preprocessIcons } from '../plugins/remark-icons.js';
+import { preprocessAttrList } from '../plugins/remark-attr-list.js';
+
+/**
+ * Preprocess markdown content to transform MkDocs Material syntax
+ * This runs before react-markdown parses the content
+ */
+function preprocessMarkdown(rawContent) {
+  let content = rawContent;
+  // Order matters: process admonitions first (they may contain icons/buttons)
+  content = preprocessAdmonitions(content);
+  content = preprocessIcons(content);
+  content = preprocessAttrList(content);
+  return content;
+}
 
 // Preload all markdown files using Vite's glob import (raw content)
 const mdModules = import.meta.glob('/public/chapters/*.md', { as: 'raw' });
@@ -18,6 +38,7 @@ const docOrder = generatedDocOrder;
 
 export default function MarkdownPage({ filePath }) {
   const [content, setContent] = useState('');
+  const [processedContent, setProcessedContent] = useState('');
   const [headings, setHeadings] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const location = useLocation();
@@ -80,8 +101,10 @@ export default function MarkdownPage({ filePath }) {
       }
 
       // Fallback: network fetch (works if files are served from public)
+      // For public folder files, strip /public prefix since Vite serves them at root
+      const fetchPath = normalized.replace(/^\/public/, '');
       try {
-        const res = await fetch(normalized);
+        const res = await fetch(fetchPath);
         if (res.ok) {
           const txt = await res.text();
           if (!cancelled) setContent(txt);
@@ -96,6 +119,16 @@ export default function MarkdownPage({ filePath }) {
     load();
     return () => { cancelled = true; };
   }, [filePath]);
+
+  // Preprocess markdown content for MkDocs Material syntax
+  useEffect(() => {
+    if (content) {
+      const processed = preprocessMarkdown(content);
+      setProcessedContent(processed);
+    } else {
+      setProcessedContent('');
+    }
+  }, [content]);
 
   // Always scroll to top when the route (page) changes
   useEffect(() => {
@@ -208,9 +241,10 @@ export default function MarkdownPage({ filePath }) {
             <Hero title={heroTitle} subtitle={heroSubtitle} />
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
               components={mdHeadingComponents}
             >
-              {content}
+              {processedContent}
             </ReactMarkdown>
             {(prev || next) && (
               <nav className="prev-next-nav" aria-label="Page navigation">
