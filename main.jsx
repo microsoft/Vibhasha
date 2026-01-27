@@ -30,6 +30,7 @@ import ComingSoonDoc from './components/docs/13-coming-soon';
 import AttributionDoc from './components/docs/14-attribution';
 import ReferencesDoc from './components/docs/15-references';
 
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UIProvider>
@@ -63,9 +64,9 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/14-attribution" element={<AttributionDoc />} />
                 <Route path="/playbook/15-references" element={<ReferencesDoc />} />
                 <Route index element={<PlaybookIntro />} />
+              </Route>
             </Route>
-            </Route>
-            </Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </UIProvider>
