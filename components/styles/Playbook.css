@@ -6,6 +6,10 @@
   flex: 1;
 }
 
+.sidebar-drawer {
+  background: var(--color-sidebar-bg);
+}
+
 @media (max-width: 980px) {
   .playbook-page {
     display: block;
