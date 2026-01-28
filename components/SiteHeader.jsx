@@ -2,15 +2,24 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/SiteHeader.css';
 import { useTheme } from '../theme/ThemeContext.jsx';
-import { Open24Regular } from '@fluentui/react-icons';
+import { useUI } from '../theme/UIContext.jsx';
+import { Open24Regular, LineHorizontal324Filled, Dismiss24Filled } from '@fluentui/react-icons';
 
 export default function SiteHeader() {
   const navigate = useNavigate();
   const { colors, brand, appName, appSubtitle, AppIcon } = useTheme();
+  const { toggleSidebar, sidebarOpen } = useUI();
   const brandClass = brand ? ` site-header--brand-${brand}` : '';
 
   return (
     <header className={`app-header${brandClass}`} role="banner">
+      <button
+        className="header-menu-btn"
+        aria-label={sidebarOpen ? 'Close menu' : 'Open menu'}
+        onClick={toggleSidebar}
+      >
+        {sidebarOpen ? <Dismiss24Filled /> : <LineHorizontal324Filled />}
+      </button>
       <div className="header-segment header-segment--left" onClick={() => navigate('/playbook')}> 
           <AppIcon fontSize={24} />
         <div className="segment-text">

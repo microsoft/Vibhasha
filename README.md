@@ -41,8 +41,13 @@ npm install
 npm run sync-docs
 ```
 
-- Sync routes and sidebar/doc index from filenames/order:
+To regenerate the low-level `docIndex.js` file (which exports `docEntries` and `docOrder`) run:
 
+```bash
+npm run sync-index
+```
+
+- Sync routes and sidebar/doc index from filenames/order:
 ```bash
 npm run sync-routes
 ```
@@ -86,8 +91,9 @@ Available scripts (from `package.json`):
 - `npm run build` — create a production build in `dist`
 - `npm run preview` — preview the build with Vite's preview server
 - `npm start` — run `serve -s dist` to serve the `dist` folder (requires `serve`)
- - `npm run sync-docs` — generate JSX wrappers from markdown files in `public/chapters`
- - `npm run sync-routes` — sync routes and doc index from chapter filenames
+- `npm run sync-docs` — generate JSX wrappers from markdown files in `public/chapters`
+- `npm run sync-index` — generate `components/docs/docIndex.js` (docEntries and docOrder) from `public/chapters`
+- `npm run sync-routes` — sync routes and doc index from chapter filenames
 
 ## Project structure
 

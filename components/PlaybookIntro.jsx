@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../theme/ThemeContext.jsx';
 import './styles/PlaybookIntro.css';
 import Hero from './Hero';
+import { ChevronRight24Regular } from '@fluentui/react-icons';
 import PageSearch from './PageSearch';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
@@ -41,11 +42,13 @@ export default function PlaybookIntro(){
               className="chapter-btn"
               onClick={(e)=>{e.preventDefault(); navigate(c.to);}}
             >
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <span className="chapter-btn-text">
                 <SidebarIcon name={c.icon} />
                 {c.label}
               </span>
-              <span className="chapter-arrow" aria-hidden>›</span>
+              <span className="chapter-arrow" aria-hidden>
+                <ChevronRight24Regular />
+              </span>
             </button>
           ))}
         </div>

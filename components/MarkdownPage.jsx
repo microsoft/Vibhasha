@@ -220,7 +220,7 @@ export default function MarkdownPage({ filePath }) {
 
   return (
     <>
-      <div className="doc-toolbar">
+      <div className={`doc-toolbar${groupInfo ? '' : ' no-subchapter'}`}>
         {groupInfo && (
           <div className="subchapter-menu">
             <select id="subchapter-select" onChange={onSelectSub} defaultValue={location.pathname}>

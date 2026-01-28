@@ -1,12 +1,9 @@
-/* Sidebar component styles only */
-
 .sidebar {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 190px;
   align-items: anchor-center;
-  background: var(--color-sidebar-bg);
 }
 
 .sidebar-list {
@@ -62,4 +59,60 @@
 
 .sidebar-link.scroll-active:not(.active) {
   color: var(--color-sidebar-text);
+}
+
+@media (max-width: 980px) {
+  .sidebar-drawer {
+    position: fixed;
+    top: 112px;
+    left: 0;
+    height: calc(100vh - 112px);
+    width: 100%;
+    background: var(--color-sidebar-bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transform: translateX(-100%);
+    transition: transform 180ms ease-in-out;
+    z-index: 1100;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-drawer.open {
+    transform: translateX(0);
+    background: #FFFFFF;
+    overflow-y: auto;
+  }
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 112px 0 0 0; 
+    background: rgba(0,0,0,0.35);
+    z-index: 1000;
+  }
+
+  .sidebar {
+    width: 100%;
+    align-items: stretch;
+    background: transparent;
+  }
+  .sidebar-list {
+    width: 100%;
+    margin-top: 12px;
+  }
+  .sidebar-item {
+    text-align: left;
+    height: 80px;
+  }
+  .sidebar-link {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+    border-radius: 0;
+    height: 100%; 
+    border-bottom: 1px solid #E0E0E0;
+  }
+  /* Remove bottom border on the last item in responsive view */
+  .sidebar-list .sidebar-item:last-child .sidebar-link {
+    border-bottom: none;
+  }
 }

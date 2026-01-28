@@ -7,7 +7,6 @@ import { ThemeProvider } from './theme/ThemeContext.jsx'
 import pkg from './package.json'
 
 export default function App() {
-  // Derive brand from the app name (package.json) instead of pageKey
   const appName = (pkg && pkg.name) ? pkg.name.toLowerCase() : 'paza'
 
   return (
