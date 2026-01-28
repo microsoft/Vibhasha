@@ -3,7 +3,7 @@
 *A comprehensive guide for building language model applications in multilingual and multicultural settings*
 
 !!! tip "Quick Start"
-    New to multilingual LLMs? Start with our [Interactive Flowchart](interactive/flowchart.md) to find the right approach for your use case.
+    New to multilingual LLMs? Start with our [Interactive Flowchart](/playbook/flowchart) to find the right approach for your use case.
 
 ---
 
@@ -61,7 +61,7 @@ Generate training data for low-resource languages using systematic frameworks.
     Best when you have domain-specific requirements or work with underrepresented languages.
     
     **❓ I'm not sure**  
-    **Interactive Decision Tool** → [Try It](interactive/flowchart.md)  
+    **Interactive Decision Tool** → [Try It](/playbook/flowchart)  
     Answer a few questions to get personalized recommendations.
 
 ---

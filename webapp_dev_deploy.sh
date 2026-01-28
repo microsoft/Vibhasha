@@ -16,6 +16,10 @@ SLOT=dev
 #   --slot "$SLOT" \
 #   --configuration-source "$APP"
 
+npm run sync-docs
+npm run sync-index
+npm run sync-routes
+
 npm run build
 
 cd dist && zip -r ../site.zip .

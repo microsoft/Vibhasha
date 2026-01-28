@@ -55,9 +55,9 @@ const brandSvgs = {
 
 // App catalog and brand mapping by app name
 const appCatalog = {
-  paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal },
-  atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink },
-  vibhasha: { title: 'Vibhasha', subtitle: 'The Multilingual LLM Playbook', brand: 'indigo', Icon: iconByBrand.indigo }
+  paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal, url: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/' },
+  atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink, url: 'https://atlas-crosscultural-playbook.azurewebsites.net/' },
+  vibhasha: { title: 'Vibhasha', subtitle: 'The Multilingual LLM Playbook', brand: 'indigo', Icon: iconByBrand.indigo, url: null }
 }
 
 // Brand image mapping by app key
@@ -126,6 +126,7 @@ export function ThemeProvider({ children, initialAppName }){
       title: appCatalog[key].title,
       brand: appCatalog[key].brand,
       Icon: appCatalog[key].Icon,
+      url: appCatalog[key].url,
     }))
   ), [])
 

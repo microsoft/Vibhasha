@@ -36,18 +36,23 @@ export default function SiteFooter() {
             const Icon = iconByBrand[p.brand] || iconByBrand.teal;
             const brandClass = p.brand ? `promo-cta promo-cta--${p.brand}` : 'promo-cta';
             return (
-              <button
+              <a
                 key={p.key}
                 className={brandClass}
+                href={p.url || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={(e) => {
-                  e.preventDefault();
-                  setAppName(p.key);
-                  navigate('/playbook');
+                  if (!p.url) {
+                    e.preventDefault();
+                    setAppName(p.key);
+                    navigate('/playbook');
+                  }
                 }}
               >
                 <span className="promo-icon"><Icon fontSize={24} /></span>
                 {p.title} Playbook
-              </button>
+              </a>
             );
           })}
         </div>

@@ -8,7 +8,8 @@ This document summarizes all changes made while migrating the Vibhasha Playbook 
 
 1. [MkDocs Material Syntax Support](#1-mkdocs-material-syntax-support)
 2. [Interactive Flowchart Migration](#2-interactive-flowchart-migration)
-3. [Files Overview](#3-files-overview)
+3. [Footer External Links](#3-footer-external-links)
+4. [Files Overview](#4-files-overview)
 
 ---
 
@@ -345,6 +346,8 @@ http://localhost:5173/playbook/flowchart
 | `components/MarkdownPage.jsx` | Added preprocessing pipeline, rehype-raw |
 | `main.jsx` | Added FlowchartPage import and route |
 | `package.json` | Added `rehype-raw` and `@xyflow/react` dependencies |
+| `theme/ThemeContext.jsx` | Added external URLs to app catalog |
+| `components/SiteFooter.jsx` | Changed buttons to anchor tags with external links |
 
 ## Files That Can Be Deleted
 
@@ -394,7 +397,100 @@ Markdown File (with MkDocs syntax)
 
 ---
 
-## Branch Information
+# 3. Footer External Links
+
+## Problem Statement
+
+The footer contains promotional buttons for other playbooks (Paza and Atlas). These buttons originally just switched the app theme but didn't link to the actual external playbook websites.
+
+## Solution Overview
+
+Added external URLs to the app catalog and updated the footer buttons to open the respective playbook websites in a new browser tab.
+
+---
+
+## Files Modified for Footer Links
+
+### 1. `theme/ThemeContext.jsx`
+
+**Changes:**
+
+Added `url` field to each app in the catalog:
+
+```javascript
+const appCatalog = {
+  paza: { 
+    title: 'Paza', 
+    subtitle: 'Speech Models Playbook', 
+    brand: 'teal', 
+    Icon: iconByBrand.teal, 
+    url: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/' 
+  },
+  atlas: { 
+    title: 'Atlas', 
+    subtitle: 'Human Centred AI Playbook', 
+    brand: 'pink', 
+    Icon: iconByBrand.pink, 
+    url: 'https://atlas-crosscultural-playbook.azurewebsites.net/' 
+  },
+  vibhasha: { 
+    title: 'Vibhasha', 
+    subtitle: 'The Multilingual LLM Playbook', 
+    brand: 'indigo', 
+    Icon: iconByBrand.indigo, 
+    url: null  // Current app, no external link
+  }
+}
+```
+
+Also updated `allApps` to include the URL field.
+
+---
+
+### 2. `components/SiteFooter.jsx`
+
+**Changes:**
+
+Changed the promotional buttons from `<button>` to `<a>` anchor tags:
+
+```jsx
+<a
+  key={p.key}
+  className={brandClass}
+  href={p.url || '#'}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={(e) => {
+    if (!p.url) {
+      e.preventDefault();
+      setAppName(p.key);
+      navigate('/playbook');
+    }
+  }}
+>
+  <span className="promo-icon"><Icon fontSize={24} /></span>
+  {p.title} Playbook
+</a>
+```
+
+**Key Features:**
+- Opens external URLs in new tab (`target="_blank"`)
+- Includes security attributes (`rel="noopener noreferrer"`)
+- Falls back to theme-switching behavior if no URL is provided
+
+---
+
+## External Links Summary
+
+| Playbook | URL |
+|----------|-----|
+| Paza | https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/ |
+| Atlas | https://atlas-crosscultural-playbook.azurewebsites.net/ |
+| Vibhasha | Current app (no external link) |
+
+---
+
+# 4. Files Overview
 
 - **Branch Name:** `feature/mkdocs-admonitions`
 - **Based On:** `develop`
