@@ -103,16 +103,53 @@
   min-width: 180px;
   max-width: 200px;
   text-align: center;
-  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   border: 2px solid transparent;
   position: relative;
 }
 
-.flowchart-node:hover {
+/* Clickable nodes */
+.flowchart-node.clickable {
+  cursor: pointer;
+}
+
+.flowchart-node:not(.clickable) {
+  cursor: default;
+  opacity: 0.9;
+}
+
+/* Click hint - hidden by default */
+.click-hint {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.flowchart-node.clickable:hover .click-hint {
+  opacity: 1;
+}
+
+.flowchart-node.clickable:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.flowchart-node:not(.clickable):hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .flowchart-node:active {

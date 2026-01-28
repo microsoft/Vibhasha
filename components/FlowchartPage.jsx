@@ -18,14 +18,17 @@ import './styles/FlowchartPage.css';
 // Custom Node Components
 const StartNode = ({ data }) => {
   const navigate = useNavigate();
+  const isClickable = !!data.chapter;
   
   return (
     <div 
-      className="flowchart-node node-start"
-      onClick={() => data.chapter && navigate(data.chapter)}
+      className={`flowchart-node node-start ${isClickable ? 'clickable' : ''}`}
+      onClick={() => isClickable && navigate(data.chapter)}
+      title={isClickable ? `Click to open: ${data.label}` : ''}
     >
       <div className="node-icon">🚀</div>
       <div className="node-label">{data.label}</div>
+      {isClickable && <div className="click-hint">Click to navigate →</div>}
       <Handle type="source" position={Position.Bottom} className="handle" />
     </div>
   );
@@ -43,14 +46,17 @@ const EndNode = ({ data }) => {
 
 const DecisionNode = ({ data }) => {
   const navigate = useNavigate();
+  const isClickable = !!data.chapter;
   
   return (
     <div 
-      className="flowchart-node node-decision"
-      onClick={() => data.chapter && navigate(data.chapter)}
+      className={`flowchart-node node-decision ${isClickable ? 'clickable' : ''}`}
+      onClick={() => isClickable && navigate(data.chapter)}
+      title={isClickable ? `Click to open: ${data.label}` : ''}
     >
       <div className="node-icon">❓</div>
       <div className="node-label">{data.label}</div>
+      {isClickable && <div className="click-hint">Click to navigate →</div>}
       <Handle type="target" position={Position.Top} className="handle" />
       <Handle type="source" position={Position.Bottom} className="handle" />
       <Handle type="source" position={Position.Left} id="left" className="handle" />
@@ -61,14 +67,17 @@ const DecisionNode = ({ data }) => {
 
 const StrategyNode = ({ data }) => {
   const navigate = useNavigate();
+  const isClickable = !!data.chapter;
   
   return (
     <div 
-      className="flowchart-node node-strategy"
-      onClick={() => data.chapter && navigate(data.chapter)}
+      className={`flowchart-node node-strategy ${isClickable ? 'clickable' : ''}`}
+      onClick={() => isClickable && navigate(data.chapter)}
+      title={isClickable ? `Click to open: ${data.label}` : ''}
     >
       <div className="node-icon">{data.icon || '🔷'}</div>
       <div className="node-label">{data.label}</div>
+      {isClickable && <div className="click-hint">Click to navigate →</div>}
       <Handle type="target" position={Position.Top} className="handle" />
       <Handle type="source" position={Position.Bottom} className="handle" />
     </div>
@@ -77,14 +86,17 @@ const StrategyNode = ({ data }) => {
 
 const ProcessNode = ({ data }) => {
   const navigate = useNavigate();
+  const isClickable = !!data.chapter;
   
   return (
     <div 
-      className="flowchart-node node-process"
-      onClick={() => data.chapter && navigate(data.chapter)}
+      className={`flowchart-node node-process ${isClickable ? 'clickable' : ''}`}
+      onClick={() => isClickable && navigate(data.chapter)}
+      title={isClickable ? `Click to open: ${data.label}` : ''}
     >
       <div className="node-icon">{data.icon || '⚙️'}</div>
       <div className="node-label">{data.label}</div>
+      {isClickable && <div className="click-hint">Click to navigate →</div>}
       <Handle type="target" position={Position.Top} className="handle" />
       <Handle type="source" position={Position.Bottom} className="handle" />
     </div>
