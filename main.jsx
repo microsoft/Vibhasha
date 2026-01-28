@@ -53,6 +53,7 @@ import PaperslistDoc from './components/docs/paperslist'
 import Safety2Doc from './components/docs/safety-2'
 import ScratchpadDoc from './components/docs/scratchpad'
 import ToDosDoc from './components/docs/ToDos'
+import FlowchartPage from './components/FlowchartPage'
 
 
 createRoot(document.getElementById('root')).render(
@@ -111,6 +112,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/safety-2" element={<Safety2Doc />} />
                 <Route path="/playbook/scratchpad" element={<ScratchpadDoc />} />
                 <Route path="/playbook/ToDos" element={<ToDosDoc />} />
+                <Route path="/playbook/flowchart" element={<FlowchartPage />} />
               </Route>
             </Route>
           </Route>
