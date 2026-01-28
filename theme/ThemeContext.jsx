@@ -57,7 +57,7 @@ const brandSvgs = {
 const appCatalog = {
   paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal },
   atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink },
-  vibhasha: { title: 'Vibhasha', subtitle: 'Multi-lingual LLMs Playbook', brand: 'indigo', Icon: iconByBrand.indigo }
+  vibhasha: { title: 'Vibhasha', subtitle: 'The Multilingual LLM Playbook', brand: 'indigo', Icon: iconByBrand.indigo }
 }
 
 // Brand image mapping by app key
