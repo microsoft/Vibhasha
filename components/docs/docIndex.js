@@ -331,33 +331,9 @@ export const docEntries = [
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/paperslist",
-    "label": "Paperslist",
-    "base": "paperslist",
-    "prefix": null,
-    "isSub": false,
-    "icon": "Document24Regular"
-  },
-  {
-    "path": "/playbook/safety-2",
-    "label": "Safety 2",
-    "base": "safety-2",
-    "prefix": null,
-    "isSub": false,
-    "icon": "Document24Regular"
-  },
-  {
-    "path": "/playbook/scratchpad",
-    "label": "Scratchpad",
-    "base": "scratchpad",
-    "prefix": null,
-    "isSub": false,
-    "icon": "Document24Regular"
-  },
-  {
-    "path": "/playbook/ToDos",
-    "label": "ToDos",
-    "base": "ToDos",
+    "path": "/playbook/landingpage",
+    "label": "Landingpage",
+    "base": "landingpage",
     "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"
@@ -530,19 +506,7 @@ export const docOrder = [
     "label": "Conclusion"
   },
   {
-    "path": "/playbook/paperslist",
-    "label": "Paperslist"
-  },
-  {
-    "path": "/playbook/safety-2",
-    "label": "Safety 2"
-  },
-  {
-    "path": "/playbook/scratchpad",
-    "label": "Scratchpad"
-  },
-  {
-    "path": "/playbook/ToDos",
-    "label": "ToDos"
+    "path": "/playbook/landingpage",
+    "label": "Landingpage"
   }
 ];

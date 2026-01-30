@@ -49,11 +49,8 @@ import IvPromptEngineeringDoc from './components/docs/07-iv-prompt-engineering'
 import VEvaluationDoc from './components/docs/07-v-evaluation'
 import ViConclusionDoc from './components/docs/07-vi-conclusion'
 import ConclusionDoc from './components/docs/99-conclusion'
-import PaperslistDoc from './components/docs/paperslist'
-import Safety2Doc from './components/docs/safety-2'
-import ScratchpadDoc from './components/docs/scratchpad'
-import ToDosDoc from './components/docs/ToDos'
 import FlowchartPage from './components/FlowchartPage'
+import LandingpageDoc from './components/docs/landingpage';
 
 
 createRoot(document.getElementById('root')).render(
@@ -108,11 +105,8 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/07-v-evaluation" element={<VEvaluationDoc />} />
                 <Route path="/playbook/07-vi-conclusion" element={<ViConclusionDoc />} />
                 <Route path="/playbook/99-conclusion" element={<ConclusionDoc />} />
-                <Route path="/playbook/paperslist" element={<PaperslistDoc />} />
-                <Route path="/playbook/safety-2" element={<Safety2Doc />} />
-                <Route path="/playbook/scratchpad" element={<ScratchpadDoc />} />
-                <Route path="/playbook/ToDos" element={<ToDosDoc />} />
                 <Route path="/playbook/flowchart" element={<FlowchartPage />} />
+        <Route path="/playbook/landingpage" element={<LandingpageDoc />} />
               </Route>
             </Route>
           </Route>
