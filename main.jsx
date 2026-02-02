@@ -52,8 +52,9 @@ import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import LandingpageDoc from './components/docs/landingpage';
 
-
-const basename = import.meta.env.DEV ? '/' : '/Vibhasha/'
+// Use '/' for private repo GitHub Pages deployment
+// Change to '/Vibhasha/' if deploying to microsoft.github.io/Vibhasha
+const basename = '/'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
