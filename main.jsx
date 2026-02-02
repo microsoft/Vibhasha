@@ -53,10 +53,12 @@ import FlowchartPage from './components/FlowchartPage'
 import LandingpageDoc from './components/docs/landingpage';
 
 
+const basename = import.meta.env.DEV ? '/' : '/Vibhasha/'
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UIProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<App />}>
             <Route element={<Playbook />}>
