@@ -5,3 +5,6 @@ dist/
 .DS_Store
 .idea/
 /dist
+
+# Windows NUL device artifact
+\\\.\\NUL
