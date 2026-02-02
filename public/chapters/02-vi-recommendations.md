@@ -74,13 +74,13 @@ Leveraging translation to unlock the power of English-centric LLMs for global ap
 !!! info "Continue Your Journey"
     
     **📊 Learn How to Evaluate Your System**  
-    [Evaluation Methodologies →](01-evaluation.md){ .md-button }
+    [Evaluation Methodologies →](/playbook/01-evaluation-overview){ .md-button }
     
     **⚙️ Explore Fine-Tuning Approaches**  
-    [Fine-Tuning Strategies →](04-fine-tuning.md){ .md-button }
+    [Fine-Tuning Strategies →](/playbook/04-fine-tuning-overview){ .md-button }
     
     **🛡️ Ensure Safety Across Languages**  
-    [Safety Assessments →](05-safety.md){ .md-button }
+    [Safety Assessments →](/playbook/05-safety-overview){ .md-button }
 
 ---
 

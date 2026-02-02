@@ -66,7 +66,7 @@ Based on empirical research and production deployments, multilingual LLM applica
     
     **Best for:** Quick prototyping, well-supported languages
     
-    [→ Learn more](02-translation.md)
+    [→ Learn more](/playbook/02-translation-overview)
 
 !!! note "Strategy 2: 💬 Off-the-Shelf Prompting"
     
@@ -76,7 +76,7 @@ Based on empirical research and production deployments, multilingual LLM applica
     
     **Best for:** Rapid iteration, mid-to-high resource languages
     
-    [→ Learn more](03-off-the-shelf.md)
+    [→ Learn more](/playbook/02-translation-overview)
 
 !!! note "Strategy 3: ⚙️ Fine-Tuning Specialized Models"
     
@@ -86,7 +86,7 @@ Based on empirical research and production deployments, multilingual LLM applica
     
     **Best for:** Domain-specific apps, low-resource languages
     
-    [→ Learn more](04-fine-tuning.md)
+    [→ Learn more](/playbook/04-fine-tuning-overview)
 
 ---
 
@@ -120,7 +120,7 @@ The most straightforward approach involves translating non-English input to Engl
     
     ⚠️ **Trade-offs**: Cultural nuance loss, compounding errors, increased latency/cost
 
-[→ Deep dive into Translation Strategies](02-translation.md){ .md-button }
+[→ Deep dive into Translation Strategies](/playbook/02-translation-overview){ .md-button }
 
 ### 2. Off-the-Shelf Prompting
 
@@ -151,7 +151,7 @@ Modern LLMs like GPT-4, Claude, and open models like Llama have multilingual cap
     
     ⚠️ **Trade-offs**: Inconsistent across languages, limited for low-resource scenarios
 
-[→ Explore Prompting Techniques](03-off-the-shelf.md){ .md-button }
+[→ Explore Prompting Techniques](/playbook/02-translation-overview){ .md-button }
 
 ### 3. Fine-Tuning Specialized Models
 
@@ -193,7 +193,7 @@ Fine-tuning involves taking a smaller, open-source LLM (e.g., Mistral, Phi, Gemm
     
     ⚠️ **Trade-offs**: Data collection, infrastructure needs, expertise required
 
-[→ Master Fine-Tuning Strategies](04-fine-tuning.md){ .md-button }
+[→ Master Fine-Tuning Strategies](/playbook/04-fine-tuning-overview){ .md-button }
 
 ---
 
@@ -238,7 +238,7 @@ Standard English-centric benchmarks fail to capture the true performance of mult
 
 </div>
 
-[→ Complete Evaluation Framework](01-evaluation.md){ .md-button .md-button--primary }
+[→ Complete Evaluation Framework](/playbook/01-evaluation-overview){ .md-button .md-button--primary }
 
 ---
 
@@ -266,7 +266,7 @@ Standard English-centric benchmarks fail to capture the true performance of mult
 - ✅ Implement cross-lingual safety filters
 - ✅ Monitor for cultural context-specific harms
 
-[→ Comprehensive Safety Assessments](05-safety.md){ .md-button .md-button--primary }
+[→ Comprehensive Safety Assessments](/playbook/05-safety-overview){ .md-button .md-button--primary }
 
 ---
 
@@ -296,7 +296,7 @@ Whether you need evaluation datasets, few-shot examples for prompting, or traini
 !!! tip "Practical Application"
     Translate and culturally adapt English instruction-following datasets (e.g., Alpaca, Dolly) to create training data for underrepresented languages.
 
-[→ Synthetic Data Generation Framework](06-synthetic-data.md){ .md-button }
+[→ Synthetic Data Generation Framework](/playbook/06-synthetic-data-overview){ .md-button }
 
 ---
 
@@ -307,29 +307,29 @@ Whether you need evaluation datasets, few-shot examples for prompting, or traini
 
 ### 🚀 Just Starting Out?
 
-Explore the [Interactive Flowchart](../interactive/flowchart.md)
+Explore the [Interactive Flowchart](/playbook/flowchart)
 
 Perfect for understanding the landscape.
 
 ### ⚡ Need Quick Results?
 
-- [Translation](02-translation.md) for leveraging existing MT services
-- [Off-the-Shelf Prompting](03-off-the-shelf.md) for rapid prototyping
+- [Translation](/playbook/02-translation-overview) for leveraging existing MT services
+- [Off-the-Shelf Prompting](/playbook/02-translation-overview) for rapid prototyping
 
 Get a working prototype fast.
 
 ### 🏭 Building for Production?
 
-1. Read [Evaluation](01-evaluation.md) first
-2. Then [Safety](05-safety.md)
+1. Read [Evaluation](/playbook/01-evaluation-overview) first
+2. Then [Safety](/playbook/05-safety-overview)
 3. Choose your implementation strategy
 
 Understand success criteria & risks upfront.
 
 ### 🎯 Have Specialized Needs?
 
-- [Fine-Tuning](04-fine-tuning.md) for maximum customization
-- [Synthetic Data](06-synthetic-data.md) for data scarcity
+- [Fine-Tuning](/playbook/04-fine-tuning-overview) for maximum customization
+- [Synthetic Data](/playbook/06-synthetic-data-overview) for data scarcity
 
 Deep dive into advanced techniques.
 
@@ -354,7 +354,7 @@ Deep dive into advanced techniques.
 
 ---
 
-**Ready to dive in?** Choose your path above, or start with the [Interactive Flowchart](../interactive/flowchart.md) for personalized guidance.
+**Ready to dive in?** Choose your path above, or start with the [Interactive Flowchart](/playbook/flowchart) for personalized guidance.
 
 
 ---

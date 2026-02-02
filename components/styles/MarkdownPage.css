@@ -267,3 +267,109 @@
         box-sizing: border-box;
     }
 }
+
+/* Code block styling */
+.code-block-wrapper {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e1e4e8);
+    background: var(--surface-secondary, #f6f8fa);
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--surface-tertiary, #f0f2f4);
+    border-bottom: 1px solid var(--border-color, #e1e4e8);
+}
+
+.code-block-language {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--muted, #6a737d);
+    letter-spacing: 0.5px;
+}
+
+.code-block-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.code-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--muted, #6a737d);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.code-action-btn:hover {
+    background: var(--surface-hover, rgba(0, 0, 0, 0.08));
+    color: var(--foreground, #24292e);
+}
+
+.code-block {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    background: var(--surface-secondary, #f6f8fa) !important;
+}
+
+.code-block-plain {
+    background: var(--surface-secondary, #f6f8fa);
+    color: var(--foreground, #24292e);
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.code-block-plain code {
+    background: transparent;
+    padding: 0;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+/* Inline code */
+.markdown-body code:not([class*="language-"]) {
+    background: var(--surface-secondary, #f0f0f0);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .markdown-body code:not([class*="language-"]) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .code-block-wrapper {
+    border-color: var(--border-color, #30363d);
+    background: var(--surface-secondary, #161b22);
+}
+
+[data-theme="dark"] .code-block-header {
+    background: var(--surface-tertiary, #21262d);
+    border-color: var(--border-color, #30363d);
+}
+
+[data-theme="dark"] .code-block {
+    background: var(--surface-secondary, #161b22) !important;
+}
+
+[data-theme="dark"] .code-block-plain {
+    background: var(--surface-secondary, #161b22);
+    color: var(--foreground, #c9d1d9);
+}

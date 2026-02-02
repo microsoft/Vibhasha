@@ -24,26 +24,26 @@ Making strategic decisions about **multilingual AI features**, **localization st
 
 ### 🚀 Getting Started
 
-**[Introduction](chapters/00-introduction.md)**  
+**[Introduction](/playbook/00-introduction)**  
 Core concepts, common pitfalls, and the three fundamental strategies for multilingual LLM deployment.
 
-**[Evaluation](chapters/01-evaluation.md)**  
+**[Evaluation](/playbook/01-evaluation-overview)**  
 Methodologies for measuring performance across languages and ensuring fairness in multilingual systems.
 
 ### ⚙️ Implementation Strategies
 
-**[Translation-Based Approach](chapters/02-translation.md)**  
+**[Translation-Based Approach](/playbook/02-translation-overview)**  
 Translate to English, process, then translate back. Best for quick prototyping with well-supported languages.
 
-**[Fine-Tuning](chapters/04-fine-tuning.md)**  
+**[Fine-Tuning](/playbook/04-fine-tuning-overview)**  
 Adapt open-source models to your domain and culture. Ideal for specialized use cases and cultural fidelity.
 
 ### 🛡️ Safety & Data
 
-**[Safety Assessments](chapters/05-safety.md)**  
+**[Safety Assessments](/playbook/05-safety-overview)**  
 Address safety gaps in multilingual contexts. Critical for production deployments.
 
-**[Synthetic Data](chapters/06-synthetic-data.md)**  
+**[Synthetic Data](/playbook/06-synthetic-data-overview)**  
 Generate training data for low-resource languages using systematic frameworks.
 
 ---
@@ -53,11 +53,11 @@ Generate training data for low-resource languages using systematic frameworks.
 !!! abstract "Choose Your Path"
     
     **⚡ I need something fast**  
-    **Translation-based approach** → [Get Started](chapters/02-translation.md)  
+    **Translation-based approach** → [Get Started](/playbook/02-translation-overview)  
     Perfect for prototyping or when you need quick results with mainstream languages.
     
     **🎯 I need high accuracy**  
-    **Fine-tuning approach** → [Learn More](chapters/04-fine-tuning.md)  
+    **Fine-tuning approach** → [Learn More](/playbook/04-fine-tuning-overview)  
     Best when you have domain-specific requirements or work with underrepresented languages.
     
     **❓ I'm not sure**  

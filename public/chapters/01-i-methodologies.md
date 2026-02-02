@@ -182,7 +182,7 @@ The effectiveness of LLM evaluators is highly dependent on prompt design, which 
 
 The following code demonstrates using [LangChain's OpenEvals](https://github.com/langchain-ai/openevals/tree/main) for judging hallucinations with OpenAI models:
 
-```py linenums="1"
+```python
 from openevals.llm import create_llm_as_judge
 
 # Hallucination detection prompt

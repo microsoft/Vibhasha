@@ -5,6 +5,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Copy16Regular, ArrowDownload16Regular, Checkmark16Regular as CopyCheck16Regular } from '@fluentui/react-icons';
 import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
 import Hero from './Hero.jsx';
 import PageSearch from './PageSearch.jsx';
@@ -22,6 +25,15 @@ import { preprocessAttrList } from '../plugins/remark-attr-list.js';
  */
 function preprocessMarkdown(rawContent) {
   let content = rawContent;
+  
+  // Strip MkDocs-style code block attributes (e.g., ```py linenums="1" -> ```python)
+  // Map common short language names to full names for better syntax highlighting
+  const langMap = { py: 'python', js: 'javascript', ts: 'typescript', sh: 'bash', yml: 'yaml' };
+  content = content.replace(/```(\w+)\s+[^\n]*\n/g, (match, lang) => {
+    const mappedLang = langMap[lang] || lang;
+    return '```' + mappedLang + '\n';
+  });
+  
   // Order matters: process admonitions first (they may contain icons/buttons)
   content = preprocessAdmonitions(content);
   content = preprocessIcons(content);
@@ -218,6 +230,85 @@ export default function MarkdownPage({ filePath }) {
     h3: renderHeading('h3'),
   };
 
+  // Custom code block renderer with syntax highlighting
+  const CodeBlock = ({ node, inline, className, children, ...props }) => {
+    const [copied, setCopied] = useState(false);
+    const match = /language-(\w+)/.exec(className || '');
+    const language = match ? match[1] : '';
+    const codeString = String(children).replace(/\n$/, '');
+    
+    const handleCopy = async () => {
+      await navigator.clipboard.writeText(codeString);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    };
+
+    const handleDownload = () => {
+      const ext = language || 'txt';
+      const blob = new Blob([codeString], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `code.${ext}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+    
+    if (!inline && language) {
+      return (
+        <div className="code-block-wrapper">
+          <div className="code-block-header">
+            <span className="code-block-language">{language}</span>
+            <div className="code-block-actions">
+              <button onClick={handleCopy} className="code-action-btn" title="Copy code">
+                {copied ? <CopyCheck16Regular /> : <Copy16Regular />}
+              </button>
+              <button onClick={handleDownload} className="code-action-btn" title="Download code">
+                <ArrowDownload16Regular />
+              </button>
+            </div>
+          </div>
+          <SyntaxHighlighter
+            style={oneLight}
+            language={language}
+            PreTag="div"
+            className="code-block"
+            showLineNumbers={false}
+            {...props}
+          >
+            {codeString}
+          </SyntaxHighlighter>
+        </div>
+      );
+    }
+    
+    // Inline code or code without language
+    if (!inline && !language) {
+      return (
+        <div className="code-block-wrapper">
+          <div className="code-block-header">
+            <span className="code-block-language">code</span>
+            <div className="code-block-actions">
+              <button onClick={handleCopy} className="code-action-btn" title="Copy code">
+                {copied ? <CopyCheck16Regular /> : <Copy16Regular />}
+              </button>
+            </div>
+          </div>
+          <pre className="code-block-plain">
+            <code {...props}>{children}</code>
+          </pre>
+        </div>
+      );
+    }
+    
+    return <code className={className} {...props}>{children}</code>;
+  };
+
+  const mdComponents = {
+    ...mdHeadingComponents,
+    code: CodeBlock,
+  };
+
   return (
     <>
       <div className={`doc-toolbar${groupInfo ? '' : ' no-subchapter'}`}>
@@ -242,7 +333,7 @@ export default function MarkdownPage({ filePath }) {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
-              components={mdHeadingComponents}
+              components={mdComponents}
             >
               {processedContent}
             </ReactMarkdown>
