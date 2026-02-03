@@ -11,9 +11,9 @@ export const docEntries = [
     "icon": "Document24Regular"
   },
   {
-    "path": "/playbook/01-evaluation-overview",
-    "label": "Evaluation Overview",
-    "base": "01-evaluation-overview",
+    "path": "/playbook/01-evaluation",
+    "label": "Evaluation",
+    "base": "01-evaluation",
     "prefix": "01",
     "isSub": false,
     "icon": "Document24Regular"
@@ -67,9 +67,9 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/02-translation-overview",
-    "label": "Translation Overview",
-    "base": "02-translation-overview",
+    "path": "/playbook/02-translation",
+    "label": "Translation",
+    "base": "02-translation",
     "prefix": "02",
     "isSub": false,
     "icon": "Document24Regular"
@@ -123,9 +123,9 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/04-fine-tuning-overview",
-    "label": "Fine Tuning Overview",
-    "base": "04-fine-tuning-overview",
+    "path": "/playbook/04-fine-tuning",
+    "label": "Fine Tuning",
+    "base": "04-fine-tuning",
     "prefix": "04",
     "isSub": false,
     "icon": "Document24Regular"
@@ -179,9 +179,9 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/05-safety-overview",
-    "label": "Safety Overview",
-    "base": "05-safety-overview",
+    "path": "/playbook/05-safety",
+    "label": "Safety",
+    "base": "05-safety",
     "prefix": "05",
     "isSub": false,
     "icon": "Document24Regular"
@@ -219,9 +219,9 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/06-synthetic-data-overview",
-    "label": "Synthetic Data Overview",
-    "base": "06-synthetic-data-overview",
+    "path": "/playbook/06-synthetic-data",
+    "label": "Synthetic Data",
+    "base": "06-synthetic-data",
     "prefix": "06",
     "isSub": false,
     "icon": "Document24Regular"
@@ -267,9 +267,9 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/07-culture-overview",
-    "label": "Culture Overview",
-    "base": "07-culture-overview",
+    "path": "/playbook/07-culture",
+    "label": "Culture",
+    "base": "07-culture",
     "prefix": "07",
     "isSub": false,
     "icon": "Document24Regular"
@@ -329,14 +329,6 @@ export const docEntries = [
     "prefix": "99",
     "isSub": false,
     "icon": "Document24Regular"
-  },
-  {
-    "path": "/playbook/landingpage",
-    "label": "Landingpage",
-    "base": "landingpage",
-    "prefix": null,
-    "isSub": false,
-    "icon": "Document24Regular"
   }
 ];
 
@@ -346,8 +338,8 @@ export const docOrder = [
     "label": "Introduction"
   },
   {
-    "path": "/playbook/01-evaluation-overview",
-    "label": "Evaluation Overview"
+    "path": "/playbook/01-evaluation",
+    "label": "Evaluation"
   },
   {
     "path": "/playbook/01-i-methodologies",
@@ -374,8 +366,8 @@ export const docOrder = [
     "label": "Vi Challenges"
   },
   {
-    "path": "/playbook/02-translation-overview",
-    "label": "Translation Overview"
+    "path": "/playbook/02-translation",
+    "label": "Translation"
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
@@ -402,8 +394,8 @@ export const docOrder = [
     "label": "Vi Recommendations"
   },
   {
-    "path": "/playbook/04-fine-tuning-overview",
-    "label": "Fine Tuning Overview"
+    "path": "/playbook/04-fine-tuning",
+    "label": "Fine Tuning"
   },
   {
     "path": "/playbook/04-i-pipeline",
@@ -430,8 +422,8 @@ export const docOrder = [
     "label": "Vi Implementation"
   },
   {
-    "path": "/playbook/05-safety-overview",
-    "label": "Safety Overview"
+    "path": "/playbook/05-safety",
+    "label": "Safety"
   },
   {
     "path": "/playbook/05-i-vulnerabilities",
@@ -450,8 +442,8 @@ export const docOrder = [
     "label": "Toolkits"
   },
   {
-    "path": "/playbook/06-synthetic-data-overview",
-    "label": "Synthetic Data Overview"
+    "path": "/playbook/06-synthetic-data",
+    "label": "Synthetic Data"
   },
   {
     "path": "/playbook/06-i-approaches",
@@ -474,8 +466,8 @@ export const docOrder = [
     "label": "V Implementation"
   },
   {
-    "path": "/playbook/07-culture-overview",
-    "label": "Culture Overview"
+    "path": "/playbook/07-culture",
+    "label": "Culture"
   },
   {
     "path": "/playbook/07-i-frameworks",
@@ -504,9 +496,5 @@ export const docOrder = [
   {
     "path": "/playbook/99-conclusion",
     "label": "Conclusion"
-  },
-  {
-    "path": "/playbook/landingpage",
-    "label": "Landingpage"
   }
 ];

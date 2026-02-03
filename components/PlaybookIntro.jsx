@@ -18,7 +18,7 @@ import { preprocessAttrList } from '../plugins/remark-attr-list.js';
 import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
 
 // Preload landing page markdown
-const mdModules = import.meta.glob('/public/chapters/landingpage.md', { as: 'raw' });
+const mdModules = import.meta.glob('/public/chapters/landing/landingpage.md', { as: 'raw' });
 
 function preprocessMarkdown(rawContent) {
   let content = rawContent;
@@ -44,7 +44,7 @@ export default function PlaybookIntro(){
   useEffect(() => {
     let cancelled = false;
     async function load() {
-      const loader = mdModules['/public/chapters/landingpage.md'];
+      const loader = mdModules['/public/chapters/landing/landingpage.md'];
       if (loader) {
         try {
           const raw = await loader();
@@ -56,7 +56,7 @@ export default function PlaybookIntro(){
       }
       // Fallback: network fetch
       try {
-        const res = await fetch('/chapters/landingpage.md');
+        const res = await fetch('/chapters/landing/landingpage.md');
         if (res.ok) {
           const txt = await res.text();
           if (!cancelled) setMarkdownContent(txt);
