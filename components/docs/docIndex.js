@@ -329,6 +329,14 @@ export const docEntries = [
     "prefix": "99",
     "isSub": false,
     "icon": "Document24Regular"
+  },
+  {
+    "path": "/playbook/100-attribution",
+    "label": "Attribution",
+    "base": "100-attribution",
+    "prefix": null,
+    "isSub": false,
+    "icon": "Document24Regular"
   }
 ];
 
@@ -496,5 +504,9 @@ export const docOrder = [
   {
     "path": "/playbook/99-conclusion",
     "label": "Conclusion"
+  },
+  {
+    "path": "/playbook/100-attribution",
+    "label": "Attribution"
   }
 ];

@@ -78,3 +78,9 @@ Generate training data for low-resource languages using systematic frameworks.
 
 !!! info "Living Document"
     This playbook evolves with the field. Found something useful? Have suggestions? We welcome contributions and feedback to keep this resource current and practical.
+
+---
+
+## 📄 Attribution & Citation
+
+This playbook is developed and maintained by researchers at Microsoft Research India. For contributor information, contact details, and citation guidelines, visit the [Attribution](/playbook/100-attribution) page.

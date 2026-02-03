@@ -50,6 +50,7 @@ import VEvaluationDoc from './components/docs/07-v-evaluation'
 import ViConclusionDoc from './components/docs/07-vi-conclusion'
 import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
+import AttributionDoc from './components/docs/100-attribution';
 
 // Use '/' for private repo GitHub Pages deployment
 // Change to '/Vibhasha/' if deploying to microsoft.github.io/Vibhasha
@@ -108,6 +109,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/07-vi-conclusion" element={<ViConclusionDoc />} />
                 <Route path="/playbook/99-conclusion" element={<ConclusionDoc />} />
                 <Route path="/playbook/flowchart" element={<FlowchartPage />} />
+        <Route path="/playbook/100-attribution" element={<AttributionDoc />} />
               </Route>
             </Route>
           </Route>
