@@ -185,6 +185,9 @@ export default function MarkdownPage({ filePath }) {
     h3: renderHeading('h3'),
   };
 
+// Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
+const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
+
   return (
     <>
       <div className={`doc-toolbar${groupInfo ? '' : ' no-subchapter'}`}>
@@ -208,7 +211,15 @@ export default function MarkdownPage({ filePath }) {
             <Hero title={heroTitle} subtitle={heroSubtitle} />
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              components={mdHeadingComponents}
+              components={{
+                ...mdHeadingComponents,
+                img: ({ node, ...props }) => {
+                  const src = props.src || '';
+                  const key = src.replace(/^\/+/, '');
+                  const mapped = imageModules[`/${key}`] || imageModules[key];
+                  return <img {...props} src={mapped || src} />;
+                }
+              }}
             >
               {content}
             </ReactMarkdown>

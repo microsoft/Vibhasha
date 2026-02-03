@@ -33,6 +33,7 @@ npm install
 5) Add your chapters (Markdown only)
 - Replace `.md` files in `public/chapters/` with your own files (e.g., `public/chapters/01-intro.md`, `04-i-metadata.md`).
 - Use numeric prefixes to control order; sub-pages follow roman prefixes (`i`, `ii`, `iii`, `iv`), e.g., `04-i-...`, `04-ii-...`.
+ - Add images used by chapters to `assets/chapters/` by default. Reference them from your markdown using the site path `/assets/chapters/<filename>` (for example, `/assets/chapters/04-ii-figure1.png`). See the example usage in `public/chapters/04-ii-curation-for-diversity.md`.
 
 6) Generate wrappers and routes
 - Create JSX wrappers for each markdown file by running this script:
