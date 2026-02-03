@@ -9,6 +9,8 @@
  * Types: note, info, tip, success, warning, danger, failure, important, quote, example, question, abstract
  */
 
+import { transformContentTabs } from './remark-content-tabs.js';
+
 // Regex to match admonition start: !!! type "optional title" or ??? type "optional title" or ???+ type "optional title"
 const ADMONITION_START = /^(!{3}|\?{3}\+?)\s+(\w+)(?:\s+"([^"]*)")?$/;
 
@@ -99,7 +101,9 @@ export function transformAdmonitions(content) {
         contentLines.pop();
       }
 
-      const innerContent = contentLines.join('\n');
+      // Process nested content (including content tabs) within the admonition
+      let innerContent = contentLines.join('\n');
+      innerContent = transformContentTabs(innerContent);
 
       // Generate HTML
       if (isCollapsible) {

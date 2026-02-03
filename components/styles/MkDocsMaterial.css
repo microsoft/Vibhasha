@@ -537,3 +537,197 @@ details.admonition > .admonition-content {
     font-size: 0.85rem;
   }
 }
+
+/* ==========================================================================
+   Content Tabs - MkDocs Material Style
+   ========================================================================== */
+
+.content-tabs {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color, #e1e4e8);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface-primary, #fff);
+}
+
+.content-tabs-nav-wrapper {
+  position: relative;
+  background: var(--surface-secondary, #f6f8fa);
+  border-bottom: 1px solid var(--border-color, #e1e4e8);
+}
+
+.content-tabs-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+}
+
+.content-tabs-nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Scroll buttons for horizontal navigation */
+.content-tabs-scroll-btn {
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--surface-secondary, #f6f8fa) 60%, transparent);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  color: var(--muted, #6a737d);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.content-tabs-scroll-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.content-tabs-scroll-btn:hover {
+  color: var(--foreground, #24292e);
+}
+
+.content-tabs-scroll-btn.scroll-left {
+  left: 0;
+  background: linear-gradient(to right, var(--surface-secondary, #f6f8fa) 60%, transparent);
+}
+
+.content-tabs-scroll-btn.scroll-right {
+  right: 0;
+  background: linear-gradient(to left, var(--surface-secondary, #f6f8fa) 60%, transparent);
+}
+
+.content-tab-btn {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--muted, #6a737d);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.content-tab-btn:hover {
+  color: var(--foreground, #24292e);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.content-tab-btn.active {
+  color: var(--color-header-bg, #0969da);
+  border-bottom-color: var(--color-header-bg, #0969da);
+  background: var(--surface-primary, #fff);
+}
+
+.content-tabs-panels {
+  padding: 0;
+}
+
+.content-tab-panel {
+  padding: 1rem 1.25rem;
+  display: none;
+}
+
+.content-tab-panel.active {
+  display: block;
+}
+
+.content-tab-panel[hidden] {
+  display: none;
+}
+
+.content-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.content-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Tab panel content styling */
+.content-tab-panel p {
+  margin: 0.75rem 0;
+}
+
+.content-tab-panel ul,
+.content-tab-panel ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.content-tab-panel strong {
+  font-weight: 600;
+}
+
+/* Dark mode adjustments for tabs */
+[data-theme="dark"] .content-tabs {
+  border-color: var(--border-color, #30363d);
+  background: var(--surface-primary, #0d1117);
+}
+
+[data-theme="dark"] .content-tabs-nav-wrapper {
+  background: var(--surface-secondary, #161b22);
+  border-color: var(--border-color, #30363d);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn {
+  color: var(--muted, #8b949e);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn.scroll-left {
+  background: linear-gradient(to right, var(--surface-secondary, #161b22) 60%, transparent);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn.scroll-right {
+  background: linear-gradient(to left, var(--surface-secondary, #161b22) 60%, transparent);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn:hover {
+  color: var(--foreground, #c9d1d9);
+}
+
+[data-theme="dark"] .content-tab-btn {
+  color: var(--muted, #8b949e);
+}
+
+[data-theme="dark"] .content-tab-btn:hover {
+  color: var(--foreground, #c9d1d9);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .content-tab-btn.active {
+  background: var(--surface-primary, #0d1117);
+}
+
+/* Responsive tabs */
+@media (max-width: 600px) {
+  .content-tabs {
+    margin: 1rem 0;
+  }
+  
+  .content-tab-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .content-tab-panel {
+    padding: 0.75rem 1rem;
+  }
+}

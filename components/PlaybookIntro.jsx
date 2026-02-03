@@ -15,12 +15,14 @@ import rehypeRaw from 'rehype-raw';
 import { preprocessAdmonitions } from '../plugins/remark-admonitions.js';
 import { preprocessIcons } from '../plugins/remark-icons.js';
 import { preprocessAttrList } from '../plugins/remark-attr-list.js';
+import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
 
 // Preload landing page markdown
 const mdModules = import.meta.glob('/public/chapters/landingpage.md', { as: 'raw' });
 
 function preprocessMarkdown(rawContent) {
   let content = rawContent;
+  content = preprocessContentTabs(content);
   content = preprocessAdmonitions(content);
   content = preprocessIcons(content);
   content = preprocessAttrList(content);
@@ -73,6 +75,95 @@ export default function PlaybookIntro(){
       setProcessedContent(preprocessMarkdown(markdownContent));
     }
   }, [markdownContent]);
+
+  // Handle content tabs interactivity
+  useEffect(() => {
+    if (!processedContent) return;
+    
+    // Update scroll button visibility for a tab nav
+    const updateScrollButtons = (tabGroup) => {
+      const nav = tabGroup.querySelector('.content-tabs-nav');
+      const leftBtn = tabGroup.querySelector('.scroll-left');
+      const rightBtn = tabGroup.querySelector('.scroll-right');
+      
+      if (!nav || !leftBtn || !rightBtn) return;
+      
+      const { scrollLeft, scrollWidth, clientWidth } = nav;
+      const canScrollLeft = scrollLeft > 0;
+      const canScrollRight = scrollLeft < scrollWidth - clientWidth - 1;
+      
+      leftBtn.classList.toggle('visible', canScrollLeft);
+      rightBtn.classList.toggle('visible', canScrollRight);
+    };
+    
+    // Initialize scroll buttons for all tab groups
+    const initScrollButtons = () => {
+      document.querySelectorAll('.content-tabs').forEach(tabGroup => {
+        updateScrollButtons(tabGroup);
+        
+        const nav = tabGroup.querySelector('.content-tabs-nav');
+        if (nav) {
+          nav.addEventListener('scroll', () => updateScrollButtons(tabGroup));
+        }
+      });
+    };
+    
+    // Handle scroll button clicks
+    const handleScrollClick = (e) => {
+      const scrollBtn = e.target.closest('.content-tabs-scroll-btn');
+      if (!scrollBtn) return;
+      
+      const tabGroup = scrollBtn.closest('.content-tabs');
+      const nav = tabGroup?.querySelector('.content-tabs-nav');
+      if (!nav) return;
+      
+      const scrollAmount = nav.clientWidth * 0.6;
+      const direction = scrollBtn.dataset.scrollDir === 'left' ? -1 : 1;
+      nav.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    };
+    
+    const handleTabClick = (e) => {
+      const btn = e.target.closest('.content-tab-btn');
+      if (!btn) return;
+      
+      const tabGroup = btn.closest('.content-tabs');
+      if (!tabGroup) return;
+      
+      const tabIndex = parseInt(btn.dataset.tabIndex, 10);
+      
+      // Update button states
+      tabGroup.querySelectorAll('.content-tab-btn').forEach((b, i) => {
+        b.classList.toggle('active', i === tabIndex);
+        b.setAttribute('aria-selected', i === tabIndex ? 'true' : 'false');
+      });
+      
+      // Update panel states
+      tabGroup.querySelectorAll('.content-tab-panel').forEach((panel, i) => {
+        panel.classList.toggle('active', i === tabIndex);
+        if (i === tabIndex) {
+          panel.removeAttribute('hidden');
+        } else {
+          panel.setAttribute('hidden', '');
+        }
+      });
+      
+      // Scroll active tab into view
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    };
+    
+    // Initialize after a short delay to ensure DOM is ready
+    setTimeout(initScrollButtons, 100);
+    
+    document.addEventListener('click', handleTabClick);
+    document.addEventListener('click', handleScrollClick);
+    window.addEventListener('resize', initScrollButtons);
+    
+    return () => {
+      document.removeEventListener('click', handleTabClick);
+      document.removeEventListener('click', handleScrollClick);
+      window.removeEventListener('resize', initScrollButtons);
+    };
+  }, [processedContent]);
 
 
   return (

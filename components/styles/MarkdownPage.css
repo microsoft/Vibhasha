@@ -3,6 +3,8 @@
     grid-template-columns: 75% 25%;
     gap: 10px;
     align-items: start;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .doc-toc {
@@ -76,6 +78,8 @@
 .markdown-body {
     color: var(--color-page-text);
     font-weight: 400;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .markdown-body strong {
@@ -275,6 +279,8 @@
     overflow: hidden;
     border: 1px solid var(--border-color, #e1e4e8);
     background: var(--surface-secondary, #f6f8fa);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .code-block-header {
@@ -323,6 +329,8 @@
     font-size: 0.875rem !important;
     line-height: 1.6 !important;
     background: var(--surface-secondary, #f6f8fa) !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
 }
 
 .code-block-plain {
@@ -333,6 +341,9 @@
     overflow-x: auto;
     font-size: 0.875rem;
     line-height: 1.6;
+    max-width: 100%;
+    white-space: pre;
+    word-wrap: normal;
 }
 
 .code-block-plain code {
