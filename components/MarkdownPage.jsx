@@ -399,6 +399,8 @@ export default function MarkdownPage({ filePath }) {
     ...mdHeadingComponents,
     code: CodeBlock,
   };
+// Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
+const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
 
   return (
     <>
@@ -424,7 +426,15 @@ export default function MarkdownPage({ filePath }) {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
-              components={mdComponents}
+              components={{
+                ...mdComponents,
+                img: ({ node, ...props }) => {
+                  const src = props.src || '';
+                  const key = src.replace(/^\/+/, '');
+                  const mapped = imageModules[`/${key}`] || imageModules[key];
+                  return <img {...props} src={mapped || src} />;
+                }
+              }}
             >
               {processedContent}
             </ReactMarkdown>
