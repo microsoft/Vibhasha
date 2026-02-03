@@ -18,6 +18,7 @@ import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16
 import { preprocessAdmonitions } from '../plugins/remark-admonitions.js';
 import { preprocessIcons } from '../plugins/remark-icons.js';
 import { preprocessAttrList } from '../plugins/remark-attr-list.js';
+import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
 
 /**
  * Preprocess markdown content to transform MkDocs Material syntax
@@ -34,7 +35,8 @@ function preprocessMarkdown(rawContent) {
     return '```' + mappedLang + '\n';
   });
   
-  // Order matters: process admonitions first (they may contain icons/buttons)
+  // Order matters: process content tabs first, then admonitions (they may contain icons/buttons)
+  content = preprocessContentTabs(content);
   content = preprocessAdmonitions(content);
   content = preprocessIcons(content);
   content = preprocessAttrList(content);
@@ -205,6 +207,95 @@ export default function MarkdownPage({ filePath }) {
     setActiveId(id);
   }
 
+  // Handle content tabs interactivity
+  useEffect(() => {
+    if (!processedContent) return;
+    
+    // Update scroll button visibility for a tab nav
+    const updateScrollButtons = (tabGroup) => {
+      const nav = tabGroup.querySelector('.content-tabs-nav');
+      const leftBtn = tabGroup.querySelector('.scroll-left');
+      const rightBtn = tabGroup.querySelector('.scroll-right');
+      
+      if (!nav || !leftBtn || !rightBtn) return;
+      
+      const { scrollLeft, scrollWidth, clientWidth } = nav;
+      const canScrollLeft = scrollLeft > 0;
+      const canScrollRight = scrollLeft < scrollWidth - clientWidth - 1;
+      
+      leftBtn.classList.toggle('visible', canScrollLeft);
+      rightBtn.classList.toggle('visible', canScrollRight);
+    };
+    
+    // Initialize scroll buttons for all tab groups
+    const initScrollButtons = () => {
+      document.querySelectorAll('.content-tabs').forEach(tabGroup => {
+        updateScrollButtons(tabGroup);
+        
+        const nav = tabGroup.querySelector('.content-tabs-nav');
+        if (nav) {
+          nav.addEventListener('scroll', () => updateScrollButtons(tabGroup));
+        }
+      });
+    };
+    
+    // Handle scroll button clicks
+    const handleScrollClick = (e) => {
+      const scrollBtn = e.target.closest('.content-tabs-scroll-btn');
+      if (!scrollBtn) return;
+      
+      const tabGroup = scrollBtn.closest('.content-tabs');
+      const nav = tabGroup?.querySelector('.content-tabs-nav');
+      if (!nav) return;
+      
+      const scrollAmount = nav.clientWidth * 0.6;
+      const direction = scrollBtn.dataset.scrollDir === 'left' ? -1 : 1;
+      nav.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    };
+    
+    const handleTabClick = (e) => {
+      const btn = e.target.closest('.content-tab-btn');
+      if (!btn) return;
+      
+      const tabGroup = btn.closest('.content-tabs');
+      if (!tabGroup) return;
+      
+      const tabIndex = parseInt(btn.dataset.tabIndex, 10);
+      
+      // Update button states
+      tabGroup.querySelectorAll('.content-tab-btn').forEach((b, i) => {
+        b.classList.toggle('active', i === tabIndex);
+        b.setAttribute('aria-selected', i === tabIndex ? 'true' : 'false');
+      });
+      
+      // Update panel states
+      tabGroup.querySelectorAll('.content-tab-panel').forEach((panel, i) => {
+        panel.classList.toggle('active', i === tabIndex);
+        if (i === tabIndex) {
+          panel.removeAttribute('hidden');
+        } else {
+          panel.setAttribute('hidden', '');
+        }
+      });
+      
+      // Scroll active tab into view
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    };
+    
+    // Initialize after a short delay to ensure DOM is ready
+    setTimeout(initScrollButtons, 100);
+    
+    document.addEventListener('click', handleTabClick);
+    document.addEventListener('click', handleScrollClick);
+    window.addEventListener('resize', initScrollButtons);
+    
+    return () => {
+      document.removeEventListener('click', handleTabClick);
+      document.removeEventListener('click', handleScrollClick);
+      window.removeEventListener('resize', initScrollButtons);
+    };
+  }, [processedContent]);
+
   // Render headings (h1-h3) with clickable anchors
   const renderHeading = (Tag) => ({ node, ...props }) => {
     const id = slugify(String(props.children));
@@ -308,6 +399,8 @@ export default function MarkdownPage({ filePath }) {
     ...mdHeadingComponents,
     code: CodeBlock,
   };
+// Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
+const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
 
   return (
     <>
@@ -333,7 +426,15 @@ export default function MarkdownPage({ filePath }) {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
-              components={mdComponents}
+              components={{
+                ...mdComponents,
+                img: ({ node, ...props }) => {
+                  const src = props.src || '';
+                  const key = src.replace(/^\/+/, '');
+                  const mapped = imageModules[`/${key}`] || imageModules[key];
+                  return <img {...props} src={mapped || src} />;
+                }
+              }}
             >
               {processedContent}
             </ReactMarkdown>
