@@ -1,6 +1,6 @@
 ## Evaluation and Quality Assurance
 
-Measuring the success of a multilingual, translation-based system is a non-trivial challenge. It requires a **multi-stage evaluation framework** that can diagnose issues at different points in the pipeline and account for qualitative aspects of language that automated metrics often miss.
+Quality assurance is one of the most important parts of building a multilingual system. Strong translation patterns and thoughtful prompting help, but they are not enough on their own. You need a process that ensures outputs are accurate, culturally appropriate, safe, and consistent across languages. This section explains how to evaluate and refine multilingual quality before your system reaches real users. 
 
 ### Establishing Ground Truth: A Fundamental Choice
 

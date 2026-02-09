@@ -27,41 +27,49 @@ export const docEntries = [
     "icon": null
   },
   {
-    "path": "/playbook/01-ii-low-resource",
-    "label": "Low Resource",
-    "base": "01-ii-low-resource",
+    "path": "/playbook/01-ii-pipeline",
+    "label": "Evaluation in Practice",
+    "base": "01-ii-pipeline",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-iii-advisory",
+    "path": "/playbook/01-iii-low-resource",
+    "label": "Low Resource MT Eval",
+    "base": "01-iii-low-resource",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-iv-advisory",
     "label": "Advisory",
-    "base": "01-iii-advisory",
+    "base": "01-iv-advisory",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-iv-scenarios",
-    "label": "Scenarios",
-    "base": "01-iv-scenarios",
+    "path": "/playbook/01-v-scenarios",
+    "label": "V Scenarios",
+    "base": "01-v-scenarios",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-v-datasets",
-    "label": "V Datasets",
-    "base": "01-v-datasets",
+    "path": "/playbook/01-vi-datasets",
+    "label": "Vi Datasets",
+    "base": "01-vi-datasets",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-vi-challenges",
-    "label": "Vi Challenges",
-    "base": "01-vi-challenges",
+    "path": "/playbook/01-vii-challenges",
+    "label": "Vii Challenges",
+    "base": "01-vii-challenges",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -354,24 +362,28 @@ export const docOrder = [
     "label": "Methodologies"
   },
   {
-    "path": "/playbook/01-ii-low-resource",
-    "label": "Low Resource"
+    "path": "/playbook/01-ii-pipeline",
+    "label": "Evaluation in Practice"
   },
   {
-    "path": "/playbook/01-iii-advisory",
+    "path": "/playbook/01-iii-low-resource",
+    "label": "Low Resource MT Eval"
+  },
+  {
+    "path": "/playbook/01-iv-advisory",
     "label": "Advisory"
   },
   {
-    "path": "/playbook/01-iv-scenarios",
-    "label": "Scenarios"
+    "path": "/playbook/01-v-scenarios",
+    "label": "V Scenarios"
   },
   {
-    "path": "/playbook/01-v-datasets",
-    "label": "V Datasets"
+    "path": "/playbook/01-vi-datasets",
+    "label": "Vi Datasets"
   },
   {
-    "path": "/playbook/01-vi-challenges",
-    "label": "Vi Challenges"
+    "path": "/playbook/01-vii-challenges",
+    "label": "Vii Challenges"
   },
   {
     "path": "/playbook/02-translation",

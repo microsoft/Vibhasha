@@ -130,7 +130,7 @@ These advanced metrics move beyond surface-level lexical matching by leveraging 
     
     **Advantage**: Better captures semantic equivalence, recognizing synonyms and paraphrases even without exact word overlaps
     
-    **Implementation**: Available via `evaluate` library
+    **Implementation**: Available via **evaluate** library
 
 !!! success "MoverScore"
     **Mechanism**: Utilizes Word Mover's Distance (WMD) concept with contextual embeddings

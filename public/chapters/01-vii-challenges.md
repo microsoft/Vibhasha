@@ -1,6 +1,12 @@
 ## Critical Challenges in LLM Evaluation
 
-LLM evaluation faces significant challenges beyond methodological design, including pervasive data contamination and the complexities of multilingual and multicultural assessment.
+Robust multilingual evaluation requires thoughtful planning, diverse testing methods, and dedicated human involvement. The aim is not perfection in every language. Instead, the goal is to understand your system’s strengths and weaknesses so you can make informed decisions about translation, prompting, fine-tuning, and safety. 
+
+A strong evaluation program will help you: 
+- Build more reliable multilingual products 
+- Catch cultural and safety issues before deployment 
+- Allocate resources wisely 
+- Create systems that serve global users fairly and effectively 
 
 ### The Pervasive Issue of Test Data Contamination
 
