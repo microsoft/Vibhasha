@@ -6,6 +6,7 @@ export const docEntries = [
     "path": "/playbook/01-intro",
     "label": "Intro",
     "base": "01-intro",
+    "content": "/public/chapters/01-intro.md",
     "prefix": "01",
     "isSub": false,
     "icon": "Document24Regular"
@@ -14,6 +15,7 @@ export const docEntries = [
     "path": "/playbook/02-evolution-of-asr",
     "label": "Evolution Of ASR",
     "base": "02-evolution-of-asr",
+    "content": "/public/chapters/02-evolution-of-asr.md",
     "prefix": "02",
     "isSub": false,
     "icon": "Branch24Regular"
@@ -22,6 +24,7 @@ export const docEntries = [
     "path": "/playbook/03-background-of-asr",
     "label": "Background Of ASR",
     "base": "03-background-of-asr",
+    "content": "/public/chapters/03-background-of-asr.md",
     "prefix": "03",
     "isSub": false,
     "icon": "Document24Regular"
@@ -30,6 +33,7 @@ export const docEntries = [
     "path": "/playbook/04-dataset-creation-guidelines",
     "label": "Dataset Creation Guidelines",
     "base": "04-dataset-creation-guidelines",
+    "content": "/public/chapters/04-dataset-creation-guidelines.md",
     "prefix": "04",
     "isSub": false,
     "icon": "Add24Regular"
@@ -38,6 +42,7 @@ export const docEntries = [
     "path": "/playbook/04-i-metadata",
     "label": "Metadata",
     "base": "04-i-metadata",
+    "content": "/public/chapters/04-i-metadata.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -46,6 +51,7 @@ export const docEntries = [
     "path": "/playbook/04-ii-curation-for-diversity",
     "label": "Curation For Diversity",
     "base": "04-ii-curation-for-diversity",
+    "content": "/public/chapters/04-ii-curation-for-diversity.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -54,6 +60,7 @@ export const docEntries = [
     "path": "/playbook/04-iii-generalization-vs-domain",
     "label": "Generalization Vs Domain",
     "base": "04-iii-generalization-vs-domain",
+    "content": "/public/chapters/04-iii-generalization-vs-domain.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -62,6 +69,7 @@ export const docEntries = [
     "path": "/playbook/04-iv-quality-control",
     "label": "Quality Control",
     "base": "04-iv-quality-control",
+    "content": "/public/chapters/04-iv-quality-control.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -70,6 +78,7 @@ export const docEntries = [
     "path": "/playbook/05-data-formats-structures",
     "label": "Data Formats Structures",
     "base": "05-data-formats-structures",
+    "content": "/public/chapters/05-data-formats-structures.md",
     "prefix": "05",
     "isSub": false,
     "icon": "Document24Regular"
@@ -78,6 +87,7 @@ export const docEntries = [
     "path": "/playbook/06-data-preprocessing",
     "label": "Data Preprocessing",
     "base": "06-data-preprocessing",
+    "content": "/public/chapters/06-data-preprocessing.md",
     "prefix": "06",
     "isSub": false,
     "icon": "Document24Regular"
@@ -86,6 +96,7 @@ export const docEntries = [
     "path": "/playbook/07-data-compression",
     "label": "Data Compression",
     "base": "07-data-compression",
+    "content": "/public/chapters/07-data-compression.md",
     "prefix": "07",
     "isSub": false,
     "icon": "Document24Regular"
@@ -94,6 +105,7 @@ export const docEntries = [
     "path": "/playbook/08-model-finetuning-intro",
     "label": "Model Finetuning Intro",
     "base": "08-model-finetuning-intro",
+    "content": "/public/chapters/08-model-finetuning-intro.md",
     "prefix": "08",
     "isSub": false,
     "icon": "Options24Regular"
@@ -102,6 +114,7 @@ export const docEntries = [
     "path": "/playbook/08-i-model-selection",
     "label": "Model Selection",
     "base": "08-i-model-selection",
+    "content": "/public/chapters/08-i-model-selection.md",
     "prefix": "08",
     "isSub": true,
     "icon": null
@@ -110,6 +123,7 @@ export const docEntries = [
     "path": "/playbook/08-ii-full-finetuning",
     "label": "Full Finetuning",
     "base": "08-ii-full-finetuning",
+    "content": "/public/chapters/08-ii-full-finetuning.md",
     "prefix": "08",
     "isSub": true,
     "icon": null
@@ -118,6 +132,7 @@ export const docEntries = [
     "path": "/playbook/08-iii-peft",
     "label": "Peft",
     "base": "08-iii-peft",
+    "content": "/public/chapters/08-iii-peft.md",
     "prefix": "08",
     "isSub": true,
     "icon": null
@@ -126,6 +141,7 @@ export const docEntries = [
     "path": "/playbook/08-iv-decision-matrix",
     "label": "Decision Matrix",
     "base": "08-iv-decision-matrix",
+    "content": "/public/chapters/08-iv-decision-matrix.md",
     "prefix": "08",
     "isSub": true,
     "icon": null
@@ -134,6 +150,7 @@ export const docEntries = [
     "path": "/playbook/09-inference",
     "label": "Inference",
     "base": "09-inference",
+    "content": "/public/chapters/09-inference.md",
     "prefix": "09",
     "isSub": false,
     "icon": "PlugConnected24Regular"
@@ -142,6 +159,7 @@ export const docEntries = [
     "path": "/playbook/10-data-augmentation",
     "label": "Data Augmentation",
     "base": "10-data-augmentation",
+    "content": "/public/chapters/10-data-augmentation.md",
     "prefix": "10",
     "isSub": false,
     "icon": "Wand24Regular"
@@ -150,6 +168,7 @@ export const docEntries = [
     "path": "/playbook/11-common-finetuning-challenges",
     "label": "Common Finetuning Challenges",
     "base": "11-common-finetuning-challenges",
+    "content": "/public/chapters/11-common-finetuning-challenges.md",
     "prefix": "11",
     "isSub": false,
     "icon": "Document24Regular"
@@ -158,6 +177,7 @@ export const docEntries = [
     "path": "/playbook/12-conclusion",
     "label": "Conclusion",
     "base": "12-conclusion",
+    "content": "/public/chapters/12-conclusion.md",
     "prefix": "12",
     "isSub": false,
     "icon": "Document24Regular"
@@ -166,6 +186,7 @@ export const docEntries = [
     "path": "/playbook/13-coming-soon",
     "label": "Coming Soon",
     "base": "13-coming-soon",
+    "content": "/public/chapters/13-coming-soon.md",
     "prefix": "13",
     "isSub": false,
     "icon": "Document24Regular"
@@ -174,6 +195,7 @@ export const docEntries = [
     "path": "/playbook/14-attribution",
     "label": "Attribution",
     "base": "14-attribution",
+    "content": "/public/chapters/14-attribution.md",
     "prefix": "14",
     "isSub": false,
     "icon": "Document24Regular"
@@ -182,6 +204,7 @@ export const docEntries = [
     "path": "/playbook/15-references",
     "label": "References",
     "base": "15-references",
+    "content": "/public/chapters/15-references.md",
     "prefix": "15",
     "isSub": false,
     "icon": "Document24Regular"
