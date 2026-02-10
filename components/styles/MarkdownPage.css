@@ -204,10 +204,8 @@
     flex: 0 0 auto;
 }
 
-.doc-toolbar .hero-search {
-    margin-left: auto;
-    max-width: 468px;
-    height: 40px;
+.intro-root .search {
+    display: flex;
     justify-content: flex-end;
 }
 
@@ -264,17 +262,9 @@
         align-items: stretch;
         gap: 10px;
     }
-    .doc-toolbar .hero-search {
-        margin-left: 0;
-        max-width: 276px;
-
-    }
     .doc-toolbar.no-subchapter {
         flex-direction: row;
         justify-content: flex-end;
-    }
-    .doc-toolbar.no-subchapter .hero-search {
-        margin-left: 0;
     }
 }
 
