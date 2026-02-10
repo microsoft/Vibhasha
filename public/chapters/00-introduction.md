@@ -1,4 +1,4 @@
-# Introduction
+# Getting Started
 
 !!! quote "The Global Language Gap"
     The world speaks more than 7,000 languages, yet most large language models are trained on data that is almost entirely English. In many cases, more than 90% of the training corpus is English. This imbalance creates a massive gap that leaves billions of people at a disadvantage. 
@@ -24,7 +24,8 @@ For developers building chatbots, customer support systems, content moderation t
 
 ## Why You Need a Structured Framework
 
-Trial and error is expensive. Switching models, rewriting prompts across languages, and attempting piecemeal fixes leads to delays, inconsistent results, and cultural blind spots. 
+Building multilingual applications is inherently challenging and can involve trial and error in development, potentially wasting time and introducing risks. Teams that are new to multilingual development may try different methods without fully understanding the consequences. The common pitfalls may include  
+
 
 !!! success "The Vibhasha Solution"
     That is why this playbook exists. Vibhasha provides a research grounded decision making framework that helps you move from guesswork to clarity. It does not prescribe a single “best” approach. Instead, it helps you understand: 
@@ -33,7 +34,6 @@ Trial and error is expensive. Switching models, rewriting prompts across languag
     - ✅ What resources each strategy requires
     - ✅ What tradeoffs you accept with each choice 
     
-    **The goal** is to help you build multilingual LLM systems that are effective, culturally aligned, and resource aware. 
 
 ### Common Development Pitfalls
 
@@ -54,11 +54,13 @@ Trial and error is expensive. Switching models, rewriting prompts across languag
     **🔄 Wasted iterations**  
     Teams test options without clear success criteria or guidance on when to pivot. 
 
+Vibhasha provides a principled decision-making framework grounded in empirical research and real-world deployments. Rather than offering one-size-fits-all solutions, this playbook helps you understand:  
+
 ---
 
 ## Three Implementation Strategies
 
-Based on research and real deployments, multilingual systems typically rely on one of three core strategies. Each offers a different way to bridge the gap between English optimized models and global users. 
+Based on research conducted over 20 years at Microsoft Research India and the multilingual NLP research community, and production deployments, multilingual systems typically rely on one of three core strategies. Each offers a different way to bridge the gap between English optimized models and global users. 
 
 !!! note "Strategy 1: 🌐 Translation-Based Approaches"
     
@@ -66,7 +68,7 @@ Based on research and real deployments, multilingual systems typically rely on o
     
     This strategy translates user inputs to English, processes them with a strong English model, then translates outputs back to the user’s language. 
 
-    Modern versions use selective translation, where only certain parts of a prompt are translated. In many cases, selective translation outperforms full translation or direct prompting for low-resource languages. 
+    Modern versions use selective translation, where only certain parts of a prompt are translated. In many cases, selective translation outperforms full translation or direct prompting for under-resourced languages. 
     
     **Best for:** Quick prototyping and languages supported by high quality machine translation. 
 
@@ -100,7 +102,7 @@ Based on research and real deployments, multilingual systems typically rely on o
 
     **Limitations:**
 
-    - Performance declines significantly for low-resource languages
+    - Performance declines significantly for under-resourced languages
     - Fragile prompts where small changes lead to inconsistent outputs
     - No persistent learning because each interaction starts fresh 
     
@@ -128,7 +130,7 @@ Based on research and real deployments, multilingual systems typically rely on o
     - Requires infrastructure for training and evaluation
     - Smaller models may struggle with complex reasoning tasks 
     
-    **Best for:** Domain specific applications, low-resource languages, and environments with strict privacy or security needs.
+    **Best for:** Domain specific applications, under-resourced languages, and environments with strict privacy or security needs.
     
     [→ Learn more](/playbook/04-fine-tuning-overview)
 
@@ -147,12 +149,12 @@ Based on research and real deployments, multilingual systems typically rely on o
 
 ### 📊 Robust Multilingual Evaluation
 
-English centric benchmarks are not reliable indicators of multilingual performance, and safety systems trained mostly on English create significant blind spots. Harmful content rates can be three times higher in low-resource languages, and multilingual jailbreaking attacks succeed far more often than monolingual ones. 
+English centric benchmarks are not reliable indicators of multilingual performance, and safety systems trained mostly on English create significant blind spots. Harmful content rates can be three times higher in under-resourced languages, and multilingual jailbreaking attacks succeed far more often than monolingual ones. 
 
 
 **What You Must Do:**
 
-- ✅ Test safety across all target languages (especially low-resource)
+- ✅ Test safety across all target languages (especially under-resourced)
 - ✅ Use multilingual adversarial benchmarks
 - ✅ Implement cross-lingual safety filters
 - ✅ Monitor for cultural context-specific harms
@@ -163,8 +165,8 @@ English centric benchmarks are not reliable indicators of multilingual performan
 
 ### Addressing Data Scarcity: Synthetic Data Generation
 
-!!! question "The Low-Resource Language Problem"
-    Across all strategies, a recurring challenge is the **lack of high-quality data** for low-resource languages. Synthetic data has become a practical solution. 
+!!! question "The Under-Resourced Language Problem"
+    Across all strategies, a recurring challenge is the **lack of high-quality data** for under-resourced languages. Synthetic data has become a practical solution. 
 
 A typical approach includes:
 

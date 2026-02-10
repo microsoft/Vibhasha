@@ -112,16 +112,6 @@ In specialized fields (technical, medical, legal domains), accurate and consiste
 | **Automated Metrics** | Custom metrics focused on key term translation | Extract and verify presence/accuracy of critical terms |
 | **Error Analysis** | Detailed classification of terminology errors | Identify patterns and guide improvements |
 
-!!! important "From Quality Check to Risk Management"
-    Evaluation in domain-specific settings is not merely about general linguistic quality—it is fundamentally about **critical accuracy and risk mitigation**.
-    
-    A seemingly minor linguistic error in a technical term could render:
-    
-    - A medical report **unusable**
-    - A legal document **unenforceable**
-    - A safety manual **dangerous**
-    
-    This elevates evaluation from a general quality check to a **crucial part of a risk management framework**.
 
 **Implications for High-Stakes Applications:**
 

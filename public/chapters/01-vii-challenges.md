@@ -58,15 +58,6 @@ Detecting contamination in commercial LLMs is challenging due to proprietary tra
     - GPT-4 generally showing higher rates
     - Indicates widespread contamination across multilingual benchmarks
 
-=== "Long Context Handling"
-    **Challenge**: For long contexts in QA tasks, especially for low-resource languages where tokenizers may over-tokenize text
-    
-    **Solution**: Use `LangChain` library for retrieval strategies:
-    
-    - Index context chunks with embeddings (e.g., `text-embedding-ada-002`)
-    - Retrieve the closest chunk to the question to fit model's context size
-    
-    **Note**: LangChain generally offers 'How-to Guides' for RAG use cases
 
 #### Detection Methods for Open-Source Models
 
@@ -81,6 +72,22 @@ Detecting contamination in commercial LLMs is challenging due to proprietary tra
 **Empirical Findings**:
 
 Empirical tests on instruction-tuned Llama2, Mistral, and Gemma 7B variants indicated contamination in datasets like PAWS-X, XCOPA, XQUAD, and XRISAWOZ, highlighting the widespread nature of this issue even in open-source multilingual models.
+
+The table below (from the [Contamination Report for Multilingual Benchmarks](https://arxiv.org/abs/2311.09926), NeurIPS 2024 EvalEval Workshop) further illustrates how pervasive contamination is across models and benchmarks. ✗ = **contaminated**, ✓ = **not contaminated**.
+
+<div style="overflow-x:auto" markdown>
+
+| Benchmark | Llama 3.1 8B | Llama 3.1 8B-IT | Mistral 7B v0.3 | Mistral 7B v0.3-IT | Gemma 2 9B-IT | Gemma 2 9B | Aya 23 8B |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| FLORES | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
+| PAWS-X | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
+| XCOPA | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✓ |
+| XLSum | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ | ✓ |
+| XNLI | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| XQUAD | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+| XStoryCloze | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+
+</div>
 
 !!! danger "The Known Unknown"
     Data contamination fundamentally transforms LLM generalization measurement into **memorization reflection**. This leaves LLM capabilities a "known unknown," especially for tasks with exceptionally high reported performance.
@@ -107,9 +114,9 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
 <div class="grid" markdown>
 
 !!! warning "Higher Fertility = Worse Quality + Higher Cost"
-    **Inefficiency in Low-Resource Languages**:
+    **Inefficiency in Under-Resourced Languages**:
     
-    - Tokenizers (e.g., OpenAI's) are less efficient for low-resource, non-Latin script languages (e.g., Malayalam, Tamil)
+    - Tokenizers (e.g., OpenAI's) are less efficient for under-resourced, non-Latin script languages (e.g., Malayalam, Tamil)
     - Results in very high fertility rates (~10 sub-words per word)
     - Leads to higher costs: more tokens needed for input encoding and response generation via API calls
     - Creates an **economic barrier** for multilingual applications
@@ -134,9 +141,9 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
     This ensures accurate capture of local and cultural nuances in evaluation material, leading to more authentic and reliable multicultural assessments.
 
 !!! danger "The Cultural Blind Spot"
-    The combination of inefficient tokenizers, limited pre-training data for low-resource languages, and reliance on translated benchmarks creates a **"cultural blind spot"** in global LLMs.
+    The combination of inefficient tokenizers, limited pre-training data for under-resourced languages, and reliance on translated benchmarks creates a **"cultural blind spot"** in global LLMs.
     
-    **The Problem**: Even grammatically correct text in a low-resource language may lack the deep cultural context for truly nuanced, appropriate, and helpful responses. This deficiency is evident in subjective tasks or direct assessment where cultural understanding is paramount.
+    **The Problem**: Even grammatically correct text in an under-resourced language may lack the deep cultural context for truly nuanced, appropriate, and helpful responses. This deficiency is evident in subjective tasks or direct assessment where cultural understanding is paramount.
     
     **Ethical Concern**: This "cultural blind spot" is not just a performance limitation but an **ethical concern**, potentially exacerbating the "digital divide" by making models less useful or even harmful to diverse populations.
     
@@ -229,7 +236,7 @@ To effectively navigate LLM evaluation complexities, several key practices shoul
     
     **Human Experts**: Focus valuable time on assessing complex, ambiguous cases, evaluating cultural nuances, and performing final validation
     
-    **Special Consideration**: Particularly important for low-resource languages where LLM performance may be less reliable
+    **Special Consideration**: Particularly important for under-resourced languages where LLM performance may be less reliable
 
 === "Iterative Refinement"
     **Process**: LLMs generate initial evaluations or iteratively refine their own outputs
@@ -296,6 +303,35 @@ The LLM evaluation landscape is supported by a growing ecosystem of software, fr
 
 ---
 
+## Community-Driven Evaluation
+
+Standard benchmarks and expert-only annotation pipelines, while valuable, often miss the lived realities of the communities that multilingual LLMs are meant to serve. Broadening **who participates** in evaluation—bringing in native speakers, civil-society organizations, and end users—surfaces quality gaps that top-down processes overlook and produces more culturally grounded assessments.
+
+<div class="grid cards" markdown>
+
+-   :material-account-group:{ .lg .middle } __PARIKSHA__
+
+    ---
+
+    A large-scale study conducting **90,000 human evaluations** across 10 Indic languages, comparing 30 models through pairwise and direct assessment with community annotators. Demonstrated that broadening annotator participation reveals significant performance gaps masked by automated metrics alone.
+
+    [:octicons-arrow-right-24: Watts et al., EMNLP 2024](https://aclanthology.org/2024.emnlp-main.451.pdf)
+
+-   :material-earth:{ .lg .middle } __Samiksha__
+
+    ---
+
+    A community-driven evaluation pipeline **co-created with civil-society organizations (CSOs)** and community members. Community feedback informs what to evaluate, how benchmarks are built, and how outputs are scored. Demonstrated in the healthcare domain in India, offering a scalable pathway for contextually grounded and inclusive LLM evaluation.
+
+    [:octicons-arrow-right-24: Bhat et al., 2025](https://arxiv.org/abs/2509.24506)
+
+</div>
+
+!!! tip "Getting Started with Community Evaluation"
+    Consider engaging local communities and civil-society organizations in your evaluation process. Even lightweight participation—such as having native speakers validate a sample of outputs—can reveal cultural and linguistic blind spots that automated metrics and expert-only pipelines miss.
+
+---
+
 ## Conclusions and Recommendations
 
 The analysis of LLM evaluation reveals a complex landscape with significant challenges. **Evaluation is a central, indispensable component** in the LLM lifecycle, especially for models intended for global, multilingual, and multicultural use.
@@ -307,7 +343,7 @@ The analysis of LLM evaluation reveals a complex landscape with significant chal
     Traditional static benchmarks are insufficient due to pervasive contamination, which inflates reported performance and obscures true generalization—found in both commercial and open-source models
     
     **Multilingual Performance Gaps**  
-    Consistent performance gap exists between English and non-English languages, particularly for low-resource languages and non-Latin scripts
+    Consistent performance gap exists between English and non-English languages, particularly for under-resourced languages and non-Latin scripts
     
     **Tokenizer Inefficiencies**  
     Inefficient tokenizers increase costs and negatively correlate with performance

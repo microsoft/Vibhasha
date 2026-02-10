@@ -47,6 +47,14 @@ if (mdFiles.length === 0) {
 
 // Build entries
 const ACRONYMS = ['ASR', 'NLP', 'API', 'HTTP', 'URL', 'ID'];
+// Label overrides for chapters whose auto-generated title should differ
+const LABEL_OVERRIDES = {
+    '00-introduction': 'Getting Started',
+    '01-ii-pipeline': 'Eval in Practice',
+    '01-iii-low-resource': 'Low-Resource MT',
+    '02-i-strategic-crossroads': 'Crossroads',
+    '99-conclusion': 'Moving Forward'
+};
 // Default icon map for common roots (can be edited later in docIndex)
 const DEFAULT_ICON_BY_BASE = {
     '02-evolution-of-asr': 'Branch24Regular',
@@ -58,10 +66,10 @@ const DEFAULT_ICON_BY_BASE = {
 
 const entries = mdFiles.map(f => {
     const base = f.replace(/\.md$/, '');
-    // label: remove leading digits and dash
+    // label: use override if available, otherwise auto-generate from filename
     const labelPart = base.replace(/^[0-9]+-/, '');
-    // if starts with a small roman or letter segment like i-, ii- treat as simple
-    const label = titleize(labelPart.replace(/^i-/, '').replace(/^ii-/, '').replace(/^iii-/, '').replace(/^iv-/, ''));
+    // strip leading roman-numeral sub-entry prefix (i through x)
+    const label = LABEL_OVERRIDES[base] || titleize(labelPart.replace(/^(?:viii|vii|iii|vi|iv|ii|ix|v|x|i)-/, ''));
     // build component name but honor known acronyms (ASR -> ASR)
     const rawParts = labelPart.split(/[^a-zA-Z0-9]+/).filter(Boolean);
     const pascalParts = rawParts.map(s => {

@@ -1,6 +1,9 @@
 ## Evaluation and Quality Assurance
 
-Quality assurance is one of the most important parts of building a multilingual system. Strong translation patterns and thoughtful prompting help, but they are not enough on their own. You need a process that ensures outputs are accurate, culturally appropriate, safe, and consistent across languages. This section explains how to evaluate and refine multilingual quality before your system reaches real users. 
+Quality assurance is one of the most important parts of building a multilingual system. Strong translation patterns and thoughtful prompting help, but they are not enough on their own. You need a process that ensures outputs are accurate, culturally appropriate, safe, and consistent across languages. This section explains how to evaluate and refine multilingual quality before your system reaches real users.
+
+!!! tip "See also"
+    For a broader and more detailed treatment of multilingual evaluation—covering LLM-as-judge pipelines, metric rubrics, calibration, dataset discovery, and common challenges—refer to the [Evaluation chapter](/playbook/01-evaluation). 
 
 ### Establishing Ground Truth: A Fundamental Choice
 

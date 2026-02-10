@@ -1,6 +1,9 @@
 ## Verification and Quality Assurance
 
-Finetuning raises the ceiling on multilingual performance, but quality does not take care of itself. You need a repeatable process that proves your finetuned model is accurate, culturally aligned, safe, and stable across languages. This section gives you a practical framework for qualifying multilingual models before and after release. 
+Finetuning raises the ceiling on multilingual performance, but quality does not take care of itself. You need a repeatable process that proves your finetuned model is accurate, culturally aligned, safe, and stable across languages. This section gives you a practical framework for qualifying multilingual models before and after release.
+
+!!! tip "See also"
+    For foundational evaluation concepts—including LLM-as-judge pipelines, metric rubrics, calibration with human judgments, and dataset selection—see the [Evaluation chapter](/playbook/01-evaluation). 
 
 ### What multilingual QA must prove
 

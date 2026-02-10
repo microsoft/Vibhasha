@@ -73,5 +73,7 @@ While synthetic methods address scale, culturally sensitive tasks still require 
     
     **Ethical Oversight**: Adhere to ethical considerations including user privacy and consent for fairer, more dependable systems
 
+For evaluating cultural competence specifically, efforts like [PARIKSHA](https://aclanthology.org/2024.emnlp-main.451.pdf) and [Samiksha](https://arxiv.org/abs/2509.24506) provide culturally grounded benchmarks and human evaluation data created by native speakers—capturing nuances in language, norms, and values that translated English benchmarks and synthetic pipelines tend to miss.
+
 ---
 

@@ -8,6 +8,9 @@ Below is a practical, productionready pipeline you can implement end to end.
 
 Before you teach tasks, teach language. Multilingual bases often underrepresent target scripts, dialects, or morphology. Priming fixes that.
 
+!!! warning "The Curse of Multilinguality"
+    When a model's fixed capacity is shared across many languages, per-language performance degrades — a phenomenon known as the **curse of multilinguality** ([Conneau et al., ACL 2020](https://arxiv.org/abs/1911.02116)). Adding languages improves cross-lingual transfer up to a point, after which capacity dilution causes under-resourced languages to suffer most. Recent work such as [ATLAS (2025)](https://arxiv.org/abs/2510.22037) provides scaling laws that help predict and mitigate this trade-off. Linguistic priming — continued pretraining on target-language corpora and tokenizer expansion — directly addresses this by dedicating model capacity to your priority languages.
+
 **What to do**
 
 - **Continue pretraining on native corpora.** Feed the model large, unlabeled text in target languages to strengthen orthography, morphology, and syntax.

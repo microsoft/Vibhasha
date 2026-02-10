@@ -1,5 +1,10 @@
 # Translation Strategies & Prompting for Multilingual LLM
+Many modern LLMs are trained on multilingual data and are thus capable of understanding and generating text in multiple languages. When building multilingual applications, there are two major approaches to leveraging these capabilities:
 
+1. **Using the LLM directly in the target language** — relying on the model's native multilingual abilities to process and respond in the user's language without any intermediate step.
+2. **Using translation as a bridge** — translating user input into a high-resource language (typically English), processing it there, and translating the output back.
+
+The right choice depends on the model's proficiency in the target language, the complexity of the task, and the acceptable trade-offs in latency, cost, and cultural fidelity. This chapter focuses on when and how to use translation effectively, and when direct multilingual use may be sufficient.
 Most LLMs perform strongest in English because English dominates their training data. That imbalance leads to the “language gap,” where models succeed in English but struggle as language resources decrease. Translation can help bridge that gap, especially when the target language has limited digital presence. 
 
 !!! quote "The Translation Dilemma"
@@ -170,7 +175,7 @@ Selective translation is often the best choice for global deployments.
 - **Use high-quality translation tools.** Bad translation leads to bad reasoning.
 - **Minimize translation steps.** Each additional translation introduces risk and extra cost.
 - **Document your prompt patterns.** Clear documentation prevents confusion and ensures consistent performance.
-- **Evaluate outputs carefully.** Watch for missing details, mistranslations, and cultural mismatches.
+- **Evaluate outputs carefully.** Watch for missing details, mistranslations, and cultural mismatches. See the [Evaluation chapter](/playbook/01-evaluation) for detailed metric rubrics and assessment pipelines.
 
 #### Key Takeaways
 

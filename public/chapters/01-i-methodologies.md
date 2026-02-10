@@ -48,7 +48,7 @@ Automated benchmarking evaluates models on predefined datasets with established 
 
 #### Discovering Datasets for Your Language and Domain
 
-Finding appropriate evaluation datasets is the first critical step in automated benchmarking, especially for multilingual and domain-specific applications.
+Finding appropriate evaluation datasets is the first critical step in automated benchmarking, especially for multilingual and domain-specific applications. When selecting benchmarks, prioritize those that most closely match the target application you are building. For example, if your application is a chatbot that answers user questions, a question-answering benchmark will be more informative than a summarization benchmark, even if it does not perfectly capture your scenario. Aligning benchmark tasks with your real-world use case gives you a much more reliable signal of how the model will actually perform in production.
 
 !!! tip "Starting Point: LM Evaluation Harness"
     The [EleutherAI LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness), [Hugging Face LightEval](https://github.com/huggingface/lighteval) are excellent starting point for discovering and running benchmarks. [Open Benchmark Index](https://huggingface.co/spaces/OpenEvals/open_benchmark_index) is a good starting point for discovering evaluation datasets by language, task, and domain. 

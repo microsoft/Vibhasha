@@ -159,9 +159,9 @@ Data augmentation can multiply dataset size, but it must be done responsibly.
 
 **Synthetic data**
 
-Use synthetic data when native text is limited.
+Use synthetic data when native text is limited. A bottom-up approach — prompting large LLMs grounded in language-specific sources like target-language Wikipedia — produces more culturally authentic data than simply translating English datasets. The [Updesh study](https://arxiv.org/abs/2509.21294) generated **9.5M instruction-following data points** across 13 Indian languages this way, and models fine-tuned on it consistently outperformed translation-based alternatives on NLU and NLG benchmarks. For a deeper dive into generation approaches, quality assurance, and evaluation frameworks, see the [Synthetic Data Generation](/playbook/06-synthetic-data) chapter.
 
-- Provide structured prompt templates
+- Provide structured prompt templates grounded in local content
 - Include tone, style, and safety constraints
 - Review outputs manually or with LLM-as-a-judge
 - Keep only high-quality samples

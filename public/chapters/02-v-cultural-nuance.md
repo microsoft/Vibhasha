@@ -6,7 +6,7 @@ Cultural nuance is one of the most common failure points in multilingual AI. It 
 
 ### Why Cultural Nuance Is Hard for LLMs
 
-Large language models learn patterns from text. But many forms of cultural meaning are not fully captured in the text available online, especially for low-resource languages. Even when data exists, it may lack diversity, context, or representation of everyday communication styles.
+Large language models learn patterns from text. But many forms of cultural meaning are not fully captured in the text available online, especially for under-resourced languages. Even when data exists, it may lack diversity, context, or representation of everyday communication styles.
 
 As a result, LLMs often struggle with:
 
@@ -122,7 +122,7 @@ Native reviewers identify issues models miss, such as:
 - Tone mismatches
 - Cultural sensitivities
 
-Human input is crucial for low-resource languages where the model's training data is sparse.
+Human input is crucial for under-resourced languages where the model's training data is sparse.
 
 #### 6. Create cultural guardrails in the system architecture
 

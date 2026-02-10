@@ -22,7 +22,7 @@ This section explains when to finetune, how to pick an approach, what data you n
 
 Pick finetuning when any of the following are true:
 
-- **Your languages include low-resource or underrepresented ones.** Off-the-shelf performance is uneven, and translation introduces meaning drift.
+- **Your languages include under-resourced or underrepresented ones.** Off-the-shelf performance is uneven, and translation introduces meaning drift.
 - **Your use case is high-stakes.** Legal, medical, financial, or safety-sensitive scenarios require strict control.
 - **Your domain is specialized.** You need precise terms, abbreviations, formulas, and process steps.
 - **You need a consistent brand voice.** "House style" should be enforced across regions and channels.
@@ -89,7 +89,7 @@ Finetuning quality is data-limited. Focus on **fewer, better** examples, then sc
 
 **3) Augment carefully**
 
-- **Synthetic data** can close gaps in low-resource languages. Use clear generation specs, include safety constraints, and validate with native reviewers.
+- **Synthetic data** can close gaps in under-resourced languages. Use clear generation specs, include safety constraints, and validate with native reviewers. For a comprehensive treatment of synthetic data strategies, see the [Synthetic Data Generation](/playbook/06-synthetic-data) chapter.
 - **Back-translation and paraphrase** can increase variety. Keep only samples that raise downstream metrics.
 
 **4) Split**
@@ -106,7 +106,7 @@ Finetuning quality is data-limited. Focus on **fewer, better** examples, then sc
 
 ### Safety, values, and reliability
 
-- **Cross-lingual safety sets.** Include harmful, sensitive, and ambiguous prompts in every target language. Rates of harmful output can be significantly higher in low-resource languages, so test and train accordingly.
+- **Cross-lingual safety sets.** Include harmful, sensitive, and ambiguous prompts in every target language. Rates of harmful output can be significantly higher in under-resourced languages, so test and train accordingly.
 - **Reward-model transfer.** Start with a strong English reward model, then adapt with smaller, high-quality native preference data. This improves consistency without requiring huge per-language datasets.
 - **Tone and formality constraints.** Add rules for polite address, honorifics, and region-specific etiquette during training to prevent customer-care missteps.
 
@@ -118,6 +118,9 @@ Measure what you plan to ship.
 - **Task-aligned metrics.** Combine automated metrics with task success, error types, and safety rates.
 - **Per-language dashboards.** Track accuracy, refusal quality, and harmful content by language and by release.
 - **Regression protection.** Freeze small test suites that catch tone, terminology, or formatting drift before launch.
+
+!!! tip "Deep-dive: Evaluation"
+    For a comprehensive treatment of multilingual evaluation—including metric rubrics, LLM-as-judge pipelines, calibration techniques, and dataset selection—see the [Evaluation chapter](/playbook/01-evaluation).
 
 ### Operational playbook
 

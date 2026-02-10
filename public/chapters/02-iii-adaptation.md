@@ -32,7 +32,7 @@ Off-the-shelf machine-translation tools are general purpose. They are not design
     Use lightweight approaches such as LoRA to adapt translation models without retraining the entire system.
 
 === "Synthetic Data Generation"
-    Create synthetic translation examples for low-resource languages to fill data gaps, then validate and refine them with native speakers.
+    Create synthetic translation examples for low-resource languages to fill data gaps, then validate and refine them with native speakers. See the [Synthetic Data Generation](/playbook/06-synthetic-data) chapter for detailed methodologies and case studies.
 
 Adapted translation systems reduce the risk of compounding errors across your multilingual pipeline. 
 

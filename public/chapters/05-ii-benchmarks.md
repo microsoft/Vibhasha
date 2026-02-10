@@ -104,7 +104,7 @@ A build ships only when all languages pass their gates.
 #### Multilingual Jailbreak Challenge
 - **Coverage**: Adversarial prompts in **10 languages**
 - **Key Results**:
-  - Unintentional: Low-resource prompts 3× more likely to yield policy violations
+  - Unintentional: Under-resourced language prompts 3× more likely to yield policy violations
   - Intentional: 81% success rate bypassing ChatGPT's safety
 
 #### LinguaSafe

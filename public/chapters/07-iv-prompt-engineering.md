@@ -54,7 +54,7 @@ Prompt engineering approaches can be categorized based on their mechanism and co
 | **Modeling (Fine-Tuning)** | Instruction Tuning, SFT on Augmented Data | High (requires computational resources and model weights access) | Deep, permanent behavioral and knowledge adaptation |
 | **Prompt Engineering (Cultural)** | Explicitly instructing cultural lens adoption | Low (accessible to end-users and developers) | Context-specific, dynamic mitigation (71–81% alignment improvement) |
 | **Prompt Engineering (Structured)** | Decomposition, iterative verification, synthesis via multi-step CoT | Moderate-to-High (requires complex prompt design expertise) | Highest bias reduction effectiveness (up to 87.7%) |
-| **Data Simulation** | Generating synthetic cross-cultural data using LLM agents | Moderate (requires framework implementation) | Scalable, high-fidelity data generation for low-resource cultures |
+| **Data Simulation** | Generating synthetic cross-cultural data using LLM agents | Moderate (requires framework implementation) | Scalable, high-fidelity data generation for under-resourced cultures |
 
 ---
 

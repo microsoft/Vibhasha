@@ -19,7 +19,7 @@ Two cutting-edge methodologies—CultureLLM and CultureSPA—demonstrate the fea
 #### CultureLLM: Semantic Data Augmentation
 
 !!! success "Cost-Effective Cultural Adaptation"
-    **CultureLLM Framework**: Offers a cost-effective solution to address knowledge gaps in low-resource cultures
+    **CultureLLM Framework**: Offers a cost-effective solution to address knowledge gaps in under-resourced cultures
     
     **Methodology**:
     - Uses World Value Survey (WVS) as seed dataset

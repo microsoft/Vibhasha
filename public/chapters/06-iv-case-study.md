@@ -52,7 +52,7 @@ The research demonstrates that culturally-grounded synthetic data generation ach
     
     **Resource Efficiency**: Focused cultural grounding can be more effective than massive scale alone
     
-    **Low-Resource Language Priority**: Greatest benefits accrue to underrepresented languages
+    **Under-Resourced Language Priority**: Greatest benefits accrue to underrepresented languages
     
     **Multi-Faceted Approach**: Effective multilingual AI requires diverse data generation strategies
 
