@@ -1,5 +1,9 @@
 # Vibhasha - Interactive Flowchart
 
+The interactive flowchart is your fast path to clarity. Instead of reading the entire playbook front to back, you can use the flowchart to identify the right multilingual strategy for your needs in a matter of minutes. It guides you through the most important decision points: the type of task you are building, your languages, your performance requirements, and your data constraints. 
+
+The goal is simple: help you choose the strategy that will work best for your product right now, while pointing you to the sections of this playbook that explain how to implement it. 
+
 <div style="display: flex; gap: 15px; align-items: flex-start; margin: 20px 0;">
   <div id="flowchart-container" style="height: 700px; flex: 1; border: 2px solid var(--md-default-fg-color--lighter); border-radius: 8px; background-color: var(--md-default-bg-color); box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;"></div>
   
@@ -400,7 +404,147 @@ if (document.readyState === 'loading') {
 }
 </script>
 
-## Navigation Guide
+### How the flowchart works
+
+The flowchart asks a series of questions in this order:
+
+1. **What task are you building?**
+   Extraction, generation, classification, dialogue, or search.
+
+2. **What languages do you need to support?**
+   High‑resource, mid‑resource, or low‑resource.
+
+3. **How quickly do you need a working prototype?**
+   Immediate, fast, or production‑grade.
+
+4. **How important is cultural nuance and tone?**
+   Low, medium, or high importance.
+
+5. **Do you have training data?**
+   None, limited, or robust and native.
+
+6. **Do you require privacy, on‑prem deployment, or regulated behavior?**
+   Yes or no.
+
+Based on these answers, the flowchart routes you to one of the three main strategies:
+
+- **Translation‑based approaches (Section 2.3)**
+
+- **Off‑the‑shelf prompting (Section 2.3)**
+
+- **Fine‑tuning specialized models (Section 2.4)**
+
+Along the way, it suggests when to incorporate selective translation, RAG, safety filters, or cultural alignment patterns.
+
+### Using the flowchart effectively
+
+The interactive version is built so that teams can walk through it together. It is especially helpful for:
+
+- Product teams scoping multilingual launches
+- Localization teams choosing where to add native content
+- Engineering teams deciding which pipeline to implement
+- Research teams planning model evaluation and experiments
+- Safety teams prioritizing languages for red‑teaming
+- Leaders deciding where to invest exploration vs. fine‑tuning resources
+
+You can also use the flowchart as a recurring checkpoint when:
+
+- Adding new languages
+- Introducing new features or tasks
+- Seeing degraded quality or safety in a region
+- Migrating to a new model family
+- Rethinking your multilingual architecture
+
+### What outputs the flowchart gives you
+
+By the end of the flowchart, you will know:
+
+- **Which strategy to use first**
+- **When to combine strategies** (for example, selective translation plus RAG)
+- **Whether fine‑tuning is necessary**
+- **How to handle low‑resource languages**
+- **Recommended evaluation steps**
+- **Safety requirements for your languages**
+- **Where to find the guidance in this playbook**
+
+It also points you to the appropriate subsections, such as:
+
+- **2.3.1 Translation strategies**
+- **2.3.3 Translation architectures**
+- **2.4.1 Fine‑tuning strategies**
+- **2.4.4 Data engineering**
+- **2.5.1 Safety assessments**
+
+This gives teams a shared vocabulary and set of decision criteria.
+
+
+
+### Examples of flowchart outcomes
+
+Here are three typical outcomes from running the flowchart:
+
+**Outcome 1: Mid‑resource language, fast prototype**
+
+- Task: summarization
+- Languages: Spanish and Portuguese
+- Data: minimal
+- Cultural nuance: medium
+- Privacy needs: none
+
+**Recommended strategy:**
+Use **off‑the‑shelf prompting** with light RAG and selective translation only when needed.
+
+**Outcome 2: Low‑resource language, high cultural requirements**
+
+- Task: customer support
+- Languages: Amharic and Oromo
+- Data: limited
+- Cultural nuance: high
+- Safety constraints: strong
+
+**Recommended strategy:**
+Use **selective translation** plus **fine‑tuning** with native data and cultural alignment examples.
+
+**Outcome 3: Regulated domain**
+
+- Task: medical assistance workflow
+- Languages: French, Hindi, Arabic
+- Data: robust
+- Privacy: on‑prem preferred
+- Safety risk: high
+
+**Recommended strategy:**
+Use a **small fine‑tuned model** with modular adapters (language + domain + safety), plus multilingual RAG.
+
+### Why the flowchart accelerates multilingual development
+
+Teams often lose weeks experimenting with translation patterns, prompt variations, and fine‑tuning decisions without a clear framework. The flowchart provides a structured, evidence‑based approach that dramatically reduces this exploration time.
+
+It helps you avoid:
+
+- Overinvesting in fine‑tuning too early
+- Relying solely on translation
+- Ignoring safety differences across languages
+- Using English‑centric evaluation metrics
+- Treating all languages the same despite resource differences
+
+Instead, you get a tailored strategy that matches your languages, resources, and goals.
+
+### Next steps after using the flowchart
+
+Once you complete the flowchart:
+
+1. **Review the recommended strategy** (Sections 2.3, 2.4, or both).
+2. **Check** the **evaluation requirements** in Section 2.2.
+3. **Review safety considerations** in Section 2.5.
+4. **Build a small pilot** in one language per tier.
+5. **Expand to additional languages** after successful QA.
+6. **Plan for cultural alignment and data engineering** if fine‑tuning is required.
+
+The flowchart is an entry point, not an endpoint. It tells you where to start and how to scale safely.
+
+
+<!-- ## Navigation Guide
 
 !!! info "Interactive Flowchart Guide"
     This interactive flowchart provides a bird's-eye view of the **Vibhasha** multilingual LLM playbook.
@@ -433,4 +577,4 @@ Jump directly to chapters by clicking these flowchart sections:
 - **🔵 Off-the-Shelf** → [Prompting Techniques](../chapters/03-off-the-shelf/)
 - **🔵 Fine-tuning** → [Model Fine-tuning](../chapters/04-fine-tuning/)
 - **🔷 Safety** → [Safety Assessments](../chapters/05-safety/)
-- **🔷 Synthetic Data** → [Data Generation](../chapters/06-synthetic-data/)
+- **🔷 Synthetic Data** → [Data Generation](../chapters/06-synthetic-data/) -->
