@@ -133,6 +133,27 @@
     font-size: .85rem;
 }
 
+.markdown-body img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 12px 0;
+    object-fit: contain;
+}
+
+.markdown-body figure {
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+
+.markdown-body iframe,
+.markdown-body video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
 .markdown-body thead tr {
     background: var(--color-header-bg);
     color: var(--color-header-text);
