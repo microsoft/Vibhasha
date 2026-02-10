@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import {docEntries} from "./docs/docIndex";
+import { docEntries } from "./docs/docIndex";
+import { Search20Regular, Dismiss24Regular } from '@fluentui/react-icons';
+import './styles/Search.css';
 
 export default function GlobalSearch({ onSearchActiveChange }) {
   const navigate = useNavigate();
@@ -24,19 +26,15 @@ export default function GlobalSearch({ onSearchActiveChange }) {
   }, []);
 
   function markdownToText(md) {
-  return md
-    .replace(/```[\s\S]*?```/g, " ")       // code blocks
-    .replace(/`([^`]+)`/g, "$1")           // inline code
-    // .replace(/\!\[[^\]]*\]\([^)]*\)/g, "") // images
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")  // links
-    .replace(/^#{1,6}\s+/gm, "")           // headings
-    // .replace(/^\s*>+\s?/gm, "")            // blockquotes
-    // .replace(/^\s*[-*+]\s+/gm, "")         // unordered lists
-    // .replace(/^\s*\d+\.\s+/gm, "")         // ordered lists
-    .replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, "$1")  // bold/italic
-    .replace(/\|/g, " ")                   // tables pipes
-    .trim();
-}
+    return md
+      .replace(/```[\s\S]*?```/g, " ")       // code blocks
+      .replace(/`([^`]+)`/g, "$1")           // inline code
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")  // links
+      .replace(/^#{1,6}\s+/gm, "")           // headings
+      .replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, "$1")  // bold/italic
+      .replace(/\|/g, " ")                   // tables pipes
+      .trim();
+  }
 
 
   useEffect(() => {
@@ -64,8 +62,8 @@ export default function GlobalSearch({ onSearchActiveChange }) {
       matches.push({
         ...item,
         excerpt:
-        markdownToText(text)
-        .substring(excerptStart).substring(0, 500)
+          markdownToText(text)
+        // .substring(excerptStart, excerptEnd)
       });
     }
 
@@ -84,15 +82,34 @@ export default function GlobalSearch({ onSearchActiveChange }) {
     navigate(path + `?highlight=${encodeURIComponent(q)}`);
   };
 
-  return (
-    <div className="search-panel">
-      <input
-        value={query}
-        placeholder="Search..."
-        onChange={(e) => setQuery(e.target.value)}
-        className="search-input"
-      />
+  const inputRef = useRef(null);
 
+  function clearQuery() {
+    setQuery('');
+    setResults([]);
+    if (onSearchActiveChange) onSearchActiveChange(false);
+    if (inputRef.current) inputRef.current.focus();
+  }
+
+  return (
+    <div className="search-wrapper">
+      <div className="search-input">
+        <span className="icon-left">
+          <Search20Regular />
+        </span>
+        <input
+          ref={inputRef}
+          value={query}
+          placeholder="Search"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        {query && (
+          <span className="icon-right" onClick={clearQuery} aria-label="Clear search">
+            <Dismiss24Regular />
+          </span>
+        )}
+      </div>
+      {results.length > 0 && <p>{results.length} Results</p>}
       {results.length > 0 && (
         <div className="search-results">
           {pagedResults.map((item, idx) => (
@@ -128,7 +145,6 @@ function SearchResultItem({ item, query, onClick }) {
       </>
     );
   };
-
   return (
     <div className="result-item" onClick={onClick}>
       <h4>{item.label}</h4>
@@ -142,11 +158,10 @@ function Pagination({ page, totalPages, setPage }) {
 
   return (
     <div className="search-pagination">
-      <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+      <button className="pagination-button" disabled={page === 1} onClick={() => setPage(page - 1)}>
         1
       </button>
-      {/* <span>{page} / {totalPages}</span> */}
-      <button disabled={page === totalPages} onClick={() => setPage(page + 1)}>
+      <button className="pagination-button" disabled={page === totalPages} onClick={() => setPage(page + 1)}>
         2
       </button>
     </div>

@@ -191,11 +191,9 @@ export default function MarkdownPage({ filePath }) {
 
   return (
     <div className="intro-root">
-      <div className="search">
+      <div className="doc-container">
         <GlobalSearch onSearchActiveChange={setSearchActive} />
-      </div>
-      {!searchActive && (
-        <div className="doc-container">
+        {!searchActive && (
           <div className="doc-layout">
             <main className="doc-main markdown-body doc-main-inner">
               <Hero title={heroTitle} subtitle={heroSubtitle} />
@@ -260,8 +258,9 @@ export default function MarkdownPage({ filePath }) {
               </aside>
             )}
           </div>
-        </div>
-      )}
+        )}
+      </div>
+
     </div>
   );
 }

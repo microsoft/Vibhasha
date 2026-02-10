@@ -21,9 +21,7 @@ export default function PlaybookIntro(){
 
   return (
   <div  className="intro-root">
-    <div className="search-panel">
     <GlobalSearch onSearchActiveChange={setSearchActive} />
-    </div>
     {!searchActive && (
       <div>
       <Hero

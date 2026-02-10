@@ -204,11 +204,6 @@
     flex: 0 0 auto;
 }
 
-.intro-root .search {
-    display: flex;
-    justify-content: flex-end;
-}
-
 .prev-next-nav {
     display: flex;
     justify-content: space-between;
