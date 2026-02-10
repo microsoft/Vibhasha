@@ -52,15 +52,18 @@ const brandSvgs = {
   atlas: atlasSvg,
   vibhasha: vibhashaSvg,
 }
-
-// App catalog and brand mapping by app name
-const appCatalog = {
-  paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal, url: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/' },
-  atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink, url: 'https://atlas-crosscultural-playbook.azurewebsites.net/' },
-  vibhasha: { title: 'Vibhasha', subtitle: 'The Multilingual LLM Playbook', brand: 'indigo', Icon: iconByBrand.indigo, url: null }
+const externalUrls = {
+  paza: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/',
+  atlas: 'https://atlas-crosscultural-playbook.azurewebsites.net',
+  vibhasha: 'https://multilingual-playbook-prototype-dev.azurewebsites.net/'
 }
 
-// Brand image mapping by app key
+const appCatalog = {
+  paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal, externalUrl: externalUrls?.paza },
+  atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink, externalUrl: externalUrls?.atlas },
+  vibhasha: { title: 'Vibhasha', subtitle: 'Multi-lingual LLMs Playbook', brand: 'indigo', Icon: iconByBrand.indigo, externalUrl: externalUrls?.vibhasha }
+}
+
 const brandImages = {
   paza: pazaIllustration,
   atlas: atlasIllustration,
@@ -83,7 +86,7 @@ export function ThemeProvider({ children, initialAppName }){
     return palette.light
   }, [appInfo.brand])
 
-  // Optionally expose CSS variables for existing stylesheets
+  // expose CSS variables for existing stylesheets
   React.useEffect(() => {
     const root = document.documentElement.style
     root.setProperty('--color-header-bg', colors.headerBg)
@@ -126,7 +129,7 @@ export function ThemeProvider({ children, initialAppName }){
       title: appCatalog[key].title,
       brand: appCatalog[key].brand,
       Icon: appCatalog[key].Icon,
-      url: appCatalog[key].url,
+      externalUrl: externalUrls[key] || null,
     }))
   ), [])
 
