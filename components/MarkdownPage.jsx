@@ -191,7 +191,7 @@ export default function MarkdownPage({ filePath }) {
 
   return (
     <div className="intro-root">
-      <div className="search-panel">
+      <div className="search">
         <GlobalSearch onSearchActiveChange={setSearchActive} />
       </div>
       {!searchActive && (
