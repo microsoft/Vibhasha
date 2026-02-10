@@ -1,15 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../theme/ThemeContext.jsx';
 import './styles/PlaybookIntro.css';
 import Hero from './Hero';
 import { ChevronRight24Regular } from '@fluentui/react-icons';
-import PageSearch from './PageSearch';
+import GlobalSearch from './Search.jsx';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
 
 export default function PlaybookIntro(){
   const { appName, appSubtitle, colors, brandImage } = useTheme();
+  const [searchActive, setSearchActive] = useState(false);
   const navigate = useNavigate();
 
   // Build overview from sidebar tabs
@@ -20,8 +21,11 @@ export default function PlaybookIntro(){
 
   return (
   <div  className="intro-root">
-    <PageSearch containerSelector=".intro-root" />
-    <div>
+    <div className="search-panel">
+    <GlobalSearch onSearchActiveChange={setSearchActive} />
+    </div>
+    {!searchActive && (
+      <div>
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
@@ -54,6 +58,7 @@ export default function PlaybookIntro(){
         </div>
       </section>
     </div>
+    )}
   </div>
   );
 }
