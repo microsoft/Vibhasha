@@ -1,7 +1,175 @@
-## Multilingual Vulnerability Analysis: Adversarial and Factuality Failure Modes
-Rigorous safety assessment requires an understanding of how linguistic diversity serves as a vector for exploiting known LLM vulnerabilities, specifically through adversarial manipulation and the introduction of factual instability.
+## Vulnerabilities
+Multilingual systems introduce safety vulnerabilities that often do not appear in English-only deployments. These vulnerabilities emerge from gaps in training data, differences in cultural norms, and the varied ways language encodes harmful intent. Understanding these weaknesses is essential for building systems that behave safely across all supported languages. 
 
-### Advanced Adversarial Attacks in Polyglot Systems
+This section outlines the primary categories of multilingual vulnerabilities and explains how to address them. 
+
+### Why multilingual models have unique vulnerabilities
+
+At their core, large language models learn from patterns in text. Because English dominates available training data, multilingual safety is inherently uneven. In practice, this means:
+
+- The model knows how to refuse harmful requests in English, but may fail to recognize the same request in Zulu or Nepali.
+- Jailbreak prompts succeed more easily in languages the model has not seen often.
+- Cultural or regional harms may not be well defined in the training corpus.
+- Safety tools built on English assumptions miss danger in other languages.
+
+These weaknesses create real risks for global deployments.
+
+### Major vulnerability categories
+
+**1. Uneven refusal behavior across languages**
+
+Refusal patterns learned in English do not automatically generalize to other languages. This can result in:
+
+- Inconsistent safety thresholds
+- Polite refusals in English but blunt or confusing refusals elsewhere
+- Successful harmful completions in lowresource languages
+- Incorrect acceptance of dangerous prompts
+- Safe outputs that sound rude or culturally inappropriate
+
+This inconsistency erodes trust and increases risk.
+
+**2. Meaning drift through translation**
+
+Translation introduces safety risks when key details are lost or distorted.
+
+Common forms of drift include:
+
+- Harmful intent becoming ambiguous
+- Warnings becoming softer or less clear
+- Phrasing that appears harmless after translation
+- Sensitive or taboo content becoming diluted
+- User questions being misinterpreted
+
+Meaning drift is especially dangerous when the system relies on translation to detect harmful intent.
+
+**3. Codeswitching and mixedscript attacks**
+
+Attackers use language mixing to bypass safety filters. Examples include:
+
+- Alternating between languages in the same sentence
+- Embedding harmful phrases in transliterated form (for example, Arabic written in Latin script)
+- Mixing scripts with similar-looking characters (homoglyph attacks)
+- Switching midprompt to confuse intent detection
+- Using slang or regional dialects unfamiliar to the model
+
+These attacks often succeed because English-oriented safety filters cannot parse mixed-language input.
+
+**4. Underspecified cultural harms**
+
+Many harms are culturally specific. What is offensive, taboo, or dangerous varies across regions.
+Examples:
+
+- References to sensitive historical events
+- Religious or spiritual content
+- Political commentary
+- Terms related to caste, ethnicity, or regional identity
+- Local health misinformation or dangerous home remedies
+
+If a model is unaware of these sensitivities, it may produce harmful or offensive content unintentionally.
+
+**5. Jailbreak vulnerabilities in lowresource languages**
+
+Lowresource languages often have limited representation in safety datasets. This makes them fertile ground for jailbreaks.
+
+Patterns include:
+
+- Direct instructions to bypass safety controls
+- Harmful requests phrased politely
+- Emotional manipulation in local phrasing
+- Dialect variations that safety filters do not recognize
+- Indirect requests that English-trained classifiers miss
+
+Studies show that jailbreak success rates can be many times higher in lowresource languages than in English.
+
+**6. Hallucination amplification**
+
+Hallucinations tend to increase when:
+
+- Training data is sparse
+- Translation quality is uneven
+- Cultural context is missing
+- Tokenization works poorly for a specific script
+- A prompt mixes multiple languages
+
+Hallucinations in multilingual settings are harder to detect, especially when evaluators are not native speakers.
+
+**7. Safety gaps introduced by RAG systems**
+
+Retrievalaugmented generation (RAG) can improve reliability, but also introduces multilingual risks.
+
+Potential failures include:
+
+- Pulling outdated or unverified information in the target language
+- Summarizing harmful text without recognizing its risk
+- Mixing languages in ways that confuse safety classifiers
+- Producing unsafe content when retrieved text includes culturally sensitive topics
+
+RAG must be evaluated and monitored per language just like the model itself.
+
+### Where these vulnerabilities appear in the pipeline
+
+Multilingual safety failures tend to occur at predictable points:
+
+- **Input stage:** harmful intent hidden through script tricks, slang, or code-switching
+- **Translation stage:** meaning drift hiding harmful elements
+- **Generation stage:** weak refusal patterns in some languages
+- **Postprocessing stage:** English-only safety filters missing non-English risks
+- **RAG stage:** unsafe or outdated content entering the context
+- **Fallback stage:** inconsistent handling of uncertain or ambiguous prompts
+
+Understanding where failures originate helps you design targeted defenses.
+
+### How to mitigate multilingual vulnerabilities
+
+**1. Expand safety data per language**
+
+Do not rely on English data. Build multilingual safety datasets that include:
+
+- Native-language harmful requests
+- Dialects and slang
+- Cultural harms
+- Indirect unsafe intent
+- Code-switched prompts
+
+**2. Apply perlanguage safety filters**
+
+Use safety classifiers trained or adapted for each target language.
+
+**3. Incorporate multilingual refusal examples into finetuning**
+
+Include highquality, polite refusal patterns during instruction-tuning.
+
+**4. Test with multilingual redteam prompts**
+
+Simulate attacks using:
+
+- Slang
+- Mixed scripts
+- Unicode tricks
+- Politeness misdirection
+- Multiple dialects
+
+**5. Monitor safety by language**
+
+Track:
+
+- Unsafe-response rate
+- Jailbreak success rate
+- Refusal-quality score
+- Cultural-sensitivity violations
+
+per language, not globally.
+
+### Key takeaways
+
+- Multilingual models introduce safety risks that English-only systems never encounter.
+- Code-switching, mixed scripts, and slang create major gaps in safety filters.
+- Meaning drift in translation can hide harmful intent.
+- Lowresource languages are more vulnerable to jailbreaks and harmful completions.
+- Cultural harms must be treated as first-class safety concerns.
+- Strong defenses require perlanguage data, evaluation, and monitoring.
+
+<!-- ### Advanced Adversarial Attacks in Polyglot Systems
 Adversarial attacks in multilingual environments can be differentiated based on user intent. The unintentional scenario involves non-malicious users inadvertently bypassing guardrails simply by querying in non-English languages. The intentional scenario involves malicious users who deliberately combine explicit malicious instructions with multilingual prompts to craft effective attack payloads.   
 
 The convergence of malicious intent and multilingual context significantly amplifies the negative impact. Intentional multilingual prompts function not merely as a translated attack but as an obfuscation and destabilization vector. The extreme attack success rates (ASR) observed in these scenarios confirm that multilingual phrasing bypasses safety mechanisms reliant on surface-level keyword detection or simple sentiment analysis trained in English, targeting the failure of the model’s internal safety representation space. Experimental data revealed astonishingly high rates of unsafe output: 80.92% ASR for ChatGPT and 40.71% ASR for GPT-4 when targeted with intentional multilingual jailbreaking attacks. This evidence mandates that assessment processes must explicitly test prompts that are linguistically complex or contextually ambiguous across language boundaries.   
@@ -39,4 +207,4 @@ To address this challenge, specialized evaluation metrics are required:
 - Reduces hallucinations and improves summary quality across multiple languages
 
 **Cross-lingual Chain-of-Thought (COT)**: Leverages reasoning performed in high-resource languages to improve factual consistency and reliability in low-resource language outputs.
-
+ -->

@@ -1,13 +1,206 @@
-# Safety Assessments for Multilingual Large Language Model Applications
+# Safety
 
-## Overview
+Safety is the backbone of any multilingual AI system. A model that behaves responsibly in English may behave unpredictably in other languages, especially lowresource ones. Safety performance varies widely across languages, and multilingual models often fail in ways that are invisible until tested: polite refusals disappear, unsafe outputs increase, and harmful prompts slip through undetected. 
 
-Ensuring safety in multilingual LLM applications is a multifaceted challenge that requires comprehensive assessment protocols addressing linguistic and cultural variability. Many safety mechanisms and alignment efforts have been English-centric, leaving dangerous blind spots for other languages.
+This chapter helps you build a multilingual safety program that is proactive, consistent, and grounded in real-world behavior across regions. 
 
-!!! danger "Critical Safety Gap"
-    Safety mechanisms developed in English often **fail catastrophically** in non-English environments. **GPT-4's rate of harmful content was roughly 3× higher** in certain low-resource languages than in high-resource ones. This is not gradual degradation but a fundamental structural vulnerability.
+## Safety assessments
 
-## Foundational Concepts: The Multilingual Threat Landscape
+Safety assessments reveal how your system behaves across languages, cultures, and use cases. Many teams assume that safety guardrails built for English will transfer automatically. They do not. Failure rates can increase dramatically in low-resource languages, and multilingual jailbreaking attacks are more successful in languages the model was not heavily trained on.
+
+A safety assessment should uncover blind spots, measure risks accurately, and guide improvements before deployment.
+
+### Why multilingual safety is harder than English-only safety
+
+Multilingual safety faces several unique challenges that require a dedicated strategy.
+
+**1. Uneven training data across languages**
+
+Models learn safety behavior largely from English text because English dominates the training mix. Safety-related examples in other languages are sparse, uneven, or completely absent. This leads to:
+
+- Weak refusal behavior
+- Poor detection of harmful intent
+- Inconsistent handling of sensitive topics
+
+**2. Linguistic complexity**
+
+Some languages encode politeness, harm, or intent differently. Direct translation is not enough to detect meaning accurately.
+
+**3. Higher vulnerability to attacks**
+
+Jailbreak attempts that fail in English may succeed in:
+
+- Codeswitched prompts
+- NonLatin scripts
+- Dialect variants
+- Homoglyph or unicode tricks
+
+Attackers use these linguistic gaps to bypass safety filters.
+
+**4. Cultural differences in what constitutes harm**
+
+What is considered offensive, sensitive, or inappropriate varies widely across cultures. Safety must reflect those cultural definitions, not just English ones.
+
+### Core components of a multilingual safety assessment
+
+Your assessment should include five parallel evaluations. Each contributes a different signal.
+
+**1. Harmful content detection**
+
+Test whether the model produces harmful or sensitive content across languages.
+
+Categories to test:
+
+- Violence
+- Hate or harassment
+- Self-harm
+- Extremism
+- Mis/disinformation
+- Adult content
+- Medical or legal misinformation
+- Cultural or religious sensitivity
+
+Track harmful-output rates per language. Expect higher rates in lowresource languages unless you intervene.
+
+**2. Refusal quality tests**
+
+Safety is not only about refusing harmful prompts. It is also about *refusing well*.
+
+Effective refusals should be:
+
+- Polite
+- Clear
+- Supportive
+- Culturally appropriate
+- Helpful when redirecting the user to safe alternatives
+
+A refusal that sounds cold or accusatory can damage trust.
+
+**3. Jailbreak vulnerability tests**
+
+Evaluate resilience to attacks that attempt to bypass safety guardrails.
+
+Attack types to include:
+
+- Prompt obfuscation
+- Multi-language prompts
+- Code-switching
+- Homoglyph use
+- Script variations (for example, Cyrillic, Arabic, Devanagari)
+- Indirect prompting
+- Emotion or empathybased manipulation
+- Role-play scenarios
+- Logicoverride attacks
+
+Track jailbreak success rate per language. A model with a 1% jailbreak rate in English may show 10 to 20% in lowresource languages.
+
+**4. Cultural-sensitivity evaluation**
+
+Some harms are culturally specific. A model must understand culturally sensitive topics, taboo areas, and local norms.
+
+Examples include:
+
+- Politically sensitive entities
+- Religious references
+- Regionally taboo terms
+- Sensitive historical events
+- Socialidentity references
+- Honorific norms and politeness systems
+
+Include native speakers in evaluation to capture nuance.
+
+**5. Safety in multilingual RAG systems**
+
+When using retrieval-augmented generation, assess:
+
+- Whether the model pulls inappropriate or outdated content in the target language
+- Whether summarized content maintains tone and meaning
+- Whether hallucinations occur when mixed languages appear in the retrieved text
+
+RAG improves safety when grounded correctly, but can amplify harm if retrieval is not carefully curated.
+
+### How to structure a multilingual safety test suite
+
+Below is a practical blueprint for building a comprehensive assessment.
+
+**1. Build a shared taxonomy**
+
+Define harms and severity levels globally.
+Add regional and cultural extensions as needed.
+
+**2. Create perlanguage test sets**
+
+Aim for:
+
+- Highresource languages
+- Lowresource languages
+- Dialect variants
+- Codeswitched examples
+
+**3. Use multiple prompt types**
+
+Include:
+
+- Direct harmful requests
+- Subtle, indirect intent
+- Emotional manipulation
+- Requests disguised as educational queries
+- Adversarial obfuscation
+
+**4. Evaluate at three layers**
+
+- Model output
+- Postprocessing filters
+- Final user-facing response
+
+**5. Track metrics per language**
+
+Minimum metrics include:
+
+- Unsafe-response rate
+- Jailbreak success rate
+- Refusal quality score
+- Cultural sensitivity violations
+- Misclassification rate for harmful intent
+
+These metrics become your ongoing safety dashboard.
+
+### Human reviewers are essential
+
+Native-language reviewers catch failures that automated tests cannot. Prioritize regions where harm risk is highest or language resources are lowest.
+
+Reviewers should assess:
+
+- Tone of refusals
+- Cultural appropriateness
+- Accuracy of harm detection
+- Completeness of harmfulcontent refusal
+- Potential unintended harms
+
+Set up a reviewer panel that covers multiple dialects rather than a single monolithic language sample.
+
+### Automated and LLMbased judging
+
+Automated safety classifiers are useful but must be calibrated per language.
+
+- Do not assume English classifiers generalize.
+- Add perlanguage keyword lists for sensitive topics.
+- Use multilingual embeddings for semantic harm detection.
+- Validate classifier behavior against human labels.
+
+LLMasajudge can help with triage, but must be anchored to human-reviewed examples.
+
+### Key takeaways
+
+- Safety varies dramatically across languages.
+- Lowresource languages often show higher harm and jailbreak rates.
+- Safety assessments must include cultural nuance, not just direct harm detection.
+- Test with adversarial methods across scripts, dialects, and codeswitched prompts.
+- Track safety metrics per language to detect hidden risks.
+- Native-speaker review is essential for culturally aligned safety.
+
+
+<!-- ## Foundational Concepts: The Multilingual Threat Landscape
 
 ### Taxonomy of LLM Harms and Cross-Cultural Sensitivity
 
@@ -55,4 +248,4 @@ Even high-resource languages beyond English (Arabic, Hindi, etc.) have been unde
 - **Language switching**: Models may refuse requests in English but comply in other languages
 - **Code-switching**: Mixing languages or scripts confuses safety systems
 - **Unicode evasion**: Using non-English characters to bypass content filters
-
+ -->
