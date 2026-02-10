@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
 import Hero from './Hero.jsx';
-import PageSearch from './PageSearch.jsx';
+import GlobalSearch from './Search.jsx';
 import { useTheme } from '../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
 
@@ -20,6 +20,7 @@ export default function MarkdownPage({ filePath }) {
   const [content, setContent] = useState('');
   const [headings, setHeadings] = useState([]);
   const [activeId, setActiveId] = useState(null);
+  const [searchActive, setSearchActive] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { appSubtitle, colors } = useTheme();
@@ -41,14 +42,14 @@ export default function MarkdownPage({ filePath }) {
 
   // Derive hero title: prefer root label for grouped pages; otherwise current entry label.
   const currentEntry = useMemo(() => docEntries.find(e => e.path === location.pathname), [location.pathname]);
-  function prettyTitle(label){
+  function prettyTitle(label) {
     if (!label) return '';
-    return label.replace(/\b(Guidelines|Intro)\b/i, '').replace(/\s{2,}/g,' ').trim() || label;
+    return label.replace(/\b(Guidelines|Intro)\b/i, '').replace(/\s{2,}/g, ' ').trim() || label;
   }
   const heroTitle = prettyTitle(groupInfo?.label || currentEntry?.label);
   const heroSubtitle = appSubtitle;
 
-  function onSelectSub(e){
+  function onSelectSub(e) {
     const to = e.target.value;
     if (to) navigate(to);
   }
@@ -185,92 +186,82 @@ export default function MarkdownPage({ filePath }) {
     h3: renderHeading('h3'),
   };
 
-// Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
-const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
+  // Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
+  const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
 
   return (
-    <>
-      <div className={`doc-toolbar${groupInfo ? '' : ' no-subchapter'}`}>
-        {groupInfo && (
-          <div className="subchapter-menu">
-            <select id="subchapter-select" onChange={onSelectSub} defaultValue={location.pathname}>
-              {groupInfo.root && (
-                <option key={groupInfo.root.path} value={groupInfo.root.path}>{groupInfo.root.label}</option>
+    <div className="intro-root">
+      <div className="search-panel">
+        <GlobalSearch onSearchActiveChange={setSearchActive} />
+      </div>
+      {!searchActive && (
+        <div className="doc-container">
+          <div className="doc-layout">
+            <main className="doc-main markdown-body doc-main-inner">
+              <Hero title={heroTitle} subtitle={heroSubtitle} />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  ...mdHeadingComponents,
+                  img: ({ node, ...props }) => {
+                    const src = props.src || '';
+                    const key = src.replace(/^\/+/, '');
+                    const mapped = imageModules[`/${key}`] || imageModules[key];
+                    return <img {...props} src={mapped || src} />;
+                  },
+                }}
+              >
+                {content}
+              </ReactMarkdown>
+              {(prev || next) && (
+                <nav className="prev-next-nav" aria-label="Page navigation">
+                  {prev ? (
+                    <button
+                      onClick={() => navigate(prev.path)}
+                      className="btn-primary"
+                    >
+                      <ChevronLeft24Regular />
+                      <span>{prev.label}</span>
+                    </button>
+                  ) : <div />}
+
+                  {next ? (
+                    <button
+                      onClick={() => navigate(next.path)}
+                      className="btn-primary"
+                    >
+                      <span>{next.label}</span>
+                      <ChevronRight24Regular />
+                    </button>
+                  ) : <div />}
+                </nav>
               )}
-              {groupInfo.items.map(it => (
-                <option key={it.path} value={it.path}>{it.label}</option>
-              ))}
-            </select>
-          </div>
-        )}
-        <PageSearch containerSelector=".doc-main-inner" placeholder="Search" />
-      </div>
-      <div className="doc-container">
-        <div className="doc-layout">
-          <main className="doc-main markdown-body doc-main-inner">
-            <Hero title={heroTitle} subtitle={heroSubtitle} />
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                ...mdHeadingComponents,
-                img: ({ node, ...props }) => {
-                  const src = props.src || '';
-                  const key = src.replace(/^\/+/, '');
-                  const mapped = imageModules[`/${key}`] || imageModules[key];
-                  return <img {...props} src={mapped || src} />;
-                }
-              }}
-            >
-              {content}
-            </ReactMarkdown>
-            {(prev || next) && (
-              <nav className="prev-next-nav" aria-label="Page navigation">
-                {prev ? (
-                  <button
-                    onClick={() => navigate(prev.path)}
-                    className="btn-primary"
-                  >
-                    <ChevronLeft24Regular />
-                    <span>{prev.label}</span>
-                  </button>
-                ) : <div />}
+            </main>
 
-                {next ? (
-                  <button
-                    onClick={() => navigate(next.path)}
-                    className="btn-primary"
-                  >
-                    <span>{next.label}</span>
-                    <ChevronRight24Regular />
-                  </button>
-                ) : <div />}
-              </nav>
+            {showToc && (
+              <aside className="doc-toc" aria-label="Table of contents">
+                <div className="doc-toc-inner">
+                  <strong className="doc-toc-title">On this page</strong>
+                  <ul>
+                    {headings.map(h => (
+                      <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
+                        <button
+                          onClick={() => scrollToId(h.id)}
+                          className={activeId === h.id ? 'active' : ''}
+                          aria-current={activeId === h.id ? 'true' : undefined}
+                        >
+                          <span>{h.text}</span>
+                          {activeId === h.id && <Checkmark16Regular className="toc-active-icon" />}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </aside>
             )}
-          </main>
-
-          {showToc && (
-            <aside className="doc-toc" aria-label="Table of contents">
-              <div className="doc-toc-inner">
-                <strong className="doc-toc-title">On this page</strong>
-                <ul>
-                  {headings.map(h => (
-                    <li key={h.id} className={h.level === 3 ? 'toc-sub' : ''}>
-                      <button
-                        onClick={() => scrollToId(h.id)}
-                        className={activeId === h.id ? 'active' : ''}
-                        aria-current={activeId === h.id ? 'true' : undefined}
-                      >
-                        <span>{h.text}</span>
-                        {activeId === h.id && <Checkmark16Regular className="toc-active-icon" />}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
-          )}
+          </div>
         </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 }
