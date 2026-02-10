@@ -78,6 +78,18 @@
     font-weight: 400;
 }
 
+.markdown-body,
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote,
+.markdown-body figcaption,
+.markdown-body td,
+.markdown-body th {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
 .markdown-body strong {
     color: var(--color-page-text);
     font-weight: 500;
