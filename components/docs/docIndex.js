@@ -33,6 +33,7 @@ export const docEntries = [
     "path": "/playbook/01-ii-pipeline",
     "label": "Eval in Practice",
     "base": "01-ii-pipeline",
+    "content": "/public/chapters/01-ii-pipeline.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -41,6 +42,7 @@ export const docEntries = [
     "path": "/playbook/01-iii-low-resource",
     "label": "Low-Resource MT",
     "base": "01-iii-low-resource",
+    "content": "/public/chapters/01-iii-low-resource.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -49,6 +51,7 @@ export const docEntries = [
     "path": "/playbook/01-iv-advisory",
     "label": "Advisory",
     "base": "01-iv-advisory",
+    "content": "/public/chapters/01-iv-advisory.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -57,6 +60,7 @@ export const docEntries = [
     "path": "/playbook/01-v-scenarios",
     "label": "Scenarios",
     "base": "01-v-scenarios",
+    "content": "/public/chapters/01-v-scenarios.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -65,6 +69,7 @@ export const docEntries = [
     "path": "/playbook/01-vi-datasets",
     "label": "Datasets",
     "base": "01-vi-datasets",
+    "content": "/public/chapters/01-vi-datasets.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -73,6 +78,7 @@ export const docEntries = [
     "path": "/playbook/01-vii-challenges",
     "label": "Challenges",
     "base": "01-vii-challenges",
+    "content": "/public/chapters/01-vii-challenges.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
