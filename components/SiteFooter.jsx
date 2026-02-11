@@ -5,12 +5,10 @@ import { Open24Regular } from '@fluentui/react-icons';
 import './styles/SiteFooter.css';
 
 export default function SiteFooter() {
-  const { colors, theme, appName, setAppName } = useTheme();
+  const { appName, setAppName, allApps } = useTheme();
   const navigate = useNavigate();
 
-  const { allApps } = useTheme();
-
-  const promos = allApps.filter(a => a.title.toLowerCase() !== (appName || '').toLowerCase());
+  const externalLinks = allApps.filter(a => a.title.toLowerCase() !== (appName || '').toLowerCase());
 
   return (
     <div className="promo-footer" role="contentinfo">
@@ -30,29 +28,29 @@ export default function SiteFooter() {
           </a>
         </div>
         <div className="promo-right">
-          {promos.map(p => {
-            const pal = brandPalettes[p.brand] || brandPalettes.teal;
-            const c = pal[theme] || pal.light;
-            const Icon = iconByBrand[p.brand] || iconByBrand.teal;
-            const brandClass = p.brand ? `promo-cta promo-cta--${p.brand}` : 'promo-cta';
+          {externalLinks.map(playbook => {
+            const Icon = iconByBrand[playbook.brand] || iconByBrand.teal;
+            const brandClass = playbook.brand ? `promo-cta promo-cta--${playbook.brand}` : 'promo-cta';
             return (
-              <a
-                key={p.key}
+              <button
+                key={playbook.key}
                 className={brandClass}
-                href={p.url || '#'}
+                href={playbook.externalUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
-                  if (!p.url) {
-                    e.preventDefault();
-                    setAppName(p.key);
-                    navigate('/playbook');
+                  e.preventDefault();
+                  if (playbook.externalUrl) {
+                    window.open(playbook.externalUrl, '_blank', 'noopener,noreferrer');
+                    return;
                   }
+                  setAppName(playbook.key);
+                  navigate('/playbook');
                 }}
               >
                 <span className="promo-icon"><Icon fontSize={24} /></span>
-                {p.title} Playbook
-              </a>
+                {playbook.title} Playbook
+              </button>
             );
           })}
         </div>

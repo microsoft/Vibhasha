@@ -6,6 +6,7 @@ export const docEntries = [
     "path": "/playbook/00-introduction",
     "label": "Getting Started",
     "base": "00-introduction",
+    "content": "/public/chapters/00-introduction.md",
     "prefix": "00",
     "isSub": false,
     "icon": "Document24Regular"
@@ -14,6 +15,7 @@ export const docEntries = [
     "path": "/playbook/01-evaluation",
     "label": "Evaluation",
     "base": "01-evaluation",
+    "content": "/public/chapters/01-evaluation.md",
     "prefix": "01",
     "isSub": false,
     "icon": "Document24Regular"
@@ -22,6 +24,7 @@ export const docEntries = [
     "path": "/playbook/01-i-methodologies",
     "label": "Methodologies",
     "base": "01-i-methodologies",
+    "content": "/public/chapters/01-i-methodologies.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -78,6 +81,7 @@ export const docEntries = [
     "path": "/playbook/02-translation",
     "label": "Translation",
     "base": "02-translation",
+    "content": "/public/chapters/02-translation.md",
     "prefix": "02",
     "isSub": false,
     "icon": "Document24Regular"
@@ -86,6 +90,7 @@ export const docEntries = [
     "path": "/playbook/02-i-strategic-crossroads",
     "label": "Crossroads",
     "base": "02-i-strategic-crossroads",
+    "content": "/public/chapters/02-i-strategic-crossroads.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -94,6 +99,7 @@ export const docEntries = [
     "path": "/playbook/02-ii-architectures",
     "label": "Architectures",
     "base": "02-ii-architectures",
+    "content": "/public/chapters/02-ii-architectures.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -102,6 +108,7 @@ export const docEntries = [
     "path": "/playbook/02-iii-adaptation",
     "label": "Adaptation",
     "base": "02-iii-adaptation",
+    "content": "/public/chapters/02-iii-adaptation.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -110,6 +117,7 @@ export const docEntries = [
     "path": "/playbook/02-iv-quality-assurance",
     "label": "Quality Assurance",
     "base": "02-iv-quality-assurance",
+    "content": "/public/chapters/02-iv-quality-assurance.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -118,6 +126,7 @@ export const docEntries = [
     "path": "/playbook/02-v-cultural-nuance",
     "label": "Cultural Nuance",
     "base": "02-v-cultural-nuance",
+    "content": "/public/chapters/02-v-cultural-nuance.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -126,6 +135,7 @@ export const docEntries = [
     "path": "/playbook/02-vi-recommendations",
     "label": "Recommendations",
     "base": "02-vi-recommendations",
+    "content": "/public/chapters/02-vi-recommendations.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -134,6 +144,7 @@ export const docEntries = [
     "path": "/playbook/04-fine-tuning",
     "label": "Fine Tuning",
     "base": "04-fine-tuning",
+    "content": "/public/chapters/04-fine-tuning.md",
     "prefix": "04",
     "isSub": false,
     "icon": "Document24Regular"
@@ -142,6 +153,7 @@ export const docEntries = [
     "path": "/playbook/04-i-pipeline",
     "label": "Pipeline",
     "base": "04-i-pipeline",
+    "content": "/public/chapters/04-i-pipeline.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -150,6 +162,7 @@ export const docEntries = [
     "path": "/playbook/04-ii-methodologies",
     "label": "Methodologies",
     "base": "04-ii-methodologies",
+    "content": "/public/chapters/04-ii-methodologies.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -158,6 +171,7 @@ export const docEntries = [
     "path": "/playbook/04-iii-data-engineering",
     "label": "Data Engineering",
     "base": "04-iii-data-engineering",
+    "content": "/public/chapters/04-iii-data-engineering.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -166,6 +180,7 @@ export const docEntries = [
     "path": "/playbook/04-iv-alignment",
     "label": "Alignment",
     "base": "04-iv-alignment",
+    "content": "/public/chapters/04-iv-alignment.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -174,6 +189,7 @@ export const docEntries = [
     "path": "/playbook/04-v-quality",
     "label": "Quality",
     "base": "04-v-quality",
+    "content": "/public/chapters/04-v-quality.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -182,6 +198,7 @@ export const docEntries = [
     "path": "/playbook/04-vi-implementation",
     "label": "Implementation",
     "base": "04-vi-implementation",
+    "content": "/public/chapters/04-vi-implementation.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -190,6 +207,7 @@ export const docEntries = [
     "path": "/playbook/05-safety",
     "label": "Safety",
     "base": "05-safety",
+    "content": "/public/chapters/05-safety.md",
     "prefix": "05",
     "isSub": false,
     "icon": "Document24Regular"
@@ -198,6 +216,7 @@ export const docEntries = [
     "path": "/playbook/05-i-vulnerabilities",
     "label": "Vulnerabilities",
     "base": "05-i-vulnerabilities",
+    "content": "/public/chapters/05-i-vulnerabilities.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -206,6 +225,7 @@ export const docEntries = [
     "path": "/playbook/05-ii-benchmarks",
     "label": "Benchmarks",
     "base": "05-ii-benchmarks",
+    "content": "/public/chapters/05-ii-benchmarks.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -214,6 +234,7 @@ export const docEntries = [
     "path": "/playbook/05-iii-red-teaming",
     "label": "Red Teaming",
     "base": "05-iii-red-teaming",
+    "content": "/public/chapters/05-iii-red-teaming.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -222,6 +243,7 @@ export const docEntries = [
     "path": "/playbook/05-iv-toolkits",
     "label": "Toolkits",
     "base": "05-iv-toolkits",
+    "content": "/public/chapters/05-iv-toolkits.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -230,6 +252,7 @@ export const docEntries = [
     "path": "/playbook/06-synthetic-data",
     "label": "Synthetic Data",
     "base": "06-synthetic-data",
+    "content": "/public/chapters/06-synthetic-data.md",
     "prefix": "06",
     "isSub": false,
     "icon": "Document24Regular"
@@ -238,6 +261,7 @@ export const docEntries = [
     "path": "/playbook/06-i-approaches",
     "label": "Approaches",
     "base": "06-i-approaches",
+    "content": "/public/chapters/06-i-approaches.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -246,6 +270,7 @@ export const docEntries = [
     "path": "/playbook/06-ii-quality",
     "label": "Quality",
     "base": "06-ii-quality",
+    "content": "/public/chapters/06-ii-quality.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -254,6 +279,7 @@ export const docEntries = [
     "path": "/playbook/06-iii-evaluation",
     "label": "Evaluation",
     "base": "06-iii-evaluation",
+    "content": "/public/chapters/06-iii-evaluation.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -262,6 +288,7 @@ export const docEntries = [
     "path": "/playbook/06-iv-case-study",
     "label": "Case Study",
     "base": "06-iv-case-study",
+    "content": "/public/chapters/06-iv-case-study.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -270,6 +297,7 @@ export const docEntries = [
     "path": "/playbook/06-v-implementation",
     "label": "Implementation",
     "base": "06-v-implementation",
+    "content": "/public/chapters/06-v-implementation.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -278,6 +306,7 @@ export const docEntries = [
     "path": "/playbook/07-culture",
     "label": "Culture",
     "base": "07-culture",
+    "content": "/public/chapters/07-culture.md",
     "prefix": "07",
     "isSub": false,
     "icon": "Document24Regular"
@@ -286,6 +315,7 @@ export const docEntries = [
     "path": "/playbook/07-i-frameworks",
     "label": "Frameworks",
     "base": "07-i-frameworks",
+    "content": "/public/chapters/07-i-frameworks.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -294,6 +324,7 @@ export const docEntries = [
     "path": "/playbook/07-ii-data-benchmarks",
     "label": "Data Benchmarks",
     "base": "07-ii-data-benchmarks",
+    "content": "/public/chapters/07-ii-data-benchmarks.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -302,6 +333,7 @@ export const docEntries = [
     "path": "/playbook/07-iii-modeling",
     "label": "Modeling",
     "base": "07-iii-modeling",
+    "content": "/public/chapters/07-iii-modeling.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -310,6 +342,7 @@ export const docEntries = [
     "path": "/playbook/07-iv-prompt-engineering",
     "label": "Prompt Engineering",
     "base": "07-iv-prompt-engineering",
+    "content": "/public/chapters/07-iv-prompt-engineering.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -318,6 +351,7 @@ export const docEntries = [
     "path": "/playbook/07-v-evaluation",
     "label": "Evaluation",
     "base": "07-v-evaluation",
+    "content": "/public/chapters/07-v-evaluation.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -326,6 +360,7 @@ export const docEntries = [
     "path": "/playbook/07-vi-conclusion",
     "label": "Conclusion",
     "base": "07-vi-conclusion",
+    "content": "/public/chapters/07-vi-conclusion.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -334,6 +369,7 @@ export const docEntries = [
     "path": "/playbook/99-conclusion",
     "label": "Moving Forward",
     "base": "99-conclusion",
+    "content": "/public/chapters/99-conclusion.md",
     "prefix": "99",
     "isSub": false,
     "icon": "Document24Regular"
@@ -342,6 +378,7 @@ export const docEntries = [
     "path": "/playbook/100-attribution",
     "label": "Attribution",
     "base": "100-attribution",
+    "content": "/public/chapters/100-attribution.md",
     "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"

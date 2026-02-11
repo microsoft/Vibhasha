@@ -10,7 +10,7 @@ export default function BaseFooter() {
       </div>
         <div className="site-footer-legal" aria-label="Legal and privacy">
           <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank" rel="noopener noreferrer">Privacy & Cookies</a>
-          <a href="https://www.microsoft.com/en-us/privacy/consumer-health-data-privacy" target="_blank" rel="noopener noreferrer">Consumer Health Privacy</a>
+          <a href="https://go.microsoft.com/fwlink/?linkid=2259814" target="_blank" rel="noopener noreferrer">Consumer Health Privacy</a>
           <a href="https://support.microsoft.com/contactus" target="_blank" rel="noopener noreferrer">Contact Microsoft</a>
           <a href="https://go.microsoft.com/fwlink/?linkid=2196228" target="_blank" rel="noopener noreferrer">Trademarks</a>
           <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank" rel="noopener noreferrer">Terms of Use</a>
