@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './styles/MarkdownPage.css'
-import './styles/MKDocsMaterial.css'
+import './styles/MkDocsMaterial.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
