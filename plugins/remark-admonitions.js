@@ -6,7 +6,12 @@
  * - ??? type "title" - Collapsible (closed by default)
  * - ???+ type "title" - Collapsible (open by default)
  * 
- * Types: note, info, tip, success, warning, danger, failure, important, quote, example, question, abstract
+ * Vibhasha 3-category system:
+ *   info    (Blue)  — informational, notes, definitions, context
+ *   warning (Amber) — challenges, risks, limitations, cautions
+ *   success (Green) — opportunities, best practices, tips, checklists
+ * 
+ * Legacy types (note, tip, danger, failure, etc.) are normalized at render time.
  */
 
 import { transformContentTabs } from './remark-content-tabs.js';
@@ -15,47 +20,64 @@ import { transformContentTabs } from './remark-content-tabs.js';
 const ADMONITION_START = /^(!{3}|\?{3}\+?)\s+(\w+)(?:\s+"([^"]*)")?$/;
 
 /**
+ * Normalize legacy admonition types to the 3 canonical Vibhasha categories.
+ * Any type not in the map passes through unchanged (and will get info styling via CSS aliases).
+ */
+const TYPE_NORMALIZE = {
+  note: 'info',
+  abstract: 'info',
+  quote: 'info',
+  example: 'info',
+  question: 'info',
+  important: 'info',
+  tip: 'success',
+  danger: 'warning',
+  failure: 'warning',
+  bug: 'warning',
+  // canonical types map to themselves
+  info: 'info',
+  warning: 'warning',
+  success: 'success',
+};
+
+function normalizeType(type) {
+  return TYPE_NORMALIZE[type.toLowerCase()] || 'info';
+}
+
+/**
  * Get the default title for an admonition type
  */
 function getDefaultTitle(type) {
   const titles = {
-    note: 'Note',
     info: 'Info',
-    tip: 'Tip',
-    success: 'Success',
     warning: 'Warning',
-    danger: 'Danger',
-    failure: 'Failure',
+    success: 'Success',
+    // Legacy titles kept so bare "!!! note" still shows a reasonable fallback
+    note: 'Note',
+    tip: 'Tip',
+    danger: 'Warning',
+    failure: 'Warning',
     important: 'Important',
     quote: 'Quote',
     example: 'Example',
     question: 'Question',
     abstract: 'Abstract',
-    bug: 'Bug',
+    bug: 'Warning',
   };
   return titles[type.toLowerCase()] || type.charAt(0).toUpperCase() + type.slice(1);
 }
 
 /**
- * Get the icon for an admonition type
+ * Get the icon for an admonition type (mapped to the 3 canonical categories)
  */
 function getAdmonitionIcon(type) {
+  const canonical = normalizeType(type);
   const icons = {
-    note: '📝',
     info: 'ℹ️',
-    tip: '💡',
-    success: '✅',
     warning: '⚠️',
-    danger: '🔴',
-    failure: '❌',
-    important: '❗',
-    quote: '💬',
-    example: '📋',
-    question: '❓',
-    abstract: '📄',
-    bug: '🐛',
+    success: '✅',
   };
-  return icons[type.toLowerCase()] || '📌';
+  return icons[canonical] || 'ℹ️';
 }
 
 /**
@@ -78,7 +100,8 @@ export function transformAdmonitions(content) {
       const isOpenByDefault = syntax === '???+';
       const title = customTitle || getDefaultTitle(type);
       const icon = getAdmonitionIcon(type);
-      const typeLower = type.toLowerCase();
+      // Normalize to canonical Vibhasha category for CSS class
+      const typeLower = normalizeType(type);
 
       // Collect indented content (4 spaces or 1 tab)
       const contentLines = [];

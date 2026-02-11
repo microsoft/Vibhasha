@@ -1,19 +1,19 @@
-## Advisory for Effective MT Evaluation
+## 1.4 Advisory for effective MT evaluation
 
 Effective MT evaluation, particularly in low-resource settings, requires a strategic approach that combines various methodologies.
 
-### When to Use Which Metric: A Practical Guide
+### 1.4.1 When to use which metric: a practical guide
 
-!!! important "Fundamental Principle"
+!!! info "Fundamental Principle"
     No single metric provides a complete picture of MT quality. The most effective and reliable evaluation strategy **almost always involves a judicious combination** of automated metrics complemented by targeted human review.
 
 This multi-faceted approach helps to triangulate results and mitigate the limitations of individual methods.
 
-#### Strategic Metric Selection
+#### Strategic metric selection
 
 <div class="grid" markdown>
 
-!!! note "Early-Stage Development & Rapid Prototyping"
+!!! info "Early-Stage Development & Rapid Prototyping"
     **Metric**: N-gram metrics (BLEU)
     
     **Use When**: Quick feedback needed for large-scale experiments
@@ -30,7 +30,7 @@ This multi-faceted approach helps to triangulate results and mitigate the limita
     
     **✅ Recommended**: Significantly more reliable indicators of quality in challenging contexts
 
-!!! tip "Large-Scale Quality Assessment"
+!!! success "Large-Scale Quality Assessment"
     **Metric**: LLM-as-judge
     
     **Use When**: Approximate human-like judgments needed at scale and resources for comprehensive human evaluation are severely constrained
@@ -39,7 +39,7 @@ This multi-faceted approach helps to triangulate results and mitigate the limita
 
 </div>
 
-#### The Paradigm Shift for Low-Resource MT
+#### The paradigm shift for low-resource MT
 
 !!! warning "Re-evaluating Traditional Approaches"
     Historically, BLEU has been the de facto standard for automated MT evaluation. However:
@@ -53,7 +53,7 @@ This multi-faceted approach helps to triangulate results and mitigate the limita
     **🆕 LLM-as-Judge Emergence**  
     Introduces new dimension of scalability and nuanced feedback, albeit with its own challenges
 
-!!! important "New Best Practice"
+!!! info "New Best Practice"
     For low-resource MT, the traditional evaluation paradigm where n-gram metrics are primary should be **fundamentally re-evaluated**:
     
     1. **Semantic metrics should become the default** automated choice for meaningful progress tracking and system comparison
@@ -62,12 +62,12 @@ This multi-faceted approach helps to triangulate results and mitigate the limita
     
     This implies a necessary shift in best practices for low-resource MT development. Researchers and practitioners should prioritize implementing, reporting, and interpreting semantic metrics alongside traditional ones.
 
-### The Role of Human Evaluation
+### 1.4.2 The role of human evaluation
 
-!!! quote "The Ultimate Arbiter"
+!!! info "The Ultimate Arbiter"
     Despite advancements in automated metrics, human evaluation **unequivocally remains the ultimate arbiter** of translation quality. Human annotators are uniquely capable of assessing nuances, cultural appropriateness, stylistic quality, and overall fluency and adequacy that automated metrics often fail to capture.
 
-#### Best Practices for Human Evaluation
+#### Best practices for human evaluation
 
 === "Clear Guidelines & Rubrics"
     - Provide annotators with unambiguous guidelines
@@ -94,7 +94,7 @@ This multi-faceted approach helps to triangulate results and mitigate the limita
     - Accurately assess terminology correctness
     - Ensure contextual appropriateness
 
-#### Integration with Automated Methods
+#### Integration with automated methods
 
 Human evaluation results are indispensable for:
 
@@ -132,7 +132,7 @@ Human evaluation results are indispensable for:
     - **Automated metrics** for large-scale initial screening, progress tracking, and identifying outliers
     - **Targeted human evaluation** for in-depth analysis, error classification, and final quality assurance
 
-!!! important "Strategic Investment Perspective"
+!!! info "Strategic Investment Perspective"
     Human evaluation is recognized as the gold standard but is inherently expensive and time-consuming. Automated metrics, while efficient, have significant limitations, particularly in low-resource settings.
     
     **In low-resource settings**, human evaluation should not be viewed as an **optional luxury** to be minimized, but rather as a **strategic, targeted investment**.
@@ -145,24 +145,24 @@ Human evaluation results are indispensable for:
     
     This shifts the perspective from simply minimizing the cost to **maximizing the impact and value** derived from limited human evaluation resources.
 
-### Data Considerations
+### 1.4.3 Data considerations
 
 The quality, quantity, and diversity of evaluation data are paramount for reliable assessment.
 
-#### Reference Quality
+#### Reference quality
 
-!!! danger "Critical Bottleneck"
+!!! warning "Critical Bottleneck"
     The quality, quantity, and diversity of human reference translations are paramount for the reliability of any automated evaluation metric. In low-resource settings, where obtaining high-quality references is a significant challenge, this becomes a **critical bottleneck**.
 
 **Mitigation Strategies:**
 
-| Strategy | Description | Trade-offs |
+| **Strategy** | **Description** | **Trade-offs** |
 |----------|-------------|-----------|
 | **Meticulous Curation** | Focus on creating small sets of exceptionally high-quality references | Prioritize accuracy and naturalness over volume |
 | **Multiple References** | Obtain multiple human references for each source segment | Accounts for linguistic variability but often difficult in low-resource contexts |
 | **Post-Edited MT** | Consider high-quality human post-edited MT outputs as references | Introduces potential biases towards MT system's style or errors |
 
-#### Test Set Creation
+#### Test set creation
 
 !!! warning "Representativeness is Key"
     Test sets must be highly representative of the actual target domain, style, and content that the MT system will encounter in real-world deployment. **Misaligned test sets lead to misleading evaluation results.**
@@ -173,7 +173,7 @@ The quality, quantity, and diversity of evaluation data are paramount for reliab
 - ✅ **Include challenges**: Deliberately incorporate challenging linguistic phenomena, domain-specific terminology, and longer-form content
 - ✅ **Stress testing**: Thoroughly test the MT system's capabilities and reveal its limitations
 
-#### Domain Adaptation
+#### Domain adaptation
 
 !!! info "Domain-Specific Performance"
     MT systems are known to perform poorly on out-of-domain text without specific domain adaptation. This principle **applies equally to evaluation**.
@@ -185,7 +185,7 @@ The quality, quantity, and diversity of evaluation data are paramount for reliab
 - Accurate translation and consistent usage of domain-specific terms are critical for specialized texts (legal, medical, technical)
 - Even minor errors can be highly detrimental
 
-!!! important "Evaluation Data as Strategic Resource"
+!!! info "Evaluation Data as Strategic Resource"
     Low-resource settings are fundamentally characterized by data scarcity. This scarcity directly impacts the availability of high-quality reference translations for evaluation.
     
     The reliability and discriminative power of any automated metric—regardless of its sophistication—are **fundamentally dependent** on the quality and representativeness of the test sets and references.
@@ -207,5 +207,3 @@ This also suggests that evaluation approaches that are **less dependent on perfe
 - Targeted human error analysis
 - Specific LLM-as-judge applications
 - Reference-free methods
-
----

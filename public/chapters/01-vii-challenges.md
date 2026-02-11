@@ -1,4 +1,4 @@
-## Critical Challenges in LLM Evaluation
+## 1.7 Critical challenges in LLM evaluation
 
 Robust multilingual evaluation requires thoughtful planning, diverse testing methods, and dedicated human involvement. The aim is not perfection in every language. Instead, the goal is to understand your system’s strengths and weaknesses so you can make informed decisions about translation, prompting, fine-tuning, and safety. 
 
@@ -8,38 +8,38 @@ A strong evaluation program will help you:
 - Allocate resources wisely 
 - Create systems that serve global users fairly and effectively 
 
-### The Pervasive Issue of Test Data Contamination
+### 1.7.1 The pervasive issue of test data contamination
 
-!!! danger "Definition & Impact"
+!!! warning "Definition & Impact"
     **Test data contamination** occurs when test datasets, or portions of them, are inadvertently included in LLM training or fine-tuning data. This skews evaluation results, hindering accurate assessment of true multilingual capabilities.
 
-#### Implications for Model Performance and Trustworthiness
+#### Implications for model performance and trustworthiness
 
 <div class="grid" markdown>
 
-!!! failure "Inflated Performance"
+!!! warning "Inflated Performance"
     Artificially inflates perceived model capabilities—models may appear to perform exceptionally by **recalling memorized answers** rather than genuinely understanding and generating responses
     
     Particularly misleading for claims of cross-lingual generalization
 
-!!! failure "Misleading Benchmarks"
+!!! warning "Misleading Benchmarks"
     Exacerbates benchmark saturation—models may seem to achieve or surpass human performance by recall
     
     Undermines benchmarks as true progress indicators, especially for multilingual advancements
 
-!!! failure "Research Hindrance"
+!!! warning "Research Hindrance"
     Makes it challenging to discern genuine architectural improvements or training methodology advancements
     
     Observed performance gains may be erroneously attributed to innovation when they are artifacts of data leakage
 
-!!! failure "Widening Digital Divide"
+!!! warning "Widening Digital Divide"
     For non-English languages, contamination can obscure actual performance gaps
     
     Hinders effective multilingual model development and potentially exacerbates the digital divide by misrepresenting capabilities in underserved languages
 
 </div>
 
-#### Detection Methods for Commercial Models (Black-Box Testing)
+#### Detection methods for commercial models (black-box testing)
 
 Detecting contamination in commercial LLMs is challenging due to proprietary training data. Black-box testing methods are employed:
 
@@ -59,7 +59,7 @@ Detecting contamination in commercial LLMs is challenging due to proprietary tra
     - Indicates widespread contamination across multilingual benchmarks
 
 
-#### Detection Methods for Open-Source Models
+#### Detection methods for open-source models
 
 !!! info "Black Box Test (Oren et al., 2023)"
     A statistical method providing **provable guarantees** of contamination by leveraging "exchangeability"—where example order can be shuffled without altering joint distribution.
@@ -77,7 +77,7 @@ The table below (from the [Contamination Report for Multilingual Benchmarks](htt
 
 <div style="overflow-x:auto" markdown>
 
-| Benchmark | Llama 3.1 8B | Llama 3.1 8B-IT | Mistral 7B v0.3 | Mistral 7B v0.3-IT | Gemma 2 9B-IT | Gemma 2 9B | Aya 23 8B |
+| **Benchmark** | **Llama 3.1 8B** | **Llama 3.1 8B-IT** | **Mistral 7B v0.3** | **Mistral 7B v0.3-IT** | **Gemma 2 9B-IT** | **Gemma 2 9B** | **Aya 23 8B** |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | FLORES | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
 | PAWS-X | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
@@ -89,7 +89,7 @@ The table below (from the [Contamination Report for Multilingual Benchmarks](htt
 
 </div>
 
-!!! danger "The Known Unknown"
+!!! warning "The Known Unknown"
     Data contamination fundamentally transforms LLM generalization measurement into **memorization reflection**. This leaves LLM capabilities a "known unknown," especially for tasks with exceptionally high reported performance.
     
     **Systemic Issue**: The widespread nature of contamination across commercial and open-source models points to a systemic issue in the LLM development ecosystem. The emphasis on high benchmark scores often overlooks evaluation integrity.
@@ -100,11 +100,11 @@ The table below (from the [Contamination Report for Multilingual Benchmarks](htt
 
 - [**OpLLMSanitize**](https://github.com/ntunlp/LLMSanitize): Library for contamination detection in NLP datasets and Large Language Models
 
-### Nuances of Multilingual and Multicultural Evaluation
+### 1.7.2 Nuances of multilingual and multicultural evaluation
 
 Evaluating LLMs in non-English languages presents a complex array of linguistic, cultural, and technical challenges, demanding specialized approaches for accurate assessment.
 
-#### The Impact of Tokenizer Fertility on Performance and Cost
+#### The impact of tokenizer fertility on performance and cost
 
 !!! info "Tokenizer Fertility Definition"
     **Tokenizer fertility** = average sub-words per tokenized word
@@ -121,7 +121,7 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
     - Leads to higher costs: more tokens needed for input encoding and response generation via API calls
     - Creates an **economic barrier** for multilingual applications
 
-!!! failure "Performance Correlation"
+!!! warning "Performance Correlation"
     **Negative Impact**:
     
     - Statistically significant negative correlation exists between tokenizer fertility and dataset-specific performance
@@ -130,7 +130,7 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
 
 </div>
 
-#### Importance of Culturally-Nuanced and Independently Created Benchmarks
+#### Importance of culturally-nuanced and independently created benchmarks
 
 !!! warning "The Translation Problem"
     Many existing multilingual benchmarks are direct translations of English originals, losing crucial linguistic and cultural context. This can lead to lower LLM evaluator agreement with human judgments on culturally nuanced responses.
@@ -140,7 +140,7 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
     
     This ensures accurate capture of local and cultural nuances in evaluation material, leading to more authentic and reliable multicultural assessments.
 
-!!! danger "The Cultural Blind Spot"
+!!! warning "The Cultural Blind Spot"
     The combination of inefficient tokenizers, limited pre-training data for under-resourced languages, and reliance on translated benchmarks creates a **"cultural blind spot"** in global LLMs.
     
     **The Problem**: Even grammatically correct text in an under-resourced language may lack the deep cultural context for truly nuanced, appropriate, and helpful responses. This deficiency is evident in subjective tasks or direct assessment where cultural understanding is paramount.
@@ -153,11 +153,11 @@ Evaluating LLMs in non-English languages presents a complex array of linguistic,
 
 
 
-## Best Practices and Future Directions
+## Best practices and future directions
 
 Rigorous LLM evaluation is an evolving discipline requiring continuous adaptation. This section outlines best practices for robust evaluation frameworks and identifies promising future research avenues.
 
-### Recommendations for Robust Evaluation Frameworks
+### 1.7.3 Recommendations for robust evaluation frameworks
 
 To effectively navigate LLM evaluation complexities, several key practices should be adopted:
 
@@ -221,9 +221,9 @@ To effectively navigate LLM evaluation complexities, several key practices shoul
 
 </div>
 
-### The Role of Hybrid Human-LLM Evaluation Systems
+### 1.7.4 The role of hybrid human-LLM evaluation systems
 
-!!! tip "Complementary Strengths"
+!!! success "Complementary Strengths"
     Given the complementary strengths of human judgment (for nuance and gold-standard quality) and LLM-as-a-judge capabilities (for scalability), a **hybrid evaluation system** is often the most robust and practical solution for comprehensive multilingual assessment.
 
 === "Human-in-the-Loop Calibration"
@@ -245,7 +245,7 @@ To effectively navigate LLM evaluation complexities, several key practices shoul
     
     **Outcome**: Leads to more refined multilingual models through symbiotic relationship
 
-### Continuous Adaptation of Benchmarks and Methodologies
+### 1.7.5 Continuous adaptation of benchmarks and methodologies
 
 LLM evaluation is dynamic, requiring ongoing research to keep pace with rapid model advancements, especially in expanding multilingual and multicultural coverage.
 
@@ -279,23 +279,23 @@ LLM evaluation is dynamic, requiring ongoing research to keep pace with rapid mo
 
 ---
 
-## Evaluation Libraries and Frameworks
+## Evaluation libraries and frameworks
 
 The LLM evaluation landscape is supported by a growing ecosystem of software, frameworks, and toolkits that streamline and standardize assessment.
 
 !!! info "Available Tools"
     These tools facilitate benchmarking, metric calculation, and human-in-the-loop calibration. While specific code snippets for their direct implementation in multilingual contexts are typically found in their documentation, the following tools are notable for enabling robust evaluation strategies.
 
-### General LLM Evaluation Frameworks
+### 1.7.6 General LLM evaluation frameworks
 
-| Tool | Description | Link |
+| **Tool** | **Description** | **Link** |
 |------|-------------|------|
 | **EleutherAI LLM Evaluation Harness** | Widely used tool for evaluating large language models | [GitHub](https://github.com/EleutherAI/lm-evaluation-harness) |
 | **OpenAI Evals** | Evaluation tool provided by OpenAI | [GitHub](https://github.com/openai/evals) |
 
-### LLM-as-a-Judge Tools
+### 1.7.7 LLM-as-a-Judge tools
 
-| Tool | Description | Link |
+| **Tool** | **Description** | **Link** |
 |------|-------------|------|
 | **LLM Comparator (PAIR Google)** | Side-by-side evaluation tool facilitating human-driven LLM evaluation | [GitHub](https://github.com/google/llm-comparator) |
 | **OpenEvals (LangChain)** | Evaluation framework supporting LLM-as-a-judge methodologies | [GitHub](https://github.com/langchain-ai/langchain/tree/master/libs/langchain/langchain/evaluation) |
@@ -303,7 +303,7 @@ The LLM evaluation landscape is supported by a growing ecosystem of software, fr
 
 ---
 
-## Community-Driven Evaluation
+## Community-driven evaluation
 
 Standard benchmarks and expert-only annotation pipelines, while valuable, often miss the lived realities of the communities that multilingual LLMs are meant to serve. Broadening **who participates** in evaluation—bringing in native speakers, civil-society organizations, and end users—surfaces quality gaps that top-down processes overlook and produces more culturally grounded assessments.
 
@@ -327,18 +327,18 @@ Standard benchmarks and expert-only annotation pipelines, while valuable, often 
 
 </div>
 
-!!! tip "Getting Started with Community Evaluation"
+!!! success "Getting Started with Community Evaluation"
     Consider engaging local communities and civil-society organizations in your evaluation process. Even lightweight participation—such as having native speakers validate a sample of outputs—can reveal cultural and linguistic blind spots that automated metrics and expert-only pipelines miss.
 
 ---
 
-## Conclusions and Recommendations
+## Conclusions and recommendations
 
 The analysis of LLM evaluation reveals a complex landscape with significant challenges. **Evaluation is a central, indispensable component** in the LLM lifecycle, especially for models intended for global, multilingual, and multicultural use.
 
-### Key Findings
+### 1.7.8 Key findings
 
-!!! failure "Critical Challenges Identified"
+!!! warning "Critical Challenges Identified"
     **Test Data Contamination**  
     Traditional static benchmarks are insufficient due to pervasive contamination, which inflates reported performance and obscures true generalization—found in both commercial and open-source models
     
@@ -354,7 +354,7 @@ The analysis of LLM evaluation reveals a complex landscape with significant chal
     **LLM-as-Judge Biases**  
     While offering scalable evaluation, LLM-as-judge has biases including overly positive scoring, self-bias, and verbosity bias—creating an "illusion of competence" when human judgments diverge
 
-### Comprehensive Recommendations
+### 1.7.9 Comprehensive recommendations
 
 Based on these findings, the following recommendations are essential for designing and implementing robust LLM evaluation frameworks with strong emphasis on multilingual and multicultural considerations:
 
@@ -395,9 +395,9 @@ Further research and development are needed to improve tokenizer efficiency for 
 
 Expand evaluation beyond traditional accuracy metrics to encompass critical dimensions like fairness, bias, robustness, and efficiency—particularly for non-English languages where dedicated datasets for these aspects are currently limited.
 
-### Final Thoughts
+### 1.7.10 Final thoughts
 
-!!! quote "The Path Forward"
+!!! info "The Path Forward"
     LLM evaluation is an **ongoing, iterative development cycle**. The future success of LLMs, particularly in serving a global, diverse user base, hinges on continuously refining evaluation methodologies, fostering an ecosystem as dynamic and sophisticated as the models it assesses, with a deep understanding of multilingual and multicultural nuances.
 
 ---

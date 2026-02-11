@@ -1,10 +1,10 @@
-## Managing the Loss of Cultural Nuance
+## 2.5 Managing the loss of cultural nuance
 
 Language is more than words. It carries identity, emotion, history, and social meaning. When an AI system crosses languages, it also crosses cultures, and that transition is rarely clean. Even models that handle grammar well can miss the deeper cues that make communication feel natural and respectful to native speakers. 
 
 Cultural nuance is one of the most common failure points in multilingual AI. It is also one of the easiest to overlook. This section explains the types of cultural meaning LLMs struggle with, why those struggles matter, and how to design systems that preserve cultural authenticity across languages. 
 
-### Why Cultural Nuance Is Hard for LLMs
+### 2.5.1 Why cultural nuance is hard for LLMs
 
 Large language models learn patterns from text. But many forms of cultural meaning are not fully captured in the text available online, especially for under-resourced languages. Even when data exists, it may lack diversity, context, or representation of everyday communication styles.
 
@@ -56,7 +56,7 @@ Translation pipelines tend to focus on semantic accuracy, not cultural fidelity.
 
 Selective translation can help, but it still requires thoughtful guardrails.
 
-### Design strategies for preserving cultural nuance 
+### 2.5.2 Design strategies for preserving cultural nuance 
 
 A multilingual system is stronger when it actively protects cultural meaning rather than passively hoping the model gets it right. Below are practical ways to maintain cultural fidelity. 
 
@@ -136,7 +136,7 @@ Add rules or checks that enforce cultural appropriateness, such as:
 
 These rules improve stability and prevent accidental misalignment.
 
-### Putting cultural nuance into practice
+### 2.5.3 Putting cultural nuance into practice
 
 A multilingual system that respects cultural nuance builds trust, prevents misunderstandings, and improves user satisfaction. To protect cultural meaning:
 
@@ -148,6 +148,4 @@ A multilingual system that respects cultural nuance builds trust, prevents misun
 6. Add guardrails that reinforce cultural norms
 
 These steps help ensure your system communicates with users in a way that feels authentic and appropriate for their context.
-
----
 

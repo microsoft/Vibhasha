@@ -1,11 +1,11 @@
-## Verification and Quality Assurance
+## 4.5 Verification and quality assurance
 
-Finetuning raises the ceiling on multilingual performance, but quality does not take care of itself. You need a repeatable process that proves your finetuned model is accurate, culturally aligned, safe, and stable across languages. This section gives you a practical framework for qualifying multilingual models before and after release.
+Fine-tuning raises the ceiling on multilingual performance, but quality does not take care of itself. You need a repeatable process that proves your fine-tuned model is accurate, culturally aligned, safe, and stable across languages. This section gives you a practical framework for qualifying multilingual models before and after release.
 
-!!! tip "See also"
+!!! success "See also"
     For foundational evaluation concepts—including LLM-as-judge pipelines, metric rubrics, calibration with human judgments, and dataset selection—see the [Evaluation chapter](/playbook/01-evaluation). 
 
-### What multilingual QA must prove
+### 4.5.1 What multilingual QA must prove
 
 A rigorous QA program answers six questions:
 
@@ -18,7 +18,7 @@ A rigorous QA program answers six questions:
 
 A model ships only when you can answer "yes" for the languages and tasks in scope.
 
-### A layered QA pipeline that works
+### 4.5.2 A layered QA pipeline that works
 
 Build QA as a set of complementary checks rather than a single metric.
 
@@ -58,7 +58,7 @@ Probe refusal quality, content filters, and jailbreak resilience in every langua
 
 Freeze small, high-signal test sets that catch tone drift, terminology changes, and formatting regressions. Run on every adapter update and block release on failures.
 
-### Designing strong human evaluations
+### 4.5.3 Designing strong human evaluations
 
 Human evaluation is most effective when it is systematic.
 
@@ -69,7 +69,7 @@ Human evaluation is most effective when it is systematic.
 
 Aim for smaller, higher-quality panels rather than large, noisy ones.
 
-### Acceptance criteria and release gates
+### 4.5.4 Acceptance criteria and release gates
 
 Define clear pass/fail thresholds before testing begins.
 
@@ -82,7 +82,7 @@ Define clear pass/fail thresholds before testing begins.
 
 Block the release if any gate fails. Publish a short QA report so decisions are auditable.
 
-### Factuality and hallucination control
+### 4.5.5 Factuality and hallucination control
 
 Multilingual hallucinations often rise as language resources fall. Use multiple lines of defense.
 
@@ -94,7 +94,7 @@ Multilingual hallucinations often rise as language resources fall. Use multiple 
 
 Track hallucination rate and top error types in a per-language dashboard.
 
-### Cultural and style verification
+### 4.5.6 Cultural and style verification
 
 Ensure the model adheres to per-language style guides.
 
@@ -106,7 +106,7 @@ Ensure the model adheres to per-language style guides.
 
 Add lightweight rule checks for these items and escalate mismatches to human review.
 
-### Safety QA across languages
+### 4.5.7 Safety QA across languages
 
 Safety cannot be assumed to transfer from English.
 
@@ -117,7 +117,7 @@ Safety cannot be assumed to transfer from English.
 
 Track unsafe-response rate and refusal-quality score by language and scenario.
 
-### Production monitoring and feedback loops
+### 4.5.8 Production monitoring and feedback loops
 
 QA does not end at release. Watch live signals and feed them back into tuning.
 
@@ -128,7 +128,7 @@ QA does not end at release. Watch live signals and feed them back into tuning.
 
 Document each remediation with a short post-release note.
 
-### Tooling that saves time
+### 4.5.9 Tooling that saves time
 
 You do not need a heavy stack to get reliable QA.
 
@@ -140,18 +140,18 @@ You do not need a heavy stack to get reliable QA.
 
 Choose tools that your localization and product teams can use without engineering help.
 
-### Key metrics to track
+### 4.5.10 Key metrics to track
 
 - Human scores for fluency, adequacy, and cultural fit per language
 - Unsafe-response rate and refusal-quality score per language
 - Hallucination rate on factual tasks
 - Task success rate and error-type distribution
 - Regression failures on frozen suites
-- Latency and cost per request after finetuning vs. baseline
+- Latency and cost per request after fine-tuning vs. baseline
 
 Make these metrics visible and review them in release meetings.
 
-### Quickstart checklist
+### 4.5.11 Quickstart checklist
 
 - Per-language style guides and glossaries in place
 - Layered QA pipeline with automated checks, human panels, and calibrated LLM-judging
@@ -159,6 +159,4 @@ Make these metrics visible and review them in release meetings.
 - Clear acceptance gates and a block-on-fail policy
 - Production sampling, drift alerts, and a hotfix plan
 - A short QA report attached to every release
-
----
 

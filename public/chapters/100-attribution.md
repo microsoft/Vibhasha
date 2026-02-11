@@ -60,7 +60,7 @@ We welcome contributions, corrections, and suggestions to improve this playbook.
 
 ---
 
-## Citing This Work
+## Citing this work
 
 If you use this playbook in your research or projects, please cite it using one of the formats below:
 
@@ -115,5 +115,3 @@ This playbook draws inspiration from:
 - Open-source LLM development initiatives
 - Practitioners working on language technology for underserved communities
 - Academic research in cross-lingual transfer and cultural AI alignment
-
----

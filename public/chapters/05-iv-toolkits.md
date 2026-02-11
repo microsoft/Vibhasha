@@ -1,17 +1,17 @@
-## Safety Toolkits and Frameworks for Multilingual Applications
+## 5.4 Safety toolkits and frameworks for multilingual applications
 
 As an application builder, moving from abstract safety policies to concrete, verifiable deployment requires specialized toolkits. For multilingual LLMs, this necessitates tools that can simulate sophisticated cross-lingual attacks and integrate continuous monitoring into your MLOps pipeline, extending beyond simple commercial APIs.
 
 !!! info "Essential Toolkits Overview"
     The following toolkits, frameworks, and research repositories provide the essential technical capabilities for systematic multilingual LLM safety assessment and alignment.
 
-### Automated Red Teaming (ART) Frameworks
+### 5.4.1 Automated red teaming (ART) frameworks
 
 Automated Red Teaming (ART) frameworks are crucial for scaling vulnerability detection across numerous languages and conversational scenarios, which human red teaming cannot feasibly cover. They simulate adversarial attacks, allowing you to test your LLM's guardrails under pressure.
 
-#### Core ART Framework Comparison
+#### Core ART framework comparison
 
-| Toolkit/Framework | Primary Use Case | Multilingual Capabilities & Focus | Key Attack Methodology |
+| **Toolkit/Framework** | **Primary Use Case** | **Multilingual Capabilities & Focus** | **Key Attack Methodology** |
 |-------------------|------------------|-----------------------------------|------------------------|
 | **garak** | Comprehensive LLM vulnerability scanner and baseline probing | Designed to discover general weaknesses and unwanted behaviors across models. Utilizes the `art` module, including plugins like `art.Tox`, to provoke specific failure modes via iterative conversation with the target LLM | Responsive Auto-Prompt, Conversational Probes (fixed turns) for toxicity |
 | **DeepTeam** (via deepeval) | End-to-end automated red teaming workflow and metric-driven evaluation | Automates the entire red teaming workflow for safety risks and security vulnerabilities (bias, toxicity, PII leakage, misinformation) for various LLM applications. Provides a structured, metric-driven evaluation of defense efficacy | Adversarial Attack Generation (Prompt Injection, Jailbreaking) |
@@ -20,13 +20,13 @@ Automated Red Teaming (ART) frameworks are crucial for scaling vulnerability det
 !!! warning "MM-ART Implementation Critical Note"
     The severity of multi-turn attacks in non-English languages (up to **195% increase in failure rate**) mandates that application builders configure their ART pipelines to prioritize conversational depth (e.g., 5-turn sequences) in low-resource language testing. Research-associated repositories often include tools like `jailbreak.py` for inference and utilities for translating datasets using tools like NLLB (No Language Left Behind).
 
-### Safety Alignment and Defense Toolkits
+### 5.4.2 Safety alignment and defense toolkits
 
 Once vulnerabilities are identified by ART, these frameworks and patterns provide the means to create defensive countermeasures and improve model alignment.
 
-#### Defense Framework Comparison
+#### Defense framework comparison
 
-| Framework/Pattern | Alignment Function | Multilingual Utility | Technical Principle |
+| **Framework/Pattern** | **Alignment Function** | **Multilingual Utility** | **Technical Principle** |
 |-------------------|-------------------|---------------------|---------------------|
 | **Self-Defense Framework** | Generates adversarial training data for safety fine-tuning | Automatically generates multilingual training data from real-world failures identified during the ART loop. Fine-tuning with this data achieves a substantial reduction in unsafe content generation across languages | Uses the model's own failure modes (detected jailbreaks) to generate high-quality, targeted negative preference data for alignment |
 | **SelfDefend** (Architectural Pattern) | Runtime jailbreak defense and performance optimization | Generic defense framework that protects against indirect and multilingual jailbreaks while aiming to incur negligible latency delays | Establishes a **Shadow LLM** (a defense instance in detection state) that concurrently monitors and collaborates with the **Target LLM** (in the answering state) using checkpoint-based access control |

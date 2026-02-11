@@ -1,26 +1,26 @@
 
-# Fine-Tuning Strategies for Multilingual LLMs
+# Fine-tuning strategies for multilingual LLMs
 
-!!! quote "The Customization Imperative"
+!!! info "The Customization Imperative"
     Fine-tuning lightweight open-source LLMs on domain-specific multilingual data represents a strategic shift from generalized scale to **maximal control**—essential for culturally aware systems that demand high fidelity to local languages and norms.
 
 ---
 
-Finetuning is the fastest path to a model that speaks your users’ language, understands your domain, and behaves the way your product requires. Offtheshelf prompting can get you a working prototype, and translation can bridge gaps, but finetuning gives you control. You can encode terminology, align tone, reduce hallucinations, and raise performance in lowresource languages that generalpurpose models do not handle well. 
+Fine-tuning is the fastest path to a model that speaks your users' language, understands your domain, and behaves the way your product requires. Off-the-shelf prompting can get you a working prototype, and translation can bridge gaps, but fine-tuning gives you control. You can encode terminology, align tone, reduce hallucinations, and raise performance in low-resource languages that general-purpose models do not handle well. 
 
 
-This section explains when to finetune, how to pick an approach, what data you need, and how to avoid common pitfalls. 
+This section explains when to fine-tune, how to pick an approach, what data you need, and how to avoid common pitfalls. 
 
-### What finetuning actually solves
+### What fine-tuning actually solves
 
 - **Domain accuracy.** The model learns product names, procedures, legal phrases, and technical vocabulary that matter to your users.
 - **Cultural alignment.** Training on region-specific and community-specific data improves tone, politeness, and norms.
 - **Consistency.** Style, terminology, and safety behavior become predictable across markets.
-- **Efficiency.** Smaller, finetuned models often match or beat larger general models on focused tasks, which lowers latency and cost.
+- **Efficiency.** Smaller, fine-tuned models often match or beat larger general models on focused tasks, which lowers latency and cost.
 
-### When to choose finetuning
+### When to choose fine-tuning
 
-Pick finetuning when any of the following are true:
+Pick fine-tuning when any of the following are true:
 
 - **Your languages include under-resourced or underrepresented ones.** Off-the-shelf performance is uneven, and translation introduces meaning drift.
 - **Your use case is high-stakes.** Legal, medical, financial, or safety-sensitive scenarios require strict control.
@@ -28,13 +28,13 @@ Pick finetuning when any of the following are true:
 - **You need a consistent brand voice.** "House style" should be enforced across regions and channels.
 - **You operate under privacy constraints.** A smaller model that can run on-prem can be trained to a high standard with targeted data.
 
-If your use case is exploratory and your languages are wellsupported, start with prompting and selective translation. Move to finetuning when you need reliability, depth, or control. 
+If your use case is exploratory and your languages are well-supported, start with prompting and selective translation. Move to fine-tuning when you need reliability, depth, or control. 
 
 ### How to pick an approach
 
 There are two broad paths. Choose based on your constraints.
 
-**Parameter-efficient finetuning (PEFT)**
+**Parameter-efficient fine-tuning (PEFT)**
 
 Examples include **LoRA** and **QLoRA**. PEFT updates a small set of adapter weights instead of the whole model.
 
@@ -50,11 +50,11 @@ Examples include **LoRA** and **QLoRA**. PEFT updates a small set of adapter wei
 - Easy to swap adapters per language, market, or product line
 - Strong results for instruction following, tone, and terminology
 
-**Full finetuning**
+**Full fine-tuning**
 
 You update all model weights.
 
-**When to use full finetuning**
+**When to use full fine-tuning**
 
 - PEFT cannot reach required quality
 - The domain shift is extreme
@@ -67,13 +67,13 @@ You update all model weights.
 
 ### Model selection for multilingual tasks
 
-- **Prefer compact, high-quality bases** (for example, 3B–14B) if you plan to deploy on edge or in private environments. Smaller models finetuned well can rival much larger general models on focused tasks.
+- **Prefer compact, high-quality bases** (for example, 3B–14B) if you plan to deploy on edge or in private environments. Smaller models fine-tuned well can rival much larger general models on focused tasks.
 - **Check tokenizer behavior** for your target scripts. If fertility is high for a given language, sequence lengths increase and quality drops. Consider models with multilingual tokenizers or add vocabulary during continued pretraining.
 - **Audit language coverage** in the base model's pretraining. If your languages are minimally represented, plan for more aggressive adaptation and evaluation.
 
 ### Data strategy that actually works
 
-Finetuning quality is data-limited. Focus on **fewer, better** examples, then scale.
+Fine-tuning quality is data-limited. Focus on **fewer, better** examples, then scale.
 
 **1) Collect**
 
@@ -119,14 +119,14 @@ Measure what you plan to ship.
 - **Per-language dashboards.** Track accuracy, refusal quality, and harmful content by language and by release.
 - **Regression protection.** Freeze small test suites that catch tone, terminology, or formatting drift before launch.
 
-!!! tip "Deep-dive: Evaluation"
+!!! success "Deep-dive: Evaluation"
     For a comprehensive treatment of multilingual evaluation—including metric rubrics, LLM-as-judge pipelines, calibration techniques, and dataset selection—see the [Evaluation chapter](/playbook/01-evaluation).
 
 ### Operational playbook
 
 - **Versioning.** Name adapters by language, domain, and date. Keep a manifest of data sources for each release.
 - **Rollouts.** Deploy per language behind flags. Start with 1–5% traffic, monitor, then scale.
-- **Fallbacks.** If a finetuned model is uncertain, fall back to selective translation or retrieval-augmented answers.
+- **Fallbacks.** If a fine-tuned model is uncertain, fall back to selective translation or retrieval-augmented answers.
 - **Cost controls.** Use smaller context windows with RAG, cache translations, and prune long prompts.
 
 ### Antipatterns to avoid
@@ -140,7 +140,7 @@ Measure what you plan to ship.
 ### Quickstart checklist
 
 - Pick a compact, multilingual-friendly base model
-- Decide PEFT vs. full finetuning based on constraints
+- Decide PEFT vs. full fine-tuning based on constraints
 - Assemble per-language instruction data and native corpora
 - Add cultural and safety examples to the training mix
 - Train with a two-phase plan, then validate with native speakers
@@ -173,6 +173,4 @@ Measure what you plan to ship.
     - You lack domain-specific training data
     - Quick deployment is prioritized over customization
     - You're working with extremely low-resource scenarios -->
-
----
 

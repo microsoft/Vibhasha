@@ -1,4 +1,4 @@
-## Enhancing Performance through System Adaptation
+## 2.3 Enhancing performance through system adaptation
 
 Even the strongest translation strategy or prompting pattern can fall short if the broader system around the model is not designed to support multilingual performance. System adaptation refers to the set of tools, workflows, and safeguards you layer on top of model behavior to improve quality, stability, cultural fit, and reliability. 
 
@@ -13,7 +13,7 @@ These adaptations help reduce the model’s error rate, compensate for weaknesse
 
     System adaptation ensures that each part of your workflow works together smoothly, especially when multiple languages are involved.
 
-### Fine-Tuning Translation Systems
+### 2.3.1 Fine-tuning translation systems
 
 Off-the-shelf machine-translation tools are general purpose. They are not designed for your domain, your terminology, your brand voice, or the specific languages your users speak. This is why many teams improve translation quality through **fine-tuning or adaptation**. 
 
@@ -23,7 +23,7 @@ Off-the-shelf machine-translation tools are general purpose. They are not design
     - It enforces consistency across products, markets, and teams.
     - It significantly improves translation quality for low-resource languages.
 
-#### Paths for Fine-Tuning 
+#### Paths for fine-tuning 
 
 === "Instruction Fine-Tuning (IFT)"
     Train on examples that model how translations should handle tone, tense, formal vs. informal address, or specific terminology.
@@ -36,7 +36,7 @@ Off-the-shelf machine-translation tools are general purpose. They are not design
 
 Adapted translation systems reduce the risk of compounding errors across your multilingual pipeline. 
 
-### Mitigating Error Propagation
+### 2.3.2 Mitigating error propagation
 
 One of the biggest risks in multilingual workflows is error propagation, where a mistake made early in the pipeline becomes harder to correct later. A single mistranslated term can lead to: 
 - Incorrect reasoning 
@@ -72,7 +72,7 @@ Some systems can estimate uncertainty. Low-confidence segments can trigger addit
 
 These controls help ensure that multilingual reasoning is not only accurate, but also culturally and linguistically appropriate.
 
-### Using guardrails to improve stability
+### 2.3.3 Using guardrails to improve stability
 
 Guardrails provide extra structure around the model to keep responses predictable and safe across languages.
 
@@ -86,7 +86,7 @@ Guardrails provide extra structure around the model to keep responses predictabl
 
 When combined, these guardrails reduce errors and reinforce predictable model behavior.
 
-### RAG and context enhancement
+### 2.3.4 RAG and context enhancement
 
 Retrieval-augmented generation (RAG) can dramatically improve multilingual performance by grounding responses in relevant documents, FAQs, or knowledge bases.
 
@@ -99,7 +99,7 @@ Retrieval-augmented generation (RAG) can dramatically improve multilingual perfo
 
 RAG is especially helpful when the model struggles with terminology or cultural references.
 
-### Putting system adaptation into practice
+### 2.3.5 Putting system adaptation into practice
 
 To build effective multilingual systems, combine multiple adaptation strategies:
 
@@ -110,6 +110,4 @@ To build effective multilingual systems, combine multiple adaptation strategies:
 5. **Use RAG** to boost accuracy for complex or specialized content.
 
 When layered together, these strategies create a system that is far more stable, accurate, and culturally aligned than one that relies on raw model output alone.
-
----
 

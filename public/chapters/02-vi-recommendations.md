@@ -1,10 +1,10 @@
-## Summary and Strategic Recommendations
+## 2.6 Summary and strategic recommendations
 
 Choosing the right multilingual strategy is not about finding a single perfect method. It is about selecting the approach that fits your languages, your users, your constraints, and your goals. This section brings together everything covered so far and translates it into practical, actionable guidance. 
 
 These recommendations help you build multilingual systems that are accurate, culturally aligned, and ready for real-world use. 
 
-### Adopt a dynamic, layered strategy
+### 2.6.1 Adopt a dynamic, layered strategy
 
 There is no universal best choice for multilingual AI. Instead, treat multilingual work as a set of adaptable tactics. Start with the simplest approach, evaluate its strengths and weaknesses, then layer in more advanced strategies when needed.
 
@@ -12,12 +12,12 @@ Most teams use a combination of:
 
 - Direct prompting for mid to high-resource languages
 - Selective translation for low-resource languages
-- Finetuning for domain depth
+- Fine-tuning for domain depth
 - Guardrails and evaluation for stability
 
 Approaching multilingual development as a flexible ecosystem will make your system more resilient and easier to evolve over time.
 
-### Prioritize selective translation over full translation
+### 2.6.2 Prioritize selective translation over full translation
 
 Full translation is easy to implement, but it often weakens accuracy, tone, and cultural alignment. Selective translation offers a more balanced and reliable approach by letting you:
 
@@ -29,20 +29,20 @@ Selective translation consistently outperforms full translation for tasks involv
 
 Use full translation only for fast prototypes or well-supported languages.
 
-### Treat translation as a core component, not an afterthought
+### 2.6.3 Treat translation as a core component, not an afterthought
 
 If translations are part of your workflow, invest in their quality. Better translation leads directly to better model performance.
 
 Strengthen your translation pipeline by:
 
-- Finetuning translation models for your domain
+- Fine-tuning translation models for your domain
 - Creating multilingual glossaries and terminology lists
 - Adding validation steps to catch early errors
 - Pairing translations with native-speaker review when possible
 
 High-quality translation is a force multiplier for every downstream model task.
 
-### Use evaluation at multiple stages
+### 2.6.4 Use evaluation at multiple stages
 
 Do not wait until the end of development to test multilingual quality. Instead, evaluate often and across languages.
 
@@ -56,7 +56,7 @@ Strong multilingual evaluation includes:
 
 This layered approach helps you detect issues early and prevents quality regressions.
 
-### Build for safety across languages
+### 2.6.5 Build for safety across languages
 
 Safety mechanisms built for English do not automatically transfer to other languages. Rates of harmful content can be significantly higher in low-resource languages, and jailbreak attempts succeed more often when prompts mix languages.
 
@@ -70,11 +70,11 @@ To guard against these failures:
 
 Safety must be implemented with cultural knowledge, not simply translated rules.
 
-### Use fine-tuning when you need cultural depth or domain accuracy
+### 2.6.6 Use fine-tuning when you need cultural depth or domain accuracy
 
-Off-the-shelf prompting and translation can get you far. But when your system must understand culturally specific expressions, specialized terminology, or regulated content, finetuning provides unmatched control.
+Off-the-shelf prompting and translation can get you far. But when your system must understand culturally specific expressions, specialized terminology, or regulated content, fine-tuning provides unmatched control.
 
-Finetune when you need:
+Fine-tune when you need:
 
 - Consistent brand voice
 - Precise terminology
@@ -82,9 +82,9 @@ Finetune when you need:
 - Cultural sensitivity
 - Privacy or on-prem operation
 
-Finetuning smaller models with LoRA or similar methods is cost-efficient and often outperforms much larger general-purpose models on targeted tasks.
+Fine-tuning smaller models with LoRA or similar methods is cost-efficient and often outperforms much larger general-purpose models on targeted tasks.
 
-### Leverage synthetic data carefully and purposefully
+### 2.6.7 Leverage synthetic data carefully and purposefully
 
 Synthetic data can fill gaps for low-resource languages, but it must be used thoughtfully.
 
@@ -97,7 +97,7 @@ Best practices include:
 
 Synthetic data is a supplement, not a substitute.
 
-### Document your patterns and workflows
+### 2.6.8 Document your patterns and workflows
 
 Multilingual AI introduces complexity across prompts, languages, translation rules, evaluation, and guardrails. Documenting your decisions helps:
 
@@ -109,7 +109,7 @@ Multilingual AI introduces complexity across prompts, languages, translation rul
 
 Clear documentation becomes especially important as your multilingual system grows.
 
-### Key takeaways
+### 2.6.9 Key takeaways
 
 - Multilingual development requires flexible, layered strategies.
 - Selective translation is often the best balance of performance and cultural fidelity.
@@ -124,7 +124,7 @@ These recommendations help ensure that your multilingual system remains accurate
 
 ---
 
-## Next Steps
+## Next steps
 
 !!! info "Continue Your Journey"
     

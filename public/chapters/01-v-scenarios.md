@@ -1,8 +1,8 @@
-## Challenges in MT Evaluation for Specific Scenarios
+## 1.5 Challenges in MT evaluation for specific scenarios
 
 Beyond general evaluation considerations, specific translation scenarios introduce unique complexities that demand tailored evaluation approaches.
 
-### Long-Form Translation
+### 1.5.1 Long-form translation
 
 Translating long-form content such as documents, articles, or books poses distinct challenges for MT systems that require specialized evaluation approaches.
 
@@ -19,7 +19,7 @@ Translating long-form content such as documents, articles, or books poses distin
     **Stylistic Consistency**  
     Maintaining consistent tone, style, and register across an entire document is crucial for professional translations but often overlooked by automated metrics
 
-#### Evaluation Approaches for Long-Form Content
+#### Evaluation approaches for long-form content
 
 === "Human Review (Essential)"
     **Focus**: Document-level quality attributes
@@ -46,7 +46,7 @@ Translating long-form content such as documents, articles, or books poses distin
     - Issues affecting overall document structure
     - Problems with document-level meaning
 
-!!! danger "The Document-Level Evaluation Gap"
+!!! warning "The Document-Level Evaluation Gap"
     The vast majority of current automated MT metrics (BLEU, BERTScore) are designed to operate at the **sentence level**. However, long-form translation quality critically depends on **document-level attributes** such as:
     
     - Overall coherence
@@ -57,7 +57,7 @@ Translating long-form content such as documents, articles, or books poses distin
     
     **This is analogous to seeing the trees (individual sentences) but missing the forest (the coherent document).**
 
-!!! important "Current State & Future Needs"
+!!! info "Current State & Future Needs"
     This highlights a significant and persistent gap in current automated evaluation capabilities for practical, real-world MT applications involving continuous text.
     
     **It necessitates:**
@@ -66,11 +66,11 @@ Translating long-form content such as documents, articles, or books poses distin
     - Urgent need for new research into document-level automated metrics
     - Development of LLM-as-judge approaches specifically designed to assess coherence and consistency across entire texts
 
-### Domain-Specific Terminology
+### 1.5.2 Domain-specific terminology
 
 In specialized fields (technical, medical, legal domains), accurate and consistent translation of specific terminology is **paramount**—errors can have severe, even dangerous, consequences.
 
-!!! danger "High-Stakes Domain Translation"
+!!! warning "High-Stakes Domain Translation"
     **Critical Accuracy Requirement**  
     Errors in domain-specific terms can lead to:
     
@@ -81,7 +81,7 @@ In specialized fields (technical, medical, legal domains), accurate and consiste
 
 <div class="grid" markdown>
 
-!!! failure "MT System Challenges"
+!!! warning "MT System Challenges"
     **Rare/Specialized Vocabulary**  
     Struggle with highly specialized or ambiguous vocabulary without proper domain adaptation
     
@@ -103,9 +103,9 @@ In specialized fields (technical, medical, legal domains), accurate and consiste
 
 </div>
 
-#### Evaluation Framework for Domain-Specific MT
+#### Evaluation framework for domain-specific MT
 
-| Evaluation Component | Requirement | Purpose |
+| **Evaluation Component** | **Requirement** | **Purpose** |
 |---------------------|-------------|---------|
 | **Test Sets** | Domain-representative with domain-specific glossaries/term bases | Accurate validation of terminology usage |
 | **Human Evaluators** | Subject matter experts in specific domain | Assess terminology correctness and contextual appropriateness |
@@ -123,7 +123,7 @@ For high-stakes domain-specific MT applications, the evaluation strategy must be
 
 The perceived cost of human evaluation, while high, becomes a **necessary investment to mitigate significant operational, financial, or safety risks** associated with inaccurate domain translations.
 
-### Formatting Issues
+### 1.5.3 Formatting issues
 
 MT systems frequently struggle to correctly handle and preserve non-textual elements—a challenge often overlooked but critical for functional translation.
 
@@ -137,7 +137,7 @@ MT systems frequently struggle to correctly handle and preserve non-textual elem
     **Functional Impact**  
     Errors in formatting can lead to an unusable output, even if the linguistic translation is otherwise correct
 
-#### Evaluation Strategies for Formatting
+#### Evaluation strategies for formatting
 
 === "Automated Validation"
     **Implementation**: Scripts to validate preservation of:
@@ -162,24 +162,24 @@ MT systems frequently struggle to correctly handle and preserve non-textual elem
     - Tag sets
     - Critical formatting elements
 
-!!! danger "The Hidden Functional Barrier"
+!!! warning "The Hidden Functional Barrier"
     Standard MT evaluation metrics primarily focus on **linguistic quality** (fluency, adequacy, semantic similarity). However, MT systems frequently struggle with preserving non-textual elements and maintaining document formatting.
     
     **The Critical Problem**: Even a machine translation that is **linguistically perfect** can be rendered **completely unusable** or require extensive manual rework if its formatting or structural elements are corrupted.
     
     This creates a hidden, yet critical, barrier to practical deployment that traditional linguistic metrics fail to detect. The translation might be "good" linguistically but "bad" functionally.
 
-!!! important "Comprehensive Evaluation Framework"
+!!! info "Comprehensive Evaluation Framework"
     A comprehensive MT evaluation framework must extend significantly beyond mere linguistic quality to include **"usability"** and **"fidelity to source format"** as explicit evaluation criteria.
     
     **Best Practice**: Automated checks for formatting integrity and non-textual element preservation should be a **standard, mandatory part** of the evaluation pipeline, potentially even acting as a basic pass/fail criterion for functional translation before deeper linguistic assessment.
 
 ---
-## Practical Implementation: Code Snippets for Automated Evaluation
+## Practical implementation: code snippets for automated evaluation
 
 This section provides practical code examples for implementing automated MT evaluation metrics, along with setup instructions.
 
-### Setting Up the Environment
+### 1.5.4 Setting up the environment
 
 To run the following code snippets, ensure Python (version 3.8+ recommended) is installed. It is best practice to create a virtual environment to manage dependencies:
 
@@ -198,7 +198,7 @@ pip install sacrebleu transformers evaluate torch scipy numpy
 !!! info "Note"
     `torch` is a dependency for `transformers` when using models like BERT.
 
-### N-gram Overlap Metrics Implementation (BLEU)
+### 1.5.5 N-gram overlap metrics implementation (BLEU)
 
 The BLEU score is a widely used metric for evaluating the quality of machine-translated text. It measures similarity between the machine translation and high-quality human reference translations by counting n-gram overlaps. The `sacrebleu` library provides a standardized and robust implementation.
 
@@ -241,7 +241,7 @@ print(f"BLEU score (single reference): {bleu_score_single_ref.score:.2f}")
 # highlights BLEU's sensitivity to reference diversity and its limitations in low-resource settings.
 ```
 
-### Embedding-based Metrics Implementation (BERTScore)
+### 1.5.6 Embedding-based metrics implementation (BERTScore)
 
 Embedding-based metrics like BERTScore overcome the limitations of n-gram overlap metrics by assessing semantic similarity using contextual word embeddings. They are particularly valuable in low-resource settings because they can capture valid paraphrases and synonyms, providing a more robust measure of quality even when exact lexical matches are scarce.
 
@@ -285,7 +285,7 @@ print(f"Average BERTScore F1: {sum(results['f1']) / len(results['f1']):.4f}")
 # might still get a reasonable BERTScore due to semantic similarity.
 ```
 
-### MoverScore (Conceptual Setup)
+### 1.5.7 MoverScore (conceptual setup)
 
 MoverScore, based on Word Mover's Distance, is excellent at capturing semantic distance even with low n-gram overlap by considering the "cost" of transforming one set of word embeddings into another. Its implementation is slightly more involved than BLEU or BERTScore as it often requires pre-computing IDF weights and managing embedding extraction.
 
@@ -319,7 +319,7 @@ print("MoverScore typically returns a distance (lower is better) or a similarity
 print("-----------------------------------")
 ```
 
-### Conceptual Framework for LLM-as-Judge Setup
+### 1.5.8 Conceptual framework for LLM-as-Judge setup
 
 Leveraging LLMs as judges offers a powerful way to obtain human-like quality assessments at scale. The core idea involves crafting a detailed prompt that guides the LLM to perform the evaluation task. This framework outlines the general workflow, emphasizing the critical role of prompt engineering and the need to address potential biases.
 
@@ -424,7 +424,7 @@ if evaluation_bad:
     Monitor API usage and costs, especially for large-scale evaluations.
 
 ---
-## 6\. Conclusions and Recommendations
+## 6\. Conclusions and recommendations
 
 Evaluating machine translation quality, particularly in low-resource settings, is a multifaceted challenge that demands a sophisticated and adaptive approach. The inherent scarcity of parallel data in these environments profoundly impacts both MT model training and the reliability of evaluation metrics, creating a cycle where data limitations hinder both development and assessment.[1, 2]
 

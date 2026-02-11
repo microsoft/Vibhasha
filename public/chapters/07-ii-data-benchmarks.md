@@ -1,10 +1,10 @@
-## The Data Layer Blueprint: Building Culturally Aware Benchmarks and Datasets
+## 7.2 The data layer blueprint: building culturally aware benchmarks and datasets
 
 The cornerstone of any culturally aligned system is the quality and representativeness of its data. Addressing cultural bias demands scalable, cost-effective methods for generating culturally rich datasets, especially training data, where a significant deficit currently exists.
 
-### Current Gaps and the Need for Training Data
+### 7.2.1 Current gaps and the need for training data
 
-!!! failure "Primary Limitation"
+!!! warning "Primary Limitation"
     Most existing cultural resources have been constructed for evaluation (benchmarks and test sets), creating an urgent need for large-scale, culturally diverse training data.
 
 **Specific Coverage Deficiencies**:
@@ -13,15 +13,15 @@ The cornerstone of any culturally aligned system is the quality and representati
 - **Monocultural Focus**: Resources for norms and morals predominantly in English, reflecting narrow perspectives
 - **Geographic Inequity**: Persistent underrepresentation of diverse geographical regions and cultures
 
-### Methodologies for Culturally Inclusive Data Creation
+### 7.2.2 Methodologies for culturally inclusive data creation
 
 To acquire culturally rich data, methodologies must balance scalability with fidelity, leading to categorization based on their reliance on human labor and computational resources.
 
-#### Traditional Data Pipelines and Their Limitations
+#### Traditional data pipelines and their limitations
 
 Traditional methods, while foundational, face inherent scaling challenges when dealing with cultural complexity:
 
-!!! example "Automatic Pipelines"
+!!! info "Automatic Pipelines"
     **Approach**: Curate cultural knowledge quickly by leveraging large-scale, publicly available multilingual corpora
     
     **Limitations**: 
@@ -29,7 +29,7 @@ Traditional methods, while foundational, face inherent scaling challenges when d
     - Limited depth of cultural knowledge captured
     - High scalability but moderate cost
 
-!!! example "Semi-Automatic Pipelines"
+!!! info "Semi-Automatic Pipelines"
     **Approach**: Source data from web platforms (Wikipedia, social media) with human annotation/validation
     
     **Examples**: CUNIT, CAMeL, EnCBP
@@ -39,7 +39,7 @@ Traditional methods, while foundational, face inherent scaling challenges when d
     - Challenging to scale internationally
     - Dependent on expert annotators
 
-#### Synthetic Data Generation via Simulation (CulturePark)
+#### Synthetic data generation via simulation (CulturePark)
 
 The constraints of traditional, human-labeled data collection have driven innovation toward synthetic data generation.
 
@@ -53,7 +53,7 @@ The constraints of traditional, human-labeled data collection have driven innova
     
     **Proven Effectiveness**: Models fine-tuned on 41,000 synthetic samples surpassed GPT-4's performance on Hofstede's VSM 13 framework
 
-#### Culturally Aware Data Creation Methodologies Comparison
+#### Culturally aware data creation methodologies comparison
 
 | **Methodology** | **Mechanism/Goal** | **Scalability/Cost** | **Key Challenges** | **Example** |
 |-----------------|-------------------|----------------------|-------------------|-------------|
@@ -62,11 +62,11 @@ The constraints of traditional, human-labeled data collection have driven innova
 | **Synthetic Simulation** | LLM multi-agent frameworks | High Scalability; Low-Moderate Cost | Framework complexity; quality dependent on LLM knowledge | CulturePark |
 | **Semantic Augmentation** | Culture-specific data from seed datasets | High Scalability; Low Cost | Seed data quality dependency | CultureLLM (WVS Seed Data) |
 
-### Best Practices for Culturally Aware Annotation
+### 7.2.3 Best practices for culturally aware annotation
 
 While synthetic methods address scale, culturally sensitive tasks still require robust human validation and high-quality initial seed data.
 
-!!! tip "Key Best Practices"
+!!! success "Key Best Practices"
     **Expert and Native Engagement**: Employ expert annotators and linguists who are native speakers of the target language, particularly critical for low-resource languages
     
     **Process Rigor**: Provide comprehensive training and detailed guidelines with iterative quality control processes
@@ -74,6 +74,4 @@ While synthetic methods address scale, culturally sensitive tasks still require 
     **Ethical Oversight**: Adhere to ethical considerations including user privacy and consent for fairer, more dependable systems
 
 For evaluating cultural competence specifically, efforts like [PARIKSHA](https://aclanthology.org/2024.emnlp-main.451.pdf) and [Samiksha](https://arxiv.org/abs/2509.24506) provide culturally grounded benchmarks and human evaluation data created by native speakers—capturing nuances in language, norms, and values that translated English benchmarks and synthetic pipelines tend to miss.
-
----
 

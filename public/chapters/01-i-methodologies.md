@@ -1,4 +1,4 @@
-## Core Evaluation Methodologies
+## 1.1 Core evaluation methodologies
 
 <!-- Assessing LLMs requires a multifaceted approach that combines the irreplaceable insights of human judgment with the scalability of automated systems. This section delineates the primary methodologies for LLM evaluation, highlighting their strengths, practical considerations, and inherent complexities in multilingual and multicultural settings.
 
@@ -36,19 +36,19 @@ A strong multilingual evaluation program uses multiple approaches. Each method b
 
     However, it introduces risks such as model bias, verbosity bias, and overgeneralization. It should always be validated using human data. 
 
-!!! tip "Learn More"
+!!! success "Learn More"
     For an in-depth exploration of these evaluation paradigms and their philosophical implications, see [LLM Evaluation: Why, What, and How](https://huggingface.co/blog/clefourrier/llm-evaluation) by Clémentine Fourrier at Hugging Face.
 
-### Automated Benchmark Evaluation: Standardized Assessment
+### 1.1.1 Automated benchmark evaluation: standardized assessment
 
 !!! info "Why Automated Benchmarks Matter"
     Automated benchmarks provide **standardized, reproducible, and scalable** evaluation of LLM performance across well-defined tasks. They enable consistent comparison across models and are essential for tracking training progress and non-regression testing.
 
 Automated benchmarking evaluates models on predefined datasets with established metrics, offering objective performance measurements across various capabilities—from question answering and reasoning to language understanding and generation.
 
-#### Discovering Datasets for Your Language and Domain
+#### Discovering datasets for your language and domain
 
 Finding appropriate evaluation datasets is the first critical step in automated benchmarking, especially for multilingual and domain-specific applications. When selecting benchmarks, prioritize those that most closely match the target application you are building. For example, if your application is a chatbot that answers user questions, a question-answering benchmark will be more informative than a summarization benchmark, even if it does not perfectly capture your scenario. Aligning benchmark tasks with your real-world use case gives you a much more reliable signal of how the model will actually perform in production.
 
-!!! tip "Starting Point: LM Evaluation Harness"
+!!! success "Starting Point: LM Evaluation Harness"
     The [EleutherAI LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness), [Hugging Face LightEval](https://github.com/huggingface/lighteval) are excellent starting point for discovering and running benchmarks. [Open Benchmark Index](https://huggingface.co/spaces/OpenEvals/open_benchmark_index) is a good starting point for discovering evaluation datasets by language, task, and domain. 

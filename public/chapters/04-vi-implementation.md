@@ -1,12 +1,12 @@
-## Implementation Checklist
+## 4.6 Implementation checklist
 
-Finetuning a multilingual model is only half the story. The other half is implementing it in a way that is reliable, observable, and easy to iterate as your product grows. This section gives you a practical, productionready approach for deploying finetuned models across multiple languages and regions. 
+Fine-tuning a multilingual model is only half the story. The other half is implementing it in a way that is reliable, observable, and easy to iterate as your product grows. This section gives you a practical, production-ready approach for deploying fine-tuned models across multiple languages and regions. 
 
 Implementation is where theory meets reality. A strong model can fail in production if rollout, monitoring, or fallback strategies are not carefully designed. The guidance below helps you deploy multilingual systems with confidence. 
 
-### Design for modularity from the start
+### 4.6.1 Design for modularity from the start
 
-Models that serve multiple countries, products, or verticals must be easy to update without disrupting everything else. The best way to do that is to treat finetuned components as **modular units**.
+Models that serve multiple countries, products, or verticals must be easy to update without disrupting everything else. The best way to do that is to treat fine-tuned components as **modular units**.
 
 **Use adapters as building blocks**
 
@@ -26,7 +26,7 @@ This modular design lets you:
 
 A modular architecture keeps your system agile as markets and requirements change.
 
-### Implement controlled rollouts
+### 4.6.2 Implement controlled rollouts
 
 Do not ship multilingual models globally on day one. Roll them out in stages.
 
@@ -44,7 +44,7 @@ Do not ship multilingual models globally on day one. Roll them out in stages.
 
 This staged approach lets you contain unexpected behavior before it affects users.
 
-### Set guardrails at multiple layers
+### 4.6.3 Set guardrails at multiple layers
 
 Guardrails are essential for safety, consistency, and quality. They catch errors before outputs reach users.
 
@@ -61,7 +61,7 @@ Guardrails are essential for safety, consistency, and quality. They catch errors
 
 Guardrails work best when they are lightweight, fast, and designed specifically for each target language.
 
-### Reduce error chains with validation layers
+### 4.6.4 Reduce error chains with validation layers
 
 Multilingual workflows have many moving parts. Translation errors, tokenization quirks, or inconsistent terminology can amplify downstream issues.
 
@@ -75,7 +75,7 @@ Mitigate error chains through:
 
 The goal is not perfection, but predictability.
 
-### Use fallbacks for reliability
+### 4.6.5 Use fallbacks for reliability
 
 Even the best multilingual models need backup plans.
 
@@ -89,7 +89,7 @@ Even the best multilingual models need backup plans.
 
 Fallbacks create resilience across languages and domains.
 
-### Monitor everything at the language level
+### 4.6.6 Monitor everything at the language level
 
 Monitoring must be multilingual, not aggregated. Problems that hide in averages often reveal themselves when viewed per language.
 
@@ -105,9 +105,9 @@ Monitoring must be multilingual, not aggregated. Problems that hide in averages 
 
 Set alert thresholds for each language, not just overall.
 
-### Version and document every release
+### 4.6.7 Version and document every release
 
-Finetuned models must be tracked as carefully as production code.
+Fine-tuned models must be tracked as carefully as production code.
 
 **What to document**
 
@@ -120,7 +120,7 @@ Finetuned models must be tracked as carefully as production code.
 
 Good documentation reduces on-call pain and prevents knowledge gaps as teams change.
 
-### Build a repeatable refresh cycle
+### 4.6.8 Build a repeatable refresh cycle
 
 Models degrade over time as products evolve, markets shift, or new topics emerge. Plan for refresh cycles from the beginning.
 
@@ -135,7 +135,7 @@ Models degrade over time as products evolve, markets shift, or new topics emerge
 
 A healthy cycle refreshes data and adapters regularly without destabilizing what already works.
 
-### Coordinate across teams
+### 4.6.9 Coordinate across teams
 
 Multilingual AI succeeds when engineering, localization, policy, research, and product teams collaborate. They bring complementary expertise in language, culture, safety, and user experience.
 
@@ -149,7 +149,7 @@ Multilingual AI succeeds when engineering, localization, policy, research, and p
 
 This alignment prevents fragmentation and improves the end-to-end user experience.
 
-### Key takeaways
+### 4.6.10 Key takeaways
 
 - A modular architecture with adapters is the most flexible and scalable option.
 - Roll out gradually to detect issues early and avoid global regressions.

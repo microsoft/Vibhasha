@@ -1,4 +1,4 @@
-# Moving Forward
+# Moving forward
 
 Building multilingual AI systems is a commitment to serving global users with accuracy, respect, and cultural understanding. This playbook has walked through the major decisions involved in that work: choosing the right strategy, designing multilingual prompts and translation workflows, fine‑tuning models for depth and nuance, engineering high‑quality datasets, and ensuring safety across languages and cultures.
 

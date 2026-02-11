@@ -1,9 +1,9 @@
-## Dataset Discovery and Creation
+## 1.6 Dataset discovery and creation
 
-!!! quote "The Foundation of Evaluation"
+!!! info "The Foundation of Evaluation"
     Effective LLM evaluation relies on high-quality, representative datasets. This section explores leveraging existing benchmarks and systematically creating new ones, with special emphasis on multilingual and multicultural contexts.
 
-### Navigating Existing Benchmarks
+### 1.6.1 Navigating existing benchmarks
 
 Initial LLM evaluation typically involves surveying and using existing benchmarks. These provide a convenient starting point with structured tasks and predefined metrics. However, their utility, especially in complex multilingual evaluation, faces significant constraints.
 
@@ -12,7 +12,7 @@ Initial LLM evaluation typically involves surveying and using existing benchmark
     - **Common Ground**: Enable model comparison across research efforts
     - **Quick Start**: Provide structured tasks with predefined metrics
 
-!!! failure "Critical Limitations"
+!!! warning "Critical Limitations"
     **Contamination**  
     Many popular benchmarks are inadvertently or intentionally included in LLM training data, making them unsuitable for fair assessment—performance may reflect memorization rather than true capability
     
@@ -28,11 +28,11 @@ Initial LLM evaluation typically involves surveying and using existing benchmark
     **Ceiling Effects**  
     Older benchmarks are often too simplistic for current state-of-the-art models, leading to models achieving near-perfect scores—hinders meaningful performance differentiation
 
-#### Key Multilingual LLM Evaluation Benchmarks
+#### Key multilingual LLM evaluation benchmarks
 
 The following table summarizes key multilingual benchmarks, detailing their task types, language coverage, and notable characteristics. This is essential for navigating the current landscape and identifying appropriate datasets for specific global evaluation needs.
 
-| Benchmark Name | Task Type(s) | Language Coverage | Key Characteristics/Challenges |
+| **Benchmark Name** | **Task Type(s)** | **Language Coverage** | **Key Characteristics/Challenges** |
 |----------------|--------------|-------------------|-------------------------------|
 | **XNLI** | Natural Language Inference | 15 languages | Translated |
 | **IndicXNLI** | Natural Language Inference | 11 Indic languages | Culturally-nuanced, Indic languages |
@@ -57,17 +57,17 @@ The following table summarizes key multilingual benchmarks, detailing their task
 | **XM-3600** | Image Captioning | 20 evaluated / 36 total | Multimodal, geographically diverse |
 | **Belebele** | Reading Comprehension | 23 evaluated / 122 total | Parallel, discriminates comprehension levels |
 
-### Systematic Creation of New Evaluation Datasets
+### 1.6.2 Systematic creation of new evaluation datasets
 
 When existing benchmarks are inadequate due to contamination, insufficient language coverage, or task irrelevance, systematically creating new, high-quality evaluation datasets becomes essential.
 
-!!! important "When to Create New Datasets"
+!!! info "When to Create New Datasets"
     - Existing benchmarks show contamination
     - Insufficient coverage for your target languages
     - Task requirements not met by existing resources
     - Need for culturally-appropriate evaluation content
 
-#### Principles of Prompt Curation
+#### Principles of prompt curation
 
 Robust evaluation datasets are built on carefully curated prompts that capture the richness of human language and culture.
 
@@ -99,7 +99,7 @@ Robust evaluation datasets are built on carefully curated prompts that capture t
 
 </div>
 
-#### Designing Human Annotation Protocols
+#### Designing human annotation protocols
 
 The integrity of a new dataset relies heavily on well-defined human annotation protocols and clear, unambiguous guidelines.
 
@@ -117,7 +117,7 @@ The integrity of a new dataset relies heavily on well-defined human annotation p
     - Illustrative examples in target language
     - Consistent interpretation across annotators and cultural contexts
 
-    ??? example "Example Rubric: Problematic Content (PC)"
+    ??? info "Example Rubric: Problematic Content (PC)"
         **Score 0** — No problematic content detected:
 
         - (a) The output is free from any content that might be perceived as offensive, harmful, or inappropriate.
@@ -147,21 +147,19 @@ The integrity of a new dataset relies heavily on well-defined human annotation p
     
     **Gibberish Check**: Initial filter for nonsensical outputs
 
-#### Inter-Annotator Agreement Metrics
+#### Inter-annotator agreement metrics
 
 !!! info "Ensuring Annotation Quality"
     To confirm the reliability and quality of human annotations, rigorous measurement of inter-annotator agreement (IAA) is indispensable.
 
-| Metric | Description | When to Use |
+| **Metric** | **Description** | **When to Use** |
 |--------|-------------|-------------|
 | **Percentage Agreement (PA)** | Straightforward raw measure of agreement proportion | Quick assessment (doesn't account for chance agreement) |
 | **Fleiss' Kappa (κ)** | Robust measure factoring out chance agreement | Per-datapoint agreement among multiple annotators (κ > 0.6 indicates substantial agreement) |
 | **Kendall's Tau (τ)** | Non-parametric statistic for assessing correlation between rankings | Comparing human and LLM evaluator leaderboards |
 
-!!! danger "The Calibration Dependency"
+!!! warning "The Calibration Dependency"
     Creating evaluation datasets, especially for subjective judgments, involves constructing a reliable approximation of human judgment. This relies on meticulous prompt curation, detailed annotation guidelines, and rigorous inter-annotator agreement checks.
     
     **Critical Point**: The primary goal is to minimize noise and bias in the human-labeled "gold standard," as this standard calibrates LLM evaluators. **If the human-derived "gold truth" is compromised, any calibrated LLM evaluator will inherit those flaws**, undermining the entire evaluation—particularly in complex multilingual scenarios.
-
----
 

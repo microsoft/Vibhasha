@@ -1,28 +1,28 @@
-# Getting Started
+# Getting started
 
-!!! quote "The Global Language Gap"
+!!! info "The Global Language Gap"
     The world speaks more than 7,000 languages, yet most large language models are trained on data that is almost entirely English. In many cases, more than 90% of the training corpus is English. This imbalance creates a massive gap that leaves billions of people at a disadvantage. 
 
     Models built on English heavy datasets struggle to understand or generate text in languages with limited digital presence. This affects accuracy, reliability, cultural fit, and safety. 
 
 ---
 
-## The Multilingual AI Challenge
+## The multilingual AI challenge
 
-If you are building LLM powered applications for global audiences, you face a fundamental reality: the models you rely on are overwhelmingly optimized for English. GPT3’s training data is approximately 92.65% English, and Llama 2’s data is nearly 90% English. Researchers call this imbalance the resourcedness gap, and it systematically disadvantages languages with low online representation. 
+If you are building LLM powered applications for global audiences, you face a fundamental reality: the models you rely on are overwhelmingly optimized for English. GPT-3's training data is approximately 92.65% English, and Llama 2's data is nearly 90% English. Researchers call this imbalance the resourcedness gap, and it systematically disadvantages languages with low online representation.
 
-!!! danger "The Real-World Impact"
+!!! warning "The Real-World Impact"
     This gap appears in three critical ways:
     
-    - **📉 Lower accuracy**. NonEnglish tasks often perform dramatically worse.
+    - **📉 Lower accuracy**. Non-English tasks often perform dramatically worse.
     - **🌍 Cultural Misalignment**. AI systems miss local context, tone, conventions, and norms. 
     - **⚠️ Safety Risks**: Filters that block harmful content in English fail in other languages, sometimes by a factor of three or more. 
 
-For developers building chatbots, customer support systems, content moderation tools, or coding assistants, this creates difficult decisions. Should you translate everything into English? Prompt in the user’s language? Fine tune your own model? **The wrong choice can waste resources, create poor user experiences, or cause real harm.**
+For developers building chatbots, customer support systems, content moderation tools, or coding assistants, this creates difficult decisions. Should you translate everything into English? Prompt in the user's language? Fine-tune your own model? **The wrong choice can waste resources, create poor user experiences, or cause real harm.**
 
 ---
 
-## Why You Need a Structured Framework
+## Why you need a structured framework
 
 Building multilingual applications is inherently challenging and can involve trial and error in development, potentially wasting time and introducing risks. Teams that are new to multilingual development may try different methods without fully understanding the consequences. The common pitfalls may include  
 
@@ -35,9 +35,9 @@ Building multilingual applications is inherently challenging and can involve tri
     - ✅ What tradeoffs you accept with each choice 
     
 
-### Common Development Pitfalls
+### Common development pitfalls
 
-!!! failure "Without a framework, multilingual development often leads to predictable problems: "
+!!! warning "Without a framework, multilingual development often leads to predictable problems: "
     
     **❌ Inconsistent results**  
     A technique that works for French may fail completely for Swahili or Tamil. 
@@ -58,11 +58,11 @@ Vibhasha provides a principled decision-making framework grounded in empir
 
 ---
 
-## Three Implementation Strategies
+## Three implementation strategies
 
 Based on research conducted over 20 years at Microsoft Research India and the multilingual NLP research community, and production deployments, multilingual systems typically rely on one of three core strategies. Each offers a different way to bridge the gap between English optimized models and global users. 
 
-!!! note "Strategy 1: 🌐 Translation-Based Approaches"
+!!! info "Strategy 1: 🌐 Translation-Based Approaches"
     
     **Leverage translation as a bridge to English-centric model capabilities**
     
@@ -86,11 +86,11 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
     
     [→ Learn more](/playbook/02-translation-overview)
 
-!!! note "Strategy 2: 💬 Off-the-Shelf Prompting"
+!!! info "Strategy 2: 💬 Off-the-Shelf Prompting"
     
     **Use pretrained multilingual models through strategic prompt engineering**
     
-    This strategy uses multilingual models directly, relying on careful prompt engineering. Modern LLMs such as GPT4, Claude, and open models like Llama offer built in multilingual capabilities. 
+    This strategy uses multilingual models directly, relying on careful prompt engineering. Modern LLMs such as GPT-4, Claude, and open models like Llama offer built in multilingual capabilities. 
 
     This approach uses techniques such as few shot examples, cultural framing, persona prompts, and retrieval augmented generation (RAG). 
 
@@ -110,7 +110,7 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
     
     [→ Learn more](/playbook/02-translation-overview)
 
-!!! note "Strategy 3: ⚙️ Fine-Tuning Specialized Models"
+!!! info "Strategy 3: ⚙️ Fine-Tuning Specialized Models"
     
     **Adapt lightweight models on domain-specific, culturally relevant data**
     
@@ -142,12 +142,12 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
 --- -->
 
 
-## Cross-Cutting Concerns: Evaluation and Safety
+## Cross-cutting concerns: evaluation and safety
 
 !!! warning "Critical: These Apply to ALL Strategies"
     No matter which strategy you choose, evaluation and safety checks are essential. 
 
-### 📊 Robust Multilingual Evaluation
+### 📊 Robust multilingual evaluation
 
 English centric benchmarks are not reliable indicators of multilingual performance, and safety systems trained mostly on English create significant blind spots. Harmful content rates can be three times higher in under-resourced languages, and multilingual jailbreaking attacks succeed far more often than monolingual ones. 
 
@@ -163,9 +163,9 @@ English centric benchmarks are not reliable indicators of multilingual performan
 
 ---
 
-### Addressing Data Scarcity: Synthetic Data Generation
+### Addressing data scarcity: synthetic data generation
 
-!!! question "The Under-Resourced Language Problem"
+!!! info "The Under-Resourced Language Problem"
     Across all strategies, a recurring challenge is the **lack of high-quality data** for under-resourced languages. Synthetic data has become a practical solution. 
 
 A typical approach includes:
@@ -200,7 +200,7 @@ Synthetic data does not replace real data, but it can meaningfully supplement it
 
 ---
 
-## How to Navigate This Playbook
+## How to navigate this playbook
 
 !!! info "Choose Your Path"
     This playbook is designed to be read in whichever order fits your needs. 
@@ -222,7 +222,7 @@ Use the interactive flowchart(/playbook/flowchart) for a quick overview of recom
 
 Start with [Evaluation](/playbook/01-evaluation-overview) and [Safety](/playbook/05-safety-overview), then choose an approach that balances your goals with available resources.
 
-### 🎯 Have Specialized Needs?
+### 🎯 Have specialized needs?
 
 
 [Fine-Tuning](/playbook/04-fine-tuning-overview) and [Synthetic Data](/playbook/06-synthetic-data-overview) provide the strongest performance for culturally specific or domain heavy applications.

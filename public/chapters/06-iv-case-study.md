@@ -1,8 +1,8 @@
-## Case Study: Updesh - Culturally-Grounded Indian Language Dataset
+## 6.4 Case study: Updesh - culturally-grounded Indian language dataset
 
 The **Updesh dataset** represents a landmark achievement in culturally-aware synthetic data generation, providing concrete evidence for the effectiveness of bottom-up approaches in multilingual AI development.
 
-### Dataset Characteristics
+### 6.4.1 Dataset characteristics
 
 !!! info "Updesh Dataset Specifications"
     **Scale**: 9.5M synthetic instruction-following data points  
@@ -10,11 +10,11 @@ The **Updesh dataset** represents a landmark achievement in culturally-aware syn
     **Focus**: Long-context, multi-turn capabilities with cultural grounding  
     **Method**: Wikipedia-grounded generation using large open-source LLMs (≥235B parameters)
 
-### Generation Methodology
+### 6.4.2 Generation methodology
 
 The Updesh team implemented a sophisticated **bottom-up generation strategy** that fundamentally differs from translation-based approaches:
 
-#### Cultural Context Integration
+#### Cultural context integration
 
 Rather than translating English instructions, the methodology:
 
@@ -23,7 +23,7 @@ Rather than translating English instructions, the methodology:
 3. **Generates authentic examples** that reflect local contexts and values
 4. **Maintains linguistic diversity** through native language patterns
 
-#### Quality Assurance Framework
+#### Quality assurance framework
 
 The research incorporated comprehensive evaluation combining:
 
@@ -34,9 +34,9 @@ The research incorporated comprehensive evaluation combining:
     
     **Downstream Performance**: Fine-tuning evaluation demonstrating real-world effectiveness
 
-### Key Findings and Impact
+### 6.4.3 Key findings and impact
 
-#### Performance Improvements
+#### Performance improvements
 
 The research demonstrates that culturally-grounded synthetic data generation achieves:
 
@@ -45,9 +45,9 @@ The research demonstrates that culturally-grounded synthetic data generation ach
 - **Pronounced improvements** for low and medium-resource languages
 - **Reduced performance gaps** between high-resource and low-resource languages
 
-#### Implications for Multilingual AI
+#### Implications for multilingual AI
 
-!!! tip "Strategic Insights from Updesh"
+!!! success "Strategic Insights from Updesh"
     **Cultural Grounding Matters**: Bottom-up generation significantly outperforms translation-based approaches
     
     **Resource Efficiency**: Focused cultural grounding can be more effective than massive scale alone
@@ -56,7 +56,7 @@ The research demonstrates that culturally-grounded synthetic data generation ach
     
     **Multi-Faceted Approach**: Effective multilingual AI requires diverse data generation strategies
 
-### Implementation Lessons
+### 6.4.4 Implementation lessons
 
 The Updesh research provides actionable guidance for practitioners:
 
@@ -64,6 +64,4 @@ The Updesh research provides actionable guidance for practitioners:
 2. **Leverage Large Models**: Use the largest available open-source models for generation quality
 3. **Focus on Context**: Long-context, multi-turn generation better reflects real-world usage
 4. **Validate Comprehensively**: Combine automated metrics with human evaluation
-
----
 

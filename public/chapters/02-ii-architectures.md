@@ -1,10 +1,10 @@
-## Advanced Translation Architectures
+## 2.2 Advanced translation architectures
 
 Translation can be woven into a multilingual workflow in several ways. The right architecture depends on how much control you need, how much nuance your task requires, and how reliably your target languages are supported. This section breaks down the three main translation architectures and how to choose between them. 
 
-### Full Pre-translation
+### 2.2.1 Full pre-translation
 
-Full pre-translation is the most straightforward approach. In this architecture, every part of the user request is translated into English, processed by an Englishoptimized model, and then translated back into the target language. 
+Full pre-translation is the most straightforward approach. In this architecture, every part of the user request is translated into English, processed by an English-optimized model, and then translated back into the target language. 
 
 !!! info "How it works "
     1. **Translate** the entire non-English input prompt into English
@@ -27,7 +27,7 @@ Full pre-translation is the most straightforward approach. In this architecture,
 
 Full pre-translation is often a useful starting point, but it rarely produces the best results for production systems. 
 
-### Selective Pre-translation
+### 2.2.2 Selective pre-translation
 
 Selective pre-translation is a more advanced and reliable strategy. Instead of translating everything, you translate only the components that benefit from English processing. 
 
@@ -54,7 +54,7 @@ Selective translation is flexible, powerful, and ideal for complex tasks that re
 
 
 
-### Dynamic translation pipelines 
+### 2.2.3 Dynamic translation pipelines 
 
 Some applications benefit from treating translation as a dynamic component within the reasoning process. In this architecture, translation is not a single step at the beginning or end. Instead, the system calls translation tools at multiple points as needed. 
 
@@ -74,7 +74,7 @@ Some applications benefit from treating translation as a dynamic component withi
 
 This architecture gives you maximum control and adaptability but requires additional orchestration. 
 
-### Choosing the Right Architecture 
+### 2.2.4 Choosing the right architecture 
 
 Here’s a quick guide to help you choose.
 
@@ -99,7 +99,7 @@ Here’s a quick guide to help you choose.
 - Tasks require both English reasoning and native-language fidelity 
 
 Selective and dynamic approaches often produce the highest-quality multilingual systems. 
----
+
 
 
  

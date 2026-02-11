@@ -1,8 +1,8 @@
-## Frameworks for Cultural Quantification and Measurement
+## 7.1 Frameworks for cultural quantification and measurement
 
 Effective mitigation of cultural bias necessitates a systematic method for measuring and quantifying the cultural values ingrained within LLMs. Geert Hofstede's cultural dimensions framework has emerged as a primary diagnostic tool for this purpose, offering a quantifiable and explanatory mechanism for cross-cultural comparison.
 
-### The Hofstede Model as an NLP Diagnostic Tool
+### 7.1.1 The Hofstede model as an NLP diagnostic tool
 
 Hofstede's foundational work provides a structured framework for conceptualizing complex differences, such as the spectrum between individualism and collectivism or variations in power distance.
 
@@ -14,17 +14,17 @@ Hofstede's foundational work provides a structured framework for conceptualizing
 - **GPT-4**: Demonstrates unique capability to adapt to certain cultural nuances (e.g., Chinese settings)
 - **Challenges**: Struggles significantly with aligning to American and Arab cultures
 
-### The Impact of Language-Specific Training on Model Values
+### 7.1.2 The impact of language-specific training on model values
 
 !!! success "Critical Discovery"
     A crucial finding from Hofstede-based evaluations reveals a **strong, demonstrable link** between the language used in fine-tuning and the resulting cultural value expression of the model.
 
 **Language as Cultural Proxy**: Research confirms that language serves as a proxy for value incorporation—fine-tuning LLMs with different languages causes measurable shifts in their responses to cultural questions.
 
-!!! note "Strategic Implication"
+!!! info "Strategic Implication"
     Even highly capable models like GPT-4 struggle to align perfectly with American culture despite likely dominance of US data in pre-training. This suggests alignment requires **explicit cultural adaptation** through specific prompts or fine-tuning, not just data ingestion.
 
-#### Hofstede's Dimensions Applied to LLM Behavior
+#### Hofstede's dimensions applied to LLM behavior
 
 | **Dimension** | **Core Concept** | **Potential NLP Impact (Bias/Misalignment)** |
 |---------------|------------------|-----------------------------------------------|
@@ -36,7 +36,7 @@ Hofstede's foundational work provides a structured framework for conceptualizing
 
 ---
 
-### Beyond Knowledge: The Case for Meta-Cultural Competence
+### 7.1.3 Beyond knowledge: the case for meta-cultural competence
 
 Hofstede-based probing and cultural-knowledge test beds tell us whether a model *knows* facts about specific cultures, but they do not tell us whether the model can operate in a culture it has never seen. [Saha, Pandey & Choudhury (NAACL 2025)](https://aclanthology.org/2025.naacl-long.408.pdf) argue that we should be evaluating **meta-cultural competence** rather than cultural awareness alone.
 
@@ -46,7 +46,7 @@ Hofstede-based probing and cultural-knowledge test beds tell us whether a model 
 
     An LLM that scores well on Hofstede-aligned probes for five countries has demonstrated knowledge of those five cultures. It has *not* demonstrated the ability to reason about a sixth.
 
-#### Why Current Approaches Fall Short
+#### Why current approaches fall short
 
 Most cultural evaluation methods rely on constructing culture-specific test beds and measuring how closely a model's responses align with known cultural values. While important, this strategy has inherent limitations:
 
@@ -55,7 +55,7 @@ Most cultural evaluation methods rely on constructing culture-specific test beds
 - **Culture is experiential and multimodal.** Much cultural knowledge is acquired through lived experience across modalities—text alone cannot represent it fully.
 - **Spurious correlations.** Studies show it is difficult to disentangle actual cultural knowledge from placebos introduced by socio-demographic prompting techniques ([Mukherjee et al., EMNLP 2024](https://doi.org/10.18653/v1/2024.emnlp-main.884)).
 
-#### Two Core Competencies
+#### Two core competencies
 
 Saha et al. propose two measurable competencies that a model or system must possess to be deemed meta-culturally competent:
 
@@ -69,7 +69,7 @@ Saha et al. propose two measurable competencies that a model or system must poss
 
     A model with high variational awareness shows high entropy for culturally variable questions when no culture is specified, and low entropy when the culture is made explicit. This is a **model-level** property that must be incorporated during training.
 
-    !!! example "Measuring Variational Awareness"
+    !!! info "Measuring Variational Awareness"
         Saha et al. demonstrate this by probing Llama-3.1-8B-Instruct on the GeoMLAMA dataset across 25 culturally variable questions for five countries (China, India, Iran, Kenya, USA). They found:
 
         - There is little correlation between a model's factual accuracy and its variational awareness.
@@ -87,10 +87,10 @@ Saha et al. propose two measurable competencies that a model or system must poss
     - Rather than defaulting to the dominant culture's norms, it should ask clarifying questions.
     - The probing should be *sample-efficient*—requiring minimal user input to resolve cultural ambiguity.
 
-    !!! example "Explication in Action"
+    !!! info "Explication in Action"
         Instead of assuming a Western greeting norm, a culturally competent system might respond: *"Greeting conventions vary widely—would you like a formal or informal tone, and is there a cultural context I should be aware of?"*
 
-#### Connecting to Existing Frameworks
+#### Connecting to existing frameworks
 
 The meta-cultural competence perspective does not replace Hofstede-based evaluation—it extends it. The relationship can be summarized as:
 
@@ -111,4 +111,3 @@ The meta-cultural competence perspective does not replace Hofstede-based evaluat
 
     This aligns with a broader shift from testing *what a model knows* about culture to testing *how a model behaves* when it encounters cultural variation—including cultures absent from its training data.
 
----

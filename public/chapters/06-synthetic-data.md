@@ -1,6 +1,6 @@
-# Synthetic Data Generation for Multilingual LLMs
+# Synthetic data generation for multilingual LLMs
 
-!!! quote "The Data Scarcity Challenge"
+!!! info "The Data Scarcity Challenge"
     The multilingual landscape is defined by extreme data inequality—while English enjoys abundant high-quality datasets, most of the world's 7,000+ languages exist in a data desert. **Synthetic data generation emerges as a critical strategy to democratize AI capabilities across linguistic boundaries.**
 
 ---
@@ -17,7 +17,7 @@ Synthetic data generation represents one of the most promising approaches to add
 
 This chapter provides a comprehensive framework for generating high-quality synthetic data for multilingual LLM training and fine-tuning, with particular emphasis on maintaining linguistic authenticity and cultural appropriateness.
 
-!!! danger "Critical Considerations"
+!!! warning "Critical Considerations"
     **Quality Over Quantity**  
     Synthetic data quality directly impacts model performance—poor synthetic data can degrade model capabilities rather than enhance them
     
@@ -29,9 +29,9 @@ This chapter provides a comprehensive framework for generating high-quality synt
 
 ---
 
-## The Imperative for Multilingual Synthetic Data
+## The imperative for multilingual synthetic data
 
-### The Global Data Imbalance
+### The global data imbalance
 
 The current landscape of NLP training data exhibits extreme linguistic inequality. While English benefits from vast corpora spanning web crawls, academic papers, books, and specialized datasets, most languages—particularly those spoken by billions in the Global South—suffer from severe data scarcity.
 
@@ -43,9 +43,9 @@ The current landscape of NLP training data exhibits extreme linguistic inequalit
     
     This imbalance creates a **digital linguistic divide** that perpetuates technological inequality.
 
-### Traditional Data Collection Limitations
+### Traditional data collection limitations
 
-!!! failure "Barriers to Natural Data Collection"
+!!! warning "Barriers to Natural Data Collection"
     **Human Resource Constraints**  
     Creating high-quality annotated datasets requires native speakers with specialized expertise—a bottleneck for most languages
     
@@ -58,9 +58,7 @@ The current landscape of NLP training data exhibits extreme linguistic inequalit
     **Domain Coverage Gaps**  
     Even available data often lacks coverage across domains (technical, medical, legal, cultural)
 
-### The Synthetic Solution
+### The synthetic solution
 
 Synthetic data generation offers a scalable, cost-effective approach to bridge these gaps. By leveraging the cross-lingual capabilities of existing multilingual models, we can systematically generate training data that preserves linguistic authenticity while dramatically expanding available resources.
-
----
 

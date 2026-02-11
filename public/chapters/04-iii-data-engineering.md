@@ -1,10 +1,10 @@
-## Advanced Data Engineering for Multilingual Adaptation
+## 4.3 Advanced data engineering for multilingual adaptation
 
-Highquality data is the single greatest predictor of multilingual model performance. Even the best finetuning strategies will underperform if the underlying data is sparse, noisy, mistranslated, or culturally shallow. Data engineering is where multilingual systems either gain their strength or inherit their weaknesses. 
+High-quality data is the single greatest predictor of multilingual model performance. Even the best fine-tuning strategies will underperform if the underlying data is sparse, noisy, mistranslated, or culturally shallow. Data engineering is where multilingual systems either gain their strength or inherit their weaknesses. 
 
 This section explains how to build multilingual datasets that support strong performance across domains, languages, and cultural contexts. 
 
-### Core components of a multilingual data strategy
+### 4.3.1 Core components of a multilingual data strategy
 
 Every strong multilingual dataset is built from three pillars:
 
@@ -14,7 +14,7 @@ Every strong multilingual dataset is built from three pillars:
 
 Together, these pillars create a training set that teaches the model not only *what* to say, but *how* to say it in a way that feels natural and appropriate across cultures.
 
-### 1. Instruction-following data
+### 4.3.2 1. Instruction-following data
 
 Instruction-following examples teach the model how to respond to commands, prompts, questions, and tasks.
 
@@ -36,7 +36,7 @@ Instruction-following examples teach the model how to respond to commands, promp
 
 Instruction examples shape your model's "personality." They deserve careful attention.
 
-### 2. Domain-specific corpora
+### 4.3.3 2. Domain-specific corpora
 
 Domain corpora teach the model the terminology, context, and patterns of your field. These documents are especially important for technical or regulated domains.
 
@@ -59,7 +59,7 @@ Examples include:
 
 These corpora help the model become an expert rather than a generalist.
 
-### 3. Cultural grounding data
+### 4.3.4 3. Cultural grounding data
 
 Cultural grounding data makes the model feel like it truly belongs in the target language and region.
 
@@ -83,9 +83,9 @@ Sources can include:
 
 Without cultural grounding, even technically correct outputs can feel off.
 
-### Building reliable multilingual datasets
+### 4.3.5 Building reliable multilingual datasets
 
-Here is a practical blueprint for building multilingual datasets that support high-quality finetuning.
+Here is a practical blueprint for building multilingual datasets that support high-quality fine-tuning.
 
 **Step 1: Collect**
 
@@ -178,7 +178,7 @@ Great for increasing instruction variety. Ensure paraphrases sound natural in ea
 
 **Step 5: Split datasets deliberately**
 
-Random splits do not work well for multilingual finetuning.
+Random splits do not work well for multilingual fine-tuning.
 
 **Recommended approach:**
 
@@ -205,7 +205,7 @@ Before training, validate data itself.
 
 High-quality data always outperforms high-quantity data.
 
-### Advanced data engineering topics
+### 4.3.6 Advanced data engineering topics
 
 **Tokenizer optimization**
 
@@ -248,7 +248,7 @@ Guidelines include:
 
 Governance becomes essential as systems scale globally.
 
-### Key takeaways
+### 4.3.7 Key takeaways
 
 - Data engineering is the foundation of multilingual success.
 - Native, culturally grounded data beats large volumes of translated English.
@@ -257,6 +257,4 @@ Governance becomes essential as systems scale globally.
 - Tokenizers require attention for languages with complex scripts.
 - Balanced, well-structured datasets support more stable training.
 - Strong governance ensures safety, trust, and maintainability.
-
----
 

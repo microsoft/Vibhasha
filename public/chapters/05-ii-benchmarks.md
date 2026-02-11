@@ -1,8 +1,8 @@
-## Multilingual Safety Evaluation: Benchmarks and Datasets
+## 5.2 Multilingual safety evaluation: benchmarks and datasets
 
 Safety benchmarks provide the structure and visibility needed to test multilingual behavior consistently. They act as the foundation for release gates, regression tracking, and safety audits. 
 
-### Recommended multilingual safety benchmarks
+### 5.2.1 Recommended multilingual safety benchmarks
 
 A strong suite combines native, adversarial, and culturally nuanced datasets:
 
@@ -15,7 +15,7 @@ A strong suite combines native, adversarial, and culturally nuanced datasets:
 
 Use at least one natural dataset, one adversarial dataset, and one cultural dataset.
 
-### Building a practical benchmark suite
+### 5.2.2 Building a practical benchmark suite
 
 **1. Select languages by tier**
 
@@ -36,7 +36,7 @@ Pair datasets to maximize coverage.
 
 Include domain‑specific harms and culturally sensitive prompts.
 
-### Scoring and release gates
+### 5.2.3 Scoring and release gates
 
 Define thresholds before testing:
 
@@ -48,7 +48,7 @@ Define thresholds before testing:
 
 A build ships only when all languages pass their gates.
 
-### Running the benchmark workflow
+### 5.2.4 Running the benchmark workflow
 
 1. Prepare prompts by dataset, harm type, and language.
 2. Generate outputs with consistent model settings.
@@ -59,7 +59,7 @@ A build ships only when all languages pass their gates.
 7. Gate the build based on thresholds.
 8. Publish a one‑page safety report.
 
-### Extending with in‑house datasets
+### 5.2.5 Extending with in‑house datasets
 
 - Collect native prompts from real interactions (with PII removed).
 - Transcreate English harms into culturally realistic examples.
@@ -67,7 +67,7 @@ A build ships only when all languages pass their gates.
 - Version, freeze, and maintain sets over time.
 - Ensure coverage across dialects and cultural groups.
 
-### Key benchmark takeaways
+### 5.2.6 Key benchmark takeaways
 
 - Multilingual safety demands structured, reproducible test suites.
 - Combine native, adversarial, and cultural datasets for full coverage.

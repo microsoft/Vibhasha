@@ -1,9 +1,9 @@
-## Vulnerabilities
+## 5.1 Vulnerabilities
 Multilingual systems introduce safety vulnerabilities that often do not appear in English-only deployments. These vulnerabilities emerge from gaps in training data, differences in cultural norms, and the varied ways language encodes harmful intent. Understanding these weaknesses is essential for building systems that behave safely across all supported languages. 
 
 This section outlines the primary categories of multilingual vulnerabilities and explains how to address them. 
 
-### Why multilingual models have unique vulnerabilities
+### 5.1.1 Why multilingual models have unique vulnerabilities
 
 At their core, large language models learn from patterns in text. Because English dominates available training data, multilingual safety is inherently uneven. In practice, this means:
 
@@ -14,7 +14,7 @@ At their core, large language models learn from patterns in text. Because Englis
 
 These weaknesses create real risks for global deployments.
 
-### Major vulnerability categories
+### 5.1.2 Major vulnerability categories
 
 **1. Uneven refusal behavior across languages**
 
@@ -22,7 +22,7 @@ Refusal patterns learned in English do not automatically generalize to other lan
 
 - Inconsistent safety thresholds
 - Polite refusals in English but blunt or confusing refusals elsewhere
-- Successful harmful completions in lowresource languages
+- Successful harmful completions in low-resource languages
 - Incorrect acceptance of dangerous prompts
 - Safe outputs that sound rude or culturally inappropriate
 
@@ -42,14 +42,14 @@ Common forms of drift include:
 
 Meaning drift is especially dangerous when the system relies on translation to detect harmful intent.
 
-**3. Codeswitching and mixedscript attacks**
+**3. Code-switching and mixed-script attacks**
 
 Attackers use language mixing to bypass safety filters. Examples include:
 
 - Alternating between languages in the same sentence
 - Embedding harmful phrases in transliterated form (for example, Arabic written in Latin script)
 - Mixing scripts with similar-looking characters (homoglyph attacks)
-- Switching midprompt to confuse intent detection
+- Switching mid-prompt to confuse intent detection
 - Using slang or regional dialects unfamiliar to the model
 
 These attacks often succeed because English-oriented safety filters cannot parse mixed-language input.
@@ -67,9 +67,9 @@ Examples:
 
 If a model is unaware of these sensitivities, it may produce harmful or offensive content unintentionally.
 
-**5. Jailbreak vulnerabilities in lowresource languages**
+**5. Jailbreak vulnerabilities in low-resource languages**
 
-Lowresource languages often have limited representation in safety datasets. This makes them fertile ground for jailbreaks.
+Low-resource languages often have limited representation in safety datasets. This makes them fertile ground for jailbreaks.
 
 Patterns include:
 
@@ -79,7 +79,7 @@ Patterns include:
 - Dialect variations that safety filters do not recognize
 - Indirect requests that English-trained classifiers miss
 
-Studies show that jailbreak success rates can be many times higher in lowresource languages than in English.
+Studies show that jailbreak success rates can be many times higher in low-resource languages than in English.
 
 **6. Hallucination amplification**
 
@@ -95,7 +95,7 @@ Hallucinations in multilingual settings are harder to detect, especially when ev
 
 **7. Safety gaps introduced by RAG systems**
 
-Retrievalaugmented generation (RAG) can improve reliability, but also introduces multilingual risks.
+Retrieval-augmented generation (RAG) can improve reliability, but also introduces multilingual risks.
 
 Potential failures include:
 
@@ -106,20 +106,20 @@ Potential failures include:
 
 RAG must be evaluated and monitored per language just like the model itself.
 
-### Where these vulnerabilities appear in the pipeline
+### 5.1.3 Where these vulnerabilities appear in the pipeline
 
 Multilingual safety failures tend to occur at predictable points:
 
 - **Input stage:** harmful intent hidden through script tricks, slang, or code-switching
 - **Translation stage:** meaning drift hiding harmful elements
 - **Generation stage:** weak refusal patterns in some languages
-- **Postprocessing stage:** English-only safety filters missing non-English risks
+- **Post-processing stage:** English-only safety filters missing non-English risks
 - **RAG stage:** unsafe or outdated content entering the context
 - **Fallback stage:** inconsistent handling of uncertain or ambiguous prompts
 
 Understanding where failures originate helps you design targeted defenses.
 
-### How to mitigate multilingual vulnerabilities
+### 5.1.4 How to mitigate multilingual vulnerabilities
 
 **1. Expand safety data per language**
 
@@ -131,15 +131,15 @@ Do not rely on English data. Build multilingual safety datasets that include:
 - Indirect unsafe intent
 - Code-switched prompts
 
-**2. Apply perlanguage safety filters**
+**2. Apply per-language safety filters**
 
 Use safety classifiers trained or adapted for each target language.
 
-**3. Incorporate multilingual refusal examples into finetuning**
+**3. Incorporate multilingual refusal examples into fine-tuning**
 
-Include highquality, polite refusal patterns during instruction-tuning.
+Include high-quality, polite refusal patterns during instruction-tuning.
 
-**4. Test with multilingual redteam prompts**
+**4. Test with multilingual red-team prompts**
 
 Simulate attacks using:
 
@@ -160,14 +160,14 @@ Track:
 
 per language, not globally.
 
-### Key takeaways
+### 5.1.5 Key takeaways
 
 - Multilingual models introduce safety risks that English-only systems never encounter.
 - Code-switching, mixed scripts, and slang create major gaps in safety filters.
 - Meaning drift in translation can hide harmful intent.
-- Lowresource languages are more vulnerable to jailbreaks and harmful completions.
+- Low-resource languages are more vulnerable to jailbreaks and harmful completions.
 - Cultural harms must be treated as first-class safety concerns.
-- Strong defenses require perlanguage data, evaluation, and monitoring.
+- Strong defenses require per-language data, evaluation, and monitoring.
 
 <!-- ### Advanced Adversarial Attacks in Polyglot Systems
 Adversarial attacks in multilingual environments can be differentiated based on user intent. The unintentional scenario involves non-malicious users inadvertently bypassing guardrails simply by querying in non-English languages. The intentional scenario involves malicious users who deliberately combine explicit malicious instructions with multilingual prompts to craft effective attack payloads.   

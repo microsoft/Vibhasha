@@ -1,10 +1,10 @@
-## The Fine-Tuning Pipeline
+## 4.1 The fine-tuning pipeline
 
-Finetuning is a multistep process. It is a pipeline that strengthens a base model’s language representations, teaches it task behavior, stabilizes training, and validates quality before release. The goal is simple: ship a smaller, faster model that speaks your users’ languages, reflects your domain, and behaves consistently across markets. 
+Fine-tuning is a multistep process. It is a pipeline that strengthens a base model’s language representations, teaches it task behavior, stabilizes training, and validates quality before release. The goal is simple: ship a smaller, faster model that speaks your users’ languages, reflects your domain, and behaves consistently across markets. 
 
-Below is a practical, productionready pipeline you can implement end to end. 
+Below is a practical, production-ready pipeline you can implement end to end. 
 
-### Phase 1: Linguistic priming (make the model speak the language well)
+### 4.1.1 Phase 1: linguistic priming (make the model speak the language well)
 
 Before you teach tasks, teach language. Multilingual bases often underrepresent target scripts, dialects, or morphology. Priming fixes that.
 
@@ -25,7 +25,7 @@ Native corpora per language, tokenizer stats, high-frequency vocabulary lists.
 
 A linguistically stronger base, plus an updated tokenizer when needed.
 
-### Phase 2: Behavioral alignment (teach tasks, tone, and policy)
+### 4.1.2 Phase 2: behavioral alignment (teach tasks, tone, and policy)
 
 Once the model "speaks," teach it what to do and how to sound.
 
@@ -44,7 +44,7 @@ Per-language instruction datasets, tone and style guides, safety exemplars.
 
 Task-ready adapters that follow instructions, respect tone, and apply safety norms.
 
-### Phase 3: Stability control (keep what works, avoid regressions)
+### 4.1.3 Phase 3: stability control (keep what works, avoid regressions)
 
 Multilingual training can forget earlier abilities or destabilize reasoning if you push too hard.
 
@@ -63,7 +63,7 @@ Stability dashboards, per-language dev sets, training logs.
 
 Adapters that are steady across languages and resilient to prompt variation.
 
-### Phase 4: Evaluation and release gates (prove it works before you ship)
+### 4.1.4 Phase 4: evaluation and release gates (prove it works before you ship)
 
 Measure what users will see. Pass only models that clear clear gates.
 
@@ -78,9 +78,9 @@ Measure what users will see. Pass only models that clear clear gates.
 
 A model ships only if it meets target accuracy, clears safety thresholds, and shows no regressions against the previous release in any language.
 
-### Phase 5: Packaging and rollout (make it operable at scale)
+### 4.1.5 Phase 5: packaging and rollout (make it operable at scale)
 
-Treat finetuned artifacts like product components.
+Treat fine-tuned artifacts like product components.
 
 **What to do**
 
@@ -93,7 +93,7 @@ Treat finetuned artifacts like product components.
 
 A controlled release that is reversible, observable, and easy to iterate.
 
-### Data flow: from raw text to production
+### 4.1.6 Data flow: from raw text to production
 
 1. **Collect and clean** native corpora and instruction data per language.
 2. **Prime** with continued pretraining and tokenizer updates where needed.
@@ -103,14 +103,14 @@ A controlled release that is reversible, observable, and easy to iterate.
 6. **Package and ship** with versioned adapters, flags, and fallbacks.
 7. **Monitor and improve** through feedback loops and periodic refreshes.
 
-### Risks to watch and how to mitigate them
+### 4.1.7 Risks to watch and how to mitigate them
 
 - **Translationese in training data.** Overreliance on translated English creates unnatural outputs. Mitigate with native, in-situ examples and cultural review.
 - **Tokenizer inefficiency.** Oversegmented scripts raise cost and lower quality. Audit fertility and expand vocabulary where needed.
 - **Safety drift across languages.** Good English behavior does not guarantee good behavior elsewhere. Bake in multilingual safety from Phase 2 and test hard in Phase 4.
 - **Monolithic weights.** One giant model for all languages and domains slows iteration. Prefer modular adapters you can compose.
 
-### Success metrics you can trust
+### 4.1.8 Success metrics you can trust
 
 - **Task success rate** per language and scenario
 - **Human scores** for fluency, adequacy, tone, and cultural fit
@@ -118,7 +118,7 @@ A controlled release that is reversible, observable, and easy to iterate.
 - **Latency and cost** improvements vs. larger general models
 - **Regression stability** across releases and markets
 
-### Quickstart checklist
+### 4.1.9 Quickstart checklist
 
 - Native corpora and instruction data per language
 - Tokenizer audit and vocabulary plan
@@ -126,6 +126,4 @@ A controlled release that is reversible, observable, and easy to iterate.
 - Multilingual stability settings and monitors
 - Human evaluation panels and safety stress tests
 - Versioning, rollout flags, and fallbacks
-
----
 

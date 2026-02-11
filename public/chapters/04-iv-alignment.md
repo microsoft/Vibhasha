@@ -1,10 +1,10 @@
-## Cultural and Value Alignment
+## 4.4 Cultural and value alignment
 
-Finetuning goes well beyond the need for accuracy. It is about teaching a model to communicate in a way that feels natural, respectful, and culturally aligned for every language you support. Cultural alignment ensures that the model’s responses reflect the social norms, communication patterns, and expectations of real users, not just literal translations of English patterns. 
+Fine-tuning goes well beyond the need for accuracy. It is about teaching a model to communicate in a way that feels natural, respectful, and culturally aligned for every language you support. Cultural alignment ensures that the model’s responses reflect the social norms, communication patterns, and expectations of real users, not just literal translations of English patterns. 
 
-This section explains how to embed cultural awareness directly into your finetuned model so your system feels truly native across regions. 
+This section explains how to embed cultural awareness directly into your fine-tuned model so your system feels truly native across regions. 
 
-### Why cultural alignment matters
+### 4.4.1 Why cultural alignment matters
 
 Multilingual systems often struggle not with grammar, but with *behavior*. A response that seems acceptable in English may feel blunt, overly formal, confusing, or even disrespectful in another language. This misalignment reduces trust and usability.
 
@@ -17,9 +17,9 @@ Multilingual systems often struggle not with grammar, but with *behavior*. A res
 - Unintended emotional distance or insensitivity
 - Overreliance on English structures that do not map culturally
 
-When you finetune cultural signals into the model, you teach it how speakers of each language actually communicate.
+When you fine-tune cultural signals into the model, you teach it how speakers of each language actually communicate.
 
-### Encoding cultural norms during finetuning
+### 4.4.2 Encoding cultural norms during fine-tuning
 
 Cultural alignment must be built intentionally. The most reliable way is to include culturally meaningful examples in your instruction-tuning data.
 
@@ -40,13 +40,13 @@ Include examples showing:
 
 Some cultures value concise communication; others value added context. Some prefer highly direct instructions; others prefer softening phrases.
 
-Finetuning examples should reflect these preferences.
+Fine-tuning examples should reflect these preferences.
 
 **3. Culturally appropriate safety behavior**
 
 Safety norms vary. A refusal phrased for English speakers may sound abrupt or aggressive in another language.
 
-Finetune refusal examples that:
+Fine-tune refusal examples that:
 
 - Use polite deflection
 - Offer alternatives when appropriate
@@ -56,15 +56,15 @@ Finetune refusal examples that:
 
 Idioms, metaphors, and emotional expressions rarely translate directly. Add examples that capture culturally relevant ways of expressing agreement, praise, gratitude, or uncertainty.
 
-### Reward-model transfer for cultural alignment
+### 4.4.3 Reward-model transfer for cultural alignment
 
-Reward-model transfer is one of the most effective methods for crosslingual cultural alignment.
+Reward-model transfer is one of the most effective methods for cross-lingual cultural alignment.
 
 **How it works:**
 
 1. Start with a strong English reward model.
 2. Add small amounts of high-quality preference data from native speakers.
-3. Finetune a multilingual reward model that captures culturally appropriate behavior.
+3. Fine-tune a multilingual reward model that captures culturally appropriate behavior.
 4. Use this model during reinforcement learning to shape responses in each language.
 
 **Why this approach works well:**
@@ -76,7 +76,7 @@ Reward-model transfer is one of the most effective methods for crosslingual cult
 
 This method helps the model make culturally correct choices even when instructions are ambiguous.
 
-### Self-pluralizing alignment
+### 4.4.4 Self-pluralizing alignment
 
 Self-pluralizing alignment teaches models to reflect multiple valid cultural viewpoints or norms rather than collapsing to a single one.
 
@@ -95,7 +95,7 @@ For example:
 
 Self-pluralizing alignment ensures the model does not overgeneralize across cultures.
 
-### Cultural calibration through evaluation
+### 4.4.5 Cultural calibration through evaluation
 
 Cultural alignment must be validated through human review. Automated evaluation cannot reliably detect tone issues, context gaps, or culturally inappropriate phrasing.
 
@@ -109,11 +109,11 @@ Cultural alignment must be validated through human review. Automated evaluation 
 
 Include speakers from different dialect groups, not just one region.
 
-### Building multilingual respect into the system
+### 4.4.6 Building multilingual respect into the system
 
 Here are the best practices that reliably improve cultural alignment:
 
-- Include culturally grounded text in your pretraining and finetuning mix
+- Include culturally grounded text in your pretraining and fine-tuning mix
 - Provide clear tone and politeness instructions in the training examples
 - Use reward-model transfer for cost-effective cultural preference learning
 - Evaluate with native speakers across multiple dialects
@@ -122,14 +122,12 @@ Here are the best practices that reliably improve cultural alignment:
 
 Cultural alignment increases user trust, satisfaction, and product credibility across markets.
 
-### Key takeaways
+### 4.4.7 Key takeaways
 
 - Cultural nuance is essential for multilingual communication, not optional.
-- Finetuning must include examples that teach tone, politeness, formality, and social norms.
+- Fine-tuning must include examples that teach tone, politeness, formality, and social norms.
 - Reward-model transfer provides cultural depth with minimal data.
 - Self-pluralizing alignment helps models respect diverse dialects and cultural variants.
 - Human review is required to validate tone and avoid cultural missteps.
 - Culturally aligned models feel natural, respectful, and trustworthy for global users.
-
----
 

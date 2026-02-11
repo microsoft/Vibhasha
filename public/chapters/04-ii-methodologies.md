@@ -1,16 +1,16 @@
-## Core Fine-Tuning Methodologies
+## 4.2 Core fine-tuning methodologies
 
-Finetuning multilingual models can be approached in several ways, each with different levels of control, cost, and complexity. The methodologies in this section focus on helping you get the highest-quality results with the least overhead, while preserving stability across languages. 
+Fine-tuning multilingual models can be approached in several ways, each with different levels of control, cost, and complexity. The methodologies in this section focus on helping you get the highest-quality results with the least overhead, while preserving stability across languages. 
 
 The goal is to select the right tuning technique for your languages, your domain, and your constraints, rather than defaulting to a single approach for everything. 
 
-### Parameter-Efficient Fine-Tuning (PEFT)
+### 4.2.1 Parameter-efficient fine-tuning (PEFT)
 
-Parameter efficient finetuning updates only a small number of model parameters instead of modifying the entire model. This makes training faster, cheaper, and easier to scale across languages. It also allows you to maintain a single base model with multiple language- or domain-specific adapters. 
+Parameter-efficient fine-tuning updates only a small number of model parameters instead of modifying the entire model. This makes training faster, cheaper, and easier to scale across languages. It also allows you to maintain a single base model with multiple language- or domain-specific adapters. 
 
 #### LoRA
 
-LowRank Adaptation (LoRA) adds lightweight, trainable matrices to specific layers of the model.
+Low-Rank Adaptation (LoRA) adds lightweight, trainable matrices to specific layers of the model.
 
 **Why LoRA works well:**
 
@@ -32,11 +32,11 @@ QLoRA extends LoRA with quantization. It shrinks the memory footprint while main
 
 QLoRA typically delivers near-full precision quality at a fraction of the cost.
 
-### Full finetuning
+### 4.2.2 Full fine-tuning
 
-Full finetuning updates all model weights. It is the most powerful and most expensive option.
+Full fine-tuning updates all model weights. It is the most powerful and most expensive option.
 
-**Choose full finetuning when:**
+**Choose full fine-tuning when:**
 
 - The domain shift is very large
 - PEFT does not reach your required accuracy
@@ -52,9 +52,9 @@ Full finetuning updates all model weights. It is the most powerful and most expe
 
 Full tuning is best reserved for mission-critical tasks or extremely specialized workflows.
 
-### Continued pretraining
+### 4.2.3 Continued pretraining
 
-Continued pretraining adapts the model to a specific language or domain using large amounts of unlabeled text. It comes *before* instruction finetuning.
+Continued pretraining adapts the model to a specific language or domain using large amounts of unlabeled text. It comes *before* instruction fine-tuning.
 
 **Why it works**
 
@@ -69,9 +69,9 @@ Models trained mostly on English often struggle with morphology, orthography, an
 
 It is especially powerful for languages with complex grammar or unique writing systems.
 
-### Instruction finetuning
+### 4.2.4 Instruction fine-tuning
 
-Instruction finetuning trains the model to follow commands, respond with the right tone, and exhibit consistent behavior across tasks and languages.
+Instruction fine-tuning trains the model to follow commands, respond with the right tone, and exhibit consistent behavior across tasks and languages.
 
 **Key elements of good instruction-tuning data:**
 
@@ -81,13 +81,13 @@ Instruction finetuning trains the model to follow commands, respond with the rig
 - Safety examples, including refusals
 - Domain-specific terminology
 
-Instruction finetuning is where the model learns "how to behave," so quality matters more than quantity.
+Instruction fine-tuning is where the model learns "how to behave," so quality matters more than quantity.
 
-### Reward-model alignment
+### 4.2.5 Reward-model alignment
 
 Reward-model alignment helps the model internalize human preferences, especially around tone, politeness, and safety.
 
-**Crosslingual reward transfer**
+**Cross-lingual reward transfer**
 
 This approach starts with an English reward model, then adapts it using small amounts of high-quality native-language preference data.
 
@@ -100,9 +100,9 @@ This approach starts with an English reward model, then adapts it using small am
 
 Reward-model alignment is essential when your model interacts directly with end users.
 
-### Stabilization through training schedules
+### 4.2.6 Stabilization through training schedules
 
-Multilingual finetuning can be unstable if training is not carefully managed.
+Multilingual fine-tuning can be unstable if training is not carefully managed.
 
 **Recommended stabilization practices:**
 
@@ -114,7 +114,7 @@ Multilingual finetuning can be unstable if training is not carefully managed.
 
 These techniques help models retain general reasoning skills while learning new behaviors.
 
-### Cultural and safety alignment during finetuning
+### 4.2.7 Cultural and safety alignment during fine-tuning
 
 Cultural alignment must be built intentionally. Safety cannot be assumed to transfer.
 
@@ -128,7 +128,7 @@ Add examples that teach:
 
 These data points significantly reduce cultural errors, misinterpretations, and safety violations.
 
-### Adapters as modular building blocks
+### 4.2.8 Adapters as modular building blocks
 
 Adapters are small tuning layers you can toggle on or off. They make multilingual systems modular and easier to scale.
 
@@ -142,9 +142,9 @@ Then combine them as needed for each region or product.
 
 This modularity speeds up experimentation and ensures changes in one area do not break others.
 
-### Choosing the right methodology
+### 4.2.9 Choosing the right methodology
 
-To decide between PEFT, full finetuning, continued pretraining, or alignment, consider:
+To decide between PEFT, full fine-tuning, continued pretraining, or alignment, consider:
 
 - **Language resources:** The lower the resource level, the more pretraining you need.
 - **Domain complexity:** The more specialized your content, the more aggressive the tuning.
@@ -160,6 +160,4 @@ Most teams use a blend:
 - Modular adapters
 
 This combination delivers high performance with low operational overhead.
-
----
 
