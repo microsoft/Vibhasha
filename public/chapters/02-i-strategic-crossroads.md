@@ -1,93 +1,105 @@
-## The Strategic Crossroads: Direct Inference vs. Pre-translation
+## 2.1 The strategic crossroads: direct inference vs. pre-translation
 
-The foundational decision for any multilingual workflow is whether to engage the LLM directly in the source language or to first translate the query into English. This choice is not static; it depends on the specific capabilities of the model, the characteristics of the language, and the quality of available translation tools.
+Choosing whether to translate, prompt directly, or fine-tune is not just a technical decision. It is a strategic one. Each path comes with strengths, weaknesses, and implications for accuracy, cost, culture, and safety. This section helps you decide which direction to take for your multilingual application. 
 
-### The Default: Direct Inference
+**Why the choice matters**: A model that performs flawlessly in English may behave unpredictably in a low-resource language. Some languages benefit from direct prompting, while others perform better when the task is translated into English. Still others require fine-tuning to achieve even baseline reliability. 
 
-Modern multilingual LLMs are engineered with **cross-lingual transfer capabilities**. During pretraining on vast, multilingual corpora, they learn to infer connections between languages, allowing them to apply grammatical structures and semantic associations from high-resource languages like English to lower-resource ones.[^10]
+Understanding where your target languages fall on this spectrum can save you significant time, money, and engineering effort.
 
-!!! success "Direct Inference: The Strong Default"
-    For many applications, the most effective approach is **direct inference**—prompting the model directly in the non-English source language.
-    
-    **Key Finding**: Analysis of PaLM2-L performance revealed that approximately **85% of low-resource languages benefit from direct inference**.[^2][^14]
+### 2.1.1 The surprising strength of direct inference 
+
+Despite the dominance of English in model pretraining, many multilingual LLMs handle non-English text better than expected. In fact, research on PaLM 2 suggests that about 85% of low-resource languages perform best with direct inference. That means prompting directly in the source language can often outperform translation-based workflows. 
+
 
 **Why Direct Inference Works:**
 
-- ✅ Leverages intrinsic cross-lingual capabilities
-- ✅ Avoids translation error propagation
-- ✅ Preserves cultural and linguistic nuance
-- ✅ Validated by empirical research for QA tasks
+- ✅ Models have strong cross-lingual transfer from high-resource languages. 
+- ✅ Native scripts can carry contextual cues that translations lose. 
+- ✅ Direct prompting avoids translation artifacts and ambiguity. 
+- ✅ It preserves voice, tone, and cultural nuance. 
 
-### The Exception: When Pre-translation Prevails
+But there is a catch: this pattern does not hold for all languages. 
 
-Despite the general superiority of direct inference, a **consistent and important exception** exists for specific low-resource languages.
+### 2.1.2 The exception: when pre-translation prevails
 
-!!! warning "Seven Critical Exception Languages"
-    Research with PaLM2-L identified languages where pre-translation **consistently outperforms** direct inference:
-    
-    **Bambara** · **Cusco-Collao Quechua** · **Lingala** · **Oromo** · **Punjabi** · **Tigrinya** · **Tsonga**
-    
-    *Note: Four of these seven are African languages, potentially indicating regional patterns in data representation.*
+A small but important group of languages consistently performs better with pre-translation. In studies of multilingual models, languages such as Bambara, Quechua (Cusco-Collao), Lingala, Oromo, Punjabi, Tigrinya, and Tsonga showed significantly stronger outcomes when inputs were translated into English before reasoning. 
 
-**Root Causes for Pre-translation Success:**
+Why these languages behave differently: 
+- Severe underrepresentation in pretraining data 
+- Tokenization inefficiency when scripts or morphology do not align with English-centric tokenizers 
+- Sparse digital presence, which limits model exposure 
+- Linguistic distance from high-resource languages the model understands well 
 
-<div class="grid cards" markdown>
+Understanding whether your target languages fall into this “exception” category is key to choosing the right pipeline. 
 
--   **📊 Severe Data Underrepresentation**
 
-    ---
+#### Three key performance determinants
 
-    These languages are so sparsely represented in pretraining that the model's internal representations are too weak for complex reasoning.[^6][^15][^16]
-
--   **🔤 Tokenization Inefficiency**
-
-    ---
-
-    Standard tokenizers optimized for Latin scripts create longer, more expensive, and less semantically coherent token sequences.[^4]
-
--   **🌐 Linguistic Divergence**
-
-    ---
-
-    Languages typologically distant from English benefit less from cross-lingual transfer, making translation a more reliable bridge.[^4]
-
-</div>
-
-### Data-Driven Decision Framework
-
-!!! important "Dynamic Strategy Selection"
-    The optimal strategy is **not a fixed property** of a language but shifts based on the specific model being used. As new models with more diverse pretraining data emerge, continuous re-evaluation is essential.[^4]
-
-#### Three Key Performance Determinants
+Your workflow should be based on three core considerations. These factors influence whether direct prompting, translation, or fine-tuning will give you the strongest results. 
 
 === "1. Model Size"
-    **Impact**: Larger models generally possess more robust multilingual capabilities
+    Larger models generally perform better across languages because they have richer internal representations and stronger reasoning skills. Bigger models also tend to have more robust multilingual capability. 
+
+    Impact on your decision 
+    - Large models are more likely to succeed with direct inference. 
+    - Smaller models may need translation help or fine-tuning to handle linguistic complexity. 
     
-    - Better candidates for direct inference
-    - Translation quality improves with size due to greater pretraining exposure[^17][^18][^19]
-    - **Caveat**: Size alone doesn't eliminate performance disparities[^20]
+    Model size is important, but it is not the only thing that matters. 
 
 === "2. Language Representation"
-    **Impact**: **Most critical determinant** of performance
-    
-    - Strong positive correlation between pretraining corpus proportion and performance[^6][^15][^21]
-    - Greater representation → direct inference more likely to succeed
-    - Check model documentation for language coverage details
+    This is the single most important factor in multilingual performance. 
+
+    Languages with strong presence in the model’s training data tend to deliver: 
+    - Higher accuracy 
+    - Better cultural alignment 
+    - Stronger safety performance 
+    - More stable responses across tasks 
+
+    Languages with poor representation require more support through translation, retrieval, or fine-tuning. 
+
+    Tip: Check a model’s documentation for language coverage. Most vendors now publish language-support statements. 
 
 === "3. Translator Proficiency"
-    **Impact**: Quality of MT system determines pre-translation success
-    
-    - High-fidelity translation is **prerequisite** for pre-translation workflows[^12][^22]
-    - Poor MT introduces cascading errors through entire pipeline[^13][^23][^24][^25]
-    - **Guideline**: If MT quality is weak, direct inference may be less risky
+    Even the best model cannot overcome a bad translation pipeline. 
 
-#### Strategy Comparison Matrix
+    High-quality translation improves: 
+    - Accuracy 
+    - Faithfulness to the source 
+    - Safety 
+    - Consistency 
 
-| Strategy | Best For (Language Profile) | Best For (Task Type) | Key Dependencies | Primary Risk |
-|----------|----------------------------|---------------------|------------------|--------------|
-| **Direct Inference** | High- and Medium-Resource Languages; Majority of Low-Resource Languages | All Tasks | Robust multilingual LLM with strong cross-lingual transfer | Suboptimal performance if model's native support is weak |
-| **Full Pre-translation** | Very Low-Resource Languages with poor native LLM support (e.g., Bambara, Quechua) | General tasks where cultural nuance is not critical | High-quality, reliable MT API | Loss of cultural nuance and translation error propagation |
-| **Selective Pre-translation** | All non-English languages, especially Low- and Medium-Resource | Extractive and Generative tasks requiring precision and nuance | High-quality MT API and well-structured prompt architecture | Increased implementation complexity |
+    Low-quality translation introduces: 
+    - Meaning drift 
+    - Cultural distortion 
+    - Error chains 
+    - Higher hallucination rates 
 
----
+    If your translation quality is weak, direct inference may outperform any translation-based workflow. 
+
+#### Comparing the three strategies
+
+Below is a high-level guide to help you choose the right path based on your task and language profile.
+
+| **Strategy** | **Best For** | **Watch Out For** |
+|----------|----------|---------------|
+| **Direct Inference** | High-resource and mid-resource languages; Conversations or tasks that require tone, style, and cultural nuance; Low-latency applications; Scenarios with poor machine-translation quality | Performance drops in underrepresented languages, inconsistent tone, and safety gaps |
+| **Full Pre-translation** | Quick prototypes; Languages with excellent machine-translation support; Straightforward tasks that do not depend heavily on nuance | Layered translation errors, value drift, and unnatural output phrasing |
+| **Selective Pre-translation** | Low-resource languages; Tasks that require precision and nuance; Scenarios where context must remain intact; Balancing performance with cultural fidelity | Additional implementation complexity and the need for careful prompt design |
+
+**Quick Decision Guide**
+
+- ➡️ Choose **direct inference** if you want natural, culturally aligned responses and the language has moderate-to-strong support.
+- ➡️ Choose **selective pre-translation** if you need stronger reasoning or accuracy in a low-resource language without losing context.
+- ➡️ Choose **full pre-translation** if you are in the early prototyping phase or working with well-supported languages and simple tasks.
+
+**The Bottom Line**
+
+There is no single "best" strategy for multilingual deployment. The right choice depends on:
+
+- The languages you support
+- The complexity of your task
+- The translation quality available
+- The performance characteristics of your model
+
+By understanding these factors, you can select the strategy that delivers the best mix of accuracy, cultural relevance, and reliability for your users.
 

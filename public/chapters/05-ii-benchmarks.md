@@ -1,8 +1,81 @@
-## Multilingual Safety Evaluation: Benchmarks and Datasets
+## 5.2 Multilingual safety evaluation: benchmarks and datasets
 
-Rigorously assessing multilingual safety requires standardized benchmarks built on authentic, localized content. Several key datasets have emerged to quantify multilingual safety vulnerabilities:
+Safety benchmarks provide the structure and visibility needed to test multilingual behavior consistently. They act as the foundation for release gates, regression tracking, and safety audits. 
 
-### Key Multilingual Safety Datasets
+### 5.2.1 Recommended multilingual safety benchmarks
+
+A strong suite combines native, adversarial, and culturally nuanced datasets:
+
+- **RTPLX.** Native multilingual toxicity prompts.
+- **PolyglotToxicityPrompts.** Real-world toxic prompts across languages.
+- **Aya Red Teaming.** Curated multilingual harms with difficulty levels.
+- **ALMBench.** Culturally grounded multilingual evaluation.
+- **Multilingual Jailbreak Challenge.** Stress tests for safety controls.
+- **LinguaSafe.** Underrepresented language prompts and sensitive content.
+
+Use at least one natural dataset, one adversarial dataset, and one cultural dataset.
+
+### 5.2.2 Building a practical benchmark suite
+
+**1. Select languages by tier**
+
+- Tier A: `high‑resource`
+- Tier B: `mid‑resource`
+- Tier C: `low‑resource` and culturally sensitive
+
+**2. Assign datasets per tier**
+
+Pair datasets to maximize coverage.
+
+**3. Size the test sets**
+
+- 1,000–3,000 prompts per language for automated evaluation
+- 200–400 frozen regression samples per language
+
+**4. Add product‑specific slices**
+
+Include domain‑specific harms and culturally sensitive prompts.
+
+### 5.2.3 Scoring and release gates
+
+Define thresholds before testing:
+
+- **Unsafe‑response rate:** for example, ≤ 1% Tier A; ≤ 2–3% Tier B; ≤ 3–5% Tier C
+- **Jailbreak success rate:** ≤ 1–3% depending on tier
+- **Refusal‑quality score:** target ≥ 4.0 average
+- **Cultural‑sensitivity violations:** zero critical cases
+- **Consistency index:** ensure stable behavior across languages
+
+A build ships only when all languages pass their gates.
+
+### 5.2.4 Running the benchmark workflow
+
+1. Prepare prompts by dataset, harm type, and language.
+2. Generate outputs with consistent model settings.
+3. Score automatically first.
+4. Use LLM‑as‑a‑judge for triage.
+5. Conduct human review for a sampled set.
+6. Aggregate and compare results per language.
+7. Gate the build based on thresholds.
+8. Publish a one‑page safety report.
+
+### 5.2.5 Extending with in‑house datasets
+
+- Collect native prompts from real interactions (with PII removed).
+- Transcreate English harms into culturally realistic examples.
+- Label with clear rubrics.
+- Version, freeze, and maintain sets over time.
+- Ensure coverage across dialects and cultural groups.
+
+### 5.2.6 Key benchmark takeaways
+
+- Multilingual safety demands structured, reproducible test suites.
+- Combine native, adversarial, and cultural datasets for full coverage.
+- Track metrics and regressions per language.
+- Gate releases on safety metrics just like functional metrics.
+- Maintain in‑house sets for domain- and culture-specific risks.
+
+<!-- ### Key Multilingual Safety Datasets
 
 #### RTP-LX: Multilingual Toxicity Evaluation
 - **Coverage**: 1,000+ toxic prompts in **28 languages**
@@ -31,7 +104,7 @@ Rigorously assessing multilingual safety requires standardized benchmarks built 
 #### Multilingual Jailbreak Challenge
 - **Coverage**: Adversarial prompts in **10 languages**
 - **Key Results**:
-  - Unintentional: Low-resource prompts 3× more likely to yield policy violations
+  - Unintentional: Under-resourced language prompts 3× more likely to yield policy violations
   - Intentional: 81% success rate bypassing ChatGPT's safety
 
 #### LinguaSafe
@@ -69,4 +142,4 @@ Rigorously assessing multilingual safety requires standardized benchmarks built 
 | **Aya Red Teaming** | Harmful Prompts | 8 | Human annotations | Global vs. local harm distinction |
 | **ALM-Bench** | Cultural Inclusivity | 100 | Native speaker curation | Multimodal cultural content |
 
-
+ -->

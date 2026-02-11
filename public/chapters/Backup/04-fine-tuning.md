@@ -152,11 +152,12 @@ Data quality and cultural authenticity are paramount for successful multilingual
     **Method**: Generate data in-situ using culturally relevant sources
     
     **Process**: 
-    1. Prompt foundation LLMs with local context
-    2. Ground generation in language-specific sources (Wikipedia, regional news)
-    3. Ensure cultural authenticity throughout
+    1. Prompt large open-source LLMs (≥235B parameters) with local context
+    2. Ground generation in language-specific sources (e.g., Wikipedia in the target language, regional news)
+    3. Generate diverse reasoning and generative tasks, not just translations of English instructions
+    4. Validate quality with automated metrics and human assessment
     
-    **Evidence**: The **Updesh dataset** (13 Indian languages) demonstrated significant performance gains, effectively narrowing the performance gap for low- and medium-resource languages
+    **Evidence**: The [**Updesh dataset**](https://arxiv.org/abs/2509.21294) applied this approach to produce **9.5M high-quality synthetic instruction-following data points** across 13 Indian languages and English. Quality was confirmed through 10K human evaluations. Models fine-tuned on Updesh showed consistent improvements on NLU and NLG benchmarks, and ablation studies confirmed that context-aware, culturally grounded generation is essential — simply translating English data is not sufficient for effective multilingual AI development.
 
 ---
 
@@ -292,10 +293,14 @@ To help you implement the fine-tuning strategies discussed in this chapter, here
     - [Open Assistant](https://huggingface.co/datasets/OpenAssistant/oasst1) - Multilingual conversational dataset
     
     **Multilingual-Specific Datasets**
+
+    - [Updesh](https://huggingface.co/datasets/microsoft/Updesh_beta) - 9.5M culturally grounded synthetic instruction data across 13 Indic languages
+    - [Aya Dataset](https://huggingface.co/datasets/CohereLabs/aya_dataset) - Multilingual instruction-following dataset covering 65+ languages
+    - [Bactrian-X](https://huggingface.co/datasets/MBZUAI/Bactrian-X) - Multilingual instruction dataset spanning 52 languages
+    - [IndicAlign](https://huggingface.co/datasets/ai4bharat/indic-align) - Alignment dataset for Indic languages
     - [mC4](https://huggingface.co/datasets/mc4) - Multilingual Common Crawl for continued pretraining
     - [XNLI](https://huggingface.co/datasets/xnli) - Cross-lingual natural language inference
     - [TyDi QA](https://huggingface.co/datasets/tydiqa) - Multilingual question answering dataset
-
 ### ⚙️ Configuration Templates
 
 !!! example "Sample Training Configurations"

@@ -11,11 +11,12 @@ import { UIProvider } from './theme/UIContext'
 import IntroductionDoc from './components/docs/00-introduction'
 import EvaluationDoc from './components/docs/01-evaluation'
 import IMethodologiesDoc from './components/docs/01-i-methodologies'
-import IiLowResourceDoc from './components/docs/01-ii-low-resource'
-import IiiAdvisoryDoc from './components/docs/01-iii-advisory'
-import IvScenariosDoc from './components/docs/01-iv-scenarios'
-import VDatasetsDoc from './components/docs/01-v-datasets'
-import ViChallengesDoc from './components/docs/01-vi-challenges'
+import IiPipelineDoc from './components/docs/01-ii-pipeline'
+import IiiLowResourceDoc from './components/docs/01-iii-low-resource'
+import IvAdvisoryDoc from './components/docs/01-iv-advisory'
+import VScenariosDoc from './components/docs/01-v-scenarios'
+import ViDatasetsDoc from './components/docs/01-vi-datasets'
+import ViiChallengesDoc from './components/docs/01-vii-challenges'
 import TranslationDoc from './components/docs/02-translation'
 import IStrategicCrossroadsDoc from './components/docs/02-i-strategic-crossroads'
 import IiArchitecturesDoc from './components/docs/02-ii-architectures'
@@ -70,11 +71,12 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/00-introduction" element={<IntroductionDoc />} />
                 <Route path="/playbook/01-evaluation" element={<EvaluationDoc />} />
                 <Route path="/playbook/01-i-methodologies" element={<IMethodologiesDoc />} />
-                <Route path="/playbook/01-ii-low-resource" element={<IiLowResourceDoc />} />
-                <Route path="/playbook/01-iii-advisory" element={<IiiAdvisoryDoc />} />
-                <Route path="/playbook/01-iv-scenarios" element={<IvScenariosDoc />} />
-                <Route path="/playbook/01-v-datasets" element={<VDatasetsDoc />} />
-                <Route path="/playbook/01-vi-challenges" element={<ViChallengesDoc />} />
+                <Route path="/playbook/01-ii-pipeline" element={<IiPipelineDoc />} />
+                <Route path="/playbook/01-iii-low-resource" element={<IiiLowResourceDoc />} />
+                <Route path="/playbook/01-iv-advisory" element={<IvAdvisoryDoc />} />
+                <Route path="/playbook/01-v-scenarios" element={<VScenariosDoc />} />
+                <Route path="/playbook/01-vi-datasets" element={<ViDatasetsDoc />} />
+                <Route path="/playbook/01-vii-challenges" element={<ViiChallengesDoc />} />
                 <Route path="/playbook/02-translation" element={<TranslationDoc />} />
                 <Route path="/playbook/02-i-strategic-crossroads" element={<IStrategicCrossroadsDoc />} />
                 <Route path="/playbook/02-ii-architectures" element={<IiArchitecturesDoc />} />
@@ -110,6 +112,12 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/99-conclusion" element={<ConclusionDoc />} />
                 <Route path="/playbook/flowchart" element={<FlowchartPage />} />
         <Route path="/playbook/100-attribution" element={<AttributionDoc />} />
+        <Route path="/playbook/01-ii-pipeline" element={<IiPipelineDoc />} />
+        <Route path="/playbook/01-iii-low-resource" element={<IiiLowResourceDoc />} />
+        <Route path="/playbook/01-iv-advisory" element={<IvAdvisoryDoc />} />
+        <Route path="/playbook/01-v-scenarios" element={<VScenariosDoc />} />
+        <Route path="/playbook/01-vi-datasets" element={<ViDatasetsDoc />} />
+        <Route path="/playbook/01-vii-challenges" element={<ViiChallengesDoc />} />
               </Route>
             </Route>
           </Route>

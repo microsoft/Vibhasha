@@ -4,8 +4,9 @@
 export const docEntries = [
   {
     "path": "/playbook/00-introduction",
-    "label": "Introduction",
+    "label": "Getting Started",
     "base": "00-introduction",
+    "content": "/public/chapters/00-introduction.md",
     "prefix": "00",
     "isSub": false,
     "icon": "Document24Regular"
@@ -14,6 +15,7 @@ export const docEntries = [
     "path": "/playbook/01-evaluation",
     "label": "Evaluation",
     "base": "01-evaluation",
+    "content": "/public/chapters/01-evaluation.md",
     "prefix": "01",
     "isSub": false,
     "icon": "Document24Regular"
@@ -22,46 +24,61 @@ export const docEntries = [
     "path": "/playbook/01-i-methodologies",
     "label": "Methodologies",
     "base": "01-i-methodologies",
+    "content": "/public/chapters/01-i-methodologies.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-ii-low-resource",
-    "label": "Low Resource",
-    "base": "01-ii-low-resource",
+    "path": "/playbook/01-ii-pipeline",
+    "label": "Eval in Practice",
+    "base": "01-ii-pipeline",
+    "content": "/public/chapters/01-ii-pipeline.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-iii-advisory",
+    "path": "/playbook/01-iii-low-resource",
+    "label": "Low-Resource MT",
+    "base": "01-iii-low-resource",
+    "content": "/public/chapters/01-iii-low-resource.md",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/01-iv-advisory",
     "label": "Advisory",
-    "base": "01-iii-advisory",
+    "base": "01-iv-advisory",
+    "content": "/public/chapters/01-iv-advisory.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-iv-scenarios",
+    "path": "/playbook/01-v-scenarios",
     "label": "Scenarios",
-    "base": "01-iv-scenarios",
+    "base": "01-v-scenarios",
+    "content": "/public/chapters/01-v-scenarios.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-v-datasets",
-    "label": "V Datasets",
-    "base": "01-v-datasets",
+    "path": "/playbook/01-vi-datasets",
+    "label": "Datasets",
+    "base": "01-vi-datasets",
+    "content": "/public/chapters/01-vi-datasets.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
   },
   {
-    "path": "/playbook/01-vi-challenges",
-    "label": "Vi Challenges",
-    "base": "01-vi-challenges",
+    "path": "/playbook/01-vii-challenges",
+    "label": "Challenges",
+    "base": "01-vii-challenges",
+    "content": "/public/chapters/01-vii-challenges.md",
     "prefix": "01",
     "isSub": true,
     "icon": null
@@ -70,14 +87,16 @@ export const docEntries = [
     "path": "/playbook/02-translation",
     "label": "Translation",
     "base": "02-translation",
+    "content": "/public/chapters/02-translation.md",
     "prefix": "02",
     "isSub": false,
     "icon": "Document24Regular"
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
-    "label": "Strategic Crossroads",
+    "label": "Crossroads",
     "base": "02-i-strategic-crossroads",
+    "content": "/public/chapters/02-i-strategic-crossroads.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -86,6 +105,7 @@ export const docEntries = [
     "path": "/playbook/02-ii-architectures",
     "label": "Architectures",
     "base": "02-ii-architectures",
+    "content": "/public/chapters/02-ii-architectures.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -94,6 +114,7 @@ export const docEntries = [
     "path": "/playbook/02-iii-adaptation",
     "label": "Adaptation",
     "base": "02-iii-adaptation",
+    "content": "/public/chapters/02-iii-adaptation.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -102,22 +123,25 @@ export const docEntries = [
     "path": "/playbook/02-iv-quality-assurance",
     "label": "Quality Assurance",
     "base": "02-iv-quality-assurance",
+    "content": "/public/chapters/02-iv-quality-assurance.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/02-v-cultural-nuance",
-    "label": "V Cultural Nuance",
+    "label": "Cultural Nuance",
     "base": "02-v-cultural-nuance",
+    "content": "/public/chapters/02-v-cultural-nuance.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/02-vi-recommendations",
-    "label": "Vi Recommendations",
+    "label": "Recommendations",
     "base": "02-vi-recommendations",
+    "content": "/public/chapters/02-vi-recommendations.md",
     "prefix": "02",
     "isSub": true,
     "icon": null
@@ -126,6 +150,7 @@ export const docEntries = [
     "path": "/playbook/04-fine-tuning",
     "label": "Fine Tuning",
     "base": "04-fine-tuning",
+    "content": "/public/chapters/04-fine-tuning.md",
     "prefix": "04",
     "isSub": false,
     "icon": "Document24Regular"
@@ -134,6 +159,7 @@ export const docEntries = [
     "path": "/playbook/04-i-pipeline",
     "label": "Pipeline",
     "base": "04-i-pipeline",
+    "content": "/public/chapters/04-i-pipeline.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -142,6 +168,7 @@ export const docEntries = [
     "path": "/playbook/04-ii-methodologies",
     "label": "Methodologies",
     "base": "04-ii-methodologies",
+    "content": "/public/chapters/04-ii-methodologies.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -150,6 +177,7 @@ export const docEntries = [
     "path": "/playbook/04-iii-data-engineering",
     "label": "Data Engineering",
     "base": "04-iii-data-engineering",
+    "content": "/public/chapters/04-iii-data-engineering.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -158,22 +186,25 @@ export const docEntries = [
     "path": "/playbook/04-iv-alignment",
     "label": "Alignment",
     "base": "04-iv-alignment",
+    "content": "/public/chapters/04-iv-alignment.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/04-v-quality",
-    "label": "V Quality",
+    "label": "Quality",
     "base": "04-v-quality",
+    "content": "/public/chapters/04-v-quality.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/04-vi-implementation",
-    "label": "Vi Implementation",
+    "label": "Implementation",
     "base": "04-vi-implementation",
+    "content": "/public/chapters/04-vi-implementation.md",
     "prefix": "04",
     "isSub": true,
     "icon": null
@@ -182,6 +213,7 @@ export const docEntries = [
     "path": "/playbook/05-safety",
     "label": "Safety",
     "base": "05-safety",
+    "content": "/public/chapters/05-safety.md",
     "prefix": "05",
     "isSub": false,
     "icon": "Document24Regular"
@@ -190,6 +222,7 @@ export const docEntries = [
     "path": "/playbook/05-i-vulnerabilities",
     "label": "Vulnerabilities",
     "base": "05-i-vulnerabilities",
+    "content": "/public/chapters/05-i-vulnerabilities.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -198,6 +231,7 @@ export const docEntries = [
     "path": "/playbook/05-ii-benchmarks",
     "label": "Benchmarks",
     "base": "05-ii-benchmarks",
+    "content": "/public/chapters/05-ii-benchmarks.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -206,6 +240,7 @@ export const docEntries = [
     "path": "/playbook/05-iii-red-teaming",
     "label": "Red Teaming",
     "base": "05-iii-red-teaming",
+    "content": "/public/chapters/05-iii-red-teaming.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -214,6 +249,7 @@ export const docEntries = [
     "path": "/playbook/05-iv-toolkits",
     "label": "Toolkits",
     "base": "05-iv-toolkits",
+    "content": "/public/chapters/05-iv-toolkits.md",
     "prefix": "05",
     "isSub": true,
     "icon": null
@@ -222,6 +258,7 @@ export const docEntries = [
     "path": "/playbook/06-synthetic-data",
     "label": "Synthetic Data",
     "base": "06-synthetic-data",
+    "content": "/public/chapters/06-synthetic-data.md",
     "prefix": "06",
     "isSub": false,
     "icon": "Document24Regular"
@@ -230,6 +267,7 @@ export const docEntries = [
     "path": "/playbook/06-i-approaches",
     "label": "Approaches",
     "base": "06-i-approaches",
+    "content": "/public/chapters/06-i-approaches.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -238,6 +276,7 @@ export const docEntries = [
     "path": "/playbook/06-ii-quality",
     "label": "Quality",
     "base": "06-ii-quality",
+    "content": "/public/chapters/06-ii-quality.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -246,6 +285,7 @@ export const docEntries = [
     "path": "/playbook/06-iii-evaluation",
     "label": "Evaluation",
     "base": "06-iii-evaluation",
+    "content": "/public/chapters/06-iii-evaluation.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -254,14 +294,16 @@ export const docEntries = [
     "path": "/playbook/06-iv-case-study",
     "label": "Case Study",
     "base": "06-iv-case-study",
+    "content": "/public/chapters/06-iv-case-study.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/06-v-implementation",
-    "label": "V Implementation",
+    "label": "Implementation",
     "base": "06-v-implementation",
+    "content": "/public/chapters/06-v-implementation.md",
     "prefix": "06",
     "isSub": true,
     "icon": null
@@ -270,6 +312,7 @@ export const docEntries = [
     "path": "/playbook/07-culture",
     "label": "Culture",
     "base": "07-culture",
+    "content": "/public/chapters/07-culture.md",
     "prefix": "07",
     "isSub": false,
     "icon": "Document24Regular"
@@ -278,6 +321,7 @@ export const docEntries = [
     "path": "/playbook/07-i-frameworks",
     "label": "Frameworks",
     "base": "07-i-frameworks",
+    "content": "/public/chapters/07-i-frameworks.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -286,6 +330,7 @@ export const docEntries = [
     "path": "/playbook/07-ii-data-benchmarks",
     "label": "Data Benchmarks",
     "base": "07-ii-data-benchmarks",
+    "content": "/public/chapters/07-ii-data-benchmarks.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -294,6 +339,7 @@ export const docEntries = [
     "path": "/playbook/07-iii-modeling",
     "label": "Modeling",
     "base": "07-iii-modeling",
+    "content": "/public/chapters/07-iii-modeling.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
@@ -302,30 +348,34 @@ export const docEntries = [
     "path": "/playbook/07-iv-prompt-engineering",
     "label": "Prompt Engineering",
     "base": "07-iv-prompt-engineering",
+    "content": "/public/chapters/07-iv-prompt-engineering.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/07-v-evaluation",
-    "label": "V Evaluation",
+    "label": "Evaluation",
     "base": "07-v-evaluation",
+    "content": "/public/chapters/07-v-evaluation.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/07-vi-conclusion",
-    "label": "Vi Conclusion",
+    "label": "Conclusion",
     "base": "07-vi-conclusion",
+    "content": "/public/chapters/07-vi-conclusion.md",
     "prefix": "07",
     "isSub": true,
     "icon": null
   },
   {
     "path": "/playbook/99-conclusion",
-    "label": "Conclusion",
+    "label": "Moving Forward",
     "base": "99-conclusion",
+    "content": "/public/chapters/99-conclusion.md",
     "prefix": "99",
     "isSub": false,
     "icon": "Document24Regular"
@@ -334,6 +384,7 @@ export const docEntries = [
     "path": "/playbook/100-attribution",
     "label": "Attribution",
     "base": "100-attribution",
+    "content": "/public/chapters/100-attribution.md",
     "prefix": null,
     "isSub": false,
     "icon": "Document24Regular"
@@ -343,7 +394,7 @@ export const docEntries = [
 export const docOrder = [
   {
     "path": "/playbook/00-introduction",
-    "label": "Introduction"
+    "label": "Getting Started"
   },
   {
     "path": "/playbook/01-evaluation",
@@ -354,24 +405,28 @@ export const docOrder = [
     "label": "Methodologies"
   },
   {
-    "path": "/playbook/01-ii-low-resource",
-    "label": "Low Resource"
+    "path": "/playbook/01-ii-pipeline",
+    "label": "Eval in Practice"
   },
   {
-    "path": "/playbook/01-iii-advisory",
+    "path": "/playbook/01-iii-low-resource",
+    "label": "Low-Resource MT"
+  },
+  {
+    "path": "/playbook/01-iv-advisory",
     "label": "Advisory"
   },
   {
-    "path": "/playbook/01-iv-scenarios",
+    "path": "/playbook/01-v-scenarios",
     "label": "Scenarios"
   },
   {
-    "path": "/playbook/01-v-datasets",
-    "label": "V Datasets"
+    "path": "/playbook/01-vi-datasets",
+    "label": "Datasets"
   },
   {
-    "path": "/playbook/01-vi-challenges",
-    "label": "Vi Challenges"
+    "path": "/playbook/01-vii-challenges",
+    "label": "Challenges"
   },
   {
     "path": "/playbook/02-translation",
@@ -379,7 +434,7 @@ export const docOrder = [
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
-    "label": "Strategic Crossroads"
+    "label": "Crossroads"
   },
   {
     "path": "/playbook/02-ii-architectures",
@@ -395,11 +450,11 @@ export const docOrder = [
   },
   {
     "path": "/playbook/02-v-cultural-nuance",
-    "label": "V Cultural Nuance"
+    "label": "Cultural Nuance"
   },
   {
     "path": "/playbook/02-vi-recommendations",
-    "label": "Vi Recommendations"
+    "label": "Recommendations"
   },
   {
     "path": "/playbook/04-fine-tuning",
@@ -423,11 +478,11 @@ export const docOrder = [
   },
   {
     "path": "/playbook/04-v-quality",
-    "label": "V Quality"
+    "label": "Quality"
   },
   {
     "path": "/playbook/04-vi-implementation",
-    "label": "Vi Implementation"
+    "label": "Implementation"
   },
   {
     "path": "/playbook/05-safety",
@@ -471,7 +526,7 @@ export const docOrder = [
   },
   {
     "path": "/playbook/06-v-implementation",
-    "label": "V Implementation"
+    "label": "Implementation"
   },
   {
     "path": "/playbook/07-culture",
@@ -495,15 +550,15 @@ export const docOrder = [
   },
   {
     "path": "/playbook/07-v-evaluation",
-    "label": "V Evaluation"
+    "label": "Evaluation"
   },
   {
     "path": "/playbook/07-vi-conclusion",
-    "label": "Vi Conclusion"
+    "label": "Conclusion"
   },
   {
     "path": "/playbook/99-conclusion",
-    "label": "Conclusion"
+    "label": "Moving Forward"
   },
   {
     "path": "/playbook/100-attribution",

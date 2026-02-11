@@ -42,23 +42,6 @@
   font-size: 28px
 }
 
-.hero-search input {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, .12);
-  height: 40px;
-}
-
-.hero-search .search-btn {
-  background-color: var(--color-header-bg);
-  color: var(--color-header-text);
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  height: 40px;
-}
-
 
 .intro-heading {
   margin: 12px 0;

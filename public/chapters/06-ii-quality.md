@@ -1,6 +1,6 @@
-## Quality Assurance in Synthetic Data
+## 6.2 Quality assurance in synthetic data
 
-### The Quality Imperative
+### 6.2.1 The quality imperative
 
 The effectiveness of synthetic data directly correlates with its quality. Poor-quality synthetic data can actively harm model performance, introducing biases, factual errors, and linguistic patterns that degrade rather than enhance model capabilities.
 
@@ -14,7 +14,7 @@ The effectiveness of synthetic data directly correlates with its quality. Poor-q
     **Factual Inconsistency**  
     Synthetic data may contain hallucinated facts that models then learn as truth
 
-### Multi-Layered Quality Assessment
+### 6.2.2 Multi-layered quality assessment
 
 Effective quality assurance requires both automated metrics and human evaluation, implemented at multiple stages of the generation pipeline:
 
@@ -29,6 +29,4 @@ Effective quality assurance requires both automated metrics and human evaluation
     - Native speaker evaluation for naturalness and appropriateness
     - Cultural expert review for authentic representation
     - Domain specialist validation for technical accuracy
-
----
 

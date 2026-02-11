@@ -1,6 +1,6 @@
-# The Cultural Dimension of Multilingual NLP: Strategies for Alignment and Equity
+# The cultural dimension of multilingual NLP: strategies for alignment and equity
 
-!!! quote "The Cultural Imperative"
+!!! info "The Cultural Imperative"
     True multilingual AI requires more than linguistic fluency—it demands deep cultural competence that respects diverse worldviews, values, and social norms. **Cultural awareness transforms LLMs from mere translation tools into culturally intelligent systems.**
 
 ---
@@ -9,7 +9,7 @@
 
 Cultural awareness in Natural Language Processing (NLP) represents a fundamental shift away from merely achieving linguistic competence toward mastering socio-pragmatic behavioral alignment. For large language models (LLMs) to serve global populations effectively, they must internalize and appropriately express the complex systems of shared beliefs, norms, and behavioral standards that define human societies.
 
-!!! danger "Cultural Bias Risks"
+!!! warning "Cultural Bias Risks"
     - **Algorithmic Monoculture**: Western-centric training data creates inherent cultural bias; Single set of values imposed as universal standards
     - **Cultural Homogenization**: "WEIRD" perspectives marginalize diverse worldviews
     - **Language Loss**: 40% of world's languages missing from AI systems
@@ -18,9 +18,9 @@ This chapter provides comprehensive strategies for building culturally aware mul
 
 ---
 
-## Establishing the Cultural Imperative in Global NLP
+## Establishing the cultural imperative in global NLP
 
-### Delineating Culture and Multilinguality in the NLP Context
+### Delineating culture and multilinguality in the NLP context
 
 While multilinguality addresses the surface-level variations of language—grammar, syntax, and vocabulary—cultural awareness necessitates recognizing and adapting to shared human knowledge and complex social rules. 
 
@@ -39,25 +39,25 @@ Many models, while linguistically proficient, struggle with context-dependent ta
 !!! warning "Cross-Cultural Modeling Challenge"
     Most existing studies examine cultural elements in isolation, failing to analyze similarities and differences between groups. This isolated approach hinders genuine multicultural dataset development and risks flattening distinct cultural identities through over-generalization.
 
-### The Ethical and Societal Risks of Monocultural AI Systems
+### The ethical and societal risks of monocultural AI systems
 
 The widespread deployment of LLMs, which are predominantly trained on vast quantities of English-language and Western-centric data, introduces profound ethical and societal hazards.
 
-!!! danger "The Algorithmic Monoculture Problem"
+!!! warning "The Algorithmic Monoculture Problem"
     This foundation fosters an **algorithmic monoculture**, leading to systems that exhibit inherent cultural value bias directly attributable to:
     
     - **Training Data Dominance**: Primarily English corpora
     - **Fine-tuning Methods**: Western-centric alignment techniques  
     - **Market Uniformity**: Homogeneous LLM development approaches
 
-#### Digital Colonialism Through AI
+#### Digital colonialism through AI
 
 This monolithic development trajectory risks a new form of **digital colonialism**, where a single set of values, frequently emphasizing individualism and Anglo-Saxon norms, is inadvertently promoted as the universal standard or "correct" way of thought.
 
-!!! failure "The WEIRD Problem"
+!!! warning "The WEIRD Problem"
     Researchers identify this as cultural homogenization or "global weirdization"—where Western, Educated, Industrialized, Rich, and Democratic (WEIRD) perspectives are reinforced, creating systems that marginalize non-WEIRD ways of conceptualizing fundamental concepts like time, space, and causality.
 
-#### Severe Consequences of Cultural Bias
+#### Severe consequences of cultural bias
 
 !!! warning "Systemic Impact"
     **Beyond Simple Inaccuracy**: The problem transcends factual errors like misidentifying popular activities—it involves imposing Western cognitive frameworks upon global users.
@@ -70,6 +70,4 @@ This monolithic development trajectory risks a new form of **digital colonialism
     **Linguistic Loss**: Absence of over 40% of the world's languages from AI systems accelerates their disappearance and reinforces Western technological dominance.
 
 Currently, documented negative impacts of LLM-driven homogenization significantly outweigh evidence of successfully fostering diversity. This gap requires urgent, explicit attention to inclusivity in the AI design, data, and development pipeline.
-
----
 

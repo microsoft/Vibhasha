@@ -1,12 +1,15 @@
-## Evaluation and Quality Assurance
+## 2.4 Evaluation and quality assurance
 
-Measuring the success of a multilingual, translation-based system is a non-trivial challenge. It requires a **multi-stage evaluation framework** that can diagnose issues at different points in the pipeline and account for qualitative aspects of language that automated metrics often miss.
+Quality assurance is one of the most important parts of building a multilingual system. Strong translation patterns and thoughtful prompting help, but they are not enough on their own. You need a process that ensures outputs are accurate, culturally appropriate, safe, and consistent across languages. This section explains how to evaluate and refine multilingual quality before your system reaches real users.
 
-### Establishing Ground Truth: A Fundamental Choice
+!!! success "See also"
+    For a broader and more detailed treatment of multilingual evaluation—covering LLM-as-judge pipelines, metric rubrics, calibration, dataset discovery, and common challenges—refer to the [Evaluation chapter](/playbook/01-evaluation). 
+
+### 2.4.1 Establishing ground truth: a fundamental choice
 
 A critical decision in the evaluation process is the choice of the **ground truth (GT)**—the human-created reference against which the system's output is compared.
 
-!!! question "Two Evaluation Approaches"
+!!! info "Two Evaluation Approaches"
     The choice between these approaches reflects the core objective of your system.
 
 === "Source Language Ground Truth"
@@ -41,11 +44,11 @@ A critical decision in the evaluation process is the choice of the **ground trut
     - **English GT**: Intrinsic, system-internal measure for optimizing core LLM and prompt engineering[^72][^73]
     - **Source GT**: Extrinsic, user-centric measure for validating final product quality[^72][^73]
 
-### Automated Evaluation Metrics
+### 2.4.2 Automated evaluation metrics
 
 Automated metrics provide scalable performance tracking during development, but understanding their limitations is crucial.
 
-#### Metric Categories
+#### Metric categories
 
 === "Lexical Overlap Metrics"
     **Examples**: BLEU, ROUGE
@@ -68,9 +71,9 @@ Automated metrics provide scalable performance tracking during development, but 
         - ✅ Better assess preservation of meaning
         - ✅ More suitable for modern LLM outputs[^74][^75][^76]
 
-#### The Fluency Illusion Problem
+#### The fluency illusion problem
 
-!!! danger "Critical Limitation of Automated Metrics"
+!!! warning "Critical Limitation of Automated Metrics"
     Modern LLMs excel at producing **fluent, grammatically correct, plausible-sounding text**.[^76]
     
     **The Problem**: Metrics like COMET (themselves based on LLMs) can be biased towards fluency, assigning high scores to translations that are:
@@ -82,9 +85,9 @@ Automated metrics provide scalable performance tracking during development, but 
     
     **Conclusion**: Human oversight is **more critical than ever**, as only humans with real-world knowledge can reliably detect these nuanced failures.[^72][^77]
 
-### Human-in-the-Loop Evaluation
+### 2.4.3 Human-in-the-loop evaluation
 
-!!! important "The Gold Standard"
+!!! info "The Gold Standard"
     Given the limitations of automated metrics, **human evaluation remains essential** for assessing translation quality, especially for high-stakes or user-facing content.
 
 **What Automated Metrics Cannot Reliably Measure:**
@@ -94,7 +97,7 @@ Automated metrics provide scalable performance tracking during development, but 
 - 🎯 Preservation of subtle meaning
 - 🌍 Local customs and sensitivities[^72][^78][^79]
 
-#### Human Evaluation Criteria
+#### Human evaluation criteria
 
 A robust human evaluation process involves **native speakers** judging outputs based on well-defined criteria:
 
@@ -119,6 +122,4 @@ A robust human evaluation process involves **native speakers** judging outputs b
     Does the translation respect local customs, social norms, and sensitivities, avoiding potentially offensive or confusing language?[^79][^80]
 
 </div>
-
----
 

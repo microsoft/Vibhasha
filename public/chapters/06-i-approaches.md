@@ -1,10 +1,10 @@
-## Strategic Approaches to Synthetic Data Generation
+## 6.1 Strategic approaches to synthetic data generation
 
 The generation of high-quality multilingual synthetic data requires careful consideration of both technical methodology and linguistic authenticity. Two primary strategic approaches have emerged, each with distinct advantages and use cases.
 
 ![Multilingual Synthetic Data Framework](../assets/01_evaluation/Framework_figure-Multilingual-Synthetic-Data-Framework.png)
 
-### Top-Down Translation Approach
+### 6.1.1 Top-down translation approach
 
 The **top-down paradigm** represents the most straightforward approach to multilingual synthetic data generation: translating existing high-quality English datasets into target languages.
 
@@ -31,7 +31,7 @@ The **top-down paradigm** represents the most straightforward approach to multil
     **Domain Mismatch**  
     English-centric examples may not reflect target language cultural contexts or domain knowledge
 
-### Bottom-Up Cultural Grounding
+### 6.1.2 Bottom-up cultural grounding
 
 The **bottom-up approach** generates data directly in target languages using culturally relevant sources and context-aware prompting strategies.
 
@@ -40,11 +40,11 @@ The **bottom-up approach** generates data directly in target languages using cul
     
     **Key Innovation:** Grounding data generation in **language-specific Wikipedia content** rather than translating from English sources.
 
-#### The Updesh Methodology
+#### The Updesh methodology
 
 The Updesh framework represents a paradigm shift in multilingual synthetic data generation, leveraging large open-source LLMs (≥235B parameters) with culturally-grounded prompting:
 
-!!! example "Bottom-Up Generation Process"
+!!! info "Bottom-Up Generation Process"
     **1. Cultural Context Seeding**  
     Use language-specific Wikipedia articles as cultural and factual grounding for generation prompts
     
@@ -57,7 +57,7 @@ The Updesh framework represents a paradigm shift in multilingual synthetic data 
     **4. Diverse Task Coverage**  
     Cover reasoning, generative tasks, and instruction-following with cultural authenticity
 
-#### Empirical Evidence for Bottom-Up Superiority
+#### Empirical evidence for bottom-up superiority
 
 The Updesh research provides compelling evidence for the effectiveness of culturally-grounded generation:
 
@@ -68,7 +68,7 @@ The Updesh research provides compelling evidence for the effectiveness of cultur
     - **Most pronounced gains** in low and medium-resource languages
     - **Narrowed performance gap** between high-resource and low-resource languages
 
-### Understanding Generation Paradigms
+### 6.1.3 Understanding generation paradigms
 
 !!! info "Generation Strategy Selection"
     The choice between top-down and bottom-up approaches should be driven by:
@@ -80,6 +80,4 @@ The Updesh research provides compelling evidence for the effectiveness of cultur
     - **Cultural authenticity requirements**
 
 **Hybrid Strategies** can effectively combine both approaches, using top-down methods for rapid prototyping and bottom-up methods for cultural refinement and specialized domains.
-
----
 

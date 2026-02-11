@@ -1,75 +1,130 @@
-## Summary and Strategic Recommendations
+## 2.6 Summary and strategic recommendations
 
-Leveraging translation to unlock the power of English-centric LLMs for global applications is a potent but complex strategy. Successful implementation requires nuanced understanding of trade-offs, sophisticated workflow architecture, and rigorous commitment to evaluation and cultural adaptation.
+Choosing the right multilingual strategy is not about finding a single perfect method. It is about selecting the approach that fits your languages, your users, your constraints, and your goals. This section brings together everything covered so far and translates it into practical, actionable guidance. 
 
-!!! success "Key Strategic Recommendations"
+These recommendations help you build multilingual systems that are accurate, culturally aligned, and ready for real-world use. 
 
-    === "1. Adopt a Dynamic, Tiered Strategy"
-        **Principle**: No single "best" approach for all languages and tasks
-        
-        **Framework**:
-        - ✅ Begin with **direct inference** as the default
-        - ⚠️ For poor-performing languages (especially identified LRLs like Bambara, Quechua), pivot to translation
-        - 🔄 Continuously re-evaluate as more capable multilingual models emerge
+### 2.6.1 Adopt a dynamic, layered strategy
 
-    === "2. Prioritize Selective Pre-translation"
-        **Principle**: Avoid blunt full-translation approach
-        
-        **Implementation**:
-        - 🧩 Adopt **modular prompt architecture**
-        - 📋 Separate: instructions, context, examples, output
-        - 🎯 Tailor translation based on task type:
-            - **Extractive**: Keep context in source language
-            - **Abstractive**: Generate output in English
-        
-        **Result**: 100-200% performance gains for LRLs
+There is no universal best choice for multilingual AI. Instead, treat multilingual work as a set of adaptable tactics. Start with the simplest approach, evaluate its strengths and weaknesses, then layer in more advanced strategies when needed.
 
-    === "3. Treat Translation as Core Component"
-        **Principle**: Translation is not a static external dependency
-        
-        **Actions**:
-        - 🔧 **Fine-tune MT models** using LoRA for key domains
-        - 📊 Integrate into **MLOps lifecycle**
-        - 🔄 Dedicated processes for training, versioning, evaluation
-        
-        **Benefit**: Substantial performance improvements for specialized domains
+Most teams use a combination of:
 
-    === "4. Implement Multi-Stage Evaluation"
-        **Principle**: Automated metrics alone are insufficient
-        
-        **Framework**:
-        - 🤖 Use **COMET** for continuous performance tracking
-        - 👥 Implement rigorous **human-in-the-loop review**
-        - ✅ Validate: adequacy, fluency, cultural nuance
-        - 📊 Evaluate both intermediate English and final source-language outputs
-        
-        **Goal**: Diagnose entire pipeline effectively
+- Direct prompting for mid to high-resource languages
+- Selective translation for low-resource languages
+- Fine-tuning for domain depth
+- Guardrails and evaluation for stability
 
-    === "5. Architect for Resilience"
-        **Principle**: Proactively mitigate error propagation
-        
-        **Strategies**:
-        - 📚 Implement **RAG with domain-specific knowledge bases**
-        - 🎯 Ground outputs in factual data
-        - 🔄 Design **iterative debugging loops**
-        - ⚡ Self-correct in-process vs. costly post-editing
-        
-        **Result**: Reduced hallucinations and terminology errors
+Approaching multilingual development as a flexible ecosystem will make your system more resilient and easier to evolve over time.
 
-    === "6. Never Underestimate Cultural Context"
-        **Principle**: Most damaging errors escape automated detection
-        
-        **Critical Actions**:
-        - 🎯 Use selective translation to protect culturally rich content
-        - 📝 Provide explicit contextual cues in prompts
-        - 👥 Engage **transcreation experts** for high-value creative content
-        - 🌍 Ensure messages resonate correctly and respectfully globally
-        
-        **Priority**: Paramount for user-facing applications
+### 2.6.2 Prioritize selective translation over full translation
+
+Full translation is easy to implement, but it often weakens accuracy, tone, and cultural alignment. Selective translation offers a more balanced and reliable approach by letting you:
+
+- Keep context in the original language
+- Translate only instructions
+- Let the model reason in English without distorting source content
+
+Selective translation consistently outperforms full translation for tasks involving nuance, cultural meaning, or long-form reasoning.
+
+Use full translation only for fast prototypes or well-supported languages.
+
+### 2.6.3 Treat translation as a core component, not an afterthought
+
+If translations are part of your workflow, invest in their quality. Better translation leads directly to better model performance.
+
+Strengthen your translation pipeline by:
+
+- Fine-tuning translation models for your domain
+- Creating multilingual glossaries and terminology lists
+- Adding validation steps to catch early errors
+- Pairing translations with native-speaker review when possible
+
+High-quality translation is a force multiplier for every downstream model task.
+
+### 2.6.4 Use evaluation at multiple stages
+
+Do not wait until the end of development to test multilingual quality. Instead, evaluate often and across languages.
+
+Strong multilingual evaluation includes:
+
+- Native-speaker review for high-importance tasks
+- Automated checks for consistency and format
+- LLM-based judging calibrated against human evaluations
+- Stress tests for low-resource languages
+- Safety-specific testing in every supported language
+
+This layered approach helps you detect issues early and prevents quality regressions.
+
+### 2.6.5 Build for safety across languages
+
+Safety mechanisms built for English do not automatically transfer to other languages. Rates of harmful content can be significantly higher in low-resource languages, and jailbreak attempts succeed more often when prompts mix languages.
+
+To guard against these failures:
+
+- Test safety responses in every language
+- Use multilingual adversarial prompts
+- Apply cross-lingual safety filters
+- Include native speakers in red-team reviews
+- Avoid relying solely on English safety behavior
+
+Safety must be implemented with cultural knowledge, not simply translated rules.
+
+### 2.6.6 Use fine-tuning when you need cultural depth or domain accuracy
+
+Off-the-shelf prompting and translation can get you far. But when your system must understand culturally specific expressions, specialized terminology, or regulated content, fine-tuning provides unmatched control.
+
+Fine-tune when you need:
+
+- Consistent brand voice
+- Precise terminology
+- Industry-specific knowledge
+- Cultural sensitivity
+- Privacy or on-prem operation
+
+Fine-tuning smaller models with LoRA or similar methods is cost-efficient and often outperforms much larger general-purpose models on targeted tasks.
+
+### 2.6.7 Leverage synthetic data carefully and purposefully
+
+Synthetic data can fill gaps for low-resource languages, but it must be used thoughtfully.
+
+Best practices include:
+
+- Generate synthetic data with clear guidelines
+- Validate with native-speaker review
+- Avoid over-reliance that reinforces model bias
+- Pair synthetic data with real examples when possible
+
+Synthetic data is a supplement, not a substitute.
+
+### 2.6.8 Document your patterns and workflows
+
+Multilingual AI introduces complexity across prompts, languages, translation rules, evaluation, and guardrails. Documenting your decisions helps:
+
+- Maintain consistency across teams
+- Share best practices
+- Avoid regressions
+- Scale to new languages
+- Enable fast iteration
+
+Clear documentation becomes especially important as your multilingual system grows.
+
+### 2.6.9 Key takeaways
+
+- Multilingual development requires flexible, layered strategies.
+- Selective translation is often the best balance of performance and cultural fidelity.
+- Translation quality directly affects system quality.
+- Evaluation must be multilingual, frequent, and human-in-the-loop.
+- Safety must be tested across languages, not assumed from English behavior.
+- Fine-tuning is essential for domain depth and cultural alignment.
+- Synthetic data helps fill gaps but must be validated.
+- Documentation keeps systems reliable as they scale.
+
+These recommendations help ensure that your multilingual system remains accurate, culturally appropriate, safe, and sustainable as it expands.
 
 ---
 
-## Next Steps
+## Next steps
 
 !!! info "Continue Your Journey"
     

@@ -6,7 +6,7 @@ import './styles/MarkdownPage.css';
 import './styles/MkDocsMaterial.css';
 import Hero from './Hero';
 import { ChevronRight24Regular } from '@fluentui/react-icons';
-import PageSearch from './PageSearch';
+import GlobalSearch from './Search.jsx';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
 import ReactMarkdown from 'react-markdown';
@@ -31,6 +31,7 @@ function preprocessMarkdown(rawContent) {
 
 export default function PlaybookIntro(){
   const { appName, appSubtitle, colors, brandImage } = useTheme();
+  const [searchActive, setSearchActive] = useState(false);
   const navigate = useNavigate();
   const [markdownContent, setMarkdownContent] = useState('');
   const [processedContent, setProcessedContent] = useState('');
@@ -168,8 +169,9 @@ export default function PlaybookIntro(){
 
   return (
   <div  className="intro-root">
-    <PageSearch containerSelector=".intro-root" />
-    <div>
+    <GlobalSearch onSearchActiveChange={setSearchActive} />
+    {!searchActive && (
+      <div>
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
@@ -178,29 +180,6 @@ export default function PlaybookIntro(){
       />
 
       <section className="intro-body">
-        <h2 className="intro-heading">Best Practices</h2>
-        <p className="intro-text">
-          This playbook shares practical guidance for building and evaluating models, with attention to data diversity,
-          generalization, and deployment considerations. Explore the chapters below or use the sidebar for section jumps.
-        </p>
-        <div className="intro-chapters">
-          {overviewChapters.map(c => (
-            <button
-              key={c.to}
-              className="chapter-btn"
-              onClick={(e)=>{e.preventDefault(); navigate(c.to);}}
-            >
-              <span className="chapter-btn-text">
-                <SidebarIcon name={c.icon} />
-                {c.label}
-              </span>
-              <span className="chapter-arrow" aria-hidden>
-                <ChevronRight24Regular />
-              </span>
-            </button>
-          ))}
-        </div>
-
         {/* Render landing page markdown content */}
         {processedContent && (
           <div className="markdown-body intro-markdown">
@@ -214,6 +193,7 @@ export default function PlaybookIntro(){
         )}
       </section>
     </div>
+    )}
   </div>
   );
 }

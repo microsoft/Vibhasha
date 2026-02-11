@@ -1,8 +1,8 @@
-## Conclusion
+## 7.6 Conclusion
 
 The integration of culture into multilingual NLP is a strategic imperative that moves beyond linguistic parity to demand behavioral and socio-pragmatic alignment. The current technological landscape is marked by inherent cultural bias rooted in training data that reinforces Western cognitive styles, risking homogenization and digital exclusion.
 
-### Multi-Layered Mitigation Approach
+### 7.6.1 Multi-layered mitigation approach
 
 Successfully addressing these risks requires adopting a comprehensive strategy:
 
@@ -17,9 +17,9 @@ Successfully addressing these risks requires adopting a comprehensive strategy:
     
     **Rigorous Evaluation**: Adopt advanced LLM-based evaluation (LAVE) and human protocols prioritizing the Emic perspective
 
-### Future Direction
+### 7.6.2 Future direction
 
-!!! quote "The Path Forward"
+!!! info "The Path Forward"
     The future success of global NLP deployment depends on integrating these prescriptive strategies to ensure that LLMs become equitable, inclusive tools that serve all communities, rather than amplifying existing global digital and cultural divides.
 
 The goal is not just multilingual competence, but genuine multicultural intelligence that respects, understands, and appropriately responds to the rich diversity of human cultural expression worldwide.

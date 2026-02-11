@@ -1,6 +1,6 @@
-## Machine Translation Evaluation in Low-Resource Settings
+## 1.3 Machine translation evaluation in low-resource settings
 
-### Overview
+### 1.3.1 Overview
 
 Machine translation (MT) has made significant strides, yet its application in low-resource settings presents unique challenges, particularly concerning effective evaluation. These environments are characterized by a profound scarcity of linguistic data, which not only impedes the development of robust MT models but also complicates accurate assessment of their performance.
 
@@ -12,11 +12,11 @@ Machine translation (MT) has made significant strides, yet its application in lo
     - **Lack of annotated text** and speech data
     - **Insufficient high-quality human-generated reference translations** essential for most automated metrics
 
-### The Unique Challenges of Low-Resource MT
+### 1.3.2 The unique challenges of low-resource MT
 
 The fundamental lack of parallel data in low-resource contexts creates a detrimental feedback loop:
 
-!!! failure "The Low-Resource Feedback Loop"
+!!! warning "The Low-Resource Feedback Loop"
     1. **Training Challenge**: Limited data makes developing robust MT systems difficult
     2. **Evaluation Challenge**: Same data scarcity prevents reliable performance assessment
     3. **Development Barrier**: Cannot accurately measure progress or identify weaknesses
@@ -24,10 +24,10 @@ The fundamental lack of parallel data in low-resource contexts creates a detrime
 
 Furthermore, many low-resource languages exhibit inherent linguistic diversity, morphological richness, and typological complexity. This means that even the limited available data can be highly varied, making it challenging for MT models to generalize effectively and for evaluation metrics to accurately capture translation quality across a wide spectrum of linguistic phenomena.
 
-!!! danger "Critical Implication"
+!!! warning "Critical Implication"
     When reference data is limited or of poor quality, the reported evaluation scores **may not accurately reflect** the true performance of the MT system. This can lead to misinterpretations of model improvements or failures, creating a significant barrier to understanding where and how MT systems are truly performing.
 
-#### Why Robust Evaluation is Critical
+#### Why robust evaluation is critical
 
 Robust evaluation in machine translation transcends merely assigning a numerical score. It serves as:
 
@@ -59,7 +59,7 @@ Robust evaluation in machine translation transcends merely assigning a numerical
 
 </div>
 
-!!! tip "Resource Optimization in Low-Resource Contexts"
+!!! success "Resource Optimization in Low-Resource Contexts"
     In low-resource contexts, where every data point is valuable and development resources are severely constrained, **precise and insightful evaluation is paramount**. It helps in:
     
     - Prioritizing research efforts
@@ -69,11 +69,11 @@ Robust evaluation in machine translation transcends merely assigning a numerical
 
 **The ultimate objective**: Move beyond superficial aggregate scores to derive actionable information that directly contributes to tangible improvements in translation quality and utility.
 
-### Automated Evaluation Methods
+### 1.3.3 Automated evaluation methods
 
 Automated evaluation methods offer a scalable and reproducible way to assess MT quality without extensive human intervention. However, their effectiveness varies significantly, particularly in low-resource environments.
 
-#### N-gram Overlap Metrics (BLEU, ROUGE)
+#### N-gram overlap metrics (BLEU, ROUGE)
 
 N-gram overlap metrics quantify the lexical overlap between a machine translation output and one or more human-generated reference translations. They operate by counting shared n-grams, which are contiguous sequences of words.
 
@@ -110,7 +110,7 @@ N-gram overlap metrics quantify the lexical overlap between a machine translatio
     **Misleading Scores**  
     Low BLEU score might indicate limitation of evaluation setup (limited references) rather than poor translation quality
 
-!!! danger "The BLEU Paradox in Low-Resource Settings"
+!!! warning "The BLEU Paradox in Low-Resource Settings"
     BLEU fundamentally relies on exact word and phrase matches. In low-resource settings, limited references may not encompass the full range of linguistically valid translations. Consequently:
     
     - A semantically correct and fluent translation using synonyms/alternative phrasings **will be unfairly penalized**
@@ -119,7 +119,7 @@ N-gram overlap metrics quantify the lexical overlap between a machine translatio
     
     This underscores the urgent need for evaluation methods more robust to lexical variation and reference scarcity.
 
-#### Model Embedding-based Metrics (BERTScore, MoverScore)
+#### Model embedding-based metrics (BERTScore, MoverScore)
 
 These advanced metrics move beyond surface-level lexical matching by leveraging contextual word embeddings derived from large pre-trained language models (like BERT).
 
@@ -130,7 +130,7 @@ These advanced metrics move beyond surface-level lexical matching by leveraging 
     
     **Advantage**: Better captures semantic equivalence, recognizing synonyms and paraphrases even without exact word overlaps
     
-    **Implementation**: Available via `evaluate` library
+    **Implementation**: Available via **evaluate** library
 
 !!! success "MoverScore"
     **Mechanism**: Utilizes Word Mover's Distance (WMD) concept with contextual embeddings
@@ -148,14 +148,14 @@ These advanced metrics move beyond surface-level lexical matching by leveraging 
 - ✅ **Reduced Reference Sensitivity**: Less dependent on specific wording in references
 - ✅ **Higher Human Correlation**: Better alignment with human quality judgments
 
-!!! tip "Critical for Low-Resource Settings"
+!!! success "Critical for Low-Resource Settings"
     Traditional n-gram metrics are severely limited by lexical variation and scarcity of diverse references. **Semantic metrics like BERTScore and MoverScore address these limitations by focusing on meaning rather than exact word forms.**
     
     In low-resource environments, where the "correct" translation might have many valid phrasings not captured by a single reference, semantic metrics become **not merely an improvement but a fundamental necessity**.
 
 **Paradigm Shift Recommendation:**
 
-!!! important "New Evaluation Standard"
+!!! info "New Evaluation Standard"
     While n-gram metrics might still be reported for historical comparison, **semantic metrics should be considered the primary automated choice** for:
     
     - Tracking meaningful progress
@@ -164,7 +164,7 @@ These advanced metrics move beyond surface-level lexical matching by leveraging 
 
 
 
-#### LLM-as-Judge for MT Evaluation
+#### LLM-as-Judge for MT evaluation
 
 The advent of powerful Large Language Models (LLMs) has opened new avenues for MT quality assessment. This approach leverages the LLM's extensive linguistic knowledge, reasoning capabilities, and ability to understand nuanced instructions.
 
@@ -217,7 +217,7 @@ The advent of powerful Large Language Models (LLMs) has opened new avenues for M
     **Cost Considerations**  
     While cheaper than human evaluation at scale, frequent API calls can still incur significant costs and latency
 
-!!! danger "Amplified Risks in Low-Resource Settings"
+!!! warning "Amplified Risks in Low-Resource Settings"
     Human evaluation, though the gold standard, is prohibitively expensive and time-consuming, making scalable alternatives highly desirable, especially in resource-constrained low-resource settings. LLM-as-judge offers a compelling solution for scalable, nuanced evaluation.
     
     **However**, LLMs are known to exhibit various biases and their performance is highly sensitive to prompt engineering. In low-resource settings, where there might be:
@@ -230,7 +230,7 @@ The advent of powerful Large Language Models (LLMs) has opened new avenues for M
 
 **Critical Requirements for Low-Resource Application:**
 
-!!! important "Methodological Rigor Mandatory"
+!!! info "Methodological Rigor Mandatory"
     While LLM-as-judge represents a significant advancement, its application in low-resource MT evaluation demands a **heightened level of scrutiny and methodological sophistication**. Researchers and practitioners must invest heavily in:
     
     - ✅ Robust prompt engineering
@@ -239,14 +239,12 @@ The advent of powerful Large Language Models (LLMs) has opened new avenues for M
     
     Without this, the LLM's judgments might merely reflect its internal biases or training data artifacts, leading to misinformed development decisions.
 
-#### Comparative Analysis of Automated MT Evaluation Metrics
+#### Comparative analysis of automated MT evaluation metrics
 
 The following table summarizes the trade-offs between different automated evaluation approaches:
 
-| Metric Type | Core Principle | Key Strengths | Primary Limitations | Human Correlation | Low-Resource Suitability |
+| **Metric Type** | **Core Principle** | **Key Strengths** | **Primary Limitations** | **Human Correlation** | **Low-Resource Suitability** |
 |-------------|----------------|---------------|---------------------|-------------------|-------------------------|
 | **N-gram Overlap** (BLEU, ROUGE) | Lexical overlap; counting shared n-grams | Computationally efficient, widely adopted, reproducible, quick assessment | Highly dependent on exact matches; penalizes valid variations; sensitive to reference quality/quantity; poor correlation with nuanced judgment | Low to Moderate | ⚠️ **Limited** - Scores can be misleading due to scarce and undiverse references. Use with extreme caution, not as sole indicator. |
 | **Embedding-based** (BERTScore, MoverScore) | Semantic similarity using contextual word embeddings | Captures semantic equivalence, handles synonyms/paraphrases; robust to lexical variation; higher human correlation | More computationally intensive; requires pre-trained models; may miss some nuanced errors (e.g., factual errors with high semantic similarity) | Moderate to High | ✅ **Recommended** - More reliable for assessing meaning when reference diversity is limited. Should be primary automated metric. |
 | **LLM-as-Judge** | LLM evaluates quality based on prompts and linguistic knowledge | Highly scalable; nuanced, human-like feedback and error analysis; flexible criteria via prompt engineering | Prone to biases (length, position, model preference); consistency/reproducibility issues; high prompt dependency; can be costly/latent | Variable (potentially High, but bias-sensitive) | ⚠️ **Promising but risky** - Requires rigorous calibration and bias mitigation. Can offer scalable assessment if carefully validated against human data. |
-
----

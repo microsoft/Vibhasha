@@ -1,5 +1,6 @@
 .playbook-page {
   display: flex;
+  align-items: stretch;
 }
 
 .playbook-content {
@@ -8,6 +9,7 @@
 
 .sidebar-drawer {
   background: var(--color-sidebar-bg);
+  padding: 0 20px;
 }
 
 @media (max-width: 980px) {
@@ -16,5 +18,8 @@
   }
   .playbook-content {
     width: 100%;
+  }
+  .sidebar-drawer {
+    padding: 0;
   }
 }

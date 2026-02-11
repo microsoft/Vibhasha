@@ -13,7 +13,7 @@
 Building LLM-powered products for global markets, dealing with **chatbots**, **coding copilots**, and **AI assistants** that need to work across languages.
 
 **Researchers & Practitioners**  
-Working with **low-resource languages**, exploring **cross-lingual capabilities**, or studying **cultural AI alignment**.
+Working with **under-resourced languages**, exploring **cross-lingual capabilities**, or studying **cultural AI alignment**.
 
 **Product Teams**  
 Making strategic decisions about **multilingual AI features**, **localization strategies**, and **inclusive technology design**.
@@ -44,7 +44,7 @@ Adapt open-source models to your domain and culture. Ideal for specialized use c
 Address safety gaps in multilingual contexts. Critical for production deployments.
 
 **[Synthetic Data](/playbook/06-synthetic-data-overview)**  
-Generate training data for low-resource languages using systematic frameworks.
+Generate training data for under-resourced languages using systematic frameworks.
 
 ---
 

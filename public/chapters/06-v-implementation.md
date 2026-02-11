@@ -1,6 +1,6 @@
-## Implementation Recommendations
+## 6.5 Implementation recommendations
 
-!!! tip "Best Practices for Synthetic Data Projects"
+!!! success "Best Practices for Synthetic Data Projects"
     **Start Small and Iterate**  
     Begin with focused domains and languages before scaling to broader applications
     
@@ -17,7 +17,7 @@
 
 <!-- # Why Synthetic Data?
 
-## Typical Approachs
+## Typical Approaches
 
 ### Top Down
 
