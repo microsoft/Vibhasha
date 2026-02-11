@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './styles/MarkdownPage.css'
-import './styles/MkDocsMaterial.css'
+import './styles/MKDocsMaterial.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -26,7 +26,7 @@ import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
  */
 function preprocessMarkdown(rawContent) {
   let content = rawContent;
-  
+
   // Strip MkDocs-style code block attributes (e.g., ```py linenums="1" -> ```python)
   // Map common short language names to full names for better syntax highlighting
   const langMap = { py: 'python', js: 'javascript', ts: 'typescript', sh: 'bash', yml: 'yaml' };
@@ -34,7 +34,7 @@ function preprocessMarkdown(rawContent) {
     const mappedLang = langMap[lang] || lang;
     return '```' + mappedLang + '\n';
   });
-  
+
   // Order matters: process content tabs first, then admonitions (they may contain icons/buttons)
   content = preprocessContentTabs(content);
   content = preprocessAdmonitions(content);
@@ -56,6 +56,7 @@ export default function MarkdownPage({ filePath }) {
   const [headings, setHeadings] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const [searchActive, setSearchActive] = useState(false);
+
   const location = useLocation();
   const navigate = useNavigate();
   const { appSubtitle, colors } = useTheme();
@@ -83,11 +84,6 @@ export default function MarkdownPage({ filePath }) {
   }
   const heroTitle = prettyTitle(groupInfo?.label || currentEntry?.label);
   const heroSubtitle = appSubtitle;
-
-  function onSelectSub(e) {
-    const to = e.target.value;
-    if (to) navigate(to);
-  }
 
   // derive whether to show a right-hand TOC for long documents
   const showToc = headings.length >= 4 || content.length > 2200;
@@ -207,6 +203,7 @@ export default function MarkdownPage({ filePath }) {
     if (history && history.replaceState) history.replaceState(null, '', `#${id}`);
     setActiveId(id);
   }
+
 
   // Handle content tabs interactivity
   useEffect(() => {
@@ -328,7 +325,7 @@ export default function MarkdownPage({ filePath }) {
     const match = /language-(\w+)/.exec(className || '');
     const language = match ? match[1] : '';
     const codeString = String(children).replace(/\n$/, '');
-    
+
     const handleCopy = async () => {
       await navigator.clipboard.writeText(codeString);
       setCopied(true);
@@ -345,7 +342,7 @@ export default function MarkdownPage({ filePath }) {
       a.click();
       URL.revokeObjectURL(url);
     };
-    
+
     if (!inline && language) {
       return (
         <div className="code-block-wrapper">
@@ -373,7 +370,7 @@ export default function MarkdownPage({ filePath }) {
         </div>
       );
     }
-    
+
     // Inline code or code without language
     if (!inline && !language) {
       return (
@@ -392,7 +389,7 @@ export default function MarkdownPage({ filePath }) {
         </div>
       );
     }
-    
+
     return <code className={className} {...props}>{children}</code>;
   };
 
@@ -400,8 +397,9 @@ export default function MarkdownPage({ filePath }) {
     ...mdHeadingComponents,
     code: CodeBlock,
   };
-// Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
-const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
+
+  // Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
+  const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
 
   return (
     <div className="intro-root">
@@ -413,8 +411,9 @@ const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: 
               <Hero title={heroTitle} subtitle={heroSubtitle} />
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
                 components={{
-                  ...mdHeadingComponents,
+                  ...mdComponents,
                   img: ({ node, ...props }) => {
                     const src = props.src || '';
                     const key = src.replace(/^\/+/, '');
@@ -423,7 +422,7 @@ const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: 
                   },
                 }}
               >
-                {content}
+                {processedContent}
               </ReactMarkdown>
               {(prev || next) && (
                 <nav className="prev-next-nav" aria-label="Page navigation">
