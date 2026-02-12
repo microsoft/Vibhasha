@@ -372,6 +372,183 @@
     var(--fc-iterate) 0 6px,
     transparent 6px 10px
   ) !important;
+}
+/* ============================================================
+   CONTENT SECTIONS (below canvas)
+   ============================================================ */
+.fc-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fc-section {
+  background: var(--fc-surface);
+  border: 1px solid var(--fc-border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 1px 4px var(--fc-shadow);
+}
+
+.fc-section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fc-text);
+}
+
+.fc-section p {
+  margin: 0 0 .75rem;
+  font-size: .92rem;
+  line-height: 1.65;
+  color: var(--fc-text);
+  opacity: .88;
+}
+
+.fc-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.fc-section li {
+  font-size: .9rem;
+  line-height: 1.65;
+  color: var(--fc-text);
+  opacity: .88;
+  margin-bottom: .35rem;
+}
+
+/* numbered question items */
+.fc-questions {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.fc-q-item {
+  display: flex;
+  gap: .9rem;
+  align-items: flex-start;
+}
+
+.fc-q-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--fc-node-strategy-bg, #6366f1);
+  margin-top: 2px;
+}
+
+.fc-q-item div {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.fc-q-item strong {
+  font-size: .92rem;
+  color: var(--fc-text);
+}
+
+.fc-q-item span {
+  font-size: .85rem;
+  color: var(--fc-text);
+  opacity: .75;
+  line-height: 1.55;
+}
+
+/* outcome cards */
+.fc-outcomes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.fc-outcome-card {
+  background: color-mix(in srgb, var(--fc-surface) 92%, var(--fc-border));
+  border: 1px solid var(--fc-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.35rem;
+}
+
+.fc-outcome-card h3 {
+  margin: .5rem 0 .65rem;
+  font-size: .95rem;
+  font-weight: 650;
+  color: var(--fc-text);
+}
+
+.fc-outcome-card p {
+  margin: 0 0 .45rem;
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+.fc-outcome-tag {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: .2rem .65rem;
+  border-radius: 6px;
+}
+
+.fc-tag-direct     { background: #dbeafe; color: #2563eb; }
+.fc-tag-pretranslate { background: #ccfbf1; color: #0d9488; }
+.fc-tag-finetune   { background: #ede9fe; color: #7c3aed; }
+
+/* two-column layout */
+.fc-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* next-steps grid */
+.fc-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .65rem;
+}
+
+.fc-step {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .7rem 1rem;
+  background: color-mix(in srgb, var(--fc-surface) 92%, var(--fc-border));
+  border-radius: 8px;
+  font-size: .88rem;
+  color: var(--fc-text);
+  opacity: .9;
+}
+
+.fc-step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .72rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--fc-node-safety-bg, #f59e0b);
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -384,6 +561,9 @@
   .fc-legend-sep { display: none; }
   .fc-legend-hint { flex-basis: 100%; text-align: center; }
   .fc-path-legend { gap: .75rem; }
+  .fc-two-col { grid-template-columns: 1fr; }
+  .fc-content { padding: 1.5rem 0 2rem; }
+  .fc-section { padding: 1.25rem 1.35rem; }
 }
 
 @media (max-width: 480px) {
@@ -391,4 +571,6 @@
   .fc-node { min-width: 150px; max-width: 170px; padding: 10px 14px; }
   .fc-node-label { font-size: .75rem; }
   .fc-node-desc { display: none; }
+  .fc-outcomes { grid-template-columns: 1fr; }
+  .fc-steps-grid { grid-template-columns: 1fr; }
 }

@@ -584,6 +584,134 @@ export default function FlowchartPage() {
           <span>Iteration loop</span>
         </div>
       </div>
+
+      {/* ── Content sections ───────────────────── */}
+      <div className="fc-content">
+
+        <section className="fc-section">
+          <h2>How the flowchart works</h2>
+          <p>
+            The flowchart guides you through the most important decision points for building a multilingual AI system.
+            Rather than reading the entire playbook front to back, use it to identify the right strategy in minutes.
+          </p>
+          <div className="fc-questions">
+            <div className="fc-q-item">
+              <span className="fc-q-num">1</span>
+              <div>
+                <strong>Define your task &amp; languages</strong>
+                <span>Extraction, generation, classification, dialogue, or search — and whether your target languages are high‑, mid‑, or low‑resource.</span>
+              </div>
+            </div>
+            <div className="fc-q-item">
+              <span className="fc-q-num">2</span>
+              <div>
+                <strong>Evaluate language representation</strong>
+                <span>How well does the model support your languages? This is the single most important factor in choosing a strategy.</span>
+              </div>
+            </div>
+            <div className="fc-q-item">
+              <span className="fc-q-num">3</span>
+              <div>
+                <strong>Assess your resources &amp; constraints</strong>
+                <span>Available training data, MT quality, timeline, cultural sensitivity needs, privacy requirements.</span>
+              </div>
+            </div>
+            <div className="fc-q-item">
+              <span className="fc-q-num">4</span>
+              <div>
+                <strong>Choose and implement a strategy</strong>
+                <span>Direct inference, pre‑translation, or fine‑tuning — each with its own implementation path shown above.</span>
+              </div>
+            </div>
+            <div className="fc-q-item">
+              <span className="fc-q-num">5</span>
+              <div>
+                <strong>Validate safety &amp; cultural alignment</strong>
+                <span>Red‑team across all target languages and validate cultural appropriateness before deploying.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="fc-section">
+          <h2>Example outcomes</h2>
+          <div className="fc-outcomes">
+            <div className="fc-outcome-card">
+              <div className="fc-outcome-tag fc-tag-direct">Direct Inference</div>
+              <h3>Mid‑resource language, fast prototype</h3>
+              <p><strong>Scenario:</strong> Summarization in Spanish &amp; Portuguese, minimal data, medium cultural nuance</p>
+              <p><strong>Strategy:</strong> Prompt the LLM directly in the target language with cultural prompt engineering. Use selective translation only when reasoning quality drops.</p>
+            </div>
+            <div className="fc-outcome-card">
+              <div className="fc-outcome-tag fc-tag-pretranslate">Pre‑Translation</div>
+              <h3>Low‑resource language, high cultural needs</h3>
+              <p><strong>Scenario:</strong> Customer support in Amharic &amp; Oromo, limited data, strong safety constraints</p>
+              <p><strong>Strategy:</strong> Selective pre‑translation with system adaptation, domain glossaries, and cultural nuance assessment. Combine with synthetic data for evaluation.</p>
+            </div>
+            <div className="fc-outcome-card">
+              <div className="fc-outcome-tag fc-tag-finetune">Fine‑Tuning</div>
+              <h3>Regulated domain, production‑grade</h3>
+              <p><strong>Scenario:</strong> Medical assistance in French, Hindi &amp; Arabic, robust data, on‑prem preferred</p>
+              <p><strong>Strategy:</strong> Fine‑tune with PEFT adapters (language + domain + safety modules), backed by synthetic data and rigorous red teaming across all languages.</p>
+            </div>
+          </div>
+        </section>
+
+        <div className="fc-two-col">
+          <section className="fc-section">
+            <h2>Who this helps</h2>
+            <ul>
+              <li><strong>Product teams</strong> scoping multilingual launches</li>
+              <li><strong>Localization teams</strong> choosing where to add native content</li>
+              <li><strong>Engineering teams</strong> deciding which pipeline to implement</li>
+              <li><strong>Research teams</strong> planning model evaluation</li>
+              <li><strong>Safety teams</strong> prioritizing languages for red‑teaming</li>
+            </ul>
+          </section>
+
+          <section className="fc-section">
+            <h2>When to revisit</h2>
+            <ul>
+              <li>Adding new languages to your system</li>
+              <li>Introducing new features or task types</li>
+              <li>Seeing degraded quality or safety in a region</li>
+              <li>Migrating to a new model family</li>
+              <li>Rethinking your multilingual architecture</li>
+            </ul>
+          </section>
+        </div>
+
+        <section className="fc-section fc-next-steps">
+          <h2>Next steps after using the flowchart</h2>
+          <div className="fc-steps-grid">
+            <div className="fc-step">
+              <span className="fc-step-num">1</span>
+              <span>Review the recommended strategy chapter</span>
+            </div>
+            <div className="fc-step">
+              <span className="fc-step-num">2</span>
+              <span>Set up your evaluation framework</span>
+            </div>
+            <div className="fc-step">
+              <span className="fc-step-num">3</span>
+              <span>Review safety considerations for your languages</span>
+            </div>
+            <div className="fc-step">
+              <span className="fc-step-num">4</span>
+              <span>Build a small pilot in one language per tier</span>
+            </div>
+            <div className="fc-step">
+              <span className="fc-step-num">5</span>
+              <span>Expand to additional languages after QA</span>
+            </div>
+            <div className="fc-step">
+              <span className="fc-step-num">6</span>
+              <span>Plan cultural alignment &amp; data engineering if fine‑tuning</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </div>
   );
 }
