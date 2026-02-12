@@ -53,9 +53,8 @@ import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import AttributionDoc from './components/docs/100-attribution';
 
-// Use '/' for private repo GitHub Pages deployment
-// Change to '/Vibhasha/' if deploying to microsoft.github.io/Vibhasha
-const basename = '/'
+// Use '/Vibhasha/' for public repo GitHub Pages (microsoft.github.io/Vibhasha)
+const basename = '/Vibhasha/'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
