@@ -20,11 +20,17 @@ export default function GlobalSearch({ onSearchActiveChange }) {
   useEffect(() => {
     docEntries.forEach(item => {
       if (!mdCache[item.content]) {
-        fetch(item.content)
-          .then(res => res.text())
+        // Strip /public prefix: Vite serves public/ contents at root in production
+        const fetchUrl = item.content.replace(/^\/public/, '');
+        fetch(fetchUrl)
+          .then(res => {
+            if (!res.ok) throw new Error(`${res.status} ${fetchUrl}`);
+            return res.text();
+          })
           .then(text =>
             setMdCache(prev => ({ ...prev, [item.content]: text }))
-          );
+          )
+          .catch(err => console.warn('Search: failed to load', fetchUrl, err));
       }
     });
   }, []);
