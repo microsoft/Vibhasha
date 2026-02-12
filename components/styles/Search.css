@@ -70,13 +70,50 @@
 }
 
 .result-item h4 {
-  margin: 0 0 8px 0;
+  margin: 0;
   color: var(--color-header-bg);
   font-weight: 400;
 }
 
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.match-count {
+  font-size: 0.75em;
+  color: #888;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Plain-text excerpt */
+.result-excerpt {
+  color: #666666;
+  font-weight: 400;
+  font-size: 0.92em;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.result-excerpt mark {
+  background: #fff3a8;
+  color: inherit;
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
 .search-results {
-  text-align: justify;
+  text-align: left;
 }
 
 .result-item {

@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { docEntries } from "./docs/docIndex";
 import { Search20Regular, Dismiss24Regular } from '@fluentui/react-icons';
+import { preprocessMarkdown } from './MarkdownPage.jsx';
 import './styles/Search.css';
 
 export default function GlobalSearch({ onSearchActiveChange }) {
@@ -11,7 +12,10 @@ export default function GlobalSearch({ onSearchActiveChange }) {
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 10;
 
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const [mdCache, setMdCache] = useState({});
+  // Cache of preprocessed plain-text per doc (computed once)
+  const textCache = useRef({});
 
   useEffect(() => {
     docEntries.forEach(item => {
@@ -25,20 +29,54 @@ export default function GlobalSearch({ onSearchActiveChange }) {
     });
   }, []);
 
-  function markdownToText(md) {
-    return md
-      .replace(/```[\s\S]*?```/g, " ")       // code blocks
-      .replace(/`([^`]+)`/g, "$1")           // inline code
-      .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")  // links
-      .replace(/^#{1,6}\s+/gm, "")           // headings
-      .replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, "$1")  // bold/italic
-      .replace(/\|/g, " ")                   // tables pipes
+  // Debounce: update debouncedQuery 300ms after user stops typing
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQuery(query), 300);
+    return () => clearTimeout(timer);
+  }, [query]);
+
+  /**
+   * Convert markdown to clean plain text via preprocessMarkdown then strip.
+   * Results are cached so each document is only processed once.
+   */
+  function getPlainText(key, rawMd) {
+    if (textCache.current[key]) return textCache.current[key];
+    let text = preprocessMarkdown(rawMd);
+    text = text
+      .replace(/```[\s\S]*?```/g, ' ')         // code blocks
+      .replace(/<[^>]+>/g, ' ')                 // HTML tags
+      .replace(/`([^`]+)`/g, '$1')              // inline code
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // links
+      .replace(/^#{1,6}\s+/gm, '')              // headings
+      .replace(/[*_]{1,3}([^*_]+)[*_]{1,3}/g, '$1') // bold/italic
+      .replace(/!\[.*?\]\(.*?\)/g, '')          // images
+      .replace(/\|/g, ' ')                      // table pipes
+      .replace(/-{3,}/g, '')                    // horizontal rules
+      .replace(/^\s*[-*+]\s+/gm, '')            // list markers
+      .replace(/^\s*\d+\.\s+/gm, '')            // ordered list markers
+      .replace(/^>\s?/gm, '')                   // blockquotes
+      .replace(/\n{2,}/g, '\n')                 // collapse blank lines
+      .replace(/[ \t]+/g, ' ')                  // normalize spaces
       .trim();
+    textCache.current[key] = text;
+    return text;
   }
 
+  /**
+   * Count all occurrences of query in text.
+   */
+  function countMatches(text, q) {
+    let count = 0, pos = 0;
+    const lower = text.toLowerCase();
+    while ((pos = lower.indexOf(q, pos)) !== -1) {
+      count++;
+      pos += q.length;
+    }
+    return count;
+  }
 
   useEffect(() => {
-    if (query.trim() === "") {
+    if (debouncedQuery.trim() === "") {
       setResults([]);
       onSearchActiveChange(false);
       return;
@@ -46,30 +84,38 @@ export default function GlobalSearch({ onSearchActiveChange }) {
 
     onSearchActiveChange(true);
 
-    const q = query.toLowerCase();
+    const q = debouncedQuery.toLowerCase();
     const matches = [];
 
     for (const item of docEntries) {
-      const text = mdCache[item.content];
-      if (!text) continue;
+      const rawMd = mdCache[item.content];
+      if (!rawMd) continue;
 
-      const idx = text.toLowerCase().indexOf(q);
+      const plainText = getPlainText(item.content, rawMd);
+      const idx = plainText.toLowerCase().indexOf(q);
       if (idx === -1) continue;
 
-      const excerptStart = Math.max(0, idx - 100);
-      const excerptEnd = idx + q.length + 600;
+      // Extract a ~300-char window around the first match
+      const WINDOW = 150;
+      const start = Math.max(0, idx - WINDOW);
+      const end = Math.min(plainText.length, idx + q.length + WINDOW);
+      const prefix = start > 0 ? '...' : '';
+      const suffix = end < plainText.length ? '...' : '';
+      const excerpt = prefix + plainText.substring(start, end) + suffix;
 
       matches.push({
         ...item,
-        excerpt:
-          markdownToText(text)
-        // .substring(excerptStart, excerptEnd)
+        excerpt,
+        matchCount: countMatches(plainText, q),
       });
     }
 
+    // Sort by match count descending for relevance
+    matches.sort((a, b) => b.matchCount - a.matchCount);
+
     setResults(matches);
     setPage(1);
-  }, [query, mdCache]);
+  }, [debouncedQuery, mdCache]);
 
   const pagedResults = useMemo(() => {
     const start = (page - 1) * PAGE_SIZE;
@@ -133,22 +179,33 @@ export default function GlobalSearch({ onSearchActiveChange }) {
 }
 
 function SearchResultItem({ item, query, onClick }) {
-  const highlight = (text, q) => {
-    const i = text.toLowerCase().indexOf(q.toLowerCase());
-    if (i === -1) return text;
+  // Highlight all occurrences of query in the plain-text excerpt
+  const parts = useMemo(() => {
+    if (!query) return [{ text: item.excerpt, highlight: false }];
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`(${escaped})`, 'gi');
+    const segments = item.excerpt.split(re);
+    return segments.map((seg, i) => ({
+      text: seg,
+      highlight: i % 2 === 1, // odd segments are matches from split with capture group
+    }));
+  }, [item.excerpt, query]);
 
-    return (
-      <>
-        {text.substring(0, i)}
-        <mark>{text.substring(i, i + q.length)}</mark>
-        {text.substring(i + q.length)}
-      </>
-    );
-  };
   return (
     <div className="result-item" onClick={onClick}>
-      <h4>{item.label}</h4>
-      <p>{highlight(item.excerpt, query)}</p>
+      <div className="result-header">
+        <h4>{item.label}</h4>
+        {item.matchCount > 1 && (
+          <span className="match-count">{item.matchCount} matches</span>
+        )}
+      </div>
+      <p className="result-excerpt">
+        {parts.map((part, i) =>
+          part.highlight
+            ? <mark key={i}>{part.text}</mark>
+            : <span key={i}>{part.text}</span>
+        )}
+      </p>
     </div>
   );
 }
