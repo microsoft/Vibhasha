@@ -24,7 +24,7 @@ import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
  * Preprocess markdown content to transform MkDocs Material syntax
  * This runs before react-markdown parses the content
  */
-function preprocessMarkdown(rawContent) {
+export function preprocessMarkdown(rawContent) {
   let content = rawContent;
 
   // Strip MkDocs-style code block attributes (e.g., ```py linenums="1" -> ```python)

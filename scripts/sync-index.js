@@ -57,6 +57,15 @@ const LABEL_OVERRIDES = {
 };
 // Default icon map for common roots (can be edited later in docIndex)
 const DEFAULT_ICON_BY_BASE = {
+    '00-introduction': 'Target24Regular',
+    '01-evaluation': 'TaskListSquareLtr24Regular',
+    '02-translation': 'TranslateAuto24Regular',
+    '04-fine-tuning': 'Options24Regular',
+    '05-safety': 'Shield24Regular',
+    '06-synthetic-data': 'SquareHintSparkles24Regular',
+    '07-culture': 'Diversity24Regular',
+    '99-conclusion': 'TargetSparkle24Regular',
+    '100-attribution': 'BookmarkAdd24Regular',
     '02-evolution-of-asr': 'Branch24Regular',
     '04-dataset-creation-guidelines': 'Add24Regular',
     '08-model-finetuning-intro': 'Options24Regular',

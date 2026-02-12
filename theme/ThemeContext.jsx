@@ -61,7 +61,7 @@ const externalUrls = {
 const appCatalog = {
   paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal, externalUrl: externalUrls?.paza },
   atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink, externalUrl: externalUrls?.atlas },
-  vibhasha: { title: 'Vibhasha', subtitle: 'Multi-lingual LLMs Playbook', brand: 'indigo', Icon: iconByBrand.indigo, externalUrl: externalUrls?.vibhasha }
+  vibhasha: { title: 'Vibhasha', subtitle: 'Build Multilingual & Multicultural AI Systems', brand: 'indigo', Icon: iconByBrand.indigo, externalUrl: externalUrls?.vibhasha }
 }
 
 const brandImages = {
