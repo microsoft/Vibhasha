@@ -1,7 +1,7 @@
 .doc-layout {
     display: grid;
     grid-template-columns: 75% 25%;
-    gap: 10px;
+    gap: 20px;
     align-items: start;
 }
 
@@ -183,7 +183,7 @@
 }
 
 .doc-container {
-    padding: 30px 60px;
+    padding: 30px 0;
 }
 
 .doc-toolbar {
