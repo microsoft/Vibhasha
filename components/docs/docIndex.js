@@ -9,7 +9,7 @@ export const docEntries = [
     "content": "/public/chapters/00-introduction.md",
     "prefix": "00",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "Target24Regular"
   },
   {
     "path": "/playbook/01-evaluation",
@@ -18,7 +18,7 @@ export const docEntries = [
     "content": "/public/chapters/01-evaluation.md",
     "prefix": "01",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "TaskListSquareLtr24Regular"
   },
   {
     "path": "/playbook/01-i-methodologies",
@@ -90,7 +90,7 @@ export const docEntries = [
     "content": "/public/chapters/02-translation.md",
     "prefix": "02",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "TranslateAuto24Regular"
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
@@ -153,7 +153,7 @@ export const docEntries = [
     "content": "/public/chapters/04-fine-tuning.md",
     "prefix": "04",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "Options24Regular"
   },
   {
     "path": "/playbook/04-i-pipeline",
@@ -216,7 +216,7 @@ export const docEntries = [
     "content": "/public/chapters/05-safety.md",
     "prefix": "05",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "Shield24Regular"
   },
   {
     "path": "/playbook/05-i-vulnerabilities",
@@ -261,7 +261,7 @@ export const docEntries = [
     "content": "/public/chapters/06-synthetic-data.md",
     "prefix": "06",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "SquareHintSparkles24Regular"
   },
   {
     "path": "/playbook/06-i-approaches",
@@ -315,7 +315,7 @@ export const docEntries = [
     "content": "/public/chapters/07-culture.md",
     "prefix": "07",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "Diversity24Regular"
   },
   {
     "path": "/playbook/07-i-frameworks",
@@ -378,7 +378,7 @@ export const docEntries = [
     "content": "/public/chapters/99-conclusion.md",
     "prefix": "99",
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "TargetSparkle24Regular"
   },
   {
     "path": "/playbook/100-attribution",
@@ -387,7 +387,7 @@ export const docEntries = [
     "content": "/public/chapters/100-attribution.md",
     "prefix": null,
     "isSub": false,
-    "icon": "Document24Regular"
+    "icon": "BookmarkAdd24Regular"
   }
 ];
 
