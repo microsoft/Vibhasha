@@ -38,7 +38,11 @@
 
 .promo-right {
   display: flex;
-  height: -webkit-fill-available;
+  /* avoid Safari's unpredictable -webkit-fill-available behavior */
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .promo-cta {
@@ -79,4 +83,23 @@
     width: 100%;
     padding: 16px;
   }
+}
+
+/* Safari/flexbox fixes: ensure flex children can shrink and text doesn't overflow */
+.promo-bar,
+.promo-left,
+.promo-right,
+.promo-cta {
+  box-sizing: border-box;
+}
+
+.promo-left,
+.promo-right {
+  overflow: hidden;
+}
+
+.promo-lead {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
