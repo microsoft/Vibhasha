@@ -22,6 +22,15 @@ body {
   color: var(--color-page-text);
 }
 
+/* Ensure the root fills the viewport so footers sit at the bottom when content is short */
+html, body, #root {
+  height: 100%;
+}
+
+.app-root {
+  min-height: 100vh;
+}
+
 .btn-primary {
   border: none;
   color: white;

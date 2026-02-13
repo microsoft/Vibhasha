@@ -4,7 +4,10 @@
   gap: 10px;
   width: 240px;
   align-items: center;
-  height: 100%;
+  /* ensure the sidebar background fills the full viewport height */
+  min-height: 100vh;
+  align-self: stretch;
+  box-sizing: border-box;
 }
 
 .sidebar-list {
