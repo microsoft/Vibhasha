@@ -23,8 +23,7 @@ export default function PlaybookIntro(){
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
-        imageSrc={brandImage}
-        imageAlt={`${appName} brand illustration`}
+        isOverview={true}
       />
 
       <section className="intro-body">
