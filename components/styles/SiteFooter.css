@@ -7,6 +7,7 @@
   justify-content: flex-end;
   align-items: center;
   min-height: 112px;
+  box-sizing: border-box;
   gap: 10px;
   background: var(--color-footer-bg);
 }
@@ -33,16 +34,12 @@
 }
 
 .promo-link:hover {
-  background: rgba(0,0,0,.06);
+  background: rgba(0, 0, 0, .06);
 }
 
 .promo-right {
   display: flex;
-  /* avoid Safari's unpredictable -webkit-fill-available behavior */
-  height: auto;
-  min-height: 0;
-  min-width: 0;
-  box-sizing: border-box;
+  min-height: 112px;
 }
 
 .promo-cta {
@@ -57,49 +54,46 @@
   cursor: pointer;
 }
 
-.promo-cta:hover { filter: brightness(1.05); }
+.promo-cta:hover {
+  filter: brightness(1.05);
+}
 
-.promo-cta--teal { background-color: #0f766e; color: #ffffff; }
-.promo-cta--pink { background-color: #9F1459; color: #ffffff; }
-.promo-cta--indigo { background-color: #312A9A; color: #ffffff; }
+.promo-cta--teal {
+  background-color: #0f766e;
+  color: #ffffff;
+}
+
+.promo-cta--pink {
+  background-color: #9F1459;
+  color: #ffffff;
+}
+
+.promo-cta--indigo {
+  background-color: #312A9A;
+  color: #ffffff;
+}
 
 @media (max-width: 980px) {
   .promo-bar {
     flex-direction: column;
   }
+
   .promo-left {
     align-items: center;
     width: 100%;
     text-align: center;
     padding: 16px 0;
   }
+
   .promo-right {
     width: 100%;
     flex-direction: column;
     align-items: center;
     gap: 0;
   }
+
   .promo-cta {
     width: 100%;
     padding: 16px;
   }
-}
-
-/* Safari/flexbox fixes: ensure flex children can shrink and text doesn't overflow */
-.promo-bar,
-.promo-left,
-.promo-right,
-.promo-cta {
-  box-sizing: border-box;
-}
-
-.promo-left,
-.promo-right {
-  overflow: hidden;
-}
-
-.promo-lead {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
