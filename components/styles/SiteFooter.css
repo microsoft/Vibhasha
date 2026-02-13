@@ -42,11 +42,9 @@
 }
 
 .promo-cta {
-  /* max-width: 300px; */
   border: none;
-  font-size: 22px;
+  font-size: 18px;
   padding: 12px 16px;
-  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +55,6 @@
 
 .promo-cta:hover { filter: brightness(1.05); }
 
-/* Brand-specific CTA variants (match brandPalettes.light headerBg/headerText) */
 .promo-cta--teal { background-color: #0f766e; color: #ffffff; }
 .promo-cta--pink { background-color: #9F1459; color: #ffffff; }
 .promo-cta--indigo { background-color: #312A9A; color: #ffffff; }
