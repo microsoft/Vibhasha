@@ -34,9 +34,8 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    padding: 0px 8px;
+    padding: 5px 8px;
     background: #242424CC;
-    height: 32px;
     border-radius: 4px;
     font-size: 15px;
     opacity: 1;
