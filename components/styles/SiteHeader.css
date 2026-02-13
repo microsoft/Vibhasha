@@ -1,10 +1,5 @@
 .app-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2000;
-    min-height: 112px;
+    height: 112px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,21 +70,24 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    padding: 30px;
 }
 
 .header-segment--middle {
-    width: 300px;
+    min-width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--Solid-Teal-70-Primary, #22918B);
+    background: #22918B;
+
 }
 
 .header-segment--right {
-    width: 300px;
+    min-width: 300px;
     align-items: center;
     justify-content: center;
-    background: var(--Solid-Teal-90, #1EC8B0);
+    background: #8CD0FF;
+    color: black;
     gap: 10px;
 }
 
@@ -135,6 +133,18 @@
     font-size: 20px;
     font-weight: 500;
     font-style: normal;
+}
+
+.link-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@media (max-width:1200px) {
+    .segment-subtitle {
+        display: none;
+    }
 }
 
 @media (max-width:980px) {

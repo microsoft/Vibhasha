@@ -20,7 +20,6 @@ body {
   flex: 1;
   background: var(--color-page-bg);
   color: var(--color-page-text);
-  padding-top: 112px;
 }
 
 .btn-primary {
