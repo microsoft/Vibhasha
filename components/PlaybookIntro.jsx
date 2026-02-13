@@ -6,7 +6,6 @@ import './styles/MarkdownPage.css';
 import './styles/MkDocsMaterial.css';
 import Hero from './Hero';
 import { ChevronRight24Regular } from '@fluentui/react-icons';
-import GlobalSearch from './Search.jsx';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
 import ReactMarkdown from 'react-markdown';
@@ -30,8 +29,7 @@ function preprocessMarkdown(rawContent) {
 }
 
 export default function PlaybookIntro(){
-  const { appName, appSubtitle, colors, brandImage } = useTheme();
-  const [searchActive, setSearchActive] = useState(false);
+  const { appName, appSubtitle, brandImage } = useTheme();
   const navigate = useNavigate();
   const [markdownContent, setMarkdownContent] = useState('');
   const [processedContent, setProcessedContent] = useState('');
@@ -169,14 +167,11 @@ export default function PlaybookIntro(){
 
   return (
   <div  className="intro-root">
-    <GlobalSearch onSearchActiveChange={setSearchActive} />
-    {!searchActive && (
       <div>
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
-        imageSrc={brandImage}
-        imageAlt={`${appName} brand illustration`}
+        isOverview={true}
       />
 
       <section className="intro-body">
@@ -193,7 +188,6 @@ export default function PlaybookIntro(){
         )}
       </section>
     </div>
-    )}
   </div>
   );
 }
