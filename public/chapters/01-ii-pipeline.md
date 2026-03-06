@@ -44,7 +44,7 @@ For open-ended generation tasks, evaluation requires comparing generated text wi
 
     Present annotators with two responses from different models for the same prompt, asking them to select the superior response or indicate a tie
 
-    [:octicons-arrow-right-24: Implementation Details](#pairwise-details)
+    [:octicons-arrow-right-24: Implementation Details](https://aclanthology.org/2024.emnlp-main.451.pdf)
 
 -   :material-trophy:{ .lg .middle } __Elo Rating System__
 
@@ -52,7 +52,7 @@ For open-ended generation tasks, evaluation requires comparing generated text wi
 
     Adapted from chess, Elo ratings rank models based on pairwise comparison outcomes, providing robust relative performance measures
 
-    [:octicons-arrow-right-24: Calculate Elo Scores](#elo-calculation)
+    [:octicons-arrow-right-24: Calculate Elo Scores](https://lmsys.org/blog/2023-05-25-leaderboard/)
 
 </div>
 
@@ -70,7 +70,7 @@ This comparative approach directly assesses relative performance. The process in
 
 Clear guidelines are essential for effective pairwise comparisons. The image below shows task instructions from the PARIKSHA study:
 
-![Task instructions provided to the annotators for pair wise comparisons.](/assets/01_evaluation/Guidelines_PairWiseEvaluations.png){ width="480" }
+![Task instructions provided to the annotators for pair wise comparisons.](/assets/01_evaluation/Guidelines_PairWiseEvaluations.png){ width="50%" }
 
 #### Direct assessment (metric-based scoring)
 
@@ -91,7 +91,7 @@ Direct assessment involves human annotators rating a single query-response pair 
 
 **Annotation Guidelines Example:**
 
-![Task instructions provided to the annotators for direct assessments.](/assets/01_evaluation/Instructions_DirectAssessment.png){ width="480" }
+![Task instructions provided to the annotators for direct assessments.](/assets/01_evaluation/Instructions_DirectAssessment.png){ width="50%" }
 
 #### Ethical considerations in human annotation
 
@@ -145,7 +145,7 @@ The effectiveness of LLM evaluators is highly dependent on prompt design, which 
 
 The following code demonstrates using [LangChain's OpenEvals](https://github.com/langchain-ai/openevals/tree/main) for judging hallucinations with OpenAI models:
 
-??? info "View Code: Hallucination Detection with OpenEvals"
+!!! info "View Code: Hallucination Detection with OpenEvals"
 
     ```python
     from openevals.llm import create_llm_as_judge
@@ -212,7 +212,7 @@ The following code demonstrates using [LangChain's OpenEvals](https://github.com
     # Output: {'key': 'hallucination', 'score': False, 'comment': '...'}
     ```
 
-??? info "View Code: Safety Content Metric Rubric"
+!!! info "View Code: Safety Content Metric Rubric"
 
     ```python
     # Problematic Content detection prompt

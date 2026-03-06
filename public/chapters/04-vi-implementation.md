@@ -314,7 +314,7 @@ To help you implement the fine-tuning strategies discussed in this chapter, here
  -->
 ---
 
-## References
+<!-- ## References
 
 [^1]: MultiFiT: Efficient Multi-lingual Language Model Fine-tuning. ACL Anthology. [Paper](https://aclanthology.org/D19-1572.pdf)
 
@@ -326,7 +326,7 @@ To help you implement the fine-tuning strategies discussed in this chapter, here
 
 [^5]: The role of synthetic data in Multilingual, Multi-cultural AI systems: Lessons from Indic Languages. arXiv. [Paper](https://arxiv.org/html/2509.21294v1)
 
-[^6]: Cross-lingual Transfer of Reward Models in Multilingual Alignment. ACL Anthology. [Paper](https://aclanthology.org/2025.naacl-short.8.pdf)
+[^6]: Cross-lingual Transfer of Reward Models in Multilingual Alignment. ACL Anthology. [Paper](https://aclanthology.org/2025.naacl-short.8.pdf) -->
 
 <!-- # Fine-Tuning
 

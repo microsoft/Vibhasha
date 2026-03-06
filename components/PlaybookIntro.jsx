@@ -243,7 +243,7 @@ export default function PlaybookIntro(){
               <div key={i} className="path-cards">
           <button
             className="path-card path-card--translation"
-            onClick={() => navigate('/playbook/02-translation-overview')}
+            onClick={() => navigate('/playbook/02-translation')}
           >
             <div className="path-card__content">
               <span className="path-card__question">Short on time?</span>
@@ -259,7 +259,7 @@ export default function PlaybookIntro(){
 
           <button
             className="path-card path-card--finetuning"
-            onClick={() => navigate('/playbook/04-fine-tuning-overview')}
+            onClick={() => navigate('/playbook/04-fine-tuning')}
           >
             <div className="path-card__content">
               <span className="path-card__question">Keen to have high accuracy?</span>
