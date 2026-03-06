@@ -18,7 +18,6 @@ import {
   TargetSparkle24Regular,
   BookmarkAdd24Regular,
 } from '@fluentui/react-icons';
-import GlobalSearch from './Search.jsx';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
 import ReactMarkdown from 'react-markdown';
@@ -42,8 +41,7 @@ function preprocessMarkdown(rawContent) {
 }
 
 export default function PlaybookIntro(){
-  const { appName, appSubtitle, colors, brandImage } = useTheme();
-  const [searchActive, setSearchActive] = useState(false);
+  const { appName, appSubtitle, brandImage } = useTheme();
   const navigate = useNavigate();
   const [markdownContent, setMarkdownContent] = useState('');
   const [processedContent, setProcessedContent] = useState('');
@@ -181,14 +179,11 @@ export default function PlaybookIntro(){
 
   return (
   <div  className="intro-root">
-    <GlobalSearch onSearchActiveChange={setSearchActive} />
-    {!searchActive && (
       <div>
       <Hero
         title={`${appName} Playbook`}
         subtitle={appSubtitle}
-        imageSrc={brandImage}
-        imageAlt={`${appName} brand illustration`}
+        isOverview={true}
       />
 
       <section className="intro-body">
@@ -248,7 +243,7 @@ export default function PlaybookIntro(){
               <div key={i} className="path-cards">
           <button
             className="path-card path-card--translation"
-            onClick={() => navigate('/playbook/02-translation-overview')}
+            onClick={() => navigate('/playbook/02-translation')}
           >
             <div className="path-card__content">
               <span className="path-card__question">Short on time?</span>
@@ -264,7 +259,7 @@ export default function PlaybookIntro(){
 
           <button
             className="path-card path-card--finetuning"
-            onClick={() => navigate('/playbook/04-fine-tuning-overview')}
+            onClick={() => navigate('/playbook/04-fine-tuning')}
           >
             <div className="path-card__content">
               <span className="path-card__question">Keen to have high accuracy?</span>
@@ -327,7 +322,6 @@ export default function PlaybookIntro(){
         })()}
       </section>
     </div>
-    )}
   </div>
   );
 }

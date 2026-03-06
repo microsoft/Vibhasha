@@ -36,7 +36,7 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
           >
             <div className="segment-text">
-              <div className="segment-subtitle">{appName} Models</div>
+              <div className="link-subtitle">{appName} Models</div>
             </div>
             <Open24Regular />
           </a>
@@ -47,7 +47,7 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
           >
             <div className="segment-text">
-              <div className="segment-subtitle">PazaBench</div>
+              <div className="link-subtitle">PazaBench</div>
             </div>
             <Open24Regular />
           </a>

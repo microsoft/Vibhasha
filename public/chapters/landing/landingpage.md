@@ -40,11 +40,11 @@ Making strategic decisions about **multilingual AI features**, **localization st
 !!! abstract "Choose Your Path"
     
     **⚡ I need something fast**  
-    **Translation-based approach** → [Get Started](/playbook/02-translation-overview)  
+    **Translation-based approach** → [Get Started](/playbook/02-translation)  
     Perfect for prototyping or when you need quick results with mainstream languages.
     
     **🎯 I need high accuracy**  
-    **Fine-tuning approach** → [Learn More](/playbook/04-fine-tuning-overview)  
+    **Fine-tuning approach** → [Learn More](/playbook/04-fine-tuning)  
     Best when you have domain-specific requirements or work with underrepresented languages.
     
     **❓ I'm not sure**  

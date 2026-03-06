@@ -1,31 +1,30 @@
 import React from 'react'
 import './styles/Hero.css'
-import { useTheme } from '../theme/ThemeContext.jsx'
 
-/**
- * Hero component
- * Props:
- *  - title: string (required)
- *  - subtitle: string (optional)
- *  - imageSrc: string (optional image URL)
- *  - imageAlt: string (optional image alt text)
- *  - rightContent: ReactNode (optional custom media/content on right)
- */
-export default function Hero({ title, subtitle, imageSrc, imageAlt = '', rightContent }){
-  const { colors } = useTheme();
+export default function Hero({ title, subtitle, isOverview = false }) {
+
   return (
-    <section className="hero">
-      <div className="hero-inner">
-        <div className="hero-text">
-          {title && <h1 className="hero-title">{title}</h1>}
-          {subtitle && <p className="hero-subtitle">{subtitle}</p>}
-        </div>
-        <div className="hero-media">
-          {rightContent ? (
-            rightContent
-          ) : imageSrc ? (
-            <img src={imageSrc} alt={imageAlt} />
-          ) : null}
+    <section className={isOverview ? 'overview-hero' : 'hero'}>
+      <div className="hero-text">
+        {title && <h1 className="hero-title">{title}</h1>}
+        {subtitle && <p className="hero-subtitle">{subtitle}</p>}
+        <div className="hero-meta">
+          <p className="hero-created">
+            <a
+              href="https://www.microsoft.com/en-us/research/project/project-gecko/"
+              className="promo-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Created by Microsoft Research
+            </a>
+          </p>
+          {!isOverview && (
+            <p className="hero-created">
+              Updated 5 days ago
+            </p>
+          )}
+
         </div>
       </div>
     </section>

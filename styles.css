@@ -20,7 +20,15 @@ body {
   flex: 1;
   background: var(--color-page-bg);
   color: var(--color-page-text);
-  padding-top: 112px;
+}
+
+/* Ensure the root fills the viewport so footers sit at the bottom when content is short */
+html, body, #root {
+  height: 100%;
+}
+
+.app-root {
+  min-height: 100vh;
 }
 
 .btn-primary {

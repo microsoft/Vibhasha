@@ -10,7 +10,6 @@ import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy16Regular, ArrowDownload16Regular, Checkmark16Regular as CopyCheck16Regular } from '@fluentui/react-icons';
 import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
 import Hero from './Hero.jsx';
-import GlobalSearch from './Search.jsx';
 import { useTheme } from '../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
 
@@ -55,8 +54,6 @@ export default function MarkdownPage({ filePath }) {
   const [processedContent, setProcessedContent] = useState('');
   const [headings, setHeadings] = useState([]);
   const [activeId, setActiveId] = useState(null);
-  const [searchActive, setSearchActive] = useState(false);
-
   const location = useLocation();
   const navigate = useNavigate();
   const { appSubtitle, colors } = useTheme();
@@ -276,8 +273,14 @@ export default function MarkdownPage({ filePath }) {
         }
       });
       
-      // Scroll active tab into view
-      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      // Scroll active tab into view within the tab nav only (not the page)
+      const nav = tabGroup.querySelector('.content-tabs-nav');
+      if (nav) {
+        const navRect = nav.getBoundingClientRect();
+        const btnRect = btn.getBoundingClientRect();
+        const scrollLeft = btn.offsetLeft - nav.offsetLeft - (navRect.width / 2) + (btnRect.width / 2);
+        nav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+      }
     };
     
     // Initialize after a short delay to ensure DOM is ready
@@ -320,11 +323,16 @@ export default function MarkdownPage({ filePath }) {
   };
 
   // Custom code block renderer with syntax highlighting
+  const COLLAPSE_LINE_THRESHOLD = 10;
+
   const CodeBlock = ({ node, inline, className, children, ...props }) => {
     const [copied, setCopied] = useState(false);
+    const [expanded, setExpanded] = useState(false);
     const match = /language-(\w+)/.exec(className || '');
     const language = match ? match[1] : '';
     const codeString = String(children).replace(/\n$/, '');
+    const lineCount = codeString.split('\n').length;
+    const isCollapsible = lineCount > COLLAPSE_LINE_THRESHOLD;
 
     const handleCopy = async () => {
       await navigator.clipboard.writeText(codeString);
@@ -345,7 +353,7 @@ export default function MarkdownPage({ filePath }) {
 
     if (!inline && language) {
       return (
-        <div className="code-block-wrapper">
+        <div className={`code-block-wrapper${isCollapsible && !expanded ? ' code-block-collapsed' : ''}`}>
           <div className="code-block-header">
             <span className="code-block-language">{language}</span>
             <div className="code-block-actions">
@@ -357,16 +365,23 @@ export default function MarkdownPage({ filePath }) {
               </button>
             </div>
           </div>
-          <SyntaxHighlighter
-            style={oneLight}
-            language={language}
-            PreTag="div"
-            className="code-block"
-            showLineNumbers={false}
-            {...props}
-          >
-            {codeString}
-          </SyntaxHighlighter>
+          <div className="code-block-body">
+            <SyntaxHighlighter
+              style={oneLight}
+              language={language}
+              PreTag="div"
+              className="code-block"
+              showLineNumbers={false}
+              {...props}
+            >
+              {codeString}
+            </SyntaxHighlighter>
+          </div>
+          {isCollapsible && !expanded && (
+            <button className="code-block-expand-btn" onClick={() => setExpanded(true)}>
+              Show more ({lineCount} lines)
+            </button>
+          )}
         </div>
       );
     }
@@ -374,7 +389,7 @@ export default function MarkdownPage({ filePath }) {
     // Inline code or code without language
     if (!inline && !language) {
       return (
-        <div className="code-block-wrapper">
+        <div className={`code-block-wrapper${isCollapsible && !expanded ? ' code-block-collapsed' : ''}`}>
           <div className="code-block-header">
             <span className="code-block-language">code</span>
             <div className="code-block-actions">
@@ -383,9 +398,16 @@ export default function MarkdownPage({ filePath }) {
               </button>
             </div>
           </div>
-          <pre className="code-block-plain">
-            <code {...props}>{children}</code>
-          </pre>
+          <div className="code-block-body">
+            <pre className="code-block-plain">
+              <code {...props}>{children}</code>
+            </pre>
+          </div>
+          {isCollapsible && !expanded && (
+            <button className="code-block-expand-btn" onClick={() => setExpanded(true)}>
+              Show more ({lineCount} lines)
+            </button>
+          )}
         </div>
       );
     }
@@ -396,16 +418,26 @@ export default function MarkdownPage({ filePath }) {
   const mdComponents = {
     ...mdHeadingComponents,
     code: CodeBlock,
+    a: ({ node, href, children, ...props }) => {
+      const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+      return (
+        <a
+          href={href}
+          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          {...props}
+        >
+          {children}
+        </a>
+      );
+    },
   };
 
-  // Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
-  const imageModules = import.meta.glob('/assets/chapters/*', { as: 'url', eager: true });
+  // Images expected to be referenced with absolute `/assets/...` paths in markdown
+  const imageModules = import.meta.glob('/assets/**/*', { as: 'url', eager: true });
 
   return (
     <div className="intro-root">
       <div className="doc-container">
-        <GlobalSearch onSearchActiveChange={setSearchActive} />
-        {!searchActive && (
           <div className="doc-layout">
             <main className="doc-main markdown-body doc-main-inner">
               <Hero title={heroTitle} subtitle={heroSubtitle} />
@@ -471,7 +503,6 @@ export default function MarkdownPage({ filePath }) {
               </aside>
             )}
           </div>
-        )}
       </div>
     </div>
   );

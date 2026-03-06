@@ -53,9 +53,9 @@ const brandSvgs = {
   vibhasha: vibhashaSvg,
 }
 const externalUrls = {
-  paza: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/',
-  atlas: 'https://atlas-crosscultural-playbook.azurewebsites.net',
-  vibhasha: 'https://multilingual-playbook-prototype-dev.azurewebsites.net/'
+  paza: 'https://aka.ms/Paza',
+  atlas: 'https://aka.ms/AtlasPlaybook',
+  vibhasha: 'https://aka.ms/Vibhasha'
 }
 
 const appCatalog = {

@@ -25,10 +25,13 @@ export function transformAttrList(content) {
     }
   );
 
-  // Transform images with width attribute: ![alt](src){ width="480" }
+  // Transform images with width attribute: ![alt](src){ width="480" } or ![alt](src){ width="50%" }
   result = result.replace(
-    /!\[([^\]]*)\]\(([^)]+)\)\{\s*width="(\d+)"\s*\}/g,
+    /!\[([^\]]*)\]\(([^)]+)\)\{\s*width="(\d+%?)"\s*\}/g,
     (match, alt, src, width) => {
+      if (width.endsWith('%')) {
+        return `<img src="${src}" alt="${alt}" style="width: ${width}; max-width: 100%;" />`;
+      }
       return `<img src="${src}" alt="${alt}" width="${width}" />`;
     }
   );

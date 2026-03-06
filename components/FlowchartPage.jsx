@@ -534,58 +534,7 @@ export default function FlowchartPage() {
         </div>
       </header>
 
-      {/* ── Canvas ─────────────────────────────── */}
-      <div className="fc-canvas">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onInit={onInit}
-          onNodeClick={onNodeClick}
-          nodeTypes={phaseNodeTypes}
-          edgeTypes={edgeTypes}
-          defaultEdgeOptions={defaultEdgeOptions}
-          fitView
-          attributionPosition="bottom-left"
-          minZoom={0.12}
-          maxZoom={2.5}
-          nodesDraggable={false}
-          nodesConnectable={false}
-          elementsSelectable={true}
-          proOptions={{ hideAttribution: true }}
-        >
-          <Controls showInteractive={false} className="fc-controls" />
-          <MiniMap nodeColor={nodeColor} nodeStrokeWidth={3} zoomable pannable className="fc-minimap" />
-          <Background variant="dots" gap={24} size={1} color="var(--fc-dot-color, #e2e8f0)" />
-        </ReactFlow>
-      </div>
-
-      {/* ── Path legend (below canvas) ─────────── */}
-      <div className="fc-path-legend">
-        <div className="fc-path-item">
-          <span className="fc-path-line" style={{ background: EDGE_COLORS.direct }} />
-          <span>Direct inference path</span>
-        </div>
-        <div className="fc-path-item">
-          <span className="fc-path-line" style={{ background: EDGE_COLORS.pretranslate }} />
-          <span>Pre-translation path</span>
-        </div>
-        <div className="fc-path-item">
-          <span className="fc-path-line" style={{ background: EDGE_COLORS.finetune }} />
-          <span>Fine-tuning path</span>
-        </div>
-        <div className="fc-path-item">
-          <span className="fc-path-line" style={{ background: EDGE_COLORS.safety }} />
-          <span>Safety validation</span>
-        </div>
-        <div className="fc-path-item">
-          <span className="fc-path-line fc-dashed" style={{ background: EDGE_COLORS.iterate }} />
-          <span>Iteration loop</span>
-        </div>
-      </div>
-
-      {/* ── Content sections ───────────────────── */}
+      {/* ── Content sections (instructions first) ─ */}
       <div className="fc-content">
 
         <section className="fc-section">
@@ -620,7 +569,7 @@ export default function FlowchartPage() {
               <span className="fc-q-num">4</span>
               <div>
                 <strong>Choose and implement a strategy</strong>
-                <span>Direct inference, pre‑translation, or fine‑tuning — each with its own implementation path shown above.</span>
+                <span>Direct inference, pre‑translation, or fine‑tuning — each with its own implementation path shown in the flowchart below.</span>
               </div>
             </div>
             <div className="fc-q-item">
@@ -711,6 +660,57 @@ export default function FlowchartPage() {
           </div>
         </section>
 
+      </div>
+
+      {/* ── Canvas ─────────────────────────────── */}
+      <div className="fc-canvas">
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onInit={onInit}
+          onNodeClick={onNodeClick}
+          nodeTypes={phaseNodeTypes}
+          edgeTypes={edgeTypes}
+          defaultEdgeOptions={defaultEdgeOptions}
+          fitView
+          attributionPosition="bottom-left"
+          minZoom={0.12}
+          maxZoom={2.5}
+          nodesDraggable={false}
+          nodesConnectable={false}
+          elementsSelectable={true}
+          proOptions={{ hideAttribution: true }}
+        >
+          <Controls showInteractive={false} className="fc-controls" />
+          <MiniMap nodeColor={nodeColor} nodeStrokeWidth={3} zoomable pannable className="fc-minimap" />
+          <Background variant="dots" gap={24} size={1} color="var(--fc-dot-color, #e2e8f0)" />
+        </ReactFlow>
+      </div>
+
+      {/* ── Path legend (below canvas) ─────────── */}
+      <div className="fc-path-legend">
+        <div className="fc-path-item">
+          <span className="fc-path-line" style={{ background: EDGE_COLORS.direct }} />
+          <span>Direct inference path</span>
+        </div>
+        <div className="fc-path-item">
+          <span className="fc-path-line" style={{ background: EDGE_COLORS.pretranslate }} />
+          <span>Pre-translation path</span>
+        </div>
+        <div className="fc-path-item">
+          <span className="fc-path-line" style={{ background: EDGE_COLORS.finetune }} />
+          <span>Fine-tuning path</span>
+        </div>
+        <div className="fc-path-item">
+          <span className="fc-path-line" style={{ background: EDGE_COLORS.safety }} />
+          <span>Safety validation</span>
+        </div>
+        <div className="fc-path-item">
+          <span className="fc-path-line fc-dashed" style={{ background: EDGE_COLORS.iterate }} />
+          <span>Iteration loop</span>
+        </div>
       </div>
     </div>
   );

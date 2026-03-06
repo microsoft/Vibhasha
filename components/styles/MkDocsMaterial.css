@@ -73,7 +73,7 @@
 .admonition-content pre {
   margin: 0.75rem 0;
   padding: 1rem;
-  background: #1e1e1e;
+  background: var(--surface-secondary, #f6f8fa);
   border-radius: 4px;
   overflow-x: auto;
 }

@@ -1,7 +1,7 @@
 .doc-layout {
     display: grid;
     grid-template-columns: 75% 25%;
-    gap: 10px;
+    gap: 20px;
     align-items: start;
     max-width: 100%;
     overflow-x: hidden;
@@ -9,7 +9,6 @@
 
 .doc-toc {
     position: sticky;
-    top: 104px;
     align-self: start;
 }
 
@@ -82,18 +81,6 @@
     max-width: 100%;
 }
 
-.markdown-body,
-.markdown-body p,
-.markdown-body li,
-.markdown-body blockquote,
-.markdown-body figcaption,
-.markdown-body td,
-.markdown-body th {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
 .markdown-body strong {
     color: var(--color-page-text);
     font-weight: 500;
@@ -151,7 +138,6 @@
 
 .markdown-body img {
     max-width: 100%;
-    width: 100%;
     height: auto;
     display: block;
     margin: 12px 0;
@@ -173,6 +159,14 @@
 .markdown-body thead tr {
     background: var(--color-header-bg);
     color: var(--color-header-text);
+}
+
+.markdown-body thead th {
+    color: var(--color-header-text);
+}
+
+.markdown-body thead th strong {
+    color: inherit;
 }
 
 .markdown-body th,
@@ -199,7 +193,7 @@
 }
 
 .doc-container {
-    padding: 30px 60px;
+    padding: 30px 0;
 }
 
 .doc-toolbar {
@@ -368,6 +362,55 @@
     background: transparent;
     padding: 0;
     font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+/* Collapsible code blocks */
+.code-block-body {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.code-block-collapsed .code-block-body {
+    max-height: calc(1.6em * 10 + 2rem);
+    position: relative;
+}
+
+.code-block-collapsed .code-block-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2.5rem;
+    background: linear-gradient(transparent, var(--surface-secondary, #f6f8fa));
+    pointer-events: none;
+}
+
+.code-block-expand-btn {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    background: var(--surface-tertiary, #f0f2f4);
+    border: none;
+    border-top: 1px solid var(--border-color, #e1e4e8);
+    color: var(--color-header-bg, #0078d4);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.code-block-expand-btn:hover {
+    background: var(--surface-hover, rgba(0, 0, 0, 0.06));
+}
+
+[data-theme="dark"] .code-block-collapsed .code-block-body::after {
+    background: linear-gradient(transparent, var(--surface-secondary, #161b22));
+}
+
+[data-theme="dark"] .code-block-expand-btn {
+    background: var(--surface-tertiary, #21262d);
+    border-color: var(--border-color, #30363d);
 }
 
 /* Inline code */
