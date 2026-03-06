@@ -18,10 +18,8 @@ export default function SiteFooter() {
           <a
             href="https://www.microsoft.com/en-us/research/project/project-gecko/"
             className="promo-link"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open('https://www.microsoft.com/en-us/research/project/project-gecko/', '_blank');
-            }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <strong>Project Gecko</strong>
             <Open24Regular />

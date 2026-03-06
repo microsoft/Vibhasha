@@ -1,5 +1,5 @@
 .site-footer {
-  min-height: 100px;
+  height: 100px;
   background: #F2F2F2;
   color: var(--text);
   margin-top: auto;
@@ -58,8 +58,8 @@
 @media (max-width:980px) {
   .site-footer {
     display: flex;
+    height: unset;
     flex-direction: column;
-    min-height: 100px;
     padding: 24px;
   }
   .site-footer-legal {

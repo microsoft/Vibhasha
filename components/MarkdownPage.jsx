@@ -10,7 +10,6 @@ import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy16Regular, ArrowDownload16Regular, Checkmark16Regular as CopyCheck16Regular } from '@fluentui/react-icons';
 import { docOrder as generatedDocOrder, docEntries } from './docs/docIndex.js';
 import Hero from './Hero.jsx';
-import GlobalSearch from './Search.jsx';
 import { useTheme } from '../theme/ThemeContext.jsx'
 import { ChevronLeft24Regular, ChevronRight24Regular, Checkmark16Regular, Link16Regular } from '@fluentui/react-icons'
 
@@ -55,8 +54,6 @@ export default function MarkdownPage({ filePath }) {
   const [processedContent, setProcessedContent] = useState('');
   const [headings, setHeadings] = useState([]);
   const [activeId, setActiveId] = useState(null);
-  const [searchActive, setSearchActive] = useState(false);
-
   const location = useLocation();
   const navigate = useNavigate();
   const { appSubtitle, colors } = useTheme();
@@ -404,8 +401,6 @@ export default function MarkdownPage({ filePath }) {
   return (
     <div className="intro-root">
       <div className="doc-container">
-        <GlobalSearch onSearchActiveChange={setSearchActive} />
-        {!searchActive && (
           <div className="doc-layout">
             <main className="doc-main markdown-body doc-main-inner">
               <Hero title={heroTitle} subtitle={heroSubtitle} />
@@ -471,7 +466,6 @@ export default function MarkdownPage({ filePath }) {
               </aside>
             )}
           </div>
-        )}
       </div>
     </div>
   );
