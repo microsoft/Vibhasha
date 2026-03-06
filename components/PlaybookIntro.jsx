@@ -5,7 +5,6 @@ import './styles/PlaybookIntro.css';
 import './styles/MarkdownPage.css';
 import './styles/MkDocsMaterial.css';
 import Hero from './Hero';
-import { ChevronRight24Regular } from '@fluentui/react-icons';
 import {
   ArrowUpRight24Regular,
   ChevronRight24Regular,
