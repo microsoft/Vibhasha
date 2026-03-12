@@ -497,7 +497,7 @@ export default function FlowchartPage() {
 
   const onInit = useCallback((instance) => {
     reactFlowRef.current = instance;
-    setTimeout(() => instance.fitView({ padding: 0.08, duration: 600 }), 100);
+    setTimeout(() => instance.fitView({ padding: 0.2, duration: 600, minZoom: 0.45 }), 100);
   }, []);
 
   const onNodeClick = useCallback((_event, node) => {
@@ -675,8 +675,9 @@ export default function FlowchartPage() {
           edgeTypes={edgeTypes}
           defaultEdgeOptions={defaultEdgeOptions}
           fitView
+          fitViewOptions={{ padding: 0.2, minZoom: 0.45 }}
           attributionPosition="bottom-left"
-          minZoom={0.12}
+          minZoom={0.3}
           maxZoom={2.5}
           nodesDraggable={false}
           nodesConnectable={false}

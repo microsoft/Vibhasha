@@ -76,7 +76,24 @@ export default function Sidebar() {
           const groupActive = location.pathname === g.path || g.children.some(c => location.pathname === c.path || location.pathname.startsWith(c.path));
           const groupScrollActive = !groupActive && isScrollActive({ label: g.label });
           return (
-            <li key={g.path} className={'sidebar-item'}>
+            <React.Fragment key={g.path}>
+            {g.path === '/playbook/100-attribution' && (
+              <li className={'sidebar-item'}>
+                <NavLink
+                  to="/playbook/flowchart"
+                  onClick={closeSidebar}
+                  className={({ isActive }) => {
+                    let cls = 'sidebar-link';
+                    if (isActive) cls += ' active';
+                    return cls;
+                  }}
+                >
+                  <SidebarIcon name="Branch24" active={location.pathname === '/playbook/flowchart'} />
+                  <span>Interactive Flowchart</span>
+                </NavLink>
+              </li>
+            )}
+            <li className={'sidebar-item'}>
               {g.children && g.children.length > 0 ? (
                 <>
                   <button
@@ -127,6 +144,7 @@ export default function Sidebar() {
                 </NavLink>
               )}
             </li>
+            </React.Fragment>
           )
         })}
       </ul>
