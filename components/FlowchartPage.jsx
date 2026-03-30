@@ -194,7 +194,7 @@ const initialNodes = [
       label: 'Assess Language & Resources',
       desc: 'Language representation × model size × MT quality',
       icon: '🔀',
-      chapter: '/playbook/02-i-strategic-crossroads',
+      chapter: '/playbook/03-i-strategic-crossroads',
     },
   },
   {
@@ -213,18 +213,51 @@ const initialNodes = [
   {
     id: 'direct',
     type: 'strategy',
-    position: { x: -20, y: 910 },
+    position: { x: -100, y: 910 },
     data: {
-      label: 'Direct Inference',
+      label: 'Direct Inference & Prompting',
       desc: 'Prompt the LLM in the target language — best for ~85% of languages',
       icon: '💬',
-      chapter: '/playbook/02-translation',
+      chapter: '/playbook/02-prompting',
+    },
+  },
+  {
+    id: 'model-select',
+    type: 'process',
+    position: { x: -100, y: 1050 },
+    data: {
+      label: 'Select the Right Model',
+      desc: 'Check language support, leaderboards & tokenizer efficiency',
+      icon: '🔍',
+      chapter: '/playbook/02-ii-model-selection',
+    },
+  },
+  {
+    id: 'prompting-strategy',
+    type: 'process',
+    position: { x: -100, y: 1190 },
+    data: {
+      label: 'Choose Prompting Strategy',
+      desc: 'Monolingual, cross-lingual, or translate-test prompting',
+      icon: '✨',
+      chapter: '/playbook/02-i-strategies',
+    },
+  },
+  {
+    id: 'few-shot-cot',
+    type: 'process',
+    position: { x: -100, y: 1330 },
+    data: {
+      label: 'Few-Shot & Chain-of-Thought',
+      desc: 'Native examples + English reasoning (En-CoT) for best results',
+      icon: '🧠',
+      chapter: '/playbook/02-iii-few-shot',
     },
   },
   {
     id: 'prompt-eng',
     type: 'process',
-    position: { x: -20, y: 1050 },
+    position: { x: -100, y: 1470 },
     data: {
       label: 'Cultural Prompt Engineering',
       desc: 'Structured prompts for 71–81% better cultural alignment',
@@ -233,14 +266,14 @@ const initialNodes = [
     },
   },
   {
-    id: 'test-sensitivity',
+    id: 'test-prompting',
     type: 'process',
-    position: { x: -20, y: 1190 },
+    position: { x: -100, y: 1610 },
     data: {
-      label: 'Test Prompt Sensitivity',
-      desc: 'Validate robustness across language variants',
+      label: 'Test & Validate Prompts',
+      desc: 'Evaluate across models, strategies & languages on representative samples',
       icon: '🧪',
-      chapter: '/playbook/01-i-methodologies',
+      chapter: '/playbook/02-iv-evaluation',
     },
   },
 
@@ -250,45 +283,45 @@ const initialNodes = [
   {
     id: 'pretranslate',
     type: 'strategy',
-    position: { x: 285, y: 910 },
+    position: { x: 260, y: 910 },
     data: {
-      label: 'Pre-Translation',
+      label: 'Translation',
       desc: 'Full or selective translation as a bridge to English',
       icon: '🌐',
-      chapter: '/playbook/02-ii-architectures',
+      chapter: '/playbook/03-ii-architectures',
     },
   },
   {
     id: 'adaptation',
     type: 'process',
-    position: { x: 285, y: 1050 },
+    position: { x: 260, y: 1050 },
     data: {
       label: 'System Adaptation',
       desc: 'Glossaries, terminology injection & error mitigation',
       icon: '🔧',
-      chapter: '/playbook/02-iii-adaptation',
+      chapter: '/playbook/03-iii-adaptation',
     },
   },
   {
     id: 'trans-qa',
     type: 'process',
-    position: { x: 285, y: 1190 },
+    position: { x: 260, y: 1190 },
     data: {
       label: 'Translation Quality Assurance',
       desc: 'Evaluate & validate translation output quality',
       icon: '🔍',
-      chapter: '/playbook/02-iv-quality-assurance',
+      chapter: '/playbook/03-iv-quality-assurance',
     },
   },
   {
     id: 'cultural-nuance',
     type: 'process',
-    position: { x: 285, y: 1330 },
+    position: { x: 260, y: 1330 },
     data: {
       label: 'Assess Cultural Nuance Loss',
       desc: 'Identify meaning & tone lost across languages',
       icon: '🎭',
-      chapter: '/playbook/02-v-cultural-nuance',
+      chapter: '/playbook/03-v-cultural-nuance',
     },
   },
 
@@ -298,7 +331,7 @@ const initialNodes = [
   {
     id: 'finetune',
     type: 'strategy',
-    position: { x: 590, y: 910 },
+    position: { x: 610, y: 910 },
     data: {
       label: 'Fine-Tune Model',
       desc: 'Max control for high-stakes, specialized, or on-prem use cases',
@@ -309,7 +342,7 @@ const initialNodes = [
   {
     id: 'ft-pipeline',
     type: 'process',
-    position: { x: 590, y: 1050 },
+    position: { x: 610, y: 1050 },
     data: {
       label: 'Fine-Tuning Pipeline',
       desc: 'Linguistic priming → behavioral alignment → stability control',
@@ -320,7 +353,7 @@ const initialNodes = [
   {
     id: 'data-eng',
     type: 'process',
-    position: { x: 590, y: 1190 },
+    position: { x: 610, y: 1190 },
     data: {
       label: 'Data Engineering',
       desc: 'Curate multilingual training corpora + synthetic augmentation',
@@ -331,7 +364,7 @@ const initialNodes = [
   {
     id: 'peft',
     type: 'process',
-    position: { x: 590, y: 1330 },
+    position: { x: 610, y: 1330 },
     data: {
       label: 'PEFT Techniques',
       desc: 'LoRA, QLoRA, adapters — composable language/domain/safety modules',
@@ -346,7 +379,7 @@ const initialNodes = [
   {
     id: 'cultural',
     type: 'process',
-    position: { x: 285, y: 1560 },
+    position: { x: 260, y: 1830 },
     data: {
       label: 'Cultural Awareness',
       desc: 'Combat algorithmic monoculture — cultural adaptation across all strategies',
@@ -357,7 +390,7 @@ const initialNodes = [
   {
     id: 'safety',
     type: 'process',
-    position: { x: 285, y: 1690 },
+    position: { x: 260, y: 1960 },
     data: {
       label: 'Safety Assessment',
       desc: 'Per-language testing — expect 3× higher risk in low-resource languages',
@@ -368,7 +401,7 @@ const initialNodes = [
   {
     id: 'redteam',
     type: 'process',
-    position: { x: 80, y: 1820 },
+    position: { x: 55, y: 2090 },
     data: {
       label: 'Red Teaming',
       desc: 'Manual + automated adversarial probing across languages',
@@ -379,7 +412,7 @@ const initialNodes = [
   {
     id: 'toolkits',
     type: 'process',
-    position: { x: 490, y: 1820 },
+    position: { x: 465, y: 2090 },
     data: {
       label: 'Safety Toolkits',
       desc: 'Frameworks & tools for multilingual safety at scale',
@@ -390,7 +423,7 @@ const initialNodes = [
   {
     id: 'safety-check',
     type: 'decision',
-    position: { x: 285, y: 1960 },
+    position: { x: 260, y: 2230 },
     data: {
       label: 'Safety Validation',
       desc: 'Pass all multilingual safety checks?',
@@ -400,7 +433,7 @@ const initialNodes = [
   {
     id: 'deploy',
     type: 'end',
-    position: { x: 285, y: 2110 },
+    position: { x: 260, y: 2380 },
     data: {
       label: 'Deploy & Monitor',
       desc: 'Ship, continuously evaluate, and adapt',
@@ -409,7 +442,7 @@ const initialNodes = [
   {
     id: 'iterate',
     type: 'iterate',
-    position: { x: 590, y: 1960 },
+    position: { x: 565, y: 2230 },
     data: { label: 'Refine & Iterate', desc: 'Address failures, add languages, retrain' },
   },
 ];
@@ -420,6 +453,7 @@ const initialNodes = [
 const EDGE_COLORS = {
   primary: '#64748b',
   direct: '#2563eb',
+  prompting: '#3B7DD8',
   pretranslate: '#0d9488',
   finetune: '#7c3aed',
   safety: '#dc2626',
@@ -444,10 +478,13 @@ const initialEdges = [
   { id: 'e-choose-pretranslate', source: 'choose', target: 'pretranslate', type: 'styled', style: { stroke: EDGE_COLORS.pretranslate, strokeWidth: 2.5 } },
   { id: 'e-choose-finetune', source: 'choose', target: 'finetune', sourceHandle: 'right', type: 'styled', style: { stroke: EDGE_COLORS.finetune, strokeWidth: 2.5 } },
 
-  // ── Path A: Direct Inference (blue) ─────────────
-  { id: 'e-direct-prompt', source: 'direct', target: 'prompt-eng', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2 } },
-  { id: 'e-prompt-test', source: 'prompt-eng', target: 'test-sensitivity', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2 } },
-  { id: 'e-test-cultural', source: 'test-sensitivity', target: 'cultural', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2, strokeDasharray: '6 4' } },
+  // ── Path A: Direct Inference + Prompting (blue) ─
+  { id: 'e-direct-model', source: 'direct', target: 'model-select', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2 } },
+  { id: 'e-model-strategy', source: 'model-select', target: 'prompting-strategy', type: 'styled', style: { stroke: EDGE_COLORS.prompting, strokeWidth: 2 } },
+  { id: 'e-strategy-fewshot', source: 'prompting-strategy', target: 'few-shot-cot', type: 'styled', style: { stroke: EDGE_COLORS.prompting, strokeWidth: 2 } },
+  { id: 'e-fewshot-prompt', source: 'few-shot-cot', target: 'prompt-eng', type: 'styled', style: { stroke: EDGE_COLORS.prompting, strokeWidth: 2 } },
+  { id: 'e-prompt-test', source: 'prompt-eng', target: 'test-prompting', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2 } },
+  { id: 'e-test-cultural', source: 'test-prompting', target: 'cultural', type: 'styled', style: { stroke: EDGE_COLORS.direct, strokeWidth: 2, strokeDasharray: '6 4' } },
 
   // ── Path B: Pre-Translation (teal) ──────────────
   { id: 'e-pre-adapt', source: 'pretranslate', target: 'adaptation', type: 'styled', style: { stroke: EDGE_COLORS.pretranslate, strokeWidth: 2 } },
@@ -497,7 +534,7 @@ export default function FlowchartPage() {
 
   const onInit = useCallback((instance) => {
     reactFlowRef.current = instance;
-    setTimeout(() => instance.fitView({ padding: 0.2, duration: 600, minZoom: 0.45 }), 100);
+    setTimeout(() => instance.fitView({ padding: 0.08, duration: 600 }), 100);
   }, []);
 
   const onNodeClick = useCallback((_event, node) => {
@@ -518,7 +555,7 @@ export default function FlowchartPage() {
         <h1 className="fc-title">Interactive Decision Flowchart</h1>
         <p className="fc-subtitle">
           Navigate the playbook visually — click any node to jump to its chapter.
-          The chart covers evaluation, strategy selection, implementation, and safety validation.
+          The chart covers evaluation, strategy selection, prompting, implementation, and safety validation.
         </p>
 
         {/* Compact inline legend */}
@@ -569,7 +606,7 @@ export default function FlowchartPage() {
               <span className="fc-q-num">4</span>
               <div>
                 <strong>Choose and implement a strategy</strong>
-                <span>Direct inference, pre‑translation, or fine‑tuning — each with its own implementation path shown in the flowchart below.</span>
+                <span>Direct inference with prompting, pre‑translation, or fine‑tuning — each with its own implementation path shown in the flowchart below.</span>
               </div>
             </div>
             <div className="fc-q-item">
@@ -586,10 +623,10 @@ export default function FlowchartPage() {
           <h2>Example outcomes</h2>
           <div className="fc-outcomes">
             <div className="fc-outcome-card">
-              <div className="fc-outcome-tag fc-tag-direct">Direct Inference</div>
+              <div className="fc-outcome-tag fc-tag-direct">Direct Inference + Prompting</div>
               <h3>Mid‑resource language, fast prototype</h3>
               <p><strong>Scenario:</strong> Summarization in Spanish &amp; Portuguese, minimal data, medium cultural nuance</p>
-              <p><strong>Strategy:</strong> Prompt the LLM directly in the target language with cultural prompt engineering. Use selective translation only when reasoning quality drops.</p>
+              <p><strong>Strategy:</strong> Select a model with strong language support, use monolingual prompting with native examples and En-CoT reasoning, then validate with representative samples.</p>
             </div>
             <div className="fc-outcome-card">
               <div className="fc-outcome-tag fc-tag-pretranslate">Pre‑Translation</div>
@@ -675,9 +712,8 @@ export default function FlowchartPage() {
           edgeTypes={edgeTypes}
           defaultEdgeOptions={defaultEdgeOptions}
           fitView
-          fitViewOptions={{ padding: 0.2, minZoom: 0.45 }}
           attributionPosition="bottom-left"
-          minZoom={0.3}
+          minZoom={0.12}
           maxZoom={2.5}
           nodesDraggable={false}
           nodesConnectable={false}
@@ -695,6 +731,10 @@ export default function FlowchartPage() {
         <div className="fc-path-item">
           <span className="fc-path-line" style={{ background: EDGE_COLORS.direct }} />
           <span>Direct inference path</span>
+        </div>
+        <div className="fc-path-item">
+          <span className="fc-path-line" style={{ background: EDGE_COLORS.prompting }} />
+          <span>Prompting strategy path</span>
         </div>
         <div className="fc-path-item">
           <span className="fc-path-line" style={{ background: EDGE_COLORS.pretranslate }} />

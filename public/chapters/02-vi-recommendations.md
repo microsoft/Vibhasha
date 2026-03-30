@@ -129,13 +129,13 @@ These recommendations help ensure that your multilingual system remains accurate
 !!! info "Continue Your Journey"
     
     **📊 Learn How to Evaluate Your System**  
-    [Evaluation Methodologies →](/playbook/01-evaluation){ .md-button }
+    [Evaluation Methodologies →](/playbook/01-evaluation-overview){ .md-button }
     
     **⚙️ Explore Fine-Tuning Approaches**  
-    [Fine-Tuning Strategies →](/playbook/04-fine-tuning){ .md-button }
+    [Fine-Tuning Strategies →](/playbook/04-fine-tuning-overview){ .md-button }
     
     **🛡️ Ensure Safety Across Languages**  
-    [Safety Assessments →](/playbook/05-safety){ .md-button }
+    [Safety Assessments →](/playbook/05-safety-overview){ .md-button }
 
 ---
 

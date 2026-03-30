@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5B5FC7"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="520" rx="12" fill="#F8F9FA"/>
+  
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#242424">Multilingual prompting strategies</text>
+  
+  <!-- Strategy A: Monolingual -->
+  <rect x="30" y="65" width="260" height="200" rx="10" fill="#EAEAFF" stroke="#5B5FC7" stroke-width="1.5"/>
+  <rect x="30" y="65" width="260" height="36" rx="10" fill="#5B5FC7"/>
+  <text x="160" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Monolingual prompting</text>
+  <text x="50" y="120" font-size="12" fill="#242424" font-weight="600">Instruction</text>
+  <rect x="160" y="107" width="110" height="22" rx="4" fill="#D1D1FF"/>
+  <text x="215" y="122" text-anchor="middle" font-size="11" fill="#242424">English</text>
+  <text x="50" y="148" font-size="12" fill="#242424" font-weight="600">Examples</text>
+  <rect x="160" y="135" width="110" height="22" rx="4" fill="#C8F5B7"/>
+  <text x="215" y="150" text-anchor="middle" font-size="11" fill="#242424">Target language</text>
+  <text x="50" y="176" font-size="12" fill="#242424" font-weight="600">Test input</text>
+  <rect x="160" y="163" width="110" height="22" rx="4" fill="#C8F5B7"/>
+  <text x="215" y="178" text-anchor="middle" font-size="11" fill="#242424">Target language</text>
+  <text x="50" y="204" font-size="12" fill="#242424" font-weight="600">Output</text>
+  <rect x="160" y="191" width="110" height="22" rx="4" fill="#C8F5B7"/>
+  <text x="215" y="206" text-anchor="middle" font-size="11" fill="#242424">Target language</text>
+  <text x="160" y="247" text-anchor="middle" font-size="11" fill="#5B5FC7" font-style="italic">English instructions + native data</text>
+
+  <!-- Strategy B: Translate-Test -->
+  <rect x="320" y="65" width="260" height="200" rx="10" fill="#FFF3E2" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="320" y="65" width="260" height="36" rx="10" fill="#D97706"/>
+  <text x="450" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Translate-test prompting</text>
+  <text x="340" y="120" font-size="12" fill="#242424" font-weight="600">Instruction</text>
+  <rect x="450" y="107" width="110" height="22" rx="4" fill="#FFE4BE"/>
+  <text x="505" y="122" text-anchor="middle" font-size="11" fill="#242424">English</text>
+  <text x="340" y="148" font-size="12" fill="#242424" font-weight="600">Examples</text>
+  <rect x="450" y="135" width="110" height="22" rx="4" fill="#FFE4BE"/>
+  <text x="505" y="150" text-anchor="middle" font-size="11" fill="#242424">English</text>
+  <text x="340" y="176" font-size="12" fill="#242424" font-weight="600">Test input</text>
+  <rect x="450" y="163" width="110" height="22" rx="4" fill="#FFE4BE"/>
+  <text x="505" y="178" text-anchor="middle" font-size="11" fill="#242424">English (translated)</text>
+  <text x="340" y="204" font-size="12" fill="#242424" font-weight="600">Output</text>
+  <rect x="450" y="191" width="110" height="22" rx="4" fill="#FFE4BE"/>
+  <text x="505" y="206" text-anchor="middle" font-size="11" fill="#242424">English</text>
+  <text x="450" y="247" text-anchor="middle" font-size="11" fill="#D97706" font-style="italic">Everything in English via translation</text>
+
+  <!-- Strategy C: Cross-Lingual -->
+  <rect x="610" y="65" width="260" height="200" rx="10" fill="#EDFDE6" stroke="#16A34A" stroke-width="1.5"/>
+  <rect x="610" y="65" width="260" height="36" rx="10" fill="#16A34A"/>
+  <text x="740" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Cross-lingual prompting</text>
+  <text x="630" y="120" font-size="12" fill="#242424" font-weight="600">Instruction</text>
+  <rect x="740" y="107" width="110" height="22" rx="4" fill="#D1D1FF"/>
+  <text x="795" y="122" text-anchor="middle" font-size="11" fill="#242424">English</text>
+  <text x="630" y="148" font-size="12" fill="#242424" font-weight="600">Examples</text>
+  <rect x="740" y="135" width="110" height="22" rx="4" fill="#D1D1FF"/>
+  <text x="795" y="150" text-anchor="middle" font-size="11" fill="#242424">English / pivot</text>
+  <text x="630" y="176" font-size="12" fill="#242424" font-weight="600">Test input</text>
+  <rect x="740" y="163" width="110" height="22" rx="4" fill="#C8F5B7"/>
+  <text x="795" y="178" text-anchor="middle" font-size="11" fill="#242424">Target language</text>
+  <text x="630" y="204" font-size="12" fill="#242424" font-weight="600">Output</text>
+  <rect x="740" y="191" width="110" height="22" rx="4" fill="#C8F5B7"/>
+  <text x="795" y="206" text-anchor="middle" font-size="11" fill="#242424">Target language</text>
+  <text x="740" y="247" text-anchor="middle" font-size="11" fill="#16A34A" font-style="italic">English demos + native input/output</text>
+
+  <!-- Bottom: Decision flow -->
+  <rect x="30" y="290" width="840" height="210" rx="10" fill="#fff" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="450" y="316" text-anchor="middle" font-size="15" font-weight="700" fill="#242424">How to choose your strategy</text>
+  
+  <!-- Decision nodes -->
+  <rect x="60" y="340" width="200" height="50" rx="8" fill="#EAEAFF" stroke="#5B5FC7" stroke-width="1"/>
+  <text x="160" y="362" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Is the target language</text>
+  <text x="160" y="378" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">well-represented in the model?</text>
+
+  <!-- Yes path -->
+  <line x1="260" y1="365" x2="340" y2="365" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="300" y="358" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="600">Yes</text>
+  <rect x="340" y="340" width="200" height="50" rx="8" fill="#EDFDE6" stroke="#16A34A" stroke-width="1"/>
+  <text x="440" y="362" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Try monolingual prompting</text>
+  <text x="440" y="378" text-anchor="middle" font-size="11" fill="#242424">(native examples + English instr)</text>
+  
+  <!-- No path -->
+  <line x1="160" y1="390" x2="160" y2="430" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="172" y="415" font-size="10" fill="#D97706" font-weight="600">No</text>
+  <rect x="60" y="430" width="200" height="50" rx="8" fill="#FFF3E2" stroke="#D97706" stroke-width="1"/>
+  <text x="160" y="452" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Is MT quality strong</text>
+  <text x="160" y="468" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">for this language?</text>
+  
+  <!-- Yes from MT -->
+  <line x1="260" y1="455" x2="340" y2="455" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="300" y="448" text-anchor="middle" font-size="10" fill="#16A34A" font-weight="600">Yes</text>
+  <rect x="340" y="430" width="200" height="50" rx="8" fill="#FFF3E2" stroke="#D97706" stroke-width="1"/>
+  <text x="440" y="452" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Try translate-test prompting</text>
+  <text x="440" y="468" text-anchor="middle" font-size="11" fill="#242424">(translate input → English)</text>
+  
+  <!-- No from MT -->
+  <line x1="260" y1="455" x2="610" y2="455" stroke="#5B5FC7" stroke-width="0" />
+  <line x1="540" y1="455" x2="620" y2="455" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="580" y="448" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">No</text>
+  <rect x="620" y="430" width="230" height="50" rx="8" fill="#EAEAFF" stroke="#5B5FC7" stroke-width="1"/>
+  <text x="735" y="452" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Try cross-lingual prompting</text>
+  <text x="735" y="468" text-anchor="middle" font-size="11" fill="#242424">(English demos + native input)</text>
+
+  <!-- Right arrow from monolingual to aggregate -->
+  <line x1="540" y1="365" x2="620" y2="365" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="620" y="340" width="230" height="50" rx="8" fill="#F0F0F0" stroke="#888" stroke-width="1"/>
+  <text x="735" y="358" text-anchor="middle" font-size="11" fill="#242424" font-weight="600">Consider aggregation:</text>
+  <text x="735" y="374" text-anchor="middle" font-size="11" fill="#242424">run multiple strategies + combine</text>
+</svg>
