@@ -5,10 +5,12 @@ import { Open24Regular } from '@fluentui/react-icons';
 import './styles/SiteFooter.css';
 
 export default function SiteFooter() {
-  const { appName, setAppName, allApps } = useTheme();
+  const { colors, theme, appName, setAppName } = useTheme();
   const navigate = useNavigate();
 
-  const externalLinks = allApps.filter(a => a.title.toLowerCase() !== (appName || '').toLowerCase());
+  const { allApps } = useTheme();
+
+  const promos = allApps.filter(a => a.title.toLowerCase() !== (appName || '').toLowerCase());
 
   return (
     <div className="promo-footer" role="contentinfo">
@@ -18,37 +20,39 @@ export default function SiteFooter() {
           <a
             href="https://www.microsoft.com/en-us/research/project/project-gecko/"
             className="promo-link"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open('https://www.microsoft.com/en-us/research/project/project-gecko/', '_blank');
+            }}
           >
             <strong>Project Gecko</strong>
             <Open24Regular />
           </a>
         </div>
         <div className="promo-right">
-          {externalLinks.map(playbook => {
-            const Icon = iconByBrand[playbook.brand] || iconByBrand.teal;
-            const brandClass = playbook.brand ? `promo-cta promo-cta--${playbook.brand}` : 'promo-cta';
+          {promos.map(p => {
+            const pal = brandPalettes[p.brand] || brandPalettes.teal;
+            const c = pal[theme] || pal.light;
+            const Icon = iconByBrand[p.brand] || iconByBrand.teal;
+            const brandClass = p.brand ? `promo-cta promo-cta--${p.brand}` : 'promo-cta';
             return (
-              <button
-                key={playbook.key}
+              <a
+                key={p.key}
                 className={brandClass}
-                href={playbook.externalUrl || '#'}
+                href={p.url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
-                  e.preventDefault();
-                  if (playbook.externalUrl) {
-                    window.open(playbook.externalUrl, '_blank', 'noopener,noreferrer');
-                    return;
+                  if (!p.url) {
+                    e.preventDefault();
+                    setAppName(p.key);
+                    navigate('/playbook');
                   }
-                  setAppName(playbook.key);
-                  navigate('/playbook');
                 }}
               >
                 <span className="promo-icon"><Icon fontSize={24} /></span>
-                {playbook.title} Playbook
-              </button>
+                {p.title} Playbook
+              </a>
             );
           })}
         </div>

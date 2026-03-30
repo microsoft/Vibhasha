@@ -52,14 +52,18 @@ const LABEL_OVERRIDES = {
     '00-introduction': 'Getting Started',
     '01-ii-pipeline': 'Eval in Practice',
     '01-iii-low-resource': 'Low-Resource MT',
-    '02-i-strategic-crossroads': 'Crossroads',
+    '02-ii-model-selection': 'Model Selection',
+    '02-iii-few-shot': 'Few-Shot & Chain-of-Thought',
+    '02-iv-evaluation': 'Testing & Validation',
+    '03-i-strategic-crossroads': 'Crossroads',
     '99-conclusion': 'Moving Forward'
 };
 // Default icon map for common roots (can be edited later in docIndex)
 const DEFAULT_ICON_BY_BASE = {
     '00-introduction': 'Target24Regular',
     '01-evaluation': 'TaskListSquareLtr24Regular',
-    '02-translation': 'TranslateAuto24Regular',
+    '02-prompting': 'ChatSparkle24Regular',
+    '03-translation': 'TranslateAuto24Regular',
     '04-fine-tuning': 'Options24Regular',
     '05-safety': 'Shield24Regular',
     '06-synthetic-data': 'SquareHintSparkles24Regular',

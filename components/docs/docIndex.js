@@ -84,17 +84,26 @@ export const docEntries = [
     "icon": null
   },
   {
+    "path": "/playbook/01-vii-pipeline",
+    "label": "Pipeline",
+    "base": "01-vii-pipeline",
+    "content": "/public/chapters/01-vii-pipeline.md",
+    "prefix": "01",
+    "isSub": true,
+    "icon": null
+  },
+  {
     "path": "/playbook/02-translation",
     "label": "Translation",
     "base": "02-translation",
     "content": "/public/chapters/02-translation.md",
     "prefix": "02",
     "isSub": false,
-    "icon": "TranslateAuto24Regular"
+    "icon": "Document24Regular"
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
-    "label": "Crossroads",
+    "label": "Strategic Crossroads",
     "base": "02-i-strategic-crossroads",
     "content": "/public/chapters/02-i-strategic-crossroads.md",
     "prefix": "02",
@@ -143,6 +152,51 @@ export const docEntries = [
     "base": "02-vi-recommendations",
     "content": "/public/chapters/02-vi-recommendations.md",
     "prefix": "02",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/03-prompting",
+    "label": "Prompting",
+    "base": "03-prompting",
+    "content": "/public/chapters/03-prompting.md",
+    "prefix": "03",
+    "isSub": false,
+    "icon": "ChatSparkle24Regular"
+  },
+  {
+    "path": "/playbook/03-i-strategies",
+    "label": "Strategies",
+    "base": "03-i-strategies",
+    "content": "/public/chapters/03-i-strategies.md",
+    "prefix": "03",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/03-ii-model-selection",
+    "label": "Model Selection",
+    "base": "03-ii-model-selection",
+    "content": "/public/chapters/03-ii-model-selection.md",
+    "prefix": "03",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/03-iii-few-shot",
+    "label": "Few Shot",
+    "base": "03-iii-few-shot",
+    "content": "/public/chapters/03-iii-few-shot.md",
+    "prefix": "03",
+    "isSub": true,
+    "icon": null
+  },
+  {
+    "path": "/playbook/03-iv-evaluation",
+    "label": "Evaluation",
+    "base": "03-iv-evaluation",
+    "content": "/public/chapters/03-iv-evaluation.md",
+    "prefix": "03",
     "isSub": true,
     "icon": null
   },
@@ -388,6 +442,15 @@ export const docEntries = [
     "prefix": null,
     "isSub": false,
     "icon": "BookmarkAdd24Regular"
+  },
+  {
+    "path": "/playbook/landingpage",
+    "label": "Landingpage",
+    "base": "landingpage",
+    "content": "/public/chapters/landingpage.md",
+    "prefix": null,
+    "isSub": false,
+    "icon": "Document24Regular"
   }
 ];
 
@@ -429,12 +492,16 @@ export const docOrder = [
     "label": "Challenges"
   },
   {
+    "path": "/playbook/01-vii-pipeline",
+    "label": "Pipeline"
+  },
+  {
     "path": "/playbook/02-translation",
     "label": "Translation"
   },
   {
     "path": "/playbook/02-i-strategic-crossroads",
-    "label": "Crossroads"
+    "label": "Strategic Crossroads"
   },
   {
     "path": "/playbook/02-ii-architectures",
@@ -455,6 +522,26 @@ export const docOrder = [
   {
     "path": "/playbook/02-vi-recommendations",
     "label": "Recommendations"
+  },
+  {
+    "path": "/playbook/03-prompting",
+    "label": "Prompting"
+  },
+  {
+    "path": "/playbook/03-i-strategies",
+    "label": "Strategies"
+  },
+  {
+    "path": "/playbook/03-ii-model-selection",
+    "label": "Model Selection"
+  },
+  {
+    "path": "/playbook/03-iii-few-shot",
+    "label": "Few Shot"
+  },
+  {
+    "path": "/playbook/03-iv-evaluation",
+    "label": "Evaluation"
   },
   {
     "path": "/playbook/04-fine-tuning",
@@ -563,5 +650,9 @@ export const docOrder = [
   {
     "path": "/playbook/100-attribution",
     "label": "Attribution"
+  },
+  {
+    "path": "/playbook/landingpage",
+    "label": "Landingpage"
   }
 ];
