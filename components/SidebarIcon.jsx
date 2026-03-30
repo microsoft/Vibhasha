@@ -15,6 +15,7 @@ import {
   Diversity24Regular, Diversity24Filled,
   TargetSparkle24Regular, TargetSparkle24Filled,
   BookmarkAdd24Regular, BookmarkAdd24Filled,
+  ChatSparkle24Regular, ChatSparkle24Filled,
 } from '@fluentui/react-icons'
 
 const PAIRS = {
@@ -33,6 +34,7 @@ const PAIRS = {
   Diversity24: { Regular: Diversity24Regular, Filled: Diversity24Filled },
   TargetSparkle24: { Regular: TargetSparkle24Regular, Filled: TargetSparkle24Filled },
   BookmarkAdd24: { Regular: BookmarkAdd24Regular, Filled: BookmarkAdd24Filled },
+  ChatSparkle24: { Regular: ChatSparkle24Regular, Filled: ChatSparkle24Filled },
 }
 
 export default function SidebarIcon({ name, active }){

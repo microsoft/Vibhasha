@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5B5FC7"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="480" rx="12" fill="#F8F9FA"/>
+  <text x="450" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#242424">Model selection workflow for multilingual tasks</text>
+
+  <!-- Step 1 -->
+  <rect x="30" y="60" width="840" height="70" rx="10" fill="#EAEAFF" stroke="#5B5FC7" stroke-width="1.5"/>
+  <circle cx="60" cy="95" r="16" fill="#5B5FC7"/>
+  <text x="60" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1</text>
+  <text x="90" y="90" font-size="13" font-weight="700" fill="#242424">Define your requirements</text>
+  <text x="90" y="110" font-size="11" fill="#555">Target languages · Task type (classification, generation, reasoning) · Latency/cost constraints · Required quality bar</text>
+
+  <line x1="450" y1="130" x2="450" y2="150" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- Step 2 -->
+  <rect x="30" y="150" width="840" height="85" rx="10" fill="#FFF3E2" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="60" cy="192" r="16" fill="#D97706"/>
+  <text x="60" y="197" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2</text>
+  <text x="90" y="180" font-size="13" font-weight="700" fill="#242424">Check language support and training data</text>
+  <text x="90" y="198" font-size="11" fill="#555">✓ Official language lists in model cards  ·  ✓ Training data composition  ·  ✓ Tokenizer coverage</text>
+  <text x="90" y="216" font-size="11" fill="#555">✓ Language family proximity to well-supported languages  ·  ✓ Community reports and benchmarks</text>
+
+  <line x1="450" y1="235" x2="450" y2="255" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- Step 3 -->
+  <rect x="30" y="255" width="840" height="85" rx="10" fill="#EDFDE6" stroke="#16A34A" stroke-width="1.5"/>
+  <circle cx="60" cy="297" r="16" fill="#16A34A"/>
+  <text x="60" y="302" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3</text>
+  <text x="90" y="285" font-size="13" font-weight="700" fill="#242424">Consult leaderboards and benchmarks</text>
+  <text x="90" y="303" font-size="11" fill="#555">Open LLM Leaderboard · MEGA benchmark · Belebele · Flores-200 · XTREME-UP · SIB-200</text>
+  <text x="90" y="321" font-size="11" fill="#555">Match benchmarks to your task type · Check per-language breakdowns · Watch for contamination risks</text>
+
+  <line x1="450" y1="340" x2="450" y2="360" stroke="#5B5FC7" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- Step 4 -->
+  <rect x="30" y="360" width="840" height="95" rx="10" fill="#EAEAFF" stroke="#5B5FC7" stroke-width="1.5"/>
+  <circle cx="60" cy="407" r="16" fill="#5B5FC7"/>
+  <text x="60" y="412" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4</text>
+  <text x="90" y="390" font-size="13" font-weight="700" fill="#242424">Run your own evaluation on representative samples</text>
+  <text x="90" y="408" font-size="11" fill="#555">Create 50–100 representative samples from your target application</text>
+  <text x="90" y="426" font-size="11" fill="#555">Test 2–3 candidate models · Try multiple prompting strategies per model · Use human evaluation for final ranking</text>
+  <text x="90" y="444" font-size="11" fill="#555">Compare: accuracy, cultural appropriateness, safety, latency, cost</text>
+</svg>

@@ -128,7 +128,7 @@
 /* ── Path Cards ── */
 .path-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   margin-top: 32px;
 }
@@ -154,6 +154,10 @@
 
 .path-card--translation {
   background: #4A43CB;
+}
+
+.path-card--prompting {
+  background: #3B7DD8;
 }
 
 .path-card--finetuning {

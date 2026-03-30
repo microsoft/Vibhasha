@@ -17,6 +17,7 @@ import {
   Diversity24Regular,
   TargetSparkle24Regular,
   BookmarkAdd24Regular,
+  ChatSparkle24Regular,
 } from '@fluentui/react-icons';
 import SidebarIcon from './SidebarIcon';
 import { docEntries } from './docs/docIndex';
@@ -217,6 +218,7 @@ export default function PlaybookIntro(){
           const chapterCards = [
             { label: 'Getting Started', icon: <Target24Regular />, path: '/playbook/00-introduction' },
             { label: 'Evaluation', icon: <TaskListSquareLtr24Regular />, path: '/playbook/01-evaluation' },
+            { label: 'Prompting', icon: <ChatSparkle24Regular />, path: '/playbook/03-prompting' },
             { label: 'Translation', icon: <TranslateAuto24Regular />, path: '/playbook/02-translation' },
             { label: 'Fine-tuning', icon: <Options24Regular />, path: '/playbook/04-fine-tuning' },
             { label: 'Safety', icon: <Shield24Regular />, path: '/playbook/05-safety' },
@@ -242,6 +244,22 @@ export default function PlaybookIntro(){
                   return (
               <div key={i} className="path-cards">
           <button
+            className="path-card path-card--prompting"
+            onClick={() => navigate('/playbook/03-prompting')}
+          >
+            <div className="path-card__content">
+              <span className="path-card__question">Using LLMs off the shelf?</span>
+              <span className="path-card__desc">Learn how to prompt multilingual models effectively across languages</span>
+            </div>
+            <div className="path-card__footer">
+              <span className="path-card__label">Prompting Path</span>
+              <span className="path-card__arrow">
+                <ArrowUpRight24Regular />
+              </span>
+            </div>
+          </button>
+
+          <button
             className="path-card path-card--translation"
             onClick={() => navigate('/playbook/02-translation')}
           >
@@ -250,7 +268,7 @@ export default function PlaybookIntro(){
               <span className="path-card__desc">Try the translation approach for quick results with mainstream languages</span>
             </div>
             <div className="path-card__footer">
-              <span className="path-card__label">Translation & Off-the-shelf LLM Path</span>
+              <span className="path-card__label">Translation Path</span>
               <span className="path-card__arrow">
                 <ArrowUpRight24Regular />
               </span>
