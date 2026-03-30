@@ -52,6 +52,7 @@ import ViConclusionDoc from './components/docs/07-vi-conclusion'
 import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import AttributionDoc from './components/docs/100-attribution';
+import EvalsDashboard from './components/EvalsDashboard';
 
 // Use '/Vibhasha/' for public repo GitHub Pages (microsoft.github.io/Vibhasha)
 const basename = '/Vibhasha/'
@@ -62,6 +63,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route path="evals" element={<EvalsDashboard />} />
             <Route element={<Playbook />}>
               <Route index element={<PlaybookIntro />} />
               <Route path="playbook">
