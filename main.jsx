@@ -61,8 +61,8 @@ import EvalsDashboard from './components/EvalsDashboard';
 import ViiPipelineDoc from './components/docs/01-vii-pipeline';
 import LandingpageDoc from './components/docs/landingpage';
 
-// Use '/Vibhasha/' for public repo GitHub Pages (microsoft.github.io/Vibhasha)
-const basename = '/Vibhasha/'
+// Vite injects the `base` value from vite.config.js as import.meta.env.BASE_URL
+const basename = import.meta.env.BASE_URL
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

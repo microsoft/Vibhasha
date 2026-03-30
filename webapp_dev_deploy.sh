@@ -20,7 +20,11 @@ npm run sync-docs
 npm run sync-index
 npm run sync-routes
 
-npm run build
+VITE_BASE=/ npm run build
+
+# Copy index.html to SPA routes so they resolve on Azure
+mkdir -p dist/evals
+cp dist/index.html dist/evals/index.html
 
 cd dist && zip -r ../site.zip .
 echo "Zipped dist/ to site.zip"
