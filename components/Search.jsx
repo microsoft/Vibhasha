@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { docEntries } from "./docs/docIndex";
 import { Search20Regular, Dismiss24Regular } from '@fluentui/react-icons';
 import './styles/Search.css';
+import { trackSearchPerformed, trackSearchResultClicked } from '../lib/telemetry.js';
 
 export default function GlobalSearch({ onSearchActiveChange }) {
   const navigate = useNavigate();
@@ -71,6 +72,20 @@ export default function GlobalSearch({ onSearchActiveChange }) {
     setPage(1);
   }, [query, mdCache]);
 
+  // Telemetry: emit SearchPerformed once per settled query (debounced).
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) return undefined;
+    const handle = setTimeout(() => {
+      trackSearchPerformed({
+        query_length: q.length,
+        results_count: results.length,
+        has_results: results.length > 0,
+      });
+    }, 600);
+    return () => clearTimeout(handle);
+  }, [query, results.length]);
+
   const pagedResults = useMemo(() => {
     const start = (page - 1) * PAGE_SIZE;
     return results.slice(start, start + PAGE_SIZE);
@@ -78,7 +93,12 @@ export default function GlobalSearch({ onSearchActiveChange }) {
 
   const totalPages = Math.ceil(results.length / PAGE_SIZE);
 
-  const handleClick = (path, q) => {
+  const handleClick = (path, q, rank) => {
+    const slug = (path || '').split('/').pop().toLowerCase();
+    trackSearchResultClicked({
+      result_chapter: slug || 'unknown',
+      result_rank: rank,
+    });
     navigate(path + `?highlight=${encodeURIComponent(q)}`);
   };
 
@@ -117,7 +137,7 @@ export default function GlobalSearch({ onSearchActiveChange }) {
               key={idx}
               item={item}
               query={query}
-              onClick={() => handleClick(item.path, query)}
+              onClick={() => handleClick(item.path, query, (page - 1) * PAGE_SIZE + idx + 1)}
             />
           ))}
 

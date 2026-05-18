@@ -3,6 +3,7 @@ import { useTheme, brandPalettes, iconByBrand } from '../theme/ThemeContext.jsx'
 import { useNavigate } from 'react-router-dom';
 import { Open24Regular } from '@fluentui/react-icons';
 import './styles/SiteFooter.css';
+import { trackExternalLinkClick, trackCrossPlaybookNavigation } from '../lib/telemetry.js';
 
 export default function SiteFooter() {
   const { appName, setAppName, allApps } = useTheme();
@@ -20,6 +21,11 @@ export default function SiteFooter() {
             className="promo-link"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackExternalLinkClick({
+              url_domain: 'microsoft.com',
+              link_text: 'Project Gecko',
+              link_context: 'footer',
+            })}
           >
             <strong>Project Gecko</strong>
             <Open24Regular />
@@ -38,6 +44,10 @@ export default function SiteFooter() {
                 rel="noopener noreferrer"
                 onClick={(e) => {
                   e.preventDefault();
+                  trackCrossPlaybookNavigation({
+                    source_playbook: (appName || '').toLowerCase(),
+                    target_playbook: (playbook.key || playbook.title || '').toLowerCase(),
+                  });
                   if (playbook.externalUrl) {
                     window.open(playbook.externalUrl, '_blank', 'noopener,noreferrer');
                     return;

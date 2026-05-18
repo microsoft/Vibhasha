@@ -18,6 +18,15 @@ import { preprocessAdmonitions } from '../plugins/remark-admonitions.js';
 import { preprocessIcons } from '../plugins/remark-icons.js';
 import { preprocessAttrList } from '../plugins/remark-attr-list.js';
 import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
+import {
+  trackScrollMilestone,
+  trackChapterCompleted,
+  trackChapterNavigation,
+  trackCodeCopied,
+  trackExternalLinkClick,
+  resetScrollDedup,
+  resetChapterCompleted,
+} from '../lib/telemetry.js';
 
 /**
  * Preprocess markdown content to transform MkDocs Material syntax
@@ -142,6 +151,64 @@ export default function MarkdownPage({ filePath }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
+
+  // Reset per-page telemetry dedup state when route changes.
+  useEffect(() => {
+    resetScrollDedup();
+    resetChapterCompleted();
+  }, [location.pathname]);
+
+  // Scroll-milestone telemetry: sentinels at 25/50/75/100% of the markdown body.
+  useEffect(() => {
+    if (!processedContent) return undefined;
+    const body = document.querySelector('.markdown-body');
+    if (!body) return undefined;
+    const pageStart = performance.now();
+    const milestones = [25, 50, 75, 100];
+    const sentinels = [];
+    const prevPosition = body.style.position;
+    if (!prevPosition) body.style.position = 'relative';
+    milestones.forEach((m) => {
+      const el = document.createElement('div');
+      el.setAttribute('data-telemetry-sentinel', String(m));
+      el.style.position = 'absolute';
+      el.style.left = '0';
+      el.style.width = '1px';
+      el.style.height = '1px';
+      el.style.pointerEvents = 'none';
+      el.style.opacity = '0';
+      el.style.top = `calc(${m}% - 1px)`;
+      body.appendChild(el);
+      sentinels.push(el);
+    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const milestone = Number(entry.target.getAttribute('data-telemetry-sentinel'));
+          if (!milestone) return;
+          trackScrollMilestone({
+            milestone,
+            content_height: body.scrollHeight,
+            time_to_milestone_ms: Math.round(performance.now() - pageStart),
+          });
+          if (milestone === 100) {
+            trackChapterCompleted({
+              completion_method: 'scroll_bottom',
+              time_on_page_ms: Math.round(performance.now() - pageStart),
+            });
+          }
+        });
+      },
+      { root: null, threshold: 0 }
+    );
+    sentinels.forEach((el) => observer.observe(el));
+    return () => {
+      observer.disconnect();
+      sentinels.forEach((el) => el.remove());
+      if (!prevPosition) body.style.position = '';
+    };
+  }, [processedContent, location.pathname]);
 
   // On new page, default TOC active to the first heading
   useEffect(() => {
@@ -327,6 +394,11 @@ export default function MarkdownPage({ filePath }) {
       await navigator.clipboard.writeText(codeString);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      trackCodeCopied({
+        language: language || 'plain',
+        snippet_length: codeString.length,
+        snippet_preview: codeString.slice(0, 50),
+      });
     };
 
     const handleDownload = () => {
@@ -393,6 +465,25 @@ export default function MarkdownPage({ filePath }) {
   const mdComponents = {
     ...mdHeadingComponents,
     code: CodeBlock,
+    a: ({ node, href, children, ...props }) => {
+      const isExternal = href && /^https?:\/\//.test(href);
+      if (isExternal) {
+        const handleExt = () => {
+          let domain = '';
+          try { domain = new URL(href).hostname; } catch (_) { domain = href; }
+          const text = typeof children === 'string'
+            ? children
+            : (Array.isArray(children) ? children.join(' ') : '');
+          trackExternalLinkClick({
+            url_domain: domain,
+            link_text: String(text).slice(0, 80),
+            link_context: 'content',
+          });
+        };
+        return <a href={href} target="_blank" rel="noopener noreferrer" onClick={handleExt} {...props}>{children}</a>;
+      }
+      return <a href={href} {...props}>{children}</a>;
+    },
   };
 
   // Images expected to be referenced with absolute `/assets/chapters/...` paths in markdown
@@ -423,7 +514,10 @@ export default function MarkdownPage({ filePath }) {
                 <nav className="prev-next-nav" aria-label="Page navigation">
                   {prev ? (
                     <button
-                      onClick={() => navigate(prev.path)}
+                      onClick={() => {
+                        trackChapterNavigation({ direction: 'previous' });
+                        navigate(prev.path);
+                      }}
                       className="btn-primary"
                     >
                       <ChevronLeft24Regular />
@@ -433,7 +527,11 @@ export default function MarkdownPage({ filePath }) {
 
                   {next ? (
                     <button
-                      onClick={() => navigate(next.path)}
+                      onClick={() => {
+                        trackChapterNavigation({ direction: 'next' });
+                        trackChapterCompleted({ completion_method: 'next_button' });
+                        navigate(next.path);
+                      }}
                       className="btn-primary"
                     >
                       <span>{next.label}</span>
