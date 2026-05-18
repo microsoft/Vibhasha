@@ -159,10 +159,13 @@ export default function MarkdownPage({ filePath }) {
   }, [location.pathname]);
 
   // Scroll-milestone telemetry: sentinels at 25/50/75/100% of the markdown body.
+  // Skipped on short pages (content shorter than viewport) to avoid firing all
+  // milestones immediately on mount without any user scroll.
   useEffect(() => {
     if (!processedContent) return undefined;
     const body = document.querySelector('.markdown-body');
     if (!body) return undefined;
+    if (body.scrollHeight <= window.innerHeight + 4) return undefined;
     const pageStart = performance.now();
     const milestones = [25, 50, 75, 100];
     const sentinels = [];
@@ -397,7 +400,6 @@ export default function MarkdownPage({ filePath }) {
       trackCodeCopied({
         language: language || 'plain',
         snippet_length: codeString.length,
-        snippet_preview: codeString.slice(0, 50),
       });
     };
 
@@ -468,19 +470,20 @@ export default function MarkdownPage({ filePath }) {
     a: ({ node, href, children, ...props }) => {
       const isExternal = href && /^https?:\/\//.test(href);
       if (isExternal) {
-        const handleExt = () => {
+        const handleExt = (e) => {
           let domain = '';
           try { domain = new URL(href).hostname; } catch (_) { domain = href; }
-          const text = typeof children === 'string'
-            ? children
-            : (Array.isArray(children) ? children.join(' ') : '');
+          const text = React.Children.toArray(children)
+            .filter((child) => typeof child === 'string')
+            .join(' ');
           trackExternalLinkClick({
             url_domain: domain,
             link_text: String(text).slice(0, 80),
             link_context: 'content',
           });
+          if (typeof props.onClick === 'function') props.onClick(e);
         };
-        return <a href={href} target="_blank" rel="noopener noreferrer" onClick={handleExt} {...props}>{children}</a>;
+        return <a href={href} target="_blank" rel="noopener noreferrer" {...props} onClick={handleExt}>{children}</a>;
       }
       return <a href={href} {...props}>{children}</a>;
     },

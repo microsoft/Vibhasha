@@ -73,18 +73,23 @@ export default function GlobalSearch({ onSearchActiveChange }) {
   }, [query, mdCache]);
 
   // Telemetry: emit SearchPerformed once per settled query (debounced).
+  // Use a ref for the results count so the dep array can stay [query] only,
+  // preventing duplicate emits when async result computation lands later.
+  const resultsRef = useRef(results);
+  useEffect(() => { resultsRef.current = results; }, [results]);
   useEffect(() => {
     const q = query.trim();
     if (!q) return undefined;
     const handle = setTimeout(() => {
+      const count = resultsRef.current.length;
       trackSearchPerformed({
         query_length: q.length,
-        results_count: results.length,
-        has_results: results.length > 0,
+        results_count: count,
+        has_results: count > 0,
       });
     }, 600);
     return () => clearTimeout(handle);
-  }, [query, results.length]);
+  }, [query]);
 
   const pagedResults = useMemo(() => {
     const start = (page - 1) * PAGE_SIZE;
