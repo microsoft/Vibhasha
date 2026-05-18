@@ -6,6 +6,10 @@ import Playbook from './Playbook'
 import PlaybookIntro from './components/PlaybookIntro'
 import './styles.css'
 import { UIProvider } from './theme/UIContext'
+import pkg from './package.json'
+import { initTelemetry } from './lib/telemetry'
+
+initTelemetry((pkg?.name ?? 'vibhasha').toLowerCase())
 
 // Docs markdown components
 import IntroductionDoc from './components/docs/00-introduction'
