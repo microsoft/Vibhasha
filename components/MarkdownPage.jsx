@@ -19,13 +19,14 @@ import { preprocessIcons } from '../plugins/remark-icons.js';
 import { preprocessAttrList } from '../plugins/remark-attr-list.js';
 import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
 import {
+  setChapterContext,
   trackScrollMilestone,
   trackChapterCompleted,
   trackChapterNavigation,
   trackCodeCopied,
+  trackCodeDownloaded,
   trackExternalLinkClick,
   resetScrollDedup,
-  resetChapterCompleted,
 } from '../lib/telemetry.js';
 
 /**
@@ -147,26 +148,31 @@ export default function MarkdownPage({ filePath }) {
     }
   }, [content]);
 
-  // Always scroll to top when the route (page) changes
+  // Single route-change effect: announce chapter context, reset scroll dedup, scroll to top.
   useEffect(() => {
+    const entry = docEntries.find((e) => e.path === location.pathname);
+    const parent = entry?.isSub
+      ? docEntries.find((e) => !e.isSub && e.prefix === entry.prefix)
+      : null;
+    setChapterContext({
+      chapter_id: entry?.base ?? (location.pathname === '/' ? 'landing' : 'overview'),
+      chapter_title: entry?.label ?? (location.pathname === '/' ? 'Landing' : 'Overview'),
+      parent_chapter_id: parent?.base ?? null,
+      parent_chapter_title: parent?.label ?? null,
+      is_subchapter: !!entry?.isSub,
+      route: location.pathname,
+    });
+    resetScrollDedup();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
-  // Reset per-page telemetry dedup state when route changes.
-  useEffect(() => {
-    resetScrollDedup();
-    resetChapterCompleted();
-  }, [location.pathname]);
-
   // Scroll-milestone telemetry: sentinels at 25/50/75/100% of the markdown body.
-  // Skipped on short pages (content shorter than viewport) to avoid firing all
-  // milestones immediately on mount without any user scroll.
+  // Skipped on short pages (content shorter than viewport).
   useEffect(() => {
     if (!processedContent) return undefined;
     const body = document.querySelector('.markdown-body');
     if (!body) return undefined;
     if (body.scrollHeight <= window.innerHeight + 4) return undefined;
-    const pageStart = performance.now();
     const milestones = [25, 50, 75, 100];
     const sentinels = [];
     const prevPosition = body.style.position;
@@ -190,17 +196,7 @@ export default function MarkdownPage({ filePath }) {
           if (!entry.isIntersecting) return;
           const milestone = Number(entry.target.getAttribute('data-telemetry-sentinel'));
           if (!milestone) return;
-          trackScrollMilestone({
-            milestone,
-            content_height: body.scrollHeight,
-            time_to_milestone_ms: Math.round(performance.now() - pageStart),
-          });
-          if (milestone === 100) {
-            trackChapterCompleted({
-              completion_method: 'scroll_bottom',
-              time_on_page_ms: Math.round(performance.now() - pageStart),
-            });
-          }
+          trackScrollMilestone({ milestone });
         });
       },
       { root: null, threshold: 0 }
@@ -397,10 +393,7 @@ export default function MarkdownPage({ filePath }) {
       await navigator.clipboard.writeText(codeString);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      trackCodeCopied({
-        language: language || 'plain',
-        snippet_length: codeString.length,
-      });
+      trackCodeCopied({ language: language || 'plain' });
     };
 
     const handleDownload = () => {
@@ -412,6 +405,7 @@ export default function MarkdownPage({ filePath }) {
       a.download = `code.${ext}`;
       a.click();
       URL.revokeObjectURL(url);
+      trackCodeDownloaded({ language: language || 'plain' });
     };
 
     if (!inline && language) {
@@ -478,7 +472,7 @@ export default function MarkdownPage({ filePath }) {
             .join(' ');
           trackExternalLinkClick({
             url_domain: domain,
-            link_text: String(text).slice(0, 80),
+            link_text: text,
             link_context: 'content',
           });
           if (typeof props.onClick === 'function') props.onClick(e);
