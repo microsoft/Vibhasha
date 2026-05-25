@@ -7,13 +7,10 @@ import SidebarIcon from './SidebarIcon'
 import { docEntries } from './docs/docIndex'
 import { trackSidebarNavigation } from '../lib/telemetry.js'
 
-function chapterIdFromPath(path) {
-  if (!path) return 'unknown';
-  if (path === '/') return 'landing';
-  const m = path.match(/\/playbook(?:\/(.+))?$/i);
-  if (!m) return 'unknown';
-  if (!m[1]) return 'overview';
-  return m[1].split('/').pop().toLowerCase();
+// Look up the chapter slug for a route via docEntries (single source of truth).
+function chapterIdFor(path) {
+  return docEntries.find((e) => e.path === path)?.base
+    ?? (path === '/' ? 'landing' : 'overview');
 }
 
 export default function Sidebar() {
@@ -23,8 +20,8 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   const handleNavClick = (toPath) => () => {
-    const from = chapterIdFromPath(location.pathname);
-    const to = chapterIdFromPath(toPath);
+    const from = chapterIdFor(location.pathname);
+    const to = chapterIdFor(toPath);
     if (from !== to) {
       trackSidebarNavigation({ from_chapter: from, to_chapter: to });
     }
@@ -102,8 +99,8 @@ export default function Sidebar() {
                     className={`sidebar-link group-toggle ${openGroups[g.prefix] ? 'open' : ''} ${groupActive ? 'active' : ''} ${groupScrollActive ? 'scroll-active' : ''}`}
                     onClick={() => {
                       setOpenGroups(prev => ({ ...prev, [g.prefix]: !prev[g.prefix] }));
-                      const from = chapterIdFromPath(location.pathname);
-                      const to = chapterIdFromPath(g.path);
+                      const from = chapterIdFor(location.pathname);
+                      const to = chapterIdFor(g.path);
                       if (from !== to) {
                         trackSidebarNavigation({ from_chapter: from, to_chapter: to });
                       }
