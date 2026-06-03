@@ -57,9 +57,8 @@ import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import AttributionDoc from './components/docs/100-attribution';
 
-// Use '/' for private repo GitHub Pages deployment
-// Change to '/Vibhasha/' if deploying to microsoft.github.io/Vibhasha
-const basename = '/'
+// Match Vite's base path so React Router works under any GitHub Pages prefix.
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
