@@ -3,6 +3,7 @@ import { useTheme, brandPalettes, iconByBrand } from '../theme/ThemeContext.jsx'
 import { useNavigate } from 'react-router-dom';
 import { Open24Regular } from '@fluentui/react-icons';
 import './styles/SiteFooter.css';
+import { trackExternalLinkClick, trackCrossPlaybookNavigation } from '../lib/telemetry.js';
 
 export default function SiteFooter() {
   const { colors, theme, appName, setAppName } = useTheme();
@@ -20,10 +21,13 @@ export default function SiteFooter() {
           <a
             href="https://www.microsoft.com/en-us/research/project/project-gecko/"
             className="promo-link"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open('https://www.microsoft.com/en-us/research/project/project-gecko/', '_blank');
-            }}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackExternalLinkClick({
+              url_domain: 'microsoft.com',
+              link_text: 'Project Gecko',
+              link_context: 'footer',
+            })}
           >
             <strong>Project Gecko</strong>
             <Open24Regular />
@@ -43,6 +47,10 @@ export default function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
+                  trackCrossPlaybookNavigation({
+                    source_playbook: (appName || '').toLowerCase(),
+                    target_playbook: (p.key || p.title || '').toLowerCase(),
+                  });
                   if (!p.url) {
                     e.preventDefault();
                     setAppName(p.key);

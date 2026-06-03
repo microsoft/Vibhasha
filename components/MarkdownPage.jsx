@@ -18,6 +18,16 @@ import { preprocessAdmonitions } from '../plugins/remark-admonitions.js';
 import { preprocessIcons } from '../plugins/remark-icons.js';
 import { preprocessAttrList } from '../plugins/remark-attr-list.js';
 import { preprocessContentTabs } from '../plugins/remark-content-tabs.js';
+import {
+  setChapterContext,
+  trackScrollMilestone,
+  trackChapterCompleted,
+  trackChapterNavigation,
+  trackCodeCopied,
+  trackCodeDownloaded,
+  trackExternalLinkClick,
+  resetScrollDedup,
+} from '../lib/telemetry.js';
 
 /**
  * Preprocess markdown content to transform MkDocs Material syntax
@@ -138,10 +148,66 @@ export default function MarkdownPage({ filePath }) {
     }
   }, [content]);
 
-  // Always scroll to top when the route (page) changes
+  // Single route-change effect: announce chapter context, reset scroll dedup, scroll to top.
   useEffect(() => {
+    const entry = docEntries.find((e) => e.path === location.pathname);
+    const parent = entry?.isSub
+      ? docEntries.find((e) => !e.isSub && e.prefix === entry.prefix)
+      : null;
+    setChapterContext({
+      chapter_id: entry?.base ?? (location.pathname === '/' ? 'landing' : 'overview'),
+      chapter_title: entry?.label ?? (location.pathname === '/' ? 'Landing' : 'Overview'),
+      parent_chapter_id: parent?.base ?? null,
+      parent_chapter_title: parent?.label ?? null,
+      is_subchapter: !!entry?.isSub,
+      route: location.pathname,
+    });
+    resetScrollDedup();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
+
+  // Scroll-milestone telemetry: sentinels at 25/50/75/100% of the markdown body.
+  // Skipped on short pages (content shorter than viewport).
+  useEffect(() => {
+    if (!processedContent) return undefined;
+    const body = document.querySelector('.markdown-body');
+    if (!body) return undefined;
+    if (body.scrollHeight <= window.innerHeight + 4) return undefined;
+    const milestones = [25, 50, 75, 100];
+    const sentinels = [];
+    const prevPosition = body.style.position;
+    if (!prevPosition) body.style.position = 'relative';
+    milestones.forEach((m) => {
+      const el = document.createElement('div');
+      el.setAttribute('data-telemetry-sentinel', String(m));
+      el.style.position = 'absolute';
+      el.style.left = '0';
+      el.style.width = '1px';
+      el.style.height = '1px';
+      el.style.pointerEvents = 'none';
+      el.style.opacity = '0';
+      el.style.top = `calc(${m}% - 1px)`;
+      body.appendChild(el);
+      sentinels.push(el);
+    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const milestone = Number(entry.target.getAttribute('data-telemetry-sentinel'));
+          if (!milestone) return;
+          trackScrollMilestone({ milestone });
+        });
+      },
+      { root: null, threshold: 0 }
+    );
+    sentinels.forEach((el) => observer.observe(el));
+    return () => {
+      observer.disconnect();
+      sentinels.forEach((el) => el.remove());
+      if (!prevPosition) body.style.position = '';
+    };
+  }, [processedContent, location.pathname]);
 
   // On new page, default TOC active to the first heading
   useEffect(() => {
@@ -338,6 +404,7 @@ export default function MarkdownPage({ filePath }) {
       await navigator.clipboard.writeText(codeString);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      trackCodeCopied({ language: language || 'plain' });
     };
 
     const handleDownload = () => {
@@ -349,6 +416,7 @@ export default function MarkdownPage({ filePath }) {
       a.download = `code.${ext}`;
       a.click();
       URL.revokeObjectURL(url);
+      trackCodeDownloaded({ language: language || 'plain' });
     };
 
     if (!inline && language) {
@@ -419,16 +487,24 @@ export default function MarkdownPage({ filePath }) {
     ...mdHeadingComponents,
     code: CodeBlock,
     a: ({ node, href, children, ...props }) => {
-      const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
-      return (
-        <a
-          href={href}
-          {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          {...props}
-        >
-          {children}
-        </a>
-      );
+      const isExternal = href && /^https?:\/\//.test(href);
+      if (isExternal) {
+        const handleExt = (e) => {
+          let domain = '';
+          try { domain = new URL(href).hostname; } catch (_) { domain = href; }
+          const text = React.Children.toArray(children)
+            .filter((child) => typeof child === 'string')
+            .join(' ');
+          trackExternalLinkClick({
+            url_domain: domain,
+            link_text: text,
+            link_context: 'content',
+          });
+          if (typeof props.onClick === 'function') props.onClick(e);
+        };
+        return <a href={href} target="_blank" rel="noopener noreferrer" {...props} onClick={handleExt}>{children}</a>;
+      }
+      return <a href={href} {...props}>{children}</a>;
     },
   };
 
@@ -460,7 +536,10 @@ export default function MarkdownPage({ filePath }) {
                 <nav className="prev-next-nav" aria-label="Page navigation">
                   {prev ? (
                     <button
-                      onClick={() => navigate(prev.path)}
+                      onClick={() => {
+                        trackChapterNavigation({ direction: 'previous' });
+                        navigate(prev.path);
+                      }}
                       className="btn-primary"
                     >
                       <ChevronLeft24Regular />
@@ -470,7 +549,11 @@ export default function MarkdownPage({ filePath }) {
 
                   {next ? (
                     <button
-                      onClick={() => navigate(next.path)}
+                      onClick={() => {
+                        trackChapterNavigation({ direction: 'next' });
+                        trackChapterCompleted({ completion_method: 'next_button' });
+                        navigate(next.path);
+                      }}
                       className="btn-primary"
                     >
                       <span>{next.label}</span>

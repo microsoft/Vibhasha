@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => {
-  const isDev = command === 'serve'
+  const isGitHubPages = process.env.GITHUB_ACTIONS === 'true'
   return {
-    // Use '/Vibhasha/' for public repo GitHub Pages (microsoft.github.io/Vibhasha)
-    base: '/Vibhasha/',
+    // Resolves to '/Vibhasha/' under GITHUB_ACTIONS, '/' locally so dev preview still works.
+    base: isGitHubPages ? '/Vibhasha/' : '/',
     plugins: [react()],
     build: {
       outDir: 'dist',

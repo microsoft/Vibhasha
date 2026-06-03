@@ -5,12 +5,28 @@ import { useNavigate } from 'react-router-dom'
 import { useUI } from '../theme/UIContext.jsx'
 import SidebarIcon from './SidebarIcon'
 import { docEntries } from './docs/docIndex'
+import { trackSidebarNavigation } from '../lib/telemetry.js'
+
+// Look up the chapter slug for a route via docEntries (single source of truth).
+function chapterIdFor(path) {
+  return docEntries.find((e) => e.path === path)?.base
+    ?? (path === '/' ? 'landing' : 'overview');
+}
 
 export default function Sidebar() {
   const [visibleHeading, setVisibleHeading] = useState(null);
   const location = useLocation();
   const { closeSidebar } = useUI();
   const navigate = useNavigate();
+
+  const handleNavClick = (toPath) => () => {
+    const from = chapterIdFor(location.pathname);
+    const to = chapterIdFor(toPath);
+    if (from !== to) {
+      trackSidebarNavigation({ from_chapter: from, to_chapter: to });
+    }
+    closeSidebar();
+  };
   const groups = useMemo(() => {
     const roots = docEntries.filter(e => !e.isSub);
     return roots.map(r => ({
@@ -59,7 +75,7 @@ export default function Sidebar() {
           <NavLink
             to="/playbook"
             end
-            onClick={closeSidebar}
+            onClick={handleNavClick('/playbook')}
             className={({ isActive }) => {
               let cls = 'sidebar-link';
               if (isActive) cls += ' active';
@@ -100,6 +116,11 @@ export default function Sidebar() {
                     className={`sidebar-link group-toggle ${openGroups[g.prefix] ? 'open' : ''} ${groupActive ? 'active' : ''} ${groupScrollActive ? 'scroll-active' : ''}`}
                     onClick={() => {
                       setOpenGroups(prev => ({ ...prev, [g.prefix]: !prev[g.prefix] }));
+                      const from = chapterIdFor(location.pathname);
+                      const to = chapterIdFor(g.path);
+                      if (from !== to) {
+                        trackSidebarNavigation({ from_chapter: from, to_chapter: to });
+                      }
                       navigate(g.path);
                     }}
                     aria-expanded={!!openGroups[g.prefix]}
@@ -114,7 +135,7 @@ export default function Sidebar() {
                       <li key={c.path} className="sidebar-subitem">
                         <NavLink
                           to={c.path}
-                          onClick={closeSidebar}
+                          onClick={handleNavClick(c.path)}
                           className={({ isActive }) => {
                             let cls = 'sidebar-sublink';
                             if (isActive) cls += ' active';
@@ -131,7 +152,7 @@ export default function Sidebar() {
               ) : (
                 <NavLink
                   to={g.path}
-                  onClick={closeSidebar}
+                  onClick={handleNavClick(g.path)}
                   className={({ isActive }) => {
                     let cls = 'sidebar-link';
                     if (isActive) cls += ' active';
