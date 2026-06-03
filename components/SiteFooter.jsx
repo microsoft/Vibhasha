@@ -43,7 +43,7 @@ export default function SiteFooter() {
               <a
                 key={p.key}
                 className={brandClass}
-                href={p.url || '#'}
+                href={p.externalUrl || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {
@@ -51,7 +51,7 @@ export default function SiteFooter() {
                     source_playbook: (appName || '').toLowerCase(),
                     target_playbook: (p.key || p.title || '').toLowerCase(),
                   });
-                  if (!p.url) {
+                  if (!p.externalUrl) {
                     e.preventDefault();
                     setAppName(p.key);
                     navigate('/playbook');
