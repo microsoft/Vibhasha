@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/telemetry
   workflow_dispatch:
 
 permissions:
