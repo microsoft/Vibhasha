@@ -1,0 +1,162 @@
+/* ===== SummarySlide — Shiksha-style overview card ===== */
+
+.summary-slide {
+  --slide-accent: #312A9A;          /* overridden inline via ThemeContext */
+  --slide-radius: 14px;
+  --card-gap: 18px;
+
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  min-height: 520px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: var(--slide-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .12);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- LEFT COLUMN ---------- */
+.slide-left {
+  background: var(--slide-accent);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+}
+
+.slide-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 .5rem;
+  line-height: 1.15;
+}
+
+.slide-subtitle {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: .92;
+  margin: 0;
+}
+
+.slide-hero-image {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.slide-hero-image img {
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* ---------- RIGHT COLUMN (2×2 grid) ---------- */
+.slide-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--card-gap);
+  padding: var(--card-gap);
+  background: #fafafe;
+}
+
+/* ---------- CARD ---------- */
+.slide-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+  overflow: hidden;
+}
+
+.slide-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: .6rem;
+}
+
+.slide-card-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slide-accent);
+}
+
+.slide-card-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--slide-accent) 12%, transparent);
+  color: var(--slide-accent);
+}
+
+.slide-card-body {
+  flex: 1;
+  font-size: .86rem;
+  line-height: 1.55;
+  color: #333;
+}
+.slide-card-body p {
+  margin: 0 0 .4rem;
+}
+.slide-card-body ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.slide-card-body li {
+  margin-bottom: .35rem;
+}
+.slide-card-body li::marker {
+  color: var(--slide-accent);
+}
+
+/* ---------- QUOTE variant ---------- */
+.slide-card-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+  font-size: .88rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.slide-quote-attr {
+  margin-top: .6rem !important;
+  font-size: .78rem;
+  font-style: normal;
+  color: #777;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  .summary-slide {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+  .slide-left {
+    padding: 1.5rem;
+  }
+  .slide-right {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .slide-title {
+    font-size: 1.8rem;
+  }
+  .slide-subtitle {
+    font-size: .95rem;
+  }
+}

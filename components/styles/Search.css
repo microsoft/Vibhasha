@@ -70,7 +70,7 @@
 }
 
 .result-item h4 {
-  margin: 0 0 8px 0;
+  margin: 0;
   color: var(--color-header-bg);
   font-weight: 400;
 }

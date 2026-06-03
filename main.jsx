@@ -28,6 +28,11 @@ import IiiAdaptationDoc from './components/docs/02-iii-adaptation'
 import IvQualityAssuranceDoc from './components/docs/02-iv-quality-assurance'
 import VCulturalNuanceDoc from './components/docs/02-v-cultural-nuance'
 import ViRecommendationsDoc from './components/docs/02-vi-recommendations'
+import PromptingDoc from './components/docs/03-prompting'
+import IStrategiesDoc from './components/docs/03-i-strategies'
+import IiModelSelectionDoc from './components/docs/03-ii-model-selection'
+import IiiFewShotDoc from './components/docs/03-iii-few-shot'
+import IvEvaluationDoc from './components/docs/03-iv-evaluation'
 import FineTuningDoc from './components/docs/04-fine-tuning'
 import IPipelineDoc from './components/docs/04-i-pipeline'
 import IiMethodologiesDoc from './components/docs/04-ii-methodologies'
@@ -56,8 +61,11 @@ import ViConclusionDoc from './components/docs/07-vi-conclusion'
 import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import AttributionDoc from './components/docs/100-attribution';
+import ViiPipelineDoc from './components/docs/01-vii-pipeline';
+import LandingpageDoc from './components/docs/landingpage';
 
-// Match Vite's base path so React Router works under any GitHub Pages prefix.
+// Match Vite's base path so React Router works under any GitHub Pages prefix
+// ('/Vibhasha/' under GITHUB_ACTIONS, '/' locally).
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
 
 createRoot(document.getElementById('root')).render(
@@ -87,6 +95,11 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/02-iv-quality-assurance" element={<IvQualityAssuranceDoc />} />
                 <Route path="/playbook/02-v-cultural-nuance" element={<VCulturalNuanceDoc />} />
                 <Route path="/playbook/02-vi-recommendations" element={<ViRecommendationsDoc />} />
+                <Route path="/playbook/03-prompting" element={<PromptingDoc />} />
+                <Route path="/playbook/03-i-strategies" element={<IStrategiesDoc />} />
+                <Route path="/playbook/03-ii-model-selection" element={<IiModelSelectionDoc />} />
+                <Route path="/playbook/03-iii-few-shot" element={<IiiFewShotDoc />} />
+                <Route path="/playbook/03-iv-evaluation" element={<IvEvaluationDoc />} />
                 <Route path="/playbook/04-fine-tuning" element={<FineTuningDoc />} />
                 <Route path="/playbook/04-i-pipeline" element={<IPipelineDoc />} />
                 <Route path="/playbook/04-ii-methodologies" element={<IiMethodologiesDoc />} />
@@ -114,13 +127,9 @@ createRoot(document.getElementById('root')).render(
                 <Route path="/playbook/07-vi-conclusion" element={<ViConclusionDoc />} />
                 <Route path="/playbook/99-conclusion" element={<ConclusionDoc />} />
                 <Route path="/playbook/flowchart" element={<FlowchartPage />} />
-        <Route path="/playbook/100-attribution" element={<AttributionDoc />} />
-        <Route path="/playbook/01-ii-pipeline" element={<IiPipelineDoc />} />
-        <Route path="/playbook/01-iii-low-resource" element={<IiiLowResourceDoc />} />
-        <Route path="/playbook/01-iv-advisory" element={<IvAdvisoryDoc />} />
-        <Route path="/playbook/01-v-scenarios" element={<VScenariosDoc />} />
-        <Route path="/playbook/01-vi-datasets" element={<ViDatasetsDoc />} />
-        <Route path="/playbook/01-vii-challenges" element={<ViiChallengesDoc />} />
+                <Route path="/playbook/100-attribution" element={<AttributionDoc />} />
+        <Route path="/playbook/01-vii-pipeline" element={<ViiPipelineDoc />} />
+        <Route path="/playbook/landingpage" element={<LandingpageDoc />} />
               </Route>
             </Route>
           </Route>

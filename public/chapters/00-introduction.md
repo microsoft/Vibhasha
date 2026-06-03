@@ -84,7 +84,7 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
     - Compounding translation errors
     - Increased latency and cost from extra translation steps 
     
-    [→ Learn more](/playbook/02-translation-overview)
+    [→ Learn more](/playbook/03-translation)
 
 !!! info "Strategy 2: 💬 Off-the-Shelf Prompting"
     
@@ -108,7 +108,7 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
     
     **Best for:** Rapid prototyping and medium to high resource languages.
     
-    [→ Learn more](/playbook/02-translation-overview)
+    [→ Learn more](/playbook/02-prompting)
 
 !!! info "Strategy 3: ⚙️ Fine-Tuning Specialized Models"
     
@@ -132,13 +132,13 @@ Based on research conducted over 20 years at Microsoft Research India and the mu
     
     **Best for:** Domain specific applications, under-resourced languages, and environments with strict privacy or security needs.
     
-    [→ Learn more](/playbook/04-fine-tuning-overview)
+    [→ Learn more](/playbook/04-fine-tuning)
 
 ---
 <!-- 
 
 
-[→ Master Fine-Tuning Strategies](/playbook/04-fine-tuning-overview){ .md-button }
+[→ Master Fine-Tuning Strategies](/playbook/04-fine-tuning){ .md-button }
 --- -->
 
 
@@ -159,7 +159,7 @@ English centric benchmarks are not reliable indicators of multilingual performan
 - ✅ Implement cross-lingual safety filters
 - ✅ Monitor for cultural context-specific harms
 
-[→ Comprehensive Safety Assessments](/playbook/05-safety-overview){ .md-button .md-button--primary }
+[→ Comprehensive Safety Assessments](/playbook/05-safety){ .md-button }
 
 ---
 
@@ -196,7 +196,7 @@ Synthetic data does not replace real data, but it can meaningfully supplement it
 !!! tip "Practical Application"
     Translate and culturally adapt English instruction-following datasets (e.g., Alpaca, Dolly) to create training data for underrepresented languages. -->
 
-[→ Synthetic Data Generation Framework](/playbook/06-synthetic-data-overview){ .md-button }
+[→ Synthetic Data Generation Framework](/playbook/06-synthetic-data){ .md-button }
 
 ---
 
@@ -207,25 +207,24 @@ Synthetic data does not replace real data, but it can meaningfully supplement it
 
 ### 🚀 If you are just getting started:
 
-<!-- Explore the [Interactive Flowchart](/playbook/flowchart) -->
-Use the interactive flowchart(/playbook/flowchart) for a quick overview of recommended strategies. 
+Use the [Interactive Flowchart](/playbook/flowchart) for a quick overview of recommended strategies.
 
 ### ⚡ If you need quick results:
 
-<!-- - [Translation](/playbook/02-translation-overview) for leveraging existing MT services
-- [Off-the-Shelf Prompting](/playbook/02-translation-overview) for rapid prototyping -->
+<!-- - [Translation](/playbook/03-translation) for leveraging existing MT services
+- [Off-the-Shelf Prompting](/playbook/02-prompting) for rapid prototyping -->
 
-[Translation](/playbook/02-translation-overview) and [Off-the-Shelf Prompting](/playbook/02-translation-overview) offer the fastest path to a working prototype.
+[Prompting](/playbook/02-prompting) and [Translation](/playbook/03-translation) offer the fastest path to a working prototype.
 
 
 ### 🏭 If you are building for production:
 
-Start with [Evaluation](/playbook/01-evaluation-overview) and [Safety](/playbook/05-safety-overview), then choose an approach that balances your goals with available resources.
+Start with [Evaluation](/playbook/01-evaluation) and [Safety](/playbook/05-safety), then choose an approach that balances your goals with available resources.
 
 ### 🎯 Have specialized needs?
 
 
-[Fine-Tuning](/playbook/04-fine-tuning-overview) and [Synthetic Data](/playbook/06-synthetic-data-overview) provide the strongest performance for culturally specific or domain heavy applications.
+[Fine-Tuning](/playbook/04-fine-tuning) and [Synthetic Data](/playbook/06-synthetic-data) provide the strongest performance for culturally specific or domain heavy applications.
 
 
 Each chapter stands alone but connects to others where concepts overlap. The guidance combines research insights and lessons from real world deployments, supported by decision matrices and concrete, step-by-step instructions. 

@@ -56,6 +56,8 @@ For questions, feedback, or collaboration inquiries, please reach out to the cor
 
 [Prashant Kodali](mailto:kodali.prashant@gmail.com) · [Sunayana Sitaram](mailto:Sunayana.Sitaram@microsoft.com)
 
+To reach the team, please contact [gecko-playbooks@microsoft.com](mailto:gecko-playbooks@microsoft.com)
+
 We welcome contributions, corrections, and suggestions to improve this playbook.
 
 ---

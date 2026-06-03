@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      //
+      // When GitHub Pages serves a 404 for a deep link, this script
+      // converts the path into a query-string redirect so the SPA's
+      // index.html can restore the original URL on load.
+      var pathSegmentsToKeep = 1; // keep '/Vibhasha' (the repo name)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+    Redirecting&hellip;
+  </body>
+</html>

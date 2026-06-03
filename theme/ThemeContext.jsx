@@ -53,15 +53,15 @@ const brandSvgs = {
   vibhasha: vibhashaSvg,
 }
 const externalUrls = {
-  paza: 'https://aka.ms/Paza',
-  atlas: 'https://aka.ms/AtlasPlaybook',
-  vibhasha: 'https://aka.ms/Vibhasha'
+  paza: 'https://paza-speech-playbook-hvfneafda6amb6cg.westeurope-01.azurewebsites.net/',
+  atlas: 'https://atlas-crosscultural-playbook.azurewebsites.net',
+  vibhasha: 'https://multilingual-playbook-prototype-dev.azurewebsites.net/'
 }
 
 const appCatalog = {
   paza: { title: 'Paza', subtitle: 'Speech Models Playbook', brand: 'teal', Icon: iconByBrand.teal, externalUrl: externalUrls?.paza },
   atlas: { title: 'Atlas', subtitle: 'Human Centred AI Playbook', brand: 'pink', Icon: iconByBrand.pink, externalUrl: externalUrls?.atlas },
-  vibhasha: { title: 'Vibhasha', subtitle: 'Multi-lingual LLMs Playbook', brand: 'indigo', Icon: iconByBrand.indigo, externalUrl: externalUrls?.vibhasha }
+  vibhasha: { title: 'Vibhasha', subtitle: 'Build Multilingual & Multicultural AI Systems', brand: 'indigo', Icon: iconByBrand.indigo, externalUrl: externalUrls?.vibhasha }
 }
 
 const brandImages = {
