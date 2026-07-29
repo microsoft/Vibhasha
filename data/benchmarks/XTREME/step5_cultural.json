@@ -1,0 +1,71 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "BUCC", "Tatoeba"],
+      "evidence": "Universal Dependencies POS uses independently annotated treebanks in each language. WikiANN uses automatically annotated Wikipedia in each language. TyDiQA-GoldP uses questions written by native speakers in each language. BUCC uses parallel corpora from comparable sources. Tatoeba uses community-contributed sentence pairs."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "PAWS-X", "XQuAD"],
+      "evidence": "XNLI: 'Crowd-sourced English data is translated to ten other languages by professional translators.' PAWS-X: 'A subset of the PAWS dev and test sets was translated to six other languages by professional translators.' XQuAD: 'A subset of the English SQuAD v1.1 dev set was translated into ten other languages by professional translators.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["Universal Dependencies POS", "TyDiQA-GoldP"],
+      "details": {
+        "Universal Dependencies POS": "Treebanks created from native text in each language with independently annotated data",
+        "TyDiQA-GoldP": "Questions written by native speakers reflecting natural information-seeking behavior in each language, without seeing the answers"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "no",
+      "evidence": "Only TyDiQA-GoldP clearly uses native speaker annotators for question creation. XNLI, PAWS-X, and XQuAD use professional translators (not necessarily native speakers of target languages). WikiANN uses fully automatic annotation. MLQA uses English crowdsource workers. Paper does not provide details on annotator native-speaker status for BUCC, Tatoeba, or Universal Dependencies POS."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "professional_translators (XNLI, PAWS-X, XQuAD)",
+        "crowdworkers (XNLI original English, MLQA English questions)",
+        "automatic_annotation (WikiANN)",
+        "expert_linguists (Universal Dependencies POS)",
+        "native_speakers (TyDiQA-GoldP)",
+        "community_contributors (Tatoeba)",
+        "shared_task_organizers (BUCC)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Carnegie Mellon University",
+        "DeepMind",
+        "Google Research"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Paper does not report annotator demographics, compensation, or ethics review. The XTREME paper aggregates existing datasets and does not create new annotations. Annotator details are in the original dataset papers."
+    },
+    "english_centricity_notes": "XTREME is explicitly English-centric in its evaluation design: 'XTREME focuses on the zero-shot cross-lingual transfer scenario, where annotated training data is provided in English but none is provided in the language to which systems must transfer.' Three of nine datasets (XNLI, PAWS-X, XQuAD) are direct translations from English. MLQA questions originate in English. All models are trained on English data and evaluated on other languages. The paper acknowledges: 'English is not generally the best source language for cross-lingual transfer for all target languages.'",
+    "geographic_representation": {
+      "primary_region": "Global (typologically diverse selection)",
+      "sub_regions": [
+        "Western Europe",
+        "Eastern Europe",
+        "South Asia",
+        "East Asia",
+        "Southeast Asia",
+        "Middle East",
+        "Sub-Saharan Africa",
+        "Central Asia"
+      ],
+      "also_represented": [
+        "Caucasus (Georgian)",
+        "Northern Europe (Finnish, Estonian)"
+      ],
+      "notably_excluded": [
+        "Indigenous Americas",
+        "Oceania / Pacific Islands",
+        "Most of Sub-Saharan Africa (only Swahili and Yoruba)",
+        "Central Africa",
+        "Northern Africa (beyond Arabic)"
+      ],
+      "evidence": "XTREME covers 40 languages from 12 language families and two isolates: Afro-Asiatic, Austro-Asiatic, Austronesian, Dravidian, Indo-European, Japonic, Kartvelian, Kra-Dai, Niger-Congo, Sino-Tibetan, Turkic, and Uralic. However, the benchmark acknowledges limitations: 'while models do reasonably well in most languages in the Indo-European family, we observe lower performance particularly for Sino-Tibetan, Japonic, Koreanic, and Niger-Congo languages.' Indo-European languages are heavily overrepresented with ~17 of 40 languages."
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MaXIFE",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "instruction following",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Basic Questions: LLM-based translation (GPT-4o and Claude-3.5 Sonnet) followed by native speaker review and correction. Instructions (47 items): professional human translation by native speakers proficient in English. Both underwent multi-round human quality control.",
+      "num_languages": 23,
+      "language_list": [
+        "English",
+        "Swedish",
+        "Portuguese",
+        "French",
+        "Italian",
+        "Chinese",
+        "Japanese",
+        "Filipino",
+        "Romanian",
+        "Indonesian",
+        "Malay",
+        "Turkish",
+        "Korean",
+        "Bengali",
+        "Hindi",
+        "Kyrgyz",
+        "Armenian",
+        "Georgian",
+        "Malagasy",
+        "Zulu",
+        "Tamil",
+        "Telugu",
+        "Quechua"
+      ],
+      "annotation_method": "Data collected via questionnaire from 31 respondents (researchers, native speakers, linguistics experts), then expanded using GPT-4o and Claude-3.5 Sonnet. 795 Basic Questions combined with 47 templatized Instructions (1-3 per question) to form 18,285 parallel evaluation entries.",
+      "data_creator_info": {
+        "creator_type": "researchers and native speakers",
+        "creator_affiliation": "Waseda University and OPPO AI Center, Shenzhen, China",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "The total number of questionnaire participants was 31 people, of which 19 were male, 12 were female, most people's age distribution was 21-39 years old, and all respondents had high-frequency usage habits of LLMs. The translations were carried out by internal research team members as part of their responsibilities, thus no additional compensation was involved."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Each of the 23 languages has 795 parallel data points with 1667 total instructions. Evaluation combines Rule-Based (32 instruction subcategories across 7 categories) and Model-Based (15 instruction subcategories across 4 categories) approaches."
+    }
+  ]
+}

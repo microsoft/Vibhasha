@@ -1,0 +1,60 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "MMLU-ProX is entirely built upon English MMLU-Pro through translation. No datasets were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MMLU-ProX"],
+      "evidence": "MMLU-ProX extends the challenging MMLU-Pro benchmark to encompass 29 typologically diverse languages... By carefully translating the same set of questions across all languages"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "Translation prompts instruct 'Ensuring cultural appropriateness for {target_lang} speakers' and mention 'cultural relevance,' but the underlying content (questions, subjects, knowledge domains) is inherited from English MMLU-Pro. Cultural adaptation is limited to linguistic/terminological level (e.g., measurement unit conventions), not content-level grounding."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "Expert verification involved native speakers: 'each language evaluated by two professional translators who are native speakers of the target language and proficient in English.' However, verification was conducted for only 15 of 29 languages. The initial data curation (4 interdisciplinary specialists) and translation (LLM-based) did not involve native speakers of all target languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "professional translators", "LLM-based translation"],
+      "total_annotators_reported": "30+",
+      "affiliations": [
+        "The University of Tokyo", "Duke-NUS Medical School", "Waseda University",
+        "Northwestern University", "Carnegie Mellon University", "Yale University",
+        "University College Dublin", "Nanyang Technological University", "Smartor LLC",
+        "UC Berkeley", "University of New South Wales", "Singapore Management University",
+        "New York University", "Polytechnique Montréal", "University of Geneva",
+        "University of Alberta"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "We ensured that all expert annotators were compensated at rates above the minimum hourly wage in their respective countries.",
+      "irb_ethics_review": null,
+      "evidence": "we engage over 30 experts to verify the data quality, with a total labor effort exceeding 400 hours... For English data curation, we engage four interdisciplinary specialists, with a total labor investment of approximately 20 hours"
+    },
+    "english_centricity_notes": "MMLU-ProX is fundamentally English-centric in design: all content originates from English MMLU-Pro and is translated to 28 other languages. The questions, subjects (57 subjects across 14 disciplines), answer options, and knowledge domains all reflect English/Western academic traditions. The paper explicitly acknowledges this as a translated benchmark enabling 'direct cross-linguistic comparisons' by having 'identical questions' — meaning the same English-origin content across all languages. The translation pipeline preserves LaTeX, code, currency symbols ($) without localization.",
+    "geographic_representation": {
+      "primary_region": "Global (29 languages across multiple regions)",
+      "sub_regions": [
+        "Western Europe (English, French, German, Spanish, Portuguese, Italian)",
+        "South Asia (Hindi, Bengali, Urdu, Telugu, Marathi, Nepali)",
+        "East Asia & Southeast Asia (Chinese, Japanese, Korean, Vietnamese, Thai, Indonesian)",
+        "Africa (Arabic, Afrikaans, Swahili, Wolof, Yoruba, Zulu)",
+        "Eastern Europe (Russian, Ukrainian, Serbian, Czech, Hungarian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Indigenous languages of the Americas",
+        "Oceanic/Pacific languages",
+        "Central Asian languages (e.g., Kazakh, Uzbek)",
+        "Nordic/Scandinavian languages",
+        "Many Southeast Asian languages (e.g., Burmese, Khmer, Lao)",
+        "Many African languages beyond the 4 included"
+      ],
+      "evidence": "The paper groups languages into 5 geographic regions: Western Europe, South Asia, East Asia & Southeast Asia, Africa, and Eastern Europe. Coverage spans 29 languages but the authors acknowledge: 'One limitation lies in the coverage of languages due to budget constraints... expanding to include additional languages, particularly extremely low-resource ones, remains a future goal.'"
+    }
+  }
+}

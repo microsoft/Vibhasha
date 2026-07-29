@@ -1,0 +1,69 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ],
+      "evidence": "All questions are sourced from authentic Indian government and professional examination papers, not translated from English. The Hindi content originates from Hindi-medium examinations. 'Our comprehensive collection encompasses over 40 different examination types across multiple categories: national competitive exams, domain-specific degree examinations, professional certification tests, and state-level civil services examinations' (Section 3.2). However, the benchmark also contains 52,494 English questions, so the benchmark is bilingual with both English and Hindi original content."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets are translated from English. Questions are sourced directly from examination papers that were originally in English or Hindi. 'All question-answer pairs are sourced exclusively from publicly available government and professional examination papers' (Ethics Statement)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ],
+      "details": {
+        "BhashaBench Krishi (BBK)": "Covers Indian agricultural practices, crop varieties, soil conditions, and traditional farming practices across 25 subdomains specific to Indian agriculture.",
+        "BhashaBench Finance (BBF)": "Incorporates India-specific areas like Rural Economics, UPI transactions, Indian financial regulations, and RBI/SEBI policies across 30 subdomains.",
+        "BhashaBench Legal (BBL)": "Covers Indian jurisprudence, constitutional law, Indian Penal Code, CrPC, CPC, and state-specific legal systems across 20 subdomains.",
+        "BhashaBench Ayurveda (BBA)": "Deeply rooted in traditional Indian medicine systems including Kayachikitsa, Dravyaguna, Panchakarma, classical Ayurvedic texts (Charaka Samhita, Sushruta Samhita), and traditional formulations across 16 subdomains."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper states domain experts and BharatGen team members conducted validation, and mentions diverse teams, but does not explicitly confirm all annotators were native speakers of English and Hindi.",
+      "evidence": "Our curation process involved diverse teams to minimize cultural and regional biases (Ethics Statement). domain experts reviewed the linguistic authenticity to maintain the natural flow and idiomatic expressions characteristic of each language (Section 3.3). BharatGen's consortium members, including IIT Bombay and IIM Indore (Acknowledgements)."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "mixed"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "BharatGen Team",
+        "IIT Bombay TIH (Technology Innovation Hub)",
+        "IIM Indore"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing. We acknowledge the significant contributions of BharatGen's consortium members, including IIT Bombay and IIM Indore, for their expertise in data curation, validation, and domain-specific guidance (Acknowledgements). The paper includes an Ethics Statement but does not mention IRB review. No information on number of annotators, their demographics, or compensation."
+    },
+    "english_centricity_notes": "The benchmark is bilingual (English and Hindi), with English comprising 70.8% of questions (52,494) and Hindi 29.2% (21,672). The paper acknowledges this imbalance: 'The benchmark reflects the inherent resource disparity between English and Hindi, where Hindi content, while substantial, represents a relatively lower-resource context compared to English' (Appendix A). Models consistently perform better on English than Hindi across all domains. The benchmark only covers 2 of India's 22 official languages, which is acknowledged as a limitation.",
+    "geographic_representation": {
+      "primary_region": "India (South Asia)",
+      "sub_regions": [
+        "National-level (UPSC, NTA, ICAR, RBI, SBI examinations)",
+        "Maharashtra",
+        "Madhya Pradesh",
+        "Bihar",
+        "Chhattisgarh",
+        "Uttar Pradesh",
+        "Andhra Pradesh",
+        "Delhi"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "All Indian languages besides English and Hindi (Tamil, Telugu, Bengali, Kannada, Malayalam, Marathi, Gujarati, etc.)",
+        "Non-Indian contexts"
+      ],
+      "evidence": "India has 22 official languages and hundreds of regional dialects. Our current evaluation cannot capture the full linguistic diversity of Indian knowledge systems, particularly regional variations in agricultural practices, legal terminologies, and traditional medicine nomenclature that exist in languages like Tamil, Telugu, Bengali, and others (Appendix A). Examination sources span national bodies (UPSC, NTA, ICAR) and multiple state-level bodies (BPSC, MPSC, CG Vyapam, etc.) as listed in Tables 2 and 3."
+    }
+  }
+}

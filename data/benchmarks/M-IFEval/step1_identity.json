@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "M-IFEval",
+  "paper_id": "2025.findings-naacl.344",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present Multilingual Instruction Following Evaluation (M-IFEval), a benchmark for evaluating LLM instruction following beyond English.",
+  "total_languages_claimed": 4,
+  "total_datasets": 1,
+  "dataset_names": ["M-IFEval"],
+  "task_categories": ["instruction_following"],
+  "brief_description": "M-IFEval is a multilingual extension of the IFEval benchmark that evaluates LLM instruction-following abilities in French, Japanese, and Spanish (plus English from the original IFEval), using both shared and language-specific verifiable instructions covering formatting, punctuation, script-based, and special-character constraints."
+}

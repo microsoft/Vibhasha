@@ -1,0 +1,73 @@
+{
+  "total_languages": 17,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Serbian": {
+      "iso_code": "sr",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MILU (75% native portion)"],
+      "evidence": "75% of the ~79,617 questions were preserved in their original source languages, scraped from Indian competitive exam portals. These were natively authored for Indian exams in regional languages, not derived from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MILU (25% translated portion)"],
+      "evidence": "Approximately 25% (19,915 of 79,617) questions were translated from English using GPT-4o to fill gaps where subjects had fewer than 100 questions in a given language."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["MILU"],
+      "details": {
+        "MILU": "India-centric design incorporating material from regional and state-level examinations, covering topics such as local history, arts, festivals, laws, Ayurveda, government schemes (e.g., Pradhan Mantri Kisan Samman Nidhi, FASTag, Make in India), alongside standard academic subjects. Content varies by state and language, reflecting India's cultural mosaic."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "The original exam questions (75%) were authored by Indian exam bodies in respective regional languages, implying native speakers created them. The AI4Bharat team (based in India) conducted manual audits. However, the paper does not explicitly confirm all annotators/auditors were native speakers of each specific language."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "exam-body authors (original questions from Indian competitive exams)",
+        "researchers (curation, cleaning, quality control)",
+        "volunteers (AI4Bharat team manual audits)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "AI4Bharat / Nilekani Centre at IIT Madras",
+        "IBM Research, India"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We are also immensely grateful to the volunteers from the AI4Bharat team for their motivation and meticulous efforts in conducting manual audits. All data described in this work was scraped from publicly available resources. The datasets used in this paper will be made available under permissible licenses."
+    },
+    "english_centricity_notes": "The benchmark explicitly addresses English-centricity by creating India-specific content rather than translating English benchmarks. However, 25% of questions are still translated from English to fill coverage gaps. English is included as one of the 11 languages because English exam questions in India often address India-specific cultural content. The paper notes: 'In contrast, MILU addresses this limitation by centering on India-specific topics and questions, providing a more culturally relevant and context-aware evaluation.'",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": [
+        "India (nationwide, with state-level coverage)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Other South Asian countries (Pakistan, Bangladesh, Sri Lanka, Nepal)",
+        "All non-South Asian regions"
+      ],
+      "evidence": "Questions sourced from national exams (Union Public Service Commission, Staff Selection Commission, Railway Recruitment Board, etc.) and state-level exams across multiple Indian states including Punjab, Telangana, Tamil Nadu, Odisha, Karnataka, Madhya Pradesh, Delhi, West Bengal, Bihar, Maharashtra, Rajasthan, Uttar Pradesh, Haryana, Andhra Pradesh, Chhattisgarh, Jammu & Kashmir, Himachal Pradesh, and Jharkhand."
+    }
+  }
+}

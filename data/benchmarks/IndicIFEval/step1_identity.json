@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "IndicIFEval",
+  "paper_id": "2602.22125v1",
+  "year": 2026,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce INDICIFEVAL, a benchmark evaluating constrained generation of LLMs across 14 Indic languages using automatically verifiable, rule-based instructions. It comprises around 800 human-verified examples per language spread across two complementary subsets: INDICIFEVAL-TRANS, translated prompts from IFEval (Zhou et al., 2023) carefully localized for Indic contexts, and INDICIFEVAL-GROUND, synthetically generated instructions grounded in native Indic content.",
+  "total_languages_claimed": 14,
+  "total_datasets": 2,
+  "dataset_names": [
+    "IndicIFEval-Trans",
+    "IndicIFEval-Ground"
+  ],
+  "task_categories": [
+    "instruction_following",
+    "constrained_generation"
+  ],
+  "brief_description": "IndicIFEval is a benchmark for evaluating verifiable instruction-following in 14 Indic languages, comprising two subsets: IndicIFEval-Trans (translated and localized from English IFEval) and IndicIFEval-Ground (synthetically generated instructions grounded in native Indic content from the Sangraha corpus), with ~800 human-verified examples per language."
+}

@@ -1,0 +1,32 @@
+{
+  "benchmark_name": "IndicXTREME",
+  "paper_id": "2212.05409",
+  "year": 2023,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "we create a human-supervised benchmark, IndicXTREME, consisting of nine diverse NLU tasks covering 20 languages... Of the total 105 evaluation sets, summed across languages and tasks, 52 have been newly created as a part of this benchmark.",
+  "total_languages_claimed": 20,
+  "total_datasets": 9,
+  "dataset_names": [
+    "IndicSentiment",
+    "IndicXNLI",
+    "IndicCOPA",
+    "IndicXParaphrase",
+    "MASSIVE-Intent",
+    "Naamapadam",
+    "MASSIVE-SlotFill",
+    "IndicQA",
+    "FLORES"
+  ],
+  "task_categories": [
+    "Sentiment Classification",
+    "Natural Language Inference",
+    "Commonsense Reasoning",
+    "Paraphrase Detection",
+    "Intent Classification",
+    "Named Entity Recognition",
+    "Slot Filling",
+    "Question Answering",
+    "Sentence Retrieval"
+  ],
+  "brief_description": "IndicXTREME is a human-supervised NLU benchmark for Indic languages consisting of nine diverse tasks (five classification, two structure prediction, one QA, one retrieval) covering 20 languages from 4 language families, with 105 evaluation sets of which 52 are new contributions. It is designed to test zero-shot cross-lingual transfer of pretrained language models."
+}

@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "TUMLU",
+      "variant_name": null,
+      "variant_notes": "Full benchmark containing 38,139 questions across 8 newly collected language subsets plus Turkish from TurkishMMLU. Includes parallel versions in multiple scripts (Latin, Cyrillic, Arabic) for several languages.",
+      "task_type": "multiple-choice question answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "not applicable — natively developed; questions sourced from local educational materials and university entrance exams in each target language. Script transliterations (not translations) provided for Crimean Tatar, Kazakh, Uyghur, and Uzbek.",
+      "num_languages": 9,
+      "language_list": [
+        "Azerbaijani",
+        "Crimean Tatar",
+        "Karakalpak",
+        "Kazakh",
+        "Kyrgyz",
+        "Tatar",
+        "Turkish",
+        "Uyghur",
+        "Uzbek"
+      ],
+      "annotation_method": "Data collected from publicly available books and websites; the majority are sample or official questions for university entrance exams of respective countries. Questions standardized to 4-choice format. Native speakers of each language manually verified the quality of a random sample from each subject. In Azerbaijani, where questions were community-developed, around 10% were found invalid or had incorrect answers.",
+      "data_creator_info": {
+        "creator_type": "academic researchers and native speakers",
+        "creator_affiliation": "Multi-institutional team spanning Khazar University, New York University, George Washington University, Saarland University, Microsoft, Baku Higher Oil School, KAIST, Queensland University of Technology, CETOBaC EHESS, Turan University, Nazarbayev University, LMU Munich, ADA University, and independent researchers",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Author affiliations listed; paper states 'native speakers of each language manually verified the quality of a random sample from each subject' but does not report annotator demographics or compensation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Turkish subset sourced from TurkishMMLU (Yüksel et al., 2024)",
+      "notes": "The Turkish subset is TurkishMMLU, a separate pre-existing project. The other 8 language subsets are newly collected. 11 subjects total: Maths, Physics, Chemistry, Biology, Geography, Native Language & Literature, History, Logic, Human & Society, Philosophy, Religion & Ethics. Logic, Human & Society, Philosophy, and Religion & Ethics are available only in 1-2 languages."
+    },
+    {
+      "dataset_name": "TUMLU-mini",
+      "variant_name": "mini",
+      "variant_notes": "A more balanced, manually verified subset of TUMLU with ~100 randomly selected questions per subject per language. Subjects available in fewer than 3 languages were removed. All choices shuffled to mitigate memorization.",
+      "task_type": "multiple-choice question answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "not applicable — subset of natively developed TUMLU",
+      "num_languages": 9,
+      "language_list": [
+        "Azerbaijani",
+        "Crimean Tatar",
+        "Karakalpak",
+        "Kazakh",
+        "Kyrgyz",
+        "Tatar",
+        "Turkish",
+        "Uyghur",
+        "Uzbek"
+      ],
+      "annotation_method": "Randomly selected from TUMLU full dataset; all questions manually verified by native speakers. Answer choices shuffled. 7 core subjects retained: Biology, Chemistry, Geography, History, Maths, Native Language & Literature, Physics.",
+      "data_creator_info": {
+        "creator_type": "academic researchers and native speakers",
+        "creator_affiliation": "Same as TUMLU",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Paper states TUMLU-mini is 'manually verified' but does not detail the verification workforce."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Subset of TUMLU; Turkish portion from TurkishMMLU (Yüksel et al., 2024)",
+      "notes": "Used for all experiments in the paper. Contains 100 questions per subject per language where available, fewer otherwise. See Appendix B Table 7 for exact counts."
+    }
+  ]
+}

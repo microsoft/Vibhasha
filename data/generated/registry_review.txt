@@ -1,0 +1,117 @@
+======================================================================
+  V2 LANGUAGE REGISTRY — HUMAN REVIEW REPORT
+  Generated: 2026-07-29T05:59:25.167044+00:00
+======================================================================
+
+  Total unique canonical names: 219
+  Resolved via Glottolog:       219
+  Unresolved:                   0
+  Ambiguous:                    0
+  Joshi unmatched:              3
+  CLDR script missing:          23
+  Duplicate glottocodes:         13
+
+----------------------------------------------------------------------
+  UNRESOLVED NAMES
+  Action: Add to GLOTTOLOG_OVERRIDES with correct glottocode
+----------------------------------------------------------------------
+  (none)
+
+----------------------------------------------------------------------
+  AMBIGUOUS MATCHES
+  Action: Add to GLOTTOLOG_OVERRIDES with correct glottocode
+----------------------------------------------------------------------
+  (none)
+
+----------------------------------------------------------------------
+  DUPLICATE GLOTTOCODES (different names → same language)
+  Action: Merge via SEED_ALIASES if they should be the same,
+  or keep distinct if genuinely different (e.g., dialects)
+----------------------------------------------------------------------
+  akan1250 (Akan):
+    → Akan (in 1 benchmarks)
+    → Twi (in 4 benchmarks)
+  bamb1269 (Bambara):
+    → Bambara (in 3 benchmarks)
+    → NKo (in 1 benchmarks)
+  beng1280 (Bengali):
+    → Bengali (in 23 benchmarks)
+    → Bengali (Romanized) (in 1 benchmarks)
+  cusc1236 (Cusco Quechua):
+    → Cusco Quechua (in 1 benchmarks)
+    → Quechua (in 3 benchmarks)
+  hind1269 (Hindi):
+    → Bhatnair (in 1 benchmarks)
+    → Bilaspuri (in 1 benchmarks)
+    → Hindi (in 28 benchmarks)
+    → Hindi (Romanized) (in 1 benchmarks)
+    → Meeruti (in 1 benchmarks)
+    → Muzaffarnagar (in 1 benchmarks)
+    → Sirmouri (in 1 benchmarks)
+  nepa1254 (Nepali):
+    → Nepali (in 11 benchmarks)
+    → Nepali (Romanized) (in 1 benchmarks)
+  oriy1255 (Odia):
+    → Baleswari (in 1 benchmarks)
+    → Ganjami (in 1 benchmarks)
+    → Odia (in 14 benchmarks)
+  port1283 (Portuguese):
+    → Brazilian Portuguese (in 2 benchmarks)
+    → Mozambican Portuguese (in 1 benchmarks)
+    → Portuguese (in 14 benchmarks)
+  sinh1246 (Sinhala):
+    → Sinhala (in 6 benchmarks)
+    → Sinhala (Romanized) (in 1 benchmarks)
+  stan1288 (Spanish):
+    → Latin American Spanish (in 1 benchmarks)
+    → Spanish (in 20 benchmarks)
+  stan1318 (Standard Arabic):
+    → Arabic (in 19 benchmarks)
+    → Modern Standard Arabic (Romanized) (in 1 benchmarks)
+    → Standard Arabic (in 1 benchmarks)
+  urdu1245 (Urdu):
+    → Urdu (in 16 benchmarks)
+    → Urdu (Romanized) (in 1 benchmarks)
+  west2454 (Western Niger Fulfulde):
+    → Fula (in 2 benchmarks)
+    → Fulfulde (in 2 benchmarks)
+
+----------------------------------------------------------------------
+  JOSHI UNMATCHED (resolved in Glottolog but not in Joshi taxonomy)
+  Action: Add to LANG2TAX_OVERRIDES or confirm level 0 default
+----------------------------------------------------------------------
+  Achinese [family=Austronesian, iso=ace]
+  Ngaju [family=Austronesian, iso=nij]
+  Toba Batak [family=Austronesian, iso=bbc]
+
+----------------------------------------------------------------------
+  CLDR SCRIPT MISSING (valid ISO code but no script in CLDR)
+  Action: Add manual script entry or leave as null
+----------------------------------------------------------------------
+  Asháninka [iso=cni, family=Arawakan]
+  Bribri [iso=bzd, family=Chibchan]
+  Chokwe [iso=cjk, family=Atlantic-Congo]
+  Desia [iso=dso, family=Bookkeeping]
+  Dinka [iso=dip, family=Nilotic]
+  Fula [iso=fuh, family=Atlantic-Congo]
+  Fulfulde [iso=fuh, family=Atlantic-Congo]
+  Huichol [iso=hch, family=Uto-Aztecan]
+  Kabiye [iso=kbp, family=Atlantic-Congo]
+  Konkani [iso=gom, family=Indo-European]
+  Kulluvi [iso=kfx, family=Indo-European]
+  Lugbara [iso=lgg, family=Central Sudanic]
+  Mandyali [iso=mjl, family=Indo-European]
+  Mesopotamian Arabic [iso=acm, family=Afro-Asiatic]
+  Nahuatl [iso=nhn, family=Uto-Aztecan]
+  Otomí [iso=ote, family=Otomanguean]
+  Pashto [iso=pst, family=Indo-European]
+  Rajasthani [iso=rwr, family=Indo-European]
+  Sambalpuri [iso=spv, family=Indo-European]
+  Sanskrit [iso=san, family=Indo-European]
+  Shipibo-Konibo [iso=shp, family=Pano-Tacanan]
+  Tamashek [iso=taq, family=Afro-Asiatic]
+  Tarahumara [iso=tar, family=Uto-Aztecan]
+
+======================================================================
+  END OF REVIEW REPORT
+======================================================================

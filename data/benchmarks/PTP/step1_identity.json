@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "PolygloToxicityPrompts (PTP)",
+  "paper_id": "2405.09373v3",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce PolygloToxicityPrompts (PTP), the first large-scale multilingual toxicity evaluation benchmark of 425K naturally occurring prompts spanning 17 languages.",
+  "total_languages_claimed": 17,
+  "total_datasets": 2,
+  "dataset_names": [
+    "PolygloToxicityPrompts (PTP)",
+    "PTPSmall"
+  ],
+  "task_categories": [
+    "toxicity evaluation",
+    "toxic degeneration evaluation"
+  ],
+  "brief_description": "A large-scale multilingual benchmark of 425K naturally occurring prompts across 17 languages for evaluating neural toxic degeneration in LLMs, created by scraping over 100M web-text documents from mC4 and The Pile corpora and scoring them with Perspective API. PTPSmall is a stratified 5K-per-language subset for lower-cost benchmarking."
+}

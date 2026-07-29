@@ -1,0 +1,52 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["PolygloToxicityPrompts (PTP) — naturally occurring portion (~83.2%)"],
+      "evidence": "The majority of PTP was scraped from naturally occurring web-text in each target language from mC4 and The Pile corpora, not translated from English. However, ~16.8% was machine-translated to augment high-toxicity data for low-toxicity languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["PolygloToxicityPrompts (PTP) — translated portion (~16.8%, ~70K prompts)"],
+      "evidence": "For 9 languages (ar, cs, fr, ko, id, it, nl, pl, sv) with very low toxicity rates in mC4, toxic samples were translated from English/other languages using NLLB-3.3B: 'we translate toxic samples from the mC4 and THE PILE corpora into target languages using the NLLB-3.3B model. We use this process to create ≈70K translated prompts across 9 languages, which amounts to only 16.8% of our dataset.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "PTP does not include culturally-grounded design. Although the authors argue naturally occurring web-text captures more authentic toxicity than translated benchmarks, there was no deliberate cultural adaptation or region-specific content creation."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "not_applicable",
+      "evidence": "No human annotators were used in dataset creation. The entire pipeline is automated: web scraping, toxicity scoring via Perspective API, and stratified sampling."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["automated_pipeline"],
+      "total_annotators_reported": null,
+      "affiliations": ["Carnegie Mellon University", "University of Virginia", "Allen Institute for AI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The dataset was created entirely through automated web scraping and Perspective API scoring by the research team. No human annotators or crowdworkers were involved in the dataset construction. The paper includes an Ethics Statement about dataset release (using AI2 ImpACT license) but does not mention IRB review. The research was partly funded by Jigsaw."
+    },
+    "english_centricity_notes": "The benchmark is limited to 17 languages supported by Perspective API, all of which are relatively high-resource. The authors acknowledge: 'our testbed does not extend to low-resource languages due to the lack of toxicity detection tools.' The 9 languages that required translated toxic data highlight language resource imbalances. The toxicity evaluation tool (Perspective API) itself is trained primarily on English data with known biases (e.g., against German). The paper explicitly advocates for non-translated, naturally occurring data as superior to English-translated benchmarks.",
+    "geographic_representation": {
+      "primary_region": "Global (web-text coverage)",
+      "sub_regions": [
+        "Europe (Czech, Dutch, French, German, Italian, Polish, Portuguese, Russian, Spanish, Swedish)",
+        "East Asia (Chinese, Japanese, Korean)",
+        "South Asia (Hindi)",
+        "Southeast Asia (Indonesian)",
+        "Middle East/North Africa (Arabic)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "African languages",
+        "Indigenous/First Nations languages",
+        "South/Southeast Asian languages beyond Hindi and Indonesian",
+        "Central Asian languages",
+        "Oceanic/Pacific languages"
+      ],
+      "evidence": "The 17 languages are constrained by Perspective API's language support: Arabic, Chinese, Czech, Dutch, English, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Swedish. All are relatively high-resource. The paper acknowledges: 'our testbed does not extend to low-resource languages due to the lack of toxicity detection tools.'"
+    }
+  }
+}

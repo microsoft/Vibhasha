@@ -1,0 +1,166 @@
+{
+  "assessments": {
+    "Bitext Mining Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "Bitext mining datasets are inherently parallel text pairs. Some are based on human translations (FloresBitextMining, NTREXBitextMining - 'human-translated and localized'), some are found parallel text (NorwegianCourtsBitextMining, Tatoeba). BibleNLPBitextMining uses existing Bible translations. MMTEB removed machine-translated datasets from MTEB(Multilingual).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Annotation types range from 'expert-annotated' (BibleNLPBitextMining, NTREXBitextMining, IN22GenBitextMining) to 'human-annotated' (FloresBitextMining, Tatoeba). The paper does not specify whether annotators are native speakers of target languages.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Bitext mining tasks evaluate parallel text alignment ability, not cultural knowledge. Most are translated news/religious text. Content is not culturally grounded in specific target-language contexts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality ensured via MMTEB's review process: each task reviewed by at least one main contributor, required metadata fields, and performance sanity checks with two multilingual models."
+    },
+    "Classification Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "Many classification datasets are natively authored: AfriSentiClassification (found social media), various news classifications (Gujarati, Odia, Punjabi, Swahili, etc.), sentiment analyses in target languages. However, MassiveIntentClassification and MassiveScenarioClassification are 'human-translated and localized' from English. MultiHateClassification is 'created'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Annotation methods vary: 'derived' (labels from data structure), 'human-annotated', 'expert-annotated'. Many language-specific datasets (Kurdish, Macedonian, Zulu, Sinhala news) likely had native-speaker annotators but this is not confirmed. MassiveIntent/Scenario was annotated by Amazon's localization teams.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Many native-language classification datasets (news, sentiment, reviews) are culturally grounded by virtue of using local content. However, translated datasets like MassiveIntentClassification inherit English/Western interaction patterns. The paper notes 43 classification tasks in MTEB(Multilingual).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "43 classification tasks in MTEB(Multilingual). Mix of expert-annotated, human-annotated, and derived labels. Performance validated with sanity checks."
+    },
+    "Clustering Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "SIB200ClusteringS2S is explicitly flagged: 'labels from English samples are transferred to their translations, potentially introducing bias towards English.' WikiClusteringP2P.v2 uses native Wikipedia content. ArXiv/Biorxiv/Medrxiv clusters are English-only derived.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mostly_no",
+        "evidence": "Most clustering tasks use 'derived' annotations (labels from data structure like Wikipedia categories, arXiv topics, news categories). SIB200 labels transferred from English. Only AlloProfClusteringS2S and HALClusteringS2S have 'human-annotated' labels.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "WikiClusteringP2P.v2 uses native Wikipedia categories per language (14 languages). MasakhaNEWSClusteringS2S uses African news. SIB200 inherits English topic categories. English-only datasets (ArXiv, Biorxiv) reflect Western academic domains.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "17 clustering tasks in MTEB(Multilingual). Clustering evaluation reformulated with bootstrapping for efficiency (16.11x speedup, Spearman 0.96 correlation preserved)."
+    },
+    "Retrieval Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "Many retrieval datasets are originally in their target language (MIRACLRetrieval, CovidRetrieval in Chinese, TwitterHjerneRetrieval in Danish). BelebeleRetrieval is created with expert annotation. WikipediaRetrievalMultilingual uses native Wikipedia content with LLM-generated queries in target languages. Some English-only (ArguAna, SCIDOCS, TRECCOVID).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Annotation types: expert-annotated (MIRACL, Belebele, HagridRetrieval), human-annotated (MLQARetrieval), derived (many reasoning-based datasets), LM-generated and reviewed (WikipediaRetrievalMultilingual - GPT-4o generated queries).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "WikipediaRetrievalMultilingual uses native Wikipedia content. MIRACL covers 18 language-specific retrieval. Many are English-domain-specific (legal, medical, academic). LLM-generated queries may not fully capture cultural search patterns.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "18 retrieval tasks in MTEB(Multilingual). Downsampled using TREC pooling with 250 docs/query from BM25, e5-multilingual-large, and e5-Mistral-7B hard negatives."
+    },
+    "Pair Classification Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "XNLI is translated from English MultiNLI. PawsXPairClassification is 'human-translated'. Others are natively authored: ArmenianParaphrasePC, CTKFactsNLI (Czech), PpcPC (Polish), TERRa (Russian), indonli (Indonesian).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Expert-annotated: XNLI, RTE3, indonli. Human-annotated: OpusparcusPC, CTKFactsNLI, TERRa, PawsX. Derived: SprintDuplicateQuestions, TwitterURLCorpus, PpcPC.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Natively authored datasets (Armenian, Czech, Polish, Russian, Indonesian) use local content. XNLI and PawsX inherit English source material patterns despite translation.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "11 pair classification tasks in MTEB(Multilingual). Mix of NLI, paraphrase detection, and duplicate detection tasks."
+    },
+    "STS Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "Most STS benchmarks (STS12-17) are English-created. GermanSTSBenchmark and STSBenchmark note 'machine-translated and verified'. FaroeseSTS and FinParaSTS are natively authored/found. SemRel24STS is 'created'. IndicCrosslingualSTS is 'created'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mostly_yes",
+        "evidence": "Most STS tasks are 'human-annotated' or 'expert-annotated'. Exceptions: STS14 is 'derived'. SemRel24STS is specifically 'created' and 'human-annotated'. FinParaSTS is 'expert-annotated'.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Language-specific STS datasets (Faroese, Finnish, Japanese JSICK, Chinese STSB, Spanish STSES) use local content. SemRel24STS covers multiple languages with 'Spoken, Written' domains. English STS benchmarks reflect Western web/news content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "16 STS tasks in MTEB(Multilingual). Primary metric: Spearman correlation on highest similarity."
+    },
+    "Instruction Retrieval Datasets": {
+      "translated": {
+        "value": false,
+        "evidence": "All three instruction retrieval tasks (Core17, News21, Robust04) are English-only, derived from TREC shared tasks. No translation involved.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Derived from TREC shared tasks with 'comprehensive narratives created by professional assessors' (Weller et al., 2024).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "English-only news retrieval tasks. Culturally grounded in English/US news context only.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New task type introduced in MMTEB. 3 datasets total. English only. Excluded from per-category averages due to limited model support."
+    },
+    "Multi-label Classification Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "MultiEURLEXMultilabelClassification uses official EU legal documents (natively multilingual). BrazilianToxicTweetsClassification is natively Portuguese. MalteseNewsClassification is natively Maltese. CEDRClassification is natively Russian. KorHateSpeechMLClassification is natively Korean.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mostly_yes",
+        "evidence": "All five datasets are 'expert-annotated' or 'human-annotated'. EU legal documents have expert classification. Language-specific datasets likely have native annotators.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "All datasets use content native to their target languages: EU legal documents, Brazilian tweets, Maltese news, Russian social media, Korean hate speech. Content reflects local contexts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "5 multi-label classification tasks in MTEB(Multilingual). New task type introduced in MMTEB."
+    },
+    "Reranking Datasets": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "WikipediaRerankingMultilingual uses native Wikipedia content per language with LLM-generated queries. AlloprofReranking (French), RuBQReranking (Russian), T2Reranking (Chinese), VoyageMMarcoReranking (Japanese) are language-specific. WebLINXCandidatesReranking is English only.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Expert-annotated (AlloprofReranking, WebLINXCandidatesReranking), human-annotated (RuBQReranking), LM-generated and reviewed (WikipediaRerankingMultilingual). Derived (VoyageMMarcoReranking).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Language-specific reranking datasets (French, Russian, Chinese, Japanese) use native content. WikipediaRerankingMultilingual covers 16 languages with native Wikipedia. WebLINX is English web agent task.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "6 reranking tasks in MTEB(Multilingual). Primary metric: MAP@1000."
+    }
+  }
+}

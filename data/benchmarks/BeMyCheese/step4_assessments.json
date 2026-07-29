@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "BeMyCheese": {
+      "translated": {
+        "value": true,
+        "evidence": "The benchmark evaluates English-to-target-language machine translations. 'We evaluate multilingual LLMs on their ability to translate and culturally localise English marketing emails into 15 target languages.' (Section 3). Source texts are English; all evaluated content in target languages is LLM-generated translations from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "'We recruited five native speakers per language (N = 75 total) across 15 locales... Participants reside in the region they evaluated and are fluent speakers of both English and their native language. Each rater evaluated translations only for their native language.' (Section 3.1)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "'We introduce the first multilingual, human-annotated benchmark designed explicitly to evaluate cultural nuance and resonance in machine translation' (Section 1.1). Segments evaluated include idioms, puns, holidays, and culturally embedded concepts. Raters scored both cultural appropriateness and audience appropriateness, and participants reside in the target locale. (Sections 3.1, 3.3, 3.4)",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Inter-rater reliability assessed via Krippendorff's alpha (ordinal) and Gwet's AC2 with quadratic weights. Overall Krippendorff's alpha = 0.448 for segment-level ratings, indicating moderate agreement. IRR varies substantially by language, model, and segment category, with lower agreement for figurative language (idioms, puns). Detailed IRR tables in Appendix C."
+    }
+  }
+}

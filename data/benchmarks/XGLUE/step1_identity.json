@@ -1,0 +1,36 @@
+{
+  "benchmark_name": "XGLUE",
+  "paper_id": "EMNLP-2020-XGLUE",
+  "year": 2020,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "XGLUE not only includes these 5 existing tasks, but also introduces 6 new tasks selected from real-world scenarios (i.e., Search, Ads and News).",
+  "total_languages_claimed": 19,
+  "total_datasets": 11,
+  "dataset_names": [
+    "CoNLL NER",
+    "UDPOS",
+    "NC",
+    "MLQA",
+    "XNLI",
+    "PAWS-X",
+    "QADSM",
+    "WPR",
+    "QAM",
+    "QG",
+    "NTG"
+  ],
+  "task_categories": [
+    "Named Entity Recognition",
+    "POS Tagging",
+    "News Classification",
+    "Machine Reading Comprehension",
+    "Natural Language Inference",
+    "Paraphrase Identification",
+    "Query-Ad Matching",
+    "Web Page Ranking",
+    "QA Matching",
+    "Question Generation",
+    "News Title Generation"
+  ],
+  "brief_description": "XGLUE is a cross-lingual benchmark covering 11 tasks (both understanding and generation) across 19 languages, with English-only training data for each task. It includes 5 existing multilingual datasets and 6 new tasks from Search, Ads, and News scenarios."
+}

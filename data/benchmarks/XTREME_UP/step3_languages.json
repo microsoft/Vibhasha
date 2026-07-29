@@ -1,0 +1,365 @@
+{
+  "total_languages": 88,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Amharic": {
+      "iso_code": "am",
+      "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Asturian": {
+      "iso_code": "ast",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Azerbaijani": {
+      "iso_code": "az",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Ghomala'": {
+      "iso_code": "bbj",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Belarusian": {
+      "iso_code": "be",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "MTOP++"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Bambara": {
+      "iso_code": "bm",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)", "MTOP++", "TyDi QA / XOR QA (In-language QA)"]
+    },
+    "Bosnian": {
+      "iso_code": "bs",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Central Kurdish": {
+      "iso_code": "ckb",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Welsh": {
+      "iso_code": "cy",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Danish": {
+      "iso_code": "da",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Ewe": {
+      "iso_code": "ee",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Fula": {
+      "iso_code": "ff",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Irish": {
+      "iso_code": "ga",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Galician": {
+      "iso_code": "gl",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Hausa": {
+      "iso_code": "ha",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)", "MasakhaNER-X"]
+    },
+    "Hebrew": {
+      "iso_code": "he",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Armenian": {
+      "iso_code": "hy",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Igbo": {
+      "iso_code": "ig",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Icelandic": {
+      "iso_code": "is",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Georgian": {
+      "iso_code": "ka",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Kamba": {
+      "iso_code": "kam",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Kabuverdianu": {
+      "iso_code": "kea",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Kazakh": {
+      "iso_code": "kk",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Khmer": {
+      "iso_code": "km",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Kyrgyz": {
+      "iso_code": "ky",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Luxembourgish": {
+      "iso_code": "lb",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Luganda": {
+      "iso_code": "lg",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Lingala": {
+      "iso_code": "ln",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Lao": {
+      "iso_code": "lo",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Lithuanian": {
+      "iso_code": "lt",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["FLEURS (ASR)", "MasakhaNER-X", "FLORES-101 (MT)"]
+    },
+    "Latvian": {
+      "iso_code": "lv",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Macedonian": {
+      "iso_code": "mk",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Mongolian": {
+      "iso_code": "mn",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Mossi": {
+      "iso_code": "mos",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Maltese": {
+      "iso_code": "mt",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Burmese": {
+      "iso_code": "my",
+      "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Nepali": {
+      "iso_code": "ne",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)"]
+    },
+    "Norwegian": {
+      "iso_code": "no",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Nyanja": {
+      "iso_code": "ny",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Occitan": {
+      "iso_code": "oc",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Oromo": {
+      "iso_code": "om",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Oriya": {
+      "iso_code": "or",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Nigerian Pidgin": {
+      "iso_code": "pcm",
+      "datasets_present_in": ["MasakhaNER-X", "Autocomplete (Universal Dependencies)"]
+    },
+    "Pashto": {
+      "iso_code": "ps",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Romanian": {
+      "iso_code": "ro",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "rw",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Sanskrit": {
+      "iso_code": "sa",
+      "datasets_present_in": ["UL-OCR"]
+    },
+    "Sindhi": {
+      "iso_code": "sd",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Dakshina Transliteration", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Sinhala": {
+      "iso_code": "si",
+      "datasets_present_in": ["UL-OCR", "Dakshina Transliteration"]
+    },
+    "Slovak": {
+      "iso_code": "sk",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Slovenian": {
+      "iso_code": "sl",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Shona": {
+      "iso_code": "sn",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Somali": {
+      "iso_code": "so",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "MTOP++"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)", "MTOP++"]
+    },
+    "Tajik": {
+      "iso_code": "tg",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MTOP++"]
+    },
+    "Tswana": {
+      "iso_code": "tn",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Twi": {
+      "iso_code": "tw",
+      "datasets_present_in": ["MasakhaNER-X"]
+    },
+    "Uyghur": {
+      "iso_code": "ug",
+      "datasets_present_in": ["Autocomplete (Universal Dependencies)"]
+    },
+    "Ukrainian": {
+      "iso_code": "uk",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Umbundu": {
+      "iso_code": "umb",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]
+    },
+    "Uzbek": {
+      "iso_code": "uz",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]
+    },
+    "Wolof": {
+      "iso_code": "wo",
+      "datasets_present_in": ["FLEURS (ASR)", "MasakhaNER-X", "FLORES-101 (MT)"]
+    },
+    "Xhosa": {
+      "iso_code": "xh",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Zulu": {
+      "iso_code": "zu",
+      "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]
+    },
+    "Basque": {
+      "iso_code": "eu",
+      "datasets_present_in": ["Autocomplete (Universal Dependencies)"]
+    },
+    "Scottish Gaelic": {
+      "iso_code": "gd",
+      "datasets_present_in": ["Autocomplete (Universal Dependencies)"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["Dakshina Transliteration", "MTOP++"]
+    }
+  }
+}

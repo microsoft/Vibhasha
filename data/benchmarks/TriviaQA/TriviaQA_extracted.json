@@ -1,0 +1,124 @@
+{
+  "benchmark_name": "TriviaQA",
+  "paper_id": "P17-1147",
+  "year": 2017,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present TriviaQA, a challenging reading comprehension dataset containing over 650K question-answer-evidence triples.",
+  "total_languages_claimed": 1,
+  "total_datasets": 1,
+  "dataset_names": [
+    "TriviaQA"
+  ],
+  "task_categories": [
+    "Reading Comprehension",
+    "Question Answering"
+  ],
+  "brief_description": "TriviaQA is a large-scale reading comprehension dataset containing over 650K question-answer-evidence triples, with 95K question-answer pairs authored by trivia enthusiasts and independently gathered evidence documents from Wikipedia and the Web. It tests complex compositional questions, lexical/syntactic variability, and multi-sentence reasoning.",
+  "datasets": [
+    {
+      "dataset_name": "TriviaQA",
+      "variant_name": null,
+      "variant_notes": "The dataset includes two evidence-source domains: Wikipedia (78K examples, avg 1.8 evidence docs per question) and Web (650K examples from Bing search results). A verified human-annotated subset of 1,975 question-document-answer triples is also provided.",
+      "task_type": "Reading Comprehension / Question Answering",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": "N/A - monolingual English dataset",
+      "num_languages": 1,
+      "language_list": [
+        "English"
+      ],
+      "annotation_method": "Questions and answers were collected from 14 trivia and quiz-league websites, authored by trivia enthusiasts independently of any evidence documents. Evidence documents were automatically gathered via Bing Web search and Wikipedia entity linking (TAGME). A human annotator verified a subset of 1,975 question-document-answer triples.",
+      "data_creator_info": {
+        "creator_type": "trivia enthusiasts (questions/answers) + automated retrieval (evidence documents) + expert annotator (verification subset)",
+        "creator_affiliation": "University of Washington, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We collected a large dataset to support the reading comprehension task described above. First we gathered question-answer pairs from 14 trivia and quiz-league websites."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Total 95,956 QA pairs, 40,478 unique answers, 662,659 evidence documents. Average question length 14 words, average document length 2,895 words. The full unfiltered dataset contains 110,495 QA pairs and 740K evidence documents."
+    }
+  ],
+  "total_languages": 1,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": [
+        "TriviaQA"
+      ]
+    }
+  },
+  "assessments": {
+    "TriviaQA": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions were collected from 14 trivia and quiz-league websites authored by trivia enthusiasts in English. Evidence documents gathered from English Wikipedia and English web search results. No translation involved.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "INSUFFICIENT_INFO: The paper does not report whether the trivia enthusiasts who authored the questions or the human annotator who verified the subset are native English speakers.",
+        "evidence": "The paper describes questions authored by 'trivia enthusiasts' from trivia/quiz-league websites and a single 'human annotator' for verification, but does not specify language nativeness.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Questions cover general trivia topics (history, geography, entertainment, science, etc.) sourced from English-language trivia websites. The dataset is not designed to be culturally grounded in any specific culture; it reflects the broad interests of English-speaking trivia enthusiasts.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "A human annotator verified 1,975 question-document-answer triples (297+584 Wikipedia, 322+733 Web for dev+test). Evidence documents contain answers for 79.7% (Wikipedia) and 75.4% (Web) of questions. Error analysis on 100 BiDAF predictions found 19% lacked evidence, 3% had incorrect ground truth, and 3% had valid but unlisted answers."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "TriviaQA"
+      ],
+      "evidence": "Questions and answers were originally authored in English by trivia enthusiasts on trivia/quiz-league websites. Evidence documents are English Wikipedia and English web pages. The dataset is natively English, not translated from another language."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "TriviaQA is a monolingual English dataset with no translation component."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "The dataset covers broad trivia topics but is not designed for cultural grounding in any specific culture or region."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper does not report the native language of the trivia enthusiasts or the human annotator.",
+      "evidence": "Questions were gathered from 14 English-language trivia and quiz-league websites. A single human annotator verified a subset. No demographic or language background information is provided."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "trivia enthusiasts (questions/answers)",
+        "automated retrieval (evidence documents)",
+        "expert annotator (verification)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "University of Washington",
+        "Allen Institute for AI"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We collected a large dataset to support the reading comprehension task described above. First we gathered question-answer pairs from 14 trivia and quiz-league websites. The paper mentions 'a human annotator' for verification but provides no demographic, compensation, or ethics review details."
+    },
+    "english_centricity_notes": "TriviaQA is an English-only dataset. All questions, answers, and evidence documents are in English. The trivia questions originate from English-language trivia websites and evidence is gathered from English Wikipedia and English web search results via Bing.",
+    "geographic_representation": {
+      "primary_region": "INSUFFICIENT_INFO: Not explicitly stated, but the dataset draws from English-language trivia websites and covers global trivia topics.",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The paper does not discuss geographic representation. Questions cover diverse topics (history, geography, entertainment, science) but the geographic distribution of topics is not analyzed."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

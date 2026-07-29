@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "FLUID QA": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3: 'we build on the FLUTE dataset, which offers high-quality English examples across rhetorical types.' Section 3.1: 'we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' Section 3.2: 'Data construction was guided by FLUTE's literal, figurative, and explanatory annotations. We generated items using GPT-4o.' English items are constructed from English FLUTE data; Korean and Chinese are machine-translated with cultural adaptation from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'As a final step to ensure the highest quality, all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' Section 3.2: 'all outputs were post-edited for fluency and coherence.' Initial generation was LLM-based (GPT-4o); native-speaking authors performed post-editing only.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'To ensure cross-linguistic validity, we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' 'For idioms... we replaced them with culturally equivalent idioms in Korean and Chinese to preserve both semantic and pragmatic meaning.' Cultural adaptation was applied to translations, but the source content originates from the English FLUTE dataset.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Bradley-Terry pairwise preference evaluation showed culturally adapted translations statistically significantly preferred over literal translations (p < 0.001). Models performed better on culturally adapted versions. All outputs post-edited by native-speaking authors. GPT family excluded from evaluation due to potential contamination from GPT-4o's role in data generation (Appendix D)."
+    },
+    "FLUTE-bi": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.3: 'Adapted from the original FLUTE dataset.' Section 3.1 describes the same culturally adaptive GPT-4o translation pipeline for Korean and Chinese. English sentences come from the original English FLUTE dataset; Korean and Chinese are translated with cultural adaptation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' Same post-editing process as FLUID QA; original content is from FLUTE, translations are LLM-generated then post-edited.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Same cultural adaptation pipeline as FLUID QA (Section 3.1). Culturally adaptive prompting and idiom replacement applied, but source content is English FLUTE.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Appendix C reports that literal translations produced lower F1 scores compared to culturally adapted versions, confirming the value of the cultural adaptation step. Same quality assurance process as FLUID QA."
+    }
+  }
+}

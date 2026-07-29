@@ -1,0 +1,62 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "Uhura-ARC-Easy",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Multiple-choice Science Question Answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Professional human translation by native speakers recruited through the Masakhane NLP community, with quality control review by language coordinators",
+      "num_languages": 6,
+      "language_list": [
+        "Amharic",
+        "Hausa",
+        "Northern Sotho",
+        "Swahili",
+        "Yoruba",
+        "Zulu"
+      ],
+      "annotation_method": "Human translation using a custom annotation platform, followed by review and adjudication by language coordinators",
+      "data_creator_info": {
+        "creator_type": "Professional translators (native speakers) recruited via Masakhane NLP community",
+        "creator_affiliation": "Masakhane NLP community; affiliated institutions include Saarland University, Equiano Institute, OpenAI, University of Minnesota, Imperial College London, University of South Africa, University of Johannesburg, Mila/McGill University",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "We recruited professional translators through the Masakhane NLP community... we ensured all translators were compensated above the local living wage. H.1: The translators and language coordinators were native speakers of the target languages, residing in the respective countries or within diaspora communities. They were selected so half were male and half were female."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "ARC-Easy (Clark et al., 2018) — AI2 Reasoning Challenge, Easy subset with 5,197 multiple-choice science questions from grade 3-9 examinations",
+      "notes": "The dataset is multi-way parallel across all 6 languages plus English. Data splits vary by language (e.g., Amharic: 656/92/491 train/dev/test; Zulu: 9246/0/300). Translators could skip or flag questions that were difficult or inappropriate to translate."
+    },
+    {
+      "dataset_name": "Uhura-TruthfulQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Truthfulness Evaluation (multiple-choice and generation)",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Professional human translation by native speakers recruited through the Masakhane NLP community, with quality control review by language coordinators",
+      "num_languages": 6,
+      "language_list": [
+        "Amharic",
+        "Hausa",
+        "Northern Sotho",
+        "Swahili",
+        "Yoruba",
+        "Zulu"
+      ],
+      "annotation_method": "Human translation using a custom annotation platform, followed by review and adjudication by language coordinators",
+      "data_creator_info": {
+        "creator_type": "Professional translators (native speakers) recruited via Masakhane NLP community",
+        "creator_affiliation": "Masakhane NLP community; affiliated institutions include Saarland University, Equiano Institute, OpenAI, University of Minnesota, Imperial College London, University of South Africa, University of Johannesburg, Mila/McGill University",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "We recruited professional translators through the Masakhane NLP community... we ensured all translators were compensated above the local living wage. H.1: The translators and language coordinators were native speakers of the target languages, residing in the respective countries or within diaspora communities. They were selected so half were male and half were female."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "TruthfulQA (Lin et al., 2022) — 817 questions across 38 categories including health, law, finance, and politics",
+      "notes": "Targets common misconceptions and false beliefs. Data splits are approximately 8 dev / ~800 test per language. The dataset is multi-way parallel."
+    }
+  ]
+}

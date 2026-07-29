@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "LinguaSafe",
+  "paper_id": "2508.12733v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce LinguaSafe, a comprehensive multilingual safety benchmark crafted with meticulous attention to linguistic authenticity. The LinguaSafe dataset comprises 45k entries in 12 languages",
+  "total_languages_claimed": 12,
+  "total_datasets": 1,
+  "dataset_names": [
+    "LinguaSafe"
+  ],
+  "task_categories": [
+    "safety_recognition",
+    "safety_compliance",
+    "oversensitivity_evaluation"
+  ],
+  "brief_description": "A comprehensive multilingual safety benchmark for LLMs comprising 45k entries across 12 languages (high-, medium-, and low-resource), curated using a combination of translated, transcreated, and natively-sourced data. Features a hierarchical safety taxonomy with 5 domains and 23 subtypes, severity-level annotations (L0-L3), and both direct (MCQ) and indirect evaluation frameworks including oversensitivity assessment."
+}

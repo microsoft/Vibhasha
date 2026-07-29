@@ -1,0 +1,94 @@
+{
+  "assessments": {
+    "WikiBio (Biography Generation)": {
+      "translated": {
+        "value": false,
+        "evidence": "We download the Wikipedia dumps for each language, parse them and save the information (metadata) of pages that have infoboxes. Next, we use the wptools API to extract the infoboxes and the first lines of the pages about people.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Wikipedia content is written by native speakers. Quality evaluation used native-language annotators: 'For each language, we hire two native-language annotators and pay them higher wages than the minimum hourly wages.' Evaluation conducted on hi, bn, ml, kn with 250 examples each.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Wikipedia infoboxes are scraped from language-specific Wikipedias, so content is about people relevant to those language communities. However, the infobox format and task structure follow the English WikiBio paradigm (Lebret et al., 2016).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Human evaluation on 4 languages showed Property A (match between output and input) >96%, but Property C (extra information not inferable from input) was >10% for WikiBio, similar to XSum."
+    },
+    "Headline Generation": {
+      "translated": {
+        "value": false,
+        "evidence": "Hindi data crawled from Hindi news websites (Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV). For other languages, used the IndicGLUE headline prediction dataset (Kakwani et al., 2020) which contains native language news articles.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "News articles and headlines are written by native-language journalists. Quality evaluation used native-language annotators on 100 examples each for hi, bn, ml, kn.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is sourced from native-language Indian news websites covering topics like politics, science, entertainment, sports, business relevant to Indian language communities. Hindi data comes from Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV; other languages from IndicGLUE news data.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Human evaluation showed Property A (alignment) >90%, Property B (inconsistency) around 5%, and Property C (extra info) <10% across 4 evaluated languages."
+    },
+    "Sentence Summarization": {
+      "translated": {
+        "value": false,
+        "evidence": "Simply re-processed the headline generation dataset by extracting the first sentence and headline pairs. Same native-language news data as Headline Generation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Underlying data authored by native speakers (same as HG), but no separate human quality evaluation was conducted specifically for the sentence summarization task.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Derived from the Headline Generation dataset, which consists of native-language Indian news articles.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "No separate human evaluation was conducted for this task. Quality depends on the underlying Headline Generation dataset quality."
+    },
+    "Paraphrase Generation": {
+      "translated": {
+        "value": false,
+        "evidence": "Paraphrases mined from Samanantar parallel corpus using English as pivot language. The Indic-side text in Samanantar is native-language text, not translated text. Using English as the pivot is a method to identify paraphrases, not a translation step.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The Indic text in the Samanantar parallel corpus was authored by native speakers. Quality evaluation used two native-language annotators per language for hi, bn, ml, kn with 250 examples each, using the SemEval-2017 similarity labels.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Paraphrases are extracted from a parallel corpus (Samanantar) which contains diverse Indic-language text, but the content is constrained to sentences that have English translations, which may not always reflect culturally-specific content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Human evaluation showed that across languages, at least 50% of examples have similarity score >=3 (on 0-5 scale). However, there is relatively larger amount of noise for Kannada and Malayalam with high values of Label 0 (unrelated pairs)."
+    },
+    "Question Generation": {
+      "translated": {
+        "value": true,
+        "evidence": "We start with the SQuAD training and development (Rajpurkar et al., 2016) question answering sets and repurpose them to serve as a question generation dataset... We then translate the data into Indic languages using the IndicTrans (Ramesh et al., 2022) English to Indic model.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Dataset created entirely via machine translation from English SQuAD. No human annotation or evaluation was conducted for this task: 'We conduct this study for only three tasks... due to limited annotation budget.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Source data is SQuAD, which is based on English Wikipedia articles about topics not specific to Indic language communities. The translated questions and contexts retain English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper acknowledges in the Limitations section: 'The question generation dataset is generated using machine translation, and it might consist of translationese.' Previous work found IndicTrans translations to be of good quality (IndicXNLI; Aggarwal et al. 2022)."
+    }
+  }
+}

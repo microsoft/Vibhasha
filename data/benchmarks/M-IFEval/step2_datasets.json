@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "M-IFEval",
+      "variant_name": null,
+      "variant_notes": "Includes shared instructions adapted from original IFEval plus novel language-specific instructions for each of the 3 target languages. 115 prompts for Spanish, 235 for French, 172 for Japanese.",
+      "task_type": "instruction_following",
+      "source": "mixed",
+      "source_language": "English (for shared instructions adapted from IFEval); French, Japanese, Spanish (for language-specific instructions created natively)",
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["English", "French", "Japanese", "Spanish"],
+      "annotation_method": "expert_native_speakers",
+      "data_creator_info": {
+        "creator_type": "researchers_native_speakers",
+        "creator_affiliation": "Lightblue KK. and Arkema",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Extends IFEval (Zhou et al., 2023)",
+      "notes": "Prompts were developed by generating multiple example prompts using an LLM, then manually selecting and editing. Shared instructions from IFEval were adapted per language (e.g., case-change instructions removed for Japanese). Language-specific instructions were newly created by native-speaker language leads. English scores are from the original IFEval and not newly collected."
+    }
+  ]
+}

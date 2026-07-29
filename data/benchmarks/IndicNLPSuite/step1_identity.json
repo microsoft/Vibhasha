@@ -1,0 +1,39 @@
+{
+  "benchmark_name": "IndicNLPSuite",
+  "paper_id": "2020.findings-emnlp.445",
+  "year": 2020,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We collectively refer to this benchmark as IndicGLUE and it is a collection of (i) existing Indian language datasets for some tasks, (ii) manual translations of some English datasets into Indian languages done as a part of this work, and (iii) new datasets that were created semi-automatically for all major Indian languages as a part of this work.",
+  "total_languages_claimed": 11,
+  "total_datasets": 16,
+  "dataset_names": [
+    "IndicGLUE News Category Classification",
+    "IndicGLUE Headline Prediction",
+    "IndicGLUE Wikipedia Section-Title Prediction",
+    "IndicGLUE Cloze-style Multiple-choice QA",
+    "WikiAnn NER",
+    "CVIT-Mann Ki Baat (Cross-lingual Sentence Retrieval)",
+    "WNLI Indic",
+    "COPA Indic",
+    "Amrita Paraphrase Detection",
+    "MIDAS Hindi Discourse",
+    "IIT-Patna Movie Reviews",
+    "IIT-Patna Product Reviews",
+    "ACTSA Telugu Sentiment",
+    "BBC Hindi News Articles",
+    "Soham Bengali News Articles",
+    "iNLTK Headlines"
+  ],
+  "task_categories": [
+    "Text Classification",
+    "Multiple-choice QA",
+    "Named Entity Recognition",
+    "Cross-lingual Sentence Retrieval",
+    "Natural Language Inference",
+    "Commonsense Reasoning",
+    "Paraphrase Detection",
+    "Discourse Mode Classification",
+    "Sentiment Analysis"
+  ],
+  "brief_description": "IndicNLPSuite provides monolingual corpora (IndicCorp), pre-trained word embeddings (IndicFT), language models (IndicBERT), and an NLU evaluation benchmark (IndicGLUE) for 11 major Indian languages from the Indo-Aryan and Dravidian families, comprising newly created semi-automatic datasets and curated existing datasets across tasks including text classification, QA, NER, NLI, paraphrase detection, and sentiment analysis."
+}

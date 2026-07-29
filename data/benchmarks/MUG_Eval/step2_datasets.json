@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "Easy Twenty Questions",
+      "variant_name": null,
+      "variant_notes": "Adapted from the Things dataset (Zhang et al., 2024) into a conversational word-guessing game",
+      "task_type": "word_guessing_reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Google Translate; 200 English words translated to 30 languages, filtered to 140 after removing Latin-character artifacts, duplicates, and loan words",
+      "num_languages": 30,
+      "language_list": [
+        "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+        "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+        "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+      ],
+      "annotation_method": "Automated: words translated via Google Translate; evaluation via exact string matching with GlotLID language verification; no human annotation required for benchmark construction",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "KAIST and Trillion Labs",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Authors adapted the Things dataset and used Google Translate for translation; no annotator workforce described for this task"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Zhang et al., 2024 (Things dataset / 20Q: Probing the multi-turn planning capabilities of LLMs via 20 question games)",
+      "notes": "140 target words per language with candidate pools of 100 words per game; up to 20 yes/no questions per game; answerer responds only in English (yes/no/maybe)"
+    },
+    {
+      "dataset_name": "MCQ Conversation",
+      "variant_name": null,
+      "variant_notes": "Adapted from Belebele benchmark (Bandarkar et al., 2024) into a conversational reading comprehension task",
+      "task_type": "reading_comprehension_instruction_following",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "Uses existing Belebele multilingual data (professionally translated parallel reading comprehension dataset); no additional translation by the authors",
+      "num_languages": 30,
+      "language_list": [
+        "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+        "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+        "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+      ],
+      "annotation_method": "Automated: uses existing Belebele passages and questions; evaluation via exact string matching with GlotLID language verification; no new human annotation for benchmark construction",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "KAIST and Trillion Labs (task design); Belebele data from Meta (Bandarkar et al., 2024)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Task format designed by authors; underlying data from Belebele which used professional translators"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Bandarkar et al., 2024 (Belebele: a parallel reading comprehension dataset in 122 language variants)",
+      "notes": "900 samples from Belebele; passage given to answerer, question and 4 choices given to questioner; up to 10 yes/no questions; answerer responds in English (yes/no/maybe)"
+    },
+    {
+      "dataset_name": "Code Reconstruction",
+      "variant_name": null,
+      "variant_notes": "Adapted from HumanEvalExplain (Muennighoff et al., 2024) into a multilingual code explanation and reconstruction task",
+      "task_type": "code_generation",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "No traditional translation; code remains in English (Python); LLM generates natural language descriptions in the target language during evaluation",
+      "num_languages": 30,
+      "language_list": [
+        "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+        "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+        "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+      ],
+      "annotation_method": "Automated: uses existing HumanEvalExplain Python functions with unit tests; evaluation via code test execution; no human annotation required",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "KAIST and Trillion Labs (task design); HumanEvalExplain data from Muennighoff et al., 2024 (OctoPack)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Task format designed by authors; underlying code samples and unit tests from HumanEvalExplain"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Muennighoff et al., 2024 (OctoPack: Instruction tuning code large language models / HumanEvalExplain)",
+      "notes": "164 Python function samples with unit tests; describer generates natural language explanation in target language, rebuilder reconstructs code from description and function declaration; success measured by passing all unit tests"
+    }
+  ]
+}

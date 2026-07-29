@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "FLORES-101": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia' and 'By translating the same set of English sentences in more than hundred languages, we enable evaluation of multilingual MT with the caveat that source sentences not in English are produced by human translators.' Section 1: '3001 sentences extracted from English Wikipedia and covering a variety of different topics and domains. These sentences have been translated in 101 languages by professional translators through a carefully controlled process.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English. Translators are required to have at least two to three years of translation experience in the relevant language pair if they have an academic degree in translation or linguistics and three to five years of translation experience if they do not have any relevant academic qualification.' Additionally, 'Translators also undergo a translation test every 18 months to assess their translation quality.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia, while considering a broad set of topics that could be of general interest regardless of the native language of the reader.' The content is sourced entirely from English Wikipedia/Wikinews/Wikijunior/WikiVoyage and translated. Section 3.1 acknowledges: 'Another downside to this English-centric translation approach is a possible artificial increase of the differences between two dialects of the same language.' The authors also note in Section 6.4.1: 'the construction of FLORES-101 is English-centric in and of itself, as the same set of sentences are translated from English into all languages.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous multi-stage quality control: 20% of dataset sampled and reviewed per language by independent evaluation LSP. Translation Quality Score on 0-100 scale based on error types (grammar, punctuation, spelling, capitalization, addition/omission, mistranslation, unnatural translation, untranslated text, register) with severity levels (minor, major, critical). Minimum 90% quality threshold required. 45 of 101 languages required re-translation (avg 1 re-translation, max 3). Average turnaround 61 days per language."
+    }
+  }
+}

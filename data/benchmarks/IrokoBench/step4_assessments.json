@@ -1,0 +1,58 @@
+{
+  "assessments": {
+    "AfriXNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "The datasets were created by human translating a subset of English cross-lingual NLI (XNLI) ... into each of the 16 languages using professional translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators to translate the sentences. Most of the translators translated from English except for Ewe, Lingala and Wolof translators that translated from French since they are from the Francophone region of Africa.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is human-translated which may include some translationese effects, it would have been better if they are all generated in the native African languages. The source content (XNLI) is English-centric with domains like 'oxford university press', 'slate', 'nineeleven'.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality controlled by language coordinators who reviewed and corrected poorly translated sentences. AfriCOMET QE scores showed most translations scored 0.7-1.0 except Lingala, Twi, and Wolof (~0.5), though the metric may be unreliable for those languages."
+    },
+    "AfriMMLU": {
+      "translated": {
+        "value": true,
+        "evidence": "The datasets were created by human translating ... Massive Multitask Language Understanding (MMLU) evaluation datasets into each of the 16 languages using professional translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators. Many of the Francophone translators understand French and English but are more fluent in French.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Original MMLU was curated from freely available online sources by undergraduate and graduate students in the USA. The authors focus on five subjects that they believe are 'culturally unbiased (or international)' but the content still originates from a US/Western context.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Subjects selected for cultural neutrality: elementary mathematics, high-school geography, high-school microeconomics, international law, global facts. Translation quality controlled by language coordinators."
+    },
+    "AfriMGSM": {
+      "translated": {
+        "value": true,
+        "evidence": "AfriMGSM expands the original MGSM dataset (Shi et al., 2023), which contains 250 QA pairs and 11 languages (including Swahili), to 15 more languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators. We extend our gratitude to Charles Riley for facilitating our connection with the Vai translator for the MGSM data translation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MGSM consists of grade school mathematical word problems created by human problem writers (in English). The content is mathematical and potentially less culturally biased, but the scenarios described in the word problems originate from an English-language context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Translation quality controlled by language coordinators. Mathematical content is relatively more language-neutral than other tasks."
+    }
+  }
+}

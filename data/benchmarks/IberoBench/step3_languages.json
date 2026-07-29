@@ -1,0 +1,48 @@
+{
+  "total_languages": 5,
+  "languages": {
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": [
+        "copa_ca", "xstorycloze_ca", "catcola", "mgsm_direct_ca",
+        "xnli_ca", "wnli_ca", "teca", "parafraseja", "paws_ca",
+        "arc_ca", "catalanqa", "coqcat", "openbookqa_ca", "piqa_ca",
+        "siqa_ca", "xquad_ca", "belebele_cat_Latn", "cabreu",
+        "flores_ca", "phrases_va", "veritasqa_ca"
+      ]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": [
+        "copa_es", "xstorycloze_es", "escola", "mgsm_direct_es",
+        "xnli_es", "wnli_es", "paws_es", "openbookqa_es", "xquad_es",
+        "belebele_spa_Latn", "xlsum_es", "flores_es", "phrases_es",
+        "veritasqa_es"
+      ]
+    },
+    "Basque": {
+      "iso_code": "eus",
+      "datasets_present_in": [
+        "xcopa_eu", "xstorycloze_eu", "mgsm_direct_eu",
+        "xnli_eu", "wnli_eu", "qnli_eu", "piqa_eu",
+        "eus_exams", "eus_proficiency", "eus_trivia",
+        "belebele_eus_Latn", "eus_reading", "flores_eu"
+      ]
+    },
+    "Galician": {
+      "iso_code": "glg",
+      "datasets_present_in": [
+        "galcola", "mgsm_direct_gl", "parafrases_gl", "paws_gl",
+        "openbookqa_gl", "belebele_glg_Latn", "summarization_gl",
+        "flores_gl", "veritasqa_gl", "truthfulqa_gl"
+      ]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": [
+        "assin_entailment", "assin_paraphrase",
+        "belebele_por_Latn", "flores_pt"
+      ]
+    }
+  }
+}

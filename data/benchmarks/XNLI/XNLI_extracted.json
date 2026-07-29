@@ -1,0 +1,180 @@
+{
+  "benchmark_name": "XNLI",
+  "paper_id": "EMNLP-2018-XNLI",
+  "year": 2018,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we construct an evaluation set for XLU by extending the development and test sets of the Multi-Genre Natural Language Inference Corpus (MultiNLI) to 15 languages",
+  "total_languages_claimed": 15,
+  "total_datasets": 1,
+  "dataset_names": [
+    "XNLI"
+  ],
+  "task_categories": [
+    "Natural Language Inference"
+  ],
+  "brief_description": "XNLI is a cross-lingual natural language inference evaluation corpus consisting of 7500 human-annotated development and test examples translated from English MultiNLI data into 14 other languages (15 total), covering three-way NLI classification (entailment, contradiction, neutral).",
+  "datasets": [
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": "Cross-lingual extension of MultiNLI dev/test sets to 15 languages",
+      "task_type": "Natural Language Inference (3-way classification: entailment, contradiction, neutral)",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional human translation via One Hour Translation platform; premises and hypotheses translated separately to avoid adding context",
+      "num_languages": 15,
+      "language_list": [
+        "English",
+        "French",
+        "Spanish",
+        "German",
+        "Greek",
+        "Bulgarian",
+        "Russian",
+        "Turkish",
+        "Arabic",
+        "Vietnamese",
+        "Thai",
+        "Chinese",
+        "Hindi",
+        "Swahili",
+        "Urdu"
+      ],
+      "annotation_method": "English portion: crowdsourced annotation following MultiNLI procedure (workers produce 3 hypotheses per premise, one per label; validated by 4 additional workers with majority vote). Other languages: professional translation of English data with labels copied from source.",
+      "data_creator_info": {
+        "creator_type": "crowdworkers (English annotation) + professional translators (translation to other languages)",
+        "creator_affiliation": "MultiNLI crowdsourcing worker pool (English); One Hour Translation platform (translations)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we ask the same MultiNLI worker pool from a crowdsourcing platform to produce three hypotheses for each premise; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Williams et al. (2017) [MultiNLI]; Bowman et al. (2015) [SNLI]",
+      "notes": "7500 examples per language (dev + test), 112,500 annotated pairs total. English source data drawn from 10 genres of Open American National Corpus plus the novel Captain Blood. 93% of data achieved three-vote consensus; remaining 7% marked with special label '-'. Designed as evaluation-only (dev+test); training uses MultiNLI English training data or machine-translated versions."
+    }
+  ],
+  "total_languages": 15,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI"]
+    }
+  },
+  "assessments": {
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "we create the full XNLI corpus by employing professional translators to translate it into our ten target languages; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform. We translate the premises and hypotheses separately... and simply copy the labels from the English source text.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "The English portion was annotated by the MultiNLI crowdsourcing worker pool. The 14 other languages were produced by professional translators, not native-speaker annotators generating original content. There is no mention of native speakers creating or validating NLI judgments in target languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "One of the limitations of the XNLI corpus is that it does not capture these differences, since it was obtained by translation. The paper explicitly acknowledges that translation does not capture cultural differences, citing Mohammad et al. (2016) and Smith et al. (2016) on cultural differences affecting sentiment and classification.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "93% of English data achieved three-vote consensus among 5 annotators. Bilingual annotators re-annotated 100 examples each in English and French: recovered English consensus label 85% of the time on English data and 83% on translated French, suggesting semantic relationships were largely preserved in translation. One example found where Chinese translation changed entailment to contradiction ('upright' translated as 'sitting upright')."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All XNLI data originates from English MultiNLI examples and is translated to other languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI"],
+      "evidence": "we create the full XNLI corpus by employing professional translators to translate it into our ten target languages... We translate the premises and hypotheses separately... and simply copy the labels from the English source text."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "English portion created by MultiNLI crowdsourcing worker pool (presumably English-speaking). Translations done by professional translators via One Hour Translation platform, but whether translators are native speakers of target languages is not stated. No native-speaker NLI annotation was performed in target languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["crowdworkers", "professional translators"],
+      "total_annotators_reported": null,
+      "affiliations": ["MultiNLI crowdsourcing platform (English annotation)", "One Hour Translation platform (translations)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "we ask the same MultiNLI worker pool from a crowdsourcing platform to produce three hypotheses for each premise; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform. No demographic, compensation, or ethics review details reported."
+    },
+    "english_centricity_notes": "XNLI is entirely English-centric in design: all content originates from English MultiNLI data (sourced from Open American National Corpus and an English novel), is annotated by English-speaking crowdworkers, and translated to other languages. The paper explicitly acknowledges this limitation: 'One of the limitations of the XNLI corpus is that it does not capture these differences, since it was obtained by translation.' Labels are copied from English without re-annotation in target languages. The 10 text genres are all English-language sources.",
+    "geographic_representation": {
+      "primary_region": "North America / Western",
+      "sub_regions": ["North America"],
+      "also_represented": ["Europe", "Middle East", "South Asia", "Southeast Asia", "East Asia", "East Africa"],
+      "notably_excluded": ["Sub-Saharan Africa (beyond Swahili)", "Central Asia", "Oceania", "Indigenous Americas"],
+      "evidence": "Languages span several language families including European (French, Spanish, German, Greek, Bulgarian, Russian), Middle Eastern (Arabic, Turkish), South Asian (Hindi, Urdu), Southeast Asian (Vietnamese, Thai), East Asian (Chinese), and East African (Swahili). However, all content is culturally North American/Western in origin since it derives from English-language sources."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

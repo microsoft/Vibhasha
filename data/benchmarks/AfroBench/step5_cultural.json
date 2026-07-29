@@ -1,0 +1,46 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MasakhaPOS", "MasakhaNER-X", "MasakhaNEWS", "AfriSenti", "NollySenti", "AfriHate", "AfriQA", "AfriADR"],
+      "evidence": "MasakhaPOS, MasakhaNER-X, MasakhaNEWS created from African language news articles (Section 3.2.1-3.2.2). AfriSenti and AfriHate from African language tweets (Section 3.2.1). NollySenti from Nigerian movie reviews. AfriQA has questions natively authored in African languages (Section 3.2.4). AfriADR derived from African language text in MAFAND (Section 3.2.5)."
+    },
+    "datasets_translated_from_english": {
+      "list": ["SIB-200", "AfriXNLI", "Belebele", "Uhura-Arc-Easy", "AfriMMLU", "OpenAI-MMMLU", "AfriMGSM", "FLORES-200", "NTREX-128"],
+      "evidence": "SIB-200 based on FLORES English sentences. AfriXNLI translated from English XNLI (Adelani et al., 2024b). Belebele translated from English (Bandarkar et al., 2024). Uhura-Arc-Easy described as 'human-translated version of the scientific Arc-Easy benchmark' (Section 3.2.4). AfriMMLU and OpenAI-MMMLU are 'human-translated MMLU datasets' (Section 3.2.4). AfriMGSM is 'extension of the MGSM dataset' translated from English. FLORES-200: 'All translations are from English' (Section 3.2.5). NTREX-128 translated from English news references."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["MasakhaPOS", "MasakhaNER-X", "MasakhaNEWS", "AfriSenti", "NollySenti", "AfriHate", "AfriADR"],
+      "details": {
+        "MasakhaPOS": "Created from African language news articles",
+        "MasakhaNER-X": "Named entities from African language texts",
+        "MasakhaNEWS": "African language news article classification",
+        "AfriSenti": "Tweets natively authored in African languages",
+        "NollySenti": "Nigerian movie review sentiment",
+        "AfriHate": "Tweets in African languages reflecting local hate speech patterns",
+        "AfriADR": "Diacritics restoration for African languages — an inherently culture/language-specific task"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mixed",
+      "evidence": "Datasets from the Masakhane community (MasakhaPOS, MasakhaNER-X, MasakhaNEWS, AfriSenti, AfriHate, MAFAND) likely involved native speakers. AfriADR was automatically generated. Translated datasets (FLORES, Belebele, etc.) used professional translators whose nativeness is not confirmed in this paper."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "community_volunteers", "professional_annotators", "automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Masakhane NLP", "Mila - Quebec AI Institute", "McGill University", "University of Waterloo", "University College London", "The African Research Collective", "Lelapa AI", "Meta", "Microsoft", "OpenAI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "AfroBench authors are from Masakhane NLP, Mila, McGill University, University of Waterloo, UCL, The African Research Collective, and Lelapa AI. The paper aggregates existing datasets from Masakhane community and other organizations. No ethics statement section is present in the paper. No annotator compensation or IRB details are reported."
+    },
+    "english_centricity_notes": "The benchmark explicitly addresses English-centricity concerns. Section 5.2 reports 'Large gap in performance when compared to English' — GPT-4o and Gemini-1.5 pro achieve average scores better than Gemma 2 27B by over 20 points on African languages. Open models show 25-40 point gaps compared to English (Section 1). However, 9 of 22 datasets are translated from English, and the benchmark uses English prompts for evaluation (cross-lingual prompting approach, Appendix H). Several knowledge-intensive tasks (MMLU, Arc-Easy, MGSM) test Western-centric knowledge translated into African languages.",
+    "geographic_representation": {
+      "primary_region": "Sub-Saharan Africa",
+      "sub_regions": ["West Africa", "East Africa", "Southern Africa", "Central Africa", "North Africa"],
+      "also_represented": ["Madagascar (Austronesian)"],
+      "notably_excluded": ["Most of North Africa has only Arabic dialect representation", "No indigenous American, Asian, European, or Oceanian languages"],
+      "evidence": "Section 3.1: 'We cover 64 African languages from seven language families (Afro-Asiatic, Atlantic-Congo, Austronesian, Indo-European, Mande, Nilotic, and English-Creole). 40 languages are from the Atlantic-Congo family, 12 from the Afro-Asiatic family, seven from the Nilotic family, 2 Indo-European, 2 Creole languages, and 1 Austronesian language.' Table 10 shows languages span West, East, Southern, Central, and North Africa."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "M3Exam",
+  "paper_id": "2306.05179",
+  "year": 2023,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce M3Exam, a novel benchmark sourced from real and official human exam questions for evaluating LLMs in a multilingual, multimodal, and multilevel context",
+  "total_languages_claimed": 9,
+  "total_datasets": 1,
+  "dataset_names": [
+    "M3Exam"
+  ],
+  "task_categories": [
+    "multiple-choice question answering",
+    "multilingual evaluation",
+    "multimodal evaluation"
+  ],
+  "brief_description": "M3Exam is a benchmark of 12,317 multiple-choice questions sourced from real official human exams in 9 languages across 3 educational levels (primary, middle, high school), covering 4 subject categories (language, math, social science, natural science), with approximately 23% of questions requiring image processing."
+}

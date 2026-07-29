@@ -1,0 +1,70 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["UD-POS", "WikiANN-NER", "TyDiQA-GoldP", "Mewsli-X"],
+      "evidence": "UD-POS uses independently annotated treebanks per language. WikiANN-NER is automatically annotated from per-language Wikipedia. TyDiQA-GoldP has independently annotated questions by native speakers. Mewsli-X is automatically extracted from per-language WikiNews articles."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "XCOPA", "XQuAD", "MLQA", "Tatoeba", "LAReQA"],
+      "evidence": "XNLI: 'crowd-sourced English data that was professionally translated to 14 other languages'. XCOPA: 'translated and re-annotated the validation and test sets of the English COPA dataset into 11 languages'. XQuAD: 'A subset of the English SQuAD v1.1 dev set was professionally translated'. MLQA: test sets listed as 'translations' in Table 2. Tatoeba: 'English-aligned sentence pairs'. LAReQA: derived from XQuAD translations."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TyDiQA-GoldP"],
+      "details": {
+        "TyDiQA-GoldP": "Questions are independently created by native speakers in each language reflecting genuine information-seeking needs, not translated from English."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "no — varies by dataset",
+      "evidence": "TyDiQA-GoldP uses native speaker annotators. XNLI and XQuAD use professional translators (nativeness not confirmed). WikiANN-NER and Mewsli-X are automatically annotated. MultiCheckList used translators paid $4,360 total (nativeness not confirmed for all languages)."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "crowdsourced (XNLI/MultiNLI, MLQA)",
+        "professional translators (XNLI, XQuAD, XCOPA)",
+        "automatic annotation (WikiANN-NER, Mewsli-X)",
+        "expert annotators / linguists (UD-POS)",
+        "native speaker annotators (TyDiQA-GoldP)",
+        "community contributors (Tatoeba)",
+        "paid translators (MultiCheckList)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "DeepMind",
+        "Google Research",
+        "Fudan University",
+        "Carnegie Mellon University",
+        "Universal Dependencies consortium",
+        "Tatoeba community"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "MultiCheckList translation effort cost $4,360 for translating ~550 words into 49 languages.",
+      "irb_ethics_review": null,
+      "evidence": "The paper reports compensation for MultiCheckList translators ($4,360 total) but does not report demographics or compensation for other datasets' annotators."
+    },
+    "english_centricity_notes": "XTREME-R focuses on zero-shot cross-lingual transfer from English: 'models can be pre-trained on any multilingual data and are fine-tuned only in English.' 6 of 10 datasets have English-sourced test data (translations). The paper acknowledges: 'Zero-shot cross-lingual transfer additionally introduces a bias towards the source language' and 'the remaining gap to English performance on these tasks is partially an artefact of the evaluation setup: zero-shot cross-lingual transfer from English favors English representations.' The paper also notes: 'Due to the paucity of training data in other languages, we nevertheless focus on English-centric transfer.'",
+    "geographic_representation": {
+      "primary_region": "Global (diverse)",
+      "sub_regions": [
+        "Europe",
+        "South Asia",
+        "East Asia",
+        "Southeast Asia",
+        "Middle East"
+      ],
+      "also_represented": [
+        "West Africa (Swahili, Yoruba, Wolof)",
+        "Central Asia (Kazakh, Azerbaijani)",
+        "South America (Cusco Quechua)",
+        "Caribbean (Haitian Creole)"
+      ],
+      "notably_excluded": [
+        "Most indigenous languages of the Americas",
+        "Most African languages",
+        "Oceanian languages"
+      ],
+      "evidence": "The paper states: 'XTREME-R has little representation of languages of the Americas and Africa due to a lack of labeled datasets for these languages.' 50 languages span 14 language families and two isolates. New languages added include Haitian Creole, Cusco Quechua, Wolof, Lithuanian, Punjabi, Gujarati, Polish, Ukrainian, Azerbaijani, and Romanian."
+    }
+  }
+}

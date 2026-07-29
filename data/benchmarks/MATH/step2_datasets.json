@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MATH",
+      "variant_name": null,
+      "variant_notes": "7 subjects (Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, Precalculus) with 5 difficulty levels each",
+      "task_type": "mathematical problem solving (open-ended answer generation)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Problems collected from US mathematics competitions (AMC 10, AMC 12, AIME, etc.) via aops.com; solutions written in LaTeX with step-by-step derivations",
+      "data_creator_info": {
+        "creator_type": "competition organizers (original problems) + paper authors (curation, formatting)",
+        "creator_affiliation": "UC Berkeley, UChicago; problems sourced from Art of Problem Solving (AoPS) community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "problems from mathematics competitions including the AMC 10, AMC 12, AIME, and more. Many of these problems can be collected from aops.com/community/c3158_usa_contests"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "12,500 problems total (7,500 training, 5,000 test). Problems tagged by difficulty 1-5. Answers normalized for exact-match evaluation using \\boxed{} delimiter. Problems and solutions formatted in LaTeX with Asymptote vector graphics language for figures."
+    },
+    {
+      "dataset_name": "AMPS",
+      "variant_name": "Auxiliary Mathematics Problems and Solutions",
+      "variant_notes": "Two subsets: Khan Academy (~100,000 problems) and Mathematica (~5 million problems)",
+      "task_type": "mathematical problem solving (pretraining corpus)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Khan Academy problems pulled from Khan Academy exercises (github.com/Khan/khan-exercises); Mathematica problems generated from 100 hand-designed scripts (37 with step-by-step solutions)",
+      "data_creator_info": {
+        "creator_type": "Khan Academy (existing exercises) + paper authors (Mathematica scripts)",
+        "creator_affiliation": "UC Berkeley, UChicago; Khan Academy",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Khan Academy subset has 693 exercise types with over 100,000 problems and full solutions... we also contribute our own Mathematica scripts to generate approximately 50x more problems"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "23 GB total. Khan Academy covers elementary math to multivariable calculus. Mathematica covers algebra, calculus, counting, statistics, geometry, linear algebra, number theory. Designed as auxiliary pretraining dataset for MATH."
+    }
+  ]
+}

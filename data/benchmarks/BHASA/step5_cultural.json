@@ -1,0 +1,102 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "NER-Grit",
+        "VLSP2018",
+        "ThaiNERv2",
+        "Naamapadam",
+        "TyDiQA-GoldP",
+        "IndicQA",
+        "NusaX",
+        "UIT-VSFC",
+        "Wisesight",
+        "MLHSD",
+        "ViHSD",
+        "Thai Toxicity Tweet",
+        "XLSum",
+        "IndoNLI",
+        "LINDSEA (Indonesian)",
+        "LINDSEA (Tamil)",
+        "Cultural Representation Dataset",
+        "Cultural Sensitivity Dataset"
+      ],
+      "evidence": "Table 2 marks these datasets as 'Native' under the Translation column. LINDSEA and cultural datasets were handcrafted from scratch by the authors (Sections 4.3, 5.1.1, 5.2.1)."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "XQuAD",
+        "IndicSentiment",
+        "FLORES-200",
+        "XNLI",
+        "IndicXNLI",
+        "XCOPA"
+      ],
+      "evidence": "Table 2 marks XQuAD, IndicSentiment, FLORES, XNLI as 'PT' (Professionally Translated) and IndicXNLI as 'AT' (Auto-Translated). XCOPA is marked as 'PT'. Section 3.3: 'We selected datasets that contained data originally in the target language as far as possible and where translated datasets were used, we ensured that they were translated by professional translators or that elaborate effort has been shown to ensure that the translation was done accurately.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "LINDSEA (Indonesian)",
+        "LINDSEA (Tamil)",
+        "Cultural Representation Dataset",
+        "Cultural Sensitivity Dataset",
+        "MLHSD",
+        "ViHSD",
+        "Thai Toxicity Tweet"
+      ],
+      "details": {
+        "LINDSEA (Indonesian)": "Handcrafted linguistic diagnostics targeting Indonesian-specific linguistic phenomena (voice affixes, clitics, reduplication, idiomatic expressions, classiﬁers).",
+        "LINDSEA (Tamil)": "Handcrafted linguistic diagnostics targeting Tamil-specific linguistic phenomena (case markers, complex predicates, emphatic taan, verbal reduplication).",
+        "Cultural Representation Dataset": "Probes cultural knowledge across language (proverbs), literature (pantun/poetry, folklore), history (historical figures), and customs (traditional customs and games) for Indonesian and Tamil cultures.",
+        "Cultural Sensitivity Dataset": "Probes cultural sensitivity on gender and social norms in Indonesian and Singaporean Tamil contexts.",
+        "MLHSD": "Indonesian Twitter hate speech data; toxicity detection is inherently culturally grounded.",
+        "ViHSD": "Vietnamese social media hate speech data; toxicity detection is inherently culturally grounded.",
+        "Thai Toxicity Tweet": "Thai Twitter toxicity data with polysemous culturally-dependent words."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "For LINDSEA and cultural datasets (new datasets), annotators are native speakers: Section 4.3.2: 'three native speakers for each language rated a sample of the dataset'; Section 5.1.1: 'The authors of this paper who are native speakers evaluated the responses'; Section 5.2.1: '3 volunteer Indonesian raters and 3 volunteer Singaporean Tamil raters'. For NLP benchmark prompts: Section 3.4.2: 'we worked with native speakers to translate the English prompts into their respective languages'. For human evaluation: Section 3.5.2: '3 lay annotators who are native speakers of the respective target languages'. For existing aggregated datasets, annotator details are not reported in this paper."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "researchers",
+        "native_speaker_volunteers"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "AI Singapore",
+        "National University of Singapore",
+        "University of Arizona",
+        "University of Jaffna"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Authors from AI Singapore and NUS created new datasets. Appendix A details contributions: Wei Qi Leong (project lead, NLP benchmark), Jian Gang Ngui (LINDSEA lead, cultural tasks), Yosephine Susanto (LINDSEA, cultural tasks), Hamsawardhini Rengarajan (Tamil LINDSEA, cultural tasks), Kengatharaiyer Sarveswaran (Tamil validation, University of Jaffna), William Chandra Tjhi (project direction, Indonesian validation). Acknowledgements list additional native speaker helpers for prompt translation, NLG human evaluation, and LINDSEA annotation/vetting. Paper states 'This work is supported by the National Research Foundation, Singapore under its AI Singapore Programme.' No mention of IRB/ethics review, demographics, or annotator compensation."
+    },
+    "english_centricity_notes": "Section 3.3: 'We selected datasets that contained data originally in the target language as far as possible'. 6 out of 20 NLP benchmark datasets are translated from English. Section 3.4.2: 'Existing benchmarking efforts often use machine-translated prompts... which has been reported to elicit drops in model performance due to errors in translation.' Authors manually translated prompts with native speakers. Section 3.6.9 discusses data leakage concerns. LINDSEA minimal pair analysis found GPT-4 often relies on English syntax: Section 4.5.1: 'These categories often involve linguistic phenomena that do not feature in English which might suggest that GPT-4 is unable to understand these phenomena because it does not have a strong representation of Indonesian syntax and is still relying heavily on its understanding of English syntax.'",
+    "geographic_representation": {
+      "primary_region": "Southeast Asia",
+      "sub_regions": [
+        "Indonesia",
+        "Vietnam",
+        "Thailand",
+        "Singapore"
+      ],
+      "also_represented": [
+        "Tamil Nadu (India)",
+        "Sri Lanka"
+      ],
+      "notably_excluded": [
+        "Philippines/Filipino",
+        "Myanmar/Burmese",
+        "Malaysia/Malay",
+        "Cambodia/Khmer",
+        "Laos/Lao"
+      ],
+      "evidence": "Section 3.2: 'While we would ideally have liked to include all official ASEAN languages... we had to accept the reality that many languages in SEA are low-resource languages.' Section 6: 'We aim to expand the evaluation to other multilingual LLMs... to other SEA languages such as Filipino.' Tamil is included for its presence in Singapore and typological diversity despite being primarily a South Asian language. Cultural sensitivity study covers 'Singaporean Tamil' specifically."
+    }
+  }
+}

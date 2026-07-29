@@ -1,0 +1,20 @@
+{
+  "benchmark_name": "IrokoBench",
+  "paper_id": "2025.naacl-long.139",
+  "year": 2025,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "We introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference (AfriXNLI), mathematical reasoning (AfriMGSM), and multi-choice knowledge-based question answering (AfriMMLU).",
+  "total_languages_claimed": 17,
+  "total_datasets": 3,
+  "dataset_names": [
+    "AfriXNLI",
+    "AfriMMLU",
+    "AfriMGSM"
+  ],
+  "task_categories": [
+    "natural language inference",
+    "multi-choice knowledge QA",
+    "mathematical reasoning"
+  ],
+  "brief_description": "IrokoBench is a human-translated benchmark for 17 typologically-diverse low-resource African languages, comprising three tasks: natural language inference (AfriXNLI, from XNLI), multi-choice knowledge QA (AfriMMLU, from MMLU), and mathematical reasoning (AfriMGSM, from MGSM). It evaluates LLMs on complex reasoning and knowledge-intensive tasks for African languages."
+}

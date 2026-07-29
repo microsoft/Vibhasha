@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "GSM8K": {
+      "translated": {
+        "value": false,
+        "evidence": "Problems were created from scratch by human workers. 'We avoid error-prone scraping procedures and instead rely on human workers to create problems.' Seed questions from GPT-3 were provided as optional inspiration, but workers could write their own entirely.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The paper does not explicitly state whether annotators are native English speakers. Workers were hired via Upwork and Surge AI, but their language backgrounds are not reported.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The dataset focuses on universal grade school math word problems (basic arithmetic). Problems are not designed to reflect any specific cultural context; they test mathematical reasoning ability. Example problems involve generic scenarios (e.g., counting items, calculating costs).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Extensive quality control: workers re-solved all problems (no worker re-solved their own), disagreements were repaired or discarded, and a second agreement check found ~1.7% of problems still producing disagreements. Pairwise similarity scores were computed between problems to prevent template reuse."
+    }
+  }
+}

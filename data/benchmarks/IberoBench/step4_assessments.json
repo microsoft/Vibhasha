@@ -1,0 +1,598 @@
+{
+  "assessments": {
+    "COPA": {
+      "translated": {
+        "value": true,
+        "evidence": "Translated from English COPA. copa_ca pre-existing (Gonzalez-Agirre et al. 2024); copa_es and xcopa_eu newly translated by professional human translators following shared quality criteria.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Translations performed by human translators in target languages with language-specific guidelines. Basque translators instructed to restructure sentences minimally while preserving semantic integrity.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Translation guidelines specify cultural adaptation: 'Dates, metric systems, and currency should be adapted to the target-language context', 'Personal names should be translated to their local equivalents'. However, underlying content originates from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "IberoBench applies rigorous translation criteria including cultural adaptation, lexical variety, idiomatic expressions, and preservation of task difficulty."
+    },
+    "XStoryCloze": {
+      "translated": {
+        "value": true,
+        "evidence": "XStoryCloze (Lin et al. 2022a) is a multilingual translation of the English StoryCloze dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not describe the annotation/translation process of the pre-existing XStoryCloze dataset.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English stories; no mention of cultural adaptation for target languages.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "CatCoLA": {
+      "translated": {
+        "value": false,
+        "evidence": "CatCoLA (Bel et al. 2024b) is independently created for Catalan. 'They share the task of measuring linguistic acceptability, even though they were created independently.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Natively authored Catalan linguistic acceptability corpus created by researchers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Catalan, measuring linguistic acceptability of Catalan sentences.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Only evaluation prompts are translated from English CoLA; the data itself is original Catalan."
+    },
+    "EsCoLA": {
+      "translated": {
+        "value": false,
+        "evidence": "EsCoLA (Bel et al. 2024a) is independently created for Spanish, not translated from English CoLA.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Natively authored Spanish linguistic acceptability corpus.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Spanish, measuring linguistic acceptability of Spanish sentences.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "GalCoLA": {
+      "translated": {
+        "value": false,
+        "evidence": "GalCoLA (de Dios-Flores et al. 2023) is independently created for Galician.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Natively authored Galician linguistic acceptability corpus.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Galician, measuring linguistic acceptability of Galician sentences.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "MGSM": {
+      "translated": {
+        "value": true,
+        "evidence": "MGSM (Shi et al. 2023) is a multilingual translation of English GSM8K math problems. Spanish version pre-existing; Catalan, Basque, Galician newly translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "New translations (ca, eu, gl) are done by professional human translators following IberoBench quality criteria.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Math problems translated with cultural adaptation (metric systems, currency adapted to target context), but underlying content is from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "XNLI (Conneau et al. 2018) is translated from English MultiNLI. XNLIeu (Heredia et al. 2024) for Basque.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "XNLI uses professional translators for its language versions.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English NLI data without cultural adaptation of content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "IberoBench fixes prompt formatting issues: original Harness implementation had punctuation problems with consecutive punctuation marks."
+    },
+    "WNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Translated from English Winograd NLI. wnli_ca pre-existing; wnli_es and wnli_eu newly translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "IberoBench translations done by professional human translators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Translation with cultural adaptation guidelines, but underlying content English-sourced.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "TE-ca": {
+      "translated": {
+        "value": false,
+        "evidence": "TE-ca from Gonzalez-Agirre et al. 2024, natively authored Catalan textual entailment.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Part of Catalan data infrastructure (Gonzalez-Agirre et al. 2024).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Catalan.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "QNLI_eu": {
+      "translated": {
+        "value": false,
+        "evidence": "QNLI_eu from BasqueGLUE (Urbizu et al. 2022), natively authored for Basque.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Part of BasqueGLUE, created by Basque NLP researchers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Basque.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "ASSIN": {
+      "translated": {
+        "value": false,
+        "evidence": "ASSIN (Fonseca et al. 2016) is natively authored in Portuguese.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Portuguese dataset with human annotations. Paper states: datasets with 'automatic annotations that have undergone thorough human revision (e.g., ASSIN)'.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Portuguese for Portuguese semantic similarity and textual entailment.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "IberoBench only includes datasets with human-generated or thoroughly human-revised annotations."
+    },
+    "Parafraseja": {
+      "translated": {
+        "value": false,
+        "evidence": "Parafraseja is a natively authored Catalan paraphrase dataset from Projecte AINA.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Catalan NLP researchers/Projecte AINA.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Catalan.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "Parafrases_gl": {
+      "translated": {
+        "value": false,
+        "evidence": "Parafrases_gl created from scratch using Galician sources: Wikipedia articles, novels, parliamentary sessions.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "'The dataset was manually reviewed and annotated by two linguists.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created from Galician-language sources (Wikipedia, novels, parliamentary sessions) and annotated by Galician linguists.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "2032 entries. Automatic generation using BERT term replacement and back-translation, followed by manual review and annotation by two linguists. Three-label scheme: full paraphrases, borderline paraphrases, non-paraphrases."
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "PAWS-X (Yang et al. 2019) is translated from English PAWS. paws_ca from Gonzalez-Agirre et al. 2024; paws_es from PAWS-X; paws_gl newly translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: PAWS-X uses professional translators but specific details not given in this paper.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English paraphrase pairs without cultural adaptation.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "IberoBench requires human translations or human-reviewed translations."
+    },
+    "ARC_ca": {
+      "translated": {
+        "value": true,
+        "evidence": "ARC_ca is a Catalan translation of English ARC dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional human translation with manual revision. Paper reports fixing grammatical errors, unfinished instances, odd symbols, and mixed label types from the original.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Translated with cultural adaptation guidelines, but science questions are largely culture-neutral. Errors in original English were corrected.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Extensive manual quality control: 'we ensure that these errors do not permeate to ARC_ca by manually revising and fixing each of them.'"
+    },
+    "CatalanQA": {
+      "translated": {
+        "value": false,
+        "evidence": "CatalanQA from Gonzalez-Agirre et al. 2024, natively authored Catalan QA dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Part of Catalan data infrastructure (Gonzalez-Agirre et al. 2024).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Catalan.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "CoQCat": {
+      "translated": {
+        "value": false,
+        "evidence": "CoQCat from Gonzalez-Agirre et al. 2024, natively authored Catalan QA dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Part of Catalan data infrastructure (Gonzalez-Agirre et al. 2024).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Catalan.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "OpenBookQA": {
+      "translated": {
+        "value": true,
+        "evidence": "OpenBookQA translated from English into Catalan, Spanish, and Galician by professional human translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional human translators with shared quality guidelines.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Translation guidelines include cultural adaptation (dates, metrics, currency, names) but underlying questions from English science QA.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Translated following unified general criteria to ensure consistency and comparability across languages."
+    },
+    "PIQA": {
+      "translated": {
+        "value": true,
+        "evidence": "PIQA translated from English into Catalan and Basque by professional human translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional human translators with dataset-specific guidelines. Basque translators given specific instructions for handling ergative-absolutive alignment challenges.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Cultural adaptation applied in translation, with special restructuring for Basque (see Appendix A examples). But underlying physical intuition questions from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Basque version required sentence restructuring due to typological differences (ergative-absolutive, agglutinative morphology, head-final word order)."
+    },
+    "Social IQA": {
+      "translated": {
+        "value": true,
+        "evidence": "Social IQA translated from English into Catalan.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional human translation following IberoBench quality criteria.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Translated with cultural adaptation (names, cultural references), but social situations originate from English/American cultural context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "XQuAD (Artetxe et al. 2020) is translated from English SQuAD. XQuAD_ca from Armengol-Estapé et al. 2021.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "XQuAD uses professional translation.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English Wikipedia-based SQuAD without cultural adaptation of content topics.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "EusExams": {
+      "translated": {
+        "value": false,
+        "evidence": "EusExams from Etxaniz et al. 2024, natively authored from Basque public examination questions.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "From real Basque public examinations, created by Basque researchers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Based on actual Basque public examination content, deeply culturally grounded in Basque/Spanish educational system.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "EusProficiency": {
+      "translated": {
+        "value": false,
+        "evidence": "EusProficiency from Etxaniz et al. 2024, natively authored Basque language proficiency exam questions.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Paper explicitly states: 'we only included those with human-generated annotations (e.g., Belebele, EusProficiency)'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Based on Basque language proficiency exams, inherently culturally grounded.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Explicitly cited as example of human-generated annotations in IberoBench quality criteria."
+    },
+    "EusTrivia": {
+      "translated": {
+        "value": false,
+        "evidence": "EusTrivia from Etxaniz et al. 2024, natively authored Basque trivia questions.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Basque NLP researchers (Etxaniz et al. 2024).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Basque trivia questions, grounded in Basque cultural and general knowledge.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "EusReading": {
+      "translated": {
+        "value": false,
+        "evidence": "EusReading from Etxaniz et al. 2024, natively authored Basque reading comprehension.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Basque NLP researchers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored in Basque.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "Belebele": {
+      "translated": {
+        "value": false,
+        "evidence": "Belebele (Bandarkar et al. 2023) is a parallel reading comprehension dataset created across 122 language variants, not translated from a single source.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Paper states: 'we only included those with human-generated annotations (e.g., Belebele, EusProficiency)'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Parallel creation across many languages, but reading passages may not be culturally specific to each language.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "IberoBench fixed non-UTF-8 character issues in the Belebele task prompt."
+    },
+    "CaBREU": {
+      "translated": {
+        "value": false,
+        "evidence": "CaBREU from Gonzalez-Agirre et al. 2024, natively authored Catalan summarization dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Three annotators produced summaries per text. IberoBench conducted human evaluation with two native speakers to assess annotator quality.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively authored Catalan summarization from Catalan texts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Three summaries per text from three annotators. IberoBench tested all three as gold standard, found slight advantage for annotator #3 on small models but no human preference, so uses annotator #1 to avoid biasing models. Human evaluation involved two native speakers blind to experimental setup, evaluating 60 instances."
+    },
+    "XL-Sum": {
+      "translated": {
+        "value": false,
+        "evidence": "XL-Sum (Hasan et al. 2021) contains native news articles from BBC in 44 languages including Spanish.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Native-language BBC news articles with professionally written summaries.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Spanish-language BBC news articles, reflecting topics relevant to Spanish-speaking audiences.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Summarization_gl": {
+      "translated": {
+        "value": false,
+        "evidence": "Created from scratch using Galician newspaper articles.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Summaries from three Galician newspapers (Que pasa na costa, Nós diario, Praza Pública), written by journalists/editors.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Entirely from Galician-language newspapers covering Galician topics and news.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Over 80,000 summaries paired with full articles from three Galician newspapers."
+    },
+    "FLORES-200": {
+      "translated": {
+        "value": "partial",
+        "evidence": "FLORES-200 (Costa-jussà et al. 2022) is a professionally translated parallel corpus. Content originated primarily from English Wikipedia but was professionally translated into 200 languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "FLORES-200 used professional human translators.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Parallel translation corpus; content topics not adapted for cultural specificity of target languages.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "IberoBench uses English prompts across all FLORES-200 sub-tasks as an exception to its multilingual prompting strategy, due to the many language pair combinations."
+    },
+    "Phrases": {
+      "translated": {
+        "value": false,
+        "evidence": "Created from scratch: phrases extracted from Common Voice, translated from Spanish into Catalan and Valencian by a Catalan philology expert.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "'The translation process was conducted by an expert in Catalan philology, ensuring both linguistic quality and cultural accuracy.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Focuses on Valencian, a regional variety of Catalan, with expert ensuring 'cultural accuracy'. Designed specifically for Catalan-Valencian and Valencian-Spanish language adaptation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Constructed from 200,000 Common Voice phrases, filtered for lexical and grammatical diversity. Translation by a Catalan philology expert."
+    },
+    "VeritasQA": {
+      "translated": {
+        "value": "partial",
+        "evidence": "VeritasQA (Aula-Blasco et al. 2025) is described as a 'truthfulness benchmark aimed at multilingual transferability'. Catalan and Spanish versions pre-existing; Galician version newly translated.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The paper does not describe the creation methodology of VeritasQA in detail beyond its citation.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Insufficient detail in this paper about VeritasQA's cultural grounding.",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": null
+    },
+    "TruthfulQA_gl": {
+      "translated": {
+        "value": true,
+        "evidence": "TruthfulQA_gl is a Galician translation of the English TruthfulQA dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "IberoBench uses professional human translators for all translations.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English TruthfulQA which contains English/American-centric misconceptions and cultural references.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    }
+  }
+}

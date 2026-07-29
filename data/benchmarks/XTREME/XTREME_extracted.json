@@ -1,0 +1,498 @@
+{
+  "benchmark_name": "XTREME",
+  "paper_id": "2003.11080",
+  "year": 2020,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "we introduce the Cross-lingual TRansfer Evaluation of Multilingual Encoders (XTREME) benchmark, a multi-task benchmark for evaluating the cross-lingual generalization capabilities of multilingual representations across 40 languages and 9 tasks",
+  "total_languages_claimed": 40,
+  "total_datasets": 9,
+  "dataset_names": [
+    "XNLI",
+    "PAWS-X",
+    "Universal Dependencies POS",
+    "WikiANN",
+    "XQuAD",
+    "MLQA",
+    "TyDiQA-GoldP",
+    "BUCC",
+    "Tatoeba"
+  ],
+  "task_categories": [
+    "classification",
+    "structured_prediction",
+    "question_answering",
+    "sentence_retrieval"
+  ],
+  "brief_description": "XTREME (Cross-lingual TRansfer Evaluation of Multilingual Encoders) is a multi-task benchmark for evaluating the cross-lingual generalization capabilities of multilingual representations. It covers 40 typologically diverse languages spanning 12 language families and includes 9 tasks across classification, structured prediction, question answering, and sentence retrieval.",
+  "datasets": [
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "natural_language_inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional_human_translation",
+      "num_languages": 15,
+      "language_list": ["English", "Arabic", "Bulgarian", "German", "Greek", "Spanish", "French", "Hindi", "Russian", "Swahili", "Thai", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "Crowd-sourced English data (MultiNLI) translated to 10 other languages by professional translators",
+      "data_creator_info": {
+        "creator_type": "crowdsourced_then_professionally_translated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Crowd-sourced English data is translated to ten other languages by professional translators and used for evaluation, while the MultiNLI training data is used for training."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al., 2018b",
+      "notes": "Test sets are translations of English data. Training uses MultiNLI English data."
+    },
+    {
+      "dataset_name": "PAWS-X",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "paraphrase_identification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional_human_translation",
+      "num_languages": 7,
+      "language_list": ["English", "German", "Spanish", "French", "Japanese", "Korean", "Chinese"],
+      "annotation_method": "Subset of PAWS dev and test sets translated to six other languages by professional translators",
+      "data_creator_info": {
+        "creator_type": "automatically_generated_then_professionally_translated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "A subset of the PAWS dev and test sets (Zhang et al., 2019) was translated to six other languages by professional translators and is used for evaluation, while the PAWS training set is used for training."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Yang et al., 2019",
+      "notes": "Test sets are translations of English data."
+    },
+    {
+      "dataset_name": "Universal Dependencies POS",
+      "variant_name": "Universal Dependencies v2.5",
+      "variant_notes": "Uses 17 universal POS tags. English training data for training, target language test sets for evaluation.",
+      "task_type": "part_of_speech_tagging",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 33,
+      "language_list": ["Afrikaans", "Arabic", "Bulgarian", "German", "Greek", "English", "Spanish", "Estonian", "Basque", "Persian", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Kazakh", "Korean", "Marathi", "Dutch", "Portuguese", "Russian", "Tamil", "Telugu", "Thai", "Tagalog", "Turkish", "Urdu", "Vietnamese", "Yoruba", "Chinese"],
+      "annotation_method": "Independently annotated treebanks with universal POS tag set",
+      "data_creator_info": {
+        "creator_type": "expert_linguists",
+        "creator_affiliation": "INSUFFICIENT_INFO: Paper does not detail UD treebank annotators",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use POS tagging data from the Universal Dependencies v2.5 (Nivre et al., 2018) treebanks, which cover 90 languages. Each word is assigned one of 17 universal POS tags."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Nivre et al., 2018",
+      "notes": "33 languages in XTREME selection out of 90 in full UD. Test sets are independently annotated (not translations)."
+    },
+    {
+      "dataset_name": "WikiANN",
+      "variant_name": "Balanced splits from Rahimi et al., 2019",
+      "variant_notes": "Uses balanced train, dev, and test splits from Rahimi et al. (2019)",
+      "task_type": "named_entity_recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 40,
+      "language_list": ["English", "Afrikaans", "Arabic", "Bulgarian", "Bengali", "German", "Greek", "Spanish", "Estonian", "Basque", "Persian", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Javanese", "Georgian", "Kazakh", "Korean", "Malayalam", "Marathi", "Malay", "Burmese", "Dutch", "Portuguese", "Russian", "Swahili", "Tamil", "Telugu", "Thai", "Tagalog", "Turkish", "Urdu", "Vietnamese", "Yoruba", "Chinese"],
+      "annotation_method": "Automatic annotation using knowledge base properties, cross-lingual and anchor links, self-training, and data selection",
+      "data_creator_info": {
+        "creator_type": "automatic",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Named entities in Wikipedia were automatically annotated with LOC, PER, and ORG tags in IOB2 format using a combination of knowledge base properties, cross-lingual and anchor links, self-training, and data selection."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Pan et al., 2017; splits from Rahimi et al., 2019",
+      "notes": "40 languages in XTREME selection out of 176/282 in full WikiANN. Annotations are automatic (no human annotators). Test sets are independently annotated (not translations from English)."
+    },
+    {
+      "dataset_name": "XQuAD",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "extractive_question_answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional_human_translation",
+      "num_languages": 11,
+      "language_list": ["English", "Arabic", "German", "Greek", "Spanish", "Hindi", "Russian", "Thai", "Turkish", "Vietnamese", "Chinese"],
+      "annotation_method": "Subset of English SQuAD v1.1 dev set translated into 10 other languages by professional translators",
+      "data_creator_info": {
+        "creator_type": "crowdsourced_then_professionally_translated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "A subset of the English SQuAD v1.1 (Rajpurkar et al., 2016) dev set was translated into ten other languages by professional translators and is used for evaluation."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Artetxe et al., 2020",
+      "notes": "Test sets are translations of English SQuAD data. Training uses SQuAD v1.1 English data."
+    },
+    {
+      "dataset_name": "MLQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "extractive_question_answering",
+      "source": "mixed",
+      "source_language": "English",
+      "translation_method": "Automatically mined parallel sentences from Wikipedia; crowdsourced annotations in English; questions translated and answer spans aligned in target languages",
+      "num_languages": 7,
+      "language_list": ["English", "Arabic", "German", "Spanish", "Hindi", "Vietnamese", "Chinese"],
+      "annotation_method": "Automatic mining of parallel sentences + crowdsourced English annotations + translation and alignment of questions/answers",
+      "data_creator_info": {
+        "creator_type": "crowdsourced_and_automatic",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The evaluation data for English and six other languages was obtained by automatically mining target language sentences that are parallel to sentences in English from Wikipedia, crowd-sourcing annotations in English, and translating the question and aligning the answer spans in the target languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Lewis et al., 2019",
+      "notes": "Context passages are native (mined from Wikipedia in target languages). Questions are crowdsourced in English and translated/aligned. Training uses SQuAD v1.1 English data."
+    },
+    {
+      "dataset_name": "TyDiQA-GoldP",
+      "variant_name": "Gold Passage version",
+      "variant_notes": "Simplified version using only gold passage as context, excluding unanswerable questions",
+      "task_type": "extractive_question_answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["English", "Arabic", "Bengali", "Finnish", "Indonesian", "Korean", "Russian", "Swahili", "Telugu"],
+      "annotation_method": "Questions written by native speakers without seeing the answers; independently annotated",
+      "data_creator_info": {
+        "creator_type": "native_speakers",
+        "creator_affiliation": "INSUFFICIENT_INFO: Paper references Clark et al. 2020 but does not detail annotator affiliations",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "questions have been written without seeing the answers, leading to 3x and 2x less lexical overlap compared to XQuAD and MLQA respectively"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020",
+      "notes": "More challenging than XQuAD and MLQA due to questions written without seeing answers. Gold passage version simplifies the primary TyDi QA task."
+    },
+    {
+      "dataset_name": "BUCC",
+      "variant_name": "2nd and 3rd shared task",
+      "variant_notes": null,
+      "task_type": "sentence_retrieval",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": ["English", "German", "French", "Russian", "Chinese"],
+      "annotation_method": "Parallel sentence extraction from comparable corpora between English and four other languages",
+      "data_creator_info": {
+        "creator_type": "automatic_and_shared_task",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The goal of the second and third shared task of the workshop on Building and Using Parallel Corpora is to extract parallel sentences from a comparable corpus between English and four other languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Zweigenbaum et al., 2017; 2018",
+      "notes": "Evaluated without fine-tuning using cosine similarity. Train and test splits provided for each language pair."
+    },
+    {
+      "dataset_name": "Tatoeba",
+      "variant_name": null,
+      "variant_notes": "Paper claims 33-language intersection with XTREME's 40 languages, but results tables show evaluation on 36 non-English target languages",
+      "task_type": "sentence_retrieval",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 37,
+      "language_list": ["English", "Afrikaans", "Arabic", "Bulgarian", "Bengali", "German", "Greek", "Spanish", "Estonian", "Basque", "Persian", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Javanese", "Georgian", "Kazakh", "Korean", "Malayalam", "Marathi", "Dutch", "Portuguese", "Russian", "Swahili", "Tamil", "Telugu", "Thai", "Tagalog", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "Community-contributed English-aligned sentence pairs",
+      "data_creator_info": {
+        "creator_type": "community_contributed",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the Tatoeba dataset (Artetxe & Schwenk, 2019), which consists of up to 1,000 English-aligned sentence pairs covering 122 languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Artetxe & Schwenk, 2019",
+      "notes": "122 languages in full dataset. Nearest neighbour retrieval using cosine similarity. Error rate is the evaluation metric."
+    }
+  ],
+  "total_languages": 40,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Basque": {
+      "iso_code": "eu",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Burmese": {
+      "iso_code": "my",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "BUCC", "Tatoeba"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "TyDiQA-GoldP", "BUCC", "Tatoeba"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "BUCC", "Tatoeba"]
+    },
+    "Georgian": {
+      "iso_code": "ka",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "BUCC", "Tatoeba"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Hebrew": {
+      "iso_code": "he",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PAWS-X", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "Kazakh": {
+      "iso_code": "kk",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["PAWS-X", "Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "TyDiQA-GoldP", "BUCC", "Tatoeba"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Tagalog": {
+      "iso_code": "tl",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN"]
+    }
+  },
+  "assessments": {
+    "XNLI": {
+      "translated": {"value": true, "evidence": "Crowd-sourced English data is translated to ten other languages by professional translators and used for evaluation.", "confidence": "high"},
+      "native_annotators": {"value": false, "evidence": "Original data crowd-sourced in English (MultiNLI), then professionally translated. No native authoring in target languages.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "English-sourced NLI examples translated to other languages.", "confidence": "high"},
+      "annotation_quality_notes": "Professional human translation. Paper notes translationese artifacts."
+    },
+    "PAWS-X": {
+      "translated": {"value": true, "evidence": "A subset of the PAWS dev and test sets was translated to six other languages by professional translators.", "confidence": "high"},
+      "native_annotators": {"value": false, "evidence": "Original PAWS data from English, then professionally translated.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "Source data from English Wikipedia and Quora, translated to other languages.", "confidence": "high"},
+      "annotation_quality_notes": "Professional human translation from English source."
+    },
+    "Universal Dependencies POS": {
+      "translated": {"value": false, "evidence": "Table 1 labels POS test sets as 'ind. annot.' (independently annotated).", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not detail whether UD annotators are native speakers.", "confidence": "medium"},
+      "culturally_grounded": {"value": true, "evidence": "Treebanks created from native text in each language.", "confidence": "high"},
+      "annotation_quality_notes": "Uses universal 17 POS tags. Quality varies by treebank."
+    },
+    "WikiANN": {
+      "translated": {"value": false, "evidence": "Table 1 labels NER test sets as 'ind. annot.' Automatically annotated from Wikipedia in each language.", "confidence": "high"},
+      "native_annotators": {"value": false, "evidence": "Fully automatic annotation. No human annotators.", "confidence": "high"},
+      "culturally_grounded": {"value": "partial", "evidence": "Wikipedia content in native languages but annotation is fully automatic.", "confidence": "medium"},
+      "annotation_quality_notes": "Fully automatic annotation with no human quality control mentioned."
+    },
+    "XQuAD": {
+      "translated": {"value": true, "evidence": "A subset of the English SQuAD v1.1 dev set was translated into ten other languages by professional translators.", "confidence": "high"},
+      "native_annotators": {"value": false, "evidence": "Original SQuAD data crowdsourced in English, then professionally translated.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "English Wikipedia passages and questions translated to target languages.", "confidence": "high"},
+      "annotation_quality_notes": "Professional human translation."
+    },
+    "MLQA": {
+      "translated": {"value": "partial", "evidence": "Context passages native (mined from Wikipedia), questions crowdsourced in English and translated.", "confidence": "high"},
+      "native_annotators": {"value": "partial", "evidence": "Context is native. Questions crowdsourced in English, then translated.", "confidence": "high"},
+      "culturally_grounded": {"value": "partial", "evidence": "Context from target-language Wikipedia, but questions originate in English.", "confidence": "medium"},
+      "annotation_quality_notes": "Mixed methodology."
+    },
+    "TyDiQA-GoldP": {
+      "translated": {"value": false, "evidence": "Table 1 labels TyDiQA-GoldP test sets as 'ind. annot.' Questions written without seeing answers.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Questions written by native speakers without seeing answers.", "confidence": "high"},
+      "culturally_grounded": {"value": true, "evidence": "Questions reflect natural information-seeking behavior in each language.", "confidence": "high"},
+      "annotation_quality_notes": "More challenging and naturalistic than translated QA datasets."
+    },
+    "BUCC": {
+      "translated": {"value": false, "evidence": "Parallel sentence extraction from comparable corpora.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not describe BUCC annotators.", "confidence": "low"},
+      "culturally_grounded": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not describe cultural content of BUCC.", "confidence": "low"},
+      "annotation_quality_notes": "Shared task data. Domain: Wikipedia and news."
+    },
+    "Tatoeba": {
+      "translated": {"value": false, "evidence": "Community-contributed English-aligned sentence pairs.", "confidence": "medium"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not describe whether Tatoeba contributors are native speakers.", "confidence": "low"},
+      "culturally_grounded": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not describe cultural content of Tatoeba.", "confidence": "low"},
+      "annotation_quality_notes": "Community-contributed. Up to 1,000 pairs per language."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "BUCC", "Tatoeba"],
+      "evidence": "These datasets use independently created/annotated data in each language, not translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "PAWS-X", "XQuAD"],
+      "evidence": "XNLI, PAWS-X, and XQuAD are all translated from English by professional translators."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["Universal Dependencies POS", "TyDiQA-GoldP"],
+      "details": {
+        "Universal Dependencies POS": "Treebanks from native text in each language",
+        "TyDiQA-GoldP": "Questions written by native speakers reflecting natural information-seeking behavior"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "no",
+      "evidence": "Only TyDiQA-GoldP clearly uses native speaker annotators. WikiANN is fully automatic. XNLI, PAWS-X, XQuAD use professional translators. MLQA uses English crowdworkers."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "professional_translators (XNLI, PAWS-X, XQuAD)",
+        "crowdworkers (XNLI original, MLQA questions)",
+        "automatic_annotation (WikiANN)",
+        "expert_linguists (Universal Dependencies POS)",
+        "native_speakers (TyDiQA-GoldP)",
+        "community_contributors (Tatoeba)",
+        "shared_task_organizers (BUCC)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": ["Carnegie Mellon University", "DeepMind", "Google Research"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Paper aggregates existing datasets and does not create new annotations. Annotator details are in original dataset papers."
+    },
+    "english_centricity_notes": "XTREME is explicitly English-centric: 'XTREME focuses on the zero-shot cross-lingual transfer scenario, where annotated training data is provided in English but none is provided in the language to which systems must transfer.' Three of nine datasets (XNLI, PAWS-X, XQuAD) are direct translations from English. MLQA questions originate in English. All models are trained on English data.",
+    "geographic_representation": {
+      "primary_region": "Global (typologically diverse selection)",
+      "sub_regions": ["Western Europe", "Eastern Europe", "South Asia", "East Asia", "Southeast Asia", "Middle East", "Sub-Saharan Africa", "Central Asia"],
+      "also_represented": ["Caucasus (Georgian)", "Northern Europe (Finnish, Estonian)"],
+      "notably_excluded": ["Indigenous Americas", "Oceania / Pacific Islands", "Most of Sub-Saharan Africa (only Swahili and Yoruba)", "Central Africa"],
+      "evidence": "40 languages from 12 families and two isolates. Indo-European languages heavily overrepresented (~17 of 40)."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

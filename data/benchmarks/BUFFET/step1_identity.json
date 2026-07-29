@@ -1,0 +1,37 @@
+{
+  "benchmark_name": "BUFFET",
+  "paper_id": "asai-etal-2024-buffet",
+  "year": 2024,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "we introduce BUFFET: Benchmark of Unified Format FEw-shot Transfer Evaluation... BUFFET curates a diverse mix of tasks: 15 different tasks... across 54 languages",
+  "total_languages_claimed": 54,
+  "total_datasets": 15,
+  "dataset_names": [
+    "XLSUM",
+    "TyDiQA-QG",
+    "XNLI",
+    "AmericasNLI",
+    "ParsiNLU-Entailment",
+    "OCNLI",
+    "KLUE-NLI",
+    "PAWS-X",
+    "IndicNLU-Sentiment",
+    "Amazon Review",
+    "XCOPA",
+    "XWinograd",
+    "TyDiQA-GoldP",
+    "WikiANN",
+    "MasakhaNER"
+  ],
+  "task_categories": [
+    "Summarization",
+    "Question Generation",
+    "Natural Language Inference",
+    "Paraphrase Detection",
+    "Sentiment Analysis",
+    "Commonsense Reasoning",
+    "Question Answering",
+    "Named Entity Recognition"
+  ],
+  "brief_description": "BUFFET (Benchmark of Unified Format Few-shot Transfer Evaluation) is a benchmark for few-shot cross-lingual transfer that unifies 15 diverse NLP tasks across 54 typologically diverse languages in a sequence-to-sequence format, providing fixed few-shot examples and instructions for rigorous comparisons of multilingual language models using both fine-tuning and in-context learning."
+}

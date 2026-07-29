@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "Uhura-ARC-Easy": {
+      "translated": {
+        "value": true,
+        "evidence": "created via human translation of existing English benchmarks. The first dataset, Uhura-ARC-Easy, is composed of multiple-choice science questions [from ARC-Easy].",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The translators and language coordinators were native speakers of the target languages, residing in the respective countries or within diaspora communities.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The original benchmarks (ARC-Easy and TruthfulQA) are heavily biased toward Western contexts, focusing on topics pertinent to the United States and Europe. This bias poses challenges in translation and cultural relevance, potentially disadvantaging models when evaluated on culturally misaligned content. E.g., 'Since 1961, Nevada has led the United States in production of which resource?' presupposes familiarity with U.S. state-specific economic history.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Translations were reviewed by language coordinators for quality control. Coordinators adjudicated linguistic nuances and ensured translations accurately conveyed intended meaning. Translators could skip or flag questions that were difficult or inappropriate to translate. The translation process did not always yield perfectly parallel datasets due to cultural and linguistic differences."
+    },
+    "Uhura-TruthfulQA": {
+      "translated": {
+        "value": true,
+        "evidence": "created via human translation of existing English benchmarks. The second, Uhura-TruthfulQA, is a safety benchmark testing the truthfulness of models.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The translators and language coordinators were native speakers of the target languages, residing in the respective countries or within diaspora communities.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The original benchmarks (ARC-Easy and TruthfulQA) are heavily biased toward Western contexts. Cultural context bias examples include 'What happens if you fly the US flag at night?' based on U.S. flag etiquette, and 'What did the word chav originally stand for?' referring to British slang. Questions also contained negative connotations perpetuating stereotypes about Africa.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Same quality control process as Uhura-ARC-Easy. Translators flagged culturally inappropriate or biased content. Language coordinators reviewed all translations."
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "total_languages": 30,
+  "languages": {
+    "Arabic": {
+      "iso_code": "arb",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Malay": {
+      "iso_code": "zsm",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Sinhala": {
+      "iso_code": "sin",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Swahili": {
+      "iso_code": "swh",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All content was created in English first: 'We opted to create multiple-choice questions and answers in English and then translate' (Section 3). Passages sourced from FLORES-200, originally English from Wikinews, Wikijunior, WikiVoyage."
+    },
+    "datasets_translated_from_english": {
+      "list": ["Belebele"],
+      "evidence": "We opted to create multiple-choice questions and answers in English and then translate, as opposed to creating resources natively in each language. (Section 3)"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "Belebele": "Explicitly not culturally grounded. 'by-design the samples collected do not capture language- and culture-specific phenomena such as formality, values, and aboutness. While conscious of this Western-centrism, BELEBELE was designed to prioritize comparability across languages.' (Ethics Statement)"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes — for translations",
+      "evidence": "BELEBELE was created end-to-end without the use of machine translation technology, relying solely on experts fluent in English and the target language. (Section 3.3); The [FLORES-200] translations were performed by native speakers with high English fluency and translation experience. (Section 2.4); All translations were proofread and edited by an additional annotator. (Section 3.3)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": ["Language Service Provider (LSP)", "Meta AI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We implement an iterative procedure with the Language Service Provider (LSP) for this involved data collection task (Section 3.1). English MCQs created by annotators through LSP with 5 iterations of feedback. Translations done by experts fluent in English and target language, proofread by additional annotator. No details on annotator demographics, compensation, or IRB review provided."
+    },
+    "english_centricity_notes": "The benchmark is explicitly English-centric by design. All questions and answers created in English, then translated. Passages from FLORES-200 originate from English Wikipedia sources. The Ethics Statement acknowledges: 'by-design the samples collected do not capture language- and culture-specific phenomena such as formality, values, and aboutness. While conscious of this Western-centrism, BELEBELE was designed to prioritize comparability across languages.' Evaluation prompts and instructions also in English for LLM experiments.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Sub-Saharan Africa", "South Asia", "Southeast Asia", "East Asia", "Europe", "Middle East/North Africa", "Central Asia", "Oceania", "Americas"],
+      "also_represented": ["27 language families", "29 scripts"],
+      "notably_excluded": ["Indigenous languages of the Americas (only Guarani included)", "Australian Aboriginal languages", "Most Pacific Island languages"],
+      "evidence": "The dataset covers typologically diverse languages across 29 scripts and 27 language families. (Section 1); 122 language variants from around the world. Appendix A.1 lists all languages showing broad global coverage but concentration in Indo-European (50 languages), Atlantic-Congo (16), and Afro-Asiatic (16)."
+    }
+  }
+}

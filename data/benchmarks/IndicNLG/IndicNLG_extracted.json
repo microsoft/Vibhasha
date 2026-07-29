@@ -1,0 +1,319 @@
+{
+  "benchmark_name": "IndicNLG Benchmark",
+  "paper_id": "indicnlg_2022",
+  "year": 2022,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We present the IndicNLG Benchmark, a collection of datasets for benchmarking NLG for 11 Indic languages. We focus on five diverse tasks... Our dataset creation methods can be easily applied to modest-resource languages as they involve simple steps such as scraping news articles and Wikipedia infoboxes, light cleaning, and pivoting through machine translation data.",
+  "total_languages_claimed": 11,
+  "total_datasets": 5,
+  "dataset_names": [
+    "WikiBio (Biography Generation)",
+    "Headline Generation",
+    "Sentence Summarization",
+    "Paraphrase Generation",
+    "Question Generation"
+  ],
+  "task_categories": [
+    "data-to-text generation",
+    "headline generation",
+    "sentence summarization",
+    "paraphrase generation",
+    "question generation"
+  ],
+  "brief_description": "IndicNLG Benchmark is a collection of datasets for benchmarking NLG performance across 5 diverse tasks (biography generation, headline generation, sentence summarization, paraphrase generation, question generation) spanning 11 Indic languages, comprising approximately 8.5M examples total. It is the first NLG benchmark for Indic languages.",
+  "datasets": [
+    {
+      "dataset_name": "WikiBio (Biography Generation)",
+      "variant_name": null,
+      "variant_notes": "Available for 9 of 11 languages (excluding Gujarati and Marathi due to insufficient Wikipedia pages)",
+      "task_type": "data-to-text generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["Assamese", "Bengali", "Hindi", "Kannada", "Malayalam", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: crawled Wikipedia infoboxes and first sentences of Wikipedia biography pages, followed by preprocessing, cleaning, serialization, filtration, and cross-lingual overlap removal",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Researchers crawled Wikipedia dumps, parsed them, and extracted infoboxes and first sentences using the wptools API. Quality evaluation on a subset used native-language annotators."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Lebret et al. (2016) originally proposed the English WikiBio task",
+      "notes": "Total 57,426 examples across 9 languages. Dataset is ~6% the size of English WikiBio (728K examples). Human quality evaluation conducted on 4 representative languages (hi, bn, ml, kn) with 250 examples each."
+    },
+    {
+      "dataset_name": "Headline Generation",
+      "variant_name": null,
+      "variant_notes": "Hindi data crawled from news websites; other 10 languages adapted from IndicGLUE headline prediction dataset",
+      "task_type": "headline generation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: Hindi data crawled from news websites (Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV); other languages adapted from IndicGLUE headline prediction dataset (Kakwani et al., 2020). Cleaned using regex, language detection tools, and overlapping ratio filtering.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Hindi data crawled from web pages of various domains. For other languages, used the Headline Prediction dataset from the IndicGLUE benchmark. Human quality evaluation conducted on 4 languages with 100 examples each."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "IndicGLUE (Kakwani et al., 2020) for non-Hindi languages",
+      "notes": "Total 1.31M examples. Hindi has the most (297K) and Malayalam the least (20K). Human evaluation showed Property A (match) >90% across languages."
+    },
+    {
+      "dataset_name": "Sentence Summarization",
+      "variant_name": null,
+      "variant_notes": "Derived from the Headline Generation dataset by extracting first-sentence/headline pairs",
+      "task_type": "sentence summarization",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: re-processed headline generation dataset by extracting first sentence of each article as input and headline as summary output, then filtered low-overlap pairs using overlapping ratio",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Derived automatically from the headline generation dataset. No separate human evaluation was conducted for this task."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Rush et al. (2015) introduced the sentence summarization paradigm using Gigaword",
+      "notes": "Total 431K examples. Far fewer than the 1.31M headline generation examples due to filtering. Training set ranges from 2.8K (Malayalam) to 78.6K (Hindi)."
+    },
+    {
+      "dataset_name": "Paraphrase Generation",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "paraphrase generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: paraphrases mined from Samanantar parallel corpus (Ramesh et al., 2022) using English as pivot language (pivoting approach). Sentences sharing the same English translation are treated as paraphrases. Cleaned by removing duplicates, filtering high-overlap pairs (>0.8 n-gram overlap ratio), and selecting up to 5 diverse references per input.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Paraphrases extracted automatically from the Samanantar parallel corpus using the pivoting approach. Human quality evaluation conducted on 4 languages (hi, bn, ml, kn) with 250 examples each."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Samanantar corpus (Ramesh et al., 2022) used as source parallel data",
+      "notes": "Total 5.57M examples, making this the largest task in the benchmark. Assamese is extremely low-resource with no training data (only 4,420 validation and test examples each). Each example can have up to 5 reference paraphrases."
+    },
+    {
+      "dataset_name": "Question Generation",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "question generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: SQuAD v1 English QA data repurposed for question generation (context sentence + answer as input, question as output), then machine-translated to 11 Indic languages using IndicTrans (Ramesh et al., 2022)",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Dataset created by machine-translating repurposed SQuAD v1 data. No separate human evaluation was conducted for this task due to limited annotation budget."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "SQuAD v1 (Rajpurkar et al., 2016); translated using IndicTrans (Ramesh et al., 2022)",
+      "notes": "Total 1.08M examples (98K per language). The paper acknowledges this dataset 'might consist of translationese' in the Limitations section. Train/dev/test splits: 69,979/17,495/10,553 per language."
+    }
+  ],
+  "total_languages": 11,
+  "languages": {
+    "Assamese": {
+      "iso_code": "asm",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Odia": {
+      "iso_code": "ori",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation", "Question Generation"]
+    }
+  },
+  "assessments": {
+    "WikiBio (Biography Generation)": {
+      "translated": {
+        "value": false,
+        "evidence": "We download the Wikipedia dumps for each language, parse them and save the information (metadata) of pages that have infoboxes. Next, we use the wptools API to extract the infoboxes and the first lines of the pages about people.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Wikipedia content is written by native speakers. Quality evaluation used native-language annotators: 'For each language, we hire two native-language annotators and pay them higher wages than the minimum hourly wages.' Evaluation conducted on hi, bn, ml, kn with 250 examples each.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Wikipedia infoboxes are scraped from language-specific Wikipedias, so content is about people relevant to those language communities. However, the infobox format and task structure follow the English WikiBio paradigm (Lebret et al., 2016).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Human evaluation on 4 languages showed Property A (match between output and input) >96%, but Property C (extra information not inferable from input) was >10% for WikiBio, similar to XSum."
+    },
+    "Headline Generation": {
+      "translated": {
+        "value": false,
+        "evidence": "Hindi data crawled from Hindi news websites (Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV). For other languages, used the IndicGLUE headline prediction dataset (Kakwani et al., 2020) which contains native language news articles.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "News articles and headlines are written by native-language journalists. Quality evaluation used native-language annotators on 100 examples each for hi, bn, ml, kn.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is sourced from native-language Indian news websites covering topics like politics, science, entertainment, sports, business relevant to Indian language communities. Hindi data comes from Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV; other languages from IndicGLUE news data.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Human evaluation showed Property A (alignment) >90%, Property B (inconsistency) around 5%, and Property C (extra info) <10% across 4 evaluated languages."
+    },
+    "Sentence Summarization": {
+      "translated": {
+        "value": false,
+        "evidence": "Simply re-processed the headline generation dataset by extracting the first sentence and headline pairs. Same native-language news data as Headline Generation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Underlying data authored by native speakers (same as HG), but no separate human quality evaluation was conducted specifically for the sentence summarization task.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Derived from the Headline Generation dataset, which consists of native-language Indian news articles.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "No separate human evaluation was conducted for this task. Quality depends on the underlying Headline Generation dataset quality."
+    },
+    "Paraphrase Generation": {
+      "translated": {
+        "value": false,
+        "evidence": "Paraphrases mined from Samanantar parallel corpus using English as pivot language. The Indic-side text in Samanantar is native-language text, not translated text. Using English as the pivot is a method to identify paraphrases, not a translation step.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The Indic text in the Samanantar parallel corpus was authored by native speakers. Quality evaluation used two native-language annotators per language for hi, bn, ml, kn with 250 examples each, using the SemEval-2017 similarity labels.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Paraphrases are extracted from a parallel corpus (Samanantar) which contains diverse Indic-language text, but the content is constrained to sentences that have English translations, which may not always reflect culturally-specific content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Human evaluation showed that across languages, at least 50% of examples have similarity score >=3 (on 0-5 scale). However, there is relatively larger amount of noise for Kannada and Malayalam with high values of Label 0 (unrelated pairs)."
+    },
+    "Question Generation": {
+      "translated": {
+        "value": true,
+        "evidence": "We start with the SQuAD training and development (Rajpurkar et al., 2016) question answering sets and repurpose them to serve as a question generation dataset... We then translate the data into Indic languages using the IndicTrans (Ramesh et al., 2022) English to Indic model.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Dataset created entirely via machine translation from English SQuAD. No human annotation or evaluation was conducted for this task: 'We conduct this study for only three tasks... due to limited annotation budget.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Source data is SQuAD, which is based on English Wikipedia articles about topics not specific to Indic language communities. The translated questions and contexts retain English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper acknowledges in the Limitations section: 'The question generation dataset is generated using machine translation, and it might consist of translationese.' Previous work found IndicTrans translations to be of good quality (IndicXNLI; Aggarwal et al. 2022)."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["WikiBio (Biography Generation)", "Headline Generation", "Sentence Summarization", "Paraphrase Generation"],
+      "evidence": "WikiBio is crawled from native-language Wikipedias. Headline Generation uses native-language Indian news articles (Hindi from Indian news websites, others from IndicGLUE). Sentence Summarization is derived from HG. Paraphrase Generation is mined from Samanantar parallel corpus using pivoting. None of these are translated from English source data."
+    },
+    "datasets_translated_from_english": {
+      "list": ["Question Generation"],
+      "evidence": "We start with the SQuAD training and development (Rajpurkar et al., 2016) question answering sets and repurpose them to serve as a question generation dataset... We then translate the data into Indic languages using the IndicTrans (Ramesh et al., 2022) English to Indic model."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["Headline Generation", "Sentence Summarization"],
+      "details": {
+        "Headline Generation": "Native-language Indian news articles from sources like Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV (Hindi) and IndicGLUE news data (other languages), covering culturally relevant topics.",
+        "Sentence Summarization": "Derived from Headline Generation dataset, retains the same culturally grounded Indian news content."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "Yes, for quality evaluation; dataset creation is automated",
+      "evidence": "For each language, we hire two native-language annotators and pay them higher wages than the minimum hourly wages. Evaluation conducted on 4 representative languages (hi, bn, ml, kn) for WikiBio, Headline Generation, and Paraphrase Generation tasks. The underlying data for non-QG tasks is authored by native speakers (Wikipedia editors, news journalists, parallel corpus authors)."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["IIT Madras", "AI4Bharat", "Columbia University", "NICT (Japan)", "Microsoft", "University of Edinburgh"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "For quality evaluation annotators: 'we hire two native-language annotators and pay them higher wages than the minimum hourly wages'",
+      "irb_ethics_review": null,
+      "evidence": "Dataset creation is primarily automated (web scraping, parallel corpus mining, machine translation). Human annotators from AI4Bharat team were used only for quality evaluation of 3 tasks. Acknowledgements mention: 'We would like to thank Anupama Sujatha from AI4Bharat for helping in coordinating the annotation task, and extend thanks to all the annotators of AI4Bharat team.'"
+    },
+    "english_centricity_notes": "Question Generation task is directly translated from English SQuAD, inheriting English-centric content from English Wikipedia. Paraphrase Generation uses English as a pivot language for extraction, which constrains the data to sentences with English translations. The WikiBio task follows the English WikiBio paradigm. The paper acknowledges in Limitations: 'The question generation dataset is generated using machine translation, and it might consist of translationese.'",
+    "geographic_representation": {
+      "primary_region": "South Asia (India)",
+      "sub_regions": ["North India", "East India", "South India", "West India", "Northeast India"],
+      "also_represented": [],
+      "notably_excluded": ["Non-Indian Indic language regions (e.g., Bangladesh for Bengali, Nepal for Nepali, Pakistan for Urdu/Punjabi)"],
+      "evidence": "The benchmark focuses on 11 Indian languages from two language families (Indo-Aryan and Dravidian). Languages belong to the 22 'scheduled' Indian languages listed in the Constitution of India. News data is from Indian news sources. The 11 languages are: Assamese, Bengali, Gujarati, Hindi, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, Telugu."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

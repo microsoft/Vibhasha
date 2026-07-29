@@ -1,0 +1,84 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "INDIC-DIALECT Dialect Classification",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "text_classification",
+      "source": "translated",
+      "source_language": "Hindi",
+      "translation_method": "human_professional",
+      "num_languages": 11,
+      "language_list": [
+        "Kulluvi", "Bilaspuri", "Mandyali", "Sirmouri",
+        "Meerut", "Bhatner", "Muzaffarnagar",
+        "Sambalpuri", "Ganjami", "Baleswari", "Desia"
+      ],
+      "annotation_method": "Native speaker translation from standard Hindi sentences created by domain experts, followed by expert validation. Multi-class labels are dialect names assigned to each sentence.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Indian Institute of Technology Mandi; Indian Institute of Technology Kanpur",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We recruit 23 annotators (2 per dialect, and 1 for Odia) and 11 experts (1 per dialect) from the specific regions where these dialects are spoken. All annotators are compensated for their linguistic expertise at a rate exceeding the local minimum wage."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Derived from the INDIC-DIALECT parallel corpus. Sentences from all 11 dialects compiled with dialect names as ground-truth labels. Classification is over 11 dialect classes, not the 2 standard languages."
+    },
+    {
+      "dataset_name": "INDIC-DIALECT MCQ",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple_choice_qa",
+      "source": "translated",
+      "source_language": "Hindi",
+      "translation_method": "human_professional",
+      "num_languages": 13,
+      "language_list": [
+        "Hindi", "Odia",
+        "Kulluvi", "Bilaspuri", "Mandyali", "Sirmouri",
+        "Meerut", "Bhatner", "Muzaffarnagar",
+        "Sambalpuri", "Ganjami", "Baleswari", "Desia"
+      ],
+      "annotation_method": "Dialect sentences serve as questions; correct answer is the parallel standard language translation from the corpus. Three hard distractors are semantically similar near-misses created using the approach from Zellers et al. 2019.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Indian Institute of Technology Mandi; Indian Institute of Technology Kanpur",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We recruit 23 annotators (2 per dialect, and 1 for Odia) and 11 experts (1 per dialect) from the specific regions where these dialects are spoken. All annotators are compensated for their linguistic expertise at a rate exceeding the local minimum wage."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Derived from the INDIC-DIALECT parallel corpus. Presents a dialect sentence with four candidate interpretations in the standard language (one correct translation, three hard distractors)."
+    },
+    {
+      "dataset_name": "INDIC-DIALECT Machine Translation",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "Hindi",
+      "translation_method": "human_professional",
+      "num_languages": 13,
+      "language_list": [
+        "Hindi", "Odia",
+        "Kulluvi", "Bilaspuri", "Mandyali", "Sirmouri",
+        "Meerut", "Bhatner", "Muzaffarnagar",
+        "Sambalpuri", "Ganjami", "Baleswari", "Desia"
+      ],
+      "annotation_method": "Human translation by native speakers with expert validation. Inter-annotator agreement (Cohen's Kappa) of 0.89 on 5% subset. Parallel corpus formatted as source-target sentence pairs supporting both dialect-to-language and language-to-dialect translation.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Indian Institute of Technology Mandi; Indian Institute of Technology Kanpur",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We recruit 23 annotators (2 per dialect, and 1 for Odia) and 11 experts (1 per dialect) from the specific regions where these dialects are spoken. All annotators are compensated for their linguistic expertise at a rate exceeding the local minimum wage."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Derived from the INDIC-DIALECT parallel corpus (13,000 sentence pairs). Supports bidirectional translation: dialect-to-standard-language and standard-language-to-dialect. 70:30 train:test split used in experiments."
+    }
+  ]
+}

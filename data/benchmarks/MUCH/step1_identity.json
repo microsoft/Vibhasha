@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "MUCH",
+  "paper_id": "2511.17081v2",
+  "year": 2026,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce MUCH, a new multilingual claim hallucination dataset and evaluation protocol... The dataset contains 4,873 pairs of question and LLM-response.",
+  "total_languages_claimed": 4,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MUCH"
+  ],
+  "task_categories": [
+    "claim-level uncertainty quantification",
+    "hallucination detection",
+    "factuality verification"
+  ],
+  "brief_description": "MUCH is a multilingual claim-level hallucination benchmark comprising 4,873 LLM-generated responses (20,751 claims) across four European languages (English, French, Spanish, German), with binary factuality annotations and 24 logits per token, designed for evaluating uncertainty quantification methods under realistic deployment conditions."
+}

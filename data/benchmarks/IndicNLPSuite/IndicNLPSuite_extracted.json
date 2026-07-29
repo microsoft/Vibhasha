@@ -1,0 +1,713 @@
+{
+  "benchmark_name": "IndicNLPSuite",
+  "paper_id": "2020.findings-emnlp.445",
+  "year": 2020,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We collectively refer to this benchmark as IndicGLUE and it is a collection of (i) existing Indian language datasets for some tasks, (ii) manual translations of some English datasets into Indian languages done as a part of this work, and (iii) new datasets that were created semi-automatically for all major Indian languages as a part of this work.",
+  "total_languages_claimed": 11,
+  "total_datasets": 16,
+  "dataset_names": [
+    "IndicGLUE News Category Classification",
+    "IndicGLUE Headline Prediction",
+    "IndicGLUE Wikipedia Section-Title Prediction",
+    "IndicGLUE Cloze-style Multiple-choice QA",
+    "WikiAnn NER",
+    "CVIT-Mann Ki Baat (Cross-lingual Sentence Retrieval)",
+    "WNLI Indic",
+    "COPA Indic",
+    "Amrita Paraphrase Detection",
+    "MIDAS Hindi Discourse",
+    "IIT-Patna Movie Reviews",
+    "IIT-Patna Product Reviews",
+    "ACTSA Telugu Sentiment",
+    "BBC Hindi News Articles",
+    "Soham Bengali News Articles",
+    "iNLTK Headlines"
+  ],
+  "task_categories": [
+    "Text Classification",
+    "Multiple-choice QA",
+    "Named Entity Recognition",
+    "Cross-lingual Sentence Retrieval",
+    "Natural Language Inference",
+    "Commonsense Reasoning",
+    "Paraphrase Detection",
+    "Discourse Mode Classification",
+    "Sentiment Analysis"
+  ],
+  "brief_description": "IndicNLPSuite provides monolingual corpora (IndicCorp), pre-trained word embeddings (IndicFT), language models (IndicBERT), and an NLU evaluation benchmark (IndicGLUE) for 11 major Indian languages from the Indo-Aryan and Dravidian families, comprising newly created semi-automatic datasets and curated existing datasets across tasks including text classification, QA, NER, NLI, paraphrase detection, and sentiment analysis.",
+  "datasets": [
+    {
+      "dataset_name": "IndicGLUE News Category Classification",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Text Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["Punjabi", "Bengali", "Odia", "Gujarati", "Marathi", "Kannada", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "automatic_from_metadata",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We create news article category datasets using IndicCorp for 9 languages. The categories are determined from URL components."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Categories include entertainment, sports, business, lifestyle, technology, politics, crime. Total 125,630 examples across 9 languages."
+    },
+    {
+      "dataset_name": "IndicGLUE Headline Prediction",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Multiple-choice QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Punjabi", "Hindi", "Bengali", "Odia", "Assamese", "Gujarati", "Marathi", "Kannada", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "automatic_from_metadata",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We generate the dataset from our news article crawls which contain articles and their headlines. We ensure that the three incorrect candidates are not completely unrelated to the given article."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "4-choice task: predict correct headline for a news article. Incorrect candidates chosen based on entity overlap. Total 880,311 examples."
+    },
+    {
+      "dataset_name": "IndicGLUE Wikipedia Section-Title Prediction",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Multiple-choice QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Punjabi", "Hindi", "Bengali", "Odia", "Assamese", "Gujarati", "Marathi", "Kannada", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "automatic_from_metadata",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the open-source tool WikiExtractor to extract sections and their titles from Wikipedia. To make the task challenging, we choose the 3 incorrect candidates for a given section, only from the titles of other sections in the same article."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "4-choice task: predict correct Wikipedia section title. Total 402,170 examples."
+    },
+    {
+      "dataset_name": "IndicGLUE Cloze-style Multiple-choice QA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Multiple-choice QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Punjabi", "Hindi", "Bengali", "Odia", "Assamese", "Gujarati", "Marathi", "Kannada", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "automatic_from_metadata",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The text is obtained from Wikipedia articles and the entities in the text are identified using Wikidata. We choose the 3 incorrect candidates from entities that occur in the same article and have the same type as the correct entity."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Entity-masked cloze task from Wikipedia/Wikidata. Similar to Petroni et al. (2019). Total 238,897 examples."
+    },
+    {
+      "dataset_name": "WikiAnn NER",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Named Entity Recognition",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Punjabi", "Hindi", "Bengali", "Odia", "Assamese", "Gujarati", "Marathi", "Kannada", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "automatic_cross_lingual_projection",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "University of Illinois (original creators)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the WikiAnn NER dataset (Pan et al., 2017) which contains NER data for 282 languages. This dataset is created from Wikipedia by utilizing cross language links to propagate English named entity labels to other languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Pan et al., 2017",
+      "notes": "Coarse-grained NER labels: Person (PER), Organisation (ORG), Location (LOC). Total 787,462 examples."
+    },
+    {
+      "dataset_name": "CVIT-Mann Ki Baat",
+      "variant_name": "Cross-lingual Sentence Retrieval",
+      "variant_notes": null,
+      "task_type": "Cross-lingual Sentence Retrieval",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 8,
+      "language_list": ["Hindi", "Bengali", "Odia", "Gujarati", "Marathi", "Telugu", "Malayalam", "Tamil"],
+      "annotation_method": "INSUFFICIENT_INFO: paper does not describe annotation method for this external dataset",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "CVIT, IIIT Hyderabad",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the CVIT-Mann Ki Baat dataset (Siripragrada et al., 2020) for this task."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Siripragrada et al., 2020",
+      "notes": "English-to-Indian language parallel sentences. Given a sentence in English, retrieve its translation from candidate sentences in an Indian language. Total 39,238 sentence pairs."
+    },
+    {
+      "dataset_name": "WNLI Indic",
+      "variant_name": "Winograd NLI (Indic translations)",
+      "variant_notes": "Manual translation of the English GLUE WNLI dataset into 3 Indian languages",
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 3,
+      "language_list": ["Hindi", "Marathi", "Gujarati"],
+      "annotation_method": "human_translation",
+      "data_creator_info": {
+        "creator_type": "crowdworkers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We manually translated this dataset to 3 Indic languages (hi, mr, gu) with the help of skilled bilingual speakers. The annotators were paid 3 cents per word and the translations were then verified by an expert bilingual speaker."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Levesque et al., 2011 (original WNLI); Wang et al., 2018 (GLUE)",
+      "notes": "Each example consists of a pair of sentences; task is to predict if the second sentence is entailed by the first."
+    },
+    {
+      "dataset_name": "COPA Indic",
+      "variant_name": "Choice Of Plausible Alternatives (Indic translations)",
+      "variant_notes": "Manual translation of the English COPA dataset into 3 Indian languages",
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 3,
+      "language_list": ["Hindi", "Marathi", "Gujarati"],
+      "annotation_method": "human_translation",
+      "data_creator_info": {
+        "creator_type": "crowdworkers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "As with WNLI, we translated the dataset into 3 Indic languages (hi, mr, gu)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Gordon et al., 2011",
+      "notes": "Commonsense causal reasoning: select the more plausible cause/effect from two alternatives."
+    },
+    {
+      "dataset_name": "Amrita Paraphrase Detection",
+      "variant_name": null,
+      "variant_notes": "Includes Subtask 1 (binary: P/NP) and Subtask 2 (3-class: E/RE/NE)",
+      "task_type": "Paraphrase Detection",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["Hindi", "Punjabi", "Tamil", "Malayalam"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "Amrita University",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the Amritha paraphrase dataset comprsing 4 Indic languages (hi,pa,ta,ml) (Anand Kumar et al., 2016)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Anand Kumar et al., 2016",
+      "notes": "From newspaper domain. Subtask 1: paraphrase or not. Subtask 2: completely equivalent, roughly equivalent, or not equivalent."
+    },
+    {
+      "dataset_name": "MIDAS Hindi Discourse",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Discourse Mode Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Hindi"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "MIDAS, IIIT Delhi",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use the MIDAS Hindi Discourse Analysis dataset (Dhanwal et al., 2020) for this task."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Dhanwal et al., 2020",
+      "notes": "5 classes: argumentative, descriptive, dialogic, informative, narrative. 7,974 train / 997 test examples."
+    },
+    {
+      "dataset_name": "IIT-Patna Movie Reviews",
+      "variant_name": null,
+      "variant_notes": "Merged from IIT-Patna, IIT-Bombay, and iNLTK datasets",
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Hindi"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "IIT Patna",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "IIT-Patna Movie and Product Sentiment Analysis dataset (Hindi) (Akhtar et al., 2016). The IITP+ Movie Reviews sentiment analysis dataset is created by merging IIT-Patna dataset with the smaller IIT-Bombay and iNLTK datasets."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Akhtar et al., 2016",
+      "notes": "Original 4 classes (positive, negative, neutral, conflict); conflict class ignored. 2,480 train / 310 test."
+    },
+    {
+      "dataset_name": "IIT-Patna Product Reviews",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Hindi"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "IIT Patna",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "IIT-Patna Movie and Product Sentiment Analysis dataset (Hindi) (Akhtar et al., 2016)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Akhtar et al., 2016",
+      "notes": "Hindi product reviews. 4,182 train / 523 test."
+    },
+    {
+      "dataset_name": "ACTSA Telugu Sentiment",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Telugu"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "IIIT Hyderabad",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "ACTSA Sentiment Analysis corpus (Telugu) (Mukku and Mamidi, 2017)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Mukku and Mamidi, 2017",
+      "notes": "Telugu sentiment analysis. Only news line dataset used; other domain datasets ignored due to few data points. 4,328 train / 541 test."
+    },
+    {
+      "dataset_name": "BBC Hindi News Articles",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Text Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Hindi"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "BBC News Articles classification dataset (publicly available)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Publicly available (github.com/NirantK/hindi2vec)",
+      "notes": "6-class Hindi news article classification. 3,467 train / 866 test."
+    },
+    {
+      "dataset_name": "Soham Bengali News Articles",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Text Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Bengali"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Soham Bengali News classification dataset (publicly available on Kaggle)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Kaggle (csoham/classification-bengali-news-articles-indicnlp)",
+      "notes": "6-class Bengali news classification. 11,284 train / 1,411 test."
+    },
+    {
+      "dataset_name": "iNLTK Headlines",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Text Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["Gujarati", "Malayalam", "Marathi", "Tamil"],
+      "annotation_method": "INSUFFICIENT_INFO: not described in this paper",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "iNLTK Headlines dataset (publicly available)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "github.com/goru001/inltk",
+      "notes": "3-class news headline classification for 4 Indian languages."
+    }
+  ],
+  "total_languages": 11,
+  "languages": {
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "Amrita Paraphrase Detection"
+      ]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": [
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "IIT-Patna Product Reviews",
+        "BBC Hindi News Articles"
+      ]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Soham Bengali News Articles"
+      ]
+    },
+    "Odia": {
+      "iso_code": "or",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat"
+      ]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": [
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER"
+      ]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "iNLTK Headlines"
+      ]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "iNLTK Headlines"
+      ]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER"
+      ]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "ACTSA Telugu Sentiment"
+      ]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "iNLTK Headlines"
+      ]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "iNLTK Headlines"
+      ]
+    }
+  },
+  "assessments": {
+    "IndicGLUE News Category Classification": {
+      "translated": {"value": false, "evidence": "We create news article category datasets using IndicCorp for 9 languages. The categories are determined from URL components.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "Dataset created automatically from URL metadata of Indian language news websites; no human annotation involved in labeling.", "confidence": "high"},
+      "culturally_grounded": {"value": true, "evidence": "Based on Indian language news articles from popular Indian language news websites with locally relevant categories.", "confidence": "high"},
+      "annotation_quality_notes": "Fully automated labeling from URL structure. Categories chosen to be generic and consistent across websites."
+    },
+    "IndicGLUE Headline Prediction": {
+      "translated": {"value": false, "evidence": "We generate the dataset from our news article crawls which contain articles and their headlines.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "Semi-automatically generated from news crawls; no human annotation.", "confidence": "high"},
+      "culturally_grounded": {"value": true, "evidence": "Content sourced from Indian language news websites covering locally relevant topics.", "confidence": "high"},
+      "annotation_quality_notes": "Incorrect candidates chosen with sizeable entity overlap with the original article to make the task challenging."
+    },
+    "IndicGLUE Wikipedia Section-Title Prediction": {
+      "translated": {"value": false, "evidence": "We use the open-source tool WikiExtractor to extract sections and their titles from Wikipedia.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "Automatically extracted from Indian language Wikipedia.", "confidence": "medium"},
+      "culturally_grounded": {"value": "partial", "evidence": "Indian language Wikipedia content is a mix of culturally specific and universal knowledge topics.", "confidence": "medium"},
+      "annotation_quality_notes": "Incorrect candidates chosen from titles of other sections in the same Wikipedia article."
+    },
+    "IndicGLUE Cloze-style Multiple-choice QA": {
+      "translated": {"value": false, "evidence": "The text is obtained from Wikipedia articles and the entities in the text are identified using Wikidata.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "Automatically constructed from Indian language Wikipedia and Wikidata entities.", "confidence": "high"},
+      "culturally_grounded": {"value": "partial", "evidence": "Based on Indian language Wikipedia content, which includes both culturally specific and universal knowledge.", "confidence": "medium"},
+      "annotation_quality_notes": "Incorrect candidates are same-type entities from the same Wikipedia article."
+    },
+    "WikiAnn NER": {
+      "translated": {"value": true, "evidence": "This dataset is created from Wikipedia by utilizing cross language links to propagate English named entity labels to other languages.", "confidence": "high"},
+      "native_annotators": {"value": false, "evidence": "Labels are automatically projected from English via cross-language Wikipedia links.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "Entity labels propagated from English Wikipedia; not created with cultural context of target languages.", "confidence": "high"},
+      "annotation_quality_notes": "Automatic cross-lingual label projection may introduce noise."
+    },
+    "CVIT-Mann Ki Baat": {
+      "translated": {"value": "partial", "evidence": "A multilingual parallel corpora collection; Mann Ki Baat is the Indian PM's radio address available in multiple Indian languages.", "confidence": "medium"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: The paper only states 'We use the CVIT-Mann Ki Baat dataset (Siripragrada et al., 2020).'", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Based on the Indian PM's Mann Ki Baat radio address, inherently Indian in content.", "confidence": "high"},
+      "annotation_quality_notes": null
+    },
+    "WNLI Indic": {
+      "translated": {"value": true, "evidence": "We manually translated this dataset to 3 Indic languages (hi, mr, gu) with the help of skilled bilingual speakers.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "The annotators were paid 3 cents per word and the translations were then verified by an expert bilingual speaker.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "Translated from English GLUE WNLI dataset; content reflects English-language cultural context.", "confidence": "high"},
+      "annotation_quality_notes": "Translations verified by expert bilingual speakers. Compensated at 3 cents per word."
+    },
+    "COPA Indic": {
+      "translated": {"value": true, "evidence": "As with WNLI, we translated the dataset into 3 Indic languages (hi, mr, gu).", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Same translation process as WNLI: skilled bilingual speakers, paid, verified by expert.", "confidence": "high"},
+      "culturally_grounded": {"value": false, "evidence": "Translated from English COPA dataset; commonsense scenarios reflect English-language assumptions.", "confidence": "high"},
+      "annotation_quality_notes": "Same quality assurance as WNLI."
+    },
+    "Amrita Paraphrase Detection": {
+      "translated": {"value": false, "evidence": "Amritha paraphrase dataset comprsing 4 Indic languages (hi,pa,ta,ml). Data is from newspaper domain.", "confidence": "medium"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Newspaper domain in Indian languages, likely reflecting local news content.", "confidence": "medium"},
+      "annotation_quality_notes": null
+    },
+    "MIDAS Hindi Discourse": {
+      "translated": {"value": false, "evidence": "MIDAS Hindi Discourse Analysis dataset (Dhanwal et al., 2020). Annotated dataset of discourse modes in Hindi stories.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Based on Hindi stories, natively authored in Hindi.", "confidence": "medium"},
+      "annotation_quality_notes": null
+    },
+    "IIT-Patna Movie Reviews": {
+      "translated": {"value": false, "evidence": "IIT-Patna Sentiment Analysis dataset (Hindi) (Akhtar et al., 2016). Hindi movie reviews.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Hindi movie reviews presumably reflecting Indian cinema (Bollywood) context.", "confidence": "medium"},
+      "annotation_quality_notes": "Merged from IIT-Patna, IIT-Bombay, and iNLTK datasets. Conflict class removed."
+    },
+    "IIT-Patna Product Reviews": {
+      "translated": {"value": false, "evidence": "IIT-Patna Product Sentiment Analysis dataset (Hindi) (Akhtar et al., 2016).", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": "partial", "evidence": "Hindi product reviews; products may or may not be culturally specific.", "confidence": "low"},
+      "annotation_quality_notes": null
+    },
+    "ACTSA Telugu Sentiment": {
+      "translated": {"value": false, "evidence": "ACTSA Sentiment Analysis corpus (Telugu) (Mukku and Mamidi, 2017).", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Native Telugu sentiment corpus from news domain.", "confidence": "medium"},
+      "annotation_quality_notes": "Only news line dataset used; other domain datasets ignored."
+    },
+    "BBC Hindi News Articles": {
+      "translated": {"value": false, "evidence": "BBC Hindi News Articles classification dataset.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": "partial", "evidence": "BBC Hindi covers both Indian and international topics.", "confidence": "medium"},
+      "annotation_quality_notes": null
+    },
+    "Soham Bengali News Articles": {
+      "translated": {"value": false, "evidence": "Soham Bengali News classification dataset.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Bengali news articles, likely reflecting local topics.", "confidence": "medium"},
+      "annotation_quality_notes": null
+    },
+    "iNLTK Headlines": {
+      "translated": {"value": false, "evidence": "iNLTK Headlines dataset for gu, ml, mr, ta.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: not described in this paper.", "confidence": "low"},
+      "culturally_grounded": {"value": true, "evidence": "Indian language news headlines covering locally relevant topics.", "confidence": "medium"},
+      "annotation_quality_notes": null
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "IIT-Patna Product Reviews",
+        "ACTSA Telugu Sentiment",
+        "BBC Hindi News Articles",
+        "Soham Bengali News Articles",
+        "iNLTK Headlines"
+      ],
+      "evidence": "The four new IndicGLUE datasets are created semi-automatically from Indian language news crawls and Indian language Wikipedia. The existing incorporated datasets are natively authored in their respective Indian languages."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "WNLI Indic",
+        "COPA Indic",
+        "WikiAnn NER"
+      ],
+      "evidence": "WNLI and COPA were 'manually translated this dataset to 3 Indic languages (hi, mr, gu) with the help of skilled bilingual speakers.' WikiAnn NER is 'created from Wikipedia by utilizing cross language links to propagate English named entity labels to other languages.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "ACTSA Telugu Sentiment",
+        "Soham Bengali News Articles",
+        "iNLTK Headlines"
+      ],
+      "details": {
+        "IndicGLUE News Category Classification": "Based on Indian language news articles from popular Indian language news websites",
+        "IndicGLUE Headline Prediction": "Generated from Indian language news crawls with locally relevant content",
+        "CVIT-Mann Ki Baat": "Based on Indian PM's Mann Ki Baat radio address, inherently Indian content",
+        "Amrita Paraphrase Detection": "Indian newspaper domain content in 4 Indian languages",
+        "MIDAS Hindi Discourse": "Annotated dataset of discourse modes in Hindi stories",
+        "IIT-Patna Movie Reviews": "Hindi movie reviews reflecting Indian cinema context",
+        "ACTSA Telugu Sentiment": "Native Telugu sentiment corpus from news domain",
+        "Soham Bengali News Articles": "Bengali news articles with local topics",
+        "iNLTK Headlines": "Indian language news headlines covering locally relevant topics"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "For WNLI and COPA translations: 'skilled bilingual speakers' were used, verified by expert. The four new IndicGLUE datasets are semi-automatically generated (no human annotation). For external datasets, annotator details are not described in this paper."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["automated", "crowdworkers", "researchers"],
+      "total_annotators_reported": null,
+      "affiliations": ["IIT Madras", "AI4Bharat", "Microsoft India"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "For WNLI and COPA translations: 'The annotators were paid 3 cents per word.'",
+      "irb_ethics_review": null,
+      "evidence": "The paper describes authors from IIT Madras, AI4Bharat, and Microsoft India. For translated datasets (WNLI, COPA), skilled bilingual speakers were hired at 3 cents per word. The four new IndicGLUE datasets were created semi-automatically. No IRB/ethics review mentioned."
+    },
+    "english_centricity_notes": "Two datasets (WNLI, COPA) are direct translations from English benchmarks, inheriting English-centric content. WikiAnn NER propagates English entity labels via cross-lingual links. The cross-lingual sentence retrieval task uses English as the source language. However, the majority of IndicGLUE datasets (4 new + 8 existing) are natively authored in Indian languages. The paper deliberately excluded Wikipedia from pretraining data to avoid overlap with evaluation datasets.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India"],
+      "also_represented": [],
+      "notably_excluded": [
+        "Northeast Indian languages beyond Assamese",
+        "Indo-Aryan languages beyond the 7 covered (e.g., Nepali, Sindhi, Kashmiri)",
+        "Austroasiatic languages (e.g., Santali, Mundari)",
+        "Tibeto-Burman languages (e.g., Bodo, Manipuri)"
+      ],
+      "evidence": "The paper covers 11 major Indian languages from two families: Indo-Aryan (Punjabi, Hindi, Bengali, Odia, Assamese, Gujarati, Marathi) and Dravidian (Kannada, Telugu, Malayalam, Tamil). The paper notes 'The Indo-Aryan and Dravidian languages are spoken by 96% of the population in India. The other families are diverse, but the speaker population is relatively small.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

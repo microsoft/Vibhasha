@@ -1,0 +1,465 @@
+{
+  "total_languages": 101,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Arabic": {
+      "iso_code": "ara",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Achinese": {
+      "iso_code": "ace",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Azerbaijani": {
+      "iso_code": "aze",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Balinese": {
+      "iso_code": "ban",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Toba Batak": {
+      "iso_code": "bbc",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Belarusian": {
+      "iso_code": "bel",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bemba": {
+      "iso_code": "bem",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Banjar": {
+      "iso_code": "bjn",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bulgarian": {
+      "iso_code": "bul",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Welsh": {
+      "iso_code": "cym",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Danish": {
+      "iso_code": "dan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Esperanto": {
+      "iso_code": "epo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Estonian": {
+      "iso_code": "est",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Basque": {
+      "iso_code": "eus",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Finnish": {
+      "iso_code": "fin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Fon": {
+      "iso_code": "fon",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Scottish Gaelic": {
+      "iso_code": "gla",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Irish": {
+      "iso_code": "gle",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Galician": {
+      "iso_code": "glg",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Haitian Creole": {
+      "iso_code": "hat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Croatian": {
+      "iso_code": "hrv",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Icelandic": {
+      "iso_code": "isl",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Javanese": {
+      "iso_code": "jav",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kashmiri": {
+      "iso_code": "kas",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kanuri": {
+      "iso_code": "kau",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Khmer": {
+      "iso_code": "khm",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kurdish": {
+      "iso_code": "kur",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Lao": {
+      "iso_code": "lao",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Latvian": {
+      "iso_code": "lav",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ligurian": {
+      "iso_code": "lij",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Luxembourgish": {
+      "iso_code": "ltz",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Madurese": {
+      "iso_code": "mad",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Manipuri": {
+      "iso_code": "man",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Minangkabau": {
+      "iso_code": "min",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Macedonian": {
+      "iso_code": "mkd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malagasy": {
+      "iso_code": "mlg",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Maltese": {
+      "iso_code": "mlt",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Mongolian": {
+      "iso_code": "mon",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Maori": {
+      "iso_code": "mri",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Burmese": {
+      "iso_code": "mya",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Nepali": {
+      "iso_code": "nep",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ngaju": {
+      "iso_code": "nij",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Dutch": {
+      "iso_code": "nld",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Norwegian": {
+      "iso_code": "nor",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Chichewa": {
+      "iso_code": "nya",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Persian": {
+      "iso_code": "pes",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Polish": {
+      "iso_code": "pol",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Pashto": {
+      "iso_code": "pus",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sinhala": {
+      "iso_code": "sin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Slovak": {
+      "iso_code": "slk",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Slovenian": {
+      "iso_code": "slv",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Samoan": {
+      "iso_code": "smo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Shona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sindhi": {
+      "iso_code": "snd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Southern Sotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Albanian": {
+      "iso_code": "sqi",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sundanese": {
+      "iso_code": "sun",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tamasheq": {
+      "iso_code": "taq",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tajik": {
+      "iso_code": "tgk",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Twi": {
+      "iso_code": "twi",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Xhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Yiddish": {
+      "iso_code": "yid",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["dolly-machine-translated"]
+    }
+  }
+}

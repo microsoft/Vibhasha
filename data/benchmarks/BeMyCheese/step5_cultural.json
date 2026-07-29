@@ -1,0 +1,60 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The benchmark evaluates translations FROM English; source texts are English marketing emails. The evaluation framework and annotation scheme are original, but the evaluated content originates from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["BeMyCheese"],
+      "evidence": "Source texts are 5 English e-commerce marketing emails. LLMs translated these into 15 target languages. 'Each model received the same English source text and a fixed prompt instructing it to Translate the following email for use in [language] in [country/region].' (Section 3)"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["BeMyCheese"],
+      "details": {
+        "BeMyCheese": "Explicitly designed to evaluate cultural localisation. Segments include idioms, puns, holidays, and culturally embedded concepts. Raters are native speakers residing in-region who evaluate cultural appropriateness and audience relevance."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "'We recruited five native speakers per language (N = 75 total)... Participants reside in the region they evaluated and are fluent speakers of both English and their native language. Each rater evaluated translations only for their native language.' (Section 3.1)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers"],
+      "total_annotators_reported": 75,
+      "affiliations": ["Appen"],
+      "demographics_reported": true,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Authors are from Appen (data annotation company). 75 raters (5 per language × 15 languages). Participant demographics (age, gender, education level) fully reported in Appendix B1. No mention of compensation, IRB approval, or ethics review in the paper. 'Ratings were collected using our proprietary data annotation software (redacted for anonymity).' (Section 3.5)"
+    },
+    "english_centricity_notes": "The benchmark is inherently English-centric by design: it evaluates English-to-many translation of English marketing content (e.g., American holidays like Labor Day, Valentine's Day; US-specific concepts like koozies, Zoom calls). The paper acknowledges this: 'The benchmark focuses on English-to-many translation within a marketing email domain' (Section 8, Limitations). Source texts contain North American English cultural references.",
+    "geographic_representation": {
+      "primary_region": "Global (diverse locales)",
+      "sub_regions": [
+        "South Africa (Afrikaans)",
+        "Egypt (Arabic)",
+        "Brazil (Brazilian Portuguese)",
+        "Hong Kong (Cantonese)",
+        "Czech Republic (Czech)",
+        "Netherlands (Dutch)",
+        "Israel (Hebrew)",
+        "India (Hindi)",
+        "Japan (Japanese)",
+        "South Korea (Korean)",
+        "Taiwan (Mandarin)",
+        "Kazakhstan (Russian)",
+        "Mexico (Spanish)",
+        "Kenya (Swahili)",
+        "Pakistan (Urdu)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "No languages from Oceania, indigenous Americas, Southeast Asia, or Central Asia",
+        "No European Romance languages besides Portuguese and Spanish",
+        "Limited representation of African languages (only Afrikaans and Swahili)"
+      ],
+      "evidence": "Languages and locales listed in Section 3.1: 'Afrikaans (ZA), Arabic (EG), Brazilian Portuguese (BR), Cantonese (HK), Czech (CZ), Dutch (NL), Hebrew (IL), Hindi (IN), Japanese (JP), Korean (KR), Mandarin (TW), Russian (KZ), Spanish (MX), Swahili (KE), and Urdu (PK).'"
+    }
+  }
+}

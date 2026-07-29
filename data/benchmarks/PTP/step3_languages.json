@@ -1,0 +1,73 @@
+{
+  "total_languages": 17,
+  "languages": {
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Swedish": {
+      "iso_code": "sv",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    }
+  }
+}

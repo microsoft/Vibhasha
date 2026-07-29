@@ -1,0 +1,41 @@
+{
+  "total_languages": 9,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["M3Exam"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["M3Exam"]
+    }
+  }
+}

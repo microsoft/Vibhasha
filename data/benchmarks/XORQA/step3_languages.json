@@ -1,0 +1,33 @@
+{
+  "total_languages": 7,
+  "languages": {
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["XOR-TYDI QA"]
+    }
+  }
+}

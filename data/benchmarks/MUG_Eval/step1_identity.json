@@ -1,0 +1,22 @@
+{
+  "benchmark_name": "MUG-Eval",
+  "paper_id": "2025.findings-emnlp.MUG-Eval",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We implement three tasks in MUG-Eval by adapting existing benchmarks into conversational and multilingual settings—Easy Twenty Questions (Zhang et al., 2024), MCQ Conversation (Bandarkar et al., 2024), and Code Reconstruction (Muennighoff et al., 2024)",
+  "total_languages_claimed": 30,
+  "total_datasets": 3,
+  "dataset_names": [
+    "Easy Twenty Questions",
+    "MCQ Conversation",
+    "Code Reconstruction"
+  ],
+  "task_categories": [
+    "reasoning",
+    "instruction_following",
+    "code_generation",
+    "multilingual_generation",
+    "conversational_task_completion"
+  ],
+  "brief_description": "MUG-Eval is a language-agnostic proxy evaluation framework that assesses LLMs' multilingual generation capabilities by transforming existing benchmarks into conversational information-gap tasks, using task success rate as a proxy for generation quality. It evaluates 8 LLMs across 30 languages (high/mid/low-resource) on three tasks without requiring language-specific NLP tools, human annotations, or LLM-as-judge, and claims scalability to 2,102 languages via GlotLID."
+}

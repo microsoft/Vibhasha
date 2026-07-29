@@ -1,0 +1,164 @@
+{
+  "benchmark_name": "IndicParam",
+  "paper_id": "2512.00333v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present IndicParam, a human-curated benchmark of over 13,000 multiple-choice questions covering 11 such languages",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": [
+    "IndicParam"
+  ],
+  "task_categories": [
+    "multiple-choice QA",
+    "language understanding",
+    "general knowledge"
+  ],
+  "brief_description": "A human-curated benchmark of over 13,000 multiple-choice questions covering 11 low- and extremely low-resource Indic languages, sourced from UGC-NET graduate-level examinations administered by the Government of India. Questions are classified as language understanding or general knowledge, and annotated with six question types (MCQ, assertion & reason, list matching, fill in the blanks, identify incorrect statement, ordering).",
+  "datasets": [
+    {
+      "dataset_name": "IndicParam",
+      "variant_name": null,
+      "variant_notes": "Includes a separate Sanskrit-English code-mixed variant (971 questions) in addition to the 11 monolingual language sets.",
+      "task_type": "multiple-choice QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": [
+        "Nepali",
+        "Marathi",
+        "Gujarati",
+        "Odia",
+        "Maithili",
+        "Konkani",
+        "Santali",
+        "Bodo",
+        "Dogri",
+        "Rajasthani",
+        "Sanskrit"
+      ],
+      "annotation_method": "Human annotators corrected OCR-extracted text from official UGC-NET examination PDFs (2012-2018). Native speakers with graduate-level expertise manually corrected recognition errors, restored missing characters and diacritics, normalized punctuation and spacing, and classified each question by category (language understanding vs. general knowledge) and question type. A two-step review pipeline was used: annotators corrected and aligned answers, then a senior reviewer verified against original exam papers.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Indian Institute of Management Indore; BharatGen",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material. Annotators were compensated at a rate of $1 per 10 questions."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "UGC-NET examination papers (2012-2018) from the National Testing Agency, Government of India (https://ugcnet.nta.ac.in)",
+      "notes": "Questions sourced from UGC-NET, a nationwide graduate-level examination for PhD admission and university teaching eligibility. 13,207 total questions. Post-verification audit on a random 5% sample reported WER of 0.68% and CER of 0.12%. The original questions are human-authored by government examination authorities, not by the benchmark creators."
+    }
+  ],
+  "total_languages": 11,
+  "languages": {
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Odia": {
+      "iso_code": "ory",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Maithili": {
+      "iso_code": "mai",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Konkani": {
+      "iso_code": "gom",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Santali": {
+      "iso_code": "sat",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Bodo": {
+      "iso_code": "brx",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Dogri": {
+      "iso_code": "doi",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Rajasthani": {
+      "iso_code": null,
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Sanskrit": {
+      "iso_code": "san",
+      "datasets_present_in": ["IndicParam"]
+    }
+  },
+  "assessments": {
+    "IndicParam": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions are collected from UGC-NET, which is a nationwide examination administered by a government agency... We developed the dataset by downloading question papers and answer keys from the official examination website for the period between 2012-2018. Questions are natively authored in each target language for the UGC-NET examination, not translated from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material. Since many papers mix language-focused and knowledge-focused content, annotators were required to demonstrate strong proficiency in the relevant Indic script.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions are sourced from UGC-NET, a nationwide Indian graduate-level examination covering linguistics, literature, and general knowledge relevant to Indian languages and culture. The benchmark covers language understanding (grammar, morphology, syntax, semantics, discourse) and general knowledge about Indian subjects, drawn from graduate-level examinations in each specific language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Post-verification audit on a random 5% sample (10,427 words and 61,547 characters) reported a Word Error Rate (WER) of 0.68% and a Character Error Rate (CER) of 0.12%. A multi-stage quality control pipeline was used: OCR extraction, manual correction by native speakers, and a two-step senior review against original exam papers."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["IndicParam"],
+      "evidence": "Questions sourced from UGC-NET graduate-level examinations natively authored in each Indic language by the National Testing Agency, Government of India. Not translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets in IndicParam are translated from English. All questions originate from UGC-NET examination papers in the target languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["IndicParam"],
+      "details": {
+        "IndicParam": "Questions cover language-specific linguistics, literature, grammar, and culturally grounded general knowledge drawn from Indian graduate-level UGC-NET examinations. Topics include Indian literature, history, and cultural knowledge relevant to each language's speakers."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native speaker experts", "senior reviewers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Indian Institute of Management Indore", "BharatGen"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Annotators were compensated at a rate of $1 per 10 questions.",
+      "irb_ethics_review": false,
+      "evidence": "As the dataset is built exclusively from existing public materials and involves no new data collection from human participants, no formal review by an Institutional Review Board (IRB) or equivalent ethics committee was required or conducted. Instead, the authors performed an internal assessment of data provenance, potential societal impacts, licensing considerations, and responsible use."
+    },
+    "english_centricity_notes": "The benchmark explicitly targets low- and extremely low-resource Indic languages that are underserved by existing benchmarks. It does not rely on English sources. A Sanskrit-English code-mixed variant is included as a separate evaluation set. The evaluation prompt is in English, but the questions and options are in the native languages.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India", "Nepal"],
+      "also_represented": [],
+      "notably_excluded": ["Dravidian languages (e.g. Tamil, Telugu, Kannada)", "High-resource Indo-Aryan languages (e.g. Hindi, Bengali, Punjabi)"],
+      "evidence": "These languages are spoken by approximately 280 million people across the Indian subcontinent. 10 languages are recognized as scheduled languages in the Indian Constitution. Rajasthani, though not a scheduled language, is spoken by roughly 25 million people. The paper explicitly focuses on low- and extremely low-resource Indic languages that are underrepresented in existing benchmarks."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

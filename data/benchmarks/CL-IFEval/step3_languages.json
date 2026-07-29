@@ -1,0 +1,29 @@
+{
+  "total_languages": 6,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["CL-IFEval", "CL-GSM Symbolic"]
+    }
+  }
+}

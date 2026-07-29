@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "Belebele",
+  "paper_id": "2024.acl-long.44",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present BELEBELE, a multiple-choice machine reading comprehension (MRC) dataset spanning 122 language variants.",
+  "total_languages_claimed": 122,
+  "total_datasets": 1,
+  "dataset_names": ["Belebele"],
+  "task_categories": ["multiple-choice reading comprehension"],
+  "brief_description": "A fully parallel multiple-choice machine reading comprehension (MRC) benchmark spanning 122 language variants across 29 scripts and 27 language families, with 900 questions based on passages from the FLORES-200 dataset. Questions were created in English and professionally translated to all target languages."
+}
