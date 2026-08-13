@@ -442,15 +442,6 @@ export const docEntries = [
     "prefix": null,
     "isSub": false,
     "icon": "BookmarkAdd24Regular"
-  },
-  {
-    "path": "/playbook/landingpage",
-    "label": "Landingpage",
-    "base": "landingpage",
-    "content": "/public/chapters/landingpage.md",
-    "prefix": null,
-    "isSub": false,
-    "icon": "Document24Regular"
   }
 ];
 
@@ -650,9 +641,5 @@ export const docOrder = [
   {
     "path": "/playbook/100-attribution",
     "label": "Attribution"
-  },
-  {
-    "path": "/playbook/landingpage",
-    "label": "Landingpage"
   }
 ];
