@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "M-IFEval": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Shared instructions from the original English IFEval were adapted (not machine-translated) to the three target languages, while language-specific instructions were created natively. The paper states: 'we propose a new, multilingual version of IFEval that is not simply a translation of previous datasets but contains language-specific instructions for novel evaluation.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Language-specific instructions address script, punctuation, and character constraints particular to each language (e.g., katakana/hiragana/kanji for Japanese, ñ/ü/accents for Spanish, œ/ç/accents for French, taigen-dome for Japanese). However, the shared instructions originate from IFEval's English-centric design. Cultural grounding is limited to linguistic/script features rather than broader cultural knowledge or context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Each language lead developed and manually verified evaluation functions, prompts, and correct evaluation arguments. At least 4 unique prompts per instruction for Spanish and Japanese, 7 per instruction for French. Prompts were LLM-generated then manually selected and edited."
+    }
+  }
+}

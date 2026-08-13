@@ -1,0 +1,86 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "UL-OCR",
+        "Autocomplete (Universal Dependencies)",
+        "Dakshina Transliteration",
+        "TyDi QA / XOR QA (In-language QA)",
+        "MasakhaNER-X"
+      ],
+      "evidence": "UL-OCR uses public-domain books in target languages. Autocomplete derives from Universal Dependencies treebanks in each language. Dakshina uses Wikipedia sentences in native scripts. TyDi QA collects questions natively in each language. MasakhaNER is human-annotated in African languages by the Masakhane community."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "FLEURS (ASR)",
+        "FLORES-101 (MT)",
+        "MTOP++ (Semantic Parsing)"
+      ],
+      "evidence": "FLEURS recordings are of FLORES-101 sentences 'translated from English Wikipedia to 101 languages'. FLORES-101 MT source data 'comes from Wikinews, Wikijunior, and Wikivoyage' in English. MTOP++ adapts 'the test split of MTOP' English data via professional translation to 15 languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "Autocomplete (Universal Dependencies)",
+        "Dakshina Transliteration",
+        "TyDi QA / XOR QA (In-language QA)",
+        "MasakhaNER-X",
+        "MTOP++ (Semantic Parsing)"
+      ],
+      "details": {
+        "Autocomplete (Universal Dependencies)": "Natural text from each language's treebanks.",
+        "Dakshina Transliteration": "Wikipedia content natively in each South Asian language.",
+        "TyDi QA / XOR QA (In-language QA)": "Natively authored questions from each language's Wikipedia, reflecting local topics.",
+        "MasakhaNER-X": "Human-annotated by African researchers from the Masakhane community in African languages.",
+        "MTOP++ (Semantic Parsing)": "Partial: Western-centric entities replaced with culturally relevant entities for each target language, though underlying task structure is from English MTOP."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mostly yes, where reported",
+      "evidence": "Dakshina transliteration: 'human-romanized by native speakers'. MasakhaNER: 'created by Masakhane' (community of African NLP researchers working on their own languages). MTOP++: professional translators with localization. For other datasets (OCR, autocomplete), annotator nativeness is not explicitly confirmed."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "native_speakers",
+        "professional_translators",
+        "community_researchers",
+        "crowd_workers"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Google",
+        "Masakhane community",
+        "Meta/NLLB Team (FLORES-101 original)",
+        "Universal Dependencies consortium"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The paper lists detailed author contributions in Appendix A but does not report annotator demographics, compensation, or IRB review. Most annotations were done by Google researchers/contractors or community efforts (Masakhane)."
+    },
+    "english_centricity_notes": "Multiple datasets are translated from English sources: FLEURS/FLORES-101 (English Wikipedia/Wikinews), MTOP (English virtual assistant queries). The benchmark explicitly acknowledges English-centricity by noting Flan-PaLM 'fails to reliably apply its English-centric knowledge to ULs' and that models 'generalize more easily to languages written in an alphabet closer to the Latin alphabet'. Cross-language QA explicitly uses English passages. However, the benchmark mitigates this by: (1) using natively-authored datasets where possible (TyDi QA, MasakhaNER, UD Autocomplete), (2) localizing MTOP++ entities, and (3) translating new Indic QA data from existing Indic languages rather than English.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": [
+        "Sub-Saharan Africa",
+        "South Asia",
+        "Southeast Asia",
+        "Eastern Europe",
+        "Central Asia",
+        "Western Europe"
+      ],
+      "also_represented": [
+        "East Asia",
+        "Middle East",
+        "Oceania (minimally)",
+        "Latin America"
+      ],
+      "notably_excluded": [
+        "Indigenous Americas",
+        "Pacific Islands",
+        "Australia"
+      ],
+      "evidence": "88 under-represented languages spanning Africa (20+ via MasakhaNER, FLEURS), South Asia (13 transliteration languages, 23 new Indic QA languages), Europe (multiple via UD autocomplete), Central Asia (Kazakh, Kyrgyz, Uzbek, Tajik, Uyghur). Table 5 shows language families including Indo-European, Atlantic-Congo, Afro-Asiatic, Dravidian, Turkic, Austronesian, Uralic, Austroasiatic, Sino-Tibetan, Tai-Kadai, Kartvelian, Mongolic-Khitan, Mande, Nilotic."
+    }
+  }
+}

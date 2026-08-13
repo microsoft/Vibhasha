@@ -1,0 +1,20 @@
+{
+  "benchmark_name": "INDIC-DIALECT",
+  "paper_id": "2601.10388v1",
+  "year": 2026,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce INDIC-DIALECT, a human-curated parallel corpus of 13k sentence pairs spanning 11 dialects and 2 languages: Hindi and Odia. Using this corpus, we construct a multi-task benchmark with three tasks: dialect classification, multiple-choice question (MCQ) answering, and machine translation (MT).",
+  "total_languages_claimed": 13,
+  "total_datasets": 3,
+  "dataset_names": [
+    "INDIC-DIALECT Dialect Classification",
+    "INDIC-DIALECT MCQ",
+    "INDIC-DIALECT Machine Translation"
+  ],
+  "task_categories": [
+    "text_classification",
+    "multiple_choice_qa",
+    "machine_translation"
+  ],
+  "brief_description": "A human-curated parallel corpus of 13,000 sentence pairs spanning 11 Indian dialects and 2 standard languages (Hindi and Odia) from three Indian states (Himachal Pradesh, Uttar Pradesh, Odisha), used to construct a multi-task benchmark evaluating dialect classification, multiple-choice question answering, and machine translation between dialects and their corresponding standard languages."
+}

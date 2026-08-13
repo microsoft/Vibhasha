@@ -1,0 +1,19 @@
+{
+  "benchmark_name": "TUMLU",
+  "paper_id": "2502.11020v2",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "The Turkish dataset is TurkishMMLU, which was a separate project (Yüksel et al., 2024). The remaining 8 language subsets are newly created in this paper.",
+  "total_languages_claimed": 9,
+  "total_datasets": 2,
+  "dataset_names": [
+    "TUMLU",
+    "TUMLU-mini"
+  ],
+  "task_categories": [
+    "multiple-choice question answering",
+    "knowledge assessment",
+    "language understanding"
+  ],
+  "brief_description": "A comprehensive, natively developed multilingual language understanding benchmark for Turkic languages, consisting of 38,139 middle- and high-school level multiple-choice questions across 11 academic subjects in 9 Turkic languages (Azerbaijani, Crimean Tatar, Karakalpak, Kazakh, Kyrgyz, Tatar, Turkish, Uyghur, and Uzbek). TUMLU-mini is a balanced and manually verified subset with ~100 questions per subject per language."
+}

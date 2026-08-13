@@ -1,0 +1,166 @@
+{
+  "assessments": {
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Crowd-sourced English data is translated to ten other languages by professional translators and used for evaluation, while the MultiNLI training data is used for training.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Original data crowd-sourced in English (MultiNLI), then professionally translated. No native authoring of test items in target languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "English-sourced NLI examples translated to other languages. Content reflects English/Western cultural context.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional human translation. Paper notes that translated test sets may not fully capture true cross-lingual performance due to translationese artifacts."
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "A subset of the PAWS dev and test sets (Zhang et al., 2019) was translated to six other languages by professional translators and is used for evaluation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Original PAWS data automatically generated from English, then professionally translated. No native authoring in target languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Source data from English Wikipedia and Quora, translated to other languages. English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional human translation from English source. PAWS source uses word scrambling for adversarial paraphrase generation."
+    },
+    "Universal Dependencies POS": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 labels POS test sets as 'ind. annot.' (independently annotated). Treebanks are created from native text in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not detail whether UD treebank annotators are native speakers, though UD treebanks are typically created by native-speaking linguists. Only states 'We use POS tagging data from the Universal Dependencies v2.5 (Nivre et al., 2018) treebanks.'",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Treebanks are created from native text in each language with independently annotated data, not translated from English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Uses a universal tagset of 17 POS tags across all languages. Quality varies by treebank. Test set sizes range from 47 to 20,436 sentences per language."
+    },
+    "WikiANN": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 labels NER test sets as 'ind. annot.' (independently annotated). Named entities automatically annotated from Wikipedia in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Named entities in Wikipedia were automatically annotated with LOC, PER, and ORG tags in IOB2 format using a combination of knowledge base properties, cross-lingual and anchor links, self-training, and data selection. No human annotators involved.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Wikipedia content is in native languages and may reflect local entities, but annotation is fully automatic and relies on language-agnostic knowledge base properties and cross-lingual links.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Fully automatic annotation with no human quality control mentioned in this paper. Uses balanced splits from Rahimi et al. (2019). Test sizes range from 1,000 to 10,000 per language."
+    },
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "A subset of the English SQuAD v1.1 (Rajpurkar et al., 2016) dev set was translated into ten other languages by professional translators and is used for evaluation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Original SQuAD data crowdsourced in English, then professionally translated. No native question authoring in target languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "English Wikipedia passages and questions translated to target languages. Content reflects English-language Wikipedia topics.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional human translation. Paper finds automatically translated test sets underestimate mBERT performance by ~3.0 F1 points, suggesting translation quality matters."
+    },
+    "MLQA": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Context passages are native (mined from Wikipedia in target languages), but questions are crowdsourced in English and translated, with answer spans aligned. 'The evaluation data...was obtained by automatically mining target language sentences that are parallel to sentences in English from Wikipedia, crowd-sourcing annotations in English, and translating the question and aligning the answer spans in the target languages.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Context is native from Wikipedia. Questions are crowdsourced in English (not by native speakers of target languages), then translated and aligned.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Context passages are from Wikipedia in target languages (native content), but questions originate in English. Mixed cultural grounding.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Mixed methodology: automatic mining of parallel contexts, English crowdsourced questions, and translation/alignment of questions and answers to target languages."
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 labels TyDiQA-GoldP test sets as 'ind. annot.' (independently annotated). Questions written without seeing answers in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Questions have been written without seeing the answers, implying native speaker question creation. TyDi QA (Clark et al., 2020) is a benchmark for information-seeking QA in typologically diverse languages with questions from native speakers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions written by native speakers reflect natural information-seeking behavior in each language. 'questions have been written without seeing the answers, leading to 3x and 2x less lexical overlap compared to XQuAD and MLQA respectively.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Gold passage version simplifies the primary task. More challenging and naturalistic than translated QA datasets due to questions written without seeing answers. Domain: Wikipedia."
+    },
+    "BUCC": {
+      "translated": {
+        "value": false,
+        "evidence": "Parallel sentence extraction from comparable corpora. Not a translation of English data.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not describe how BUCC data was annotated or who created it beyond referencing the shared task (Zweigenbaum et al., 2017; 2018).",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not describe the cultural content of BUCC data. Domain is Wikipedia and news.",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": "Shared task data. Evaluated without fine-tuning using cosine similarity. Domain: Wikipedia and news."
+    },
+    "Tatoeba": {
+      "translated": {
+        "value": false,
+        "evidence": "Community-contributed English-aligned sentence pairs, not translated from a single English source.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Tatoeba is a community platform. Paper does not describe whether contributors are native speakers of the languages they contribute to.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not describe the cultural content of Tatoeba sentences. Domain listed as 'misc.'",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": "Community-contributed sentence pairs covering up to 1,000 pairs per language. Quality depends on community contributions. 122 languages in full dataset."
+    }
+  }
+}

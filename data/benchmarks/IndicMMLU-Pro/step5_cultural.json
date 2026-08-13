@@ -1,0 +1,45 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "IndicMMLU-Pro is entirely translated from the English MMLU-Pro dataset. No datasets were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IndicMMLU-Pro"],
+      "evidence": "we use IndicTrans2 to convert the questions and corresponding options from the original English MMLU Pro dataset into each of the target languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes_for_proofreading_only",
+      "evidence": "The participating experts were native speakers of their respective languages, with fluency in English and formal education in their native languages. However, these 13 experts only performed proofreading/quality evaluation, not content creation. The actual dataset was machine-translated."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "expert_proofreaders"],
+      "total_annotators_reported": 13,
+      "affiliations": [
+        "University of South Carolina",
+        "Rochester Institute of Technology",
+        "Independent Researchers",
+        "Meta AI",
+        "Amazon Gen AI",
+        "Amazon"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Experts were unpaid volunteers. Paper states: 'We extend our deepest gratitude to the experts who volunteered their time and effort' and 'generously volunteering their time and expertise to support this research endeavor.'",
+      "irb_ethics_review": null,
+      "evidence": "13 expert proofreaders, each a native speaker of one of the 9 languages, reviewed 9,000 sentence pairs (1,000 per language). Each language had at least one expert, four languages had two. No IRB or ethics review process is mentioned in the paper."
+    },
+    "english_centricity_notes": "The entire benchmark is a direct machine translation of the English MMLU-Pro. All 14 subject categories and question content originate from an English-centric source. The paper acknowledges this is an adaptation approach: 'IndicMMLU-Pro adapts the robust multi-task principles to the unique context of Indic languages.' No cultural adaptation of content was performed beyond linguistic translation.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India"],
+      "also_represented": ["Pakistan (Urdu, Punjabi)"],
+      "notably_excluded": ["Other South Asian countries with Indic language speakers"],
+      "evidence": "The benchmark targets 9 Indic languages spoken primarily in the Indian subcontinent: Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Urdu, Kannada, and Punjabi. Authors note: 'Known by more than 1.5 billion people in the Indian subcontinent.' Experts listed are associated with Indian names/institutions, though content is translated from English and not region-specific."
+    }
+  }
+}

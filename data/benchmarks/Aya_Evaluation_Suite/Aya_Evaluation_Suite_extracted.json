@@ -1,0 +1,672 @@
+{
+  "benchmark_name": "Aya Evaluation Suite",
+  "paper_id": "2402.06619",
+  "year": 2024,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "It consists of 250 human-written prompts for each of 7 languages, 200 automatically translated but human-selected prompts for 101 languages (114 dialects), and human-edited prompts of the latter for 6 languages, and the English originals.",
+  "total_languages_claimed": 101,
+  "total_datasets": 3,
+  "dataset_names": [
+    "aya-human-annotated",
+    "dolly-machine-translated",
+    "dolly-human-edited"
+  ],
+  "task_categories": [
+    "open-ended generation"
+  ],
+  "brief_description": "A multilingual evaluation suite for assessing open-ended generation quality of LLMs, consisting of 25,750 prompts: 250 original human-curated prompts in each of 7 languages, 200 machine-translated prompts from English Dolly in 101 languages (114 dialects), and human post-edited translations of those prompts in 6 languages.",
+  "datasets": [
+    {
+      "dataset_name": "aya-human-annotated",
+      "variant_name": null,
+      "variant_notes": "Test split of the Aya Dataset, containing original human-curated prompt-completion pairs selected from languages with at least 2000 original annotations",
+      "task_type": "open-ended generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": [
+        "English",
+        "Portuguese",
+        "Simplified Chinese",
+        "Standard Arabic",
+        "Telugu",
+        "Turkish",
+        "Yoruba"
+      ],
+      "annotation_method": "Original human curation by fluent speakers of each language via the Aya Annotation Platform; peer-reviewed through a quality scoring system",
+      "data_creator_info": {
+        "creator_type": "community_volunteers",
+        "creator_affiliation": "Cohere For AI Community (2,997 registered users from 119 countries)",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Section 2.1: 'Contributors We aimed to include individuals from diverse backgrounds—not limited to AI experts—enabling anyone proficient in a language to contribute.' Demographics reported in Figure 3 (age, gender). No financial compensation: 'The motivations of contributors were not based on financial remuneration but on ideals of community, identity, and social justice.' (Section 7)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "250 prompts per language, 1,750 total. Selected at random from original annotations in the Aya Dataset. Languages chosen for diversity in resourcedness, script, and language family."
+    },
+    {
+      "dataset_name": "dolly-machine-translated",
+      "variant_name": null,
+      "variant_notes": "200 human-selected prompts from English Dolly dataset, automatically translated via NLLB into 101 languages (114 dialects), plus the original English prompts (115 dialect entries total)",
+      "task_type": "open-ended generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 101,
+      "language_list": null,
+      "annotation_method": "Two human reviewers selected 200 from 500 uniformly-sampled English Dolly prompts, excluding culturally/geographically specific prompts; a third reviewer broke ties. Prompts then machine-translated with NLLB 3.3B model.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Databricks (original Dolly prompts by employees); Cohere For AI (selection and translation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section 6: 'We separate a curated subset of 200 Dolly prompts [Conover et al., 2023]... two reviewers inspected a set of initially 500 English prompts... When two reviewers disagreed, a third reviewer was asked to break the tie.' Original Dolly created by Databricks employees (Conover et al., 2023)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Dolly (Conover et al., 2023)",
+      "notes": "Covers 101 languages corresponding to the mT5 language set, with 114 dialect variants via NLLB. Including English originals, 115 dialect entries. Paper warns 'the expressiveness of a translated evaluation set is limited by the quality of the translation model.' Standard Arabic in Latin script and Minangkabau in Arabic script were excluded due to translation errors."
+    },
+    {
+      "dataset_name": "dolly-human-edited",
+      "variant_name": null,
+      "variant_notes": "Post-edited versions of the dolly-machine-translated prompts for 6 languages, edited by professional human annotators",
+      "task_type": "open-ended generation",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 6,
+      "language_list": [
+        "Arabic",
+        "Hindi",
+        "Spanish",
+        "French",
+        "Serbian",
+        "Russian"
+      ],
+      "annotation_method": "Machine translation via NLLB followed by human post-editing by professional annotators. Each translation post-edited by one annotator, then a second annotator assessed quality and proposed final edits. 3-4 annotators per language.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Cohere",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Appendix F.1: 'Annotator Selection The primary demographic make-up of the participants in the evaluations was recruited based on their proficiency in the language groups.' Appendix F.1 Compensation: 'The annotators were paid 30 CAD per hour. No special consideration was made to the hourly rate as that is the standard rate offered to Cohere's annotators who work on highly complex tasks.' Demographics: 'We do not ask any annotators to share or report any of these statistical pieces of information in a formal way; any insights into this are gathered organically and through self-reporting by the annotators.'"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Dolly (Conover et al., 2023)",
+      "notes": "200 prompts per language, 1,200 total. Post-editing effort varied: Russian had highest HTER (37.43), French had lowest (5.56). At least 41% of prompts were edited in all languages, indicating translation errors are common."
+    }
+  ],
+  "total_languages": 101,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Arabic": {
+      "iso_code": "ara",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["aya-human-annotated", "dolly-machine-translated"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["dolly-machine-translated", "dolly-human-edited"]
+    },
+    "Achinese": {
+      "iso_code": "ace",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Azerbaijani": {
+      "iso_code": "aze",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Balinese": {
+      "iso_code": "ban",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Toba Batak": {
+      "iso_code": "bbc",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Belarusian": {
+      "iso_code": "bel",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bemba": {
+      "iso_code": "bem",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Banjar": {
+      "iso_code": "bjn",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Bulgarian": {
+      "iso_code": "bul",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Welsh": {
+      "iso_code": "cym",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Danish": {
+      "iso_code": "dan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Esperanto": {
+      "iso_code": "epo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Estonian": {
+      "iso_code": "est",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Basque": {
+      "iso_code": "eus",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Finnish": {
+      "iso_code": "fin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Fon": {
+      "iso_code": "fon",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Scottish Gaelic": {
+      "iso_code": "gla",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Irish": {
+      "iso_code": "gle",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Galician": {
+      "iso_code": "glg",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Haitian Creole": {
+      "iso_code": "hat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Croatian": {
+      "iso_code": "hrv",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Icelandic": {
+      "iso_code": "isl",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Javanese": {
+      "iso_code": "jav",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kashmiri": {
+      "iso_code": "kas",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kanuri": {
+      "iso_code": "kau",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Khmer": {
+      "iso_code": "khm",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Kurdish": {
+      "iso_code": "kur",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Lao": {
+      "iso_code": "lao",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Latvian": {
+      "iso_code": "lav",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ligurian": {
+      "iso_code": "lij",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Luxembourgish": {
+      "iso_code": "ltz",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Madurese": {
+      "iso_code": "mad",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Manipuri": {
+      "iso_code": "man",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Minangkabau": {
+      "iso_code": "min",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Macedonian": {
+      "iso_code": "mkd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malagasy": {
+      "iso_code": "mlg",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Maltese": {
+      "iso_code": "mlt",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Mongolian": {
+      "iso_code": "mon",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Maori": {
+      "iso_code": "mri",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Burmese": {
+      "iso_code": "mya",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Nepali": {
+      "iso_code": "nep",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ngaju": {
+      "iso_code": "nij",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Dutch": {
+      "iso_code": "nld",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Norwegian": {
+      "iso_code": "nor",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Chichewa": {
+      "iso_code": "nya",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Persian": {
+      "iso_code": "pes",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Polish": {
+      "iso_code": "pol",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Pashto": {
+      "iso_code": "pus",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sinhala": {
+      "iso_code": "sin",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Slovak": {
+      "iso_code": "slk",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Slovenian": {
+      "iso_code": "slv",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Samoan": {
+      "iso_code": "smo",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Shona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sindhi": {
+      "iso_code": "snd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Southern Sotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Albanian": {
+      "iso_code": "sqi",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Sundanese": {
+      "iso_code": "sun",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tamasheq": {
+      "iso_code": "taq",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Tajik": {
+      "iso_code": "tgk",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Twi": {
+      "iso_code": "twi",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Xhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Yiddish": {
+      "iso_code": "yid",
+      "datasets_present_in": ["dolly-machine-translated"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["dolly-machine-translated"]
+    }
+  },
+  "assessments": {
+    "aya-human-annotated": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts' and 'aya-human-annotated test set... The test set of the Aya Dataset contains 1,750 of the total instances (250 instances from 7 languages), selected at random from original annotations.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 2.1: 'Inputs from fluent speakers of each language ensure that the dataset is more likely to be organic, fluent, and representative of the speakers' cultures.' Section 1: 'We worked with fluent speakers of languages from around the world to collect natural instances of instructions and completions.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts.' Section 2.2.1: 'This task aims to encourage annotators to submit fresh samples that are representative of their language, culture, literature, history, and region.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Peer-reviewed via Aya Score quality mechanism. Average approval ratio for Aya original annotations was ~0.81 (highest among all data groups). Contributors were community volunteers, not professionally compensated. Some language-specific annotator skew exists: for 12 languages, the 5 most active annotators contributed all examples."
+    },
+    "dolly-machine-translated": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 6: 'We automatically translate the prompts with NLLB into 101 languages and their dialects that are captured by NLLB.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Section 6: Prompts are from English Dolly dataset, selected by two (English-speaking) reviewers, then machine-translated. No native speakers involved in translation. 'We automatically translate the prompts with NLLB into 101 languages.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 6: 'Our aim with this selection was to exclude any culturally or geographically specific prompts and completions.' Prompts were specifically chosen for cross-cultural universality; culturally-specific English content was removed, but the source remains English-centric Dolly dataset.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Paper warns: 'the expressiveness of a translated evaluation set is limited by the quality of the translation model and may adversely impact an estimate of ability in languages where translations are not adequate.' Standard Arabic in Latin script and Minangkabau in Arabic script were excluded due to significant translation errors. Mean ChrF++ translation quality is 48.17 (min: 10.9, max: 69.6)."
+    },
+    "dolly-human-edited": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 6: 'The automatic translation process may introduce errors in the prompts... To enhance the reliability of testing on these prompts, we therefore enlist professional human annotators to post-edit the examples.' Appendix F.3 instructions: 'The prompts are originally machine-translated from English.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Appendix F.1: 'The primary demographic make-up of the participants in the evaluations was recruited based on their proficiency in the language groups. The proficiency was self-reported, and our requirements were natively proficient or professionally proficient in the specific languages needed for the project.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 6: The source prompts are from English Dolly with culturally-specific content removed. Post-editing corrects translation quality but does not add cultural grounding. 'some prompts, even when translated correctly, might still not transfer well into other languages—which is the main difference between a translated English-centric set like this and an evaluation set originally written in each target language like aya-human-annotated.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional annotators paid 30 CAD/hour. Each translation post-edited by one annotator, then verified by a second annotator. 3-4 annotators per language. Post-editing effort varied significantly: Russian had highest HTER (37.43), French lowest (5.56). At least 41% of prompts were edited in all languages, indicating common translation errors."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["aya-human-annotated"],
+      "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts.' Section 2.2.1: 'This task facilitates the inclusion of human-generated organic content by allowing annotators to submit original prompt-completion pairs in their language... aims to encourage annotators to submit fresh samples that are representative of their language, culture, literature, history, and region.'"
+    },
+    "datasets_translated_from_english": {
+      "list": ["dolly-machine-translated", "dolly-human-edited"],
+      "evidence": "Section 6: 'We separate a curated subset of 200 Dolly prompts... We automatically translate the prompts with NLLB into 101 languages.' dolly-human-edited is post-edited from the same English-sourced machine translations."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["aya-human-annotated"],
+      "details": {
+        "aya-human-annotated": "Original prompts written by fluent speakers in 7 languages, representing their language, culture, literature, history, and region. Section 6: 'The first set represents culturally-grounded and original prompts.'"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mixed",
+      "evidence": "aya-human-annotated: fluent speakers of each language (community volunteers). dolly-machine-translated: no native speakers involved (machine translation). dolly-human-edited: 'natively proficient or professionally proficient' annotators (Appendix F.1). Overall: mixed across the three subsets."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "community_volunteers (aya-human-annotated: 2,997 registered users from 119 countries)",
+        "researchers (dolly-machine-translated: prompt selection by reviewers)",
+        "professional_annotators (dolly-human-edited: Cohere annotators, 3-4 per language)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Cohere For AI Community (aya-human-annotated)",
+        "Databricks (original Dolly prompts)",
+        "Cohere (dolly-human-edited post-editors)"
+      ],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "aya-human-annotated: No financial compensation; volunteers motivated by community, identity, and social justice (Section 7). dolly-human-edited: Professional annotators paid 30 CAD per hour (Appendix F.1).",
+      "irb_ethics_review": null,
+      "evidence": "Section 7: 'The motivations of contributors were not based on financial remuneration but on ideals of community, identity, and social justice.' Appendix F.1: 'The annotators were paid 30 CAD per hour.' Demographics for Aya community volunteers reported in Figure 3 (age, gender distribution). For dolly-human-edited annotators: 'We do not ask any annotators to share or report any of these statistical pieces of information in a formal way.'"
+    },
+    "english_centricity_notes": "2 of 3 subsets (dolly-machine-translated and dolly-human-edited) are derived from English Dolly prompts. The paper explicitly acknowledges this limitation: 'some prompts, even when translated correctly, might still not transfer well into other languages—which is the main difference between a translated English-centric set like this and an evaluation set originally written in each target language like aya-human-annotated.' The aya-human-annotated subset (7 languages) is the only fully non-English-centric component. The paper recommends pairing translated sets with aya-human-annotated or dolly-human-edited for more reliable evaluation.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Asia", "Africa", "Europe", "Latin America"],
+      "also_represented": ["Oceania (via Samoan, Maori)"],
+      "notably_excluded": ["Indigenous Americas", "most Oceanic languages"],
+      "evidence": "Figure 4: 'more than half of all contributions for the Aya project came from Asia with 58.8%, followed by the African region with 27.4%. Europe, Latin America, and other regions account for the remaining 13.8% of the contributions.' The evaluation suite covers 101 languages spanning multiple continents but is concentrated in languages with NLLB/mT5 support. Figure 2 shows contributors from 119 countries with India having the highest number (346/2,997)."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "Extraction focuses on the Aya Evaluation Suite component of the broader Aya paper (which also introduces the Aya Dataset, Aya Collection, and Aya Annotation Platform). The 101 language count for the eval suite comes from the data card (Appendix J). The full language list in step3 is derived from Table 5 (114 entries for the Aya Collection); the eval suite's dolly-machine-translated covers 101 of these languages (114 dialect variants via NLLB). Some Table 5 languages may not be in the eval suite if they are community-contributed additions beyond the mT5 101 language set."
+  }
+}

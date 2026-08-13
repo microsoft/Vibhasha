@@ -1,0 +1,62 @@
+{
+  "total_languages": 4,
+  "languages": {
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": [
+        "NER-Grit",
+        "TyDiQA-GoldP",
+        "NusaX",
+        "MLHSD",
+        "FLORES-200",
+        "XLSum",
+        "IndoNLI",
+        "XCOPA",
+        "LINDSEA (Indonesian)",
+        "Cultural Representation Dataset",
+        "Cultural Sensitivity Dataset"
+      ]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": [
+        "VLSP2018",
+        "XQuAD",
+        "UIT-VSFC",
+        "ViHSD",
+        "FLORES-200",
+        "XLSum",
+        "XNLI",
+        "XCOPA"
+      ]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": [
+        "ThaiNERv2",
+        "XQuAD",
+        "Wisesight",
+        "Thai Toxicity Tweet",
+        "FLORES-200",
+        "XLSum",
+        "XNLI",
+        "XCOPA"
+      ]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": [
+        "Naamapadam",
+        "IndicQA",
+        "IndicSentiment",
+        "FLORES-200",
+        "XLSum",
+        "IndicXNLI",
+        "XCOPA",
+        "LINDSEA (Tamil)",
+        "Cultural Representation Dataset",
+        "Cultural Sensitivity Dataset"
+      ]
+    }
+  }
+}

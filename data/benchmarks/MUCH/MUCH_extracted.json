@@ -1,0 +1,144 @@
+{
+  "benchmark_name": "MUCH",
+  "paper_id": "2511.17081v2",
+  "year": 2026,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce MUCH, a new multilingual claim hallucination dataset and evaluation protocol... The dataset contains 4,873 pairs of question and LLM-response.",
+  "total_languages_claimed": 4,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MUCH"
+  ],
+  "task_categories": [
+    "claim-level uncertainty quantification",
+    "hallucination detection",
+    "factuality verification"
+  ],
+  "brief_description": "MUCH is a multilingual claim-level hallucination benchmark comprising 4,873 LLM-generated responses (20,751 claims) across four European languages (English, French, Spanish, German), with binary factuality annotations and 24 logits per token, designed for evaluating uncertainty quantification methods under realistic deployment conditions.",
+  "datasets": [
+    {
+      "dataset_name": "MUCH",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "claim-level factuality classification (binary: factual / non-factual)",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": "Questions sourced from the multilingual Mu-SHROOM test set (already available in all 4 languages); LLM responses generated natively in each language by multilingual instruction-tuned models. No translation step applied.",
+      "num_languages": 4,
+      "language_list": [
+        "English",
+        "French",
+        "Spanish",
+        "German"
+      ],
+      "annotation_method": "Automated annotation using GPT-4o (gpt-4o-2024-11-20) and GPT-4.1 (gpt-4.1-2025-04-14) independently; only samples where both models agree on all claim labels are retained (4,873 of 6,448 samples). A 200-sample subset (50 per language, 867 claims) was independently double-annotated by two human annotators for quality verification.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "LIX (École Polytechnique, IP Paris, CNRS), LIPN (Sorbonne Paris Nord), Crédit Agricole SA",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Two human annotators fluent in all four languages independently annotated 200 samples for quality verification. No demographic or compensation details reported."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Questions from Mu-SHROOM (Vázquez et al., 2025, SemEval-2025 Task 3), released under CC-BY-4.0 license.",
+      "notes": "4,873 LLM-generated responses containing 20,751 binary claim annotations. Generated using 4 instruction-tuned models (Llama 3.1 8B, Llama 3.2 3B, Ministral 8B, Gemma 3 4B) at 2 temperatures (0.7 and 1.0), yielding 8 generations per question. 24 logits per generated token are provided. Claim segmentation performed by much_segmenter, a deterministic rule-based algorithm. Total annotation cost ~USD 50 using GPT APIs."
+    }
+  ],
+  "total_languages": 4,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["MUCH"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["MUCH"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["MUCH"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["MUCH"]
+    }
+  },
+  "assessments": {
+    "MUCH": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions are sourced from the multilingual Mu-SHROOM test set, which provides questions already in each target language. LLM responses are generated natively in each language by multilingual instruction-tuned models, not translated. The paper states: 'We collect questions by filtering the 200 questions in English, French, Spanish and German from Mu-SHROOM dataset.' However, whether the Mu-SHROOM questions themselves originate from English is not explicitly stated in this paper.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": "INSUFFICIENT_INFO: For the primary annotations (automated via GPT-4o and GPT-4.1), the concept of native speakers does not apply. For human verification, the paper states 'Two human annotators fluent in all four languages' but does not specify whether they are native speakers of any of the four languages.",
+        "evidence": "Two human annotators fluent in all four languages then independently annotated these 200 samples.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MUCH is a factual QA benchmark based on Wikipedia knowledge. Questions are factual and non-ambiguous, verifiable against Wikipedia pages. There is no cultural grounding or adaptation to specific cultural contexts; the benchmark evaluates objective factual correctness of LLM claims.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Cohen's kappa between GPT-4o and GPT-4.1 is 0.753 (before filtering). After filtering for agreement, inter-human kappa reaches 0.922 (vs 0.797 before filtering). GPT-vs-human kappa after filtering is 0.821 and 0.848 for the two annotators respectively, considered 'almost perfect' agreement. A gold-standard human-annotated subset of 200 samples (867 claims) is released alongside the benchmark."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "MUCH questions are sourced from the Mu-SHROOM multilingual dataset. The LLM generations are produced natively in each language, but the questions themselves originate from Mu-SHROOM. It is unclear whether Mu-SHROOM questions in French, Spanish, and German were originally authored in those languages or translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "The LLM responses in MUCH are not translated; they are generated natively in each target language by multilingual models. The source questions come from Mu-SHROOM, which provides them in all four languages, but the paper does not clarify the provenance of the non-English questions in Mu-SHROOM."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: Primary annotations are automated (GPT-4o and GPT-4.1). Human verification annotators are described as 'fluent in all four languages' but nativeness is not specified.",
+      "evidence": "Two human annotators fluent in all four languages then independently annotated these 200 samples."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "automated (GPT-4o and GPT-4.1)",
+        "researchers (human verification)"
+      ],
+      "total_annotators_reported": 2,
+      "affiliations": [
+        "LIX (École Polytechnique, IP Paris, CNRS)",
+        "LIPN (Sorbonne Paris Nord)",
+        "Crédit Agricole SA"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Primary annotation by GPT-4o and GPT-4.1 (~17M completion tokens, ~13k requests, ~USD 50). Quality verification by two human annotators fluent in all four languages on a 200-sample subset. No demographics, compensation, or IRB details reported. The work received financial support from the research chair Trustworthy and Responsible AI at École Polytechnique and HPC resources from GENCI/IDRIS."
+    },
+    "english_centricity_notes": "The paper acknowledges English-centricity in evaluation: 'current methods perform better in English than in other languages because they rely on NLI models that are more performant in English.' The NLI model used (microsoft/deberta-large-mnli) is 'not optimized for French, Spanish, and German, which is particularly problematic for Spanish, where CCP and SAR achieved poor results.' The benchmark itself covers only four European languages using Latin script. The paper notes: 'incorporating languages that do not use the Latin alphabet, such as Chinese, Arabic, or Russian, would be valuable, though it would increase the complexity of the segmenter.'",
+    "geographic_representation": {
+      "primary_region": "Western Europe",
+      "sub_regions": [],
+      "also_represented": [
+        "Latin America (via Spanish)",
+        "North America (via English, French, Spanish)"
+      ],
+      "notably_excluded": [
+        "Asia",
+        "Africa",
+        "Oceania",
+        "Eastern Europe",
+        "Middle East",
+        "Non-Latin-script languages"
+      ],
+      "evidence": "Benchmark includes only four European languages (English, French, Spanish, German). Paper states: 'We focus on these languages because their punctuation and stopword systems are very similar, enabling the use of a single claim segmentation algorithm without requiring language detection.' Authors acknowledge this as a limitation: 'expanding the benchmark to include additional languages would improve its generality.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

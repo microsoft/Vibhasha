@@ -1,0 +1,233 @@
+{
+  "benchmark_name": "TUMLU",
+  "paper_id": "2502.11020v2",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "The Turkish dataset is TurkishMMLU, which was a separate project (Yüksel et al., 2024). The remaining 8 language subsets are newly created in this paper.",
+  "total_languages_claimed": 9,
+  "total_datasets": 2,
+  "dataset_names": [
+    "TUMLU",
+    "TUMLU-mini"
+  ],
+  "task_categories": [
+    "multiple-choice question answering",
+    "knowledge assessment",
+    "language understanding"
+  ],
+  "brief_description": "A comprehensive, natively developed multilingual language understanding benchmark for Turkic languages, consisting of 38,139 middle- and high-school level multiple-choice questions across 11 academic subjects in 9 Turkic languages (Azerbaijani, Crimean Tatar, Karakalpak, Kazakh, Kyrgyz, Tatar, Turkish, Uyghur, and Uzbek). TUMLU-mini is a balanced and manually verified subset with ~100 questions per subject per language.",
+  "datasets": [
+    {
+      "dataset_name": "TUMLU",
+      "variant_name": null,
+      "variant_notes": "Full benchmark containing 38,139 questions across 8 newly collected language subsets plus Turkish from TurkishMMLU. Includes parallel versions in multiple scripts (Latin, Cyrillic, Arabic) for several languages.",
+      "task_type": "multiple-choice question answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "not applicable — natively developed; questions sourced from local educational materials and university entrance exams in each target language. Script transliterations (not translations) provided for Crimean Tatar, Kazakh, Uyghur, and Uzbek.",
+      "num_languages": 9,
+      "language_list": [
+        "Azerbaijani",
+        "Crimean Tatar",
+        "Karakalpak",
+        "Kazakh",
+        "Kyrgyz",
+        "Tatar",
+        "Turkish",
+        "Uyghur",
+        "Uzbek"
+      ],
+      "annotation_method": "Data collected from publicly available books and websites; the majority are sample or official questions for university entrance exams of respective countries. Questions standardized to 4-choice format. Native speakers of each language manually verified the quality of a random sample from each subject. In Azerbaijani, where questions were community-developed, around 10% were found invalid or had incorrect answers.",
+      "data_creator_info": {
+        "creator_type": "academic researchers and native speakers",
+        "creator_affiliation": "Multi-institutional team spanning Khazar University, New York University, George Washington University, Saarland University, Microsoft, Baku Higher Oil School, KAIST, Queensland University of Technology, CETOBaC EHESS, Turan University, Nazarbayev University, LMU Munich, ADA University, and independent researchers",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Author affiliations listed; paper states 'native speakers of each language manually verified the quality of a random sample from each subject' but does not report annotator demographics or compensation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Turkish subset sourced from TurkishMMLU (Yüksel et al., 2024)",
+      "notes": "The Turkish subset is TurkishMMLU, a separate pre-existing project. The other 8 language subsets are newly collected. 11 subjects total: Maths, Physics, Chemistry, Biology, Geography, Native Language & Literature, History, Logic, Human & Society, Philosophy, Religion & Ethics. Logic, Human & Society, Philosophy, and Religion & Ethics are available only in 1-2 languages."
+    },
+    {
+      "dataset_name": "TUMLU-mini",
+      "variant_name": "mini",
+      "variant_notes": "A more balanced, manually verified subset of TUMLU with ~100 randomly selected questions per subject per language. Subjects available in fewer than 3 languages were removed. All choices shuffled to mitigate memorization.",
+      "task_type": "multiple-choice question answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "not applicable — subset of natively developed TUMLU",
+      "num_languages": 9,
+      "language_list": [
+        "Azerbaijani",
+        "Crimean Tatar",
+        "Karakalpak",
+        "Kazakh",
+        "Kyrgyz",
+        "Tatar",
+        "Turkish",
+        "Uyghur",
+        "Uzbek"
+      ],
+      "annotation_method": "Randomly selected from TUMLU full dataset; all questions manually verified by native speakers. Answer choices shuffled. 7 core subjects retained: Biology, Chemistry, Geography, History, Maths, Native Language & Literature, Physics.",
+      "data_creator_info": {
+        "creator_type": "academic researchers and native speakers",
+        "creator_affiliation": "Same as TUMLU",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Paper states TUMLU-mini is 'manually verified' but does not detail the verification workforce."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Subset of TUMLU; Turkish portion from TurkishMMLU (Yüksel et al., 2024)",
+      "notes": "Used for all experiments in the paper. Contains 100 questions per subject per language where available, fewer otherwise. See Appendix B Table 7 for exact counts."
+    }
+  ],
+  "total_languages": 9,
+  "languages": {
+    "Azerbaijani": {
+      "iso_code": "aze",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Crimean Tatar": {
+      "iso_code": "crh",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Karakalpak": {
+      "iso_code": "kaa",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Tatar": {
+      "iso_code": "tat",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Uyghur": {
+      "iso_code": "uig",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    }
+  },
+  "assessments": {
+    "TUMLU": {
+      "translated": {
+        "value": false,
+        "evidence": "We address the lack of native language MMLU benchmark especially in the under-represented Turkic language family... TUMLU is a comprehensive, multilingual, and natively developed language understanding benchmark specifically designed for Turkic languages. Data was collected from publicly available books and websites. The majority are sample or official questions for university entrance exams of respective countries.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "After collecting the data, native speakers of each language manually verified the quality of a random sample from each subject. CoT prompts were created manually by native speakers (for Azerbaijani, Kazakh, Uzbek). 'We did not create CoT prompts for other languages, because we did not have native speakers to validate their quality.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions sourced from national university entrance exams and educational materials in each target language. Subjects include National Language & Literature (language-specific), national History, Geography (region-relevant). The paper explicitly argues against translated benchmarks that 'fail to account for the linguistic and cultural intricacies of the target languages.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Native speakers verified a random sample per subject. In Azerbaijani (community-developed questions), approximately 10% of questions were found to be either invalid or had incorrect answers. Difficulty levels are not uniform across languages: Uzbek and Turkish are specifically designed for university entrance exams; Kazakh maths questions cover only middle-school topics."
+    },
+    "TUMLU-mini": {
+      "translated": {
+        "value": false,
+        "evidence": "Subset of TUMLU; same natively developed data.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TUMLU-mini consists of '100 randomly selected and manually verified questions per subject.' All choices shuffled. Native speakers performed verification.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Same source material as TUMLU — national educational materials and entrance exams.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "All questions in TUMLU-mini are manually verified. Questions with more than 5 answer choices had one choice dropped. Subjects available in fewer than 3 languages were removed for balance."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["TUMLU", "TUMLU-mini"],
+      "evidence": "TUMLU is 'a comprehensive, multilingual, and natively developed language understanding benchmark.' Data collected from publicly available books and websites in each target language; majority are sample or official questions for university entrance exams of respective countries. No English source material used. The Turkish subset (TurkishMMLU) is also natively developed in Turkish."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets are translated from English. The paper explicitly critiques translation-based benchmarks: 'most of these either cover a limited set of high-resourced languages, or the multilingual examples are generated by translating original examples from Western-centric languages, thus failing to capture cultural nuances inherent in different languages.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TUMLU", "TUMLU-mini"],
+      "details": {
+        "TUMLU": "Questions drawn from national educational curricula and university entrance exams. Includes culturally specific subjects: Native Language & Literature (language-specific), national History, Geography (region-relevant). Different countries' exam traditions represented.",
+        "TUMLU-mini": "Subset of TUMLU; inherits cultural grounding from source material."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Paper states: 'native speakers of each language manually verified the quality of a random sample from each subject.' CoT prompts were 'created manually by native speakers.' Authors include native speakers of multiple Turkic languages based at institutions across Azerbaijan, Turkey, Kazakhstan, Kyrgyzstan, and Uzbekistan."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["academic researchers", "native speaker volunteers"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Khazar University",
+        "New York University",
+        "George Washington University",
+        "Saarland University",
+        "Microsoft",
+        "Baku Higher Oil School",
+        "KAIST",
+        "Queensland University of Technology",
+        "CETOBaC EHESS",
+        "Turan University",
+        "Nazarbayev University",
+        "LMU Munich",
+        "ADA University"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "INSUFFICIENT_INFO: The paper lists author affiliations but does not report total number of annotators, annotator demographics, compensation, or ethics/IRB review. Azerbaijani subset described as 'developed by the community' (referring to a community of students and teachers). Acknowledgments mention Ukrainian Center for Educational Quality Assessment (Crimean Tatar materials), Google Gemini Academic Program (compute credits), and Azerbaijan Cultural Society of Northern California (financial support)."
+    },
+    "english_centricity_notes": "The benchmark is explicitly designed to counter English-centricity. The paper argues that 'most multilingual examples are generated by translating original examples from Western-centric languages, thus failing to capture cultural nuances.' TUMLU uses native language questions from local educational materials. All prompts provided in respective native languages, citing that 'providing the prompt in English does not result in performance gains.'",
+    "geographic_representation": {
+      "primary_region": "Central Asia and Western Asia (Turkic-speaking regions)",
+      "sub_regions": [
+        "Azerbaijan (Azerbaijani)",
+        "Crimea/Ukraine (Crimean Tatar)",
+        "Karakalpakstan/Uzbekistan (Karakalpak)",
+        "Kazakhstan (Kazakh)",
+        "Kyrgyzstan (Kyrgyz)",
+        "Tatarstan/Russia (Tatar)",
+        "Turkey (Turkish)",
+        "Xinjiang/China (Uyghur)",
+        "Uzbekistan (Uzbek)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Turkmen (Turkmenistan)",
+        "Bashkir (Russia/Bashkortostan)"
+      ],
+      "evidence": "Paper states in Limitations: 'some major Turkic languages, such as Turkmen, Kyrgyz [sic — likely an error as Kyrgyz is included] and Bashkir are not included. We are hoping to extend our benchmark with more languages in further editions.' Languages cover a broad geographic span from Turkey to China."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

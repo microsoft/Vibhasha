@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "IndiSentiment140 is entirely translated from the English Sentiment140 dataset. No data was created from scratch."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IndiSentiment140"],
+      "evidence": "Leveraging this widely used Sentiment140 dataset, we generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "not_applicable",
+      "evidence": "No human annotators were used. The dataset was created via automated machine translation (Google Translate). Sentiment labels were inherited from the source Sentiment140 dataset which used distant supervision."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Indian Institute of Technology Guwahati"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The dataset was created by automated machine translation using Google Translate. The three authors are researchers at IIT Guwahati. No human annotators or crowdworkers were involved. The paper does not mention IRB or ethics review. The study is partially funded by Ministry of Electronics and Information Technology, Government of India."
+    },
+    "english_centricity_notes": "The entire dataset is translated from an English Twitter corpus (Sentiment140). The source content, topics, and sentiment patterns are inherently English-centric. The paper acknowledges 'socio-cultural and language specific sentiment indicators' as a challenge but does not address cultural adaptation. Untranslated English words remain in all 22 language versions, with percentages ranging from 1.37% (Urdu) to 78% (Mizo).",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India", "Nepal", "Sri Lanka", "Pakistan"],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The 22 languages covered are Indian languages as recognized by Google Translate, including languages spoken in India (Assamese, Bengali, Bhojpuri, Dogri, Gujarati, Hindi, Kannada, Konkani, Maithili, Malayalam, Marathi, Meiteilon, Mizo, Odia, Punjabi, Sanskrit, Tamil, Telugu), Nepal (Nepali), Sri Lanka (Sinhala), and Pakistan (Sindhi, Urdu). However, the source content originates from English-language Twitter and does not represent South Asian discourse."
+    }
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "assessments": {
+    "CoNLL NER": {
+      "translated": {
+        "value": false,
+        "evidence": "We select a subset of the following two NER tasks, CoNLL-2002 NER (Sang, 2002) and CoNLL-2003 NER (Sang and De Meulder, 2003). CoNLL NER datasets are natively annotated in each language from the ECI Multilingual Text Corpus.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The XGLUE paper reuses CoNLL-2002/2003 NER and does not provide details about the original annotators. The original CoNLL shared tasks used annotators but demographics are not described here.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Source data is from the ECI Multilingual Text Corpus, which contains natively created text in each language, not translated content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Existing dataset from CoNLL-2002 and CoNLL-2003 shared tasks. 4 entity types: Person, Location, Organization, Miscellaneous. F1 metric."
+    },
+    "UDPOS": {
+      "translated": {
+        "value": false,
+        "evidence": "Subset of Universal Dependencies (UD) Treebanks (v2.5), which are natively constructed treebanks for each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The XGLUE paper does not discuss the annotators of the UD Treebanks. UD Treebanks are typically created by language experts, but this is not stated in this paper.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Universal Dependencies Treebanks contain native-language text for each language.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Existing dataset from UD Treebanks v2.5. ACC metric."
+    },
+    "NC": {
+      "translated": {
+        "value": false,
+        "evidence": "We crawl this dataset from Microsoft News (MSN). News articles are natively written in each language on the MSN platform.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Labels are category labels from the MSN website, reviewed by human, but the paper does not state whether the reviewers are native speakers of each language.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "News articles are crawled from MSN in each language, representing region-specific news content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset created by this paper. 10 news categories. Category labels from MSN website, human-reviewed. ACC metric."
+    },
+    "MLQA": {
+      "translated": {
+        "value": false,
+        "evidence": "The MLQA is a multilingual machine reading comprehension task, which contains QA annotations labeled in 7 languages. MLQA annotations are natively created in each language based on Wikipedia articles.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The XGLUE paper does not describe the MLQA annotator demographics. This information would be in the original MLQA paper (Lewis et al., 2019b).",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MLQA uses parallel Wikipedia passages across languages, so while QA pairs are created natively, the underlying content is parallel/shared across languages rather than culturally specific.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Existing dataset. F1 metric. Data sourced from Wikipedia."
+    },
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "We reuse the original XNLI dataset (Conneau et al., 2018) in XGLUE. XNLI is a translation of the MultiNLI English corpus into 14 other languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The XGLUE paper does not describe the XNLI translators. The original XNLI paper used professional translators.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "XNLI is translated from English MultiNLI corpus, inheriting English-centric content and cultural assumptions.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Existing translated dataset. ACC metric. Translated from English MultiNLI to 14 other languages."
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "The PAWS-X (Yang et al., 2019a) is a paraphrase identification dataset, which extends the Wikipedia portion of the PAWS (Zhang et al., 2019) evaluation to more languages. PAWS-X translates English PAWS pairs into other languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The XGLUE paper does not describe the PAWS-X translation process or annotators.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "PAWS-X extends English Wikipedia PAWS data to other languages via translation, inheriting English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Existing translated dataset. ACC metric. XGLUE uses a 4-language subset (en, es, fr, de) of the original PAWS-X."
+    },
+    "QADSM": {
+      "translated": {
+        "value": false,
+        "evidence": "We construct this dataset based on Bing. Queries and ads are natively sourced from Bing search in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Labeled on a Microsoft internal crowdsourcing platform with guidelines and testing, but whether labelers are native speakers of each language is not stated.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is natively sourced from Bing search queries and ads in each language, reflecting real user search behavior.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset. 3 annotators per sample, majority vote. Labelers passed a training guideline and labeling test. Binary classification. ACC metric."
+    },
+    "WPR": {
+      "translated": {
+        "value": false,
+        "evidence": "We construct this dataset based on Bing. Queries and web pages are natively sourced from Bing search in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Labeled on a Microsoft internal crowdsourcing platform with guidelines and testing, but whether labelers are native speakers of each language is not stated.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is natively sourced from Bing search queries and web pages in each language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset. 3 annotators per sample, majority vote. Labelers passed a training guideline and labeling test. 5-level relevance rating. nDCG metric."
+    },
+    "QAM": {
+      "translated": {
+        "value": false,
+        "evidence": "We construct this dataset based on Bing. Question-passage pairs are natively sourced from Bing in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Labeled on a Microsoft internal crowdsourcing platform with guidelines and testing, but whether labelers are native speakers of each language is not stated.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is natively sourced from Bing question-passage pairs in each language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset. 3 annotators per sample, majority vote. Labelers passed a training guideline and labeling test. Binary classification. ACC metric."
+    },
+    "QG": {
+      "translated": {
+        "value": false,
+        "evidence": "We collect <passage, question> pairs from Bing. Data is natively sourced from Bing in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "All these 6 new tasks with * are labeled by human, except es, it and pt datasets in QG (80+% accuracy) are obtained by an in-house QA ranker. So en/fr/de have human annotation, while es/it/pt have automated labels.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data is natively sourced from Bing passage-question pairs in each language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset. en/fr/de labeled by human annotators (3 per sample, majority vote). es/it/pt labeled by in-house QA ranker with 80+% accuracy. BLEU-4 metric."
+    },
+    "NTG": {
+      "translated": {
+        "value": false,
+        "evidence": "We collect <news body, news title> pairs from Microsoft News (MSN). News titles and bodies are natively written in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "News titles are created by news publishers/editors natively in each language. Category labels from MSN are reviewed by human.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "News body-title pairs are natively sourced from MSN in each language, representing region-specific news content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "New dataset. News body-title pairs from MSN. BLEU-4 metric. Training set only in English (300K instances)."
+    }
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "benchmark_name": "FLORES-101",
+  "paper_id": "tacl_a_00474",
+  "year": 2022,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present the FLORES-101 benchmark, consisting of 3001 sentences sampled from various topics in English Wikipedia and professionally translated in 101 languages.",
+  "total_languages_claimed": 101,
+  "total_datasets": 1,
+  "dataset_names": ["FLORES-101"],
+  "task_categories": ["machine_translation"],
+  "brief_description": "A high-quality evaluation benchmark for multilingual machine translation consisting of 3001 English Wikipedia sentences professionally translated into 101 languages, enabling many-to-many evaluation of 10,100 translation directions.",
+  "datasets": [
+    {
+      "dataset_name": "FLORES-101",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 101,
+      "language_list": [
+        "Afrikaans", "Amharic", "Arabic", "Armenian", "Assamese",
+        "Asturian", "Azerbaijani", "Belarusian", "Bengali", "Bosnian",
+        "Bulgarian", "Burmese", "Catalan", "Cebuano", "Chinese (Simplified)",
+        "Chinese (Traditional)", "Croatian", "Czech", "Danish", "Dutch",
+        "English", "Estonian", "Filipino (Tagalog)", "Finnish", "French",
+        "Fula", "Galician", "Ganda", "Georgian", "German",
+        "Greek", "Gujarati", "Hausa", "Hebrew", "Hindi",
+        "Hungarian", "Icelandic", "Igbo", "Indonesian", "Irish",
+        "Italian", "Japanese", "Javanese", "Kabuverdianu", "Kamba",
+        "Kannada", "Kazakh", "Khmer", "Korean", "Kyrgyz",
+        "Lao", "Latvian", "Lingala", "Lithuanian", "Luo",
+        "Luxembourgish", "Macedonian", "Malay", "Malayalam", "Maltese",
+        "Maori", "Marathi", "Mongolian", "Nepali", "Northern Sotho",
+        "Norwegian", "Nyanja", "Occitan", "Oriya", "Oromo",
+        "Pashto", "Persian", "Polish", "Portuguese (Brazil)", "Punjabi",
+        "Romanian", "Russian", "Serbian", "Shona", "Sindhi",
+        "Slovak", "Slovenian", "Somali", "Sorani Kurdish", "Spanish (Latin America)",
+        "Swahili", "Swedish", "Tajik", "Tamil", "Telugu",
+        "Thai", "Turkish", "Ukrainian", "Umbundu", "Urdu",
+        "Uzbek", "Vietnamese", "Welsh", "Wolof", "Xhosa",
+        "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Professional translation by Language Service Providers (LSPs) with multi-stage quality evaluation: translation, editing, automated QC, independent quality assessment by a separate evaluation LSP, with re-translation required if quality score < 90%.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Language Service Providers (LSPs) contracted by Facebook AI Research",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English. Translators are required to have at least two to three years of translation experience in the relevant language pair if they have an academic degree in translation or linguistics and three to five years of translation experience if they do not have any relevant academic qualification.' No demographic breakdown or compensation details are reported."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Builds on FLORES v1.0 (Guzmán et al., 2019) which covered Nepali-English and Sinhala-English",
+      "notes": "Source sentences extracted from English Wikinews, Wikijunior, and WikiVoyage. Split into dev (997 sentences), devtest (1012 sentences), and test (992 sentences). Test set available only through evaluation server. Enables many-to-many evaluation across 10,100 language pairs. Assistance from machine translation was strictly prohibited during translation."
+    }
+  ],
+  "total_languages": 101,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Arabic": {
+      "iso_code": "ara",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Assamese": {
+      "iso_code": "asm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Asturian": {
+      "iso_code": "ast",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Azerbaijani": {
+      "iso_code": "azj",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Belarusian": {
+      "iso_code": "bel",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bosnian": {
+      "iso_code": "bos",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bulgarian": {
+      "iso_code": "bul",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Burmese": {
+      "iso_code": "mya",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Chinese (Simplified)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Chinese (Traditional)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Croatian": {
+      "iso_code": "hrv",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Danish": {
+      "iso_code": "dan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Dutch": {
+      "iso_code": "nld",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Estonian": {
+      "iso_code": "est",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Filipino (Tagalog)": {
+      "iso_code": "tgl",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Finnish": {
+      "iso_code": "fin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Fula": {
+      "iso_code": "ful",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Galician": {
+      "iso_code": "glg",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Ganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Icelandic": {
+      "iso_code": "isl",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Irish": {
+      "iso_code": "gle",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Javanese": {
+      "iso_code": "jav",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kabuverdianu": {
+      "iso_code": "kea",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kamba": {
+      "iso_code": "kam",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Khmer": {
+      "iso_code": "khm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lao": {
+      "iso_code": "lao",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Latvian": {
+      "iso_code": "lav",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Luxembourgish": {
+      "iso_code": "ltz",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Macedonian": {
+      "iso_code": "mkd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Maltese": {
+      "iso_code": "mlt",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Maori": {
+      "iso_code": "mri",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Mongolian": {
+      "iso_code": "mon",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Norwegian": {
+      "iso_code": "nob",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Nyanja": {
+      "iso_code": "nya",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Occitan": {
+      "iso_code": "oci",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Oriya": {
+      "iso_code": "ory",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Oromo": {
+      "iso_code": "orm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Pashto": {
+      "iso_code": "pus",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Persian": {
+      "iso_code": "fas",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Polish": {
+      "iso_code": "pol",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Portuguese (Brazil)": {
+      "iso_code": "por",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Shona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Sindhi": {
+      "iso_code": "snd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Slovak": {
+      "iso_code": "slk",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Slovenian": {
+      "iso_code": "slv",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Sorani Kurdish": {
+      "iso_code": "ckb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Spanish (Latin America)": {
+      "iso_code": "spa",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Swahili": {
+      "iso_code": "swh",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Tajik": {
+      "iso_code": "tgk",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Umbundu": {
+      "iso_code": "umb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Welsh": {
+      "iso_code": "cym",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Xhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["FLORES-101"]
+    }
+  },
+  "assessments": {
+    "FLORES-101": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia' and 'By translating the same set of English sentences in more than hundred languages, we enable evaluation of multilingual MT with the caveat that source sentences not in English are produced by human translators.' Section 1: '3001 sentences extracted from English Wikipedia and covering a variety of different topics and domains. These sentences have been translated in 101 languages by professional translators through a carefully controlled process.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English. Translators are required to have at least two to three years of translation experience in the relevant language pair if they have an academic degree in translation or linguistics and three to five years of translation experience if they do not have any relevant academic qualification.' Additionally, 'Translators also undergo a translation test every 18 months to assess their translation quality.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia, while considering a broad set of topics that could be of general interest regardless of the native language of the reader.' The content is sourced entirely from English Wikipedia/Wikinews/Wikijunior/WikiVoyage and translated. Section 3.1 acknowledges: 'Another downside to this English-centric translation approach is a possible artificial increase of the differences between two dialects of the same language.' The authors also note in Section 6.4.1: 'the construction of FLORES-101 is English-centric in and of itself, as the same set of sentences are translated from English into all languages.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous multi-stage quality control: 20% of dataset sampled and reviewed per language by independent evaluation LSP. Translation Quality Score on 0-100 scale based on error types (grammar, punctuation, spelling, capitalization, addition/omission, mistranslation, unnatural translation, untranslated text, register) with severity levels (minor, major, critical). Minimum 90% quality threshold required. 45 of 101 languages required re-translation (avg 1 re-translation, max 3). Average turnaround 61 days per language."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All source sentences in FLORES-101 are extracted from English Wikimedia sources (Wikinews, Wikijunior, WikiVoyage) and translated into 101 languages. No dataset content was created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["FLORES-101"],
+      "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia' and Abstract: 'consisting of 3001 sentences extracted from English Wikipedia and covering a variety of different topics and domains. These sentences have been translated in 101 languages by professional translators through a carefully controlled process.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English.'"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": ["Language Service Providers (LSPs) contracted by Facebook AI Research"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Section 3.2-3.3: Translators were contracted through Language Service Providers (LSPs). Translation LSPs performed initial translation and editing; separate evaluation LSPs performed quality assessment. Translators required to have 2-5 years experience and pass translation tests every 18 months. No information on total number of annotators, demographic breakdown, compensation, or IRB/ethics review is provided."
+    },
+    "english_centricity_notes": "FLORES-101 is explicitly English-centric by design. Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia.' The authors acknowledge limitations: 'source sentences not in English are produced by human translators' (translationese concern), 'this English-centric translation approach is a possible artificial increase of the differences between two dialects of the same language.' Section 6.4.1: 'the construction of FLORES-101 is English-centric in and of itself, as the same set of sentences are translated from English into all languages. This can affect the performance of non-English-centric directions.' Topics drawn from English Wikipedia may not reflect culturally relevant content for target language communities.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Europe", "Sub-Saharan Africa", "South Asia", "Southeast Asia", "East Asia", "Central Asia", "Middle East and North Africa", "Oceania", "Latin America"],
+      "also_represented": [],
+      "notably_excluded": ["Indigenous Americas (no indigenous American languages)", "Most Oceanic languages beyond Maori"],
+      "evidence": "Table 1 shows 101 languages spanning Indo-European, Afro-Asiatic, Atlantic-Congo, Austronesian, Dravidian, Sino-Tibetan, Turkic, Uralic, Kra-Dai, Austro-Asiatic, Nilo-Saharan, Japonic, Koreanic, Kartvelian, and Mongolic families. Coverage includes 20 African languages, multiple South/Southeast Asian languages, and Central Asian languages. However, no indigenous American languages are included."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "Paper Table 1 lists 101 languages (excluding English as the source language). English is included in the language list as it is part of the benchmark dataset. The paper acknowledges English-centricity as a design limitation. ISO 639-3 codes are taken directly from Table 1 in the paper. Chinese (Simplified) and Chinese (Traditional) are listed as separate entries sharing ISO code 'zho'."
+  }
+}

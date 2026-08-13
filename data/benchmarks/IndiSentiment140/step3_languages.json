@@ -1,0 +1,27 @@
+{
+  "total_languages": 22,
+  "languages": {
+    "Assamese": { "iso_code": "as", "datasets_present_in": ["IndiSentiment140"] },
+    "Bengali": { "iso_code": "bn", "datasets_present_in": ["IndiSentiment140"] },
+    "Bhojpuri": { "iso_code": "bho", "datasets_present_in": ["IndiSentiment140"] },
+    "Dogri": { "iso_code": "doi", "datasets_present_in": ["IndiSentiment140"] },
+    "Gujarati": { "iso_code": "gu", "datasets_present_in": ["IndiSentiment140"] },
+    "Hindi": { "iso_code": "hi", "datasets_present_in": ["IndiSentiment140"] },
+    "Kannada": { "iso_code": "kn", "datasets_present_in": ["IndiSentiment140"] },
+    "Konkani": { "iso_code": "gom", "datasets_present_in": ["IndiSentiment140"] },
+    "Maithili": { "iso_code": "mai", "datasets_present_in": ["IndiSentiment140"] },
+    "Malayalam": { "iso_code": "ml", "datasets_present_in": ["IndiSentiment140"] },
+    "Marathi": { "iso_code": "mr", "datasets_present_in": ["IndiSentiment140"] },
+    "Meiteilon (Manipuri)": { "iso_code": "mni", "datasets_present_in": ["IndiSentiment140"] },
+    "Mizo": { "iso_code": "lus", "datasets_present_in": ["IndiSentiment140"] },
+    "Nepali": { "iso_code": "ne", "datasets_present_in": ["IndiSentiment140"] },
+    "Odia": { "iso_code": "or", "datasets_present_in": ["IndiSentiment140"] },
+    "Punjabi": { "iso_code": "pa", "datasets_present_in": ["IndiSentiment140"] },
+    "Sanskrit": { "iso_code": "sa", "datasets_present_in": ["IndiSentiment140"] },
+    "Sindhi": { "iso_code": "sd", "datasets_present_in": ["IndiSentiment140"] },
+    "Sinhala": { "iso_code": "si", "datasets_present_in": ["IndiSentiment140"] },
+    "Tamil": { "iso_code": "ta", "datasets_present_in": ["IndiSentiment140"] },
+    "Telugu": { "iso_code": "te", "datasets_present_in": ["IndiSentiment140"] },
+    "Urdu": { "iso_code": "ur", "datasets_present_in": ["IndiSentiment140"] }
+  }
+}

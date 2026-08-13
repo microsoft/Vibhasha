@@ -1,0 +1,49 @@
+{
+  "total_languages": 11,
+  "languages": {
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Odia": {
+      "iso_code": "ory",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Maithili": {
+      "iso_code": "mai",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Konkani": {
+      "iso_code": "gom",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Santali": {
+      "iso_code": "sat",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Bodo": {
+      "iso_code": "brx",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Dogri": {
+      "iso_code": "doi",
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Rajasthani": {
+      "iso_code": null,
+      "datasets_present_in": ["IndicParam"]
+    },
+    "Sanskrit": {
+      "iso_code": "san",
+      "datasets_present_in": ["IndicParam"]
+    }
+  }
+}

@@ -1,0 +1,547 @@
+{
+  "benchmark_name": "BenchMAX",
+  "paper_id": "2025.findings-emnlp.BenchMAX",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We develop BenchMAX, a multi-way multilingual benchmark that covers 10 diverse tasks, to evaluate LLMs' general abilities across many languages. [...] We extend current datasets by translating English to other languages. [...] we introduce the Domain Translation task, a by-product of the BenchMAX construction.",
+  "total_languages_claimed": 17,
+  "total_datasets": 10,
+  "dataset_names": [
+    "IFEval",
+    "m-ArenaHard",
+    "HumanEval+",
+    "LiveCodeBench_v4",
+    "MGSM",
+    "GPQA",
+    "RULER",
+    "Nexus",
+    "FLORES+TED+WMT24",
+    "BenchMAX Domain Translation"
+  ],
+  "task_categories": [
+    "instruction_following",
+    "code_generation",
+    "reasoning",
+    "long_context_understanding",
+    "tool_use",
+    "translation"
+  ],
+  "brief_description": "BenchMAX is a comprehensive multilingual evaluation suite covering 10 diverse tasks across 6 capabilities (instruction following, code generation, reasoning, long context understanding, tool use, and translation) in 17 languages. Data is machine-translated from English and post-edited by three native annotators per sample to ensure quality.",
+  "datasets": [
+    {
+      "dataset_name": "IFEval",
+      "variant_name": "BenchMAX Rule-based Instruction Following",
+      "variant_notes": "Filtered to 429 samples (removed English-specific instructions like letter case changes), translated from English to 16 languages with constraint extraction pipeline",
+      "task_type": "instruction_following",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "Machine translation (Google Translate with constraint extraction via special symbols) followed by post-editing by 3 native annotators per sample over multiple iterations, with rule-based and model-based (Qwen2.5-72B) quality verification. Final version selected by GPT-4o-mini via pairwise comparison.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We recuite native annatators to post-edit the machine translations. [...] The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Zhou et al., 2023 (IFEval)",
+      "notes": "429 samples after filtering English-specific instructions. Constraint keywords are preserved through special symbol enclosure during translation. Number-word constraints adjusted by language-specific ratio."
+    },
+    {
+      "dataset_name": "m-ArenaHard",
+      "variant_name": "BenchMAX Model-based Instruction Following",
+      "variant_notes": "Extends m-ArenaHard (which covered 22 languages via Google Translate) to all 17 BenchMAX languages with human post-editing for all 16 non-English languages",
+      "task_type": "instruction_following",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "10 languages from existing m-ArenaHard (machine-translated by Google Translate), 6 additional languages translated from English via Google Translate. All 16 non-English languages post-edited by human annotators.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Dang et al., 2024 (m-ArenaHard); Li et al., 2024 (Arena-Hard)",
+      "notes": "500 samples. Evaluated via win rate against GPT-4o baseline, judged by DeepSeek-V3."
+    },
+    {
+      "dataset_name": "HumanEval+",
+      "variant_name": "BenchMAX Function Completion",
+      "variant_notes": "Translated to 16 non-English languages; only natural text in function comments is translated, code syntax preserved",
+      "task_type": "code_generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "GPT-4o used for initial translation (to preserve code structure), followed by human post-editing by native annotators.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Liu et al., 2024 (HumanEval+); Chen et al., 2021 (HumanEval)",
+      "notes": "164 samples. Only docstrings/comments translated; code syntax and function names preserved."
+    },
+    {
+      "dataset_name": "LiveCodeBench_v4",
+      "variant_name": "BenchMAX Problem Solving",
+      "variant_notes": "Code generation subset from LiveCodeBench v4, translated to 16 non-English languages",
+      "task_type": "code_generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "GPT-4o used for initial translation (to distinguish translatable vs non-translatable parts), followed by human post-editing.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Jain et al., 2024 (LiveCodeBench)",
+      "notes": "713 samples from the code generation subset. Problem descriptions translated; code input/output and syntax preserved."
+    },
+    {
+      "dataset_name": "MGSM",
+      "variant_name": "BenchMAX Math Reasoning",
+      "variant_notes": "Extends MGSM to all 17 BenchMAX languages; 10 languages from original MGSM retained, 6 new languages translated and annotated",
+      "task_type": "math_reasoning",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "10 languages retained from original MGSM (already human-annotated). 6 new languages (Arabic, Czech, Hungarian, Korean, Vietnamese, Serbian) translated from English via Google Translate and manually checked.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University (for new languages); original MGSM authors for existing languages",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Shi et al., 2023 (MGSM)",
+      "notes": "250 samples. Existing languages: en, bn, de, es, fr, ja, ru, sw, te, th, zh. Newly translated: ar, cs, hu, ko, vi, sr."
+    },
+    {
+      "dataset_name": "GPQA",
+      "variant_name": "BenchMAX Science Reasoning",
+      "variant_notes": "Translated to 16 non-English languages for multilingual science reasoning evaluation",
+      "task_type": "science_reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "Google Translate for initial translation (question + 4 options concatenated with option markers), followed by post-editing by native annotators. Annotators required to hold at least a Bachelor's degree due to specialized nature.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Considering the specialized nature of datasets like Science reasoning, annotators are required to hold at least a Bachelor's degree. (Section 3.3, Step 2). The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Rein et al., 2023 (GPQA)",
+      "notes": "448 samples. Multiple-choice questions in biology, physics, and chemistry."
+    },
+    {
+      "dataset_name": "RULER",
+      "variant_name": "BenchMAX Long Context QA",
+      "variant_notes": "Extended to 17 languages via machine translation only (no human post-editing due to cost). Includes NIAH, QAIAH, VT, and QA subtasks at 128k tokens.",
+      "task_type": "long_context_question_answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "Haystacks from UN parallel corpus (existing for ar, en, es, fr, ru, zh; machine-translated for others). QA pairs from XQUAD (existing for ar, de, en, es, ru, th, vi, zh; machine-translated for others). Needles translated via Google Translate. No human post-editing.",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "For haystacks and QA pairs in Question Answering dataset, we only extend languages by machine translation. We do not post-edit the long context data mainly due to the high cost in money and time. (Appendix B)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Hsieh et al., 2024 (RULER); Ziemski et al., 2016 (UN Corpus); Artetxe et al., 2020 (XQUAD)",
+      "notes": "800 samples. 128k token context length. NIAH, QAIAH (new QA-in-a-haystack subtask), Variable Tracking, and QA tasks. Only machine-translated, no human annotation."
+    },
+    {
+      "dataset_name": "Nexus",
+      "variant_name": "BenchMAX Multiple Functions (Tool Use)",
+      "variant_notes": "Only user queries translated to 16 non-English languages; tool/function descriptions kept in English",
+      "task_type": "tool_use",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "User queries initially translated by Google Translate (with English parameters replaced by placeholders), then adjusted by human annotators. Function/tool descriptions kept in English.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Srinivasan et al., 2023 (NexusRaven/Nexus)",
+      "notes": "318 samples from the standardized_queries subset only. Only user queries are multilingual; API/function definitions remain in English."
+    },
+    {
+      "dataset_name": "FLORES+TED+WMT24",
+      "variant_name": "BenchMAX General Translation",
+      "variant_notes": "Composite of FLORES-200, TED, and WMT24 parallel test sets for general-domain translation evaluation",
+      "task_type": "machine_translation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "Existing parallel corpora included as-is for the 17 BenchMAX languages. No additional annotation by BenchMAX authors.",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "General domain data are composed of Flores-200, TED and WMT24 testsets. In BenchMAX, we include parallel data from 17 selected languages. (Appendix A)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Costa-jussà et al., 2022 (FLORES-200); Cettolo et al., 2012 (TED); Kocmi et al., 2024 (WMT24)",
+      "notes": "Sample count varies by translation direction: [1012, 4049], depending on parallel coverage in TED and WMT24. Evaluated with spBLEU. Covers En-X and X-En directions."
+    },
+    {
+      "dataset_name": "BenchMAX Domain Translation",
+      "variant_name": null,
+      "variant_notes": "By-product of BenchMAX construction: the human-post-edited translations of task data form a 17-way parallel domain-specific translation dataset",
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": ["English", "Arabic", "Bengali", "Chinese", "Czech", "French", "German", "Hungarian", "Japanese", "Korean", "Russian", "Serbian", "Spanish", "Swahili", "Telugu", "Thai", "Vietnamese"],
+      "annotation_method": "By-product of BenchMAX dataset construction. The annotated multilingual task data (from instruction following, reasoning, code generation, tool use tasks) forms parallel domain-specific translation data.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Nanjing University, University of Zurich, Shanghai AI Laboratory, Carnegie Mellon University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The annotators are paid above local average salary. (Appendix F)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "2781 samples. Challenges models to translate specialized terminology and determine whether specific segments (e.g., code, formulas) should be translated. Existing metrics (spBLEU, TER, XCOMET, retention rate) prove unreliable for this domain-specific evaluation."
+    }
+  ],
+  "total_languages": 17,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Serbian": {
+      "iso_code": "sr",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "FLORES+TED+WMT24", "BenchMAX Domain Translation"]
+    }
+  },
+  "assessments": {
+    "IFEval": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate IFEval from English to other languages (Section 3.2). Step 1: Translating data from English to selected non-English languages by machine translation systems. (Section 3.3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Each sample is given to three native annotators who are proficient in English and their native language. (Section 3.3, Step 2)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "BenchMAX focuses on language-agnostic capabilities. All content is translated from English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-round annotation with rule-based and model-based verifiers. At least 3 iterations per dataset."
+    },
+    "m-ArenaHard": {
+      "translated": {
+        "value": true,
+        "evidence": "Ten of the sixteen languages required have been provided by m-ArenaHard, which has translated the original dataset into 22 languages using Google Translate. Based on m-ArenaHard, we further translate the English data into six other languages. (Appendix B.2)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Subsequently, we ask human annotators to review and edit the translated instructions in all 16 languages. (Appendix B.2)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content originates from English-language Arena-Hard instructions translated to other languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Original m-ArenaHard used machine translation without manual annotation. BenchMAX adds human post-editing."
+    },
+    "HumanEval+": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate Humaneval+ from English to other languages. (Section 3.2). We instruct GPT-4o to complete this translation task. (Appendix B.3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "A human post-editing process is employed to refine the quality. (Appendix B.3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Python code generation tasks are language-agnostic by design.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "GPT-4o used for initial translation to preserve code structure."
+    },
+    "LiveCodeBench_v4": {
+      "translated": {
+        "value": true,
+        "evidence": "We employ GPT-4o to translate the English problems into other 16 languages. (Appendix B.4)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Human review is also used to ensure the overall quality. (Appendix B.4)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Coding competition problems translated from English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "GPT-4o distinguishes translatable vs non-translatable parts."
+    },
+    "MGSM": {
+      "translated": {
+        "value": "partial",
+        "evidence": "MGSM examples are written in ten languages we need, we only translate the English version into the remaining six languages. (Appendix B.5). Existing: en,bn,de,es,fr,ja,ru,sw,te,th,zh. New: ar,cs,hu,ko,vi,sr. (Table 13)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "10 existing languages from original MGSM (human-annotated). 6 new languages translated and manually checked. (Appendix B.5)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Grade-school math problems originally in English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "6 new languages translated via Google Translate + manual checking."
+    },
+    "GPQA": {
+      "translated": {
+        "value": true,
+        "evidence": "The question and the four options of each sample are translated into 16 other languages by Google Translate. (Appendix B.6)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Annotators required to hold at least a Bachelor's degree. (Section 3.3, Step 2)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Graduate-level science questions originally in English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Specialized annotators required (Bachelor's degree minimum)."
+    },
+    "RULER": {
+      "translated": {
+        "value": true,
+        "evidence": "We do not post-edit the long context data mainly due to the high cost in money and time. (Appendix B)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "We do not post-edit the long context data mainly due to the high cost in money and time. (Appendix B)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Synthetic long-context test sets with translated components.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Machine-translated only, no human post-editing."
+    },
+    "Nexus": {
+      "translated": {
+        "value": true,
+        "evidence": "We only translate the user queries from English into other languages. (Appendix B.8)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The user queries are initially translated by Google Translate and subsequently adjusted by human annotators. (Appendix B.8)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Tool use queries translated from English. API descriptions kept in English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "English parameters preserved via placeholder replacement."
+    },
+    "FLORES+TED+WMT24": {
+      "translated": {
+        "value": false,
+        "evidence": "Existing parallel corpora included as-is. (Appendix A)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Existing parallel corpora. No additional annotation by BenchMAX authors.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Standard parallel translation test sets.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Existing standard translation evaluation datasets."
+    },
+    "BenchMAX Domain Translation": {
+      "translated": {
+        "value": true,
+        "evidence": "Domain translation data is a by-product of the BenchMAX construction process. (Appendix A). All source content originates from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Derived from human-post-edited translations of other BenchMAX tasks. (Section 3.3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "By-product of translating English-origin task data.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality inherits from post-editing process of constituent tasks."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All BenchMAX tasks are either translated from English or are existing parallel datasets. The benchmark explicitly focuses on language-agnostic capabilities."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "BenchMAX Domain Translation"],
+      "evidence": "The way to obtain BenchMAX generally consists of three steps: 1) translate data from English to non-English by machines; 2) post-edit each sample by three native annotators; 3) pick the final translation version by GPT-4o-mini. (Section 3.3)"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Each sample is given to three native annotators who are proficient in English and their native language. (Section 3.3, Step 2)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native_speaker_annotators", "automated_machine_translation"],
+      "total_annotators_reported": null,
+      "affiliations": ["Nanjing University", "University of Zurich", "Shanghai Artificial Intelligence Laboratory", "Carnegie Mellon University"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "The annotators are paid above local average salary. (Appendix F)",
+      "irb_ethics_review": null,
+      "evidence": "We recuite native annatators to post-edit the machine translations. [...] The annotators are paid above local average salary. (Appendix F). Annotators for science reasoning required to hold at least a Bachelor's degree. 3 annotators per sample for most tasks."
+    },
+    "english_centricity_notes": "BenchMAX is explicitly English-centric in construction: all task data originates in English and is translated to 16 other languages. The benchmark evaluates 'language-agnostic capabilities' by testing whether models can perform English-origin tasks in other languages. Tool use API descriptions remain in English even for non-English queries. The paper acknowledges model bias from using Qwen2.5-72B for quality estimation and GPT-4o-mini for final selection (Section 7).",
+    "geographic_representation": {
+      "primary_region": "Global (by language selection)",
+      "sub_regions": ["East Asia", "South Asia", "Southeast Asia", "Europe", "Middle East", "East Africa"],
+      "also_represented": [],
+      "notably_excluded": ["Indigenous Americas", "Oceania", "Central Asia", "West Africa (beyond Swahili)", "North Africa (beyond Arabic)"],
+      "evidence": "BenchMAX supports 17 languages covering 10 language families: Indo-European, Uralic, Austroasiatic, Koreanic, Japonic, Afro-Asiatic, Kra-Dai, Niger-Congo, Sino-Tibetan, and Dravidian (Table 1). Coverage is limited to 17 languages, most high-to-mid resource."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-28",
+    "extractor": "copilot-subagent",
+    "notes": "Paper published at Findings of EMNLP 2025, pages 16751-16774. No explicit arxiv ID found in the paper text. GitHub: https://github.com/CONE-MT/BenchMAX. HuggingFace: https://huggingface.co/collections/LLaMAX/benchmax-674d7a815a57baf97b5539f4"
+  }
+}

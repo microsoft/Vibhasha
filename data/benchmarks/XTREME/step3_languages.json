@@ -1,0 +1,165 @@
+{
+  "total_languages": 40,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Basque": {
+      "iso_code": "eu",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Burmese": {
+      "iso_code": "my",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "BUCC", "Tatoeba"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "TyDiQA-GoldP", "BUCC", "Tatoeba"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "BUCC", "Tatoeba"]
+    },
+    "Georgian": {
+      "iso_code": "ka",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "BUCC", "Tatoeba"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Hebrew": {
+      "iso_code": "he",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PAWS-X", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "Kazakh": {
+      "iso_code": "kk",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["PAWS-X", "Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["WikiANN", "Tatoeba"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "TyDiQA-GoldP", "BUCC", "Tatoeba"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Tagalog": {
+      "iso_code": "tl",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "Tatoeba"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "Tatoeba"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "Universal Dependencies POS", "WikiANN", "XQuAD", "MLQA", "Tatoeba"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["Universal Dependencies POS", "WikiANN"]
+    }
+  }
+}

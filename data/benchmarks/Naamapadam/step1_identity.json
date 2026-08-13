@@ -1,0 +1,16 @@
+{
+  "benchmark_name": "Naamapadam",
+  "paper_id": "2212.10168v2",
+  "year": 2023,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present, Naamapadam, the largest publicly available Named Entity Recognition (NER) dataset for the 11 major Indian languages from two language families.",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": [
+    "Naamapadam"
+  ],
+  "task_categories": [
+    "Named Entity Recognition"
+  ],
+  "brief_description": "Naamapadam is the largest publicly available NER dataset for 11 major Indian languages from two language families (Indo-Aryan and Dravidian), containing 5.7M sentences and 9.4M entities across three categories (Person, Location, Organization). Training data is automatically created via annotation projection from English using parallel corpora, while manually annotated test sets are provided for 9 languages."
+}

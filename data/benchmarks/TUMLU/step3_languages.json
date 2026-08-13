@@ -1,0 +1,41 @@
+{
+  "total_languages": 9,
+  "languages": {
+    "Azerbaijani": {
+      "iso_code": "aze",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Crimean Tatar": {
+      "iso_code": "crh",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Karakalpak": {
+      "iso_code": "kaa",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Tatar": {
+      "iso_code": "tat",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Uyghur": {
+      "iso_code": "uig",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["TUMLU", "TUMLU-mini"]
+    }
+  }
+}

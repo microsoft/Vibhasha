@@ -1,0 +1,56 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "Both datasets (Uhura-ARC-Easy and Uhura-TruthfulQA) are translations of existing English benchmarks (ARC-Easy and TruthfulQA). No datasets were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "Uhura-ARC-Easy",
+        "Uhura-TruthfulQA"
+      ],
+      "evidence": "created via human translation of existing English benchmarks: ARC-Easy (Clark et al., 2018) and TruthfulQA (Lin et al., 2022)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "Neither dataset is culturally grounded. The paper explicitly notes: 'The original benchmarks (ARC-Easy and TruthfulQA) are heavily biased toward Western contexts, focusing on topics pertinent to the United States and Europe.' Translators identified numerous instances of cultural biases including historical bias (U.S.-centric questions), cultural context bias (U.S./British cultural references), and negative stereotypes about Africa."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "The translators and language coordinators were native speakers of the target languages, residing in the respective countries or within diaspora communities. They possessed expertise in linguistics, translation, or related fields."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "Professional translators (native speakers)",
+        "Language coordinators (native speakers)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Masakhane NLP community"
+      ],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "All translators were compensated above the local living wage, following the Partnership on AI's Responsible Data Enrichment Practices Guidelines.",
+      "irb_ethics_review": true,
+      "evidence": "Following the Partnership on AI's Responsible Data Enrichment Practices Guidelines, we ensured all translators were compensated above the local living wage, provided with clear communication channels for support, and equipped with comprehensive instructions and training materials. All participants provided informed consent. They were selected so half were male and half were female. Section H covers ethical considerations: consent procedures, data privacy, and anonymity."
+    },
+    "english_centricity_notes": "Both datasets are direct translations of English-language benchmarks. The paper acknowledges extensive Western/English-centricity: questions assume Western historical knowledge (e.g., U.S. state-level production data), U.S.-specific cultural practices (flag etiquette), and British slang. Questions also contained negative portrayals of Africa (e.g., 'Is it true that Africa is the country with the most poverty?'). The authors explicitly state: 'leading English-language benchmarks are developed predominantly from a Western-centric perspective.'",
+    "geographic_representation": {
+      "primary_region": "Sub-Saharan Africa",
+      "sub_regions": [
+        "East Africa (Amharic - Ethiopia; Swahili - Kenya, Tanzania, Uganda)",
+        "West Africa (Hausa - Nigeria, Niger; Yoruba - Nigeria, Benin)",
+        "Southern Africa (Northern Sotho - South Africa; Zulu - South Africa)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Central Africa",
+        "North Africa",
+        "All non-African regions"
+      ],
+      "evidence": "Uhura includes six widely spoken Sub-Saharan African languages, representing millions of speakers across the continent. These languages were carefully selected to capture diversity in linguistic families, regions, and scripts. Table 1 lists regions: East (Amharic, Swahili), West (Hausa, Yoruba), South (Northern Sotho, Zulu)."
+    }
+  }
+}

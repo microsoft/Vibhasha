@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "IndicIFEval-Trans": {
+      "translated": {
+        "value": true,
+        "evidence": "INDICIFEVAL-TRANS, translated prompts from IFEval (Zhou et al., 2023) carefully localized for Indic contexts. We use Sarvam-Translate for the translations unless explicitly stated otherwise.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "For each language, we employ one annotator who is a native speaker with linguistic qualifications. We employ qualified, native speakers for each of the target languages as the annotators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "We localize the data with Indic-relevant themes wherever possible by simple modifications of named entities like 'President of USA' to 'Prime Minister of India' etc. However, the core prompts originate from the English IFEval dataset and translation inherently carries English-centric constraints.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Single annotator per language due to funding constraints. Annotators verify semantic validity rather than strict grammatical perfection. Prompts marked incorrect are dropped, not modified. 321 prompts verified correct across all 14 languages from 490 translated prompts."
+    },
+    "IndicIFEval-Ground": {
+      "translated": {
+        "value": false,
+        "evidence": "INDICIFEVAL-GROUND, synthetically generated instructions grounded in native Indic content. We employ a context-grounded synthetic data generation pipeline using the Sangraha corpus.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "For each language, we employ one annotator who is a native speaker with linguistic qualifications.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "To ensure the keywords used were culturally and linguistically relevant, we mined high-value terms from the Sangraha corpus using TF-IDF ranking. Unlike translated prompts, these reflect naturalistic constraints with more real-world contexts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Single annotator per language. Verified prompts vary by language (e.g., Hindi 457/527, Assamese 257/439). Annotators assess meaningfulness, constraint correctness, and context dependency. Incorrect or unclear prompts excluded without modification."
+    }
+  }
+}

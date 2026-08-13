@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "CulturalBench": {
+      "translated": {
+        "value": false,
+        "evidence": "Limitations section: 'We develop an English-only benchmark as the initial step in evaluating models' cultural knowledge.' Questions are human-written via red-teaming, not translated from another source. A small supplementary multilingual experiment (Appendix A) translated questions to Chinese/Cantonese for 3 regions but this is not part of the benchmark itself.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 2.2: 'We set two main criteria to ensure that the recruited annotators have a deep understanding of the culture of the targeted country or region – (1) Nationality (2) Primary residence before age 18.' and 'we recruited five annotators for each region through the Prolific platform.' Initial question writers also brainstorm 'culturally relevant scenarios based on their personal experiences of their cultures' (Section 2.1).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Abstract: 'a set of 1,696 human-written and human-verified questions to assess LMs' cultural knowledge, covering 45 global regions including underrepresented ones like Bangladesh, Zimbabwe, and Peru. Questions are each verified by five independent annotators and span 17 diverse topics ranging from food preferences to greeting etiquette.' Section 3.2: 'we adopted a discovery-based approach by encouraging human annotators to brainstorm cultural concepts from their personal experiences.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Strict quality control: 5 independent annotators per region, majority vote threshold of >=4/5, multiple-label format allowing multiple correct answers. Questions without majority votes were filtered out. Internal filtering by researchers removed ~200 non-cultural questions. Over 3,600 questions initially collected, filtered to 1,696. IRB-reviewed process."
+    }
+  }
+}

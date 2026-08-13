@@ -1,0 +1,16 @@
+{
+  "benchmark_name": "FLUID QA",
+  "paper_id": "2025.emnlp-main.1540",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We introduce FLUID QA, the first multilingual benchmark that evaluates figurative usage in dialogue... To aid interpretation of usage-level failures, we additionally present FLUTE-bi, a sentence-level diagnostic task targeting sentence-level recognition.",
+  "total_languages_claimed": 3,
+  "total_datasets": 2,
+  "dataset_names": ["FLUID QA", "FLUTE-bi"],
+  "task_categories": [
+    "figurative language understanding",
+    "dialogue-based multiple-choice QA",
+    "binary classification"
+  ],
+  "brief_description": "FLUID QA is the first multilingual benchmark evaluating figurative language usage in dialogue across English, Korean, and Chinese, covering four rhetorical categories (idiom, metaphor, simile, sarcasm). It is accompanied by FLUTE-bi, a sentence-level binary classification diagnostic task for figurative recognition."
+}

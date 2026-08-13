@@ -1,0 +1,93 @@
+{
+  "total_languages": 22,
+  "languages": {
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Latvian": {
+      "iso_code": "lv",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Lithuanian": {
+      "iso_code": "lt",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Norwegian": {
+      "iso_code": "no",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Romanian": {
+      "iso_code": "ro",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Slovak": {
+      "iso_code": "sk",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Slovenian": {
+      "iso_code": "sl",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["JailNewsBench"]
+    },
+    "Swedish": {
+      "iso_code": "sv",
+      "datasets_present_in": ["JailNewsBench"]
+    }
+  }
+}

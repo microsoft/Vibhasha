@@ -1,0 +1,88 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "IIT-Patna Product Reviews",
+        "ACTSA Telugu Sentiment",
+        "BBC Hindi News Articles",
+        "Soham Bengali News Articles",
+        "iNLTK Headlines"
+      ],
+      "evidence": "The four new IndicGLUE datasets are created semi-automatically from Indian language news crawls and Indian language Wikipedia. The existing incorporated datasets (Amrita, MIDAS, IIT-Patna, ACTSA, BBC Hindi, Soham, iNLTK) are natively authored in their respective Indian languages."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "WNLI Indic",
+        "COPA Indic",
+        "WikiAnn NER"
+      ],
+      "evidence": "WNLI and COPA were 'manually translated this dataset to 3 Indic languages (hi, mr, gu) with the help of skilled bilingual speakers.' WikiAnn NER is 'created from Wikipedia by utilizing cross language links to propagate English named entity labels to other languages.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "ACTSA Telugu Sentiment",
+        "Soham Bengali News Articles",
+        "iNLTK Headlines"
+      ],
+      "details": {
+        "IndicGLUE News Category Classification": "Based on Indian language news articles from popular Indian language news websites",
+        "IndicGLUE Headline Prediction": "Generated from Indian language news crawls with locally relevant content",
+        "CVIT-Mann Ki Baat": "Based on Indian PM's Mann Ki Baat radio address, inherently Indian content",
+        "Amrita Paraphrase Detection": "Indian newspaper domain content in 4 Indian languages",
+        "MIDAS Hindi Discourse": "Annotated dataset of discourse modes in Hindi stories",
+        "IIT-Patna Movie Reviews": "Hindi movie reviews reflecting Indian cinema context",
+        "ACTSA Telugu Sentiment": "Native Telugu sentiment corpus from news domain",
+        "Soham Bengali News Articles": "Bengali news articles with local topics",
+        "iNLTK Headlines": "Indian language news headlines covering locally relevant topics"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "For WNLI and COPA translations: 'skilled bilingual speakers' were used and 'verified by an expert bilingual speaker.' The four new IndicGLUE datasets are semi-automatically generated (no human annotation). For external datasets (WikiAnn, Amrita, MIDAS, etc.), annotator details are not described in this paper."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "automated",
+        "crowdworkers",
+        "researchers"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "IIT Madras",
+        "AI4Bharat",
+        "Microsoft India"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "For WNLI and COPA translations: 'The annotators were paid 3 cents per word.' No compensation details for other datasets.",
+      "irb_ethics_review": null,
+      "evidence": "The paper describes the authors from IIT Madras, AI4Bharat, and Microsoft India. For translated datasets (WNLI, COPA), skilled bilingual speakers were hired at 3 cents per word. The four new IndicGLUE datasets were created semi-automatically without human annotation. No IRB/ethics review mentioned."
+    },
+    "english_centricity_notes": "Two datasets (WNLI, COPA) are direct translations from English benchmarks, inheriting English-centric content and cultural assumptions. WikiAnn NER propagates English entity labels via cross-lingual links. The cross-lingual sentence retrieval task uses English as the source language. However, the majority of IndicGLUE datasets (4 new + 8 existing) are natively authored in Indian languages. The paper deliberately excluded Wikipedia from pretraining data to avoid overlap with evaluation datasets.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India"],
+      "also_represented": [],
+      "notably_excluded": [
+        "Northeast Indian languages beyond Assamese",
+        "Indo-Aryan languages beyond the 7 covered (e.g., Nepali, Sindhi, Kashmiri)",
+        "Austroasiatic languages (e.g., Santali, Mundari)",
+        "Tibeto-Burman languages (e.g., Bodo, Manipuri)"
+      ],
+      "evidence": "The paper covers 11 major Indian languages from two major language families: Indo-Aryan (Punjabi, Hindi, Bengali, Odia, Assamese, Gujarati, Marathi) and Dravidian (Kannada, Telugu, Malayalam, Tamil). The paper notes 'Indic languages are very diverse, spanning 4 major language families. The Indo-Aryan and Dravidian languages are spoken by 96% of the population in India. The other families are diverse, but the speaker population is relatively small.'"
+    }
+  }
+}

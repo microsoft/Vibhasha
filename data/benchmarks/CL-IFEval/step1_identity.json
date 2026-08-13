@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "CL-IFEval",
+  "paper_id": "2506.20793",
+  "year": 2026,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We create multi-lingual functional benchmarks – Cross-Lingual Grade School Math Symbolic (CL-GSM Symbolic) and Cross-Lingual Instruction-Following Eval (CL-IFEval) – by translating existing functional benchmark templates from English to five additional languages (Section 1, Section 3)",
+  "total_languages_claimed": 6,
+  "total_datasets": 2,
+  "dataset_names": ["CL-IFEval", "CL-GSM Symbolic"],
+  "task_categories": ["instruction following", "math reasoning"],
+  "brief_description": "CL-IFEval and CL-GSM Symbolic are cross-lingual functional evaluation benchmarks created by translating English IFEval (541 prompts) and GSM-Symbolic (100 templates) into French, Spanish, Hindi, Arabic, and Yoruba via Google Translate with native-speaker validation, designed to measure functional multilingual performance and robustness of LLMs beyond static data benchmarks."
+}

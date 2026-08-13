@@ -1,0 +1,52 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All three datasets (AfriXNLI, AfriMMLU, AfriMGSM) are human translations of existing English-source benchmarks (XNLI, MMLU, MGSM). None were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["AfriXNLI", "AfriMMLU", "AfriMGSM"],
+      "evidence": "The datasets were created by human translating a subset of English cross-lingual NLI (XNLI), English Multilingual Grade School Math (MGSM), and Massive Multitask Language Understanding (MMLU) evaluation datasets into each of the 16 languages using professional translators. Ewe, Lingala, and Wolof were translated from French (itself translated from English for AfriMMLU)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators to translate the sentences. Most of the translators translated from English except for Ewe, Lingala and Wolof translators that translated from French since they are from the Francophone region of Africa. Many of the Francophone translators understand French and English but are more fluent in French."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Masakhane NLP community",
+        "Language coordinators for each of 16 African languages and French",
+        "Logistics company in Kenya managed recruitment and payments"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Each translator received appropriate remuneration. A logistics company in Kenya managed all recruitment and payments with country-specific rates. Example rates: $549.78 for 1020 XNLI samples in South Africa, $355.86 in Nigeria. Translators received payment only after quality control review by language coordinators.",
+      "irb_ethics_review": null,
+      "evidence": "We recruited a logistic company in Kenya that managed all recruitment and payments—each country has different rates. For example, we paid $549.78 for the translation of 1020 XNLI samples in South Africa, $355.86 in Nigeria. Translators received payment only after this phase to ensure the quality of translations."
+    },
+    "english_centricity_notes": "The entire benchmark is built by translating English-source datasets. The paper explicitly acknowledges this limitation: 'The benchmark is human-translated which may include some translationese effects, it would have been better if they are all generated in the native African languages.' For AfriMMLU, subjects were selected for cultural neutrality but the questions themselves originate from US academic contexts. The benchmark inherently measures ability to handle English-derived content in African languages rather than natively-conceived reasoning in those languages.",
+    "geographic_representation": {
+      "primary_region": "Africa",
+      "sub_regions": [
+        "West Africa",
+        "East Africa",
+        "Southern Africa",
+        "Central Africa"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "North Africa",
+        "Nilo-Saharan language family",
+        "Austronesian languages in Africa",
+        "Khoisan language family"
+      ],
+      "evidence": "17 diverse and widely spoken African languages are from four regions of Africa: seven from West Africa (Ewe, Hausa, Igbo, Twi, Vai, Wolof, Yoruba), five from East Africa (Amharic, Kinyarwanda, Luganda, Swahili, and Oromo), four from Southern Africa (chiShona, isiXhosa, isiZulu, and Sesotho), and Central Africa (Lingala). These languages are from three language families in Africa: one from Mande, three from Afro-Asiatic and 13 from the Niger-Congo family. Limitations note: 'Nilo-Saharan, Austronesian, and Khoisan language groups are missing'."
+    }
+  }
+}

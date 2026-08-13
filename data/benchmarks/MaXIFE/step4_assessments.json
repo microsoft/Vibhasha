@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "MaXIFE": {
+      "translated": {
+        "value": true,
+        "evidence": "After completing the English version data expansion, we translated the data into 22 other languages. For Basic Questions, given the large volume of 795 items, we used LLM-based translation with GPT-4o and Claude-3.5 Sonnet, followed by native speaker review and correction. For the 47 Instructions, we used professional human translators who were native speakers of the target languages and proficient in English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "All personnel we hired for instruction data translation and dataset quality control were native speakers of their respective languages, and they possessed near-native English proficiency. Original data collected via questionnaire from 31 respondents including researchers, native speakers, and linguistics experts. However, Basic Questions were LLM-translated with native speaker review, not fully natively authored.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is translated from English and focuses on instruction-following mechanics (format, keywords, length, punctuation, etc.) rather than culturally-specific content. The Basic Questions were originally collected in English and expanded using English-language LLMs. While translations were reviewed for naturalness, the tasks test format compliance rather than cultural knowledge.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Three-round quality control: (1) content rationality and accuracy, (2) language expression naturalness reviewed by native speakers, (3) parallel consistency across language versions. Human-model evaluation consistency rates: 97.3% (high-resource), 95.2% (medium-resource), 94.6% (low-resource)."
+    }
+  }
+}

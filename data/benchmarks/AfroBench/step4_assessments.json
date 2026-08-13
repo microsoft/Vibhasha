@@ -1,0 +1,400 @@
+{
+  "assessments": {
+    "MasakhaPOS": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.2: 'MASAKHAPOS (Dione et al., 2023) is a part-of-speech tagging dataset in 20 African languages created from news articles.' Created natively from African language news articles.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Masakhane community researchers who are native speakers of African languages (Dione et al., 2023). The Masakhane community involves African NLP researchers and native speaker annotators.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created from news articles written in African languages, reflecting local news content and topics.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "MasakhaNER-X": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.2: Extension of MasakhaNER dataset (Adelani et al., 2021, 2022b). Originally created from African language texts, not translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by MasakhaNER project involving native speaker annotators from the Masakhane community (Adelani et al., 2021, 2022b; Ruder et al., 2023).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Named entities from African language texts reflect local people, places, and organizations.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "SIB-200": {
+      "translated": {
+        "value": true,
+        "evidence": "SIB-200 is based on FLORES sentences which are professionally translated from English. Cited as Adelani et al., 2024a.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The AfroBench paper does not provide details about annotator nativeness for SIB-200. Refer to original paper.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Based on FLORES sentences translated from English; content originates from English-language Wikipedia articles, not culturally grounded in target languages.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "MasakhaNEWS": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.1: News articles collected in African languages. MasakhaNEWS (Adelani et al., 2023) covers 14 African languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Masakhane community researchers who are native speakers of African languages.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "News articles natively written in African languages covering local topics such as business, entertainment, and health.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriSenti": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.1: 'AFRISENTI is a tweet sentiment analysis dataset in 14 African languages.' Tweets are natively authored in African languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Masakhane community with native speaker annotators (Muhammad et al., 2023). Twitter data in African languages annotated by speakers.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Tweets authored by native speakers in African languages, reflecting real social media discourse in those languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "NollySenti": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.1: 'NOLLYSENTI focuses on sentiment in movie reviews in 4 African languages.' Movie reviews in African languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The AfroBench paper does not detail annotator demographics for NollySenti. Refer to Shode et al., 2023.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Based on Nollywood (Nigerian) movie reviews, culturally grounded in Nigerian/African entertainment.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Injongo-Intent": {
+      "translated": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The AfroBench paper does not specify whether Injongo-Intent was translated or natively created. Cited as Yu et al., 2025.",
+        "confidence": "low"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: No annotator details provided in AfroBench paper. Refer to Yu et al., 2025.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Intent categories include Banking, Home, Kitchen and Dining, Travel domains which may or may not be culturally adapted. Refer to Yu et al., 2025.",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriHate": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.1: 'AFRIHATE (Muhammad et al., 2025) is a multilingual hate speech and abusive language dataset covering 15 African languages for tweets.' Tweets are natively authored.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Masakhane community researchers. Hate speech annotation requires native language comprehension and cultural context understanding.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Based on tweets in African languages, reflecting real hate speech and abusive language patterns in those language communities.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Paper notes that distinguishing 'abusive' from 'hate' is confusing even for native speakers (Section 5.3)."
+    },
+    "AfriXNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.1: 'AFRIXNLI (Adelani et al., 2024b) is a dataset collection in 16 African languages' — part of IrokoBench, which is a human-translated benchmark from English XNLI.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not specify whether translators were native speakers. Refer to Adelani et al., 2024b.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English XNLI; the premise-hypothesis pairs originate from English contexts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriQA": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.4: 'AFRIQA (Ogundepo et al., 2023) is a cross-lingual QA task with questions in 10 African languages and context passages in English or French.' Questions are natively authored in African languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not describe annotator demographics for AfriQA. Refer to Ogundepo et al., 2023.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Questions are in African languages (potentially culturally relevant), but context passages are in English or French, creating a cross-lingual setup that may not be fully culturally grounded.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Belebele": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.4: 'BELEBELE (Bandarkar et al., 2024), a multiple-choice reading comprehension dataset in 122 languages.' This is a parallel dataset translated from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not discuss translator demographics for Belebele. Refer to Bandarkar et al., 2024.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English reading comprehension passages; content reflects English-language source material.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "NaijaRC": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.4: 'NAIJARC (Aremu et al., 2024), a multiple-choice reading comprehension dataset in 3 African languages.' Created for Nigerian languages.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: No annotator details provided in AfroBench paper. Refer to Aremu et al., 2024.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper does not provide details on cultural grounding. Refer to Aremu et al., 2024.",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": null
+    },
+    "Uhura-Arc-Easy": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.4: 'human-translated version of the scientific Arc-Easy benchmark in 6 African languages UHURA (Bayes et al., 2024).'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not discuss translator demographics. Refer to Bayes et al., 2024.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English Arc-Easy science questions; content originates from Western science curriculum.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriMMLU": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.4: 'We focus on two human-translated MMLU datasets: OPENAI-MMLU and AFRIMMLU (Adelani et al., 2024b).'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not describe translator demographics. Refer to Adelani et al., 2024b.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Human-translated from English MMLU; content reflects Western knowledge domains.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "OpenAI-MMMLU": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.4: 'We focus on two human-translated MMLU datasets: OPENAI-MMLU and AFRIMMLU.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: No details provided about OpenAI's translation process in AfroBench paper.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English MMLU covering Western-centric knowledge domains.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriMGSM": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.3: 'AFRIMGSM (Adelani et al., 2024b), an extension of the MGSM dataset to 17 African languages.' MGSM is a translated math reasoning dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not describe translator demographics. Refer to Adelani et al., 2024b.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English grade-school math problems; content originates from English-language context.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "FLORES-200": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.5: 'FLORES (Goyal et al., 2022)... covering 57 translation directions into African languages. All translations are from English.' This is a professionally translated MT benchmark.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not discuss translator demographics. Refer to Goyal et al., 2022.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English Wikipedia source sentences; content is English-centric.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "MAFAND": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Section 3.2.5: 'MAFAND (Adelani et al., 2022a)... All translations are from English, except for MAFAND, which includes a few languages with French as the source.' The dataset involves translation of African news content.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Created by Masakhane community involving native speaker translators for African news translation (Adelani et al., 2022a). Title: 'A few thousand translations go a long way! leveraging pre-trained models for African news translation.'",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Based on African news content but involves translation from English/French to African languages, so partial cultural grounding.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "NTREX-128": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.2.5: References Federmann et al., 2022 — 'NTREX-128 – news test references for MT evaluation of 128 languages.' Translated from English news references.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not discuss translator demographics. Refer to Federmann et al., 2022.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English news test references; content is English-centric.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "SALT": {
+      "translated": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper cites Akera et al., 2022 as 'Machine translation for african languages: Community creation of datasets and models in Uganda.' Unclear if original or translated.",
+        "confidence": "low"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Akera et al., 2022: 'Community creation of datasets and models in Uganda' — suggests community-driven effort by local speakers.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Community-created in Uganda, likely using local content, but the paper does not provide specific details.",
+        "confidence": "low"
+      },
+      "annotation_quality_notes": null
+    },
+    "XLSum": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.5: 'XL-SUM dataset (Hasan et al., 2021) covering 10 African languages.' Based on BBC news articles that exist natively in multiple languages.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: AfroBench paper does not discuss annotator demographics. BBC news articles may be written by journalists in those languages.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Based on BBC news articles in African languages — news content covers both local and international topics.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "AfriADR": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 3.2.5: 'To create AFRIADR, we selected the five languages with extensive use of diacritics from MAFAND MT dataset, then, we strip all accents and diacritics on each sentence.' Derived from existing African language text, not translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Section 3.2.5: Created automatically by stripping diacritics from existing MAFAND data. No human annotation was performed for this dataset; it is an automated transformation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Based on African language texts from MAFAND, reflecting actual diacritics usage in Ghomálá', Fon, Igbo, Wolof, and Yorùbá. Diacritics restoration is an inherently culture-specific task.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Automatically created by stripping diacritics from MAFAND MT dataset. Quality depends on the quality of the original MAFAND diacritized text."
+    }
+  }
+}

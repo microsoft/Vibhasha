@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The prompt templates are parallel constructions across 13 languages based on a shared structural format (shown in Table 7/Figure 7). While each language version was validated by native speakers, the template design follows a common English-originated structure. The evaluation methodology (Wikidata-based entity matching) is language-agnostic and not derived from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MAKIEVAL (prompts only)"],
+      "evidence": "The prompt templates follow parallel structures across all 13 languages, originating from a shared template design (see Table 1 and Figure 7). Templates were then validated by 15 native speakers. However, the evaluation framework itself explicitly avoids translation: 'enabling scalable, language-agnostic evaluation without manual annotation or translation.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["MAKIEVAL"],
+      "details": {
+        "MAKIEVAL": "The framework is specifically designed to evaluate cultural awareness. It covers 19 countries/regions across 6 culturally salient topics (food, beverages, clothing, books, music, transportation). Metrics include Culture Specificity (proportion of entities linked to target culture) and Culture Consensus (cross-lingual entity overlap). Prompts include explicit cultural contextualization (country names) and implicit cues (culturally associated names)."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes, for prompt validation; automatic for entity extraction",
+      "evidence": "15 native speakers validated prompt templates (at least one per language). Languages covered: German, Spanish (Spain & Mexico), English (American & British), Turkish, Persian, Arabic, Hindi, Japanese, Korean, Traditional Chinese (Taiwan), Thai, Chinese (Mainland), Italian. Entity extraction quality was manually evaluated by native speakers with graduate-level education. Core entity extraction is automated via GPT-4o-mini."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "native_speaker_validators"],
+      "total_annotators_reported": 15,
+      "affiliations": ["MaiNLP, Center for Information and Language Processing, LMU Munich", "Munich Center for Machine Learning (MCML)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "A total of 15 native speakers participated in prompt validation. The paper does not report annotator compensation or IRB/ethics review. The Ethical Concern section states: 'We do not foresee any ethical concerns associated with this work. All analyses were conducted using publicly available models. No private or sensitive information was used.' Research was supported by ERC Consolidator Grant DIALECT 101043235 and an OpenAI compute grant."
+    },
+    "english_centricity_notes": "The paper explicitly identifies and measures English-centricity as a key finding: 'English prompts consistently achieve the highest specificity gains when adding cultural context across nearly all countries and models. This suggests that LLMs are more sensitive to cultural signals in English, likely due to the disproportionate amount of English data in their pretraining corpora.' The framework is designed to detect and quantify this English bias, rather than being English-centric itself. Prompts are parallel template constructions but the evaluation uses Wikidata as a language-agnostic bridge.",
+    "geographic_representation": {
+      "primary_region": "Global (diverse coverage across continents)",
+      "sub_regions": ["East Asia", "South Asia", "Middle East", "Europe", "North America", "Latin America", "Oceania", "Africa"],
+      "also_represented": ["United Arab Emirates", "United States", "United Kingdom", "Canada", "Australia", "Nigeria", "Germany", "Mexico", "Spain", "Argentina", "Iran", "India", "Italy", "Japan", "South Korea", "Thailand", "Turkey", "China", "Taiwan"],
+      "notably_excluded": ["Sub-Saharan Africa (Hausa and Yoruba explored but excluded due to poor model generation quality)", "Southeast Asia (beyond Thailand)", "Central Asia", "Eastern Europe", "Oceania (beyond Australia)", "Indigenous languages"],
+      "evidence": "19 countries/regions across 8 geographic areas (East Asia, South Asia, Middle East, Europe, North America, Latin America, Australia, Africa). Africa represented only by Nigeria (English-speaking). The paper notes: 'we initially explored two low-resource African languages: Hausa and Yoruba. However... we found that open-source models produced text of very poor quality in these two languages.'"
+    }
+  }
+}

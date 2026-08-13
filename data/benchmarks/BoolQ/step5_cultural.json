@@ -1,0 +1,45 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "BoolQ is an English-only dataset. Questions come from English Google search queries and passages from English Wikipedia."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No translation is involved; the dataset is natively English."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper does not specify whether annotators are native English speakers.",
+      "evidence": "Paper describes annotators following the NQ pipeline (Section 3.1) but provides no demographic or language proficiency information about annotators."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "INSUFFICIENT_INFO: Paper follows NQ pipeline and refers to 'human annotator' and 'annotators' but does not specify their type"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Google AI Language",
+        "University of Washington"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Paper states 'We gather data using the pipeline from NQ (Kwiatkowski et al., 2019)' (Section 3.1). Three paper authors performed quality assessment on 110 examples (Section 3.3). No information on annotator demographics, compensation, or ethics review is provided."
+    },
+    "english_centricity_notes": "BoolQ is an English-only dataset. All questions come from English Google search queries and all passages are from English Wikipedia. The benchmark does not address any non-English languages.",
+    "geographic_representation": {
+      "primary_region": "English-speaking world",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": [
+        "All non-English-speaking regions"
+      ],
+      "evidence": "Questions are from anonymized Google search queries (likely predominantly English-speaking users). Passages are from English Wikipedia. No geographic diversity is intended or claimed."
+    }
+  }
+}

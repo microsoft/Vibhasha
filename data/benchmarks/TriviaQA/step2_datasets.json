@@ -1,0 +1,28 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "TriviaQA",
+      "variant_name": null,
+      "variant_notes": "The dataset includes two evidence-source domains: Wikipedia (78K examples, avg 1.8 evidence docs per question) and Web (650K examples from Bing search results). A verified human-annotated subset of 1,975 question-document-answer triples is also provided.",
+      "task_type": "Reading Comprehension / Question Answering",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": "N/A - monolingual English dataset",
+      "num_languages": 1,
+      "language_list": [
+        "English"
+      ],
+      "annotation_method": "Questions and answers were collected from 14 trivia and quiz-league websites, authored by trivia enthusiasts independently of any evidence documents. Evidence documents were automatically gathered via Bing Web search and Wikipedia entity linking (TAGME). A human annotator verified a subset of 1,975 question-document-answer triples.",
+      "data_creator_info": {
+        "creator_type": "trivia enthusiasts (questions/answers) + automated retrieval (evidence documents) + expert annotator (verification subset)",
+        "creator_affiliation": "University of Washington, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We collected a large dataset to support the reading comprehension task described above. First we gathered question-answer pairs from 14 trivia and quiz-league websites."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Total 95,956 QA pairs, 40,478 unique answers, 662,659 evidence documents. Average question length 14 words, average document length 2,895 words. The full unfiltered dataset contains 110,495 QA pairs and 740K evidence documents."
+    }
+  ]
+}

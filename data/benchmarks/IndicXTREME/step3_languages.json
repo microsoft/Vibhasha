@@ -1,0 +1,90 @@
+{
+  "total_languages": 21,
+  "notes": "The paper claims 20 languages. However, 21 unique language codes appear across all 9 task result tables: Nepali (ne) appears in IndicCOPA (Table 17) and FLORES (Table 23) but is absent from the cross-task averaged Table 24 which lists exactly 20 languages.",
+  "languages": {
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "IndicQA", "FLORES"]
+    },
+    "Bodo": {
+      "iso_code": "brx",
+      "datasets_present_in": ["IndicSentiment"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Konkani": {
+      "iso_code": "gom",
+      "datasets_present_in": ["IndicCOPA"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "Naamapadam", "IndicQA", "FLORES"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Kashmiri": {
+      "iso_code": "ks",
+      "datasets_present_in": ["FLORES"]
+    },
+    "Maithili": {
+      "iso_code": "mai",
+      "datasets_present_in": ["IndicCOPA", "FLORES"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Manipuri": {
+      "iso_code": "mni",
+      "datasets_present_in": ["FLORES"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "Naamapadam", "IndicQA", "FLORES"]
+    },
+    "Nepali": {
+      "iso_code": "ne",
+      "datasets_present_in": ["IndicCOPA", "FLORES"]
+    },
+    "Odia": {
+      "iso_code": "or",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "IndicQA", "FLORES"]
+    },
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "Naamapadam", "IndicQA", "FLORES"]
+    },
+    "Sanskrit": {
+      "iso_code": "sa",
+      "datasets_present_in": ["IndicCOPA", "FLORES"]
+    },
+    "Santali": {
+      "iso_code": "sat",
+      "datasets_present_in": ["IndicCOPA", "FLORES"]
+    },
+    "Sindhi": {
+      "iso_code": "sd",
+      "datasets_present_in": ["IndicCOPA"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "IndicXParaphrase", "MASSIVE-Intent", "Naamapadam", "MASSIVE-SlotFill", "IndicQA", "FLORES"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["IndicSentiment", "IndicXNLI", "IndicCOPA", "MASSIVE-Intent", "MASSIVE-SlotFill", "FLORES"]
+    }
+  }
+}

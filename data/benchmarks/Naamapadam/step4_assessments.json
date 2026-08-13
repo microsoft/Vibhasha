@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "Naamapadam": {
+      "translated": {
+        "value": "partial",
+        "evidence": "The training data is created by projecting NER annotations from English sentences to Indic language sentences in a parallel corpus (Samanantar). The underlying Indic text is not translated—it comes from a parallel corpus. However, the NER annotations are transferred from English. The test set annotations are manually created/verified by native speakers.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The human annotations were contributed by volunteers who are native language speakers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The dataset is created from the Samanantar parallel corpus which contains web-crawled parallel text. The NER annotation scheme follows the standard CoNLL 2003 English guidelines (PER, LOC, ORG). There is no specific cultural adaptation of entity categories or task design for Indian contexts.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Inter-annotator agreement (F1-Score) for the test set ranges from 60.01 (Punjabi) to 93.60 (Hindi). Token-level Cohen's Kappa ranges from 0.69 (Punjabi) to 0.95 (Hindi). Training data quality was assessed on a 50-sentence sample showing projection F1 of ~75.82 average across 8 languages. Sentence filtering retains only top 30-40% of sentences by alignment quality score."
+    }
+  }
+}

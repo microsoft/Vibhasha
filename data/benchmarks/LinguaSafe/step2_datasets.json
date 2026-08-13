@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "LinguaSafe",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "safety_evaluation",
+      "source": "mixed",
+      "source_language": "English (for translated and transcreated portions); multiple native languages for native data",
+      "translation_method": "machine",
+      "num_languages": 12,
+      "language_list": [
+        "English",
+        "Russian",
+        "Chinese",
+        "Vietnamese",
+        "Czech",
+        "Arabic",
+        "Korean",
+        "Thai",
+        "Hungarian",
+        "Serbian",
+        "Malay",
+        "Bengali"
+      ],
+      "annotation_method": "Multi-stage hybrid: 4 LLM evaluators for initial severity annotation followed by comprehensive human review and revision. Native data filtered by Llama Guard 3 and MD-Judge. Transcreated data refined via TATER framework (LLM translate-estimate-refine) with human review. Inter-annotator agreement: Krippendorff's Alpha = 0.77; AI-human agreement Alpha = 0.89 on 500 sampled instances.",
+      "data_creator_info": {
+        "creator_type": "researchers_and_native_speakers",
+        "creator_affiliation": "Shanghai Artificial Intelligence Laboratory, Shanghai Jiao Tong University, Tsinghua University, Fudan University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "For data annotation, we engage annotators with different cultural and academic backgrounds. The annotation process involved researchers with specialized expertise in AI safety. To safeguard annotator well-being, individuals were compensated fairly and provided with ongoing psychological support."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Dataset combines three data types: Native Data (ND) sourced from web-scraped online forums/social media in target languages; Translated Data (TL) from English safety datasets via Google Translate or LLM; Transcreated Data (TC) adapted from English datasets (including Do-Not-Answer, SafeText, red-teaming datasets) using the TATER framework to preserve cultural relevance and harmful intent. Hierarchical safety taxonomy: 5 domains (Crimes & Illegal Activities, Fairness & Discrimination, Explicit Content, Privacy & Property, Harm & Misuse) with 23 subtypes. Severity levels L0-L3. Direct evaluation uses MCQ format; indirect evaluation assesses open-ended safety compliance. Released under CC BY-NC-SA 4.0."
+    }
+  ]
+}

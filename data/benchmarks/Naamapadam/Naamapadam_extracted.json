@@ -1,0 +1,213 @@
+{
+  "step1_identity": {
+    "benchmark_name": "Naamapadam",
+    "paper_id": "2212.10168v2",
+    "year": 2023,
+    "benchmark_type": "single_dataset",
+    "benchmark_type_evidence": "We present, Naamapadam, the largest publicly available Named Entity Recognition (NER) dataset for the 11 major Indian languages from two language families.",
+    "total_languages_claimed": 11,
+    "total_datasets": 1,
+    "dataset_names": [
+      "Naamapadam"
+    ],
+    "task_categories": [
+      "Named Entity Recognition"
+    ],
+    "brief_description": "Naamapadam is the largest publicly available NER dataset for 11 major Indian languages from two language families (Indo-Aryan and Dravidian), containing 5.7M sentences and 9.4M entities across three categories (Person, Location, Organization). Training data is automatically created via annotation projection from English using parallel corpora, while manually annotated test sets are provided for 9 languages."
+  },
+  "step2_datasets": {
+    "datasets": [
+      {
+        "dataset_name": "Naamapadam",
+        "variant_name": "Naamapadam-train",
+        "variant_notes": "Training and dev splits created automatically via annotation projection from English NER tags onto Indic language sentences in the Samanantar parallel corpus. Contains 5.7M sentences and 9.4M entities across 11 languages.",
+        "task_type": "Named Entity Recognition",
+        "source": "adapted",
+        "source_language": "English",
+        "translation_method": "Annotation projection from English NER tags to Indic language words using word alignments (Awesome-align) on the Samanantar English-Indic parallel corpus. The underlying Indic text is original parallel corpus text, not machine-translated.",
+        "num_languages": 11,
+        "language_list": [
+          "Assamese",
+          "Bengali",
+          "Gujarati",
+          "Hindi",
+          "Kannada",
+          "Malayalam",
+          "Marathi",
+          "Odia",
+          "Punjabi",
+          "Tamil",
+          "Telugu"
+        ],
+        "annotation_method": "Automatic annotation projection: English sentences in Samanantar parallel corpus are tagged with BERT-base-NER, then NER tags are projected onto aligned Indic language words via bidirectional word alignment (Awesome-align). Sentences are filtered by alignment quality score, retaining top 30-40%.",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft India, IBM Research India",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Automatic pipeline created by the research team; no human annotators involved in training data creation."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": null,
+        "notes": "Entity categories limited to PER, LOC, ORG. MISC tags from the English NER tagger are ignored. Uses Samanantar parallel corpus (Ramesh et al., 2022) as the source of parallel sentences."
+      },
+      {
+        "dataset_name": "Naamapadam",
+        "variant_name": "Naamapadam-test",
+        "variant_notes": "Manually annotated test sets for 9 languages (500-1000 sentences per language). Assamese and Odia test sets are silver-standard (projections not yet manually verified).",
+        "task_type": "Named Entity Recognition",
+        "source": "original",
+        "source_language": null,
+        "translation_method": "Annotators were provided sentences with projected NER annotations and asked to verify/correct them following CoNLL 2003 annotation guidelines. The underlying text comes from the Samanantar parallel corpus.",
+        "num_languages": 11,
+        "language_list": [
+          "Assamese",
+          "Bengali",
+          "Gujarati",
+          "Hindi",
+          "Kannada",
+          "Malayalam",
+          "Marathi",
+          "Odia",
+          "Punjabi",
+          "Tamil",
+          "Telugu"
+        ],
+        "annotation_method": "Human annotation: Annotators verified and corrected automatically projected NER annotations on sentences, following CoNLL 2003 annotation guidelines. 9 languages have manually annotated test sets; Assamese and Odia have silver-standard test sets.",
+        "data_creator_info": {
+          "creator_type": "volunteers_and_paid_experts",
+          "creator_affiliation": "Native language speaker volunteers and paid language experts",
+          "creator_demographics_reported": false,
+          "compensation_reported": true,
+          "evidence": "The human annotations were contributed by volunteers who are native language speakers. The volunteers were not made any payment and worked pro bono. Some annotators were paid for their services. These language experts were paid a competitive monthly salary to help with the task."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": null,
+        "notes": "Inter-annotator agreement (Cohen's kappa) computed for all 9 manually annotated languages, ranging from 0.69 (Punjabi) to 0.95 (Hindi). Annotators named in acknowledgements: Archana Mhaske, Anil Mhaske, Sangeeta Rajagopal, Vindhya DS, Nitin Kedia, Yash Madhani, Kabir Ahuja, Shallu Rani, Armin Virk and Gowtham Ramesh."
+      }
+    ]
+  },
+  "step3_languages": {
+    "total_languages": 11,
+    "languages": {
+      "Assamese": {
+        "iso_code": "as",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Bengali": {
+        "iso_code": "bn",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Gujarati": {
+        "iso_code": "gu",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Hindi": {
+        "iso_code": "hi",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Kannada": {
+        "iso_code": "kn",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Malayalam": {
+        "iso_code": "ml",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Marathi": {
+        "iso_code": "mr",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Odia": {
+        "iso_code": "or",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Punjabi": {
+        "iso_code": "pa",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Tamil": {
+        "iso_code": "ta",
+        "datasets_present_in": ["Naamapadam"]
+      },
+      "Telugu": {
+        "iso_code": "te",
+        "datasets_present_in": ["Naamapadam"]
+      }
+    }
+  },
+  "step4_assessments": {
+    "assessments": {
+      "Naamapadam": {
+        "translated": {
+          "value": "partial",
+          "evidence": "The training data is created by projecting NER annotations from English sentences to Indic language sentences in a parallel corpus (Samanantar). The underlying Indic text is not translated—it comes from a parallel corpus. However, the NER annotations are transferred from English. The test set annotations are manually created/verified by native speakers.",
+          "confidence": "high"
+        },
+        "native_annotators": {
+          "value": true,
+          "evidence": "The human annotations were contributed by volunteers who are native language speakers.",
+          "confidence": "high"
+        },
+        "culturally_grounded": {
+          "value": false,
+          "evidence": "The dataset is created from the Samanantar parallel corpus which contains web-crawled parallel text. The NER annotation scheme follows the standard CoNLL 2003 English guidelines (PER, LOC, ORG). There is no specific cultural adaptation of entity categories or task design for Indian contexts.",
+          "confidence": "medium"
+        },
+        "annotation_quality_notes": "Inter-annotator agreement (F1-Score) for the test set ranges from 60.01 (Punjabi) to 93.60 (Hindi). Token-level Cohen's Kappa ranges from 0.69 (Punjabi) to 0.95 (Hindi). Training data quality was assessed on a 50-sentence sample showing projection F1 of ~75.82 average across 8 languages. Sentence filtering retains only top 30-40% of sentences by alignment quality score."
+      }
+    }
+  },
+  "step5_cultural": {
+    "cultural_flags": {
+      "datasets_from_scratch_no_english_source": {
+        "list": [],
+        "evidence": "The training data is created by projecting English NER annotations onto Indic language sentences via word alignment. The test set is manually annotated but uses sentences from the same projected pipeline as starting points for verification."
+      },
+      "datasets_translated_from_english": {
+        "list": ["Naamapadam-train"],
+        "evidence": "The training dataset has been automatically created from the Samanantar parallel corpus by projecting automatically tagged entities from an English sentence to the corresponding Indian language translation. The test set annotations are manually verified/corrected by native speakers."
+      },
+      "datasets_with_cultural_grounding": {
+        "list": [],
+        "details": {}
+      },
+      "all_annotators_native_speakers": {
+        "value": "yes_for_test_set",
+        "evidence": "The human annotations were contributed by volunteers who are native language speakers. Training data is automatically created without human annotators."
+      },
+      "annotator_workforce": {
+        "creator_types_across_datasets": [
+          "volunteer native speakers",
+          "paid language experts",
+          "automatic pipeline (training data)"
+        ],
+        "total_annotators_reported": null,
+        "affiliations": [
+          "IIT Madras",
+          "AI4Bharat",
+          "Microsoft India",
+          "IBM Research India"
+        ],
+        "demographics_reported": false,
+        "compensation_reported": true,
+        "compensation_details": "The volunteers were not made any payment and worked pro bono. Some annotators were paid for their services. These language experts were paid a competitive monthly salary to help with the task. The salary was determined based on the skill set and experience of the expert and adhered to the norms of the government of our country.",
+        "irb_ethics_review": null,
+        "evidence": "Annotators named in acknowledgements: Archana Mhaske, Anil Mhaske, Sangeeta Rajagopal, Vindhya DS, Nitin Kedia, Yash Madhani, Kabir Ahuja, Shallu Rani, Armin Virk and Gowtham Ramesh. The annotators were made aware that the annotations would be made publicly available. The annotations contains no personal information."
+      },
+      "english_centricity_notes": "The entire annotation pipeline is English-centric: English NER tags are projected onto Indic sentences via word alignment. The entity categories (PER, LOC, ORG) follow the CoNLL 2003 English NER scheme. MISC tags are dropped because they could not be reliably aligned cross-lingually. The underlying text comes from English-Indic parallel corpora, which may over-represent content that has English counterparts.",
+      "geographic_representation": {
+        "primary_region": "South Asia",
+        "sub_regions": ["India"],
+        "also_represented": [],
+        "notably_excluded": [],
+        "evidence": "The dataset covers 11 of the 22 languages listed in the Indian constitution. All 11 languages are major Indian languages from two language families (Indo-Aryan and Dravidian). The source corpus (Samanantar) is specifically an English-Indic language parallel corpus."
+      }
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

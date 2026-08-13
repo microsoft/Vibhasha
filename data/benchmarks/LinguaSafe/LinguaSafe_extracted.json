@@ -1,0 +1,192 @@
+{
+  "benchmark_name": "LinguaSafe",
+  "paper_id": "2508.12733v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce LinguaSafe, a comprehensive multilingual safety benchmark crafted with meticulous attention to linguistic authenticity. The LinguaSafe dataset comprises 45k entries in 12 languages",
+  "total_languages_claimed": 12,
+  "total_datasets": 1,
+  "dataset_names": [
+    "LinguaSafe"
+  ],
+  "task_categories": [
+    "safety_recognition",
+    "safety_compliance",
+    "oversensitivity_evaluation"
+  ],
+  "brief_description": "A comprehensive multilingual safety benchmark for LLMs comprising 45k entries across 12 languages (high-, medium-, and low-resource), curated using a combination of translated, transcreated, and natively-sourced data. Features a hierarchical safety taxonomy with 5 domains and 23 subtypes, severity-level annotations (L0-L3), and both direct (MCQ) and indirect evaluation frameworks including oversensitivity assessment.",
+  "datasets": [
+    {
+      "dataset_name": "LinguaSafe",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "safety_evaluation",
+      "source": "mixed",
+      "source_language": "English (for translated and transcreated portions); multiple native languages for native data",
+      "translation_method": "machine",
+      "num_languages": 12,
+      "language_list": [
+        "English",
+        "Russian",
+        "Chinese",
+        "Vietnamese",
+        "Czech",
+        "Arabic",
+        "Korean",
+        "Thai",
+        "Hungarian",
+        "Serbian",
+        "Malay",
+        "Bengali"
+      ],
+      "annotation_method": "Multi-stage hybrid: 4 LLM evaluators for initial severity annotation followed by comprehensive human review and revision. Native data filtered by Llama Guard 3 and MD-Judge. Transcreated data refined via TATER framework (LLM translate-estimate-refine) with human review. Inter-annotator agreement: Krippendorff's Alpha = 0.77; AI-human agreement Alpha = 0.89 on 500 sampled instances.",
+      "data_creator_info": {
+        "creator_type": "researchers_and_native_speakers",
+        "creator_affiliation": "Shanghai Artificial Intelligence Laboratory, Shanghai Jiao Tong University, Tsinghua University, Fudan University",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "For data annotation, we engage annotators with different cultural and academic backgrounds. The annotation process involved researchers with specialized expertise in AI safety. To safeguard annotator well-being, individuals were compensated fairly and provided with ongoing psychological support."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Dataset combines three data types: Native Data (ND) sourced from web-scraped online forums/social media in target languages; Translated Data (TL) from English safety datasets via Google Translate or LLM; Transcreated Data (TC) adapted from English datasets (including Do-Not-Answer, SafeText, red-teaming datasets) using the TATER framework to preserve cultural relevance and harmful intent. Hierarchical safety taxonomy: 5 domains (Crimes & Illegal Activities, Fairness & Discrimination, Explicit Content, Privacy & Property, Harm & Misuse) with 23 subtypes. Severity levels L0-L3. Direct evaluation uses MCQ format; indirect evaluation assesses open-ended safety compliance. Released under CC BY-NC-SA 4.0."
+    }
+  ],
+  "total_languages": 12,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Serbian": {
+      "iso_code": "sr",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["LinguaSafe"]
+    }
+  },
+  "assessments": {
+    "LinguaSafe": {
+      "translated": {
+        "value": "partial",
+        "evidence": "To ensure both breadth of coverage and linguistic authenticity, we incorporated three distinct types of data: Native Data (ND), Translated Data (TL), and Transcreated Data (TC). Native Data refers to authentic, organically generated content in the target languages. Translated Data is obtained by translating English safety datasets into the target languages. Transcreated Data further localize the translated data to the target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Transcreators must be native speakers of the target language or with near-native proficiency with expertise in cultural nuances and safety evaluation. Primary Annotation: The initial annotation phase requires native speakers with verified cultural competency. We also cooperate with native speakers and language experts to identify and collect relevant data from various online sources.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Transcreated Data further localize the translated data to the target languages, ensuring the safety context is culturally equivalent and linguistically authentic. For Crimes & Illegal Activities, we refer to the local laws and regulations of each language to ensure the authenticity of the data. The TATER framework prioritizes cultural fluency and safety evaluation integrity with localization of conventions (currency, dates, names, addresses). However, a portion of the data is straightforwardly translated without cultural adaptation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage annotation: 4 LLM evaluators followed by comprehensive human review and revision. Inter-annotator agreement measured using Krippendorff's Alpha (α = 0.77). AI-human collective judgment agreement on 500 sampled instances: α = 0.89. Dual annotation with discrepancies resolved through expert adjudication. TATER transcreation quality: vanilla LLM translation had 71% error rate for Bengali and 36% for Malay, reduced to 12% and 3% respectively after TATER + human review."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The native data portion is sourced from non-English web content (online forums, social media) in target languages, but the benchmark as a whole also includes translated and transcreated data from English sources. The native data component is organically generated in target languages, not derived from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "A portion of the LinguaSafe dataset is translated or transcreated from English safety datasets (including Do-Not-Answer, SafeText, red-teaming datasets). However, the benchmark also includes substantial native data, making the overall dataset mixed-source rather than purely translated."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["LinguaSafe (partial)"],
+      "details": {
+        "LinguaSafe": "Native data and transcreated data are culturally grounded. The TATER framework ensures cultural adaptation: localization of names, addresses, currency, dates to target cultures; replacement of idioms with culturally equivalent expressions; reference to local laws and regulations. Native data collected with native speakers and language experts for culturally specific content. Translated data portion is less culturally adapted."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes, for annotation and review tasks",
+      "evidence": "Transcreators must be native speakers of the target language or with near-native proficiency with expertise in cultural nuances. The initial annotation phase requires native speakers with verified cultural competency. We also cooperate with native speakers and language experts to identify and collect relevant data."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "researchers",
+        "native_speaker_annotators",
+        "language_experts",
+        "certified_ethics_specialists"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Shanghai Artificial Intelligence Laboratory",
+        "Shanghai Jiao Tong University",
+        "Tsinghua University",
+        "Fudan University"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "individuals were compensated fairly and provided with ongoing psychological support, including access to mental health resources and regular check-ins",
+      "irb_ethics_review": true,
+      "evidence": "For data annotation, we engage annotators with different cultural and academic backgrounds. The annotation process involved researchers with specialized expertise in AI safety. To safeguard annotator well-being, individuals were compensated fairly and provided with ongoing psychological support. AI-driven classifiers initially screen raw data for compliance with ethical and legal norms, followed by a secondary review conducted by three certified ethics specialists to mitigate implicit biases. A continuous monitoring system is in place to evaluate societal implications."
+    },
+    "english_centricity_notes": "The benchmark explicitly addresses English-centricity concerns: it notes that existing benchmarks have 'overdependence on translated data' and that 'simply translating a malicious prompt into a low-resource language can bypass safety alignment.' LinguaSafe mitigates this by including native data and culturally-adapted transcreated data, but the translated and transcreated portions still originate from English safety datasets (Do-Not-Answer, SafeText, red-teaming data). English is included as a high-resource language and serves as the source for translated/transcreated content.",
+    "geographic_representation": {
+      "primary_region": "East Asia and Southeast Asia",
+      "sub_regions": [
+        "East Asia (Chinese, Korean)",
+        "Southeast Asia (Vietnamese, Thai, Malay)",
+        "South Asia (Bengali)",
+        "Middle East (Arabic)",
+        "Eastern Europe (Russian, Czech, Serbian, Hungarian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Sub-Saharan Africa",
+        "Latin America",
+        "Oceania",
+        "Indigenous languages",
+        "Western Europe (except English)",
+        "Central Asia"
+      ],
+      "evidence": "LinguaSafe spans 12 languages: High-resource (English, Russian, Chinese, Vietnamese, Czech), Medium-resource (Arabic, Korean, Thai, Hungarian, Serbian), Low-resource (Malay, Bengali). The paper acknowledges: 'One main limitation is the lack of broader coverage of languages in the dataset. Compare to common multilingual benchmarks, LinguaSafe covers 12 languages which is relatively limited.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

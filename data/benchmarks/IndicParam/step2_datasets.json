@@ -1,0 +1,38 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "IndicParam",
+      "variant_name": null,
+      "variant_notes": "Includes a separate Sanskrit-English code-mixed variant (971 questions) in addition to the 11 monolingual language sets.",
+      "task_type": "multiple-choice QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": [
+        "Nepali",
+        "Marathi",
+        "Gujarati",
+        "Odia",
+        "Maithili",
+        "Konkani",
+        "Santali",
+        "Bodo",
+        "Dogri",
+        "Rajasthani",
+        "Sanskrit"
+      ],
+      "annotation_method": "Human annotators corrected OCR-extracted text from official UGC-NET examination PDFs (2012-2018). Native speakers with graduate-level expertise manually corrected recognition errors, restored missing characters and diacritics, normalized punctuation and spacing, and classified each question by category (language understanding vs. general knowledge) and question type. A two-step review pipeline was used: annotators corrected and aligned answers, then a senior reviewer verified against original exam papers.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Indian Institute of Management Indore; BharatGen",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material. Annotators were compensated at a rate of $1 per 10 questions."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "UGC-NET examination papers (2012-2018) from the National Testing Agency, Government of India (https://ugcnet.nta.ac.in)",
+      "notes": "Questions sourced from UGC-NET, a nationwide graduate-level examination for PhD admission and university teaching eligibility. 13,207 total questions. Post-verification audit on a random 5% sample reported WER of 0.68% and CER of 0.12%. The original questions are human-authored by government examination authorities, not by the benchmark creators."
+    }
+  ]
+}

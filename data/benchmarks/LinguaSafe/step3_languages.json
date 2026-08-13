@@ -1,0 +1,53 @@
+{
+  "total_languages": 12,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Serbian": {
+      "iso_code": "sr",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["LinguaSafe"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["LinguaSafe"]
+    }
+  }
+}

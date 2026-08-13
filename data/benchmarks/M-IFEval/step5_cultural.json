@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The language-specific instructions (5 for Spanish, 5 for French, 12 for Japanese) were created natively by language leads, but the overall benchmark is built as an extension of the English IFEval. The shared instructions are adapted from the English original. Thus no dataset is entirely free of English source."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "The paper explicitly states the benchmark is 'not simply a translation of previous datasets but contains language-specific instructions for novel evaluation.' Shared instructions were adapted (not machine-translated) from IFEval, with inapplicable instructions removed per language."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["M-IFEval"],
+      "details": {
+        "M-IFEval": "Partial cultural grounding through language-specific instructions addressing script systems (katakana, hiragana, kanji, furigana for Japanese), special characters (ñ, ü, accents for Spanish; œ, ç, accents for French), grammatical structures (taigen-dome, です/ます endings for Japanese; informal address tu/vous for French), and punctuation norms (¿ ¡ for Spanish, 。for Japanese). However, cultural grounding is limited to linguistic/typographic features, not broader cultural knowledge."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers"],
+      "total_annotators_reported": 4,
+      "affiliations": ["Lightblue KK.", "Arkema"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Four authors: Antoine Dussolle (Lightblue KK. & Arkema), Andrea Cardeña Díaz (Lightblue KK.), Shota Sato (Lightblue KK.), Peter Devine (Lightblue KK.). Each of the three non-English language leads was a native speaker of their language."
+    },
+    "english_centricity_notes": "The benchmark extends the English IFEval by adapting shared instructions and adding language-specific ones. English scores are included for comparison from the original IFEval. The shared instruction set originates from an English-centric design, though inapplicable instructions were removed per language. The paper explicitly acknowledges: 'only three non-English languages... all relatively high-resource languages'.",
+    "geographic_representation": {
+      "primary_region": "Europe and East Asia",
+      "sub_regions": ["Western Europe", "East Asia", "Latin America"],
+      "also_represented": [],
+      "notably_excluded": ["Africa", "South Asia", "Southeast Asia", "Middle East", "Central Asia", "Oceania"],
+      "evidence": "Only French, Japanese, and Spanish are covered — all high-resource languages. The paper acknowledges this limitation: 'these three languages were all relatively high-resource languages, and since we observe a gap between English and our evaluation languages, we may observe an even greater gap for low resource languages.'"
+    }
+  }
+}

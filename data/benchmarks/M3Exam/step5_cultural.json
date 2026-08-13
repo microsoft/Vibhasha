@@ -1,0 +1,56 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["M3Exam"],
+      "evidence": "collecting real-world natural data of different languages instead of translating from English data is of great importance; we engage native speakers from each of the selected countries to collect official exam papers"
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "The paper explicitly contrasts with translated benchmarks: 'some existing multilingual benchmarks of traditional NLP tasks that were created by translating original English datasets have been found to introduce an English-centric bias.' M3Exam sources questions from real exams in each country's language."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["M3Exam"],
+      "details": {
+        "M3Exam": "Questions sourced from official national exams in 9 countries (US, China, Italy, Brazil, Vietnam, Thailand, Kenya, South Africa, Indonesia), retaining social-cultural diversity and requiring country-specific knowledge. Example: Thai questions require knowledge of Thai geography; Chinese questions test Chinese historical knowledge."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "we engage native speakers from each of the selected countries to collect official exam papers along with their answers; We would also like to thank the annotators from various linguistic and cultural backgrounds who collaborated to contribute to this unique multilingual dataset."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native_speakers", "professional_annotation_team"],
+      "total_annotators_reported": null,
+      "affiliations": ["Alibaba DAMO Academy"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We extend our gratitude to the data management and annotation team at Alibaba DAMO Academy, particularly Yanyan Zheng, Tantong Champaiboon, Nguyen Ngoc Yen Nhi, and Andila Putri Susanti. Their kind assistance in coordinating the annotators, processing the data, and conducting quality checks has been important to our work."
+    },
+    "english_centricity_notes": "The benchmark was explicitly designed to avoid English-centricity. Questions are sourced from real exams in each country's native language. The paper notes: 'some existing multilingual benchmarks...that were created by translating original English datasets have been found to introduce an English-centric bias. This bias arises because the translation process...does not always capture culturally specific or unique concepts present in the target languages.' However, English is one of the 9 languages and has the most questions (2,738 total).",
+    "geographic_representation": {
+      "primary_region": "Global (multi-continent)",
+      "sub_regions": [
+        "North America (US)",
+        "East Asia (China)",
+        "Southern Europe (Italy)",
+        "South America (Brazil)",
+        "Southeast Asia (Vietnam, Indonesia)",
+        "South/Southeast Asia (Thailand)",
+        "East Africa (Kenya)",
+        "Southern Africa (South Africa)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "South Asia (India, Bangladesh, Pakistan)",
+        "Middle East / North Africa",
+        "Central Asia",
+        "Eastern Europe",
+        "Oceania",
+        "Indigenous Americas"
+      ],
+      "evidence": "we select 9 languages including English (from the US), Chinese (from China), Italian (from Italy), Portuguese (from Brazil), Vietnamese (from Vietnam), Thai (from Thailand), Swahili (from Kenya), Afrikaans (from South Africa), and Javanese (from Indonesia). This selection is mainly driven by language and cultural diversity, with the aim of covering different language families, languages with varying levels of resources, written scripts, and their major spoken countries."
+    }
+  }
+}

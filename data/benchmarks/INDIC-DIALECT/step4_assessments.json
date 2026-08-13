@@ -1,0 +1,58 @@
+{
+  "assessments": {
+    "INDIC-DIALECT Dialect Classification": {
+      "translated": {
+        "value": true,
+        "evidence": "The 1000 Hindi sentences are initially created by experts covering different domains... The annotators help translate the Hindi sentences to regional dialects/Odia with expert validation as final step. Limitations section confirms: 'our parallel corpus was created by translating standard language sentences'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Following standard practices for linguistic data collection, the dialectal data is produced and curated entirely by native speakers. We recruit 23 annotators (2 per dialect, and 1 for Odia) and 11 experts (1 per dialect) from the specific regions where these dialects are spoken.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Sentences cover diverse domains (science, history, culture, technology, arts, literature, language and linguistics), but are originally authored in standard Hindi and translated to dialects. The paper acknowledges in limitations: 'our parallel corpus was created by translating standard language sentences, it may not fully capture the organic, dialectal speech, which often includes extensive code-switching.'",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Inter-annotator agreement (Cohen's Kappa) of 0.89 on 5% subset. Annotation guidelines required native speakers to prioritize six core dimensions: naturalness of expression, orthographic consistency, local vocabulary selection, morphosyntactic adaptation, appropriate handling of loanwords, and preservation of sociolinguistic register."
+    },
+    "INDIC-DIALECT MCQ": {
+      "translated": {
+        "value": true,
+        "evidence": "Derived from the same parallel corpus translated from standard Hindi sentences. Dialect sentences serve as questions, correct answers are translations from the parallel corpus.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The underlying parallel corpus was produced and curated entirely by native speakers (23 annotators + 11 experts). Distractors were generated using the approach from Zellers et al. 2019.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Same source corpus as classification task. Sentences originally authored in standard Hindi covering diverse domains but not organically generated from dialect communities.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Hard distractors created to be semantically very similar near-misses using approach from Zellers et al. 2019, forcing models to rely on dialect-specific cues rather than superficial word overlap."
+    },
+    "INDIC-DIALECT Machine Translation": {
+      "translated": {
+        "value": true,
+        "evidence": "The parallel corpus is directly used for MT. '1000 Hindi sentences are initially created by experts... The annotators help translate the Hindi sentences to regional dialects/Odia.' Limitations confirm sentences are translated from standard languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "All data is produced and validated by native speakers to ensure linguistic fidelity and dialectal authenticity. 23 annotators (2 per dialect, 1 for Odia) + 11 experts (1 per dialect) from specific dialect regions.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Parallel corpus covers domains like science, history, culture, technology, arts, literature, language and linguistics. While 'culture' is included as a domain, the sentences originate from standard Hindi rather than from organic dialectal usage. The paper acknowledges it 'may not fully capture the organic, dialectal speech'.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Inter-annotator agreement (Cohen's Kappa) of 0.89 on 5% subset. Remaining 95% translated by annotators with expert validation. 70:30 train:test split; experiments run over 5 trials with different random seeds."
+    }
+  }
+}

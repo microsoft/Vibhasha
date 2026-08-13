@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All BenchMAX tasks are either translated from English or are existing parallel datasets. The benchmark explicitly focuses on language-agnostic capabilities: 'These capabilities are language-agnostic.' (Section 1)"
+    },
+    "datasets_translated_from_english": {
+      "list": ["IFEval", "m-ArenaHard", "HumanEval+", "LiveCodeBench_v4", "MGSM", "GPQA", "RULER", "Nexus", "BenchMAX Domain Translation"],
+      "evidence": "The way to obtain BenchMAX generally consists of three steps: 1) translate data from English to non-English by machines; 2) post-edit each sample by three native annotators; 3) pick the final translation version by GPT-4o-mini. (Section 3.3). MGSM partially translated (6 of 16 non-English languages newly translated)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Each sample is given to three native annotators who are proficient in English and their native language. (Section 3.3, Step 2)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native_speaker_annotators", "automated_machine_translation"],
+      "total_annotators_reported": null,
+      "affiliations": ["Nanjing University", "University of Zurich", "Shanghai Artificial Intelligence Laboratory", "Carnegie Mellon University"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "The annotators are paid above local average salary. (Appendix F)",
+      "irb_ethics_review": null,
+      "evidence": "We recuite native annatators to post-edit the machine translations. The instructions vary according to the task and constraints. [...] The annotators are paid above local average salary. (Appendix F). Considering the specialized nature of datasets like Science reasoning, annotators are required to hold at least a Bachelor's degree. (Section 3.3, Step 2). Total annotator count not reported; 3 annotators per sample for most tasks, plus a 4th annotator initially used for final selection before being replaced by GPT-4o-mini."
+    },
+    "english_centricity_notes": "BenchMAX is explicitly English-centric in its construction: all task data originates in English and is translated to 16 other languages. The benchmark is designed to evaluate 'language-agnostic capabilities' by testing whether models can perform the same English-origin tasks in other languages. The paper acknowledges this design: 'The data construction process may introduce model biases, as we use Qwen2.5-72B-Instruct for quality estimation, and GPT-4o-mini for selecting the final translation.' (Section 7, Limitations). Tool use descriptions remain in English even for non-English queries.",
+    "geographic_representation": {
+      "primary_region": "Global (by language selection)",
+      "sub_regions": ["East Asia", "South Asia", "Southeast Asia", "Europe", "Middle East", "East Africa"],
+      "also_represented": [],
+      "notably_excluded": ["Indigenous Americas", "Oceania", "Central Asia", "West Africa (beyond Swahili)", "North Africa (beyond Arabic)"],
+      "evidence": "BenchMAX supports 17 languages to cover diverse language families and writing systems (Table 1). Languages span 9 language families: Indo-European, Uralic, Austroasiatic, Koreanic, Japonic, Afro-Asiatic, Kra-Dai, Niger-Congo, Sino-Tibetan, and Dravidian. However, coverage is limited to 17 languages, most of which are high-to-mid resource."
+    }
+  }
+}

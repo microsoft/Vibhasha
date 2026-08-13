@@ -1,0 +1,118 @@
+{
+  "benchmark_name": "M-IFEval",
+  "paper_id": "2025.findings-naacl.344",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present Multilingual Instruction Following Evaluation (M-IFEval), a benchmark for evaluating LLM instruction following beyond English.",
+  "total_languages_claimed": 4,
+  "total_datasets": 1,
+  "dataset_names": ["M-IFEval"],
+  "task_categories": ["instruction_following"],
+  "brief_description": "M-IFEval is a multilingual extension of the IFEval benchmark that evaluates LLM instruction-following abilities in French, Japanese, and Spanish (plus English from the original IFEval), using both shared and language-specific verifiable instructions covering formatting, punctuation, script-based, and special-character constraints.",
+  "datasets": [
+    {
+      "dataset_name": "M-IFEval",
+      "variant_name": null,
+      "variant_notes": "Includes shared instructions adapted from original IFEval plus novel language-specific instructions for each of the 3 target languages. 115 prompts for Spanish, 235 for French, 172 for Japanese.",
+      "task_type": "instruction_following",
+      "source": "mixed",
+      "source_language": "English (for shared instructions adapted from IFEval); French, Japanese, Spanish (for language-specific instructions created natively)",
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["English", "French", "Japanese", "Spanish"],
+      "annotation_method": "expert_native_speakers",
+      "data_creator_info": {
+        "creator_type": "researchers_native_speakers",
+        "creator_affiliation": "Lightblue KK. and Arkema",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Extends IFEval (Zhou et al., 2023)",
+      "notes": "Prompts were developed by generating multiple example prompts using an LLM, then manually selecting and editing. Shared instructions from IFEval were adapted per language (e.g., case-change instructions removed for Japanese). Language-specific instructions were newly created by native-speaker language leads. English scores are from the original IFEval and not newly collected."
+    }
+  ],
+  "total_languages": 4,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["M-IFEval"]
+    }
+  },
+  "assessments": {
+    "M-IFEval": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Shared instructions from the original English IFEval were adapted (not machine-translated) to the three target languages, while language-specific instructions were created natively. The paper states: 'we propose a new, multilingual version of IFEval that is not simply a translation of previous datasets but contains language-specific instructions for novel evaluation.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Language-specific instructions address script, punctuation, and character constraints particular to each language (e.g., katakana/hiragana/kanji for Japanese, ñ/ü/accents for Spanish, œ/ç/accents for French, taigen-dome for Japanese). However, the shared instructions originate from IFEval's English-centric design. Cultural grounding is limited to linguistic/script features rather than broader cultural knowledge or context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Each language lead developed and manually verified evaluation functions, prompts, and correct evaluation arguments. At least 4 unique prompts per instruction for Spanish and Japanese, 7 per instruction for French. Prompts were LLM-generated then manually selected and edited."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The language-specific instructions (5 for Spanish, 5 for French, 12 for Japanese) were created natively by language leads, but the overall benchmark is built as an extension of the English IFEval. The shared instructions are adapted from the English original. Thus no dataset is entirely free of English source."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "The paper explicitly states the benchmark is 'not simply a translation of previous datasets but contains language-specific instructions for novel evaluation.' Shared instructions were adapted (not machine-translated) from IFEval, with inapplicable instructions removed per language."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["M-IFEval"],
+      "details": {
+        "M-IFEval": "Partial cultural grounding through language-specific instructions addressing script systems (katakana, hiragana, kanji, furigana for Japanese), special characters (ñ, ü, accents for Spanish; œ, ç, accents for French), grammatical structures (taigen-dome, です/ます endings for Japanese; informal address tu/vous for French), and punctuation norms (¿ ¡ for Spanish, 。for Japanese). However, cultural grounding is limited to linguistic/typographic features, not broader cultural knowledge."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "We chose French, Japanese, and Spanish as our research team included one native speaker in each language, with each acting as language lead for their respective language."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers"],
+      "total_annotators_reported": 4,
+      "affiliations": ["Lightblue KK.", "Arkema"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Four authors: Antoine Dussolle (Lightblue KK. & Arkema), Andrea Cardeña Díaz (Lightblue KK.), Shota Sato (Lightblue KK.), Peter Devine (Lightblue KK.). Each of the three non-English language leads was a native speaker of their language."
+    },
+    "english_centricity_notes": "The benchmark extends the English IFEval by adapting shared instructions and adding language-specific ones. English scores are included for comparison from the original IFEval. The shared instruction set originates from an English-centric design, though inapplicable instructions were removed per language. The paper explicitly acknowledges: 'only three non-English languages... all relatively high-resource languages'.",
+    "geographic_representation": {
+      "primary_region": "Europe and East Asia",
+      "sub_regions": ["Western Europe", "East Asia", "Latin America"],
+      "also_represented": [],
+      "notably_excluded": ["Africa", "South Asia", "Southeast Asia", "Middle East", "Central Asia", "Oceania"],
+      "evidence": "Only French, Japanese, and Spanish are covered — all high-resource languages. The paper acknowledges this limitation: 'these three languages were all relatively high-resource languages, and since we observe a gap between English and our evaluation languages, we may observe an even greater gap for low resource languages.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

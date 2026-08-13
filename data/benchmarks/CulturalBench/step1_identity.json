@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "CulturalBench",
+  "paper_id": "2025.acl-long.1247",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce CULTURALBENCH: a set of 1,696 human-written and human-verified questions to assess LMs' cultural knowledge",
+  "total_languages_claimed": 1,
+  "total_datasets": 1,
+  "dataset_names": ["CulturalBench"],
+  "task_categories": ["cultural knowledge QA", "multiple-choice QA", "binary classification (True/False)"],
+  "brief_description": "CulturalBench is an English-only benchmark of 1,696 human-written and human-verified multiple-choice questions assessing LMs' cultural knowledge across 45 global regions and 17 cultural topics. It includes two evaluation setups: CulturalBench-Easy (multiple-choice) and CulturalBench-Hard (True/False binary for each option, yielding 6,784 questions)."
+}

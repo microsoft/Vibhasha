@@ -1,0 +1,493 @@
+{
+  "total_languages": 122,
+  "languages": {
+    "Mesopotamian Arabic": {
+      "iso_code": "acm",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tosk Albanian": {
+      "iso_code": "als",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["Belebele"]
+    },
+    "North Levantine Arabic": {
+      "iso_code": "apc",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Modern Standard Arabic": {
+      "iso_code": "arb",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Modern Standard Arabic (Romanized)": {
+      "iso_code": "arb",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Najdi Arabic": {
+      "iso_code": "ars",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Moroccan Arabic": {
+      "iso_code": "ary",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Egyptian Arabic": {
+      "iso_code": "arz",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Assamese": {
+      "iso_code": "asm",
+      "datasets_present_in": ["Belebele"]
+    },
+    "North Azerbaijani": {
+      "iso_code": "azj",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Bambara": {
+      "iso_code": "bam",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Bengali (Romanized)": {
+      "iso_code": "ben",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Standard Tibetan": {
+      "iso_code": "bod",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Bulgarian": {
+      "iso_code": "bul",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Central Kurdish": {
+      "iso_code": "ckb",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Danish": {
+      "iso_code": "dan",
+      "datasets_present_in": ["Belebele"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["Belebele"]
+    },
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Estonian": {
+      "iso_code": "est",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Basque": {
+      "iso_code": "eus",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Finnish": {
+      "iso_code": "fin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Nigerian Fulfulde": {
+      "iso_code": "fuv",
+      "datasets_present_in": ["Belebele"]
+    },
+    "West Central Oromo": {
+      "iso_code": "gaz",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Guarani": {
+      "iso_code": "grn",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Haitian Creole": {
+      "iso_code": "hat",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Hindi (Romanized)": {
+      "iso_code": "hin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Croatian": {
+      "iso_code": "hrv",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Ilocano": {
+      "iso_code": "ilo",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Icelandic": {
+      "iso_code": "isl",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Javanese": {
+      "iso_code": "jav",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Jingpho": {
+      "iso_code": "kac",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Kabuverdianu": {
+      "iso_code": "kea",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Halh Mongolian": {
+      "iso_code": "khk",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Khmer": {
+      "iso_code": "khm",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Lao": {
+      "iso_code": "lao",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Ganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Standard Latvian": {
+      "iso_code": "lvs",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Macedonian": {
+      "iso_code": "mkd",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Maltese": {
+      "iso_code": "mlt",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Maori": {
+      "iso_code": "mri",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Burmese": {
+      "iso_code": "mya",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Dutch": {
+      "iso_code": "nld",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Norwegian Bokmål": {
+      "iso_code": "nob",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Nepali (Romanized)": {
+      "iso_code": "npi",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Nyanja": {
+      "iso_code": "nya",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Odia": {
+      "iso_code": "ory",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Eastern Panjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Southern Pashto": {
+      "iso_code": "pbt",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Western Persian": {
+      "iso_code": "pes",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Plateau Malagasy": {
+      "iso_code": "plt",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Polish": {
+      "iso_code": "pol",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Shan": {
+      "iso_code": "shn",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Sinhala (Romanized)": {
+      "iso_code": "sin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Sinhala": {
+      "iso_code": "sin",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Slovak": {
+      "iso_code": "slk",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Slovenian": {
+      "iso_code": "slv",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Shona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Sindhi": {
+      "iso_code": "snd",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Southern Sotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Swati": {
+      "iso_code": "ssw",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Sundanese": {
+      "iso_code": "sun",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Swahili": {
+      "iso_code": "swh",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tajik": {
+      "iso_code": "tgk",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tagalog": {
+      "iso_code": "tgl",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tigrinya": {
+      "iso_code": "tir",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tswana": {
+      "iso_code": "tsn",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Tsonga": {
+      "iso_code": "tso",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Urdu (Romanized)": {
+      "iso_code": "urd",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Northern Uzbek": {
+      "iso_code": "uzn",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Waray": {
+      "iso_code": "war",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Xhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Chinese (Simplified)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Chinese (Traditional)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Standard Malay": {
+      "iso_code": "zsm",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["Belebele"]
+    }
+  }
+}

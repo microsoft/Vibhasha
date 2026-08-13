@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "LinguaSafe": {
+      "translated": {
+        "value": "partial",
+        "evidence": "To ensure both breadth of coverage and linguistic authenticity, we incorporated three distinct types of data: Native Data (ND), Translated Data (TL), and Transcreated Data (TC). Native Data refers to authentic, organically generated content in the target languages. Translated Data is obtained by translating English safety datasets into the target languages. Transcreated Data further localize the translated data to the target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Transcreator Qualifications: Transcreators must be native speakers of the target language or with near-native proficiency with expertise in cultural nuances and safety evaluation. Primary Annotation: The initial annotation phase requires native speakers with verified cultural competency. We also cooperate with native speakers and language experts to identify and collect relevant data from various online sources.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Transcreated Data further localize the translated data to the target languages, ensuring the safety context is culturally equivalent and linguistically authentic. For Crimes & Illegal Activities, we refer to the local laws and regulations of each language to ensure the authenticity of the data. The TATER framework prioritizes cultural fluency and safety evaluation integrity with localization of conventions (currency, dates, names, addresses). However, a portion of the data is straightforwardly translated without cultural adaptation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage annotation: 4 LLM evaluators followed by comprehensive human review and revision. Inter-annotator agreement measured using Krippendorff's Alpha (α = 0.77). AI-human collective judgment agreement on 500 sampled instances: α = 0.89. Dual annotation with discrepancies resolved through expert adjudication. TATER transcreation quality: vanilla LLM translation had 71% error rate for Bengali and 36% for Malay, reduced to 12% and 3% respectively after TATER + human review."
+    }
+  }
+}

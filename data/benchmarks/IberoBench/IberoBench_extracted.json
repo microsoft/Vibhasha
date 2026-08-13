@@ -1,0 +1,1110 @@
+{
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "paper_source": "papers_metadata/texts/2025.coling-main.699_iberobench.txt"
+  },
+  "step1_identity": {
+    "benchmark_name": "IberoBench",
+    "paper_id": "2025.coling-main.699",
+    "year": 2025,
+    "benchmark_type": "mixed",
+    "benchmark_type_evidence": "We present 22 new datasets and tasks in IberoBench, and make use of existing datasets to expand it with 40 tasks.",
+    "total_languages_claimed": 5,
+    "total_datasets": 62,
+    "dataset_names": [
+      "copa_ca", "copa_es", "xcopa_eu",
+      "xstorycloze_ca", "xstorycloze_es", "xstorycloze_eu",
+      "catcola", "escola", "galcola",
+      "mgsm_direct_ca", "mgsm_direct_es", "mgsm_direct_eu", "mgsm_direct_gl",
+      "xnli_ca", "xnli_es", "xnli_eu",
+      "wnli_ca", "wnli_es", "wnli_eu",
+      "teca", "qnli_eu", "assin_entailment",
+      "parafraseja", "parafrases_gl",
+      "paws_ca", "paws_es", "paws_gl", "assin_paraphrase",
+      "arc_ca", "catalanqa", "coqcat",
+      "openbookqa_ca", "openbookqa_es", "openbookqa_gl",
+      "piqa_ca", "piqa_eu",
+      "siqa_ca",
+      "xquad_ca", "xquad_es",
+      "eus_exams", "eus_proficiency", "eus_trivia",
+      "belebele_cat_Latn", "belebele_spa_Latn", "belebele_eus_Latn", "belebele_glg_Latn", "belebele_por_Latn",
+      "eus_reading",
+      "cabreu", "xlsum_es", "summarization_gl",
+      "flores_ca", "flores_es", "flores_eu", "flores_gl", "flores_pt",
+      "phrases_va", "phrases_es",
+      "veritasqa_ca", "veritasqa_es", "veritasqa_gl",
+      "truthfulqa_gl"
+    ],
+    "task_categories": [
+      "Commonsense Reasoning",
+      "Linguistic Acceptability",
+      "Mathematics",
+      "Natural Language Inference",
+      "Paraphrasing",
+      "Question Answering",
+      "Reading Comprehension",
+      "Summarization",
+      "Translation",
+      "Truthfulness"
+    ],
+    "brief_description": "IberoBench is a multilingual, multi-task benchmark for evaluating LLMs in five Iberian languages (Catalan, European Spanish, Basque, Galician, and European Portuguese), consisting of 62 tasks divided into 179 subtasks across 10 categories, built on the LM Evaluation Harness framework. It combines 40 existing high-quality datasets with 22 newly created or translated datasets, emphasizing quality, reproducibility, and cultural adaptation."
+  },
+  "step2_datasets": {
+    "datasets": [
+      {
+        "dataset_name": "COPA",
+        "variant_name": "IberoBench Catalan/Spanish + XCOPA Basque",
+        "variant_notes": "copa_ca (existing, Gonzalez-Agirre et al. 2024), copa_es (newly translated), xcopa_eu (newly translated for Basque).",
+        "task_type": "commonsense_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Basque"],
+        "annotation_method": "human_professional_translation with cultural adaptation guidelines",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Barcelona Supercomputing Center, UPV/EHU, and collaborating institutions",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Translations done by professional human translators following shared general criteria and language-specific guidelines"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Gordon et al. 2012 (COPA); Gonzalez-Agirre et al. 2024 (copa_ca)",
+        "notes": "copa_ca is pre-existing; copa_es and xcopa_eu are newly created for IberoBench."
+      },
+      {
+        "dataset_name": "XStoryCloze",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "commonsense_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Basque"],
+        "annotation_method": "human_translation (from Lin et al. 2022)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Meta AI (original XStoryCloze)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Pre-existing multilingual dataset from Lin et al. 2022"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Lin et al. 2022a",
+        "notes": "All three language versions are pre-existing."
+      },
+      {
+        "dataset_name": "CatCoLA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "linguistic_acceptability",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation (natively authored Catalan linguistic acceptability corpus)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "CatCoLA (Bel et al. 2024b)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Bel et al. 2024b",
+        "notes": "Natively authored for Catalan. Prompts translated from English CoLA but data is original."
+      },
+      {
+        "dataset_name": "EsCoLA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "linguistic_acceptability",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Spanish"],
+        "annotation_method": "original_creation (natively authored Spanish linguistic acceptability corpus)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "EsCoLA (Bel et al. 2024a)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Bel et al. 2024a",
+        "notes": "Natively authored for Spanish."
+      },
+      {
+        "dataset_name": "GalCoLA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "linguistic_acceptability",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Galician"],
+        "annotation_method": "original_creation (natively authored Galician linguistic acceptability corpus)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "GalCoLA (de Dios-Flores et al. 2023)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "de Dios-Flores et al. 2023",
+        "notes": "Natively authored for Galician."
+      },
+      {
+        "dataset_name": "MGSM",
+        "variant_name": "IberoBench (ca, es, eu, gl)",
+        "variant_notes": "mgsm_direct_es is pre-existing; mgsm_direct_ca, mgsm_direct_eu, mgsm_direct_gl are newly translated.",
+        "task_type": "mathematical_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 4,
+        "language_list": ["Catalan", "Spanish", "Basque", "Galician"],
+        "annotation_method": "human_translation of English GSM8K math problems",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Google (original MGSM); IberoBench authors (new translations)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "MGSM (Shi et al. 2023)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Shi et al. 2023",
+        "notes": "Spanish version pre-existing. Catalan, Basque, and Galician are new human translations."
+      },
+      {
+        "dataset_name": "XNLI",
+        "variant_name": "IberoBench (ca, es, eu)",
+        "variant_notes": "xnli_ca and xnli_es from XNLI (Conneau et al. 2018); xnli_eu from XNLIeu (Heredia et al. 2024)",
+        "task_type": "natural_language_inference",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Basque"],
+        "annotation_method": "human_translation from English MultiNLI",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Facebook AI Research (original XNLI); Heredia et al. 2024 (eu)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "XNLI (Conneau et al. 2018), XNLIeu (Heredia et al. 2024)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Conneau et al. 2018; Heredia et al. 2024; Gonzalez-Agirre et al. 2024",
+        "notes": "All three language versions pre-existing. IberoBench fixes prompt formatting issues."
+      },
+      {
+        "dataset_name": "WNLI",
+        "variant_name": "IberoBench (ca, es, eu)",
+        "variant_notes": "wnli_ca pre-existing; wnli_es and wnli_eu newly translated",
+        "task_type": "natural_language_inference",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Basque"],
+        "annotation_method": "human_professional_translation from English Winograd NLI",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors; Gonzalez-Agirre et al. 2024 (ca)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "wnli_ca from Gonzalez-Agirre et al. 2024"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "GLUE (Wang et al. 2018); Gonzalez-Agirre et al. 2024",
+        "notes": "wnli_ca pre-existing. wnli_es and wnli_eu are new translations."
+      },
+      {
+        "dataset_name": "TE-ca",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "natural_language_inference",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation (natively authored Catalan textual entailment)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Gonzalez-Agirre et al. 2024 / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "TE-ca from Gonzalez-Agirre et al. 2024"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Gonzalez-Agirre et al. 2024",
+        "notes": "Natively authored Catalan textual entailment."
+      },
+      {
+        "dataset_name": "QNLI_eu",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "natural_language_inference",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Basque"],
+        "annotation_method": "original_creation (part of BasqueGLUE)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Urbizu et al. 2022 / University of the Basque Country",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "QNLI_eu from BasqueGLUE (Urbizu et al. 2022)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Urbizu et al. 2022",
+        "notes": "Part of BasqueGLUE, natively authored for Basque."
+      },
+      {
+        "dataset_name": "ASSIN",
+        "variant_name": "entailment and paraphrase subtasks",
+        "variant_notes": "Two subtasks: assin_entailment (NLI) and assin_paraphrase (paraphrasing)",
+        "task_type": "natural_language_inference / paraphrase_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Portuguese"],
+        "annotation_method": "original_creation with automatic annotations and thorough human revision",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Fonseca et al. 2016",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "ASSIN (Fonseca et al. 2016)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Fonseca et al. 2016",
+        "notes": "Natively authored Portuguese dataset. IberoBench uses two subsets."
+      },
+      {
+        "dataset_name": "Parafraseja",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "paraphrase_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation (natively authored Catalan paraphrase dataset)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Projecte AINA / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Parafraseja from projecte-aina"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "https://huggingface.co/datasets/projecte-aina/Parafraseja",
+        "notes": "Natively authored Catalan paraphrase dataset."
+      },
+      {
+        "dataset_name": "Parafrases_gl",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "paraphrase_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Galician"],
+        "annotation_method": "automatic_generation (BERT term replacement, back-translation) with manual review by two linguists",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "CiTIUS-USC (IberoBench authors)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Created from scratch: 2032 entries from diverse Galician materials, annotated by two linguists."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": null,
+        "notes": "Newly created for IberoBench. 2032 entries with three labels."
+      },
+      {
+        "dataset_name": "PAWS-X",
+        "variant_name": "IberoBench (ca, es, gl)",
+        "variant_notes": "paws_ca from Gonzalez-Agirre et al. 2024; paws_es from PAWS-X; paws_gl newly translated",
+        "task_type": "paraphrase_detection",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Galician"],
+        "annotation_method": "human_translation from English PAWS",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Google Research (original PAWS-X); IberoBench authors (gl)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "PAWS-X (Yang et al. 2019)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Yang et al. 2019; Gonzalez-Agirre et al. 2024",
+        "notes": "paws_ca and paws_es pre-existing. paws_gl is new."
+      },
+      {
+        "dataset_name": "ARC",
+        "variant_name": "ARC_ca (Catalan)",
+        "variant_notes": "Newly translated to Catalan with error correction",
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "human_professional_translation with manual revision and error correction",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Paper reports fixing errors in original ARC during translation."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Clark et al. 2018; Yadav et al. 2019",
+        "notes": "Two subtasks: arc_easy and arc_challenge in Catalan."
+      },
+      {
+        "dataset_name": "CatalanQA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Gonzalez-Agirre et al. 2024 / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "CatalanQA from Gonzalez-Agirre et al. 2024"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Gonzalez-Agirre et al. 2024",
+        "notes": "Natively authored Catalan QA."
+      },
+      {
+        "dataset_name": "CoQCat",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Gonzalez-Agirre et al. 2024 / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "CoQCat from Gonzalez-Agirre et al. 2024"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Gonzalez-Agirre et al. 2024",
+        "notes": "Natively authored Catalan QA."
+      },
+      {
+        "dataset_name": "OpenBookQA",
+        "variant_name": "IberoBench (ca, es, gl)",
+        "variant_notes": "All three language versions newly translated",
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Galician"],
+        "annotation_method": "human_professional_translation with cultural adaptation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Mentioned as part of human translation strategy with dataset-specific guidelines."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Original OpenBookQA (English)",
+        "notes": "Newly translated with cultural adaptation."
+      },
+      {
+        "dataset_name": "PIQA",
+        "variant_name": "IberoBench (ca, eu)",
+        "variant_notes": "Both Catalan and Basque versions newly translated",
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 2,
+        "language_list": ["Catalan", "Basque"],
+        "annotation_method": "human_professional_translation with Basque-specific adaptations",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "PIQA mentioned with dataset-specific guidelines for translation."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Original PIQA (English)",
+        "notes": "Basque translation required special restructuring due to typological differences."
+      },
+      {
+        "dataset_name": "Social IQA",
+        "variant_name": "siqa_ca (Catalan)",
+        "variant_notes": "Newly translated to Catalan",
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "human_professional_translation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": null
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Sap et al. 2019",
+        "notes": "Newly translated to Catalan for IberoBench."
+      },
+      {
+        "dataset_name": "XQuAD",
+        "variant_name": "IberoBench (ca, es)",
+        "variant_notes": "xquad_es from XQuAD; xquad_ca from Armengol-Estapé et al. 2021",
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 2,
+        "language_list": ["Catalan", "Spanish"],
+        "annotation_method": "human_translation from English SQuAD",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "DeepMind (original XQuAD); Armengol-Estapé et al. 2021 (ca)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "XQuAD (Artetxe et al. 2020)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Artetxe et al. 2020; Armengol-Estapé et al. 2021",
+        "notes": "Both language versions pre-existing."
+      },
+      {
+        "dataset_name": "EusExams",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Basque"],
+        "annotation_method": "original_creation (from Basque public examinations)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Etxaniz et al. 2024 / University of the Basque Country",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Part of Latxa evaluation suite"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Etxaniz et al. 2024",
+        "notes": "Natively authored Basque dataset."
+      },
+      {
+        "dataset_name": "EusProficiency",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Basque"],
+        "annotation_method": "original_creation with human-generated annotations",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Etxaniz et al. 2024 / University of the Basque Country",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Paper explicitly mentions human-generated annotations for EusProficiency."
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Etxaniz et al. 2024",
+        "notes": "Natively authored Basque language proficiency exam dataset."
+      },
+      {
+        "dataset_name": "EusTrivia",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Basque"],
+        "annotation_method": "original_creation (Basque trivia questions)",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Etxaniz et al. 2024 / University of the Basque Country",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Part of Latxa evaluation suite"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Etxaniz et al. 2024",
+        "notes": "Natively authored Basque trivia."
+      },
+      {
+        "dataset_name": "EusReading",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "reading_comprehension",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Basque"],
+        "annotation_method": "original_creation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Etxaniz et al. 2024 / University of the Basque Country",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Part of Latxa evaluation suite"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Etxaniz et al. 2024",
+        "notes": "Natively authored Basque reading comprehension."
+      },
+      {
+        "dataset_name": "Belebele",
+        "variant_name": "IberoBench subset (cat, spa, eus, glg, por)",
+        "variant_notes": "Only the 5 Iberian language variants used",
+        "task_type": "reading_comprehension",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 5,
+        "language_list": ["Catalan", "Spanish", "Basque", "Galician", "Portuguese"],
+        "annotation_method": "parallel creation with human-generated annotations across 122 language variants",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Meta AI (Bandarkar et al. 2023)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Paper states: 'human-generated annotations (e.g., Belebele, EusProficiency)'"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Bandarkar et al. 2023",
+        "notes": "Pre-existing. IberoBench fixed non-UTF-8 character issues."
+      },
+      {
+        "dataset_name": "CaBREU",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "summarization",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Catalan"],
+        "annotation_method": "original_creation with three annotator summaries per text",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Gonzalez-Agirre et al. 2024 / Barcelona Supercomputing Center",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "CaBREU from Gonzalez-Agirre et al. 2024"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Gonzalez-Agirre et al. 2024",
+        "notes": "Natively authored. IberoBench uses annotator #1 as gold standard after human evaluation."
+      },
+      {
+        "dataset_name": "XL-Sum",
+        "variant_name": "xlsum_es (Spanish)",
+        "variant_notes": null,
+        "task_type": "summarization",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Spanish"],
+        "annotation_method": "original_creation from BBC news articles",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Hasan et al. 2021",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "XL-Sum (Hasan et al. 2021)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Hasan et al. 2021",
+        "notes": "Spanish version from multilingual XL-Sum."
+      },
+      {
+        "dataset_name": "Summarization_gl",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "summarization",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Galician"],
+        "annotation_method": "original_creation from Galician newspapers",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "CiTIUS-USC (IberoBench authors)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Over 80,000 summaries from three Galician newspapers."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": null,
+        "notes": "Newly created. Sources: Que pasa na costa, Nós diario, Praza Pública."
+      },
+      {
+        "dataset_name": "FLORES-200",
+        "variant_name": "IberoBench subset (ca, es, eu, gl, pt)",
+        "variant_notes": "All pairwise translation combinations between Iberian languages and four major European languages",
+        "task_type": "machine_translation",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 5,
+        "language_list": ["Catalan", "Spanish", "Basque", "Galician", "Portuguese"],
+        "annotation_method": "human_translation (professional translators for FLORES-200)",
+        "data_creator_info": {
+          "creator_type": "professional_annotators",
+          "creator_affiliation": "Meta AI / NLLB team (Costa-jussà et al. 2022)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "FLORES-200 (Costa-jussà et al. 2022)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Costa-jussà et al. 2022",
+        "notes": "Pre-existing. IberoBench uses English prompts across all FLORES-200 sub-tasks."
+      },
+      {
+        "dataset_name": "Phrases",
+        "variant_name": "phrases_va and phrases_es",
+        "variant_notes": "Translation dataset focusing on Valencian variety",
+        "task_type": "translation",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 2,
+        "language_list": ["Catalan", "Spanish"],
+        "annotation_method": "original_creation: Common Voice phrases filtered and translated by Catalan philology expert",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors (expert in Catalan philology)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Expert in Catalan philology ensured linguistic quality and cultural accuracy."
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Ardila et al. 2020 (Common Voice source)",
+        "notes": "Focuses on Catalan-Valencian and Valencian-Spanish translation pairs."
+      },
+      {
+        "dataset_name": "VeritasQA",
+        "variant_name": "IberoBench (ca, es, gl)",
+        "variant_notes": "veritasqa_ca and veritasqa_es pre-existing; veritasqa_gl newly translated",
+        "task_type": "truthfulness",
+        "source": "mixed",
+        "source_language": null,
+        "translation_method": "human_professional",
+        "num_languages": 3,
+        "language_list": ["Catalan", "Spanish", "Galician"],
+        "annotation_method": "multilingual truthfulness evaluation",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "Aula-Blasco et al. 2025 / IberoBench authors",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "VeritasQA (Aula-Blasco et al. 2025)"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Aula-Blasco et al. 2025",
+        "notes": "veritasqa_ca and veritasqa_es pre-existing. veritasqa_gl is new."
+      },
+      {
+        "dataset_name": "TruthfulQA",
+        "variant_name": "truthfulqa_gl (Galician)",
+        "variant_notes": "Newly translated to Galician",
+        "task_type": "truthfulness",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_professional",
+        "num_languages": 1,
+        "language_list": ["Galician"],
+        "annotation_method": "human_professional_translation from English TruthfulQA",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "IberoBench authors",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": null
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Original TruthfulQA (English)",
+        "notes": "Newly translated to Galician for IberoBench."
+      }
+    ]
+  },
+  "step3_languages": {
+    "total_languages": 5,
+    "languages": {
+      "Catalan": {
+        "iso_code": "cat",
+        "datasets_present_in": [
+          "copa_ca", "xstorycloze_ca", "catcola", "mgsm_direct_ca",
+          "xnli_ca", "wnli_ca", "teca", "parafraseja", "paws_ca",
+          "arc_ca", "catalanqa", "coqcat", "openbookqa_ca", "piqa_ca",
+          "siqa_ca", "xquad_ca", "belebele_cat_Latn", "cabreu",
+          "flores_ca", "phrases_va", "veritasqa_ca"
+        ]
+      },
+      "Spanish": {
+        "iso_code": "spa",
+        "datasets_present_in": [
+          "copa_es", "xstorycloze_es", "escola", "mgsm_direct_es",
+          "xnli_es", "wnli_es", "paws_es", "openbookqa_es", "xquad_es",
+          "belebele_spa_Latn", "xlsum_es", "flores_es", "phrases_es",
+          "veritasqa_es"
+        ]
+      },
+      "Basque": {
+        "iso_code": "eus",
+        "datasets_present_in": [
+          "xcopa_eu", "xstorycloze_eu", "mgsm_direct_eu",
+          "xnli_eu", "wnli_eu", "qnli_eu", "piqa_eu",
+          "eus_exams", "eus_proficiency", "eus_trivia",
+          "belebele_eus_Latn", "eus_reading", "flores_eu"
+        ]
+      },
+      "Galician": {
+        "iso_code": "glg",
+        "datasets_present_in": [
+          "galcola", "mgsm_direct_gl", "parafrases_gl", "paws_gl",
+          "openbookqa_gl", "belebele_glg_Latn", "summarization_gl",
+          "flores_gl", "veritasqa_gl", "truthfulqa_gl"
+        ]
+      },
+      "Portuguese": {
+        "iso_code": "por",
+        "datasets_present_in": [
+          "assin_entailment", "assin_paraphrase",
+          "belebele_por_Latn", "flores_pt"
+        ]
+      }
+    }
+  },
+  "step4_assessments": {
+    "assessments": {
+      "COPA": {
+        "translated": {"value": true, "evidence": "Translated from English COPA. copa_ca pre-existing; copa_es and xcopa_eu newly translated by professional human translators.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Translations by professional human translators in target languages with language-specific guidelines.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Translation guidelines specify cultural adaptation (dates, metrics, currency, names) but content originates from English.", "confidence": "medium"},
+        "annotation_quality_notes": "Rigorous translation criteria including cultural adaptation and preservation of task difficulty."
+      },
+      "XStoryCloze": {
+        "translated": {"value": true, "evidence": "XStoryCloze (Lin et al. 2022a) translated from English StoryCloze.", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Translation process details not provided in this paper.", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English stories without cultural adaptation.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "CatCoLA": {
+        "translated": {"value": false, "evidence": "Independently created for Catalan (Bel et al. 2024b).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Natively authored Catalan corpus.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Catalan.", "confidence": "high"},
+        "annotation_quality_notes": "Prompts translated from English CoLA but data is original Catalan."
+      },
+      "EsCoLA": {
+        "translated": {"value": false, "evidence": "Independently created for Spanish (Bel et al. 2024a).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Natively authored Spanish corpus.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Spanish.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "GalCoLA": {
+        "translated": {"value": false, "evidence": "Independently created for Galician (de Dios-Flores et al. 2023).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Natively authored Galician corpus.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Galician.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "MGSM": {
+        "translated": {"value": true, "evidence": "MGSM (Shi et al. 2023) is a translation of English GSM8K. New translations for ca, eu, gl.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional human translators for IberoBench translations.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation applied (metric systems, currency) but problems from English.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "XNLI": {
+        "translated": {"value": true, "evidence": "XNLI translated from English MultiNLI.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional translators for XNLI.", "confidence": "medium"},
+        "culturally_grounded": {"value": false, "evidence": "English NLI content without cultural adaptation.", "confidence": "medium"},
+        "annotation_quality_notes": "IberoBench fixes prompt formatting issues with punctuation."
+      },
+      "WNLI": {
+        "translated": {"value": true, "evidence": "Translated from English Winograd NLI.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional human translators.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation guidelines but English-sourced.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "TE-ca": {
+        "translated": {"value": false, "evidence": "Natively authored Catalan (Gonzalez-Agirre et al. 2024).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Part of Catalan data infrastructure.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Catalan.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "QNLI_eu": {
+        "translated": {"value": false, "evidence": "Natively authored for Basque (BasqueGLUE, Urbizu et al. 2022).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Created by Basque NLP researchers.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Basque.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "ASSIN": {
+        "translated": {"value": false, "evidence": "Natively authored Portuguese (Fonseca et al. 2016).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Automatic annotations with thorough human revision.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Portuguese.", "confidence": "high"},
+        "annotation_quality_notes": "IberoBench criteria: datasets with automatic annotations that have undergone thorough human revision."
+      },
+      "Parafraseja": {
+        "translated": {"value": false, "evidence": "Natively authored Catalan.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "From Projecte AINA.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Catalan.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "Parafrases_gl": {
+        "translated": {"value": false, "evidence": "Created from Galician sources.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Annotated by two linguists.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Galician sources: Wikipedia, novels, parliamentary sessions.", "confidence": "high"},
+        "annotation_quality_notes": "2032 entries; automatic generation followed by manual review by two linguists."
+      },
+      "PAWS-X": {
+        "translated": {"value": true, "evidence": "PAWS-X translated from English PAWS.", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: PAWS-X translation details not in this paper.", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English paraphrase pairs.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "ARC_ca": {
+        "translated": {"value": true, "evidence": "Translated from English ARC.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional translation with manual error correction.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation applied; original errors corrected.", "confidence": "medium"},
+        "annotation_quality_notes": "Extensive quality control: fixed grammatical errors, unfinished instances, odd symbols, mixed labels."
+      },
+      "CatalanQA": {
+        "translated": {"value": false, "evidence": "Natively authored (Gonzalez-Agirre et al. 2024).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Part of Catalan data infrastructure.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Catalan.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "CoQCat": {
+        "translated": {"value": false, "evidence": "Natively authored (Gonzalez-Agirre et al. 2024).", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Part of Catalan data infrastructure.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Catalan.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "OpenBookQA": {
+        "translated": {"value": true, "evidence": "Translated from English OpenBookQA.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional human translators.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation applied but science questions from English.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "PIQA": {
+        "translated": {"value": true, "evidence": "Translated from English PIQA.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional translators with Basque-specific guidelines.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation with Basque restructuring. Underlying content from English.", "confidence": "medium"},
+        "annotation_quality_notes": "Basque required sentence restructuring due to ergative-absolutive alignment."
+      },
+      "Social IQA": {
+        "translated": {"value": true, "evidence": "Translated from English Social IQA.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional translation.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Cultural adaptation but social situations from English context.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "XQuAD": {
+        "translated": {"value": true, "evidence": "Translated from English SQuAD.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional translation.", "confidence": "medium"},
+        "culturally_grounded": {"value": false, "evidence": "English Wikipedia-based content.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "EusExams": {
+        "translated": {"value": false, "evidence": "Natively authored from Basque examinations.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "From real Basque public examinations.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Based on Basque public examination content.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "EusProficiency": {
+        "translated": {"value": false, "evidence": "Natively authored Basque proficiency exams.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Human-generated annotations explicitly mentioned.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Basque language proficiency exams.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "EusTrivia": {
+        "translated": {"value": false, "evidence": "Natively authored Basque trivia.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Created by Basque researchers.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Basque trivia questions.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "EusReading": {
+        "translated": {"value": false, "evidence": "Natively authored Basque reading comprehension.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Created by Basque researchers.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored in Basque.", "confidence": "high"},
+        "annotation_quality_notes": null
+      },
+      "Belebele": {
+        "translated": {"value": false, "evidence": "Parallel creation across 122 languages, not single-source translation.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Human-generated annotations explicitly mentioned.", "confidence": "high"},
+        "culturally_grounded": {"value": "partial", "evidence": "Parallel creation but passages may not be culturally specific.", "confidence": "medium"},
+        "annotation_quality_notes": "IberoBench fixed non-UTF-8 character issues."
+      },
+      "CaBREU": {
+        "translated": {"value": false, "evidence": "Natively authored Catalan summarization.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Three annotators; human evaluation by two native speakers.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Natively authored from Catalan texts.", "confidence": "high"},
+        "annotation_quality_notes": "Three summaries per text; annotator #1 used as gold standard after evaluation."
+      },
+      "XL-Sum": {
+        "translated": {"value": false, "evidence": "Native Spanish BBC news articles.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional news summaries.", "confidence": "medium"},
+        "culturally_grounded": {"value": true, "evidence": "Spanish-language BBC news.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      },
+      "Summarization_gl": {
+        "translated": {"value": false, "evidence": "Created from Galician newspaper articles.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Summaries from Galician newspapers.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Galician newspapers covering Galician topics.", "confidence": "high"},
+        "annotation_quality_notes": "Over 80,000 summaries from three Galician newspapers."
+      },
+      "FLORES-200": {
+        "translated": {"value": "partial", "evidence": "Professionally translated parallel corpus from English Wikipedia.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional human translators.", "confidence": "medium"},
+        "culturally_grounded": {"value": false, "evidence": "Parallel translation corpus; content not culturally adapted.", "confidence": "medium"},
+        "annotation_quality_notes": "English prompts used across all FLORES-200 sub-tasks."
+      },
+      "Phrases": {
+        "translated": {"value": false, "evidence": "Created from scratch using Common Voice and expert translation.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Expert in Catalan philology ensuring linguistic quality and cultural accuracy.", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Focuses on Valencian variety with expert cultural accuracy.", "confidence": "high"},
+        "annotation_quality_notes": "200,000 phrases filtered for diversity, translated by Catalan philology expert."
+      },
+      "VeritasQA": {
+        "translated": {"value": "partial", "evidence": "VeritasQA aimed at multilingual transferability; Galician version newly translated.", "confidence": "medium"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Creation methodology not detailed in this paper.", "confidence": "low"},
+        "culturally_grounded": {"value": null, "evidence": "INSUFFICIENT_INFO: Details not provided.", "confidence": "low"},
+        "annotation_quality_notes": null
+      },
+      "TruthfulQA_gl": {
+        "translated": {"value": true, "evidence": "Galician translation of English TruthfulQA.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Professional human translation.", "confidence": "high"},
+        "culturally_grounded": {"value": false, "evidence": "English/American-centric misconceptions and cultural references.", "confidence": "medium"},
+        "annotation_quality_notes": null
+      }
+    }
+  },
+  "step5_cultural": {
+    "cultural_flags": {
+      "datasets_from_scratch_no_english_source": {
+        "list": [
+          "CatCoLA", "EsCoLA", "GalCoLA", "TE-ca", "QNLI_eu", "ASSIN",
+          "Parafraseja", "Parafrases_gl", "CatalanQA", "CoQCat",
+          "EusExams", "EusProficiency", "EusTrivia", "EusReading",
+          "CaBREU", "Summarization_gl", "Phrases", "XL-Sum"
+        ],
+        "evidence": "Multiple datasets natively authored for their target languages. Basque datasets from Etxaniz et al. 2024; Catalan datasets from Gonzalez-Agirre et al. 2024; Portuguese ASSIN from Fonseca et al. 2016; XL-Sum from BBC Spanish news; Parafrases_gl, Summarization_gl, and Phrases newly created from scratch."
+      },
+      "datasets_translated_from_english": {
+        "list": [
+          "COPA", "XStoryCloze", "MGSM", "XNLI", "WNLI", "PAWS-X",
+          "ARC_ca", "OpenBookQA", "PIQA", "Social IQA", "XQuAD",
+          "TruthfulQA_gl"
+        ],
+        "evidence": "Pre-existing multilingual datasets translated from English plus newly translated datasets. Paper excluded MMLU because 'too closely tied to a specific source culture'."
+      },
+      "datasets_with_cultural_grounding": {
+        "list": [
+          "CatCoLA", "EsCoLA", "GalCoLA", "TE-ca", "QNLI_eu",
+          "ASSIN", "Parafraseja", "Parafrases_gl", "CatalanQA", "CoQCat",
+          "EusExams", "EusProficiency", "EusTrivia", "EusReading",
+          "CaBREU", "Summarization_gl", "Phrases", "XL-Sum"
+        ],
+        "details": {
+          "CatCoLA": "Natively authored Catalan linguistic acceptability",
+          "EsCoLA": "Natively authored Spanish linguistic acceptability",
+          "GalCoLA": "Natively authored Galician linguistic acceptability",
+          "TE-ca": "Natively authored Catalan textual entailment",
+          "QNLI_eu": "Natively authored Basque NLI from BasqueGLUE",
+          "ASSIN": "Natively authored Portuguese semantic similarity",
+          "Parafraseja": "Natively authored Catalan paraphrase dataset",
+          "Parafrases_gl": "Created from Galician sources",
+          "CatalanQA": "Natively authored Catalan QA",
+          "CoQCat": "Natively authored Catalan QA",
+          "EusExams": "From Basque public examinations",
+          "EusProficiency": "From Basque language proficiency exams",
+          "EusTrivia": "Basque trivia questions",
+          "EusReading": "Natively authored Basque reading comprehension",
+          "CaBREU": "Natively authored Catalan summarization",
+          "Summarization_gl": "From Galician newspapers",
+          "Phrases": "Catalan-Valencian by philology expert",
+          "XL-Sum": "Spanish-language BBC news"
+        }
+      },
+      "all_annotators_native_speakers": {
+        "value": "Yes, for newly created content in IberoBench",
+        "evidence": "Human translations by professional translators in target languages with language-specific guidelines. All IberoBench authors from institutions in Spain."
+      },
+      "annotator_workforce": {
+        "creator_types_across_datasets": ["researchers", "professional_annotators"],
+        "total_annotators_reported": null,
+        "affiliations": [
+          "Barcelona Supercomputing Center (BSC-CNS)",
+          "Universitat Pompeu Fabra (UPF)",
+          "Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS-USC)",
+          "HiTZ Center - IXA, University of the Basque Country (UPV/EHU)"
+        ],
+        "demographics_reported": false,
+        "compensation_reported": false,
+        "compensation_details": null,
+        "irb_ethics_review": null,
+        "evidence": "15 authors from 4 institutions. Specific expertise: Catalan philology expert, two linguists for Parafrases_gl, two native speakers for CaBREU evaluation."
+      },
+      "english_centricity_notes": "IberoBench explicitly designed to reduce English-centricity. MMLU excluded for US-specific content. Translation guidelines require cultural adaptation. However, ~12 of 33 underlying datasets originate from English. European variants of Spanish and Portuguese prioritized over Latin American variants.",
+      "geographic_representation": {
+        "primary_region": "Iberian Peninsula (Spain and Portugal)",
+        "sub_regions": ["Catalonia", "Basque Country", "Galicia", "Spain (general)", "Portugal"],
+        "also_represented": ["Valencian Community"],
+        "notably_excluded": ["Latin America", "Brazil", "Other Portuguese-speaking countries", "Other Spanish-speaking countries"],
+        "evidence": "Focused on 'the official languages of the Iberian peninsula: European Spanish, Catalan, Basque, Galician and European Portuguese'. European variants prioritized."
+      }
+    }
+  }
+}

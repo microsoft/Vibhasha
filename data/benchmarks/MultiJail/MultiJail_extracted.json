@@ -1,0 +1,174 @@
+{
+  "benchmark_name": "MultiJail",
+  "paper_id": "2310.06474v3",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we have obtained a multilingual jailbreak dataset named MultiJail. It comprises a total of 3150 samples, with 315 samples in English and parallel samples in nine other diverse non-English languages. To the best of our knowledge, this is the first multilingual jailbreak dataset available.",
+  "total_languages_claimed": 10,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MultiJail"
+  ],
+  "task_categories": [
+    "safety evaluation",
+    "jailbreak detection"
+  ],
+  "brief_description": "A multilingual jailbreak dataset comprising 3150 samples across 10 languages (English plus 9 non-English), designed to evaluate LLM safety under two scenarios: unintentional (non-English users inadvertently bypassing safety) and intentional (malicious users combining multilingual prompts with jailbreak instructions).",
+  "datasets": [
+    {
+      "dataset_name": "MultiJail",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "safety evaluation / jailbreak detection",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Human translation by native speakers; quality verified by a separate group of native speakers with a target pass rate of over 97%",
+      "num_languages": 10,
+      "language_list": [
+        "English",
+        "Chinese",
+        "Italian",
+        "Vietnamese",
+        "Arabic",
+        "Korean",
+        "Thai",
+        "Bengali",
+        "Swahili",
+        "Javanese"
+      ],
+      "annotation_method": "315 English harmful prompts were collected (15 curated from the GPT-4 report and 300 sampled from Anthropic's red-teaming dataset), then manually translated by native speakers into 9 non-English languages. Safety labels (safe/unsafe/invalid) assigned via GPT-4 automated evaluation and verified by human evaluators.",
+      "data_creator_info": {
+        "creator_type": "researchers_and_native_speaker_translators",
+        "creator_affiliation": "DAMO Academy (Alibaba Group), Nanyang Technological University, Chinese University of Hong Kong, Hupan Lab",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "English prompts sourced from GPT-4 report (OpenAI, 2023b) and Anthropic red-teaming dataset (Ganguli et al., 2022)",
+      "notes": "Total of 3150 samples (315 per language x 10 languages). The preliminary study also tested 30 languages using Google Translate on 15 curated prompts, but MultiJail itself uses human translation for 10 languages. Two evaluation scenarios: unintentional (direct non-English queries) and intentional (non-English queries combined with English jailbreak instruction AIM)."
+    }
+  ],
+  "total_languages": 10,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["MultiJail"]
+    }
+  },
+  "assessments": {
+    "MultiJail": {
+      "translated": {
+        "value": true,
+        "evidence": "we carefully gather English harmful queries and manually translate them by native speakers into 9 non-English languages, ranging from high-resource to low-resource. This leads us to the creation of the first multilingual jailbreak dataset called MultiJail.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality. We aim for a pass rate of over 97%.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "All prompts originate from English sources (GPT-4 report and Anthropic red-teaming dataset) and are translated into target languages. There is no mention of cultural adaptation or localization of content for target language communities.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Translations verified by a separate group of native speakers with a target pass rate of over 97%. Safety evaluation conducted via GPT-4 automated evaluation with human verification; Cohen's kappa score of 0.86 between human annotators and GPT-4 evaluator."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All data originates from English sources (GPT-4 report and Anthropic red-teaming dataset) and is translated into target languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MultiJail"],
+      "evidence": "we carefully gather English harmful queries and manually translate them by native speakers into 9 non-English languages"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes (for translation)",
+      "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "native_speaker_translators"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "DAMO Academy, Alibaba Group, Singapore",
+        "Nanyang Technological University, Singapore",
+        "Hupan Lab, Hangzhou, China",
+        "The Chinese University of Hong Kong, Hong Kong SAR"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The paper does not report the total number of annotators/translators, their demographics, or compensation details. An ethics statement is provided but does not mention IRB review."
+    },
+    "english_centricity_notes": "The entire benchmark is English-centric by design: all harmful prompts originate in English and are translated. The paper explicitly studies how English-centric safety training fails for non-English languages, but the evaluation content itself inherits English/Western framing of harm categories (sourced from GPT-4 report and Anthropic red-teaming data).",
+    "geographic_representation": {
+      "primary_region": "Global (by language selection across resource levels)",
+      "sub_regions": [
+        "East Asia (Chinese)",
+        "Southeast Asia (Vietnamese, Thai, Javanese)",
+        "South Asia (Bengali)",
+        "Middle East (Arabic)",
+        "East Africa (Swahili)",
+        "East Asia (Korean)",
+        "Southern Europe (Italian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Indigenous and minority languages",
+        "Latin American languages",
+        "Central Asian languages",
+        "Oceanic languages"
+      ],
+      "evidence": "Languages were selected to cover high-resource (Chinese, Italian, Vietnamese), medium-resource (Arabic, Korean, Thai), and low-resource (Bengali, Swahili, Javanese) categories based on CommonCrawl data ratios. The preliminary study additionally covered 30 languages."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

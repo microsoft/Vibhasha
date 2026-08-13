@@ -1,0 +1,85 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "aya-human-annotated",
+      "variant_name": null,
+      "variant_notes": "Test split of the Aya Dataset, containing original human-curated prompt-completion pairs selected from languages with at least 2000 original annotations",
+      "task_type": "open-ended generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": [
+        "English",
+        "Portuguese",
+        "Simplified Chinese",
+        "Standard Arabic",
+        "Telugu",
+        "Turkish",
+        "Yoruba"
+      ],
+      "annotation_method": "Original human curation by fluent speakers of each language via the Aya Annotation Platform; peer-reviewed through a quality scoring system",
+      "data_creator_info": {
+        "creator_type": "community_volunteers",
+        "creator_affiliation": "Cohere For AI Community (2,997 registered users from 119 countries)",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Section 2.1: 'Contributors We aimed to include individuals from diverse backgrounds—not limited to AI experts—enabling anyone proficient in a language to contribute.' Demographics reported in Figure 3 (age, gender). No financial compensation: 'The motivations of contributors were not based on financial remuneration but on ideals of community, identity, and social justice.' (Section 7)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "250 prompts per language, 1,750 total. Selected at random from original annotations in the Aya Dataset. Languages chosen for diversity in resourcedness, script, and language family."
+    },
+    {
+      "dataset_name": "dolly-machine-translated",
+      "variant_name": null,
+      "variant_notes": "200 human-selected prompts from English Dolly dataset, automatically translated via NLLB into 101 languages (114 dialects), plus the original English prompts (115 dialect entries total)",
+      "task_type": "open-ended generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 101,
+      "language_list": null,
+      "annotation_method": "Two human reviewers selected 200 from 500 uniformly-sampled English Dolly prompts, excluding culturally/geographically specific prompts; a third reviewer broke ties. Prompts then machine-translated with NLLB 3.3B model.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Databricks (original Dolly prompts by employees); Cohere For AI (selection and translation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section 6: 'We separate a curated subset of 200 Dolly prompts [Conover et al., 2023]... two reviewers inspected a set of initially 500 English prompts... When two reviewers disagreed, a third reviewer was asked to break the tie.' Original Dolly created by Databricks employees (Conover et al., 2023)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Dolly (Conover et al., 2023)",
+      "notes": "Covers 101 languages corresponding to the mT5 language set, with 114 dialect variants via NLLB. Including English originals, 115 dialect entries. Paper warns 'the expressiveness of a translated evaluation set is limited by the quality of the translation model.' Standard Arabic in Latin script and Minangkabau in Arabic script were excluded due to translation errors."
+    },
+    {
+      "dataset_name": "dolly-human-edited",
+      "variant_name": null,
+      "variant_notes": "Post-edited versions of the dolly-machine-translated prompts for 6 languages, edited by professional human annotators",
+      "task_type": "open-ended generation",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 6,
+      "language_list": [
+        "Arabic",
+        "Hindi",
+        "Spanish",
+        "French",
+        "Serbian",
+        "Russian"
+      ],
+      "annotation_method": "Machine translation via NLLB followed by human post-editing by professional annotators. Each translation post-edited by one annotator, then a second annotator assessed quality and proposed final edits. 3-4 annotators per language.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Cohere",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Appendix F.1: 'Annotator Selection The primary demographic make-up of the participants in the evaluations was recruited based on their proficiency in the language groups.' Appendix F.1 Compensation: 'The annotators were paid 30 CAD per hour. No special consideration was made to the hourly rate as that is the standard rate offered to Cohere's annotators who work on highly complex tasks.' Demographics: 'We do not ask any annotators to share or report any of these statistical pieces of information in a formal way; any insights into this are gathered organically and through self-reporting by the annotators.'"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Dolly (Conover et al., 2023)",
+      "notes": "200 prompts per language, 1,200 total. Post-editing effort varied: Russian had highest HTER (37.43), French had lowest (5.56). At least 41% of prompts were edited in all languages, indicating translation errors are common."
+    }
+  ]
+}

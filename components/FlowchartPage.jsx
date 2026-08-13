@@ -17,6 +17,12 @@ import '@xyflow/react/dist/style.css';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../theme/ThemeContext.jsx';
 import './styles/FlowchartPage.css';
+import {
+  trackInteractiveUsed,
+  trackInteractiveOptionSelected,
+} from '../lib/telemetry.js';
+
+const FLOWCHART_TOOL = 'interactive_flowchart';
 
 /* ============================================================
    CUSTOM NODE COMPONENTS — richer, with descriptions + tooltips
@@ -707,7 +713,15 @@ export default function FlowchartPage() {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onInit={onInit}
-          onNodeClick={onNodeClick}
+          onNodeClick={(event, node) => {
+            trackInteractiveUsed({ tool: FLOWCHART_TOOL });
+            trackInteractiveOptionSelected({
+              tool: FLOWCHART_TOOL,
+              option_id: node?.id ?? 'unknown',
+              option_label: node?.data?.label,
+            });
+            onNodeClick(event, node);
+          }}
           nodeTypes={phaseNodeTypes}
           edgeTypes={edgeTypes}
           defaultEdgeOptions={defaultEdgeOptions}

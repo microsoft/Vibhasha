@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "XOR-TYDI QA": {
+      "translated": {
+        "value": "partially",
+        "evidence": "Questions are NOT translated from English—they are information-seeking questions written by native speakers, inherited from TyDi QA. However, answers for the cross-lingual portion are annotated in English and then professionally translated back to the target languages for evaluation sets. The paper states: 'since all questions are inherited from TYDI QA, they are information-seeking questions written by native speakers' and 'This distinguishes XOR-TYDI QA from translation-based datasets such as MLQA and MKQA.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partially",
+        "evidence": "Questions were originally written by native speakers (TyDi QA). Question translation was done by Gengo professional translators with quality assessed by native speakers ('We perform manual quality assessment by native speakers on 50 translation samples, finding that more than 95% are correct'). Answer annotation was done by English-speaking crowdworkers on Amazon Mechanical Turk ('We first recruit MTurkers with a high approval rate (≥96%) located in English-speaking countries'). Answer verification was done by 'undergraduate students who are native English speakers.' Answer translation back to target languages was done by Gengo translators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions originate from native speakers of each language via TyDi QA, reflecting their actual information needs and cultural interests. The paper explicitly argues this as a strength: 'Questions in most recent multilingual QA datasets are translated from English, which leads to English-centric questions such as questions about American sports, cultures and politics' and 'questions from non-English native speakers to represent real-world applications.' The dataset includes questions about local topics (e.g., economy in Krasnodar, Russian; silk-reeling in Japan; French prime ministers from Korean speakers).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous multi-stage quality control: (1) Professional translators pre-screened with 20 sample translations assessed by native speakers; translators relying on MT systems filtered out. (2) QA annotation: 200+ MTurkers participated in calibration, ~40 qualified, 24 actively worked; weekly random monitoring by authors. (3) Model-in-the-loop annotation reduced retrieval and annotation errors. (4) Answer verification by trained undergrads found only 8% errors, corrected by high-quality crowdworkers yielding <1% error rate. (5) Question translation quality >95% correct per native speaker assessment."
+    }
+  }
+}

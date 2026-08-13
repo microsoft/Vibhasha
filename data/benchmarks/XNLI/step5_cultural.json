@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All XNLI data originates from English MultiNLI examples and is translated to other languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI"],
+      "evidence": "we create the full XNLI corpus by employing professional translators to translate it into our ten target languages... We translate the premises and hypotheses separately... and simply copy the labels from the English source text."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "English portion created by MultiNLI crowdsourcing worker pool (presumably English-speaking). Translations done by professional translators via One Hour Translation platform, but whether translators are native speakers of target languages is not stated. No native-speaker NLI annotation was performed in target languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["crowdworkers", "professional translators"],
+      "total_annotators_reported": null,
+      "affiliations": ["MultiNLI crowdsourcing platform (English annotation)", "One Hour Translation platform (translations)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "we ask the same MultiNLI worker pool from a crowdsourcing platform to produce three hypotheses for each premise; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform. No demographic, compensation, or ethics review details reported."
+    },
+    "english_centricity_notes": "XNLI is entirely English-centric in design: all content originates from English MultiNLI data (sourced from Open American National Corpus and an English novel), is annotated by English-speaking crowdworkers, and translated to other languages. The paper explicitly acknowledges this limitation: 'One of the limitations of the XNLI corpus is that it does not capture these differences, since it was obtained by translation.' Labels are copied from English without re-annotation in target languages. The 10 text genres are all English-language sources.",
+    "geographic_representation": {
+      "primary_region": "North America / Western",
+      "sub_regions": ["North America"],
+      "also_represented": ["Europe", "Middle East", "South Asia", "Southeast Asia", "East Asia", "East Africa"],
+      "notably_excluded": ["Sub-Saharan Africa (beyond Swahili)", "Central Asia", "Oceania", "Indigenous Americas"],
+      "evidence": "Languages span several language families including European (French, Spanish, German, Greek, Bulgarian, Russian), Middle Eastern (Arabic, Turkish), South Asian (Hindi, Urdu), Southeast Asian (Vietnamese, Thai), East Asian (Chinese), and East African (Swahili). However, all content is culturally North American/Western in origin since it derives from English-language sources."
+    }
+  }
+}

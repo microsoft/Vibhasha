@@ -1,0 +1,107 @@
+{
+  "total_languages": 13,
+  "languages": {
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": [
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Odia": {
+      "iso_code": "or",
+      "datasets_present_in": [
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Kulluvi": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Bilaspuri": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Mandyali": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Sirmouri": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Meerut": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Bhatner": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Muzaffarnagar": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Sambalpuri": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Ganjami": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Baleswari": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    },
+    "Desia": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "INDIC-DIALECT Dialect Classification",
+        "INDIC-DIALECT MCQ",
+        "INDIC-DIALECT Machine Translation"
+      ]
+    }
+  }
+}

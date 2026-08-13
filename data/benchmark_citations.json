@@ -1,0 +1,525 @@
+{
+  "_note": "Manual citation mapping for benchmarks. Fill in missing fields. bibtex_key should match colm2026_conference.bib when available. For arxiv papers, use the arxiv_id field. paper_url is for readers to click through.",
+  "benchmarks": {
+    "AfroBench": {
+      "paper_title": "AfroBench: A Comprehensive Multilingual Benchmark for African Languages",
+      "authors": "",
+      "year": 2025,
+      "venue": "Findings of ACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.findings-acl.976_afrobench.txt"
+    },
+    "Aya_Evaluation_Suite": {
+      "paper_title": "Aya Evaluation Suite",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "Belebele": {
+      "paper_title": "The Belebele Benchmark: a Parallel Reading Comprehension Dataset in 122 Language Variants",
+      "authors": "",
+      "year": 2023,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2308.16884",
+      "paper_url": "https://arxiv.org/abs/2308.16884",
+      "text_file": ""
+    },
+    "BeMyCheese": {
+      "paper_title": "BeMyCheese: A Large-Scale Human Evaluation Benchmark for Multilingual LLMs",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2602.04729",
+      "paper_url": "https://arxiv.org/abs/2602.04729",
+      "text_file": "2602.04729v1_bemycheese.txt"
+    },
+    "BenchMAX": {
+      "paper_title": "BenchMAX: A Multilingual Benchmark for Evaluating LLMs Across Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "BHASA": {
+      "paper_title": "BHASA: A Holistic Southeast Asian Linguistic and Cultural Evaluation Suite",
+      "authors": "",
+      "year": 2023,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2309.06085",
+      "paper_url": "https://arxiv.org/abs/2309.06085",
+      "text_file": "2309.06085v2_bhasa.txt"
+    },
+    "BhashaBench_V1": {
+      "paper_title": "BhashaBench V1",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "BoolQ": {
+      "paper_title": "BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions",
+      "authors": "Clark et al.",
+      "year": 2019,
+      "venue": "NAACL 2019",
+      "bibtex_key": "",
+      "arxiv_id": "1905.10044",
+      "paper_url": "https://arxiv.org/abs/1905.10044",
+      "text_file": ""
+    },
+    "BUFFET": {
+      "paper_title": "BUFFET: Benchmarking Large Language Models for Few-shot Cross-lingual Transfer",
+      "authors": "",
+      "year": 2024,
+      "venue": "",
+      "bibtex_key": "asai2024buffet",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "CL-IFEval": {
+      "paper_title": "Multi-lingual Functional Evaluation for Large Language Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2506.20793",
+      "paper_url": "https://arxiv.org/abs/2506.20793",
+      "text_file": "2506.20793v2_CLIFEval.txt"
+    },
+    "CulturalBench": {
+      "paper_title": "CulturalBench: A Benchmark for Evaluating Cultural Knowledge of LLMs",
+      "authors": "",
+      "year": 2025,
+      "venue": "ACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.acl-long.1247_culturalbench.txt"
+    },
+    "FLORES-101": {
+      "paper_title": "The FLORES-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation",
+      "authors": "",
+      "year": 2022,
+      "venue": "TACL",
+      "bibtex_key": "",
+      "arxiv_id": "2106.03193",
+      "paper_url": "https://arxiv.org/abs/2106.03193",
+      "text_file": ""
+    },
+    "FluidQA": {
+      "paper_title": "FluidQA: Question Answering for Fluid Intelligence",
+      "authors": "",
+      "year": 2025,
+      "venue": "EMNLP 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.emnlp-main.1540_fluidqa.txt"
+    },
+    "GSM8K": {
+      "paper_title": "Training Verifiers to Solve Math Word Problems",
+      "authors": "Cobbe et al.",
+      "year": 2021,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2110.14168",
+      "paper_url": "https://arxiv.org/abs/2110.14168",
+      "text_file": ""
+    },
+    "IberoBench": {
+      "paper_title": "IberoBench: A Benchmark for Evaluating NLP in Iberian Languages",
+      "authors": "",
+      "year": 2025,
+      "venue": "COLING 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.coling-main.699_iberobench.txt"
+    },
+    "INDIC-DIALECT": {
+      "paper_title": "INDIC-DIALECT: Multilingual Dialectal Benchmark for Indian Languages",
+      "authors": "",
+      "year": 2026,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2601.10388",
+      "paper_url": "https://arxiv.org/abs/2601.10388",
+      "text_file": "2601.10388v1_indicdialect.txt"
+    },
+    "IndicIFEval": {
+      "paper_title": "IndicIFEval: A Benchmark for Verifiable Instruction-Following in Indic Languages",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2602.22125",
+      "paper_url": "https://arxiv.org/abs/2602.22125",
+      "text_file": "2602.22125v1_IndicIFEval.txt"
+    },
+    "IndicMMLU-Pro": {
+      "paper_title": "IndicMMLU-Pro",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "IndicNLG": {
+      "paper_title": "IndicNLG Suite: Multilingual Datasets for Diverse NLG Tasks in Indic Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "IndicNLPSuite": {
+      "paper_title": "IndicNLPSuite: Monolingual Corpora, Evaluation Benchmarks and Pre-trained Multilingual Language Models for Indian Languages",
+      "authors": "Kakwani et al.",
+      "year": 2020,
+      "venue": "Findings of EMNLP 2020",
+      "bibtex_key": "kakwani2020indicnlpsuite",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "IndicParam": {
+      "paper_title": "IndicParam: Benchmark to Evaluate LLMs on Low-resource Indic Languages",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2512.00333",
+      "paper_url": "https://arxiv.org/abs/2512.00333",
+      "text_file": "2512.00333v2_indicparam.txt"
+    },
+    "IndicXTREME": {
+      "paper_title": "IndicXTREME: A Multi-Task Benchmark For Evaluating Indic Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "IndiSentiment140": {
+      "paper_title": "IndiSentiment140",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "IrokoBench": {
+      "paper_title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "NAACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.naacl-long.139_irokobench.txt"
+    },
+    "JailNewsBench": {
+      "paper_title": "JailNewsBench: A Multilingual Jailbreak and News Safety Benchmark",
+      "authors": "",
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "bibtex_key": "",
+      "arxiv_id": "2603.01291",
+      "paper_url": "https://arxiv.org/abs/2603.01291",
+      "text_file": "2603.01291v1)_jailnewsbench.txt"
+    },
+    "LinguaSafe": {
+      "paper_title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2508.12733",
+      "paper_url": "https://arxiv.org/abs/2508.12733",
+      "text_file": "2508.12733v2_linguasafe.txt"
+    },
+    "M-IFEval": {
+      "paper_title": "M-IFEval: Multilingual Instruction Following Evaluation",
+      "authors": "",
+      "year": 2025,
+      "venue": "Findings of NAACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.findings-naacl.344_MIFEval.txt"
+    },
+    "M3Exam": {
+      "paper_title": "M3Exam: A Multilingual, Multimodal, Multilevel Benchmark for Examining Large Language Models",
+      "authors": "",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "bibtex_key": "zhang2023m3exam",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MAKIEVAL": {
+      "paper_title": "MAKIEVAL: A Multilingual Automatic WikiData-based Framework for Evaluation",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2505.21693",
+      "paper_url": "https://arxiv.org/abs/2505.21693",
+      "text_file": "2505.21693v3_makieval.txt"
+    },
+    "MATH": {
+      "paper_title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+      "authors": "Hendrycks et al.",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "bibtex_key": "",
+      "arxiv_id": "2103.03874",
+      "paper_url": "https://arxiv.org/abs/2103.03874",
+      "text_file": ""
+    },
+    "MaXIFE": {
+      "paper_title": "MaXIFE: Massively Multilingual Instruction-Following Evaluation",
+      "authors": "",
+      "year": 2025,
+      "venue": "ACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.acl-long.698_MAXIFE.txt"
+    },
+    "MEGA": {
+      "paper_title": "MEGA: Multilingual Evaluation of Generative AI",
+      "authors": "Ahuja et al.",
+      "year": 2023,
+      "venue": "EMNLP 2023",
+      "bibtex_key": "ahuja-etal-2023-mega",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MILU": {
+      "paper_title": "MILU: A Multi-task Indic Language Understanding Benchmark",
+      "authors": "",
+      "year": 2025,
+      "venue": "NAACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.naacl-long.507_MILU.txt"
+    },
+    "MMLU-ProX": {
+      "paper_title": "MMLU-ProX: Multilingual MMLU-Pro",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MMTEB": {
+      "paper_title": "MMTEB: Massive Multilingual Text Embedding Benchmark",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MUCH": {
+      "paper_title": "MUCH: Multilingual Understanding and Cultural Handling Benchmark",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MUG_Eval": {
+      "paper_title": "MUG_Eval: Multilingual Generation Evaluation",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "MultiJail": {
+      "paper_title": "MultiJail: A Multilingual Jailbreak Benchmark",
+      "authors": "",
+      "year": 2024,
+      "venue": "ICLR 2024",
+      "bibtex_key": "",
+      "arxiv_id": "2310.06474",
+      "paper_url": "https://arxiv.org/abs/2310.06474",
+      "text_file": "2310.06474v3_multijail.txt"
+    },
+    "Naamapadam": {
+      "paper_title": "Naamapadam: A Large-Scale Named Entity Recognition Dataset for Indian Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "PTP": {
+      "paper_title": "PTP: Parallel Translation Probing",
+      "authors": "",
+      "year": 2024,
+      "venue": "COLM 2024",
+      "bibtex_key": "",
+      "arxiv_id": "2405.09373",
+      "paper_url": "https://arxiv.org/abs/2405.09373",
+      "text_file": "2405.09373v3_PTP.txt"
+    },
+    "SeaHELM": {
+      "paper_title": "SeaHELM: A Holistic Evaluation of Southeast Asian Languages in LLMs",
+      "authors": "",
+      "year": 2025,
+      "venue": "Findings of ACL 2025",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": "2025.findings-acl.636_seahelm.txt"
+    },
+    "TriviaQA": {
+      "paper_title": "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension",
+      "authors": "Joshi et al.",
+      "year": 2017,
+      "venue": "ACL 2017",
+      "bibtex_key": "",
+      "arxiv_id": "1705.03551",
+      "paper_url": "https://arxiv.org/abs/1705.03551",
+      "text_file": ""
+    },
+    "TUMLU": {
+      "paper_title": "TUMLU: Turkish Multilingual Understanding Benchmark",
+      "authors": "",
+      "year": 2025,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2502.11020",
+      "paper_url": "https://arxiv.org/abs/2502.11020",
+      "text_file": "2502.11020v2_tumlu.txt"
+    },
+    "Uhuru": {
+      "paper_title": "Uhuru: A Benchmark for Evaluating Scientific Question Answering",
+      "authors": "",
+      "year": 2024,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "2412.00948",
+      "paper_url": "https://arxiv.org/abs/2412.00948",
+      "text_file": "2412.00948v1_uhuru.txt"
+    },
+    "Varta": {
+      "paper_title": "Varta: A Large-Scale Headline-Generation Dataset for Indic Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XGLUE": {
+      "paper_title": "XGLUE: A New Benchmark Dataset for Cross-lingual Pre-training, Understanding and Generation",
+      "authors": "",
+      "year": 2020,
+      "venue": "EMNLP 2020",
+      "bibtex_key": "liang-etal-2020-xglue",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XNLI": {
+      "paper_title": "XNLI: Evaluating Cross-lingual Sentence Representations",
+      "authors": "Conneau et al.",
+      "year": 2018,
+      "venue": "EMNLP 2018",
+      "bibtex_key": "conneau-etal-2018-xnli",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XORQA": {
+      "paper_title": "XOR QA: Cross-lingual Open-Retrieval Question Answering",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XQuAD": {
+      "paper_title": "On the Cross-lingual Transferability of Monolingual Representations",
+      "authors": "Artetxe et al.",
+      "year": 2020,
+      "venue": "ACL 2020",
+      "bibtex_key": "artetxe-etal-2020-cross",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XTREME": {
+      "paper_title": "XTREME: A Massively Multilingual Multi-task Benchmark for Evaluating Cross-lingual Generalisation",
+      "authors": "Hu et al.",
+      "year": 2020,
+      "venue": "ICML 2020",
+      "bibtex_key": "hu2020xtreme",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XTREME-R": {
+      "paper_title": "XTREME-R: Towards More Challenging and Nuanced Multilingual Evaluation",
+      "authors": "Ruder et al.",
+      "year": 2021,
+      "venue": "EMNLP 2021",
+      "bibtex_key": "ruder-etal-2021-xtreme",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    },
+    "XTREME_UP": {
+      "paper_title": "XTREME-UP: A User-Centric Scarce-Data Benchmark for Under-Represented Languages",
+      "authors": "",
+      "year": null,
+      "venue": "",
+      "bibtex_key": "",
+      "arxiv_id": "",
+      "paper_url": "",
+      "text_file": ""
+    }
+  }
+}

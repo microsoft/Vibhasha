@@ -1,0 +1,16 @@
+{
+  "benchmark_name": "MILU",
+  "paper_id": "2025.naacl-long.507",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce MILU—Multi-task Indic Language Understanding Benchmark—a comprehensive evaluation benchmark designed to address this gap. MILU spans 8 domains and 41 subjects across 11 Indic languages, reflecting both general and culturally specific knowledge.",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MILU"
+  ],
+  "task_categories": [
+    "multiple-choice question answering"
+  ],
+  "brief_description": "MILU (Multi-task Indic Language Understanding Benchmark) is a comprehensive evaluation benchmark covering 8 domains and 41 subjects across 11 Indic languages (including English), with ~79,617 multiple-choice questions sourced from Indian national, state, and regional competitive examinations. It emphasizes India-centric, culturally relevant knowledge alongside standard academic subjects."
+}

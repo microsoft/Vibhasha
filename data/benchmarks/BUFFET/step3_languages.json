@@ -1,0 +1,221 @@
+{
+  "total_languages": 54,
+  "languages": {
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM"]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Aymara": {
+      "iso_code": "aym",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Belarusian": {
+      "iso_code": "be",
+      "datasets_present_in": ["TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN", "XLSUM"]
+    },
+    "Boro": {
+      "iso_code": "brx",
+      "datasets_present_in": ["IndicNLU-Sentiment"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "WikiANN"]
+    },
+    "Bribri": {
+      "iso_code": "bzd",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "OCNLI", "PAWS-X", "Amazon Review", "XCOPA", "XWinograd", "WikiANN", "XLSUM"]
+    },
+    "Asháninka": {
+      "iso_code": "cni",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["XCOPA", "WikiANN"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN"]
+    },
+    "Guarani": {
+      "iso_code": "gn",
+      "datasets_present_in": ["AmericasNLI", "WikiANN"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Haitian": {
+      "iso_code": "ht",
+      "datasets_present_in": ["XCOPA"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Wixarika": {
+      "iso_code": "hch",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["XCOPA", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["XCOPA", "WikiANN"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PAWS-X", "Amazon Review", "XWinograd", "WikiANN", "XLSUM"]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["KLUE-NLI", "PAWS-X", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Maithili": {
+      "iso_code": "mai",
+      "datasets_present_in": ["IndicNLU-Sentiment"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Modern Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "WikiANN"]
+    },
+    "Nahuatl": {
+      "iso_code": "nah",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Oriya": {
+      "iso_code": "or",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Otomí": {
+      "iso_code": "oto",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Panjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Nigerian Pidgin": {
+      "iso_code": "pcm",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["ParsiNLU-Entailment", "WikiANN", "XLSUM"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["XWinograd"]
+    },
+    "Quechua": {
+      "iso_code": "qu",
+      "datasets_present_in": ["AmericasNLI", "XCOPA", "WikiANN"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "XWinograd", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Shipibo-Konibo": {
+      "iso_code": "shp",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN", "XLSUM"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "XCOPA", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM", "MasakhaNER"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["IndicNLU-Sentiment", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Rarámuri": {
+      "iso_code": "tar",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["IndicNLU-Sentiment", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["MasakhaNER"]
+    }
+  }
+}

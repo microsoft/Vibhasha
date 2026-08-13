@@ -1,0 +1,202 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "FLEURS",
+      "variant_name": "ASR task in XTREME-UP",
+      "variant_notes": "Uses Maestro-U ASR predictions as input, then fine-tunes LMs to improve outputs. Evaluates on 77 under-represented languages.",
+      "task_type": "automatic_speech_recognition",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional translation — FLEURS recordings are of FLORES-101 sentences translated from English Wikipedia to 101 languages",
+      "num_languages": 100,
+      "language_list": null,
+      "annotation_method": "speech recordings of translated sentences by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Meta (original FLORES-101/FLEURS), Google (XTREME-UP adaptation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We employ the FLEURS dataset (Conneau et al., 2023) consisting of recordings in 102 languages for sentences from FLORES-101"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al., 2023 (FLEURS); Goyal et al., 2022 (FLORES-101)",
+      "notes": "77 under-represented languages evaluated; 23 high-resource languages included for training. Sub-sampled to 8h annotation budget per language."
+    },
+    {
+      "dataset_name": "UL-OCR",
+      "variant_name": "Document OCR",
+      "variant_notes": "New dataset created for XTREME-UP focusing on book page transcriptions in 7 under-represented languages.",
+      "task_type": "optical_character_recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": ["Amharic", "Bengali", "Kannada", "Burmese", "Sanskrit", "Sinhala", "Swahili"],
+      "annotation_method": "human transcription of book pages; annotators transcribed entire pages from public-domain books",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We create a dataset that aims to fill the gaps in previous work in OCR for ULs... We retrieve books that are in the public domain on Google Books."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Books domain; includes religious, linguistic, and other public-domain books filtered for quality. 9 training pages per language (~290 lines of output text). Annotation cost: 44.5 min/example (per page)."
+    },
+    {
+      "dataset_name": "Universal Dependencies",
+      "variant_name": "Autocomplete task in XTREME-UP",
+      "variant_notes": "Processed from Universal Dependencies treebanks; deduplicated against mC4 to test predictive rather than memorization capabilities.",
+      "task_type": "autocomplete",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 23,
+      "language_list": ["Basque", "Belarusian", "Bulgarian", "Danish", "Eastern Armenian", "English", "Estonian", "Galician", "Scottish Gaelic", "Greek", "Hebrew", "Icelandic", "Indonesian", "Irish", "Latvian", "Lithuanian", "Nigerian Pidgin", "Romanian", "Slovak", "Slovenian", "Ukrainian", "Urdu", "Uyghur"],
+      "annotation_method": "derived from existing Universal Dependencies treebanks with automated processing to create autocomplete examples",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Google (processing); Universal Dependencies consortium (original data)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We process high-quality natural language data from Universal Dependencies (de Marneffe et al., 2021), which we deduplicate against mC4"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "de Marneffe et al., 2021 (Universal Dependencies); Nivre et al., 2020",
+      "notes": "20 under-represented languages + 2 high-resource + English for prototyping. Evaluated with Acc@3. Up to 2,000 training examples per language."
+    },
+    {
+      "dataset_name": "Dakshina",
+      "variant_name": "Transliteration task in XTREME-UP (extended Dakshina)",
+      "variant_notes": "Extended with Amharic romanizations and Punjabi Shahmukhi transliterations. 30 transliteration tasks across 13 languages.",
+      "task_type": "transliteration",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 13,
+      "language_list": ["Amharic", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Nepali", "Punjabi", "Sinhala", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "human romanization/transliteration by native speakers; Wikipedia sentences romanized by native speakers",
+      "data_creator_info": {
+        "creator_type": "native_speakers",
+        "creator_affiliation": "Google (original Dakshina and extensions)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "10,000 Wikipedia sentences written in the native scripts of the 12 languages were human-romanized by native speakers... Amharic Wikipedia sentences were similarly manually romanized by native speakers; and the Punjabi sentences from the Dakshina dataset were manually transliterated by native speakers to the Shahmukhi script."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Roark et al., 2020 (Dakshina dataset)",
+      "notes": "12 languages from original Dakshina + 1 new (Amharic). 2,000 training sentences per task, ~6,000 test. Covers 3 language families (Indo-Aryan, Dravidian, Semitic)."
+    },
+    {
+      "dataset_name": "FLORES-101",
+      "variant_name": "Machine Translation task in XTREME-UP",
+      "variant_notes": "English-to-X translation; half of original dev set repurposed as training set. 93 target languages, 39 ULs evaluated.",
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional translation from English (original FLORES-101 creation)",
+      "num_languages": 93,
+      "language_list": null,
+      "annotation_method": "professional translation",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Meta/NLLB Team (original FLORES-101); Google (XTREME-UP adaptation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The dataset is adapted from FLORES-101 (Goyal et al., 2022), repurposing half of the dataset's original development set as a training set."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Goyal et al., 2022 (FLORES-101)",
+      "notes": "Source data from Wikinews, Wikijunior, and Wikivoyage. 499/498/1012 sentence pairs for train/validation/test. 39 ULs evaluated, 93 total languages."
+    },
+    {
+      "dataset_name": "TyDi QA",
+      "variant_name": "In-language QA in XTREME-UP",
+      "variant_notes": "Augmented gold passage setting with negative examples from same article and unanswerable questions.",
+      "task_type": "question_answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": null,
+      "annotation_method": "human annotation — information-seeking questions written without knowing the answer",
+      "data_creator_info": {
+        "creator_type": "crowd_workers",
+        "creator_affiliation": "Original TyDi QA authors; Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We obtain original questions and passages from TyDi QA (Clark et al., 2020)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020 (TyDi QA)",
+      "notes": "6 ULs + 3 HLs for in-language QA. Evidence text from Wikipedia. Negative examples added from same article and unanswerable pairs."
+    },
+    {
+      "dataset_name": "XOR QA",
+      "variant_name": "Cross-language QA in XTREME-UP",
+      "variant_notes": "Question in user's language, passage/answer in English. Includes new data in 23 Indic languages via professional translation.",
+      "task_type": "question_answering",
+      "source": "mixed",
+      "source_language": "English (passages); various (questions)",
+      "translation_method": "professionally translating questions and answers from existing Indic languages in XOR QA for new Indic languages",
+      "num_languages": 27,
+      "language_list": null,
+      "annotation_method": "mix of original annotation (TyDi/XOR QA) and professional translation for new Indic languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Google; original XOR QA authors",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use examples from TyDi XOR (Asai et al., 2021) in 7 languages. We additionally collect new data in 23 new Indic languages for cross-lingual QA by professionally translating questions and answers from existing Indic languages in XOR QA."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Asai et al., 2021 (XOR QA); Clark et al., 2020 (TyDi QA)",
+      "notes": "21 ULs + 6 HLs. Translation methodology mitigates English-centric bias by translating from existing Indic languages rather than English."
+    },
+    {
+      "dataset_name": "MasakhaNER",
+      "variant_name": "MasakhaNER-X (byte-level spans in XTREME-UP)",
+      "variant_notes": "Combined MasakhaNER and MasakhaNER 2.0, mapped from CoNLL token format to byte-level spans in raw text. Hausa and Fon subsets excluded due to quality issues.",
+      "task_type": "named_entity_recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 20,
+      "language_list": ["Bambara", "Ghomala'", "Ewe", "Igbo", "Kinyarwanda", "Luganda", "Luo", "Mossi", "Nigerian Pidgin", "Nyanja", "Shona", "Swahili", "Tswana", "Twi", "Wolof", "Xhosa", "Yoruba", "Zulu"],
+      "annotation_method": "human annotation by native speakers (original MasakhaNER datasets); byte-span re-alignment by XTREME-UP authors",
+      "data_creator_info": {
+        "creator_type": "community_researchers",
+        "creator_affiliation": "Masakhane community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Both datasets were created by Masakhane. The data is human-annotated and thus higher quality than automatically collected NER datasets."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2021 (MasakhaNER); Adelani et al., 2022 (MasakhaNER 2.0)",
+      "notes": "20 African languages. All under-represented. Hausa and Fon excluded from MasakhaNER 2.0 due to annotation quality issues. Lists 18 languages by name but paper states 20 total."
+    },
+    {
+      "dataset_name": "MTOP",
+      "variant_name": "MTOP++ (Semantic Parsing in XTREME-UP)",
+      "variant_notes": "Extended to 15 new languages via professional translation with localization; 3 additional Indic code-switched variants via PaLM + human verification. Total 20 languages.",
+      "task_type": "semantic_parsing",
+      "source": "mixed",
+      "source_language": "English",
+      "translation_method": "professional translation with localization (Western-centric entities replaced with culturally relevant ones); code-switching via PaLM with human verification for 3 Indic languages",
+      "num_languages": 20,
+      "language_list": ["Amharic", "Belarusian", "Bengali", "Brazilian Portuguese", "Finnish", "German", "Hausa", "Hungarian", "Japanese", "Russian", "Swahili", "Tamil", "Turkish", "Yoruba", "Zulu", "English", "Spanish", "French", "Hindi", "Thai"],
+      "annotation_method": "professional translators with localization guidelines; PaLM-generated code-switching with human verification for Indic languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We adapt the test split of MTOP with professional translators/annotators to 15 languages... we collect localized data (i.e., Western-centric entities are replaced with more culturally relevant entities for the target language)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Li et al., 2021 (MTOP)",
+      "notes": "9 ULs + 11 HLs. 15 newly translated languages + original 6 MTOP languages (minus overlap) = 20. 3 additional code-switched Indic variants (Hindi-English, Bengali-English, Tamil-English). Max 285 training / 239 dev / 3,669 test per language."
+    }
+  ]
+}

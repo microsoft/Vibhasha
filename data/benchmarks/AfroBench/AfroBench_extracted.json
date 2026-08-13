@@ -1,0 +1,760 @@
+{
+  "benchmark_name": "AfroBench",
+  "paper_id": "2025.findings-acl.976",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "we introduce AFROBENCH—a multi-task benchmark for evaluating the performance of LLMs across 64 African languages, 15 tasks and 22 datasets... Finally, we created a new evaluation dataset, AFRIADR, a dataset for restoring diacritic marks and tonal accents in African language texts.",
+  "brief_description": "AfroBench is a comprehensive multi-task benchmark for evaluating LLM performance across 64 African languages, comprising 15 NLP tasks and 22 datasets spanning NLU, text generation, QA, and reasoning. It aggregates existing African language evaluation datasets and introduces one new dataset (AfriADR) for diacritics restoration.",
+  "total_languages_claimed": 64,
+  "total_datasets": 22,
+  "datasets": [
+    {
+      "dataset_name": "MasakhaPOS",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Part-of-Speech Tagging",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 20,
+      "language_list": null,
+      "annotation_method": "Manual annotation from news articles",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Masakhane NLP community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Dione et al., 2023. Created from news articles in 20 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Dione et al., 2023",
+      "notes": "12,190 total test samples, 500-700 per language"
+    },
+    {
+      "dataset_name": "MasakhaNER",
+      "variant_name": "MasakhaNER-X",
+      "variant_notes": "Extension of MasakhaNER dataset (Adelani et al., 2021, 2022b) which converts NER tags from CoNLL format into a text generation task",
+      "task_type": "Named Entity Recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 20,
+      "language_list": null,
+      "annotation_method": "Manual annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Masakhane NLP community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Ruder et al., 2023; extension of Adelani et al., 2021, 2022b"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Ruder et al., 2023; Adelani et al., 2021, 2022b",
+      "notes": "18,192 total test samples, 900-1000 per language (excl. amh: 500 & luo: 185)"
+    },
+    {
+      "dataset_name": "SIB-200",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Topic Classification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 55,
+      "language_list": null,
+      "annotation_method": "Based on FLORES sentences with topic labels",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2024a"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2024a",
+      "notes": "11,220 total test samples, 204 per language. 55 languages refers to African language subset; full dataset covers 200+ languages."
+    },
+    {
+      "dataset_name": "MasakhaNEWS",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Topic Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 16,
+      "language_list": null,
+      "annotation_method": "News article classification",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Masakhane NLP community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2023"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2023",
+      "notes": "6,242 total test samples, 200-948 per language"
+    },
+    {
+      "dataset_name": "AfriSenti",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 15,
+      "language_list": null,
+      "annotation_method": "Tweet annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Muhammad et al., 2023. Tweet sentiment analysis in 14 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Muhammad et al., 2023",
+      "notes": "37,670 total test samples, 950-4500 per language (excl. tso: 254). Paper says 14 African languages but table shows 15 including English."
+    },
+    {
+      "dataset_name": "NollySenti",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": null,
+      "annotation_method": "Movie review annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Shode et al., 2023. Sentiment in movie reviews in 4 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Shode et al., 2023",
+      "notes": "2,500 total test samples, 500 per language"
+    },
+    {
+      "dataset_name": "Injongo-Intent",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Intent Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 17,
+      "language_list": null,
+      "annotation_method": "Intent utterance classification across 40 intent types",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Yu et al., 2025. Intent classification dataset in 16 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Yu et al., 2025",
+      "notes": "10,880 total test samples, 640 per language. Paper text says 16 African languages but table shows 17."
+    },
+    {
+      "dataset_name": "AfriHate",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Hate Speech Detection",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 15,
+      "language_list": null,
+      "annotation_method": "Tweet annotation for abusive, hate, or neutral labels",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Muhammad et al., 2025. Multilingual hate speech and abusive language dataset covering 15 African languages for tweets."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Muhammad et al., 2025",
+      "notes": "14,250 total test samples, 323-1600 per language"
+    },
+    {
+      "dataset_name": "XNLI",
+      "variant_name": "AfriXNLI",
+      "variant_notes": "African language extension of XNLI from IrokoBench",
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 16,
+      "language_list": null,
+      "annotation_method": "Human translation of XNLI premise-hypothesis pairs",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2024b. Dataset collection in 16 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2024b",
+      "notes": "9,600 total test samples, 600 per language"
+    },
+    {
+      "dataset_name": "AfriQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Cross-Lingual Question Answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": null,
+      "annotation_method": "Cross-lingual QA with questions in African languages and context passages in English or French",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Ogundepo et al., 2023. Cross-lingual QA task with questions in 10 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Ogundepo et al., 2023",
+      "notes": "3,107 total test samples, 250-500 per language. Paper says 10 African languages but table shows 9."
+    },
+    {
+      "dataset_name": "Belebele",
+      "variant_name": null,
+      "variant_notes": "African language subset of Belebele",
+      "task_type": "Reading Comprehension",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 31,
+      "language_list": null,
+      "annotation_method": "Multiple-choice reading comprehension, human-translated",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Meta",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Bandarkar et al., 2024. Multiple-choice reading comprehension dataset in 122 languages, including 29 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Bandarkar et al., 2024",
+      "notes": "27,900 total test samples, 900 per language. Paper says 29 African languages but table shows 31."
+    },
+    {
+      "dataset_name": "NaijaRC",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Reading Comprehension",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 3,
+      "language_list": null,
+      "annotation_method": "Multiple-choice reading comprehension for Nigerian languages",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Aremu et al., 2024. Multiple-choice reading comprehension dataset in 3 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Aremu et al., 2024",
+      "notes": "357 total test samples, 80-190 per language"
+    },
+    {
+      "dataset_name": "Uhura-Arc-Easy",
+      "variant_name": null,
+      "variant_notes": "Human-translated version of the scientific Arc-Easy benchmark",
+      "task_type": "Knowledge QA",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": null,
+      "annotation_method": "Human translation of Arc-Easy questions",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Bayes et al., 2024. Human-translated version of the scientific Arc-Easy benchmark in 6 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Bayes et al., 2024",
+      "notes": "3,257 total test samples, 300-500 per language. Paper says 6 African languages but table shows 7."
+    },
+    {
+      "dataset_name": "AfriMMLU",
+      "variant_name": null,
+      "variant_notes": "Human-translated MMLU subset covering 5 subjects for African languages",
+      "task_type": "Knowledge QA (MMLU)",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 17,
+      "language_list": null,
+      "annotation_method": "Human translation of MMLU questions",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2024b. Human-translated MMLU dataset covering 16 African languages and five subjects."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2024b",
+      "notes": "8,500 total test samples, 500 per language"
+    },
+    {
+      "dataset_name": "OpenAI-MMMLU",
+      "variant_name": null,
+      "variant_notes": "OpenAI human-translated MMLU for 3 African languages",
+      "task_type": "Knowledge QA (MMLU)",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 3,
+      "language_list": null,
+      "annotation_method": "Human translation of MMLU questions",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": "OpenAI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited via huggingface.co/datasets/openai/MMMLU. Covers 3 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "OpenAI MMMLU (huggingface.co/datasets/openai/MMMLU)",
+      "notes": "42,126 total test samples, 14,042 per language"
+    },
+    {
+      "dataset_name": "AfriMGSM",
+      "variant_name": null,
+      "variant_notes": "Extension of MGSM dataset to 17 African languages",
+      "task_type": "Mathematical Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 18,
+      "language_list": null,
+      "annotation_method": "Human translation of MGSM math problems",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2024b. Extension of the MGSM dataset to 17 African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2024b; Shi et al., 2022",
+      "notes": "4,500 total test samples, 250 per language"
+    },
+    {
+      "dataset_name": "FLORES",
+      "variant_name": "FLORES-200",
+      "variant_notes": "African language subset of FLORES-200 MT benchmark",
+      "task_type": "Machine Translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 58,
+      "language_list": null,
+      "annotation_method": "Professional human translation",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Meta",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Goyal et al., 2022. Covers 57 translation directions into African languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Goyal et al., 2022",
+      "notes": "58,696 total test samples, 1,012 per language"
+    },
+    {
+      "dataset_name": "MAFAND",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Machine Translation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "human_professional",
+      "num_languages": 21,
+      "language_list": null,
+      "annotation_method": "Human translation of African news",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Masakhane NLP community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Adelani et al., 2022a. Includes a few languages with French as the source."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2022a",
+      "notes": "29,155 total test samples, 1,000-2,000 per language. Includes translation directions from English and French."
+    },
+    {
+      "dataset_name": "NTREX-128",
+      "variant_name": null,
+      "variant_notes": "African language subset of NTREX-128",
+      "task_type": "Machine Translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 24,
+      "language_list": null,
+      "annotation_method": "Professional human translation of news test references",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Microsoft",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Federmann et al., 2022. News test references for MT evaluation."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Federmann et al., 2022",
+      "notes": "48,000 total test samples, 2,000 per language"
+    },
+    {
+      "dataset_name": "SALT",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Machine Translation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": null,
+      "annotation_method": "Community-created MT datasets from Uganda",
+      "data_creator_info": {
+        "creator_type": "community_volunteers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Akera et al., 2022. Machine translation for African languages: Community creation of datasets and models in Uganda."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Akera et al., 2022",
+      "notes": "3,500 total test samples, 500 per language"
+    },
+    {
+      "dataset_name": "XLSum",
+      "variant_name": null,
+      "variant_notes": "African language subset of XL-Sum",
+      "task_type": "Summarization",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 12,
+      "language_list": null,
+      "annotation_method": "News article summarization from BBC",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Cited as Hasan et al., 2021. Large-scale multilingual abstractive summarization for 44 languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Hasan et al., 2021",
+      "notes": "25,769 total test samples, 500-1,300 per language (excl. arb: 4,689 & eng: 11,535). Covers 10 African languages."
+    },
+    {
+      "dataset_name": "AfriADR",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Diacritics Restoration",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": ["Ghomálá'", "Fon", "Igbo", "Wolof", "Yorùbá"],
+      "annotation_method": "Automated: stripped diacritics from MAFAND MT dataset sentences to create source, original diacritized text as target",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "AfroBench authors",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section 3.2.5: 'To create AFRIADR, we selected the five languages with extensive use of diacritics from MAFAND MT dataset, then, we strip all accents and diacritics on each sentence, and use it as the \"source\" text, and the \"target\" as the fully diacritized texts.'"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "7,567 total test samples, 1,400-1,600 per language. This is the only new dataset introduced by AfroBench."
+    }
+  ],
+  "total_languages": 64,
+  "language_names": [
+    "Algerian Arabic", "Amharic", "Egyptian Arabic", "Hausa", "Kabyle", "Oromo",
+    "Moroccan Arabic", "Somali", "Tamasheq", "Tamazight", "Tigrinya", "Tunisian Arabic",
+    "Akan", "Bambara", "Bemba", "Chichewa", "chiShona", "Chokwe", "Dyula", "Éwé",
+    "Fon", "Nigerian Fulfulde", "Ghomálá'", "Igbo", "isiXhosa", "isiZulu", "Kabiyè",
+    "Kamba", "Kikongo", "Kikuyu", "Kimbundu", "Kinyarwanda", "Kiswahili", "Lingala",
+    "Luba-Kasai", "Luganda", "Lugbara", "Luo", "Mossi", "Northern Sotho", "N'Ko",
+    "Rundi", "Runyankole", "Sango", "Setswana", "Southern Sotho", "Swati", "Twi",
+    "Tumbuka", "Umbundu", "Xitsonga", "Wolof", "Yorùbá", "Acholi", "Ateso", "Dinka",
+    "Kanuri", "Nuer", "Malagasy", "Afrikaans", "Mozambican Portuguese",
+    "Nigerian Pidgin", "Kabuverdianu", "Northern Ndebele", "Venda"
+  ],
+  "languages": {
+    "Algerian Arabic": { "iso_code": "arq", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Amharic": { "iso_code": "amh", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128"] },
+    "Egyptian Arabic": { "iso_code": "arz", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "Hausa": { "iso_code": "hau", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy"] },
+    "Kabyle": { "iso_code": "kab", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Oromo": { "iso_code": "orm", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128"] },
+    "Moroccan Arabic": { "iso_code": "ary", "datasets_present_in": ["AfriHate", "AfriSenti", "SIB-200", "FLORES-200", "NTREX-128"] },
+    "Somali": { "iso_code": "som", "datasets_present_in": ["SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "XLSum"] },
+    "Tamasheq": { "iso_code": "taq", "datasets_present_in": ["SIB-200"] },
+    "Tamazight": { "iso_code": "tzm", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Tigrinya": { "iso_code": "tir", "datasets_present_in": ["AfriSenti", "Injongo-Intent", "SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "AfriMGSM"] },
+    "Tunisian Arabic": { "iso_code": "aeb", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Akan": { "iso_code": "aka", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Bambara": { "iso_code": "bam", "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"] },
+    "Bemba": { "iso_code": "bem", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128", "SALT"] },
+    "Chichewa": { "iso_code": "nya", "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "NTREX-128"] },
+    "chiShona": { "iso_code": "sna", "datasets_present_in": ["AfriHate", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128"] },
+    "Chokwe": { "iso_code": "cjk", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Dyula": { "iso_code": "dyu", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Éwé": { "iso_code": "ewe", "datasets_present_in": ["AfriHate", "AfriXNLI", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND"] },
+    "Fon": { "iso_code": "fon", "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "SIB-200", "FLORES-200", "MAFAND", "AfriADR"] },
+    "Nigerian Fulfulde": { "iso_code": "fuv", "datasets_present_in": ["SIB-200"] },
+    "Ghomálá'": { "iso_code": "bbj", "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriADR"] },
+    "Igbo": { "iso_code": "ibo", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "AfriADR"] },
+    "isiXhosa": { "iso_code": "xho", "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "Uhura-Arc-Easy", "XLSum", "AfriXNLI"] },
+    "isiZulu": { "iso_code": "zul", "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "Uhura-Arc-Easy", "XLSum", "AfriXNLI", "AfriHate"] },
+    "Kabiyè": { "iso_code": "kbp", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kamba": { "iso_code": "kam", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kikongo": { "iso_code": "kon", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kikuyu": { "iso_code": "kik", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kimbundu": { "iso_code": "kmb", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kinyarwanda": { "iso_code": "kin", "datasets_present_in": ["AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "XLSum"] },
+    "Kiswahili": { "iso_code": "swa", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "NollySenti"] },
+    "Lingala": { "iso_code": "lin", "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128"] },
+    "Luba-Kasai": { "iso_code": "lua", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Luganda": { "iso_code": "lug", "datasets_present_in": ["AfriHate", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128", "SALT", "XLSum"] },
+    "Lugbara": { "iso_code": "lgg", "datasets_present_in": ["SALT"] },
+    "Luo": { "iso_code": "luo", "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"] },
+    "Mossi": { "iso_code": "mos", "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"] },
+    "Northern Sotho": { "iso_code": "nso", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "N'Ko": { "iso_code": "nqo", "datasets_present_in": ["SIB-200"] },
+    "Rundi": { "iso_code": "run", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "Runyankole": { "iso_code": "nyn", "datasets_present_in": ["SALT"] },
+    "Sango": { "iso_code": "sag", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Setswana": { "iso_code": "tsn", "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "FLORES-200", "NTREX-128"] },
+    "Southern Sotho": { "iso_code": "sot", "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "FLORES-200", "NTREX-128"] },
+    "Swati": { "iso_code": "ssw", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "Twi": { "iso_code": "twi", "datasets_present_in": ["AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "AfriMGSM"] },
+    "Tumbuka": { "iso_code": "tum", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Umbundu": { "iso_code": "umb", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Xitsonga": { "iso_code": "tso", "datasets_present_in": ["AfriSenti", "SIB-200", "FLORES-200"] },
+    "Wolof": { "iso_code": "wol", "datasets_present_in": ["AfriHate", "AfriSenti", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128", "AfriADR", "AfriMMLU"] },
+    "Yorùbá": { "iso_code": "yor", "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "NaijaRC", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "AfriADR"] },
+    "Acholi": { "iso_code": "ach", "datasets_present_in": ["SALT"] },
+    "Ateso": { "iso_code": "teo", "datasets_present_in": ["SALT"] },
+    "Dinka": { "iso_code": "dik", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Kanuri": { "iso_code": "knc", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Nuer": { "iso_code": "nus", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Malagasy": { "iso_code": "plt", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "Afrikaans": { "iso_code": "afr", "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"] },
+    "Mozambican Portuguese": { "iso_code": "pt-MZ", "datasets_present_in": ["SIB-200"] },
+    "Nigerian Pidgin": { "iso_code": "pcm", "datasets_present_in": ["AfriSenti", "AfriXNLI", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "Belebele", "NaijaRC"] },
+    "Kabuverdianu": { "iso_code": "kea", "datasets_present_in": ["SIB-200", "FLORES-200"] },
+    "Northern Ndebele": { "iso_code": "nde", "datasets_present_in": ["Belebele"] },
+    "Venda": { "iso_code": "ven", "datasets_present_in": ["Belebele"] }
+  },
+  "assessments": {
+    "MasakhaPOS": {
+      "translated": { "value": false, "evidence": "Section 3.2.2: 'MASAKHAPOS (Dione et al., 2023) is a part-of-speech tagging dataset in 20 African languages created from news articles.'", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Created by Masakhane community researchers who are native speakers of African languages (Dione et al., 2023).", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Created from news articles written in African languages, reflecting local news content and topics.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "MasakhaNER-X": {
+      "translated": { "value": false, "evidence": "Section 3.2.2: Extension of MasakhaNER dataset. Originally created from African language texts.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Created by MasakhaNER project involving native speaker annotators from the Masakhane community.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Named entities from African language texts reflect local people, places, and organizations.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "SIB-200": {
+      "translated": { "value": true, "evidence": "SIB-200 is based on FLORES sentences which are professionally translated from English.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench paper does not provide details about annotator nativeness for SIB-200.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Based on FLORES sentences translated from English Wikipedia articles.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "MasakhaNEWS": {
+      "translated": { "value": false, "evidence": "Section 3.2.1: News articles collected in African languages.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Created by Masakhane community researchers who are native speakers.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "News articles natively written in African languages covering local topics.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "AfriSenti": {
+      "translated": { "value": false, "evidence": "Section 3.2.1: 'AFRISENTI is a tweet sentiment analysis dataset in 14 African languages.'", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Created by Masakhane community with native speaker annotators.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Tweets authored by native speakers in African languages.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "NollySenti": {
+      "translated": { "value": false, "evidence": "Section 3.2.1: 'NOLLYSENTI focuses on sentiment in movie reviews in 4 African languages.'", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench paper does not detail annotator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": true, "evidence": "Based on Nollywood movie reviews, culturally grounded in Nigerian entertainment.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "Injongo-Intent": {
+      "translated": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench paper does not specify whether Injongo-Intent was translated or natively created.", "confidence": "low" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: No annotator details provided.", "confidence": "low" },
+      "culturally_grounded": { "value": null, "evidence": "INSUFFICIENT_INFO: Intent categories include Banking, Home, Kitchen and Dining, Travel domains.", "confidence": "low" },
+      "annotation_quality_notes": null
+    },
+    "AfriHate": {
+      "translated": { "value": false, "evidence": "Section 3.2.1: 'AFRIHATE is a multilingual hate speech dataset covering 15 African languages for tweets.'", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Created by Masakhane community researchers. Hate speech annotation requires native language comprehension.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Based on tweets in African languages reflecting real hate speech patterns.", "confidence": "high" },
+      "annotation_quality_notes": "Distinguishing 'abusive' from 'hate' is confusing even for native speakers (Section 5.3)."
+    },
+    "AfriXNLI": {
+      "translated": { "value": true, "evidence": "Part of IrokoBench, human-translated from English XNLI.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not specify translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English XNLI; premise-hypothesis pairs originate from English contexts.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "AfriQA": {
+      "translated": { "value": false, "evidence": "Section 3.2.4: Questions natively authored in African languages.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not describe annotator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": "partial", "evidence": "Questions in African languages but context passages in English or French.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "Belebele": {
+      "translated": { "value": true, "evidence": "Parallel dataset translated from English (Bandarkar et al., 2024).", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not discuss translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English reading comprehension passages.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "NaijaRC": {
+      "translated": { "value": false, "evidence": "Section 3.2.4: Created for Nigerian languages (Aremu et al., 2024).", "confidence": "medium" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: No annotator details provided.", "confidence": "low" },
+      "culturally_grounded": { "value": null, "evidence": "INSUFFICIENT_INFO: Paper does not provide details on cultural grounding.", "confidence": "low" },
+      "annotation_quality_notes": null
+    },
+    "Uhura-Arc-Easy": {
+      "translated": { "value": true, "evidence": "Section 3.2.4: 'human-translated version of the scientific Arc-Easy benchmark'.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not discuss translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English Arc-Easy science questions.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "AfriMMLU": {
+      "translated": { "value": true, "evidence": "Section 3.2.4: 'human-translated MMLU datasets'.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not describe translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "human-translated from English MMLU.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "OpenAI-MMMLU": {
+      "translated": { "value": true, "evidence": "Section 3.2.4: 'human-translated MMLU datasets'.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: No details about OpenAI's translation process.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English MMLU.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "AfriMGSM": {
+      "translated": { "value": true, "evidence": "Section 3.2.3: 'extension of the MGSM dataset to 17 African languages'.", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not describe translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English grade-school math problems.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "FLORES-200": {
+      "translated": { "value": true, "evidence": "Section 3.2.5: 'All translations are from English.'", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not discuss translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English Wikipedia source sentences.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "MAFAND": {
+      "translated": { "value": "partial", "evidence": "Section 3.2.5: Translation of African news from English/French to African languages.", "confidence": "medium" },
+      "native_annotators": { "value": true, "evidence": "Created by Masakhane community involving native speaker translators.", "confidence": "medium" },
+      "culturally_grounded": { "value": "partial", "evidence": "Based on African news content but involves translation from English/French.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "NTREX-128": {
+      "translated": { "value": true, "evidence": "Translated from English news references (Federmann et al., 2022).", "confidence": "high" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: AfroBench does not discuss translator demographics.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English news test references.", "confidence": "high" },
+      "annotation_quality_notes": null
+    },
+    "SALT": {
+      "translated": { "value": null, "evidence": "INSUFFICIENT_INFO: 'Community creation of datasets and models in Uganda.'", "confidence": "low" },
+      "native_annotators": { "value": true, "evidence": "Community-created in Uganda by local speakers.", "confidence": "medium" },
+      "culturally_grounded": { "value": "partial", "evidence": "Community-created in Uganda, likely using local content.", "confidence": "low" },
+      "annotation_quality_notes": null
+    },
+    "XLSum": {
+      "translated": { "value": false, "evidence": "Based on BBC news articles that exist natively in multiple languages.", "confidence": "medium" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: BBC news articles may be written by journalists in those languages.", "confidence": "low" },
+      "culturally_grounded": { "value": "partial", "evidence": "BBC news articles in African languages cover both local and international topics.", "confidence": "medium" },
+      "annotation_quality_notes": null
+    },
+    "AfriADR": {
+      "translated": { "value": false, "evidence": "Section 3.2.5: Created by stripping diacritics from existing MAFAND data.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Section 3.2.5: Automatically created by stripping diacritics, no human annotation.", "confidence": "high" },
+      "culturally_grounded": { "value": true, "evidence": "Based on African language texts; diacritics restoration is inherently culture/language-specific.", "confidence": "high" },
+      "annotation_quality_notes": "Automatically created by stripping diacritics from MAFAND MT dataset."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MasakhaPOS", "MasakhaNER-X", "MasakhaNEWS", "AfriSenti", "NollySenti", "AfriHate", "AfriQA", "AfriADR"],
+      "evidence": "MasakhaPOS, MasakhaNER-X, MasakhaNEWS created from African language news articles. AfriSenti and AfriHate from African language tweets. NollySenti from Nigerian movie reviews. AfriQA has questions natively authored in African languages. AfriADR derived from African language text in MAFAND."
+    },
+    "datasets_translated_from_english": {
+      "list": ["SIB-200", "AfriXNLI", "Belebele", "Uhura-Arc-Easy", "AfriMMLU", "OpenAI-MMMLU", "AfriMGSM", "FLORES-200", "NTREX-128"],
+      "evidence": "SIB-200 based on FLORES English sentences. AfriXNLI from English XNLI. Belebele from English. Uhura-Arc-Easy 'human-translated version of the scientific Arc-Easy benchmark'. AfriMMLU and OpenAI-MMMLU are 'human-translated MMLU datasets'. AfriMGSM from English MGSM. FLORES-200: 'All translations are from English'. NTREX-128 from English news references."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["MasakhaPOS", "MasakhaNER-X", "MasakhaNEWS", "AfriSenti", "NollySenti", "AfriHate", "AfriADR"],
+      "details": {
+        "MasakhaPOS": "Created from African language news articles",
+        "MasakhaNER-X": "Named entities from African language texts",
+        "MasakhaNEWS": "African language news article classification",
+        "AfriSenti": "Tweets natively authored in African languages",
+        "NollySenti": "Nigerian movie review sentiment",
+        "AfriHate": "Tweets in African languages reflecting local hate speech patterns",
+        "AfriADR": "Diacritics restoration for African languages — an inherently culture-specific task"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mixed",
+      "evidence": "Datasets from the Masakhane community likely involved native speakers. AfriADR was automatically generated. Translated datasets used professional translators whose nativeness is not confirmed."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "community_volunteers", "professional_annotators", "automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Masakhane NLP", "Mila - Quebec AI Institute", "McGill University", "University of Waterloo", "University College London", "The African Research Collective", "Lelapa AI", "Meta", "Microsoft", "OpenAI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "AfroBench authors are from Masakhane NLP, Mila, McGill, Waterloo, UCL, The African Research Collective, and Lelapa AI. No ethics statement section is present. No annotator compensation or IRB details reported."
+    },
+    "english_centricity_notes": "9 of 22 datasets are translated from English. The benchmark uses English prompts for evaluation (cross-lingual prompting). Knowledge-intensive tasks (MMLU, Arc-Easy, MGSM) test Western-centric knowledge translated into African languages. However, the benchmark explicitly aims to address the underrepresentation of African languages in multilingual evaluations.",
+    "geographic_representation": {
+      "primary_region": "Sub-Saharan Africa",
+      "sub_regions": ["West Africa", "East Africa", "Southern Africa", "Central Africa", "North Africa"],
+      "also_represented": ["Madagascar (Austronesian)"],
+      "notably_excluded": ["Most of North Africa has only Arabic dialect representation"],
+      "evidence": "Section 3.1: '64 African languages from seven language families (Afro-Asiatic, Atlantic-Congo, Austronesian, Indo-European, Mande, Nilotic, and English-Creole). 40 languages from Atlantic-Congo, 12 from Afro-Asiatic, 7 from Nilotic, 2 Indo-European, 2 Creole, 1 Austronesian.'"
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "AfroBench is primarily an aggregation benchmark (21 of 22 datasets are pre-existing), with one new dataset (AfriADR) created by the authors. The paper claims 64 languages but the detailed table lists approximately 65 distinct language entries including Luo appearing in both Nilotic and Niger-Congo sections. Language counts per dataset in the paper text occasionally differ from the data table."
+  }
+}

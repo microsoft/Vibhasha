@@ -1,0 +1,24 @@
+{
+  "benchmark_name": "IndicNLG Benchmark",
+  "paper_id": "indicnlg_2022",
+  "year": 2022,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We present the IndicNLG Benchmark, a collection of datasets for benchmarking NLG for 11 Indic languages. We focus on five diverse tasks... Our dataset creation methods can be easily applied to modest-resource languages as they involve simple steps such as scraping news articles and Wikipedia infoboxes, light cleaning, and pivoting through machine translation data.",
+  "total_languages_claimed": 11,
+  "total_datasets": 5,
+  "dataset_names": [
+    "WikiBio (Biography Generation)",
+    "Headline Generation",
+    "Sentence Summarization",
+    "Paraphrase Generation",
+    "Question Generation"
+  ],
+  "task_categories": [
+    "data-to-text generation",
+    "headline generation",
+    "sentence summarization",
+    "paraphrase generation",
+    "question generation"
+  ],
+  "brief_description": "IndicNLG Benchmark is a collection of datasets for benchmarking NLG performance across 5 diverse tasks (biography generation, headline generation, sentence summarization, paraphrase generation, question generation) spanning 11 Indic languages, comprising approximately 8.5M examples total. It is the first NLG benchmark for Indic languages."
+}

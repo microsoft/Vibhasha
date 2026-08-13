@@ -1,0 +1,16 @@
+{
+  "benchmark_name": "MaXIFE",
+  "paper_id": "2025.acl-long.698",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MaXIFE: a comprehensive evaluation benchmark designed to assess instruction-following capabilities across 23 different languages with 1667 verifiable instruction tasks.",
+  "total_languages_claimed": 23,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MaXIFE"
+  ],
+  "task_categories": [
+    "instruction following"
+  ],
+  "brief_description": "MaXIFE is a multilingual and cross-lingual instruction-following evaluation benchmark covering 23 languages with 1667 verifiable instruction tasks across 47 instruction subcategories, combining rule-based and model-based evaluation strategies."
+}

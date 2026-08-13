@@ -1,0 +1,84 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "PolygloToxicityPrompts (PTP)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "toxicity evaluation / toxic degeneration evaluation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": "Approximately 83.2% naturally occurring (scraped from web-text). ~16.8% (~70K prompts across 9 languages) translated from toxic English/other-language samples using NLLB-3.3B model to supplement low-toxicity languages (ar, cs, fr, ko, id, it, nl, pl, sv).",
+      "num_languages": 17,
+      "language_list": [
+        "Arabic",
+        "Chinese",
+        "Czech",
+        "Dutch",
+        "English",
+        "French",
+        "German",
+        "Hindi",
+        "Indonesian",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese",
+        "Russian",
+        "Spanish",
+        "Swedish"
+      ],
+      "annotation_method": "Automated: documents scraped from mC4 and The Pile corpora (100M+ documents), scored for toxicity using Perspective API. Documents split in half to form prompts and continuations. 6250 documents sampled from each of 4 equal-width toxicity levels ([0, 0.25), [0.25, 0.5), [0.5, 0.75), [0.75, 1]) per language, yielding 25K prompts per language (425K total).",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Carnegie Mellon University, University of Virginia, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Dataset was created automatically by the research team via web scraping and automated toxicity scoring. No human annotators involved in dataset creation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "mC4 (Xue et al., 2021) and The Pile (Gao et al., 2020) corpora; Pile Curse subset for English.",
+      "notes": "Prompts are much longer than RealToxicityPrompts (~400 GPT-4 tokens average). For 9 languages with very low toxicity rates (<0.01% in mC4), synthetic high-toxicity data was added via machine translation."
+    },
+    {
+      "dataset_name": "PTPSmall",
+      "variant_name": "Stratified subset of PTP",
+      "variant_notes": "A stratified sample of 5K prompts per language from the full PTP dataset, designed for benchmarking models with limited computational resources.",
+      "task_type": "toxicity evaluation / toxic degeneration evaluation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": "Same as PTP (stratified subsample of PTP).",
+      "num_languages": 17,
+      "language_list": [
+        "Arabic",
+        "Chinese",
+        "Czech",
+        "Dutch",
+        "English",
+        "French",
+        "German",
+        "Hindi",
+        "Indonesian",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese",
+        "Russian",
+        "Spanish",
+        "Swedish"
+      ],
+      "annotation_method": "Stratified random sample from PTP; same toxicity scoring methodology via Perspective API.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Carnegie Mellon University, University of Virginia, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Subset automatically sampled from PTP."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Stratified subset of PolygloToxicityPrompts.",
+      "notes": "5K prompts per language (85K total). Used for the actual 62-model benchmarking due to computational constraints."
+    }
+  ]
+}

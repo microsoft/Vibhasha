@@ -1,0 +1,141 @@
+{
+  "total_languages": 11,
+  "languages": {
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "Amrita Paraphrase Detection"
+      ]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": [
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "Amrita Paraphrase Detection",
+        "MIDAS Hindi Discourse",
+        "IIT-Patna Movie Reviews",
+        "IIT-Patna Product Reviews",
+        "BBC Hindi News Articles"
+      ]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Soham Bengali News Articles"
+      ]
+    },
+    "Odia": {
+      "iso_code": "or",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat"
+      ]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": [
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER"
+      ]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "iNLTK Headlines"
+      ]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "WNLI Indic",
+        "COPA Indic",
+        "iNLTK Headlines"
+      ]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER"
+      ]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "ACTSA Telugu Sentiment"
+      ]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "iNLTK Headlines"
+      ]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": [
+        "IndicGLUE News Category Classification",
+        "IndicGLUE Headline Prediction",
+        "IndicGLUE Wikipedia Section-Title Prediction",
+        "IndicGLUE Cloze-style Multiple-choice QA",
+        "WikiAnn NER",
+        "CVIT-Mann Ki Baat",
+        "Amrita Paraphrase Detection",
+        "iNLTK Headlines"
+      ]
+    }
+  }
+}

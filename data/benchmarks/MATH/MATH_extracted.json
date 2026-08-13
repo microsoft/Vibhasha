@@ -1,0 +1,157 @@
+{
+  "benchmark_name": "MATH",
+  "paper_id": "NeurIPS Datasets and Benchmarks-2021-measuring-mathematical-problem-solving-with-the-math-dataset",
+  "year": 2021,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MATH, a new dataset of 12,500 challenging competition mathematics problems",
+  "total_languages_claimed": 1,
+  "total_datasets": 2,
+  "dataset_names": [
+    "MATH",
+    "AMPS"
+  ],
+  "task_categories": [
+    "mathematical problem solving",
+    "mathematical reasoning",
+    "answer generation"
+  ],
+  "brief_description": "MATH is a dataset of 12,500 challenging competition mathematics problems (from AMC 10, AMC 12, AIME, etc.) with step-by-step solutions in LaTeX, spanning 7 subjects and 5 difficulty levels. It is accompanied by AMPS, a large auxiliary pretraining corpus of over 5 million mathematics problems from Khan Academy and Mathematica scripts.",
+  "datasets": [
+    {
+      "dataset_name": "MATH",
+      "variant_name": null,
+      "variant_notes": "7 subjects (Prealgebra, Algebra, Number Theory, Counting and Probability, Geometry, Intermediate Algebra, Precalculus) with 5 difficulty levels each",
+      "task_type": "mathematical problem solving (open-ended answer generation)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Problems collected from US mathematics competitions (AMC 10, AMC 12, AIME, etc.) via aops.com; solutions written in LaTeX with step-by-step derivations",
+      "data_creator_info": {
+        "creator_type": "competition organizers (original problems) + paper authors (curation, formatting)",
+        "creator_affiliation": "UC Berkeley, UChicago; problems sourced from Art of Problem Solving (AoPS) community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "problems from mathematics competitions including the AMC 10, AMC 12, AIME, and more. Many of these problems can be collected from aops.com/community/c3158_usa_contests"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "12,500 problems total (7,500 training, 5,000 test). Problems tagged by difficulty 1-5. Answers normalized for exact-match evaluation using \\boxed{} delimiter. Problems and solutions formatted in LaTeX with Asymptote vector graphics language for figures."
+    },
+    {
+      "dataset_name": "AMPS",
+      "variant_name": "Auxiliary Mathematics Problems and Solutions",
+      "variant_notes": "Two subsets: Khan Academy (~100,000 problems) and Mathematica (~5 million problems)",
+      "task_type": "mathematical problem solving (pretraining corpus)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Khan Academy problems pulled from Khan Academy exercises (github.com/Khan/khan-exercises); Mathematica problems generated from 100 hand-designed scripts (37 with step-by-step solutions)",
+      "data_creator_info": {
+        "creator_type": "Khan Academy (existing exercises) + paper authors (Mathematica scripts)",
+        "creator_affiliation": "UC Berkeley, UChicago; Khan Academy",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Khan Academy subset has 693 exercise types with over 100,000 problems and full solutions... we also contribute our own Mathematica scripts to generate approximately 50x more problems"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "23 GB total. Khan Academy covers elementary math to multivariable calculus. Mathematica covers algebra, calculus, counting, statistics, geometry, linear algebra, number theory. Designed as auxiliary pretraining dataset for MATH."
+    }
+  ],
+  "total_languages": 1,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["MATH", "AMPS"]
+    }
+  },
+  "assessments": {
+    "MATH": {
+      "translated": {
+        "value": false,
+        "evidence": "Problems sourced from US mathematics competitions (AMC 10, AMC 12, AIME) originally written in English, collected from aops.com. Not translated from another language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Problems are from US math competitions and solutions are in LaTeX, but the paper does not describe who specifically wrote or verified the step-by-step solutions or whether they are native English speakers.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MATH consists of abstract mathematical competition problems (algebra, geometry, number theory, etc.) that are culture-neutral by nature. The problems assess mathematical reasoning, not cultural knowledge.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Problems sourced from established US math competitions with decades of history. Answers are normalized with explicit formatting rules for exact-match evaluation. Human evaluation reported: CS PhD student ~40%, IMO gold medalist ~90%."
+    },
+    "AMPS": {
+      "translated": {
+        "value": false,
+        "evidence": "Khan Academy problems pulled from English-language Khan Academy platform; Mathematica problems generated from hand-designed scripts by the authors. Not translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Khan Academy content is professionally created but annotator details not given. Mathematica scripts designed by the paper authors (UC Berkeley/UChicago).",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "AMPS is a pretraining corpus of algorithmically generated or curated mathematical exercises. Problems are abstract math, not culturally situated.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Khan Academy subset uses exercises from an established educational platform (693 exercise types). Mathematica subset generated from 100 hand-designed scripts covering diverse math topics. Total 23 GB."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MATH", "AMPS"],
+      "evidence": "Both datasets are originally created in English. MATH problems collected from US math competitions; AMPS generated from Khan Academy and Mathematica scripts. They are English-original, not translated from another language."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets are translated from English to other languages. The benchmark is English-only."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "Both MATH and AMPS consist of abstract mathematical problems (algebra, geometry, number theory, etc.) that are culture-neutral. No cultural grounding is attempted or relevant."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO",
+      "evidence": "The paper does not report annotator language background. Problems are sourced from US math competitions and Khan Academy (English-medium), and Mathematica scripts were written by UC Berkeley/UChicago researchers."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "competition organizers (AMC/AIME problems)",
+        "educational platform (Khan Academy)",
+        "paper authors (Mathematica scripts, curation)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": ["UC Berkeley", "UChicago", "Khan Academy", "Art of Problem Solving (AoPS)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The paper does not report demographics, compensation, or ethics review. Authors are from UC Berkeley and UChicago. Problems collected from aops.com and Khan Academy."
+    },
+    "english_centricity_notes": "The benchmark is entirely English-language. All problems, solutions, and formatting (LaTeX, Asymptote) are in English. The benchmark assesses mathematical reasoning in English only and makes no claims about multilingual coverage.",
+    "geographic_representation": {
+      "primary_region": "United States",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": ["All non-US regions"],
+      "evidence": "MATH problems are from US mathematics competitions (AMC 10, AMC 12, AIME). These competitions 'assess the mathematical problem-solving ability of the best young mathematical talent in the United States.' Khan Academy is a US-based educational platform."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

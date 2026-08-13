@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "PolygloToxicityPrompts (PTP)": {
+      "translated": {
+        "value": "partially",
+        "evidence": "Approximately 83.2% of the dataset is naturally occurring (scraped from web-text corpora). ~16.8% (~70K translated prompts across 9 languages: ar, cs, fr, ko, id, it, nl, pl, sv) were translated from toxic samples using the NLLB-3.3B model because these languages had <0.01% toxicity rates in the source corpora. The paper states: 'we translate toxic samples from the mC4 and THE PILE corpora into target languages using the NLLB-3.3B model.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "not_applicable",
+        "evidence": "No human annotators were involved in dataset creation. The dataset was constructed entirely automatically via web scraping and Perspective API scoring. The authors note: 'We construct our dataset by scraping over 100M documents from the mC4 and THE PILE corpora.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The data is scraped from general web-text without cultural grounding design. The paper argues PTP captures more naturally occurring toxicity than translated benchmarks (which 'can lack cultural nuances of toxicity') but the dataset itself is not designed with cultural specificities—it relies on Perspective API (a universal tool) rather than culturally-informed annotation. The paper acknowledges Perspective API has biases against some languages (e.g., German).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Toxicity scores are generated automatically using Perspective API, an industry-standard but imperfect tool. The paper acknowledges: (1) toxicity is subjective and their operationalization may not cover all aspects, (2) Perspective API overestimates toxicity for text containing minority identity mentions, (3) it may be biased against certain languages like German. No human validation of toxicity was performed. The scale of experiments makes human validation challenging."
+    },
+    "PTPSmall": {
+      "translated": {
+        "value": "partially",
+        "evidence": "PTPSmall is a stratified subset of PTP, so it inherits the same mixed naturally-occurring/translated composition.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "not_applicable",
+        "evidence": "Same automated creation process as PTP—no human annotators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Subset of PTP; same lack of cultural grounding design.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Same as PTP—automated Perspective API scoring without human validation."
+    }
+  }
+}

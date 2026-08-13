@@ -1,0 +1,42 @@
+name: Validate Benchmark Submission
+
+on:
+  pull_request:
+    paths:
+      - 'data/benchmarks/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Detect new/modified benchmarks
+        id: detect
+        run: |
+          # Find benchmark directories with changes in this PR
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- data/benchmarks/ | cut -d'/' -f3 | sort -u)
+          echo "benchmarks=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed benchmarks: $CHANGED"
+
+      - name: Validate submissions
+        run: |
+          ERRORS=0
+          for bench in ${{ steps.detect.outputs.benchmarks }}; do
+            echo "Validating: $bench"
+            python scripts/validate_submission.py "data/benchmarks/$bench" || ERRORS=1
+          done
+          exit $ERRORS
+
+      - name: Dry-run pipeline
+        run: |
+          python scripts/build_language_registry.py
+          python scripts/normalize.py
+          echo "Pipeline completed successfully"

@@ -6,6 +6,10 @@ import Playbook from './Playbook'
 import PlaybookIntro from './components/PlaybookIntro'
 import './styles.css'
 import { UIProvider } from './theme/UIContext'
+import pkg from './package.json'
+import { initTelemetry } from './lib/telemetry'
+
+initTelemetry((pkg?.name ?? 'vibhasha').toLowerCase())
 
 // Docs markdown components
 import IntroductionDoc from './components/docs/00-introduction'
@@ -61,8 +65,9 @@ import EvalsDashboard from './components/EvalsDashboard';
 import ViiPipelineDoc from './components/docs/01-vii-pipeline';
 import LandingpageDoc from './components/docs/landingpage';
 
-// Vite injects the `base` value from vite.config.js as import.meta.env.BASE_URL
-const basename = import.meta.env.BASE_URL
+// Match Vite's base path so React Router works under any GitHub Pages prefix
+// ('/Vibhasha/' under GITHUB_ACTIONS, '/' locally).
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

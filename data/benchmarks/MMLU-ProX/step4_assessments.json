@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "MMLU-ProX": {
+      "translated": {
+        "value": true,
+        "evidence": "we introduce MMLU-ProX, a comprehensive benchmark covering 29 languages, built on an English benchmark. Each language version consists of 11,829 identical questions... we deploy a translation agent to maintain translation quality standards... we select the SOTA Claude model, Claude Sonnet 3.7 as our primary translation model",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Expert verification involved native-speaker professional translators: 'each language evaluated by two professional translators who are native speakers of the target language and proficient in English.' However, they verified LLM translations rather than creating content from scratch. Verification covered 15 of 29 languages. The underlying content originates from English MMLU-Pro curated by 4 interdisciplinary specialists.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is a direct translation of English MMLU-Pro content. Translation prompts mention 'Ensuring cultural appropriateness for {target_lang} speakers' and the paper states translations 'ensure accurate expression, consistent terminology, and cultural relevance.' However, the underlying questions, knowledge domains, and subject matter originate from an English-centric benchmark (MMLU-Pro). The cultural adaptation is at the linguistic/terminological level, not at the content/question design level.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous quality control: four-stage LLM translation pipeline (initial translation, self-reflection, improvement, external examination by different LLMs). Expert verification on 15 languages by 2 native-speaker professional translators per language rating accuracy, fluency, completeness on 1-5 scale. Mean scores above 4 across all dimensions. Categories scoring below 3 were fully retranslated (only law in Yoruba required this). Total annotation effort exceeded 400 hours across 30+ experts. Total cost ~$80,000."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "MUCH": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions are sourced from the multilingual Mu-SHROOM test set, which provides questions already in each target language. LLM responses are generated natively in each language by multilingual instruction-tuned models, not translated. The paper states: 'We collect questions by filtering the 200 questions in English, French, Spanish and German from Mu-SHROOM dataset.' However, whether the Mu-SHROOM questions themselves originate from English is not explicitly stated in this paper.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": "INSUFFICIENT_INFO: For the primary annotations (automated via GPT-4o and GPT-4.1), the concept of native speakers does not apply. For human verification, the paper states 'Two human annotators fluent in all four languages' but does not specify whether they are native speakers of any of the four languages.",
+        "evidence": "Two human annotators fluent in all four languages then independently annotated these 200 samples.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MUCH is a factual QA benchmark based on Wikipedia knowledge. Questions are factual and non-ambiguous, verifiable against Wikipedia pages. There is no cultural grounding or adaptation to specific cultural contexts; the benchmark evaluates objective factual correctness of LLM claims.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Cohen's kappa between GPT-4o and GPT-4.1 is 0.753 (before filtering). After filtering for agreement, inter-human kappa reaches 0.922 (vs 0.797 before filtering). GPT-vs-human kappa after filtering is 0.821 and 0.848 for the two annotators respectively, considered 'almost perfect' agreement. A gold-standard human-annotated subset of 200 samples (867 claims) is released alongside the benchmark."
+    }
+  }
+}

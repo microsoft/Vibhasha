@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "IndicParam": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions are collected from UGC-NET, which is a nationwide examination administered by a government agency... We developed the dataset by downloading question papers and answer keys from the official examination website for the period between 2012-2018. Questions are natively authored in each target language for the UGC-NET examination, not translated from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material. Since many papers mix language-focused and knowledge-focused content, annotators were required to demonstrate strong proficiency in the relevant Indic script.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions are sourced from UGC-NET, a nationwide Indian graduate-level examination covering linguistics, literature, and general knowledge relevant to Indian languages and culture. The benchmark covers language understanding (grammar, morphology, syntax, semantics, discourse) and general knowledge about Indian subjects, drawn from graduate-level examinations in each specific language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Post-verification audit on a random 5% sample (10,427 words and 61,547 characters) reported a Word Error Rate (WER) of 0.68% and a Character Error Rate (CER) of 0.12%. A multi-stage quality control pipeline was used: OCR extraction, manual correction by native speakers, and a two-step senior review against original exam papers."
+    }
+  }
+}
