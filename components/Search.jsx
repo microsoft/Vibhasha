@@ -4,6 +4,7 @@ import { docEntries } from "./docs/docIndex";
 import { Search20Regular, Dismiss24Regular } from '@fluentui/react-icons';
 import { preprocessMarkdown } from './MarkdownPage.jsx';
 import './styles/Search.css';
+import { trackSearchPerformed, trackSearchResultClicked } from '../lib/telemetry.js';
 
 export default function GlobalSearch({ onSearchActiveChange }) {
   const navigate = useNavigate();
@@ -123,6 +124,25 @@ export default function GlobalSearch({ onSearchActiveChange }) {
     setPage(1);
   }, [debouncedQuery, mdCache]);
 
+  // Telemetry: emit SearchPerformed once per settled query (debounced).
+  // Use a ref for the results count so the dep array can stay [query] only,
+  // preventing duplicate emits when async result computation lands later.
+  const resultsRef = useRef(results);
+  useEffect(() => { resultsRef.current = results; }, [results]);
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) return undefined;
+    const handle = setTimeout(() => {
+      const count = resultsRef.current.length;
+      trackSearchPerformed({
+        query_length: q.length,
+        results_count: count,
+        has_results: count > 0,
+      });
+    }, 600);
+    return () => clearTimeout(handle);
+  }, [query]);
+
   const pagedResults = useMemo(() => {
     const start = (page - 1) * PAGE_SIZE;
     return results.slice(start, start + PAGE_SIZE);
@@ -130,7 +150,12 @@ export default function GlobalSearch({ onSearchActiveChange }) {
 
   const totalPages = Math.ceil(results.length / PAGE_SIZE);
 
-  const handleClick = (path, q) => {
+  const handleClick = (path, q, rank) => {
+    const slug = (path || '').split('/').pop().toLowerCase();
+    trackSearchResultClicked({
+      result_chapter: slug || 'unknown',
+      result_rank: rank,
+    });
     navigate(path + `?highlight=${encodeURIComponent(q)}`);
   };
 
@@ -169,7 +194,7 @@ export default function GlobalSearch({ onSearchActiveChange }) {
               key={idx}
               item={item}
               query={query}
-              onClick={() => handleClick(item.path, query)}
+              onClick={() => handleClick(item.path, query, (page - 1) * PAGE_SIZE + idx + 1)}
             />
           ))}
 
