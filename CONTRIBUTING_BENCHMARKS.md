@@ -43,10 +43,11 @@ python scripts/validate_submission.py data/benchmarks/<YourBenchmark>
 ### 5. Open a Pull Request
 
 - Title: `Add benchmark: <BenchmarkName>`
-- CI will automatically validate your submission
-- A maintainer will review and merge
+- CI will validate the submission, run the complete data pipeline, and build the production site
+- The pull request remains unmerged until the required checks pass and a maintainer approves it
+- Only a maintainer merges an approved pull request
 
-Once merged, the dashboard data will be automatically regenerated.
+Once merged, the deployment workflow regenerates the dashboard data from the reviewed source files and deploys the site.
 
 ---
 
