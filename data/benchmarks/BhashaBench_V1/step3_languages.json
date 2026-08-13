@@ -1,0 +1,23 @@
+{
+  "total_languages": 2,
+  "languages": {
+    "English": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ]
+    },
+    "Hindi": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ]
+    }
+  }
+}

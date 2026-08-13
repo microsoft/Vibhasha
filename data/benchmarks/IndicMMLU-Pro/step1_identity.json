@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "IndicMMLU-Pro",
+  "paper_id": "2501.15747v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce IndicMMLU-Pro, a comprehensive benchmark designed to evaluate Large Language Models (LLMs) across Indic languages, building upon the MMLU Pro (Massive Multitask Language Understanding) framework.",
+  "total_languages_claimed": 9,
+  "total_datasets": 1,
+  "dataset_names": ["IndicMMLU-Pro"],
+  "task_categories": ["multiple-choice question answering", "multi-task language understanding"],
+  "brief_description": "IndicMMLU-Pro is a machine-translated adaptation of the English MMLU-Pro benchmark into 9 Indic languages (Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Urdu, Kannada, Punjabi), covering 14 subject categories for evaluating LLM multi-task language understanding. Translation was performed using IndicTrans2 and validated via back-translation metrics and expert proofreading by 13 native-speaker reviewers."
+}

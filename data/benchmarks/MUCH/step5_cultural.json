@@ -1,0 +1,55 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "MUCH questions are sourced from the Mu-SHROOM multilingual dataset. The LLM generations are produced natively in each language, but the questions themselves originate from Mu-SHROOM. It is unclear whether Mu-SHROOM questions in French, Spanish, and German were originally authored in those languages or translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "The LLM responses in MUCH are not translated; they are generated natively in each target language by multilingual models. The source questions come from Mu-SHROOM, which provides them in all four languages, but the paper does not clarify the provenance of the non-English questions in Mu-SHROOM."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: Primary annotations are automated (GPT-4o and GPT-4.1). Human verification annotators are described as 'fluent in all four languages' but nativeness is not specified.",
+      "evidence": "Two human annotators fluent in all four languages then independently annotated these 200 samples."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "automated (GPT-4o and GPT-4.1)",
+        "researchers (human verification)"
+      ],
+      "total_annotators_reported": 2,
+      "affiliations": [
+        "LIX (École Polytechnique, IP Paris, CNRS)",
+        "LIPN (Sorbonne Paris Nord)",
+        "Crédit Agricole SA"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Primary annotation by GPT-4o and GPT-4.1 (~17M completion tokens, ~13k requests, ~USD 50). Quality verification by two human annotators fluent in all four languages on a 200-sample subset. No demographics, compensation, or IRB details reported. The work received financial support from the research chair Trustworthy and Responsible AI at École Polytechnique and HPC resources from GENCI/IDRIS."
+    },
+    "english_centricity_notes": "The paper acknowledges English-centricity in evaluation: 'current methods perform better in English than in other languages because they rely on NLI models that are more performant in English.' The NLI model used (microsoft/deberta-large-mnli) is 'not optimized for French, Spanish, and German, which is particularly problematic for Spanish, where CCP and SAR achieved poor results.' The benchmark itself covers only four European languages using Latin script. The paper notes: 'incorporating languages that do not use the Latin alphabet, such as Chinese, Arabic, or Russian, would be valuable, though it would increase the complexity of the segmenter.'",
+    "geographic_representation": {
+      "primary_region": "Western Europe",
+      "sub_regions": [],
+      "also_represented": [
+        "Latin America (via Spanish)",
+        "North America (via English, French, Spanish)"
+      ],
+      "notably_excluded": [
+        "Asia",
+        "Africa",
+        "Oceania",
+        "Eastern Europe",
+        "Middle East",
+        "Non-Latin-script languages"
+      ],
+      "evidence": "Benchmark includes only four European languages (English, French, Spanish, German). Paper states: 'We focus on these languages because their punctuation and stopword systems are very similar, enabling the use of a single claim segmentation algorithm without requiring language detection.' Authors acknowledge this as a limitation: 'expanding the benchmark to include additional languages would improve its generality.'"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "FLORES-101",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 101,
+      "language_list": [
+        "Afrikaans", "Amharic", "Arabic", "Armenian", "Assamese",
+        "Asturian", "Azerbaijani", "Belarusian", "Bengali", "Bosnian",
+        "Bulgarian", "Burmese", "Catalan", "Cebuano", "Chinese (Simplified)",
+        "Chinese (Traditional)", "Croatian", "Czech", "Danish", "Dutch",
+        "English", "Estonian", "Filipino (Tagalog)", "Finnish", "French",
+        "Fula", "Galician", "Ganda", "Georgian", "German",
+        "Greek", "Gujarati", "Hausa", "Hebrew", "Hindi",
+        "Hungarian", "Icelandic", "Igbo", "Indonesian", "Irish",
+        "Italian", "Japanese", "Javanese", "Kabuverdianu", "Kamba",
+        "Kannada", "Kazakh", "Khmer", "Korean", "Kyrgyz",
+        "Lao", "Latvian", "Lingala", "Lithuanian", "Luo",
+        "Luxembourgish", "Macedonian", "Malay", "Malayalam", "Maltese",
+        "Maori", "Marathi", "Mongolian", "Nepali", "Northern Sotho",
+        "Norwegian", "Nyanja", "Occitan", "Oriya", "Oromo",
+        "Pashto", "Persian", "Polish", "Portuguese (Brazil)", "Punjabi",
+        "Romanian", "Russian", "Serbian", "Shona", "Sindhi",
+        "Slovak", "Slovenian", "Somali", "Sorani Kurdish", "Spanish (Latin America)",
+        "Swahili", "Swedish", "Tajik", "Tamil", "Telugu",
+        "Thai", "Turkish", "Ukrainian", "Umbundu", "Urdu",
+        "Uzbek", "Vietnamese", "Welsh", "Wolof", "Xhosa",
+        "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Professional translation by Language Service Providers (LSPs) with multi-stage quality evaluation: translation, editing, automated QC, independent quality assessment by a separate evaluation LSP, with re-translation required if quality score < 90%.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Language Service Providers (LSPs) contracted by Facebook AI Research",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English. Translators are required to have at least two to three years of translation experience in the relevant language pair if they have an academic degree in translation or linguistics and three to five years of translation experience if they do not have any relevant academic qualification.' No demographic breakdown or compensation details are reported."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Builds on FLORES v1.0 (Guzmán et al., 2019) which covered Nepali-English and Sinhala-English",
+      "notes": "Source sentences extracted from English Wikinews, Wikijunior, and WikiVoyage. Split into dev (997 sentences), devtest (1012 sentences), and test (992 sentences). Test set available only through evaluation server. Enables many-to-many evaluation across 10,100 language pairs. Assistance from machine translation was strictly prohibited during translation."
+    }
+  ]
+}

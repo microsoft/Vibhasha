@@ -1,0 +1,51 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "Belebele",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice reading comprehension",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 122,
+      "language_list": [
+        "Mesopotamian Arabic", "Afrikaans", "Tosk Albanian", "Amharic",
+        "North Levantine Arabic", "Modern Standard Arabic", "Modern Standard Arabic (Romanized)",
+        "Najdi Arabic", "Moroccan Arabic", "Egyptian Arabic", "Assamese",
+        "North Azerbaijani", "Bambara", "Bengali", "Bengali (Romanized)",
+        "Standard Tibetan", "Bulgarian", "Catalan", "Cebuano", "Czech",
+        "Central Kurdish", "Danish", "German", "Greek", "English", "Estonian",
+        "Basque", "Finnish", "French", "Nigerian Fulfulde", "West Central Oromo",
+        "Guarani", "Gujarati", "Haitian Creole", "Hausa", "Hebrew", "Hindi",
+        "Hindi (Romanized)", "Croatian", "Hungarian", "Armenian", "Igbo",
+        "Ilocano", "Indonesian", "Icelandic", "Italian", "Javanese", "Japanese",
+        "Jingpho", "Kannada", "Georgian", "Kazakh", "Kabuverdianu",
+        "Halh Mongolian", "Khmer", "Kinyarwanda", "Kyrgyz", "Korean", "Lao",
+        "Lingala", "Lithuanian", "Ganda", "Luo", "Standard Latvian", "Malayalam",
+        "Marathi", "Macedonian", "Maltese", "Maori", "Burmese", "Dutch",
+        "Norwegian Bokmål", "Nepali", "Nepali (Romanized)", "Northern Sotho",
+        "Nyanja", "Odia", "Eastern Panjabi", "Southern Pashto", "Western Persian",
+        "Plateau Malagasy", "Polish", "Portuguese", "Romanian", "Russian", "Shan",
+        "Sinhala (Romanized)", "Sinhala", "Slovak", "Slovenian", "Shona", "Sindhi",
+        "Somali", "Southern Sotho", "Spanish", "Serbian", "Swati", "Sundanese",
+        "Swedish", "Swahili", "Tamil", "Telugu", "Tajik", "Tagalog", "Thai",
+        "Tigrinya", "Tswana", "Tsonga", "Turkish", "Ukrainian", "Urdu",
+        "Urdu (Romanized)", "Northern Uzbek", "Vietnamese", "Waray", "Wolof",
+        "Xhosa", "Yoruba", "Chinese (Simplified)", "Chinese (Traditional)",
+        "Standard Malay", "Zulu"
+      ],
+      "annotation_method": "Questions and answers created in English by professional annotators through iterative feedback with a Language Service Provider (LSP), then translated by professional translators fluent in English and the target language. Passages sourced from FLORES-200. All translations proofread by an additional annotator.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Language Service Provider (LSP), Meta AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We engaged in 5 total iterations, providing and receiving feedback in each. (Section 3.1); BELEBELE was created end-to-end without the use of machine translation technology, relying solely on experts fluent in English and the target language. (Section 3.3); All translations were proofread and edited by an additional annotator. (Section 3.3)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Passages are from FLORES-200 (sourced from Wikinews, Wikijunior, WikiVoyage). 900 questions, 488 distinct passages, 4 answer choices each. Training set assembled from 6 existing English MRC datasets (RACE, SCIQ, MultiRC, MCTest, MCScript2.0, ReClor) for model finetuning. Seven languages included in two scripts (romanized variants of Hindi, Urdu, Bengali, Nepali, Sinhala, plus MSA and Chinese)."
+    }
+  ]
+}

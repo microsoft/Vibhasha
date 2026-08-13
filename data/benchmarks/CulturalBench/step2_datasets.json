@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "CulturalBench",
+      "variant_name": null,
+      "variant_notes": "The benchmark has two evaluation setups: CulturalBench-Easy (1,696 multiple-choice questions with 4 options each) and CulturalBench-Hard (6,784 binary True/False questions derived from the same 1,696 questions, 4 per original question). These are evaluation formats of the same underlying data, not separate datasets.",
+      "task_type": "cultural knowledge QA (multiple-choice and binary True/False)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Human-AI red-teaming (CulturalTeaming): human annotators brainstorm culturally relevant scenarios from personal experience, AI helper formulates structured questions, humans verify and revise to challenge models. Full dataset then verified by 5 independent annotators per region via Prolific. Questions filtered by majority vote threshold (>=4 out of 5 annotators).",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "University of Washington, University of British Columbia, Vector Institute for AI, McGill University, Mila, University of Copenhagen, Stanford University; annotators recruited via Prolific platform",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethical Considerations (Sec.): 'We pay annotators according to our vendor (Prolific)'s guidance, which is higher than the local wage requirement.' Table 9 reports annotator demographics (ethnicity, age group, sex, student status) across all 14 sub-continent regions."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "English-only benchmark covering 45 countries/regions across 14 sub-continents. 17 cultural topics under 3 overarching categories (Daily Life, Social Etiquette, Wider Society). Over 3,600 questions initially collected, filtered to ~3,000 after removing non-cultural questions, then to 1,696 after majority-vote filtering. Two question types: Single-mode (one correct answer, N=1554) and Multi-mode (multiple correct answers, N=142)."
+    }
+  ]
+}

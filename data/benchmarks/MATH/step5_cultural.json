@@ -1,0 +1,44 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MATH", "AMPS"],
+      "evidence": "Both datasets are originally created in English. MATH problems collected from US math competitions; AMPS generated from Khan Academy and Mathematica scripts. They are English-original, not translated from another language."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets are translated from English to other languages. The benchmark is English-only."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "Both MATH and AMPS consist of abstract mathematical problems (algebra, geometry, number theory, etc.) that are culture-neutral. No cultural grounding is attempted or relevant."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO",
+      "evidence": "The paper does not report annotator language background. Problems are sourced from US math competitions and Khan Academy (English-medium), and Mathematica scripts were written by UC Berkeley/UChicago researchers."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "competition organizers (AMC/AIME problems)",
+        "educational platform (Khan Academy)",
+        "paper authors (Mathematica scripts, curation)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": ["UC Berkeley", "UChicago", "Khan Academy", "Art of Problem Solving (AoPS)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The paper does not report demographics, compensation, or ethics review. Authors are from UC Berkeley and UChicago. Problems collected from aops.com and Khan Academy."
+    },
+    "english_centricity_notes": "The benchmark is entirely English-language. All problems, solutions, and formatting (LaTeX, Asymptote) are in English. The benchmark assesses mathematical reasoning in English only and makes no claims about multilingual coverage.",
+    "geographic_representation": {
+      "primary_region": "United States",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": ["All non-US regions"],
+      "evidence": "MATH problems are from US mathematics competitions (AMC 10, AMC 12, AIME). These competitions 'assess the mathematical problem-solving ability of the best young mathematical talent in the United States.' Khan Academy is a US-based educational platform."
+    }
+  }
+}

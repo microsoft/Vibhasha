@@ -1,0 +1,56 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All data originates from English sources (GPT-4 report and Anthropic red-teaming dataset) and is translated into target languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MultiJail"],
+      "evidence": "we carefully gather English harmful queries and manually translate them by native speakers into 9 non-English languages"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes (for translation)",
+      "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "native_speaker_translators"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "DAMO Academy, Alibaba Group, Singapore",
+        "Nanyang Technological University, Singapore",
+        "Hupan Lab, Hangzhou, China",
+        "The Chinese University of Hong Kong, Hong Kong SAR"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The paper does not report the total number of annotators/translators, their demographics, or compensation details. An ethics statement is provided but does not mention IRB review."
+    },
+    "english_centricity_notes": "The entire benchmark is English-centric by design: all harmful prompts originate in English and are translated. The paper explicitly studies how English-centric safety training fails for non-English languages, but the evaluation content itself inherits English/Western framing of harm categories (sourced from GPT-4 report and Anthropic red-teaming data).",
+    "geographic_representation": {
+      "primary_region": "Global (by language selection across resource levels)",
+      "sub_regions": [
+        "East Asia (Chinese)",
+        "Southeast Asia (Vietnamese, Thai, Javanese)",
+        "South Asia (Bengali)",
+        "Middle East (Arabic)",
+        "East Africa (Swahili)",
+        "East Asia (Korean)",
+        "Southern Europe (Italian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Indigenous and minority languages",
+        "Latin American languages",
+        "Central Asian languages",
+        "Oceanic languages"
+      ],
+      "evidence": "Languages were selected to cover high-resource (Chinese, Italian, Vietnamese), medium-resource (Arabic, Korean, Thai), and low-resource (Bengali, Swahili, Javanese) categories based on CommonCrawl data ratios. The preliminary study additionally covered 30 languages."
+    }
+  }
+}

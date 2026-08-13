@@ -1,0 +1,282 @@
+{
+  "benchmark_name": "BhashaBench V1",
+  "paper_id": "2510.25409",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce BhashaBench V1, the first comprehensive domain-specific, multi-task, bilingual benchmark designed explicitly for evaluating large language models on India-centric knowledge systems",
+  "total_languages_claimed": 2,
+  "total_datasets": 4,
+  "dataset_names": [
+    "BhashaBench Krishi (BBK)",
+    "BhashaBench Finance (BBF)",
+    "BhashaBench Legal (BBL)",
+    "BhashaBench Ayurveda (BBA)"
+  ],
+  "task_categories": [
+    "multiple-choice question answering",
+    "assertion/reasoning",
+    "fill in the blanks",
+    "match the column",
+    "reading comprehension",
+    "rearrange the sequence"
+  ],
+  "brief_description": "BhashaBench V1 is a domain-specific, multi-task, bilingual (English and Hindi) benchmark containing 74,166 question-answer pairs across four India-centric domains: Agriculture, Legal, Finance, and Ayurveda. Questions are sourced from authentic government and professional examination papers, spanning 90+ subdomains and 500+ topics.",
+  "datasets": [
+    {
+      "dataset_name": "BhashaBench Krishi (BBK)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing. We acknowledge the significant contributions of BharatGen's consortium members, including IIT Bombay and IIM Indore, for their expertise in data curation, validation, and domain-specific guidance"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Agriculture domain; 15,405 questions; 25 subdomains including Agronomy, Agricultural Biotechnology, Soil Science, etc. Questions sourced from ICAR, ASRB NET, IBPS AFO, and other agricultural examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Finance (BBF)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Finance domain; 19,433 questions; 30 subdomains including Problem Solving, Mathematics for Finance, Banking Services, etc. Questions sourced from RBI, SBI, IBPS, ICAI, ICMAI, and other financial examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Legal (BBL)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Legal domain; 14,963 questions; 20 subdomains including Civil Litigation & Procedure, Constitutional Law, Criminal Law & Justice, etc. Questions sourced from CLAT, AILET, Bar Council, Delhi Judicial Service, and other legal examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Ayurveda (BBA)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Ayurveda (traditional Indian medicine) domain; 24,365 questions; 16 subdomains including Kayachikitsa, Dravyaguna, Panchakarma, Sharir, etc. Questions sourced from AIAPGET and other Ayurveda examinations."
+    }
+  ],
+  "total_languages": 2,
+  "languages": {
+    "English": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ]
+    },
+    "Hindi": {
+      "iso_code": null,
+      "datasets_present_in": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ]
+    }
+  },
+  "assessments": {
+    "BhashaBench Krishi (BBK)": {
+      "translated": {
+        "value": false,
+        "evidence": "We systematically gathered publicly available question papers from official online examination portals, which host previously released papers that are manually curated by subject matter experts (Section 3.2). All question-answer pairs are sourced exclusively from publicly available government and professional examination papers (Ethics Statement).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "all extracted question-answer pairs underwent rigorous expert validation to ensure accuracy verification, cultural context preservation, ambiguity resolution, and consistency standardization. Additionally, domain experts reviewed the linguistic authenticity to maintain the natural flow and idiomatic expressions characteristic of each language (Section 3.3). Our curation process involved diverse teams to minimize cultural and regional biases (Ethics Statement).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "BhashaBench V1 adheres to seven core design principles: ... (3) India-Specific Reasoning: Evaluates domain-specific reasoning incorporating cultural contexts and regional practices. ... (7) Cultural Authenticity: Prioritizes traditional knowledge systems (Section 3.1). Regional state examinations proved particularly valuable as they incorporate state-specific topics, local knowledge systems, and cultural practices often overlooked in national assessments (Section 3.2).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage validation: OCR via Surya OCR (98.1% English, 98.9% Hindi accuracy), extraction via GPT-OSS-120B, language verification via INDICLID, duplicate detection, and manual expert validation. Figure 6 shows manual quality assessment results across domains."
+    },
+    "BhashaBench Finance (BBF)": {
+      "translated": {
+        "value": false,
+        "evidence": "We systematically gathered publicly available question papers from official online examination portals, which host previously released papers that are manually curated by subject matter experts (Section 3.2).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "all extracted question-answer pairs underwent rigorous expert validation to ensure accuracy verification, cultural context preservation, ambiguity resolution, and consistency standardization. Additionally, domain experts reviewed the linguistic authenticity (Section 3.3).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "The domain uniquely incorporates India-specific areas like Rural Economics and Environmental Finance while addressing modern fintech developments (Section 3.4). Questions reflect practical, real-world knowledge requirements essential for professional contexts in India (Appendix C.1.1).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage validation pipeline identical to other domains. Finance domain shows relatively higher proportion of 'bad' readability/correctness samples in manual quality assessment (Figure 6), particularly for Hindi content."
+    },
+    "BhashaBench Legal (BBL)": {
+      "translated": {
+        "value": false,
+        "evidence": "We systematically gathered publicly available question papers from official online examination portals, which host previously released papers that are manually curated by subject matter experts (Section 3.2).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "all extracted question-answer pairs underwent rigorous expert validation to ensure accuracy verification, cultural context preservation, ambiguity resolution, and consistency standardization. Additionally, domain experts reviewed the linguistic authenticity (Section 3.3).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "The domain balances traditional legal areas with contemporary developments like Technology & Cyber Law, maintaining strong cultural relevance through Family & Personal Law (Section 3.4). Ensure legal terms, statutes, case references, and procedural knowledge are precise and jurisdictionally correct (Appendix C.1.3).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage validation pipeline. Legal domain annotation guidelines specifically require jurisdictional correctness for Indian legal system. 3-tier quality validation applied: basic structure, legal coherence, and logical consistency."
+    },
+    "BhashaBench Ayurveda (BBA)": {
+      "translated": {
+        "value": false,
+        "evidence": "We systematically gathered publicly available question papers from official online examination portals, which host previously released papers that are manually curated by subject matter experts (Section 3.2).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "all extracted question-answer pairs underwent rigorous expert validation to ensure accuracy verification, cultural context preservation, ambiguity resolution, and consistency standardization. Additionally, domain experts reviewed the linguistic authenticity (Section 3.3).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Cultural Authenticity: Prioritizes traditional knowledge systems including Ayurvedic principles (Section 3.1). Represents traditional Indian medicine across 16 subdomains. Kayachikitsa (General Medicine) forms the core with 3,134 questions, while Dravyaguna covers pharmacology and therapeutics (Section 3.4). Maintain correctness of medicinal terms, herb names, therapeutic practices, and traditional knowledge references (Appendix C.1.3).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-stage validation pipeline. BBA shows highest proportion of 'bad' readability/correctness among domains in manual assessment (Figure 6), likely due to OCR challenges with Sanskrit/Ayurvedic terminology. Domain-specific OCR correction dictionary applied for classical texts, herbs, and therapy terms."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ],
+      "evidence": "All questions are sourced from authentic Indian government and professional examination papers, not translated from English. The Hindi content originates from Hindi-medium examinations. 'Our comprehensive collection encompasses over 40 different examination types across multiple categories: national competitive exams, domain-specific degree examinations, professional certification tests, and state-level civil services examinations' (Section 3.2). However, the benchmark also contains 52,494 English questions, so the benchmark is bilingual with both English and Hindi original content."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets are translated from English. Questions are sourced directly from examination papers that were originally in English or Hindi. 'All question-answer pairs are sourced exclusively from publicly available government and professional examination papers' (Ethics Statement)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "BhashaBench Krishi (BBK)",
+        "BhashaBench Finance (BBF)",
+        "BhashaBench Legal (BBL)",
+        "BhashaBench Ayurveda (BBA)"
+      ],
+      "details": {
+        "BhashaBench Krishi (BBK)": "Covers Indian agricultural practices, crop varieties, soil conditions, and traditional farming practices across 25 subdomains specific to Indian agriculture.",
+        "BhashaBench Finance (BBF)": "Incorporates India-specific areas like Rural Economics, UPI transactions, Indian financial regulations, and RBI/SEBI policies across 30 subdomains.",
+        "BhashaBench Legal (BBL)": "Covers Indian jurisprudence, constitutional law, Indian Penal Code, CrPC, CPC, and state-specific legal systems across 20 subdomains.",
+        "BhashaBench Ayurveda (BBA)": "Deeply rooted in traditional Indian medicine systems including Kayachikitsa, Dravyaguna, Panchakarma, classical Ayurvedic texts (Charaka Samhita, Sushruta Samhita), and traditional formulations across 16 subdomains."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper states domain experts and BharatGen team members conducted validation, and mentions diverse teams, but does not explicitly confirm all annotators were native speakers of English and Hindi.",
+      "evidence": "Our curation process involved diverse teams to minimize cultural and regional biases (Ethics Statement). domain experts reviewed the linguistic authenticity to maintain the natural flow and idiomatic expressions characteristic of each language (Section 3.3). BharatGen's consortium members, including IIT Bombay and IIM Indore (Acknowledgements)."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "mixed"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "BharatGen Team",
+        "IIT Bombay TIH (Technology Innovation Hub)",
+        "IIM Indore"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing. We acknowledge the significant contributions of BharatGen's consortium members, including IIT Bombay and IIM Indore, for their expertise in data curation, validation, and domain-specific guidance (Acknowledgements). The paper includes an Ethics Statement but does not mention IRB review. No information on number of annotators, their demographics, or compensation."
+    },
+    "english_centricity_notes": "The benchmark is bilingual (English and Hindi), with English comprising 70.8% of questions (52,494) and Hindi 29.2% (21,672). The paper acknowledges this imbalance: 'The benchmark reflects the inherent resource disparity between English and Hindi, where Hindi content, while substantial, represents a relatively lower-resource context compared to English' (Appendix A). Models consistently perform better on English than Hindi across all domains. The benchmark only covers 2 of India's 22 official languages, which is acknowledged as a limitation.",
+    "geographic_representation": {
+      "primary_region": "India (South Asia)",
+      "sub_regions": [
+        "National-level (UPSC, NTA, ICAR, RBI, SBI examinations)",
+        "Maharashtra",
+        "Madhya Pradesh",
+        "Bihar",
+        "Chhattisgarh",
+        "Uttar Pradesh",
+        "Andhra Pradesh",
+        "Delhi"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "All Indian languages besides English and Hindi (Tamil, Telugu, Bengali, Kannada, Malayalam, Marathi, Gujarati, etc.)",
+        "Non-Indian contexts"
+      ],
+      "evidence": "India has 22 official languages and hundreds of regional dialects. Our current evaluation cannot capture the full linguistic diversity of Indian knowledge systems, particularly regional variations in agricultural practices, legal terminologies, and traditional medicine nomenclature that exist in languages like Tamil, Telugu, Bengali, and others (Appendix A). Examination sources span national bodies (UPSC, NTA, ICAR) and multiple state-level bodies (BPSC, MPSC, CG Vyapam, etc.) as listed in Tables 2 and 3."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "BhashaBench V1 is a single new benchmark (not an aggregation of existing datasets) with 4 domain-specific sub-benchmarks. All data is original, sourced from Indian government/professional examinations. The benchmark covers only 2 languages (English and Hindi). The paper includes detailed appendices with examination source documentation, processing pipeline details, and annotation guidelines."
+  }
+}

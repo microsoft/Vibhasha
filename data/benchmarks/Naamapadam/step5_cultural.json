@@ -1,0 +1,47 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The training data is created by projecting English NER annotations onto Indic language sentences via word alignment. The test set is manually annotated but uses sentences from the same projected pipeline as starting points for verification."
+    },
+    "datasets_translated_from_english": {
+      "list": ["Naamapadam-train"],
+      "evidence": "The training dataset has been automatically created from the Samanantar parallel corpus by projecting automatically tagged entities from an English sentence to the corresponding Indian language translation. The test set annotations are manually verified/corrected by native speakers."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes_for_test_set",
+      "evidence": "The human annotations were contributed by volunteers who are native language speakers. Training data is automatically created without human annotators."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "volunteer native speakers",
+        "paid language experts",
+        "automatic pipeline (training data)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "IIT Madras",
+        "AI4Bharat",
+        "Microsoft India",
+        "IBM Research India"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "The volunteers were not made any payment and worked pro bono. Some annotators were paid for their services. These language experts were paid a competitive monthly salary to help with the task. The salary was determined based on the skill set and experience of the expert and adhered to the norms of the government of our country.",
+      "irb_ethics_review": null,
+      "evidence": "Annotators named in acknowledgements: Archana Mhaske, Anil Mhaske, Sangeeta Rajagopal, Vindhya DS, Nitin Kedia, Yash Madhani, Kabir Ahuja, Shallu Rani, Armin Virk and Gowtham Ramesh. The annotators were made aware that the annotations would be made publicly available. The annotations contains no personal information."
+    },
+    "english_centricity_notes": "The entire annotation pipeline is English-centric: English NER tags are projected onto Indic sentences via word alignment. The entity categories (PER, LOC, ORG) follow the CoNLL 2003 English NER scheme. MISC tags are dropped because they could not be reliably aligned cross-lingually. The underlying text comes from English-Indic parallel corpora, which may over-represent content that has English counterparts.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India"],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The dataset covers 11 of the 22 languages listed in the Indian constitution. All 11 languages are major Indian languages from two language families (Indo-Aryan and Dravidian). The source corpus (Samanantar) is specifically an English-Indic language parallel corpus."
+    }
+  }
+}

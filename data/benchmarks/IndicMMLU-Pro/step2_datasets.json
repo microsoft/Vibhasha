@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "IndicMMLU-Pro",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 9,
+      "language_list": ["Hindi", "Bengali", "Telugu", "Marathi", "Tamil", "Gujarati", "Urdu", "Kannada", "Punjabi"],
+      "annotation_method": "Machine translation of MMLU-Pro using IndicTrans2 (1B parameters), with quality assurance via back-translation metrics and expert proofreading by 13 native-speaker reviewers across 9,000 sentence pairs.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "University of South Carolina, Rochester Institute of Technology, Independent Researchers, Meta AI, Amazon Gen AI, Amazon",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Authors are from multiple institutions. 13 expert proofreaders were native speakers who 'generously volunteered their time and expertise' — explicitly unpaid volunteers."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Wang et al. 2024 (MMLU-Pro by Tiger Labs)",
+      "notes": "The dataset retains the original 14 categories and task types from MMLU-Pro. Translation was done with IndicTrans2 consistently across all 9 languages (1B parameters, no quantization, batch size 8). Back-translation quality metrics (chrF++, BLEU, METEOR, TER, SacreBLEU) were reported for 3 of 9 languages (Hindi, Gujarati, Tamil). Cosine similarity via LaBSE embeddings was reported for all 9 languages."
+    }
+  ]
+}

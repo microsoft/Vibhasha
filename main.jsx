@@ -61,6 +61,7 @@ import ViConclusionDoc from './components/docs/07-vi-conclusion'
 import ConclusionDoc from './components/docs/99-conclusion'
 import FlowchartPage from './components/FlowchartPage'
 import AttributionDoc from './components/docs/100-attribution';
+import EvalsDashboard from './components/EvalsDashboard';
 import ViiPipelineDoc from './components/docs/01-vii-pipeline';
 import LandingpageDoc from './components/docs/landingpage';
 
@@ -74,6 +75,7 @@ createRoot(document.getElementById('root')).render(
       <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route path="evals" element={<EvalsDashboard />} />
             <Route element={<Playbook />}>
               <Route index element={<PlaybookIntro />} />
               <Route path="playbook">

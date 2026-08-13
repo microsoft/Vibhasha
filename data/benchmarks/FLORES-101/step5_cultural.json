@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All source sentences in FLORES-101 are extracted from English Wikimedia sources (Wikinews, Wikijunior, WikiVoyage) and translated into 101 languages. No dataset content was created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["FLORES-101"],
+      "evidence": "Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia' and Abstract: 'consisting of 3001 sentences extracted from English Wikipedia and covering a variety of different topics and domains. These sentences have been translated in 101 languages by professional translators through a carefully controlled process.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Section 3.2: 'Translators are required to be native speakers and educated in the target language. They must also have a high level of fluency (C1-C2) in English.'"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": ["Language Service Providers (LSPs) contracted by Facebook AI Research"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Section 3.2-3.3: Translators were contracted through Language Service Providers (LSPs). Translation LSPs performed initial translation and editing; separate evaluation LSPs performed quality assessment. Translators required to have 2-5 years experience and pass translation tests every 18 months. No information on total number of annotators, demographic breakdown, compensation, or IRB/ethics review is provided."
+    },
+    "english_centricity_notes": "FLORES-101 is explicitly English-centric by design. Section 3.1: 'we opted to source all sentences from three locations in English Wikimedia.' The authors acknowledge limitations: 'source sentences not in English are produced by human translators' (translationese concern), 'this English-centric translation approach is a possible artificial increase of the differences between two dialects of the same language.' Section 6.4.1: 'the construction of FLORES-101 is English-centric in and of itself, as the same set of sentences are translated from English into all languages. This can affect the performance of non-English-centric directions.' Topics drawn from English Wikipedia may not reflect culturally relevant content for target language communities.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Europe", "Sub-Saharan Africa", "South Asia", "Southeast Asia", "East Asia", "Central Asia", "Middle East and North Africa", "Oceania", "Latin America"],
+      "also_represented": [],
+      "notably_excluded": ["Indigenous Americas (no indigenous American languages)", "Most Oceanic languages beyond Maori"],
+      "evidence": "Table 1 shows 101 languages spanning Indo-European, Afro-Asiatic, Atlantic-Congo, Austronesian, Dravidian, Sino-Tibetan, Turkic, Uralic, Kra-Dai, Austro-Asiatic, Nilo-Saharan, Japonic, Koreanic, Kartvelian, Mongolic, and Koreanic families. Coverage includes 10+ African languages (Afrikaans, Amharic, Fula, Ganda, Hausa, Igbo, Kamba, Lingala, Luo, Northern Sotho, Nyanja, Oromo, Shona, Somali, Swahili, Umbundu, Wolof, Xhosa, Yoruba, Zulu), multiple South/Southeast Asian languages, and Central Asian (Kazakh, Kyrgyz, Uzbek, Tajik). However, no indigenous American languages are included."
+    }
+  }
+}

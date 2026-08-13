@@ -1,0 +1,41 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "Both FLUID QA and FLUTE-bi are built on the English FLUTE dataset (Chakrabarty et al., 2022). Section 3: 'Instead of creating new data from scratch, we build on the FLUTE dataset.'"
+    },
+    "datasets_translated_from_english": {
+      "list": ["FLUID QA", "FLUTE-bi"],
+      "evidence": "Section 3.1: 'we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' English source from FLUTE; Korean and Chinese versions are machine-translated with cultural adaptation and human post-editing."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["FLUID QA", "FLUTE-bi"],
+      "details": {
+        "FLUID QA": "Partial cultural grounding via culturally adaptive translation prompting (Section 3.1). Idioms replaced with culturally equivalent idioms in Korean and Chinese. Cultural adaptation strategies include localization, globalization, transformation. However, underlying content structure and scenarios originate from English FLUTE.",
+        "FLUTE-bi": "Same cultural adaptation pipeline as FLUID QA. Partial grounding through adapted translations but English-sourced content."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "Section 3.1: 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' The native-speaking authors performed post-editing, but initial data generation and translation were done by GPT-4o. The paper authors are affiliated with Yonsei University, South Korea."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Yonsei University, South Korea"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "INSUFFICIENT_INFO: No explicit mention of IRB/ethics review, total annotator count, or compensation. The paper lists 7 authors from Yonsei University who served as both researchers and post-editors. Data generation used GPT-4o. Section 3.1: 'native speakers participated in the evaluation' for Bradley-Terry preference comparison, but no further workforce details provided. Acknowledgments mention Yonsei University Research Fund of 2024 (2024-22-0317)."
+    },
+    "english_centricity_notes": "The benchmark is fundamentally English-centric in origin: both datasets derive from the English FLUTE dataset. Section 3: 'Instead of creating new data from scratch, we build on the FLUTE dataset, which offers high-quality English examples across rhetorical types. We sample 200 instances per category... to construct parallel data.' Korean and Chinese versions are translations (with cultural adaptation) rather than natively authored content. The evaluation results show English consistently outperforms other languages, suggesting the English-source design advantages English performance. Section 8 (Limitations): 'Our benchmark focuses exclusively on four rhetorical categories and three languages, limiting its generalizability.'",
+    "geographic_representation": {
+      "primary_region": "East Asia",
+      "sub_regions": ["South Korea", "China"],
+      "also_represented": ["English-speaking regions (via FLUTE source data)"],
+      "notably_excluded": ["All other regions and language communities"],
+      "evidence": "The benchmark covers only English, Korean, and Chinese. Authors are from Yonsei University, South Korea. Cultural adaptation targets Korean and Chinese cultural contexts specifically. Section 8 acknowledges the limitation to three languages."
+    }
+  }
+}

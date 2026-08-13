@@ -1,0 +1,19 @@
+{
+  "benchmark_name": "MATH",
+  "paper_id": "NeurIPS Datasets and Benchmarks-2021-measuring-mathematical-problem-solving-with-the-math-dataset",
+  "year": 2021,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MATH, a new dataset of 12,500 challenging competition mathematics problems",
+  "total_languages_claimed": 1,
+  "total_datasets": 2,
+  "dataset_names": [
+    "MATH",
+    "AMPS"
+  ],
+  "task_categories": [
+    "mathematical problem solving",
+    "mathematical reasoning",
+    "answer generation"
+  ],
+  "brief_description": "MATH is a dataset of 12,500 challenging competition mathematics problems (from AMC 10, AMC 12, AIME, etc.) with step-by-step solutions in LaTeX, spanning 7 subjects and 5 difficulty levels. It is accompanied by AMPS, a large auxiliary pretraining corpus of over 5 million mathematics problems from Khan Academy and Mathematica scripts."
+}

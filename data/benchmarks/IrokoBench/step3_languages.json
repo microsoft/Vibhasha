@@ -1,0 +1,81 @@
+{
+  "total_languages": 19,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Ewe": {
+      "iso_code": "ewe",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Luganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Oromo": {
+      "iso_code": "orm",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "chiShona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Sesotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Twi": {
+      "iso_code": "twi",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Vai": {
+      "iso_code": "vai",
+      "datasets_present_in": ["AfriMGSM"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "isiXhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "isiZulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    }
+  }
+}

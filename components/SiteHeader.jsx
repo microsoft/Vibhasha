@@ -53,6 +53,19 @@ export default function SiteHeader() {
           </a>
         </div>
       )}
+      {appName && appName.toLowerCase() === 'vibhasha' && (
+        <div className="header-segment-right-group">
+          <div
+            className="header-segment header-segment--middle"
+            onClick={() => navigate('/evals')}
+            style={{ cursor: 'pointer' }}
+          >
+            <div className="segment-text">
+              <div className="link-subtitle">Evals Dashboard</div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

@@ -1,0 +1,42 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": "Cross-lingual extension of MultiNLI dev/test sets to 15 languages",
+      "task_type": "Natural Language Inference (3-way classification: entailment, contradiction, neutral)",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional human translation via One Hour Translation platform; premises and hypotheses translated separately to avoid adding context",
+      "num_languages": 15,
+      "language_list": [
+        "English",
+        "French",
+        "Spanish",
+        "German",
+        "Greek",
+        "Bulgarian",
+        "Russian",
+        "Turkish",
+        "Arabic",
+        "Vietnamese",
+        "Thai",
+        "Chinese",
+        "Hindi",
+        "Swahili",
+        "Urdu"
+      ],
+      "annotation_method": "English portion: crowdsourced annotation following MultiNLI procedure (workers produce 3 hypotheses per premise, one per label; validated by 4 additional workers with majority vote). Other languages: professional translation of English data with labels copied from source.",
+      "data_creator_info": {
+        "creator_type": "crowdworkers (English annotation) + professional translators (translation to other languages)",
+        "creator_affiliation": "MultiNLI crowdsourcing worker pool (English); One Hour Translation platform (translations)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we ask the same MultiNLI worker pool from a crowdsourcing platform to produce three hypotheses for each premise; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Williams et al. (2017) [MultiNLI]; Bowman et al. (2015) [SNLI]",
+      "notes": "7500 examples per language (dev + test), 112,500 annotated pairs total. English source data drawn from 10 genres of Open American National Corpus plus the novel Captain Blood. 93% of data achieved three-vote consensus; remaining 7% marked with special label '-'. Designed as evaluation-only (dev+test); training uses MultiNLI English training data or machine-translated versions."
+    }
+  ]
+}

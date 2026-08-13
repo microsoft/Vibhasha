@@ -1,0 +1,184 @@
+{
+  "assessments": {
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "We use the crowd-sourced English data that was professionally translated to 14 other languages for evaluation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "English data was crowd-sourced, then professionally translated. Annotators created English data; translators produced other languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Data is translated from English MultiNLI. No evidence of cultural adaptation for target languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translations of crowd-sourced English data from MultiNLI."
+    },
+    "XCOPA": {
+      "translated": {
+        "value": true,
+        "evidence": "The XCOPA authors translated and re-annotated the validation and test sets of the English COPA dataset into 11 languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "XCOPA was translated and re-annotated, but the paper does not specify whether translators were native speakers of each target language.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Data is translated from English COPA. Causal reasoning scenarios are English-originated.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Translated and re-annotated from English COPA. Human performance estimated from annotator label disagreement."
+    },
+    "UD-POS": {
+      "translated": {
+        "value": false,
+        "evidence": "Test sets are independently annotated treebanks from the Universal Dependencies project.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Universal Dependencies treebanks are typically annotated by linguists and native speakers of each language.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Text sources vary per treebank; some use Wikipedia, others use varied native text. POS tagging is a structural task with less cultural dependency.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Independently annotated per-language treebanks from Universal Dependencies v2.7."
+    },
+    "WikiANN-NER": {
+      "translated": {
+        "value": false,
+        "evidence": "Proper noun spans in Wikipedia text have been automatically annotated; test sets are independently annotated per language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Annotations were automatic, not performed by human annotators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Wikipedia text is in each target language, but annotation is automatic. Named entities may reflect local or global topics depending on Wikipedia content.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Automatically annotated from Wikipedia. Silver-standard labels. Uses balanced splits from Rahimi et al. (2019)."
+    },
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "A subset of the English SQuAD v1.1 dev set was professionally translated into ten other languages for XQuAD.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Original questions and contexts are from English SQuAD, professionally translated. Original annotations were crowdsourced in English.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content is translated from English Wikipedia-based SQuAD. Topics reflect English Wikipedia.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translations of English SQuAD v1.1 subset."
+    },
+    "MLQA": {
+      "translated": {
+        "value": true,
+        "evidence": "The evaluation data in seven languages was automatically mined from Wikipedia, annotations were crowd-sourced, and answer spans aligned. Table 2 lists test sets as 'translations'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Annotations were crowd-sourced (not specified as native speakers) and answer spans were aligned across languages.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Data is mined from Wikipedia with aligned answer spans across languages. Table 2 lists domain as Wikipedia.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Automatically mined from Wikipedia with crowd-sourced annotations and aligned answer spans."
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 lists TyDiQA-GoldP test sets as 'ind. annot.' (independently annotated).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TyDiQA is a benchmark for information-seeking QA in typologically diverse languages. Questions were written by native speakers of each language (per Clark et al., 2020).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions are independently created by native speakers in each language, reflecting genuine information needs.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Independently annotated. Gold passage version simplifies original task. Questions created by native speakers."
+    },
+    "Tatoeba": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 lists Tatoeba test sets as 'translations'. Consists of English-aligned sentence pairs.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Tatoeba is a community-contributed dataset. Contributors may be native speakers or learners.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "English-aligned sentence pairs. Content is aligned to English source sentences.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Community-contributed translations. Up to 1,000 English-aligned sentence pairs per language."
+    },
+    "Mewsli-X": {
+      "translated": {
+        "value": false,
+        "evidence": "Mewsli-X is automatically extracted from WikiNews articles in each language, with mentions linking to WikiData entities. Test sets are independently annotated (Table 2).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Data is automatically extracted from WikiNews hyperlinks, not human-annotated.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Mentions come from native-language WikiNews articles, so topics reflect news interests of each language community. However, entity descriptions span all 50 languages.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Automatically extracted from WikiNews. New dataset created for XTREME-R. 15K test mentions covering 9,647 distinct entities. Candidate pool of 1M entities across 50 languages."
+    },
+    "LAReQA": {
+      "translated": {
+        "value": true,
+        "evidence": "LAReQA XQuAD-R is derived from XQuAD translations. Table 2 lists test sets as 'translations'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Derived from XQuAD professional translations of English SQuAD data.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content originates from English SQuAD/XQuAD translations. Topics reflect English Wikipedia.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Derived from XQuAD translations. 13,090 questions with 11 target answers each across 11 languages."
+    }
+  }
+}

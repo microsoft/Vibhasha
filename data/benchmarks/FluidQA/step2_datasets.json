@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "FLUID QA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice QA (cloze-style figurative expression selection in multi-turn dialogue)",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 3,
+      "language_list": ["English", "Korean", "Chinese"],
+      "annotation_method": "LLM-generated (GPT-4o with teacher-style prompting) then manually post-edited by native-speaking authors; Korean/Chinese translated via GPT-4o cultural adaptation prompting then manually reviewed and post-edited by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Yonsei University, South Korea",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Authors are listed as Yonsei University affiliates. 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility' (Section 3.1). 'all outputs were post-edited for fluency and coherence' (Section 3.2)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "FLUTE (Chakrabarty et al., 2022)",
+      "notes": "800 QA items per language (EN, KO, ZH), 200 per rhetorical category (idiom, metaphor, simile, sarcasm), yielding 2,400 parallel instances total. Built on sampled FLUTE instances. English items generated from FLUTE annotations via GPT-4o; Korean and Chinese produced via culturally adaptive GPT-4o translation with manual post-editing. GPT family excluded from evaluation due to GPT-4o's role in data generation."
+    },
+    {
+      "dataset_name": "FLUTE-bi",
+      "variant_name": null,
+      "variant_notes": "Reformulated from the original FLUTE NLI-style paired-sentence task into a single-sentence binary classification task",
+      "task_type": "binary classification (figurative vs. literal sentence-level recognition)",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 3,
+      "language_list": ["English", "Korean", "Chinese"],
+      "annotation_method": "Adapted from FLUTE dataset; reformulated as single-sentence binary classification. Korean/Chinese translated via GPT-4o cultural adaptation prompting then manually reviewed and post-edited by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Yonsei University, South Korea",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Same authorship team and process as FLUID QA. 'all translations were manually reviewed and post-edited by native-speaking authors' (Section 3.1)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "FLUTE (Chakrabarty et al., 2022)",
+      "notes": "800 sentence pairs per language (EN, KO, ZH), 200 per category, yielding 2,400 parallel labeled instances. Each sentence labeled as figurative or literal. Serves as a diagnostic baseline for interpreting FLUID QA results."
+    }
+  ]
+}

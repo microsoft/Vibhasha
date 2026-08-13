@@ -1,0 +1,166 @@
+{
+  "assessments": {
+    "FLEURS (ASR)": {
+      "translated": {
+        "value": true,
+        "evidence": "We employ the FLEURS dataset (Conneau et al., 2023) consisting of recordings in 102 languages for sentences from FLORES-101 (Goyal et al., 2022), which were translated from English Wikipedia to 101 languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "FLEURS consists of recordings by native speakers of the translated sentences, so audio is natively produced even though text content originates from English.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Source sentences come from English Wikipedia (Wikinews, Wikijunior, Wikivoyage), so content reflects English-centric topics.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "ASR baseline uses Maestro-U with average CER of 8.28% across 102 languages. Fine-tuning with ByT5 provides small but consistent improvements."
+    },
+    "UL-OCR": {
+      "translated": {
+        "value": false,
+        "evidence": "Books in the public domain from Google Books in seven under-represented languages, transcribed from original-language content.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper states annotators transcribed pages but does not explicitly confirm they were native speakers of the target languages.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Books are in the target languages and from those cultures, but many public-domain books are religious or linguistic in nature and were created for missionary purposes. Filtering was applied to improve quality and diversity.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Annotation task filtered out religious, linguistic, low-quality, and non-target-language pages. 44.5 minutes per page annotation cost. Baseline Google Vision OCR CER of 11.1%."
+    },
+    "Autocomplete (Universal Dependencies)": {
+      "translated": {
+        "value": false,
+        "evidence": "Data comes from Universal Dependencies treebanks, which contain naturally occurring text in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Universal Dependencies treebanks are created by linguists and native speakers of each language.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Universal Dependencies contain naturally occurring text in each language, reflecting natural usage patterns.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Data deduplicated against mC4 to test predictive rather than memorization capabilities. Up to 2,000 training examples per language."
+    },
+    "Dakshina Transliteration": {
+      "translated": {
+        "value": false,
+        "evidence": "Wikipedia sentences written in native scripts of the 12 languages were human-romanized by native speakers. This is transliteration, not translation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "10,000 Wikipedia sentences written in the native scripts of the 12 languages were human-romanized by native speakers... Amharic Wikipedia sentences were similarly manually romanized by native speakers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "Source text is Wikipedia content in each language, so topically relevant, but the task is script conversion rather than culturally contextualized content generation.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "2,000 training sentences per task, ~6,000 test. Character error rate used for evaluation due to no set Latin script orthography."
+    },
+    "FLORES-101 (MT)": {
+      "translated": {
+        "value": true,
+        "evidence": "The dataset is adapted from FLORES-101 (Goyal et al., 2022)... The source data comes from Wikinews, Wikijunior, and Wikivoyage. English to 93 target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional translators created the FLORES-101 translations (per original FLORES-101 paper methodology).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Source content is from English Wikinews, Wikijunior, and Wikivoyage — English-centric topics translated to target languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "High-quality professional translations. 499/498/1012 train/val/test sentence pairs per language pair."
+    },
+    "TyDi QA / XOR QA (In-language QA)": {
+      "translated": {
+        "value": false,
+        "evidence": "We obtain original questions and passages from TyDi QA (Clark et al., 2020). TyDi QA collected questions natively in each language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TyDi QA uses information-seeking questions written by native speakers without knowing the answer, based on Wikipedia articles in their language.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions and passages are natively authored in each language from that language's Wikipedia, reflecting local topics of interest.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Augmented gold passage setting with negative examples. Information-seeking questions exhibit less lexical overlap with answers."
+    },
+    "TyDi QA / XOR QA (Cross-language QA)": {
+      "translated": {
+        "value": "mixed",
+        "evidence": "Original XOR QA has natively authored questions with English passages. New Indic languages added by professionally translating questions and answers from existing Indic languages in XOR QA.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "mixed",
+        "evidence": "Original 7 XOR languages have natively authored questions. 23 new Indic languages use professionally translated questions from existing Indic languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "This methodology mitigates the issue of translating Western-centric English data to locales with different topical interests — translating from existing Indic languages rather than English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Cross-language setting: question in user's language, passage/answer in English. Important for ULs that lack in-language answer content on the web."
+    },
+    "MasakhaNER-X": {
+      "translated": {
+        "value": false,
+        "evidence": "MasakhaNER datasets are human-annotated NER datasets in 20 African languages, created from original text in those languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Both datasets were created by Masakhane, a community of African NLP researchers. The data is human-annotated and thus higher quality than automatically collected NER datasets.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Data annotated by the Masakhane community of African researchers in their native African languages, covering entities relevant to those languages/regions.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Hausa and Fon subsets excluded due to annotation quality issues. Byte-level span re-alignment from CoNLL tokenized format to raw text."
+    },
+    "MTOP++ (Semantic Parsing)": {
+      "translated": {
+        "value": true,
+        "evidence": "We adapt the test split of MTOP with professional translators/annotators to 15 languages... We extend a portion of an existing semantic parsing dataset to new languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Professional translators carried out translation and localization. Code-switched data verified by human annotators who were native speakers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partially",
+        "evidence": "We collect localized data (i.e., Western-centric entities are replaced with more culturally relevant entities for the target language), following recent trends in multilingual benchmarking. However, the underlying task structure/intents originate from English MTOP.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Two pilots conducted before full-scale annotation. Manual inspections on data samples plus automatic checks on slot alignment. Code-switched Indic data generated by PaLM and verified by human annotators."
+    }
+  }
+}

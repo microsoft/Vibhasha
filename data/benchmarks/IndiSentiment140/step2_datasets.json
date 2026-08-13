@@ -1,0 +1,31 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "IndiSentiment140",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "sentiment_analysis",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 22,
+      "language_list": [
+        "Assamese", "Bengali", "Bhojpuri", "Dogri", "Gujarati", "Hindi",
+        "Kannada", "Konkani", "Maithili", "Malayalam", "Marathi",
+        "Meiteilon (Manipuri)", "Mizo", "Nepali", "Odia", "Punjabi",
+        "Sanskrit", "Sindhi", "Sinhala", "Tamil", "Telugu", "Urdu"
+      ],
+      "annotation_method": "Labels inherited from source dataset (Sentiment140) which used distant supervision via Twitter emoticons; no new annotation performed on translated data.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Indian Institute of Technology Guwahati",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Authors are from Department of Computer Science and Engineering, IIT Guwahati. The dataset was created by automated machine translation (Google Translate) of the English Sentiment140 dataset. No human annotators were involved in IndiSentiment140 creation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Go et al. (2009) - Sentiment140 (Twitter sentiment classification using distant supervision)",
+      "notes": "Each language version contains ~1.59M samples split 80/20 train/test. The source Sentiment140 dataset contains 1.6M English tweets labeled as positive or negative via distant supervision (emoticons). Google Translate was used to translate the cleaned tweets (URLs, emojis, special symbols removed) into 22 Indian languages. Binary sentiment labels (0=negative, 4=positive) were preserved from the original dataset."
+    }
+  ]
+}

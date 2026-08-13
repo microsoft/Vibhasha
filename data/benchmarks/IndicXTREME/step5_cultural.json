@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["IndicQA"],
+      "evidence": "The datasets for three tasks, viz., NER, QA, and paraphrase detection were created from scratch without any translation from English sources. IndicQA context paragraphs are from Indic-language Wikipedia on topics related to Indic culture, history, monuments, authors, politicians, festivals. Note: Naamapadam (NER) uses parallel corpus alignment so has an indirect English source. IndicXParaphrase has English source sentences."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IndicXNLI", "IndicCOPA", "IndicSentiment", "MASSIVE-Intent", "MASSIVE-SlotFill", "FLORES"],
+      "evidence": "IndicXNLI: machine translated from XNLI English. IndicCOPA: 'We manually translate the COPA test set into 18 Indic languages.' IndicSentiment: 'All the reviews are first written in English and then manually translated to 13 Indic languages.' MASSIVE: professionally translated from English Alexa queries. FLORES: n-way parallel manually translated. IndicXParaphrase partially translated (source sentences MT'd from English, paraphrases created natively)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["IndicQA"],
+      "details": {
+        "IndicQA": "Context paragraphs chosen from Wikipedia articles on topics closely related to Indic culture, history, monuments, authors, politicians, festivals. Topics ranked by number of Indic-language Wikipedia articles."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes, for datasets created by this paper's authors",
+      "evidence": "Ethics Statement: 'All the annotators were native speakers of the respective languages and from the Indian subcontinent. The annotators were made aware that the datasets will be publicly released.' This applies to IndicSentiment, IndicCOPA, IndicXParaphrase, IndicQA, and the IndicXNLI verification effort. For external datasets (MASSIVE, FLORES), annotator demographics are not reported in this paper."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators", "researchers", "data_company"],
+      "total_annotators_reported": null,
+      "affiliations": ["AI4Bharat", "IIT Madras", "Microsoft", "Amazon (for MASSIVE)", "Meta AI / NLLB (for FLORES)"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "Annotators who participated in the annotation and/or verification task are paid a competitive monthly salary to help with the tasks. The salaries were determined based on the qualification and the prior experience working on similar tasks and adhering to the norms of the government of our country.",
+      "irb_ethics_review": null,
+      "evidence": "Ethics Statement section provides compensation and demographics info (native speakers, Indian subcontinent, competitive monthly salary). No explicit mention of IRB or formal ethics board review. The paper mentions: 'in-house language experts with several years of experience in language annotation and translation.' Per language: 2-3 annotators for IndicQA, 2 annotators each for IndicXParaphrase and IndicSentiment. Annotation coordinators named: Janki Nawale, Anupama Sujatha, Krishnan Karunganni."
+    },
+    "english_centricity_notes": "The benchmark is explicitly designed for zero-shot transfer FROM English to Indic languages (models are fine-tuned on English training data and evaluated on Indic test sets). 6 of 9 datasets are translated or adapted from English sources. The paper acknowledges this and shows that using Hindi as a transfer language instead of English yields better results (3.5-10.6 point improvements). Only IndicQA is created entirely from Indic-language sources. The overall evaluation paradigm assumes English as the default source language for both data creation and model fine-tuning.",
+    "geographic_representation": {
+      "primary_region": "South Asia (India)",
+      "sub_regions": ["All major linguistic regions of India"],
+      "also_represented": ["Nepal (Nepali)", "Bangladesh (Bengali)", "Pakistan (Urdu, Sindhi, Kashmiri)"],
+      "notably_excluded": ["Indic diaspora communities outside South Asia", "Indian languages not in the 8th Schedule (e.g., Tulu, Bhili, Gondi)"],
+      "evidence": "The paper focuses on '22 languages listed in the 8th schedule of the Indian constitution spanning 4 language families and spoken by over a billion speakers.' Some languages are 'also widely spoken and/or are official languages in neighbouring countries viz., Bangladesh, Nepal and Pakistan.' Table 14 provides language family details: Indo-European, Dravidian, Sino-Tibetan, Austroasiatic."
+    }
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "benchmark_name": "XTREME-UP",
+  "paper_id": "2023.findings-emnlp.125",
+  "year": 2023,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We create new datasets for OCR, autocomplete, question answering, semantic parsing, and transliteration, and build on and refine existing datasets for other tasks.",
+  "total_languages_claimed": 88,
+  "total_datasets": 9,
+  "dataset_names": [
+    "FLEURS (ASR)",
+    "UL-OCR",
+    "Autocomplete (Universal Dependencies)",
+    "Dakshina Transliteration",
+    "FLORES-101 (MT)",
+    "TyDi QA / XOR QA (In-language QA)",
+    "TyDi QA / XOR QA (Cross-language QA)",
+    "MasakhaNER-X",
+    "MTOP++ (Semantic Parsing)"
+  ],
+  "task_categories": [
+    "automatic_speech_recognition",
+    "optical_character_recognition",
+    "autocomplete",
+    "transliteration",
+    "machine_translation",
+    "question_answering",
+    "information_retrieval",
+    "named_entity_recognition",
+    "semantic_parsing"
+  ],
+  "brief_description": "XTREME-UP is a multilingual benchmark focusing on user-centric tasks in a scarce-data setting for 88 under-represented languages across 9 key technologies including ASR, OCR, MT, and information access tasks. It standardizes multilingual in-language fine-tuning based on realistic annotation costs (8 hours per language).",
+  "datasets": [
+    {
+      "dataset_name": "FLEURS",
+      "variant_name": "ASR task in XTREME-UP",
+      "variant_notes": "Uses Maestro-U ASR predictions as input, then fine-tunes LMs to improve outputs. Evaluates on 77 under-represented languages.",
+      "task_type": "automatic_speech_recognition",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional translation — FLEURS recordings are of FLORES-101 sentences translated from English Wikipedia to 101 languages",
+      "num_languages": 100,
+      "language_list": null,
+      "annotation_method": "speech recordings of translated sentences by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Meta (original FLORES-101/FLEURS), Google (XTREME-UP adaptation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We employ the FLEURS dataset (Conneau et al., 2023) consisting of recordings in 102 languages for sentences from FLORES-101"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al., 2023 (FLEURS); Goyal et al., 2022 (FLORES-101)",
+      "notes": "77 under-represented languages evaluated; 23 high-resource languages included for training. Sub-sampled to 8h annotation budget per language."
+    },
+    {
+      "dataset_name": "UL-OCR",
+      "variant_name": "Document OCR",
+      "variant_notes": "New dataset created for XTREME-UP focusing on book page transcriptions in 7 under-represented languages.",
+      "task_type": "optical_character_recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": ["Amharic", "Bengali", "Kannada", "Burmese", "Sanskrit", "Sinhala", "Swahili"],
+      "annotation_method": "human transcription of book pages; annotators transcribed entire pages from public-domain books",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We create a dataset that aims to fill the gaps in previous work in OCR for ULs... We retrieve books that are in the public domain on Google Books."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Books domain; includes religious, linguistic, and other public-domain books filtered for quality. 9 training pages per language (~290 lines of output text). Annotation cost: 44.5 min/example (per page)."
+    },
+    {
+      "dataset_name": "Universal Dependencies",
+      "variant_name": "Autocomplete task in XTREME-UP",
+      "variant_notes": "Processed from Universal Dependencies treebanks; deduplicated against mC4 to test predictive rather than memorization capabilities.",
+      "task_type": "autocomplete",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 23,
+      "language_list": ["Basque", "Belarusian", "Bulgarian", "Danish", "Eastern Armenian", "English", "Estonian", "Galician", "Scottish Gaelic", "Greek", "Hebrew", "Icelandic", "Indonesian", "Irish", "Latvian", "Lithuanian", "Nigerian Pidgin", "Romanian", "Slovak", "Slovenian", "Ukrainian", "Urdu", "Uyghur"],
+      "annotation_method": "derived from existing Universal Dependencies treebanks with automated processing to create autocomplete examples",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Google (processing); Universal Dependencies consortium (original data)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We process high-quality natural language data from Universal Dependencies (de Marneffe et al., 2021), which we deduplicate against mC4"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "de Marneffe et al., 2021 (Universal Dependencies); Nivre et al., 2020",
+      "notes": "20 under-represented languages + 2 high-resource + English for prototyping. Evaluated with Acc@3. Up to 2,000 training examples per language."
+    },
+    {
+      "dataset_name": "Dakshina",
+      "variant_name": "Transliteration task in XTREME-UP (extended Dakshina)",
+      "variant_notes": "Extended with Amharic romanizations and Punjabi Shahmukhi transliterations. 30 transliteration tasks across 13 languages.",
+      "task_type": "transliteration",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 13,
+      "language_list": ["Amharic", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Nepali", "Punjabi", "Sinhala", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "human romanization/transliteration by native speakers; Wikipedia sentences romanized by native speakers",
+      "data_creator_info": {
+        "creator_type": "native_speakers",
+        "creator_affiliation": "Google (original Dakshina and extensions)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "10,000 Wikipedia sentences written in the native scripts of the 12 languages were human-romanized by native speakers... Amharic Wikipedia sentences were similarly manually romanized by native speakers; and the Punjabi sentences from the Dakshina dataset were manually transliterated by native speakers to the Shahmukhi script."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Roark et al., 2020 (Dakshina dataset)",
+      "notes": "12 languages from original Dakshina + 1 new (Amharic). 2,000 training sentences per task, ~6,000 test. Covers 3 language families (Indo-Aryan, Dravidian, Semitic)."
+    },
+    {
+      "dataset_name": "FLORES-101",
+      "variant_name": "Machine Translation task in XTREME-UP",
+      "variant_notes": "English-to-X translation; half of original dev set repurposed as training set. 93 target languages, 39 ULs evaluated.",
+      "task_type": "machine_translation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional translation from English (original FLORES-101 creation)",
+      "num_languages": 93,
+      "language_list": null,
+      "annotation_method": "professional translation",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Meta/NLLB Team (original FLORES-101); Google (XTREME-UP adaptation)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The dataset is adapted from FLORES-101 (Goyal et al., 2022), repurposing half of the dataset's original development set as a training set."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Goyal et al., 2022 (FLORES-101)",
+      "notes": "Source data from Wikinews, Wikijunior, and Wikivoyage. 499/498/1012 sentence pairs for train/validation/test. 39 ULs evaluated, 93 total languages."
+    },
+    {
+      "dataset_name": "TyDi QA",
+      "variant_name": "In-language QA in XTREME-UP",
+      "variant_notes": "Augmented gold passage setting with negative examples from same article and unanswerable questions.",
+      "task_type": "question_answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": null,
+      "annotation_method": "human annotation — information-seeking questions written without knowing the answer",
+      "data_creator_info": {
+        "creator_type": "crowd_workers",
+        "creator_affiliation": "Original TyDi QA authors; Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We obtain original questions and passages from TyDi QA (Clark et al., 2020)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020 (TyDi QA)",
+      "notes": "6 ULs + 3 HLs for in-language QA. Evidence text from Wikipedia. Negative examples added from same article and unanswerable pairs."
+    },
+    {
+      "dataset_name": "XOR QA",
+      "variant_name": "Cross-language QA in XTREME-UP",
+      "variant_notes": "Question in user's language, passage/answer in English. Includes new data in 23 Indic languages via professional translation.",
+      "task_type": "question_answering",
+      "source": "mixed",
+      "source_language": "English (passages); various (questions)",
+      "translation_method": "professionally translating questions and answers from existing Indic languages in XOR QA for new Indic languages",
+      "num_languages": 27,
+      "language_list": null,
+      "annotation_method": "mix of original annotation (TyDi/XOR QA) and professional translation for new Indic languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Google; original XOR QA authors",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We use examples from TyDi XOR (Asai et al., 2021) in 7 languages. We additionally collect new data in 23 new Indic languages for cross-lingual QA by professionally translating questions and answers from existing Indic languages in XOR QA."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Asai et al., 2021 (XOR QA); Clark et al., 2020 (TyDi QA)",
+      "notes": "21 ULs + 6 HLs. Translation methodology mitigates English-centric bias by translating from existing Indic languages rather than English."
+    },
+    {
+      "dataset_name": "MasakhaNER",
+      "variant_name": "MasakhaNER-X (byte-level spans in XTREME-UP)",
+      "variant_notes": "Combined MasakhaNER and MasakhaNER 2.0, mapped from CoNLL token format to byte-level spans in raw text. Hausa and Fon subsets excluded due to quality issues.",
+      "task_type": "named_entity_recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 20,
+      "language_list": ["Bambara", "Ghomala'", "Ewe", "Igbo", "Kinyarwanda", "Luganda", "Luo", "Mossi", "Nigerian Pidgin", "Nyanja", "Shona", "Swahili", "Tswana", "Twi", "Wolof", "Xhosa", "Yoruba", "Zulu"],
+      "annotation_method": "human annotation by native speakers (original MasakhaNER datasets); byte-span re-alignment by XTREME-UP authors",
+      "data_creator_info": {
+        "creator_type": "community_researchers",
+        "creator_affiliation": "Masakhane community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Both datasets were created by Masakhane. The data is human-annotated and thus higher quality than automatically collected NER datasets."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2021 (MasakhaNER); Adelani et al., 2022 (MasakhaNER 2.0)",
+      "notes": "20 African languages. All under-represented. Hausa and Fon excluded from MasakhaNER 2.0 due to annotation quality issues. Lists 18 languages by name but paper states 20 total."
+    },
+    {
+      "dataset_name": "MTOP",
+      "variant_name": "MTOP++ (Semantic Parsing in XTREME-UP)",
+      "variant_notes": "Extended to 15 new languages via professional translation with localization; 3 additional Indic code-switched variants via PaLM + human verification. Total 20 languages.",
+      "task_type": "semantic_parsing",
+      "source": "mixed",
+      "source_language": "English",
+      "translation_method": "professional translation with localization (Western-centric entities replaced with culturally relevant ones); code-switching via PaLM with human verification for 3 Indic languages",
+      "num_languages": 20,
+      "language_list": ["Amharic", "Belarusian", "Bengali", "Brazilian Portuguese", "Finnish", "German", "Hausa", "Hungarian", "Japanese", "Russian", "Swahili", "Tamil", "Turkish", "Yoruba", "Zulu", "English", "Spanish", "French", "Hindi", "Thai"],
+      "annotation_method": "professional translators with localization guidelines; PaLM-generated code-switching with human verification for Indic languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We adapt the test split of MTOP with professional translators/annotators to 15 languages... we collect localized data (i.e., Western-centric entities are replaced with more culturally relevant entities for the target language)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Li et al., 2021 (MTOP)",
+      "notes": "9 ULs + 11 HLs. 15 newly translated languages + original 6 MTOP languages (minus overlap) = 20. 3 additional code-switched Indic variants (Hindi-English, Bengali-English, Tamil-English). Max 285 training / 239 dev / 3,669 test per language."
+    }
+  ],
+  "total_languages": 88,
+  "languages": {
+    "Afrikaans": {"iso_code": "af", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Amharic": {"iso_code": "am", "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Assamese": {"iso_code": "as", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Asturian": {"iso_code": "ast", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Azerbaijani": {"iso_code": "az", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Ghomala'": {"iso_code": "bbj", "datasets_present_in": ["MasakhaNER-X"]},
+    "Belarusian": {"iso_code": "be", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "MTOP++"]},
+    "Bulgarian": {"iso_code": "bg", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Bambara": {"iso_code": "bm", "datasets_present_in": ["MasakhaNER-X"]},
+    "Bengali": {"iso_code": "bn", "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)", "MTOP++", "TyDi QA / XOR QA (In-language QA)"]},
+    "Bosnian": {"iso_code": "bs", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Cebuano": {"iso_code": "ceb", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Central Kurdish": {"iso_code": "ckb", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Welsh": {"iso_code": "cy", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Danish": {"iso_code": "da", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Ewe": {"iso_code": "ee", "datasets_present_in": ["MasakhaNER-X"]},
+    "Greek": {"iso_code": "el", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Estonian": {"iso_code": "et", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Fula": {"iso_code": "ff", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Filipino": {"iso_code": "fil", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Irish": {"iso_code": "ga", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Galician": {"iso_code": "gl", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Gujarati": {"iso_code": "gu", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Hausa": {"iso_code": "ha", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)", "MasakhaNER-X"]},
+    "Hebrew": {"iso_code": "he", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Armenian": {"iso_code": "hy", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Indonesian": {"iso_code": "id", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Igbo": {"iso_code": "ig", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Icelandic": {"iso_code": "is", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Javanese": {"iso_code": "jv", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Georgian": {"iso_code": "ka", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Kamba": {"iso_code": "kam", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Kabuverdianu": {"iso_code": "kea", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Kazakh": {"iso_code": "kk", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Khmer": {"iso_code": "km", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Kannada": {"iso_code": "kn", "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Kyrgyz": {"iso_code": "ky", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Luxembourgish": {"iso_code": "lb", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Luganda": {"iso_code": "lg", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Lingala": {"iso_code": "ln", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Lao": {"iso_code": "lo", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Lithuanian": {"iso_code": "lt", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Luo": {"iso_code": "luo", "datasets_present_in": ["FLEURS (ASR)", "MasakhaNER-X", "FLORES-101 (MT)"]},
+    "Latvian": {"iso_code": "lv", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Macedonian": {"iso_code": "mk", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Malayalam": {"iso_code": "ml", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Mongolian": {"iso_code": "mn", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Mossi": {"iso_code": "mos", "datasets_present_in": ["MasakhaNER-X"]},
+    "Marathi": {"iso_code": "mr", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)"]},
+    "Malay": {"iso_code": "ms", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Maltese": {"iso_code": "mt", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Burmese": {"iso_code": "my", "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Nepali": {"iso_code": "ne", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)"]},
+    "Norwegian": {"iso_code": "no", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Northern Sotho": {"iso_code": "nso", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Nyanja": {"iso_code": "ny", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Occitan": {"iso_code": "oc", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Oromo": {"iso_code": "om", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Oriya": {"iso_code": "or", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Punjabi": {"iso_code": "pa", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Nigerian Pidgin": {"iso_code": "pcm", "datasets_present_in": ["MasakhaNER-X", "Autocomplete (Universal Dependencies)"]},
+    "Pashto": {"iso_code": "ps", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Romanian": {"iso_code": "ro", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Kinyarwanda": {"iso_code": "rw", "datasets_present_in": ["MasakhaNER-X"]},
+    "Sanskrit": {"iso_code": "sa", "datasets_present_in": ["UL-OCR"]},
+    "Sindhi": {"iso_code": "sd", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Dakshina Transliteration", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Sinhala": {"iso_code": "si", "datasets_present_in": ["UL-OCR", "Dakshina Transliteration"]},
+    "Slovak": {"iso_code": "sk", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Slovenian": {"iso_code": "sl", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Shona": {"iso_code": "sn", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Somali": {"iso_code": "so", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Swahili": {"iso_code": "sw", "datasets_present_in": ["FLEURS (ASR)", "UL-OCR", "Dakshina Transliteration", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Tamil": {"iso_code": "ta", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "MTOP++"]},
+    "Telugu": {"iso_code": "te", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "TyDi QA / XOR QA (In-language QA)", "TyDi QA / XOR QA (Cross-language QA)", "MTOP++"]},
+    "Tajik": {"iso_code": "tg", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Thai": {"iso_code": "th", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MTOP++"]},
+    "Tswana": {"iso_code": "tn", "datasets_present_in": ["MasakhaNER-X"]},
+    "Twi": {"iso_code": "tw", "datasets_present_in": ["MasakhaNER-X"]},
+    "Uyghur": {"iso_code": "ug", "datasets_present_in": ["Autocomplete (Universal Dependencies)"]},
+    "Ukrainian": {"iso_code": "uk", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Umbundu": {"iso_code": "umb", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Urdu": {"iso_code": "ur", "datasets_present_in": ["FLEURS (ASR)", "Dakshina Transliteration", "FLORES-101 (MT)", "Autocomplete (Universal Dependencies)"]},
+    "Uzbek": {"iso_code": "uz", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)"]},
+    "Wolof": {"iso_code": "wo", "datasets_present_in": ["FLEURS (ASR)", "MasakhaNER-X", "FLORES-101 (MT)"]},
+    "Xhosa": {"iso_code": "xh", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Yoruba": {"iso_code": "yo", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Zulu": {"iso_code": "zu", "datasets_present_in": ["FLEURS (ASR)", "FLORES-101 (MT)", "MasakhaNER-X", "MTOP++", "TyDi QA / XOR QA (Cross-language QA)"]},
+    "Basque": {"iso_code": "eu", "datasets_present_in": ["Autocomplete (Universal Dependencies)"]},
+    "Scottish Gaelic": {"iso_code": "gd", "datasets_present_in": ["Autocomplete (Universal Dependencies)"]},
+    "Hindi": {"iso_code": "hi", "datasets_present_in": ["Dakshina Transliteration", "MTOP++"]}
+  },
+  "assessments": {
+    "FLEURS (ASR)": {
+      "translated": {"value": true, "evidence": "FLEURS recordings are of FLORES-101 sentences translated from English Wikipedia to 101 languages.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "FLEURS consists of recordings by native speakers of the translated sentences.", "confidence": "medium"},
+      "culturally_grounded": {"value": false, "evidence": "Source sentences come from English Wikipedia content.", "confidence": "high"},
+      "annotation_quality_notes": "ASR baseline uses Maestro-U with average CER of 8.28% across 102 languages."
+    },
+    "UL-OCR": {
+      "translated": {"value": false, "evidence": "Books in the public domain from Google Books in seven under-represented languages.", "confidence": "high"},
+      "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Paper does not explicitly confirm annotators were native speakers.", "confidence": "low"},
+      "culturally_grounded": {"value": "partially", "evidence": "Books are in target languages but many are religious/missionary in origin. Filtering applied for quality.", "confidence": "medium"},
+      "annotation_quality_notes": "44.5 minutes per page annotation cost. Baseline Google Vision OCR CER of 11.1%."
+    },
+    "Autocomplete (Universal Dependencies)": {
+      "translated": {"value": false, "evidence": "Data from Universal Dependencies treebanks containing naturally occurring text.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Universal Dependencies treebanks created by linguists and native speakers.", "confidence": "medium"},
+      "culturally_grounded": {"value": true, "evidence": "Natural text in each language reflecting natural usage.", "confidence": "medium"},
+      "annotation_quality_notes": "Deduplicated against mC4. Up to 2,000 training examples per language."
+    },
+    "Dakshina Transliteration": {
+      "translated": {"value": false, "evidence": "Wikipedia sentences in native scripts human-romanized. Transliteration, not translation.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Human-romanized by native speakers.", "confidence": "high"},
+      "culturally_grounded": {"value": "partially", "evidence": "Source is Wikipedia in each language; task is script conversion.", "confidence": "medium"},
+      "annotation_quality_notes": "2,000 training / ~6,000 test sentences per task. CER used for evaluation."
+    },
+    "FLORES-101 (MT)": {
+      "translated": {"value": true, "evidence": "Source data from English Wikinews/Wikijunior/Wikivoyage translated to 93 languages.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Professional translators created translations.", "confidence": "medium"},
+      "culturally_grounded": {"value": false, "evidence": "English-centric source content.", "confidence": "high"},
+      "annotation_quality_notes": "499/498/1012 train/val/test sentence pairs per language."
+    },
+    "TyDi QA / XOR QA (In-language QA)": {
+      "translated": {"value": false, "evidence": "Original questions and passages from TyDi QA, natively authored.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Information-seeking questions written by native speakers.", "confidence": "high"},
+      "culturally_grounded": {"value": true, "evidence": "Natively authored from each language's Wikipedia.", "confidence": "high"},
+      "annotation_quality_notes": "Augmented gold passage setting with negatives."
+    },
+    "TyDi QA / XOR QA (Cross-language QA)": {
+      "translated": {"value": "mixed", "evidence": "Original XOR languages have native questions; 23 new Indic languages use professional translation from existing Indic languages.", "confidence": "high"},
+      "native_annotators": {"value": "mixed", "evidence": "Original 7 XOR languages natively authored; 23 Indic languages professionally translated.", "confidence": "high"},
+      "culturally_grounded": {"value": "partially", "evidence": "Mitigates English-centricity by translating from Indic languages rather than English.", "confidence": "medium"},
+      "annotation_quality_notes": "Cross-language: question in user's language, passage/answer in English."
+    },
+    "MasakhaNER-X": {
+      "translated": {"value": false, "evidence": "Human-annotated NER in 20 African languages from original text.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Created by Masakhane community of African NLP researchers.", "confidence": "high"},
+      "culturally_grounded": {"value": true, "evidence": "Annotated by African researchers in their native languages.", "confidence": "high"},
+      "annotation_quality_notes": "Hausa and Fon excluded due to quality issues. Byte-span re-alignment applied."
+    },
+    "MTOP++ (Semantic Parsing)": {
+      "translated": {"value": true, "evidence": "English MTOP adapted via professional translation to 15 languages.", "confidence": "high"},
+      "native_annotators": {"value": true, "evidence": "Professional translators with localization; code-switched data verified by native speakers.", "confidence": "high"},
+      "culturally_grounded": {"value": "partially", "evidence": "Western-centric entities replaced with culturally relevant ones, but task structure from English MTOP.", "confidence": "medium"},
+      "annotation_quality_notes": "Two pilots before full annotation. Manual + automatic quality checks."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["UL-OCR", "Autocomplete (Universal Dependencies)", "Dakshina Transliteration", "TyDi QA / XOR QA (In-language QA)", "MasakhaNER-X"],
+      "evidence": "UL-OCR uses public-domain books in target languages. Autocomplete derives from UD treebanks. Dakshina uses Wikipedia in native scripts. TyDi QA collects questions natively. MasakhaNER is human-annotated in African languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["FLEURS (ASR)", "FLORES-101 (MT)", "MTOP++ (Semantic Parsing)"],
+      "evidence": "FLEURS/FLORES-101 translated from English Wikipedia. MTOP++ translated from English MTOP."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["Autocomplete (Universal Dependencies)", "Dakshina Transliteration", "TyDi QA / XOR QA (In-language QA)", "MasakhaNER-X", "MTOP++ (Semantic Parsing)"],
+      "details": {
+        "Autocomplete (Universal Dependencies)": "Natural text from each language's treebanks.",
+        "Dakshina Transliteration": "Wikipedia content natively in each South Asian language.",
+        "TyDi QA / XOR QA (In-language QA)": "Natively authored from each language's Wikipedia.",
+        "MasakhaNER-X": "Human-annotated by African researchers in African languages.",
+        "MTOP++ (Semantic Parsing)": "Partial: localized entities replacing Western-centric ones."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mostly yes, where reported",
+      "evidence": "Dakshina: 'human-romanized by native speakers'. MasakhaNER: 'created by Masakhane'. MTOP++: professional translators. OCR/autocomplete annotator nativeness not explicitly confirmed."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native_speakers", "professional_translators", "community_researchers", "crowd_workers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Google", "Masakhane community", "Meta/NLLB Team", "Universal Dependencies consortium"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Paper lists detailed author contributions but no annotator demographics, compensation, or IRB review."
+    },
+    "english_centricity_notes": "Multiple datasets translated from English (FLEURS/FLORES-101, MTOP). Cross-language QA uses English passages. Mitigated by natively-authored datasets (TyDi QA, MasakhaNER, UD), MTOP++ localization, and Indic QA translation from Indic languages rather than English.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Sub-Saharan Africa", "South Asia", "Southeast Asia", "Eastern Europe", "Central Asia", "Western Europe"],
+      "also_represented": ["East Asia", "Middle East", "Oceania (minimally)", "Latin America"],
+      "notably_excluded": ["Indigenous Americas", "Pacific Islands", "Australia"],
+      "evidence": "88 ULs spanning Africa (20+ via MasakhaNER/FLEURS), South Asia (13 transliteration + 23 Indic QA), Europe (UD autocomplete), Central Asia (Kazakh, Kyrgyz, Uzbek, Tajik, Uyghur). 14 language families represented."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "IndiSentiment140",
+  "paper_id": "2024.naacl-long.425",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "Leveraging this widely used Sentiment140 dataset, we generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate.",
+  "total_languages_claimed": 22,
+  "total_datasets": 1,
+  "dataset_names": ["IndiSentiment140"],
+  "task_categories": ["sentiment_analysis"],
+  "brief_description": "IndiSentiment140 is a sentiment analysis dataset for 22 Indian languages created by machine-translating the English Sentiment140 Twitter corpus (1.6M tweets) into each language using Google Translate, preserving the original binary sentiment labels (positive/negative)."
+}

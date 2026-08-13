@@ -1,0 +1,46 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["ParsiNLU-Entailment", "OCNLI", "KLUE-NLI", "Amazon Review", "TyDiQA-GoldP", "TyDiQA-QG", "MasakhaNER"],
+      "evidence": "Table 1 marks these datasets as 'in-language' for data curation: annotated directly in each target language, not translated from English. XLSUM and WikiANN are 'aligned' (automatically curated) but also not translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "AmericasNLI", "IndicNLU-Sentiment", "XCOPA", "XWinograd", "PAWS-X"],
+      "evidence": "Table 1 marks XNLI, AmericasNLI, IndicNLU-Sentiment, XCOPA, XWinograd as 'translation' for data curation. PAWS-X is marked 'aligned' but created by translating English PAWS. Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI; Conneau et al. 2018, XCOPA; Ponti et al. 2020). Those datasets might exhibit undesired biases, such as translation artifacts or unnatural topic distributions.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TyDiQA-GoldP", "TyDiQA-QG", "ParsiNLU-Entailment", "OCNLI", "KLUE-NLI", "MasakhaNER", "XLSUM"],
+      "details": {
+        "TyDiQA-GoldP": "Questions from native speakers reflecting genuine information needs in each language",
+        "TyDiQA-QG": "Same underlying data as TyDiQA-GoldP, in-language questions",
+        "ParsiNLU-Entailment": "Natively created Persian NLI benchmark",
+        "OCNLI": "Original Chinese NLI, natively authored",
+        "KLUE-NLI": "Korean-native language understanding benchmark",
+        "MasakhaNER": "Annotated by native speakers on African language news",
+        "XLSUM": "News articles natively produced in each language by BBC language services"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "BUFFET includes both in-language annotated datasets and automatically curated/translated datasets. For in-language datasets (TyDiQA, ParsiNLU, OCNLI, KLUE, MasakhaNER), annotators are native speakers. For translated datasets, translator details are not provided in this paper. WikiANN has no human annotators (automated). Section A.1: TyDiQA is 'annotated in each language, better reflecting native speakers' interests.' BUFFET instructions were translated by NLLB machine translation and manually translated by volunteers for 5 languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "crowdworkers", "community_volunteers", "automated", "human_professional"],
+      "total_annotators_reported": null,
+      "affiliations": ["University of Washington", "Google DeepMind", "Allen Institute for AI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "BUFFET itself is an aggregation benchmark; the authors curated and unified existing datasets. The paper authors are from UW and Google DeepMind. Manual instruction translations were 'performed by volunteers' (Section 3.2.1 footnote 3). Manual evaluation of generations was 'conducted by the authors with native or bilingual proficiency' in English and Telugu. No compensation or demographics details reported for constituent dataset annotators. Ethics statement notes they 'manually assessed sampled questions to see the quality of data as well as potential privacy risks'."
+    },
+    "english_centricity_notes": "BUFFET explicitly addresses English-centricity as a design concern. Section 3.1 Design Principles include 'Beyond evaluations on translated data' noting biases in translation-based datasets. However, 6 of 15 datasets are translated from English. All instructions are originally in English, with translations provided by NLLB machine translation. English data is used as source for fine-tuning baselines. The paper's evaluation framework itself centers on English as the high-resource source language for cross-lingual transfer.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["South Asia", "East Asia", "Southeast Asia", "Europe", "Sub-Saharan Africa", "Americas", "Middle East"],
+      "also_represented": ["Central Asia", "Oceania-adjacent"],
+      "notably_excluded": ["Oceania", "Central Asia", "Northern Africa"],
+      "evidence": "Table 5 lists 54 languages from 25 language families. Includes Indo-European, Afro-Asiatic, Dravidian, Niger-Congo, Sino-Tibetan, Turkic, Kra-Dai, Austronesian, Austroasiatic, Japonic, Koreanic, Uralic, and several indigenous American families (Aymaran, Chibchan, Arawakan, Tupian, Uto-Aztecan, Oto-Manguean, Panoan). Section 3.1: '36 out of 54 languages are not Indo-European languages.' Strong representation of Indic languages (14 via IndicNLU-Sentiment) and African languages (9 via MasakhaNER). Limitations section notes: 'we do not specifically focus on finer-grained language varieties and dialects'."
+    }
+  }
+}

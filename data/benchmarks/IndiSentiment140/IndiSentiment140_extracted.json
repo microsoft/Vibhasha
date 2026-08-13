@@ -1,0 +1,127 @@
+{
+  "benchmark_name": "IndiSentiment140",
+  "paper_id": "2024.naacl-long.425",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "Leveraging this widely used Sentiment140 dataset, we generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate.",
+  "total_languages_claimed": 22,
+  "total_datasets": 1,
+  "dataset_names": ["IndiSentiment140"],
+  "task_categories": ["sentiment_analysis"],
+  "brief_description": "IndiSentiment140 is a sentiment analysis dataset for 22 Indian languages created by machine-translating the English Sentiment140 Twitter corpus (1.6M tweets) into each language using Google Translate, preserving the original binary sentiment labels (positive/negative).",
+  "datasets": [
+    {
+      "dataset_name": "IndiSentiment140",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "sentiment_analysis",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 22,
+      "language_list": [
+        "Assamese", "Bengali", "Bhojpuri", "Dogri", "Gujarati", "Hindi",
+        "Kannada", "Konkani", "Maithili", "Malayalam", "Marathi",
+        "Meiteilon (Manipuri)", "Mizo", "Nepali", "Odia", "Punjabi",
+        "Sanskrit", "Sindhi", "Sinhala", "Tamil", "Telugu", "Urdu"
+      ],
+      "annotation_method": "Labels inherited from source dataset (Sentiment140) which used distant supervision via Twitter emoticons; no new annotation performed on translated data.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Indian Institute of Technology Guwahati",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Authors are from Department of Computer Science and Engineering, IIT Guwahati. The dataset was created by automated machine translation (Google Translate) of the English Sentiment140 dataset. No human annotators were involved in IndiSentiment140 creation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Go et al. (2009) - Sentiment140 (Twitter sentiment classification using distant supervision)",
+      "notes": "Each language version contains ~1.59M samples split 80/20 train/test. The source Sentiment140 dataset contains 1.6M English tweets labeled as positive or negative via distant supervision (emoticons). Google Translate was used to translate the cleaned tweets (URLs, emojis, special symbols removed) into 22 Indian languages. Binary sentiment labels (0=negative, 4=positive) were preserved from the original dataset."
+    }
+  ],
+  "total_languages": 22,
+  "languages": {
+    "Assamese": { "iso_code": "as", "datasets_present_in": ["IndiSentiment140"] },
+    "Bengali": { "iso_code": "bn", "datasets_present_in": ["IndiSentiment140"] },
+    "Bhojpuri": { "iso_code": "bho", "datasets_present_in": ["IndiSentiment140"] },
+    "Dogri": { "iso_code": "doi", "datasets_present_in": ["IndiSentiment140"] },
+    "Gujarati": { "iso_code": "gu", "datasets_present_in": ["IndiSentiment140"] },
+    "Hindi": { "iso_code": "hi", "datasets_present_in": ["IndiSentiment140"] },
+    "Kannada": { "iso_code": "kn", "datasets_present_in": ["IndiSentiment140"] },
+    "Konkani": { "iso_code": "gom", "datasets_present_in": ["IndiSentiment140"] },
+    "Maithili": { "iso_code": "mai", "datasets_present_in": ["IndiSentiment140"] },
+    "Malayalam": { "iso_code": "ml", "datasets_present_in": ["IndiSentiment140"] },
+    "Marathi": { "iso_code": "mr", "datasets_present_in": ["IndiSentiment140"] },
+    "Meiteilon (Manipuri)": { "iso_code": "mni", "datasets_present_in": ["IndiSentiment140"] },
+    "Mizo": { "iso_code": "lus", "datasets_present_in": ["IndiSentiment140"] },
+    "Nepali": { "iso_code": "ne", "datasets_present_in": ["IndiSentiment140"] },
+    "Odia": { "iso_code": "or", "datasets_present_in": ["IndiSentiment140"] },
+    "Punjabi": { "iso_code": "pa", "datasets_present_in": ["IndiSentiment140"] },
+    "Sanskrit": { "iso_code": "sa", "datasets_present_in": ["IndiSentiment140"] },
+    "Sindhi": { "iso_code": "sd", "datasets_present_in": ["IndiSentiment140"] },
+    "Sinhala": { "iso_code": "si", "datasets_present_in": ["IndiSentiment140"] },
+    "Tamil": { "iso_code": "ta", "datasets_present_in": ["IndiSentiment140"] },
+    "Telugu": { "iso_code": "te", "datasets_present_in": ["IndiSentiment140"] },
+    "Urdu": { "iso_code": "ur", "datasets_present_in": ["IndiSentiment140"] }
+  },
+  "assessments": {
+    "IndiSentiment140": {
+      "translated": {
+        "value": true,
+        "evidence": "We generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate. The entire dataset is machine-translated from the English Sentiment140 corpus using Google Translate.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "No human annotation was performed. The dataset was created entirely through automated machine translation of English tweets. Sentiment labels were inherited from the source Sentiment140 dataset (which used distant supervision via emoticons, not human annotation).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The source data consists of English tweets from Twitter (Sentiment140). The content reflects English-language social media culture and was mechanically translated without any cultural adaptation. The paper acknowledges 'socio-cultural and language specific sentiment indicators' as important but does not address cultural grounding in the translated dataset itself.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper evaluates translation quality using BLEU scores against parallel corpora (Flores-200, PMIndia, IndicSentiment). Low-resource languages like Assamese, Bhojpuri, Dogri, Mizo, Maithili, Manipuri, Sanskrit, and Sinhala have relatively low BLEU scores. Untranslated English words remain in the dataset (ranging from 1.37% for Urdu to 78% for Mizo which uses Roman script). The Limitations section acknowledges noise from untranslated English words and the absence of a human-translated benchmark for comparison."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "IndiSentiment140 is entirely translated from the English Sentiment140 dataset. No data was created from scratch."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IndiSentiment140"],
+      "evidence": "Leveraging this widely used Sentiment140 dataset, we generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "not_applicable",
+      "evidence": "No human annotators were used. The dataset was created via automated machine translation (Google Translate). Sentiment labels were inherited from the source Sentiment140 dataset which used distant supervision."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Indian Institute of Technology Guwahati"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The dataset was created by automated machine translation using Google Translate. The three authors are researchers at IIT Guwahati. No human annotators or crowdworkers were involved. The paper does not mention IRB or ethics review. The study is partially funded by Ministry of Electronics and Information Technology, Government of India."
+    },
+    "english_centricity_notes": "The entire dataset is translated from an English Twitter corpus (Sentiment140). The source content, topics, and sentiment patterns are inherently English-centric. The paper acknowledges 'socio-cultural and language specific sentiment indicators' as a challenge but does not address cultural adaptation. Untranslated English words remain in all 22 language versions, with percentages ranging from 1.37% (Urdu) to 78% (Mizo).",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India", "Nepal", "Sri Lanka", "Pakistan"],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The 22 languages covered are Indian languages as recognized by Google Translate, including languages spoken in India (Assamese, Bengali, Bhojpuri, Dogri, Gujarati, Hindi, Kannada, Konkani, Maithili, Malayalam, Marathi, Meiteilon, Mizo, Odia, Punjabi, Sanskrit, Tamil, Telugu), Nepal (Nepali), Sri Lanka (Sinhala), and Pakistan (Sindhi, Urdu). However, the source content originates from English-language Twitter and does not represent South Asian discourse."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

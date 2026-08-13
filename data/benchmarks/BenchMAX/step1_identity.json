@@ -1,0 +1,30 @@
+{
+  "benchmark_name": "BenchMAX",
+  "paper_id": "2025.findings-emnlp.BenchMAX",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We develop BenchMAX, a multi-way multilingual benchmark that covers 10 diverse tasks, to evaluate LLMs' general abilities across many languages. [...] We extend current datasets by translating English to other languages. [...] we introduce the Domain Translation task, a by-product of the BenchMAX construction.",
+  "total_languages_claimed": 17,
+  "total_datasets": 10,
+  "dataset_names": [
+    "IFEval",
+    "m-ArenaHard",
+    "HumanEval+",
+    "LiveCodeBench_v4",
+    "MGSM",
+    "GPQA",
+    "RULER",
+    "Nexus",
+    "FLORES+TED+WMT24",
+    "BenchMAX Domain Translation"
+  ],
+  "task_categories": [
+    "instruction_following",
+    "code_generation",
+    "reasoning",
+    "long_context_understanding",
+    "tool_use",
+    "translation"
+  ],
+  "brief_description": "BenchMAX is a comprehensive multilingual evaluation suite covering 10 diverse tasks across 6 capabilities (instruction following, code generation, reasoning, long context understanding, tool use, and translation) in 17 languages. Data is machine-translated from English and post-edited by three native annotators per sample to ensure quality."
+}

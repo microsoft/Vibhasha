@@ -1,0 +1,24 @@
+{
+  "benchmark_name": "BhashaBench V1",
+  "paper_id": "2510.25409",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce BhashaBench V1, the first comprehensive domain-specific, multi-task, bilingual benchmark designed explicitly for evaluating large language models on India-centric knowledge systems",
+  "total_languages_claimed": 2,
+  "total_datasets": 4,
+  "dataset_names": [
+    "BhashaBench Krishi (BBK)",
+    "BhashaBench Finance (BBF)",
+    "BhashaBench Legal (BBL)",
+    "BhashaBench Ayurveda (BBA)"
+  ],
+  "task_categories": [
+    "multiple-choice question answering",
+    "assertion/reasoning",
+    "fill in the blanks",
+    "match the column",
+    "reading comprehension",
+    "rearrange the sequence"
+  ],
+  "brief_description": "BhashaBench V1 is a domain-specific, multi-task, bilingual (English and Hindi) benchmark containing 74,166 question-answer pairs across four India-centric domains: Agriculture, Legal, Finance, and Ayurveda. Questions are sourced from authentic government and professional examination papers, spanning 90+ subdomains and 500+ topics."
+}

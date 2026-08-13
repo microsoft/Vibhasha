@@ -1,0 +1,41 @@
+{
+  "total_languages": 9,
+  "languages": {
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    }
+  }
+}

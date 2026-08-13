@@ -1,0 +1,45 @@
+{
+  "total_languages": 10,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["MultiJail"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["MultiJail"]
+    }
+  }
+}

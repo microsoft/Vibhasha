@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "TUMLU": {
+      "translated": {
+        "value": false,
+        "evidence": "We address the lack of native language MMLU benchmark especially in the under-represented Turkic language family... TUMLU is a comprehensive, multilingual, and natively developed language understanding benchmark specifically designed for Turkic languages. Data was collected from publicly available books and websites. The majority are sample or official questions for university entrance exams of respective countries.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "After collecting the data, native speakers of each language manually verified the quality of a random sample from each subject. CoT prompts were created manually by native speakers (for Azerbaijani, Kazakh, Uzbek). 'We did not create CoT prompts for other languages, because we did not have native speakers to validate their quality.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions sourced from national university entrance exams and educational materials in each target language. Subjects include National Language & Literature and national History specific to each country. The paper explicitly argues against translated benchmarks that 'fail to account for the linguistic and cultural intricacies of the target languages.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Native speakers verified a random sample per subject. In Azerbaijani (community-developed questions), approximately 10% of questions were found to be either invalid or had incorrect answers. Difficulty levels are not uniform across languages: Uzbek and Turkish are specifically designed for university entrance exams; Kazakh maths questions cover only middle-school topics."
+    },
+    "TUMLU-mini": {
+      "translated": {
+        "value": false,
+        "evidence": "Subset of TUMLU; same natively developed data.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TUMLU-mini consists of '100 randomly selected and manually verified questions per subject.' All choices shuffled. Native speakers performed verification.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Same source material as TUMLU — national educational materials and entrance exams.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "All questions in TUMLU-mini are manually verified. Questions with more than 5 answer choices had one choice dropped. Subjects available in fewer than 3 languages were removed for balance."
+    }
+  }
+}

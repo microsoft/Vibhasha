@@ -1,0 +1,205 @@
+{
+  "total_languages": 50,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "TyDiQA-GoldP", "Tatoeba", "Mewsli-X", "LAReQA"]
+    },
+    "Azerbaijani": {
+      "iso_code": "az",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "TyDiQA-GoldP"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "Tatoeba", "Mewsli-X", "LAReQA"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "Tatoeba", "LAReQA"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "TyDiQA-GoldP", "Tatoeba", "Mewsli-X", "LAReQA"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "Tatoeba", "Mewsli-X", "LAReQA"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["XCOPA", "UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Basque": {
+      "iso_code": "eu",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Mewsli-X"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["WikiANN-NER"]
+    },
+    "Hebrew": {
+      "iso_code": "he",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "Tatoeba", "LAReQA"]
+    },
+    "Haitian Creole": {
+      "iso_code": "ht",
+      "datasets_present_in": ["XCOPA"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["XCOPA", "UD-POS", "WikiANN-NER", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["XCOPA", "UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba", "Mewsli-X"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["WikiANN-NER"]
+    },
+    "Georgian": {
+      "iso_code": "ka",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER"]
+    },
+    "Kazakh": {
+      "iso_code": "kk",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Lithuanian": {
+      "iso_code": "lt",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Burmese": {
+      "iso_code": "my",
+      "datasets_present_in": ["WikiANN-NER"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["WikiANN-NER"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba", "Mewsli-X"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Cusco Quechua": {
+      "iso_code": "qu",
+      "datasets_present_in": ["XCOPA", "WikiANN-NER"]
+    },
+    "Romanian": {
+      "iso_code": "ro",
+      "datasets_present_in": ["XQuAD", "UD-POS", "WikiANN-NER", "Mewsli-X"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "XQuAD", "TyDiQA-GoldP", "Tatoeba", "LAReQA"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN-NER", "TyDiQA-GoldP"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["XCOPA", "UD-POS", "WikiANN-NER", "Tatoeba", "Mewsli-X"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "TyDiQA-GoldP", "Tatoeba"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "XCOPA", "UD-POS", "WikiANN-NER", "XQuAD", "Tatoeba", "LAReQA"]
+    },
+    "Tagalog": {
+      "iso_code": "tl",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "XCOPA", "UD-POS", "WikiANN-NER", "XQuAD", "Tatoeba", "Mewsli-X"]
+    },
+    "Ukrainian": {
+      "iso_code": "uk",
+      "datasets_present_in": ["UD-POS", "WikiANN-NER", "Tatoeba", "Mewsli-X"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "UD-POS", "WikiANN-NER", "Tatoeba"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "XCOPA", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "Tatoeba", "LAReQA"]
+    },
+    "Wolof": {
+      "iso_code": "wo",
+      "datasets_present_in": ["WikiANN-NER"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["WikiANN-NER", "Tatoeba"]
+    },
+    "Mandarin Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "XCOPA", "UD-POS", "WikiANN-NER", "XQuAD", "MLQA", "Tatoeba", "LAReQA"]
+    }
+  }
+}

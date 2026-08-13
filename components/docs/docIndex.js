@@ -162,7 +162,7 @@ export const docEntries = [
     "content": "/public/chapters/03-prompting.md",
     "prefix": "03",
     "isSub": false,
-    "icon": "ChatSparkle24Regular"
+    "icon": "Document24Regular"
   },
   {
     "path": "/playbook/03-i-strategies",

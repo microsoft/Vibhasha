@@ -1,0 +1,37 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MultiJail",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "safety evaluation / jailbreak detection",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Human translation by native speakers; quality verified by a separate group of native speakers with a target pass rate of over 97%",
+      "num_languages": 10,
+      "language_list": [
+        "English",
+        "Chinese",
+        "Italian",
+        "Vietnamese",
+        "Arabic",
+        "Korean",
+        "Thai",
+        "Bengali",
+        "Swahili",
+        "Javanese"
+      ],
+      "annotation_method": "315 English harmful prompts were collected (15 curated from the GPT-4 report and 300 sampled from Anthropic's red-teaming dataset), then manually translated by native speakers into 9 non-English languages. Safety labels (safe/unsafe/invalid) assigned via GPT-4 automated evaluation and verified by human evaluators.",
+      "data_creator_info": {
+        "creator_type": "researchers_and_native_speaker_translators",
+        "creator_affiliation": "DAMO Academy (Alibaba Group), Nanyang Technological University, Chinese University of Hong Kong, Hupan Lab",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "English prompts sourced from GPT-4 report (OpenAI, 2023b) and Anthropic red-teaming dataset (Ganguli et al., 2022)",
+      "notes": "Total of 3150 samples (315 per language x 10 languages). The preliminary study also tested 30 languages using Google Translate on 15 curated prompts, but MultiJail itself uses human translation for 10 languages. Two evaluation scenarios: unintentional (direct non-English queries) and intentional (non-English queries combined with English jailbreak instruction AIM)."
+    }
+  ]
+}

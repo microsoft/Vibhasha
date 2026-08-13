@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "JailNewsBench",
+  "paper_id": "2603.01291v1",
+  "year": 2026,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce JailNewsBench, the first multi-lingual and regional benchmark explicitly targeting jailbreak-induced fake news generation.",
+  "total_languages_claimed": 22,
+  "total_datasets": 1,
+  "dataset_names": [
+    "JailNewsBench"
+  ],
+  "task_categories": [
+    "safety_evaluation",
+    "fake_news_generation",
+    "jailbreak_robustness"
+  ],
+  "brief_description": "JailNewsBench is the first benchmark for evaluating LLM robustness against jailbreak-induced fake news generation, spanning 34 regions and 22 languages with approximately 300k instances, 8 evaluation sub-metrics through LLM-as-a-Judge, and 5 jailbreak attack methods."
+}

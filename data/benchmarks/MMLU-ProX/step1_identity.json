@@ -1,0 +1,17 @@
+{
+  "benchmark_name": "MMLU-ProX",
+  "paper_id": "2503.10497",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MMLU-ProX, a comprehensive benchmark covering 29 languages, built on an English benchmark. Each language version consists of 11,829 identical questions",
+  "total_languages_claimed": 29,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MMLU-ProX"
+  ],
+  "task_categories": [
+    "multiple-choice QA",
+    "chain-of-thought reasoning"
+  ],
+  "brief_description": "MMLU-ProX is a multilingual benchmark extending MMLU-Pro to 29 typologically diverse languages, containing 11,829 parallel multiple-choice questions (10 options) per language across 57 subjects and 14 disciplines. It uses a semi-automated LLM translation pipeline with expert verification to enable direct cross-linguistic comparison of LLM reasoning capabilities."
+}

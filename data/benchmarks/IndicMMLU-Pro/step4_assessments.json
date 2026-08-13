@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "IndicMMLU-Pro": {
+      "translated": {
+        "value": true,
+        "evidence": "We used IndicTrans2, a state-of-the-art machine translation model specifically designed for Indic languages... we use IndicTrans2 to convert the questions and corresponding options from the original English MMLU Pro dataset into each of the target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "13 native-speaker experts reviewed 9,000 sentence pairs for quality (semantic accuracy, fluency, linguistic style), but the dataset itself was machine-translated, not natively authored. 'The participating experts were native speakers of their respective languages, with fluency in English and formal education in their native languages.' Experts performed proofreading/evaluation, not authoring.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The dataset is a direct machine translation of the English MMLU-Pro benchmark. 'The resulting IndicMMLU-Pro dataset maintains the same structure as the original MMLU-Pro dataset... The dataset retains the original categories and task types from MMLU Pro.' No cultural adaptation of content was performed; only linguistic translation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality was assessed via: (1) back-translation metrics (chrF++, BLEU, METEOR, TER, SacreBLEU) for 3 of 9 languages, (2) LaBSE cosine similarity for all 9 languages (scores 0.91-0.93), (3) expert proofreading of 9,000 sentence pairs by 13 native-speaker reviewers on a 5-point scale across 3 criteria. However, full back-translation metrics for 6 languages (Bengali, Punjabi, Kannada, Telugu, Urdu, Marathi) were not reported in the paper."
+    }
+  }
+}

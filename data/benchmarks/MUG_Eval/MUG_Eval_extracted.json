@@ -1,0 +1,244 @@
+{
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  },
+  "step1_identity": {
+    "benchmark_name": "MUG-Eval",
+    "paper_id": "2025.findings-emnlp.MUG-Eval",
+    "year": 2025,
+    "benchmark_type": "mixed",
+    "benchmark_type_evidence": "We implement three tasks in MUG-Eval by adapting existing benchmarks into conversational and multilingual settings—Easy Twenty Questions (Zhang et al., 2024), MCQ Conversation (Bandarkar et al., 2024), and Code Reconstruction (Muennighoff et al., 2024)",
+    "total_languages_claimed": 30,
+    "total_datasets": 3,
+    "dataset_names": [
+      "Easy Twenty Questions",
+      "MCQ Conversation",
+      "Code Reconstruction"
+    ],
+    "task_categories": [
+      "reasoning",
+      "instruction_following",
+      "code_generation",
+      "multilingual_generation",
+      "conversational_task_completion"
+    ],
+    "brief_description": "MUG-Eval is a language-agnostic proxy evaluation framework that assesses LLMs' multilingual generation capabilities by transforming existing benchmarks into conversational information-gap tasks, using task success rate as a proxy for generation quality. It evaluates 8 LLMs across 30 languages (high/mid/low-resource) on three tasks without requiring language-specific NLP tools, human annotations, or LLM-as-judge, and claims scalability to 2,102 languages via GlotLID."
+  },
+  "step2_datasets": {
+    "datasets": [
+      {
+        "dataset_name": "Easy Twenty Questions",
+        "variant_name": null,
+        "variant_notes": "Adapted from the Things dataset (Zhang et al., 2024) into a conversational word-guessing game",
+        "task_type": "word_guessing_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "Google Translate; 200 English words translated to 30 languages, filtered to 140 after removing Latin-character artifacts, duplicates, and loan words",
+        "num_languages": 30,
+        "language_list": [
+          "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+          "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+          "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+        ],
+        "annotation_method": "Automated: words translated via Google Translate; evaluation via exact string matching with GlotLID language verification; no human annotation required for benchmark construction",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "KAIST and Trillion Labs",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Authors adapted the Things dataset and used Google Translate for translation; no annotator workforce described for this task"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Zhang et al., 2024 (Things dataset / 20Q: Probing the multi-turn planning capabilities of LLMs via 20 question games)",
+        "notes": "140 target words per language with candidate pools of 100 words per game; up to 20 yes/no questions per game; answerer responds only in English (yes/no/maybe)"
+      },
+      {
+        "dataset_name": "MCQ Conversation",
+        "variant_name": null,
+        "variant_notes": "Adapted from Belebele benchmark (Bandarkar et al., 2024) into a conversational reading comprehension task",
+        "task_type": "reading_comprehension_instruction_following",
+        "source": "adapted",
+        "source_language": "English",
+        "translation_method": "Uses existing Belebele multilingual data (professionally translated parallel reading comprehension dataset); no additional translation by the authors",
+        "num_languages": 30,
+        "language_list": [
+          "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+          "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+          "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+        ],
+        "annotation_method": "Automated: uses existing Belebele passages and questions; evaluation via exact string matching with GlotLID language verification; no new human annotation for benchmark construction",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "KAIST and Trillion Labs (task design); Belebele data from Meta (Bandarkar et al., 2024)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Task format designed by authors; underlying data from Belebele which used professional translators"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Bandarkar et al., 2024 (Belebele: a parallel reading comprehension dataset in 122 language variants)",
+        "notes": "900 samples from Belebele; passage given to answerer, question and 4 choices given to questioner; up to 10 yes/no questions; answerer responds in English (yes/no/maybe)"
+      },
+      {
+        "dataset_name": "Code Reconstruction",
+        "variant_name": null,
+        "variant_notes": "Adapted from HumanEvalExplain (Muennighoff et al., 2024) into a multilingual code explanation and reconstruction task",
+        "task_type": "code_generation",
+        "source": "adapted",
+        "source_language": "English",
+        "translation_method": "No traditional translation; code remains in English (Python); LLM generates natural language descriptions in the target language during evaluation",
+        "num_languages": 30,
+        "language_list": [
+          "Arabic", "German", "English", "French", "Hindi", "Italian", "Japanese", "Portuguese", "Spanish", "Chinese",
+          "Bengali", "Greek", "Hebrew", "Indonesian", "Korean", "Lithuanian", "Malay", "Romanian", "Thai", "Ukrainian",
+          "Amharic", "Hausa", "Igbo", "Kyrgyz", "Nepali", "Sinhala", "Somali", "Swahili", "Telugu", "Yoruba"
+        ],
+        "annotation_method": "Automated: uses existing HumanEvalExplain Python functions with unit tests; evaluation via code test execution; no human annotation required",
+        "data_creator_info": {
+          "creator_type": "researchers",
+          "creator_affiliation": "KAIST and Trillion Labs (task design); HumanEvalExplain data from Muennighoff et al., 2024 (OctoPack)",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "Task format designed by authors; underlying code samples and unit tests from HumanEvalExplain"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Muennighoff et al., 2024 (OctoPack: Instruction tuning code large language models / HumanEvalExplain)",
+        "notes": "164 Python function samples with unit tests; describer generates natural language explanation in target language, rebuilder reconstructs code from description and function declaration; success measured by passing all unit tests"
+      }
+    ]
+  },
+  "step3_languages": {
+    "total_languages": 30,
+    "languages": {
+      "Arabic": { "iso_code": "arb", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "German": { "iso_code": "deu", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "English": { "iso_code": "eng", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "French": { "iso_code": "fra", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Hindi": { "iso_code": "hin", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Italian": { "iso_code": "ita", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Japanese": { "iso_code": "jpn", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Portuguese": { "iso_code": "por", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Spanish": { "iso_code": "spa", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Chinese": { "iso_code": "zho", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Bengali": { "iso_code": "ben", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Greek": { "iso_code": "ell", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Hebrew": { "iso_code": "heb", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Indonesian": { "iso_code": "ind", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Korean": { "iso_code": "kor", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Lithuanian": { "iso_code": "lit", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Malay": { "iso_code": "zsm", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Romanian": { "iso_code": "ron", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Thai": { "iso_code": "tha", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Ukrainian": { "iso_code": "ukr", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Amharic": { "iso_code": "amh", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Hausa": { "iso_code": "hau", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Igbo": { "iso_code": "ibo", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Kyrgyz": { "iso_code": "kir", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Nepali": { "iso_code": "npi", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Sinhala": { "iso_code": "sin", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Somali": { "iso_code": "som", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Swahili": { "iso_code": "swh", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Telugu": { "iso_code": "tel", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] },
+      "Yoruba": { "iso_code": "yor", "datasets_present_in": ["Easy Twenty Questions", "MCQ Conversation", "Code Reconstruction"] }
+    }
+  },
+  "step4_assessments": {
+    "assessments": {
+      "Easy Twenty Questions": {
+        "translated": {
+          "value": true,
+          "evidence": "We began with 200 English words from the dev and test sets of the Things dataset (Zhang et al., 2024). We translated these words into all 30 target languages using Google Translate.",
+          "confidence": "high"
+        },
+        "native_annotators": {
+          "value": false,
+          "evidence": "The framework is designed to not require native speaker annotation: 'Native speaker annotation is optional' (Table 1). Translation was done via Google Translate, not human annotators. The benchmark construction involved no native annotators; human eval was only for validation.",
+          "confidence": "high"
+        },
+        "culturally_grounded": {
+          "value": false,
+          "evidence": "Source data is the English Things dataset with English common nouns (e.g., foam, mango, ice). Content is not culturally adapted for target languages/regions. Words were mechanically translated without cultural adaptation.",
+          "confidence": "high"
+        },
+        "annotation_quality_notes": "Automated quality control: removed words where Latin characters persisted in non-Latin scripts, eliminated duplicates within each language, filtered out loan words to ensure semantic consistency. Yielded 140 of 200 original words."
+      },
+      "MCQ Conversation": {
+        "translated": {
+          "value": true,
+          "evidence": "Uses Belebele benchmark data which is a professionally translated parallel reading comprehension dataset. The paper states: 'We transform the Belebele benchmark (Bandarkar et al., 2024)—a reading comprehension dataset spanning 122 languages—into a conversational task.'",
+          "confidence": "high"
+        },
+        "native_annotators": {
+          "value": false,
+          "evidence": "No native annotators were used for the MUG-Eval task construction itself. The underlying Belebele data was created by professional translators (per original paper), but MUG-Eval's adaptation was automated by the researchers.",
+          "confidence": "high"
+        },
+        "culturally_grounded": {
+          "value": false,
+          "evidence": "Inherits Belebele's content which is translated from English sources. The passages and questions reflect English-centric topics. No cultural adaptation was performed in the MUG-Eval adaptation.",
+          "confidence": "medium"
+        },
+        "annotation_quality_notes": "Uses 900 existing Belebele samples. Evaluation via exact string matching with GlotLID language verification. The conversational format introduces additional difficulty compared to original Belebele (0.8 vs 0.95 accuracy ceiling)."
+      },
+      "Code Reconstruction": {
+        "translated": {
+          "value": false,
+          "evidence": "Code remains in English (Python). Descriptions are generated by the LLM itself in the target language during evaluation—not pre-translated. 'This task adapts HumanEvalExplain (Muennighoff et al., 2024) to assess code generation abilities across languages, not only in English.'",
+          "confidence": "high"
+        },
+        "native_annotators": {
+          "value": false,
+          "evidence": "No human annotators involved. Code samples and unit tests come from HumanEvalExplain. The multilingual component is generated by the LLM being evaluated.",
+          "confidence": "high"
+        },
+        "culturally_grounded": {
+          "value": false,
+          "evidence": "Python code with English variable/function names and Latin script. 'the Code Reconstruction task employs Latin script for code, with variable and function names following English naming conventions. These factors may introduce systematic biases against non-Latin script languages.'",
+          "confidence": "high"
+        },
+        "annotation_quality_notes": "164 Python function samples with existing unit tests from HumanEvalExplain. Success measured by whether reconstructed code passes all unit tests—objective and reproducible metric."
+      }
+    }
+  },
+  "step5_cultural": {
+    "cultural_flags": {
+      "datasets_from_scratch_no_english_source": {
+        "list": [],
+        "evidence": "All three tasks are adapted from English-origin benchmarks: Things dataset (English words), Belebele (translated from English), HumanEvalExplain (English Python code)."
+      },
+      "datasets_translated_from_english": {
+        "list": ["Easy Twenty Questions"],
+        "evidence": "Easy Twenty Questions directly translates 140 English words into 30 languages via Google Translate. MCQ Conversation uses Belebele which was professionally translated from English. Code Reconstruction uses English code with LLM-generated target-language descriptions."
+      },
+      "datasets_with_cultural_grounding": {
+        "list": [],
+        "details": {
+          "notes": "None of the three tasks include culturally grounded content. All source data originates from English/Western contexts. The paper acknowledges: 'the Code Reconstruction task employs Latin script for code, with variable and function names following English naming conventions. These factors may introduce systematic biases against non-Latin script languages and low-resource language contexts.'"
+        }
+      },
+      "all_annotators_native_speakers": {
+        "value": "not_applicable_for_benchmark_construction",
+        "evidence": "The benchmark framework does not require human annotators for construction or evaluation. For validation-only human evaluation (not part of the benchmark itself), 12 native-speaker annotators were recruited: 'We recruit 12 annotators—primarily university students in South Korea—each a native speaker of their assigned language(s).'"
+      },
+      "annotator_workforce": {
+        "creator_types_across_datasets": ["researchers", "automated_translation"],
+        "total_annotators_reported": 12,
+        "affiliations": ["KAIST", "Trillion Labs"],
+        "demographics_reported": false,
+        "compensation_reported": true,
+        "compensation_details": "30,000 KRW (approximately 21.76 USD as of September 2025) per annotator for a two-hour session; this was for the validation human evaluation study, not for benchmark construction",
+        "irb_ethics_review": true,
+        "evidence": "Our human evaluation study was conducted with approval from the Institutional Review Board (IRB), ensuring all procedures adhered to established ethical research standards. All participants recruited for the annotation task were compensated for their time at a rate of 30,000 KRW (approximately 21.76 USD as of September 2025). The 12 annotators were primarily university students in South Korea, each a native speaker of their assigned language(s). Note: these annotators were for the human evaluation validation study (Section C.6), not for benchmark construction."
+      },
+      "english_centricity_notes": "The framework has several English-centric aspects acknowledged by the authors: (1) English instructional prompts are used for all conversational scenarios due to difficulty of translating prompts to low-resource languages; (2) Easy Twenty Questions source words are English common nouns; (3) Code Reconstruction uses English-named Python code with Latin script; (4) MCQ Conversation source data (Belebele) was translated from English; (5) the paper finds that 'English is not always the optimal substitute language, particularly for low-resource languages', suggesting English-centricity can degrade evaluation quality.",
+      "geographic_representation": {
+        "primary_region": "Global (diverse language selection)",
+        "sub_regions": ["East Asia", "South Asia", "Southeast Asia", "Middle East", "Europe", "Sub-Saharan Africa", "Central Asia"],
+        "also_represented": [],
+        "notably_excluded": ["Indigenous Americas", "Oceania", "most of Africa beyond 4 languages"],
+        "evidence": "30 languages selected across high/mid/low resource categories covering diverse language families and writing systems including Latin, Cyrillic, Devanagari, Arabic, CJK, Ethiopic, Bengali, Greek, Hebrew, Hangul, Sinhala, Telugu, Thai scripts. Languages span Africa (Amharic, Hausa, Igbo, Somali, Swahili, Yoruba), South Asia (Bengali, Hindi, Nepali, Sinhala, Telugu), East Asia (Chinese, Japanese, Korean), Southeast Asia (Indonesian, Malay, Thai), Central Asia (Kyrgyz), Middle East (Arabic, Hebrew), and Europe (German, English, French, Greek, Italian, Lithuanian, Portuguese, Romanian, Spanish, Ukrainian)."
+      }
+    }
+  }
+}

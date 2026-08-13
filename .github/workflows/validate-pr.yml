@@ -1,0 +1,62 @@
+name: Validate Benchmark Submission
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Detect new/modified benchmarks
+        id: detect
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          CHANGED=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" -- data/benchmarks/ | cut -d'/' -f3 | sort -u | tr '\n' ' ')
+          echo "benchmarks=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed benchmarks: $CHANGED"
+
+      - name: Validate submissions
+        env:
+          CHANGED_BENCHMARKS: ${{ steps.detect.outputs.benchmarks }}
+        run: |
+          ERRORS=0
+          for bench in $CHANGED_BENCHMARKS; do
+            echo "Validating: $bench"
+            python scripts/validate_submission.py "data/benchmarks/$bench" || ERRORS=1
+          done
+          exit $ERRORS
+
+      - name: Run complete data pipeline
+        run: |
+          python scripts/build_language_registry.py
+          python scripts/normalize.py
+          python scripts/generate_web_data.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Build production site
+        run: npm run build

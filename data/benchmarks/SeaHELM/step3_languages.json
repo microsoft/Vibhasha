@@ -1,0 +1,78 @@
+{
+  "total_languages": 5,
+  "languages": {
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": [
+        "PH Elections Sentiment",
+        "Belebele",
+        "XNLI",
+        "Balanced COPA",
+        "XL-Sum",
+        "FLORES",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "KALAHI",
+        "PH Elections Toxicity"
+      ]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": [
+        "NusaX",
+        "TyDi QA-GoldP",
+        "MABL",
+        "IndoNLI",
+        "XCOPA",
+        "XL-Sum",
+        "FLORES",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "LINDSEA",
+        "MLHSD"
+      ]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": [
+        "IndicSentiment",
+        "IndicQA",
+        "IndicXNLI",
+        "XCOPA",
+        "XL-Sum",
+        "FLORES",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "LINDSEA"
+      ]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": [
+        "Wisesight",
+        "XQUAD",
+        "XNLI",
+        "XCOPA",
+        "XL-Sum",
+        "FLORES",
+        "SEA-IFEval",
+        "MT-Bench Thai",
+        "Thai Toxicity Tweet"
+      ]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": [
+        "UIT-VSFC",
+        "XQUAD",
+        "XNLI",
+        "XCOPA",
+        "XL-Sum",
+        "FLORES",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "ViHSD"
+      ]
+    }
+  }
+}

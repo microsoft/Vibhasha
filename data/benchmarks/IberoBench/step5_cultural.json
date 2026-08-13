@@ -1,0 +1,76 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "CatCoLA", "EsCoLA", "GalCoLA", "TE-ca", "QNLI_eu", "ASSIN",
+        "Parafraseja", "Parafrases_gl", "CatalanQA", "CoQCat",
+        "EusExams", "EusProficiency", "EusTrivia", "EusReading",
+        "CaBREU", "Summarization_gl", "Phrases", "XL-Sum"
+      ],
+      "evidence": "Multiple datasets are natively authored: CatCoLA, EsCoLA, GalCoLA created independently for their languages; Basque datasets (EusExams, EusProficiency, EusTrivia, EusReading) from Etxaniz et al. 2024; Catalan datasets (TE-ca, CatalanQA, CoQCat, CaBREU, Parafraseja) from Gonzalez-Agirre et al. 2024; Portuguese ASSIN from Fonseca et al. 2016; XL-Sum from BBC Spanish news; Parafrases_gl, Summarization_gl, and Phrases newly created from scratch for IberoBench."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "COPA", "XStoryCloze", "MGSM", "XNLI", "WNLI", "PAWS-X",
+        "ARC_ca", "OpenBookQA", "PIQA", "Social IQA", "XQuAD",
+        "TruthfulQA_gl"
+      ],
+      "evidence": "Paper describes two sources of translated data: (1) pre-existing multilingual datasets translated from English (XNLI, PAWS-X, XQuAD, MGSM, XStoryCloze) and (2) newly translated datasets for IberoBench using professional human translators (COPA_es, XCOPA_eu, WNLI_es/eu, ARC_ca, OpenBookQA, PIQA, SiQA_ca, TruthfulQA_gl). Paper excluded MMLU because it was 'too closely tied to a specific source culture'."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "CatCoLA", "EsCoLA", "GalCoLA", "TE-ca", "QNLI_eu",
+        "ASSIN", "Parafraseja", "Parafrases_gl", "CatalanQA", "CoQCat",
+        "EusExams", "EusProficiency", "EusTrivia", "EusReading",
+        "CaBREU", "Summarization_gl", "Phrases", "XL-Sum"
+      ],
+      "details": {
+        "CatCoLA": "Natively authored Catalan linguistic acceptability corpus",
+        "EsCoLA": "Natively authored Spanish linguistic acceptability corpus",
+        "GalCoLA": "Natively authored Galician linguistic acceptability corpus",
+        "TE-ca": "Natively authored Catalan textual entailment",
+        "QNLI_eu": "Natively authored Basque NLI from BasqueGLUE",
+        "ASSIN": "Natively authored Portuguese semantic similarity and textual entailment",
+        "Parafraseja": "Natively authored Catalan paraphrase dataset",
+        "Parafrases_gl": "Created from Galician sources: Wikipedia, novels, parliamentary sessions",
+        "CatalanQA": "Natively authored Catalan QA",
+        "CoQCat": "Natively authored Catalan QA",
+        "EusExams": "From real Basque public examination questions",
+        "EusProficiency": "From Basque language proficiency exams",
+        "EusTrivia": "Basque trivia questions with cultural/general knowledge",
+        "EusReading": "Natively authored Basque reading comprehension",
+        "CaBREU": "Natively authored Catalan summarization dataset",
+        "Summarization_gl": "From three Galician newspapers (Que pasa na costa, Nós diario, Praza Pública)",
+        "Phrases": "Catalan-Valencian language adaptation by a Catalan philology expert with cultural accuracy",
+        "XL-Sum": "Spanish-language BBC news articles"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "Yes, for newly created content in IberoBench",
+      "evidence": "The paper emphasizes quality: human translations are done by professional translators in the target languages, with language-specific guidelines. For Basque translations, specific instructions address typological differences. The Phrases dataset was translated by 'an expert in Catalan philology'. Parafrases_gl was 'manually reviewed and annotated by two linguists'. CaBREU evaluation involved 'two native speakers (blind to the experimental setup)'. All IberoBench authors are affiliated with institutions in Spain (Barcelona, Santiago de Compostela, Basque Country)."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Barcelona Supercomputing Center (BSC-CNS)",
+        "Universitat Pompeu Fabra (UPF)",
+        "Centro Singular de Investigación en Tecnoloxías Intelixentes (CiTIUS-USC)",
+        "HiTZ Center - IXA, University of the Basque Country (UPV/EHU)"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Paper lists 15 authors from 4 institutions across Spain. Translations done by professional human translators. Specific expertise mentioned: Catalan philology expert for Phrases, two linguists for Parafrases_gl, two native speakers for CaBREU evaluation. No explicit reporting on demographics, compensation, or IRB review."
+    },
+    "english_centricity_notes": "IberoBench is explicitly designed to reduce English-centricity in LLM evaluation. The paper excludes MMLU because it 'includes U.S.-specific elements like laws and historical topics' and LAMBADA because it was 'too closely tied to a specific source culture'. Translation guidelines require cultural adaptation (dates to local metric systems, currency adaptation, name localization). However, approximately 12 out of 33 underlying datasets originate from English sources. The paper acknowledges: 'results obtained on the benchmark confirm the intuition that LLM performance is worse on Iberian languages than the results obtained for English'. European Portuguese variants of Spanish and Portuguese are prioritized over Latin American variants 'in line with the benchmark's regional focus'.",
+    "geographic_representation": {
+      "primary_region": "Iberian Peninsula (Spain and Portugal)",
+      "sub_regions": ["Catalonia", "Basque Country", "Galicia", "Spain (general)", "Portugal"],
+      "also_represented": ["Valencian Community (through Phrases dataset with Valencian variety)"],
+      "notably_excluded": ["Latin America", "Brazil", "Other Portuguese-speaking countries", "Other Spanish-speaking countries"],
+      "evidence": "Paper states: 'focused on the official languages of the Iberian peninsula: European Spanish, Catalan, Basque, Galician and European Portuguese'. European variants prioritized: 'Translations into Spanish and Portuguese were prioritized to adhere to the European variants of these languages, in line with the benchmark's regional focus.' Authors note it is 'a potentially valuable contribution to varieties of Spanish and Portuguese spoken outside the Iberian Peninsula (e.g., Brazilian Portuguese and the varieties of Spanish spoken in Latin America)' but these are not directly covered."
+    }
+  }
+}

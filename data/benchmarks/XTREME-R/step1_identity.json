@@ -1,0 +1,29 @@
+{
+  "benchmark_name": "XTREME-R",
+  "paper_id": "2021.emnlp-main.802",
+  "year": 2021,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "XTREME-R follows in its predecessor's footsteps by being massively multilingual, diverse, and accessible. It expands on XTREME by covering 50 typologically diverse languages and 10 challenging, diverse tasks.",
+  "total_languages_claimed": 50,
+  "total_datasets": 10,
+  "dataset_names": [
+    "XNLI",
+    "XCOPA",
+    "UD-POS",
+    "WikiANN-NER",
+    "XQuAD",
+    "MLQA",
+    "TyDiQA-GoldP",
+    "Tatoeba",
+    "Mewsli-X",
+    "LAReQA"
+  ],
+  "task_categories": [
+    "classification",
+    "structured prediction",
+    "question answering",
+    "retrieval",
+    "language-agnostic retrieval"
+  ],
+  "brief_description": "XTREME-R (XTREME Revisited) is a multilingual benchmark consisting of 10 natural language understanding tasks covering 50 typologically diverse languages, extending XTREME with more challenging tasks including language-agnostic retrieval, a multilingual diagnostic suite (MultiCheckList), and fine-grained evaluation capabilities via an interactive leaderboard."
+}

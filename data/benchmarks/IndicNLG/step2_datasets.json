@@ -1,0 +1,114 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "WikiBio (Biography Generation)",
+      "variant_name": null,
+      "variant_notes": "Available for 9 of 11 languages (excluding Gujarati and Marathi due to insufficient Wikipedia pages)",
+      "task_type": "data-to-text generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["Assamese", "Bengali", "Hindi", "Kannada", "Malayalam", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: crawled Wikipedia infoboxes and first sentences of Wikipedia biography pages, followed by preprocessing, cleaning, serialization, filtration, and cross-lingual overlap removal",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Researchers crawled Wikipedia dumps, parsed them, and extracted infoboxes and first sentences using the wptools API. Quality evaluation on a subset used native-language annotators."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Lebret et al. (2016) originally proposed the English WikiBio task",
+      "notes": "Total 57,426 examples across 9 languages. Dataset is ~6% the size of English WikiBio (728K examples). Human quality evaluation conducted on 4 representative languages (hi, bn, ml, kn) with 250 examples each."
+    },
+    {
+      "dataset_name": "Headline Generation",
+      "variant_name": null,
+      "variant_notes": "Hindi data crawled from news websites; other 10 languages adapted from IndicGLUE headline prediction dataset",
+      "task_type": "headline generation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: Hindi data crawled from news websites (Dainik Bhaskar, Naidunia, NDTV, Business Standard, IndiaTV); other languages adapted from IndicGLUE headline prediction dataset (Kakwani et al., 2020). Cleaned using regex, language detection tools, and overlapping ratio filtering.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Hindi data crawled from web pages of various domains. For other languages, used the Headline Prediction dataset from the IndicGLUE benchmark. Human quality evaluation conducted on 4 languages with 100 examples each."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "IndicGLUE (Kakwani et al., 2020) for non-Hindi languages",
+      "notes": "Total 1.31M examples. Hindi has the most (297K) and Malayalam the least (20K). Human evaluation showed Property A (match) >90% across languages."
+    },
+    {
+      "dataset_name": "Sentence Summarization",
+      "variant_name": null,
+      "variant_notes": "Derived from the Headline Generation dataset by extracting first-sentence/headline pairs",
+      "task_type": "sentence summarization",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: re-processed headline generation dataset by extracting first sentence of each article as input and headline as summary output, then filtered low-overlap pairs using overlapping ratio",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Derived automatically from the headline generation dataset. No separate human evaluation was conducted for this task."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Rush et al. (2015) introduced the sentence summarization paradigm using Gigaword",
+      "notes": "Total 431K examples. Far fewer than the 1.31M headline generation examples due to filtering. Training set ranges from 2.8K (Malayalam) to 78.6K (Hindi)."
+    },
+    {
+      "dataset_name": "Paraphrase Generation",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "paraphrase generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: paraphrases mined from Samanantar parallel corpus (Ramesh et al., 2022) using English as pivot language (pivoting approach). Sentences sharing the same English translation are treated as paraphrases. Cleaned by removing duplicates, filtering high-overlap pairs (>0.8 n-gram overlap ratio), and selecting up to 5 diverse references per input.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Paraphrases extracted automatically from the Samanantar parallel corpus using the pivoting approach. Human quality evaluation conducted on 4 languages (hi, bn, ml, kn) with 250 examples each."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Samanantar corpus (Ramesh et al., 2022) used as source parallel data",
+      "notes": "Total 5.57M examples, making this the largest task in the benchmark. Assamese is extremely low-resource with no training data (only 4,420 validation and test examples each). Each example can have up to 5 reference paraphrases."
+    },
+    {
+      "dataset_name": "Question Generation",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "question generation",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "automated: SQuAD v1 English QA data repurposed for question generation (context sentence + answer as input, question as output), then machine-translated to 11 Indic languages using IndicTrans (Ramesh et al., 2022)",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Dataset created by machine-translating repurposed SQuAD v1 data. No separate human evaluation was conducted for this task due to limited annotation budget."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "SQuAD v1 (Rajpurkar et al., 2016); translated using IndicTrans (Ramesh et al., 2022)",
+      "notes": "Total 1.08M examples (98K per language). The paper acknowledges this dataset 'might consist of translationese' in the Limitations section. Train/dev/test splits: 69,979/17,495/10,553 per language."
+    }
+  ]
+}

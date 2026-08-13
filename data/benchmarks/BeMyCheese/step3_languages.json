@@ -1,0 +1,65 @@
+{
+  "total_languages": 15,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Arabic": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Brazilian Portuguese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Cantonese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Czech": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Dutch": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Hebrew": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Hindi": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Japanese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Korean": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Mandarin": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Russian": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Spanish": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Swahili": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Urdu": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    }
+  }
+}

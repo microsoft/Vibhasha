@@ -1,0 +1,204 @@
+{
+  "benchmark_name": "BeMyCheese",
+  "paper_id": "2602.04729v1",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce the first multilingual, human-annotated benchmark designed explicitly to evaluate cultural nuance and resonance in machine translation",
+  "total_languages_claimed": 15,
+  "total_datasets": 1,
+  "dataset_names": [
+    "BeMyCheese"
+  ],
+  "task_categories": [
+    "machine translation evaluation",
+    "cultural localisation evaluation"
+  ],
+  "brief_description": "A large-scale human evaluation benchmark for assessing cultural localisation in machine translation by multilingual LLMs. Evaluates 7 LLMs across 15 target languages with 5 native-speaker raters per language on both full-text translations and segment-level culturally nuanced language (idioms, puns, holidays, cultural concepts) on a 0-3 ordinal quality scale.",
+  "datasets": [
+    {
+      "dataset_name": "BeMyCheese",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "machine translation cultural localisation evaluation",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 15,
+      "language_list": [
+        "Afrikaans",
+        "Arabic",
+        "Brazilian Portuguese",
+        "Cantonese",
+        "Czech",
+        "Dutch",
+        "Hebrew",
+        "Hindi",
+        "Japanese",
+        "Korean",
+        "Mandarin",
+        "Russian",
+        "Spanish",
+        "Swahili",
+        "Urdu"
+      ],
+      "annotation_method": "Human evaluation by 5 native-speaker raters per language (N=75 total) scoring on a 0-3 ordinal scale for full-text criteria (content fidelity, style fidelity, audience appropriateness, overall quality) and segment-level cultural nuance ratings with NA option for untranslated segments. Produced 13,125 segment-specific annotations.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Appen",
+        "creator_demographics_reported": true,
+        "compensation_reported": false,
+        "evidence": "Authors are from Appen (a data annotation company). Rater demographics (age, gender, education) reported in Appendix B1. No mention of compensation. Ratings collected via 'our proprietary data annotation software (redacted for anonymity)' (Section 3.5)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Source texts are 5 English e-commerce marketing emails adapted from authentic commercial campaigns. Each email contains puns, holiday-specific phrases, idiomatic expressions, culturally specific references, and brand voice. 25 culturally nuanced segments extracted (13 cultural concepts, 4 idioms, 4 holidays, 4 puns). 7 LLMs generated translations that were then human-evaluated. Builds on a pilot study of 87 translations across 20 languages (Anonymous, 2025)."
+    }
+  ],
+  "total_languages": 15,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Arabic": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Brazilian Portuguese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Cantonese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Czech": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Dutch": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Hebrew": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Hindi": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Japanese": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Korean": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Mandarin": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Russian": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Spanish": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Swahili": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    },
+    "Urdu": {
+      "iso_code": null,
+      "datasets_present_in": ["BeMyCheese"]
+    }
+  },
+  "assessments": {
+    "BeMyCheese": {
+      "translated": {
+        "value": true,
+        "evidence": "The benchmark evaluates English-to-target-language machine translations. 'We evaluate multilingual LLMs on their ability to translate and culturally localise English marketing emails into 15 target languages.' (Section 3). Source texts are English; all evaluated content in target languages is LLM-generated translations from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "'We recruited five native speakers per language (N = 75 total) across 15 locales... Participants reside in the region they evaluated and are fluent speakers of both English and their native language. Each rater evaluated translations only for their native language.' (Section 3.1)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "'We introduce the first multilingual, human-annotated benchmark designed explicitly to evaluate cultural nuance and resonance in machine translation' (Section 1.1). Segments evaluated include idioms, puns, holidays, and culturally embedded concepts. Raters scored both cultural appropriateness and audience appropriateness, and participants reside in the target locale. (Sections 3.1, 3.3, 3.4)",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Inter-rater reliability assessed via Krippendorff's alpha (ordinal) and Gwet's AC2 with quadratic weights. Overall Krippendorff's alpha = 0.448 for segment-level ratings, indicating moderate agreement. IRR varies substantially by language, model, and segment category, with lower agreement for figurative language (idioms, puns). Detailed IRR tables in Appendix C."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The benchmark evaluates translations FROM English; source texts are English marketing emails. The evaluation framework and annotation scheme are original, but the evaluated content originates from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["BeMyCheese"],
+      "evidence": "Source texts are 5 English e-commerce marketing emails. LLMs translated these into 15 target languages. 'Each model received the same English source text and a fixed prompt instructing it to Translate the following email for use in [language] in [country/region].' (Section 3)"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["BeMyCheese"],
+      "details": {
+        "BeMyCheese": "Explicitly designed to evaluate cultural localisation. Segments include idioms, puns, holidays, and culturally embedded concepts. Raters are native speakers residing in-region who evaluate cultural appropriateness and audience relevance."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "'We recruited five native speakers per language (N = 75 total)... Participants reside in the region they evaluated and are fluent speakers of both English and their native language. Each rater evaluated translations only for their native language.' (Section 3.1)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers"],
+      "total_annotators_reported": 75,
+      "affiliations": ["Appen"],
+      "demographics_reported": true,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "Authors are from Appen (data annotation company). 75 raters (5 per language × 15 languages). Participant demographics (age, gender, education level) fully reported in Appendix B1. No mention of compensation, IRB approval, or ethics review in the paper. 'Ratings were collected using our proprietary data annotation software (redacted for anonymity).' (Section 3.5)"
+    },
+    "english_centricity_notes": "The benchmark is inherently English-centric by design: it evaluates English-to-many translation of English marketing content (e.g., American holidays like Labor Day, Valentine's Day; US-specific concepts like koozies, Zoom calls). The paper acknowledges this: 'The benchmark focuses on English-to-many translation within a marketing email domain' (Section 8, Limitations). Source texts contain North American English cultural references.",
+    "geographic_representation": {
+      "primary_region": "Global (diverse locales)",
+      "sub_regions": [
+        "South Africa (Afrikaans)",
+        "Egypt (Arabic)",
+        "Brazil (Brazilian Portuguese)",
+        "Hong Kong (Cantonese)",
+        "Czech Republic (Czech)",
+        "Netherlands (Dutch)",
+        "Israel (Hebrew)",
+        "India (Hindi)",
+        "Japan (Japanese)",
+        "South Korea (Korean)",
+        "Taiwan (Mandarin)",
+        "Kazakhstan (Russian)",
+        "Mexico (Spanish)",
+        "Kenya (Swahili)",
+        "Pakistan (Urdu)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "No languages from Oceania, indigenous Americas, Southeast Asia, or Central Asia",
+        "No European Romance languages besides Portuguese and Spanish",
+        "Limited representation of African languages (only Afrikaans and Swahili)"
+      ],
+      "evidence": "Languages and locales listed in Section 3.1: 'Afrikaans (ZA), Arabic (EG), Brazilian Portuguese (BR), Cantonese (HK), Czech (CZ), Dutch (NL), Hebrew (IL), Hindi (IN), Japanese (JP), Korean (KR), Mandarin (TW), Russian (KZ), Spanish (MX), Swahili (KE), and Urdu (PK).'"
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": null
+  }
+}

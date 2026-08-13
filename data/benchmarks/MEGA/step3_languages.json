@@ -1,0 +1,289 @@
+{
+  "total_languages": 70,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "af",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Amharic": {
+      "iso_code": "am",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "XStoryCloze", "XQuAD", "TyDiQA-GoldP", "MLQA", "UDPOS", "WikiANN", "WinoMT", "XLSum"]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA"]
+    },
+    "Azerbaijani": {
+      "iso_code": "az",
+      "datasets_present_in": ["WikiANN", "XLSum"]
+    },
+    "Basque": {
+      "iso_code": "eu",
+      "datasets_present_in": ["XCOPA", "XStoryCloze", "UDPOS", "WikiANN"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["Indic-XNLI", "TyDiQA-GoldP", "WikiANN", "IndicQA", "XLSum"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "UDPOS", "WikiANN"]
+    },
+    "Burmese": {
+      "iso_code": "my",
+      "datasets_present_in": ["XStoryCloze", "WikiANN", "XLSum"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "XStoryCloze"]
+    },
+    "Chinese (Simplified)": {
+      "iso_code": "zh-Hans",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Chinese (Traditional)": {
+      "iso_code": "zh-Hant",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI", "PAWS-X", "XCOPA", "XStoryCloze", "XQuAD", "TyDiQA-GoldP", "MLQA", "UDPOS", "WikiANN", "GLUECoS NLI", "EN-ES-CS", "XLSum"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["XCOPA", "UDPOS", "WikiANN"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["TyDiQA-GoldP", "UDPOS", "WikiANN"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "PAWS-X", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "XLSum"]
+    },
+    "Georgian": {
+      "iso_code": "ka",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "XQuAD", "UDPOS", "WikiANN"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN", "XLSum"]
+    },
+    "Haitian Creole": {
+      "iso_code": "ht",
+      "datasets_present_in": ["XCOPA"]
+    },
+    "Hausa": {
+      "iso_code": "ha",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Hebrew": {
+      "iso_code": "he",
+      "datasets_present_in": ["UDPOS", "WikiANN", "WinoMT"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "Indic-XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "IndicQA", "GLUECoS NLI", "XStoryCloze", "XLSum"]
+    },
+    "Hungarian": {
+      "iso_code": "hu",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Igbo": {
+      "iso_code": "ig",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["XCOPA", "XStoryCloze", "TyDiQA-GoldP", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["XCOPA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PAWS-X", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Javanese": {
+      "iso_code": "jv",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA"]
+    },
+    "Kazakh": {
+      "iso_code": "kk",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Kirundi": {
+      "iso_code": "rn",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["PAWS-X", "TyDiQA-GoldP", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Kyrgyz": {
+      "iso_code": "ky",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Lithuanian": {
+      "iso_code": "lt",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Malay": {
+      "iso_code": "ms",
+      "datasets_present_in": ["WikiANN"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Nepali": {
+      "iso_code": "ne",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Nigerian Pidgin": {
+      "iso_code": "pcm",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Oriya": {
+      "iso_code": "or",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA"]
+    },
+    "Oromo": {
+      "iso_code": "om",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Pashto": {
+      "iso_code": "ps",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["UDPOS", "WikiANN", "XLSum"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["UDPOS", "WikiANN", "Jigsaw", "XLSum"]
+    },
+    "Punjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN", "XLSum"]
+    },
+    "Quechua": {
+      "iso_code": "qu",
+      "datasets_present_in": ["XCOPA", "WikiANN"]
+    },
+    "Romanian": {
+      "iso_code": "ro",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "XStoryCloze", "XLSum"]
+    },
+    "Scottish Gaelic": {
+      "iso_code": "gd",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Serbian (Cyrillic)": {
+      "iso_code": "sr-Cyrl",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Serbian (Latin)": {
+      "iso_code": "sr-Latn",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Sinhala": {
+      "iso_code": "si",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Somali": {
+      "iso_code": "so",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "EN-ES-CS", "XStoryCloze", "XLSum"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "XCOPA", "TyDiQA-GoldP", "WikiANN", "XStoryCloze", "XLSum"]
+    },
+    "Tagalog": {
+      "iso_code": "tl",
+      "datasets_present_in": ["UDPOS", "WikiANN"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["Indic-XNLI", "XCOPA", "IndicQA", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["Indic-XNLI", "TyDiQA-GoldP", "IndicQA", "UDPOS", "WikiANN", "XStoryCloze", "XLSum"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "XCOPA", "XQuAD", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "XCOPA", "XQuAD", "UDPOS", "WikiANN", "Jigsaw", "XLSum"]
+    },
+    "Ukrainian": {
+      "iso_code": "uk",
+      "datasets_present_in": ["UDPOS", "WikiANN", "WinoMT", "XLSum"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Uzbek": {
+      "iso_code": "uz",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "XLSum"]
+    },
+    "Welsh": {
+      "iso_code": "cy",
+      "datasets_present_in": ["XLSum"]
+    },
+    "Wolof": {
+      "iso_code": "wo",
+      "datasets_present_in": ["UDPOS"]
+    },
+    "Yoruba": {
+      "iso_code": "yo",
+      "datasets_present_in": ["UDPOS", "WikiANN", "XLSum"]
+    }
+  }
+}

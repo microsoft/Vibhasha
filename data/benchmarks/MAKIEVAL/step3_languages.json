@@ -1,0 +1,57 @@
+{
+  "total_languages": 13,
+  "languages": {
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Simplified Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Traditional Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["MAKIEVAL"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["MAKIEVAL"]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "CL-IFEval",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "instruction following",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 6,
+      "language_list": ["English", "French", "Spanish", "Hindi", "Arabic", "Yoruba"],
+      "annotation_method": "Machine translation via Google Translate followed by native-speaker validation and correction against a structured rubric; 541 English IFEval prompts translated, filtered to 371 prompts to remove script-dependent constraints (e.g., case distinction) not applicable in Arabic/Hindi scripts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Brown University; University of California, Berkeley",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "For each language, we recruited at least two native speakers volunteers to validate translations. Validators were recruited primarily from students studying at a US-based university. For Yoruba, we additionally recruited a native speaker based in Nigeria to ensure dialectal and cultural appropriateness in a low-resource setting. (Section 3)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Zhou et al. (2023) IFEval — ArXiv:2311.07911",
+      "notes": "371 validated prompts per language (after filtering from 541). 7 instruction templates with 31–163 samples per template. Evaluation computes prompt-level and instruction-level strict/loose accuracy. Datasets publicly available at https://huggingface.co/datasets/vojewale/Cross-lingualIFEval"
+    },
+    {
+      "dataset_name": "CL-GSM Symbolic",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "math reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 6,
+      "language_list": ["English", "French", "Spanish", "Hindi", "Arabic", "Yoruba"],
+      "annotation_method": "Machine translation via Google Translate of 100 GSM-Symbolic templates followed by native-speaker validation; each template instantiated into 50 variants per language yielding 5,000 QA pairs per language",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Brown University; University of California, Berkeley",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "For each language, we recruited at least two native speakers volunteers to validate translations. Validators were recruited primarily from students studying at a US-based university. For Yoruba, we additionally recruited a native speaker based in Nigeria to ensure dialectal and cultural appropriateness in a low-resource setting. (Section 3)"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Mirzadeh et al. (2024) GSM-Symbolic",
+      "notes": "100 templates × 50 variants = 5,000 QA pairs per language. Evaluation uses a random sample of 500 items per language under the native 8-shot GSM8K setting. Datasets publicly available at https://huggingface.co/datasets/vojewale/Cross-lingualGSMSymbolic"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "AfriSentiClassification",
+        "BulgarianStoreReviewSentimentClassification",
+        "CSFDSKMovieReviewSentimentClassification",
+        "CataloniaTweetClassification",
+        "CzechProductReviewSentimentClassification",
+        "DalajClassification",
+        "EstonianValenceClassification",
+        "FilipinoShopeeReviewsClassification",
+        "GreekLegalCodeClassification",
+        "GujaratiNewsClassification",
+        "IndicLangClassification",
+        "IndonesianIdClickbaitClassification",
+        "IsiZuluNewsClassification",
+        "ItaCaseholdClassification",
+        "KorSarcasmClassification",
+        "KurdishSentimentClassification",
+        "MacedonianTweetSentimentClassification",
+        "MasakhaNEWSClassification",
+        "NepaliNewsClassification",
+        "NusaParagraphEmotionClassification",
+        "NusaX-senti",
+        "OdiaNewsClassification",
+        "PunjabiNewsClassification",
+        "SentimentAnalysisHindi",
+        "SinhalaNewsClassification",
+        "SiswatiNewsClassification",
+        "SwahiliNewsClassification",
+        "SwissJudgementClassification",
+        "TswanaNewsClassification",
+        "WikiClusteringP2P.v2",
+        "WikipediaRetrievalMultilingual",
+        "WikipediaRerankingMultilingual",
+        "AlloprofReranking",
+        "RuBQReranking",
+        "T2Reranking",
+        "VoyageMMarcoReranking",
+        "ArmenianParaphrasePC",
+        "CTKFactsNLI",
+        "TERRa",
+        "indonli",
+        "FaroeseSTS",
+        "FinParaSTS",
+        "JSICK",
+        "IndicCrosslingualSTS",
+        "SemRel24STS",
+        "BengaliSentimentAnalysis",
+        "MalayalamNewsClassification",
+        "SanskritShlokasClassification",
+        "UrduRomanSentimentClassification",
+        "CEDRClassification",
+        "KorHateSpeechMLClassification",
+        "MalteseNewsClassification",
+        "MultiEURLEXMultilabelClassification",
+        "BrazilianToxicTweetsClassification",
+        "MIRACLRetrievalHardNegatives",
+        "PublicHealthQA"
+      ],
+      "evidence": "Many datasets are natively authored in their target languages from local sources (news, social media, reviews, legal documents). The paper specifies sample creation methods per dataset; those marked 'found' or 'created' without translation are native. MMTEB explicitly 'reduce[d] this selection by removing machine-translated datasets' for MTEB(Multilingual)."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "SIB200ClusteringS2S",
+        "MassiveIntentClassification",
+        "MassiveScenarioClassification",
+        "PawsXPairClassification",
+        "XNLI",
+        "FloresBitextMining",
+        "NTREXBitextMining",
+        "IndicGenBenchFloresBitextMining",
+        "STSBenchmark",
+        "GermanSTSBenchmark",
+        "SICK-R-PL",
+        "RomaniBibleClustering"
+      ],
+      "evidence": "Datasets with sample creation listed as 'human-translated', 'human-translated and localized', or 'machine-translated and verified'. SIB200 explicitly flagged: 'labels from English samples are transferred to their translations, potentially introducing bias towards English'. STSBenchmark listed as 'machine-translated and verified'. Machine-translated datasets were filtered OUT of MTEB(Multilingual) but human translations were retained."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "AfriSentiClassification",
+        "MasakhaNEWSClassification",
+        "MasakhaNEWSClusteringS2S",
+        "NusaParagraphEmotionClassification",
+        "NusaX-senti",
+        "NusaTranslationBitextMining",
+        "NusaXBitextMining",
+        "WikiClusteringP2P.v2",
+        "SwissJudgementClassification",
+        "MultiEURLEXMultilabelClassification",
+        "SemRel24STS",
+        "IndicCrosslingualSTS",
+        "TwitterHjerneRetrieval",
+        "MIRACLRetrievalHardNegatives",
+        "WikipediaRetrievalMultilingual",
+        "Various native news/sentiment classification datasets"
+      ],
+      "details": {
+        "African languages": "AfriSentiClassification (14 languages), MasakhaNEWSClassification (16 languages), NollySentiBitextMining - natively authored African content",
+        "Indonesian languages": "NusaParagraphEmotionClassification, NusaX-senti, NusaTranslationBitextMining - Indonesian local languages",
+        "Indic languages": "IndicCrosslingualSTS, various Indic classification datasets, IndicLangClassification - local Indic content",
+        "European languages": "SwissJudgementClassification, MultiEURLEX, ScalaClassification - local legal/news content",
+        "General note": "Many native-language news classification and sentiment datasets are inherently culturally grounded as they use local content"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper does not systematically report whether annotators are native speakers of target languages. Individual source papers may contain this information.",
+      "evidence": "MMTEB is a large aggregation of 500+ datasets from diverse sources. The paper requires metadata fields including 'annotation_creators' (expert-annotated, human-annotated, derived, LM-generated) but does not track native speaker status. Contributors who reviewed tasks 'spoke the target language whenever possible.'"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "expert-annotated",
+        "human-annotated",
+        "derived",
+        "LM-generated",
+        "LM-generated and reviewed"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "59 institutional affiliations across 20+ countries",
+        "Aarhus University",
+        "McGill University",
+        "Stanford University",
+        "Johns Hopkins University",
+        "MBZUAI",
+        "Cohere For AI",
+        "Jina AI",
+        "Microsoft Research",
+        "Princeton University",
+        "various individual contributors"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "MMTEB involved 70+ contributors across 59 affiliations. 'Contributors include native speakers from diverse linguistic backgrounds, NLP practitioners, academic and industry researchers, and enthusiasts.' A point-based system was used for authorship (10 points threshold). The paper acknowledges: 'equal points were awarded for dataset submissions regardless of effort.' Ethical considerations mention environmental impact but not annotator IRB/compensation."
+    },
+    "english_centricity_notes": "The paper is self-aware about English centricity. Limitations section explicitly discusses 'English Leakage': 'While MMTEB filters out machine-translated datasets, it permits (human) translations. This inclusion leads to tasks like SIB200ClusteringS2S, where labels from English samples are transferred to their translations, potentially introducing bias towards English.' The distribution is heavily skewed: English has 303 tasks vs. 6-7 tasks for many languages. The paper acknowledges: 'the distribution is skewed toward high-resource languages, with low-resource languages being better represented in specific task categories like bitext-mining and classification.' Instruction retrieval tasks are English-only. Many high-coverage datasets (FloresBitextMining, SIB200) have English origins.",
+    "geographic_representation": {
+      "primary_region": "Global (contributors from 20+ countries across all continents)",
+      "sub_regions": [
+        "Western Europe",
+        "Northern Europe",
+        "Eastern Europe",
+        "South Asia",
+        "East Asia",
+        "Southeast Asia",
+        "Sub-Saharan Africa",
+        "North America"
+      ],
+      "also_represented": [
+        "Middle East / North Africa (Arabic, Hebrew, Persian, Turkish)",
+        "Central Asia (Kazakh, Kirghiz, Uighur)",
+        "Oceania (via BibleNLPBitextMining limited coverage)"
+      ],
+      "notably_excluded": [
+        "Indigenous Americas (limited coverage, primarily via bitext mining)",
+        "Central Asia (limited beyond Turkic languages)",
+        "Oceanic languages (very limited coverage beyond Bible translations)",
+        "Sign languages"
+      ],
+      "evidence": "Language distribution from Table 8 shows Indo-European dominance. African languages represented via AfriSenti, MasakhaNEWS (16 languages), and other datasets. South/Southeast Asian via Indic benchmark (30 languages) and NusaCrowd datasets. The paper encourages 'future collaborations to fill these gaps and enhance language diversity.'"
+    }
+  }
+}

@@ -1,0 +1,613 @@
+{
+  "benchmark_name": "MEGA",
+  "paper_id": "EMNLP-2023-MEGA",
+  "year": 2023,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "We present the first comprehensive benchmarking of generative LLMs - MEGA, which evaluates models on standard NLP benchmarks, covering 16 NLP datasets across 70 typologically diverse languages.",
+  "total_languages_claimed": 70,
+  "total_datasets": 16,
+  "dataset_names": [
+    "XNLI",
+    "Indic-XNLI",
+    "GLUECoS NLI",
+    "PAWS-X",
+    "XCOPA",
+    "XStoryCloze",
+    "TyDiQA-GoldP",
+    "MLQA",
+    "XQuAD",
+    "IndicQA",
+    "UDPOS",
+    "PAN-X (WikiANN)",
+    "WinoMT",
+    "EN-ES-CS",
+    "Jigsaw",
+    "XLSum"
+  ],
+  "task_categories": [
+    "Natural Language Inference",
+    "Paraphrase Identification",
+    "Commonsense Reasoning",
+    "Question Answering",
+    "Part of Speech Tagging",
+    "Named Entity Recognition",
+    "Summarization",
+    "Sentiment Analysis",
+    "Toxicity Classification",
+    "Gender Bias in Machine Translation"
+  ],
+  "brief_description": "MEGA (Multilingual Evaluation of Generative AI) is the first large-scale benchmarking of generative LLMs across multilingual settings, evaluating GPT-3.5, GPT-4, and BLOOMZ on 16 existing NLP datasets spanning 70 typologically diverse languages covering 21 language families, with analysis of prompting strategies, performance disparities across languages, and test data contamination.",
+  "datasets": [
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 15,
+      "language_list": ["English", "Arabic", "Bulgarian", "German", "Greek", "Spanish", "French", "Hindi", "Russian", "Swahili", "Thai", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "Professional translation of English MultiNLI corpus into 14 languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XNLI (Conneau et al., 2018) is a dataset for cross-lingual Natural Language Inference, which consists of professional translations of the MNLI corpus into 14 languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al., 2018",
+      "notes": null
+    },
+    {
+      "dataset_name": "XNLI",
+      "variant_name": "Indic-XNLI",
+      "variant_notes": "Version of XNLI translated to 11 Indian languages",
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English (via XNLI)",
+      "translation_method": "machine",
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Oriya", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "Machine Translation of XNLI followed by validation by native speakers",
+      "data_creator_info": {
+        "creator_type": "machine_translation_with_native_speaker_validation",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "IndicXNLI (Aggarwal et al., 2022) that translates the XNLI dataset into 11 Indic languages by using Machine Translation, followed by validation by native speakers."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Aggarwal et al., 2022",
+      "notes": null
+    },
+    {
+      "dataset_name": "GLUECoS NLI",
+      "variant_name": null,
+      "variant_notes": "Code-mixed Hindi-English NLI from GLUECoS benchmark",
+      "task_type": "Natural Language Inference",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Manual creation: Bollywood (Hindi) movie conversations as premises with manually created hypotheses in code-mixed English-Hindi",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "GLUECoS-NLI (Khanuja et al., 2020a) is a code-mixed NLI dataset in Hindi-English, consisting of Bollywood (Hindi) movie conversations as premises, with manually created hypotheses."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Khanuja et al., 2020a; Khanuja et al., 2020b",
+      "notes": "Code-mixed English-Hindi data"
+    },
+    {
+      "dataset_name": "PAWS-X",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Paraphrase Identification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": ["English", "German", "Spanish", "French", "Japanese", "Korean", "Chinese"],
+      "annotation_method": "Professional translation from English PAWS dataset into six typologically diverse languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "PAWS-X (Yang et al., 2019b) is a paraphrase identification dataset professionally translated from the PAWS dataset into six typologically diverse languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Yang et al., 2019a",
+      "notes": null
+    },
+    {
+      "dataset_name": "XCOPA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 10,
+      "language_list": ["English", "Estonian", "Haitian Creole", "Indonesian", "Italian", "Quechua", "Swahili", "Tamil", "Thai", "Turkish"],
+      "annotation_method": "Translation of English COPA dataset into typologically diverse languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XCOPA (Ponti et al., 2020) is a commonsense reasoning dataset, which is a translation of the COPA dataset into 11 typologically diverse languages, including very low-resource languages such as Eastern Apurímac Quechua and Haitian Creole."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Ponti et al., 2020",
+      "notes": "MEGA evaluates on 10 of the XCOPA languages"
+    },
+    {
+      "dataset_name": "XStoryCloze",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 11,
+      "language_list": ["Arabic", "English", "Spanish", "Basque", "Hindi", "Indonesian", "Burmese", "Russian", "Swahili", "Telugu", "Chinese"],
+      "annotation_method": "Professional translation of English StoryCloze dataset into 10 typologically diverse languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XStoryCloze (Lin et al., 2022b) is created by translating the English StoryCloze dataset using professional translators into 10 typologically diverse languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Lin et al., 2022a",
+      "notes": null
+    },
+    {
+      "dataset_name": "TyDiQA-GoldP",
+      "variant_name": null,
+      "variant_notes": "Gold Passage subtask of TyDiQA",
+      "task_type": "Question Answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["English", "Arabic", "Bengali", "Finnish", "Indonesian", "Korean", "Russian", "Swahili", "Telugu"],
+      "annotation_method": "Natively collected information-seeking QA by speakers of typologically diverse languages",
+      "data_creator_info": {
+        "creator_type": "native_speakers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "TyDiQA (Clark et al., 2020) is a QA dataset covering 11 typologically diverse languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020",
+      "notes": "MEGA evaluates on 9 of the TyDiQA languages using the Gold-P subtask. Evaluation on validation data since no public test set."
+    },
+    {
+      "dataset_name": "MLQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Question Answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": ["English", "Arabic", "German", "Spanish", "Hindi", "Vietnamese", "Chinese"],
+      "annotation_method": "Professional translation of extractive QA dataset into 7 languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "MLQA (Lewis et al., 2020) is an extractive QA dataset translated into 7 languages by professional translators."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Lewis et al., 2020",
+      "notes": "No training data available for MLQA; MEGA uses SQuAD training data for English few-shot examples"
+    },
+    {
+      "dataset_name": "XQuAD",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Question Answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 11,
+      "language_list": ["English", "Arabic", "German", "Greek", "Spanish", "Hindi", "Russian", "Thai", "Turkish", "Vietnamese", "Chinese"],
+      "annotation_method": "Professional translation of a subset of the SQuAD dataset into 10 languages",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XQuAD (Artetxe et al., 2020) consists of professional translations of a subset of the SQuaD dataset into 10 languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Artetxe et al., 2020",
+      "notes": "Only validation data available publicly; MEGA evaluates on validation set. Cross-lingual setup only (English few-shot examples)."
+    },
+    {
+      "dataset_name": "IndicQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Question Answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Oriya", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "Manually curated cloze-style reading comprehension from Wikipedia articles on Indic topics",
+      "data_creator_info": {
+        "creator_type": "native_speakers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "IndicQA (Doddapaneni et al., 2022) is a manually curated cloze-style reading comprehension dataset... context paragraphs are chosen from Wikipedia articles whose topics are closely related to Indic culture, history, etc."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Doddapaneni et al., 2022",
+      "notes": "Part of IndicXTREME benchmark. Context paragraphs related to Indic culture, history."
+    },
+    {
+      "dataset_name": "Universal Dependencies POS",
+      "variant_name": "UDPOS",
+      "variant_notes": "Part of Speech Tagging from Universal Dependencies 2.5 via XTREME benchmark",
+      "task_type": "Part of Speech Tagging",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 38,
+      "language_list": ["English", "Afrikaans", "Arabic", "Bulgarian", "German", "Greek", "Spanish", "Estonian", "Basque", "Persian", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Kazakh", "Korean", "Lithuanian", "Marathi", "Dutch", "Polish", "Portuguese", "Romanian", "Russian", "Tamil", "Telugu", "Thai", "Tagalog", "Turkish", "Ukrainian", "Urdu", "Vietnamese", "Wolof", "Yoruba", "Chinese"],
+      "annotation_method": "Expert linguistic annotation of naturally-occurring text in Universal Dependencies treebanks",
+      "data_creator_info": {
+        "creator_type": "expert_linguists",
+        "creator_affiliation": "Universal Dependencies consortium",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "UDPOS (Zeman et al., 2020) is a dataset for Part of Speech Tagging taken from the Universal Dependencies 2.5 from the XTREME benchmark."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Nivre et al., 2018; Zeman et al., 2020; Hu et al., 2020",
+      "notes": "MEGA benchmarks a subset of the languages available in UDPOS. Evaluated on first 1000 examples per language."
+    },
+    {
+      "dataset_name": "WikiANN",
+      "variant_name": "PAN-X",
+      "variant_notes": "Also called WikiANN; used via XTREME benchmark",
+      "task_type": "Named Entity Recognition",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 48,
+      "language_list": ["English", "Afrikaans", "Arabic", "Azerbaijani", "Bulgarian", "Bengali", "German", "Greek", "Spanish", "Estonian", "Basque", "Persian", "Finnish", "French", "Gujarati", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Javanese", "Georgian", "Kazakh", "Korean", "Lithuanian", "Malayalam", "Marathi", "Malay", "Burmese", "Dutch", "Punjabi", "Polish", "Portuguese", "Quechua", "Romanian", "Russian", "Swahili", "Tamil", "Telugu", "Thai", "Tagalog", "Turkish", "Ukrainian", "Urdu", "Vietnamese", "Yoruba", "Chinese"],
+      "annotation_method": "Wikipedia sentences tagged via cross-lingual annotation projection for Person, Organization, and Location entities",
+      "data_creator_info": {
+        "creator_type": "automatic_with_human_verification",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "PANX (Pan et al., 2017) or WikiANN is a Named Entity Recognition dataset consisting of Wikipedia sentences tagged with Person, Organization and Location."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Pan et al., 2017",
+      "notes": "Evaluated on first 1000 examples per language due to large number of languages."
+    },
+    {
+      "dataset_name": "WinoMT",
+      "variant_name": null,
+      "variant_notes": "Concatenation of WinoGender and WinoBias datasets",
+      "task_type": "Gender Bias in Machine Translation",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 8,
+      "language_list": ["German", "French", "Spanish", "Arabic", "Hebrew", "Italian", "Ukrainian", "Russian"],
+      "annotation_method": "Concatenation of existing English datasets (WinoGender + WinoBias); LLMs prompted to translate English sentences into 8 target languages for gender bias evaluation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The WinoMT dataset (Stanovsky et al., 2019) is created by concatenating the WinoGender and WinoBias datasets. WinoMT dataset consists of 3888 English sentences with equal distribution of Male and Female genders."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Stanovsky et al., 2019; Rudinger et al., 2018; Zhao et al., 2018",
+      "notes": "English source sentences are translated to 8 target languages by the LLMs being evaluated; gender accuracy is assessed on translations."
+    },
+    {
+      "dataset_name": "EN-ES-CS",
+      "variant_name": null,
+      "variant_notes": "English-Spanish code-mixed sentiment analysis from GLUECoS benchmark",
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Spanish"],
+      "annotation_method": "Code-mixed English-Spanish tweets annotated with SentiStrength scores",
+      "data_creator_info": {
+        "creator_type": "researchers_with_automatic_annotation",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The EN-ES-CS Sentiment Analysis dataset (Vilares et al., 2016), part of the GLUECoS benchmark is a code-mixed dataset consisting of English-Spanish Tweets annotated with SentiStrength scores."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Vilares et al., 2016; Khanuja et al., 2020b",
+      "notes": "Code-mixed English-Spanish Twitter data"
+    },
+    {
+      "dataset_name": "Jigsaw",
+      "variant_name": null,
+      "variant_notes": "Jigsaw Multilingual Toxic Comment Classification",
+      "task_type": "Toxicity Classification",
+      "source": "mixed",
+      "source_language": "English (training data)",
+      "translation_method": null,
+      "num_languages": 6,
+      "language_list": ["Turkish", "Portuguese", "Russian", "Spanish", "Italian", "French"],
+      "annotation_method": "Online comments sourced from Wikipedia with crowdsourced toxicity labels; English training with multilingual test sets",
+      "data_creator_info": {
+        "creator_type": "crowdsource",
+        "creator_affiliation": "Jigsaw / Google",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The Jigsaw dataset contains online comments sourced from Wikipedia. The training data, which is in English, contains labels pertaining to the toxicity of the comment."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Kivlichan et al., 2020",
+      "notes": "Training data in English; test data in 6 languages for multilingual evaluation. MEGA evaluates cross-lingual and translate-test strategies."
+    },
+    {
+      "dataset_name": "XLSum",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Summarization",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 44,
+      "language_list": ["Amharic", "Arabic", "Azerbaijani", "Bengali", "Burmese", "Chinese (Simplified)", "Chinese (Traditional)", "English", "French", "Gujarati", "Hausa", "Hindi", "Igbo", "Indonesian", "Japanese", "Kirundi", "Korean", "Kyrgyz", "Marathi", "Nepali", "Nigerian Pidgin", "Oromo", "Pashto", "Persian", "Portuguese", "Punjabi", "Russian", "Scottish Gaelic", "Serbian (Cyrillic)", "Serbian (Latin)", "Sinhala", "Somali", "Spanish", "Swahili", "Tamil", "Telugu", "Thai", "Turkish", "Ukrainian", "Urdu", "Uzbek", "Vietnamese", "Welsh", "Yoruba"],
+      "annotation_method": "Naturally occurring article-summary pairs from BBC news in multiple languages",
+      "data_creator_info": {
+        "creator_type": "professional_journalists",
+        "creator_affiliation": "BBC",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The XLSum dataset contains article-summary pairs across 44 typologically diverse languages, ranging from high to very low-resource."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Hasan et al., 2021a",
+      "notes": "Evaluated on first 1000 examples per language. Natively authored content from BBC news."
+    }
+  ],
+  "total_languages": 70,
+  "languages": {
+    "Afrikaans": { "iso_code": "af", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Amharic": { "iso_code": "am", "datasets_present_in": ["XLSum"] },
+    "Arabic": { "iso_code": "ar", "datasets_present_in": ["XNLI", "XStoryCloze", "XQuAD", "TyDiQA-GoldP", "MLQA", "UDPOS", "WikiANN", "WinoMT", "XLSum"] },
+    "Assamese": { "iso_code": "as", "datasets_present_in": ["Indic-XNLI", "IndicQA"] },
+    "Azerbaijani": { "iso_code": "az", "datasets_present_in": ["WikiANN", "XLSum"] },
+    "Basque": { "iso_code": "eu", "datasets_present_in": ["XCOPA", "XStoryCloze", "UDPOS", "WikiANN"] },
+    "Bengali": { "iso_code": "bn", "datasets_present_in": ["Indic-XNLI", "TyDiQA-GoldP", "WikiANN", "IndicQA", "XLSum"] },
+    "Bulgarian": { "iso_code": "bg", "datasets_present_in": ["XNLI", "UDPOS", "WikiANN"] },
+    "Burmese": { "iso_code": "my", "datasets_present_in": ["XStoryCloze", "WikiANN", "XLSum"] },
+    "Chinese": { "iso_code": "zh", "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "XStoryCloze"] },
+    "Chinese (Simplified)": { "iso_code": "zh-Hans", "datasets_present_in": ["XLSum"] },
+    "Chinese (Traditional)": { "iso_code": "zh-Hant", "datasets_present_in": ["XLSum"] },
+    "Dutch": { "iso_code": "nl", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "English": { "iso_code": "en", "datasets_present_in": ["XNLI", "PAWS-X", "XCOPA", "XStoryCloze", "XQuAD", "TyDiQA-GoldP", "MLQA", "UDPOS", "WikiANN", "GLUECoS NLI", "EN-ES-CS", "XLSum"] },
+    "Estonian": { "iso_code": "et", "datasets_present_in": ["XCOPA", "UDPOS", "WikiANN"] },
+    "Finnish": { "iso_code": "fi", "datasets_present_in": ["TyDiQA-GoldP", "UDPOS", "WikiANN"] },
+    "French": { "iso_code": "fr", "datasets_present_in": ["XNLI", "PAWS-X", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "XLSum"] },
+    "Georgian": { "iso_code": "ka", "datasets_present_in": ["WikiANN"] },
+    "German": { "iso_code": "de", "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT"] },
+    "Greek": { "iso_code": "el", "datasets_present_in": ["XNLI", "XQuAD", "UDPOS", "WikiANN"] },
+    "Gujarati": { "iso_code": "gu", "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN", "XLSum"] },
+    "Haitian Creole": { "iso_code": "ht", "datasets_present_in": ["XCOPA"] },
+    "Hausa": { "iso_code": "ha", "datasets_present_in": ["XLSum"] },
+    "Hebrew": { "iso_code": "he", "datasets_present_in": ["UDPOS", "WikiANN", "WinoMT"] },
+    "Hindi": { "iso_code": "hi", "datasets_present_in": ["XNLI", "Indic-XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "IndicQA", "GLUECoS NLI", "XStoryCloze", "XLSum"] },
+    "Hungarian": { "iso_code": "hu", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Igbo": { "iso_code": "ig", "datasets_present_in": ["XLSum"] },
+    "Indonesian": { "iso_code": "id", "datasets_present_in": ["XCOPA", "XStoryCloze", "TyDiQA-GoldP", "UDPOS", "WikiANN", "XLSum"] },
+    "Italian": { "iso_code": "it", "datasets_present_in": ["XCOPA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw"] },
+    "Japanese": { "iso_code": "ja", "datasets_present_in": ["PAWS-X", "UDPOS", "WikiANN", "XLSum"] },
+    "Javanese": { "iso_code": "jv", "datasets_present_in": ["WikiANN"] },
+    "Kannada": { "iso_code": "kn", "datasets_present_in": ["Indic-XNLI", "IndicQA"] },
+    "Kazakh": { "iso_code": "kk", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Kirundi": { "iso_code": "rn", "datasets_present_in": ["XLSum"] },
+    "Korean": { "iso_code": "ko", "datasets_present_in": ["PAWS-X", "TyDiQA-GoldP", "UDPOS", "WikiANN", "XLSum"] },
+    "Kyrgyz": { "iso_code": "ky", "datasets_present_in": ["XLSum"] },
+    "Lithuanian": { "iso_code": "lt", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Malay": { "iso_code": "ms", "datasets_present_in": ["WikiANN"] },
+    "Malayalam": { "iso_code": "ml", "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN"] },
+    "Marathi": { "iso_code": "mr", "datasets_present_in": ["Indic-XNLI", "IndicQA", "UDPOS", "WikiANN", "XLSum"] },
+    "Nepali": { "iso_code": "ne", "datasets_present_in": ["XLSum"] },
+    "Nigerian Pidgin": { "iso_code": "pcm", "datasets_present_in": ["XLSum"] },
+    "Oriya": { "iso_code": "or", "datasets_present_in": ["Indic-XNLI", "IndicQA"] },
+    "Oromo": { "iso_code": "om", "datasets_present_in": ["XLSum"] },
+    "Pashto": { "iso_code": "ps", "datasets_present_in": ["XLSum"] },
+    "Persian": { "iso_code": "fa", "datasets_present_in": ["UDPOS", "WikiANN", "XLSum"] },
+    "Polish": { "iso_code": "pl", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Portuguese": { "iso_code": "pt", "datasets_present_in": ["UDPOS", "WikiANN", "Jigsaw", "XLSum"] },
+    "Punjabi": { "iso_code": "pa", "datasets_present_in": ["Indic-XNLI", "IndicQA", "WikiANN", "XLSum"] },
+    "Quechua": { "iso_code": "qu", "datasets_present_in": ["XCOPA", "WikiANN"] },
+    "Romanian": { "iso_code": "ro", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Russian": { "iso_code": "ru", "datasets_present_in": ["XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "XStoryCloze", "XLSum"] },
+    "Scottish Gaelic": { "iso_code": "gd", "datasets_present_in": ["XLSum"] },
+    "Serbian (Cyrillic)": { "iso_code": "sr-Cyrl", "datasets_present_in": ["XLSum"] },
+    "Serbian (Latin)": { "iso_code": "sr-Latn", "datasets_present_in": ["XLSum"] },
+    "Sinhala": { "iso_code": "si", "datasets_present_in": ["XLSum"] },
+    "Somali": { "iso_code": "so", "datasets_present_in": ["XLSum"] },
+    "Spanish": { "iso_code": "es", "datasets_present_in": ["XNLI", "PAWS-X", "XQuAD", "MLQA", "UDPOS", "WikiANN", "WinoMT", "Jigsaw", "EN-ES-CS", "XStoryCloze", "XLSum"] },
+    "Swahili": { "iso_code": "sw", "datasets_present_in": ["XNLI", "XCOPA", "TyDiQA-GoldP", "WikiANN", "XStoryCloze", "XLSum"] },
+    "Tagalog": { "iso_code": "tl", "datasets_present_in": ["UDPOS", "WikiANN"] },
+    "Tamil": { "iso_code": "ta", "datasets_present_in": ["Indic-XNLI", "XCOPA", "IndicQA", "UDPOS", "WikiANN", "XLSum"] },
+    "Telugu": { "iso_code": "te", "datasets_present_in": ["Indic-XNLI", "TyDiQA-GoldP", "IndicQA", "UDPOS", "WikiANN", "XStoryCloze", "XLSum"] },
+    "Thai": { "iso_code": "th", "datasets_present_in": ["XNLI", "XCOPA", "XQuAD", "UDPOS", "WikiANN", "XLSum"] },
+    "Turkish": { "iso_code": "tr", "datasets_present_in": ["XNLI", "XCOPA", "XQuAD", "UDPOS", "WikiANN", "Jigsaw", "XLSum"] },
+    "Ukrainian": { "iso_code": "uk", "datasets_present_in": ["UDPOS", "WikiANN", "WinoMT", "XLSum"] },
+    "Urdu": { "iso_code": "ur", "datasets_present_in": ["XNLI", "UDPOS", "WikiANN", "XLSum"] },
+    "Uzbek": { "iso_code": "uz", "datasets_present_in": ["XLSum"] },
+    "Vietnamese": { "iso_code": "vi", "datasets_present_in": ["XNLI", "XQuAD", "MLQA", "UDPOS", "WikiANN", "XLSum"] },
+    "Welsh": { "iso_code": "cy", "datasets_present_in": ["XLSum"] },
+    "Wolof": { "iso_code": "wo", "datasets_present_in": ["UDPOS"] },
+    "Yoruba": { "iso_code": "yo", "datasets_present_in": ["UDPOS", "WikiANN", "XLSum"] }
+  },
+  "assessments": {
+    "XNLI": {
+      "translated": { "value": true, "evidence": "Professional translations of the MNLI corpus into 14 languages.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Professional translators translated from English; not natively authored.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English MultiNLI corpus; content reflects English-language contexts.", "confidence": "high" },
+      "annotation_quality_notes": "Professional translation quality."
+    },
+    "Indic-XNLI": {
+      "translated": { "value": true, "evidence": "Machine Translation of XNLI followed by native speaker validation.", "confidence": "high" },
+      "native_annotators": { "value": "partial", "evidence": "Native speakers validated MT output but did not create content.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "Translated from English-origin XNLI data.", "confidence": "high" },
+      "annotation_quality_notes": "MT with native speaker validation."
+    },
+    "GLUECoS NLI": {
+      "translated": { "value": false, "evidence": "Code-mixed Hindi-English data from Bollywood movies with manually created hypotheses.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Data from Bollywood conversations; hypotheses manually created by bilingual speakers.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Bollywood movie conversations reflecting Indian cultural context.", "confidence": "high" },
+      "annotation_quality_notes": "Naturally occurring code-mixed data."
+    },
+    "PAWS-X": {
+      "translated": { "value": true, "evidence": "Professionally translated from English PAWS dataset.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Translated from English.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "English Wikipedia/Quora sources.", "confidence": "high" },
+      "annotation_quality_notes": "Professional translation quality."
+    },
+    "XCOPA": {
+      "translated": { "value": true, "evidence": "Translation of English COPA dataset.", "confidence": "high" },
+      "native_annotators": { "value": "partial", "evidence": "Translated by native speakers/translators but content from English.", "confidence": "medium" },
+      "culturally_grounded": { "value": false, "evidence": "English commonsense reasoning scenarios.", "confidence": "medium" },
+      "annotation_quality_notes": "Includes very low-resource languages."
+    },
+    "XStoryCloze": {
+      "translated": { "value": true, "evidence": "Professional translation of English StoryCloze.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Professional translators from English.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "English story scenarios.", "confidence": "high" },
+      "annotation_quality_notes": "Professional translation quality."
+    },
+    "TyDiQA-GoldP": {
+      "translated": { "value": false, "evidence": "Natively collected by information-seeking speakers.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Questions natively created by speakers of each target language.", "confidence": "high" },
+      "culturally_grounded": { "value": true, "evidence": "Natively collected reflecting genuine information needs.", "confidence": "high" },
+      "annotation_quality_notes": "Gold standard natively authored QA."
+    },
+    "MLQA": {
+      "translated": { "value": true, "evidence": "Translated into 7 languages by professional translators.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Professional translators from English.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "English Wikipedia source content.", "confidence": "medium" },
+      "annotation_quality_notes": "Professional translation with answer alignment."
+    },
+    "XQuAD": {
+      "translated": { "value": true, "evidence": "Professional translations of SQuAD subset.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "Professional translators from English.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "English SQuAD/Wikipedia sources.", "confidence": "high" },
+      "annotation_quality_notes": "Professional translation of SQuAD."
+    },
+    "IndicQA": {
+      "translated": { "value": false, "evidence": "Manually curated from Indic Wikipedia articles.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Manually curated with Indic cultural topics.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Topics closely related to Indic culture, history.", "confidence": "high" },
+      "annotation_quality_notes": "Manually curated cloze-style dataset."
+    },
+    "UDPOS": {
+      "translated": { "value": false, "evidence": "Universal Dependencies treebanks with native text.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "Expert linguists, typically native speakers.", "confidence": "medium" },
+      "culturally_grounded": { "value": "partial", "evidence": "Native text sources vary by language.", "confidence": "medium" },
+      "annotation_quality_notes": "Expert linguistic annotation."
+    },
+    "WikiANN": {
+      "translated": { "value": false, "evidence": "Wikipedia text in native languages.", "confidence": "medium" },
+      "native_annotators": { "value": false, "evidence": "Cross-lingual annotation projection, not native annotators.", "confidence": "high" },
+      "culturally_grounded": { "value": "partial", "evidence": "Native Wikipedia text but projected annotations.", "confidence": "medium" },
+      "annotation_quality_notes": "Automatic annotation projection; quality varies across languages."
+    },
+    "WinoMT": {
+      "translated": { "value": "partial", "evidence": "English sentences translated to 8 target languages by LLMs.", "confidence": "high" },
+      "native_annotators": { "value": false, "evidence": "English source from existing datasets.", "confidence": "high" },
+      "culturally_grounded": { "value": false, "evidence": "English-centric gender stereotypes.", "confidence": "high" },
+      "annotation_quality_notes": "Gender bias evaluation via MT."
+    },
+    "EN-ES-CS": {
+      "translated": { "value": false, "evidence": "Naturally occurring code-mixed tweets.", "confidence": "high" },
+      "native_annotators": { "value": "partial", "evidence": "Natural tweets; automatic SentiStrength annotation.", "confidence": "medium" },
+      "culturally_grounded": { "value": true, "evidence": "Naturally occurring bilingual community language use.", "confidence": "medium" },
+      "annotation_quality_notes": "Automatic sentiment annotation via SentiStrength."
+    },
+    "Jigsaw": {
+      "translated": { "value": "partial", "evidence": "English training, multilingual Wikipedia test data.", "confidence": "medium" },
+      "native_annotators": { "value": null, "evidence": "INSUFFICIENT_INFO: MEGA paper does not detail annotator profiles for Jigsaw.", "confidence": "low" },
+      "culturally_grounded": { "value": false, "evidence": "English-centric toxicity framework.", "confidence": "medium" },
+      "annotation_quality_notes": "Crowdsourced toxicity labels."
+    },
+    "XLSum": {
+      "translated": { "value": false, "evidence": "BBC news natively authored in 44 languages.", "confidence": "high" },
+      "native_annotators": { "value": true, "evidence": "BBC journalists in each language service.", "confidence": "high" },
+      "culturally_grounded": { "value": true, "evidence": "BBC news for specific language communities.", "confidence": "high" },
+      "annotation_quality_notes": "Professional journalism quality."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["TyDiQA-GoldP", "IndicQA", "UDPOS", "XLSum", "GLUECoS NLI", "EN-ES-CS"],
+      "evidence": "TyDiQA-GoldP: natively collected. IndicQA: curated from Indic Wikipedia. UDPOS: native UD treebank text. XLSum: BBC news articles. GLUECoS NLI: Bollywood movie conversations. EN-ES-CS: naturally occurring tweets."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "Indic-XNLI", "PAWS-X", "XCOPA", "XStoryCloze", "MLQA", "XQuAD"],
+      "evidence": "All are professionally or machine translated from English source datasets."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TyDiQA-GoldP", "IndicQA", "XLSum", "GLUECoS NLI", "EN-ES-CS"],
+      "details": {
+        "TyDiQA-GoldP": "Natively collected information-seeking QA.",
+        "IndicQA": "Wikipedia articles on Indic culture and history.",
+        "XLSum": "BBC news for specific language communities.",
+        "GLUECoS NLI": "Bollywood movie conversations.",
+        "EN-ES-CS": "Naturally occurring bilingual tweets."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "varies_by_dataset",
+      "evidence": "MEGA aggregates 16 existing datasets with varying annotator profiles. Native speakers used for TyDiQA-GoldP, IndicQA, XLSum. Professional translators for XNLI, PAWS-X, XCOPA, XStoryCloze, MLQA, XQuAD. Automatic methods for WikiANN and EN-ES-CS."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_translators", "native_speakers", "expert_linguists", "crowdsource_workers", "professional_journalists", "automatic_systems", "researchers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Microsoft Corporation", "University of Washington", "Carnegie Mellon University", "Johns Hopkins University"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "MEGA is an aggregation benchmark; annotator details are in the respective original papers."
+    },
+    "english_centricity_notes": "Significant English-centricity: (1) All prompt templates in English. (2) 7/16 datasets translated from English. (3) Translate-test (translating to English) often improves performance for low-resource languages. (4) 'There is a significant disparity between the performance of LLMs in English vs non-English languages, especially low-resource languages with non-Latin scripts.' (5) Even with possible contamination inflating scores, 'LLMs still vastly underperform on (especially low-resource) non-English languages.'",
+    "geographic_representation": {
+      "primary_region": "Global (Indo-European and South Asian emphasis)",
+      "sub_regions": ["South Asia", "Europe", "East Asia", "Southeast Asia"],
+      "also_represented": ["Sub-Saharan Africa", "Middle East/North Africa", "Central Asia", "Caribbean", "South America (Quechua)"],
+      "notably_excluded": ["Indigenous Americas (beyond Quechua)", "Oceania/Pacific Islands"],
+      "evidence": "70 languages covering 21 language families with Indo-Aryan and Afro-Asiatic in majority. Paper acknowledges: 'very little representation from African languages, Indigenous languages of the Americas etc.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

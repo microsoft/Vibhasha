@@ -1,0 +1,988 @@
+{
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "paper_source": "papers_metadata/texts/2025.findings-acl.636_seahelm.txt"
+  },
+  "step1_identity": {
+    "benchmark_name": "SEA-HELM",
+    "paper_id": "2025.findings-acl.636",
+    "year": 2025,
+    "benchmark_type": "mixed",
+    "benchmark_type_evidence": "SEA-HELM is a curated suite of SEA datasets which are evaluated together... SEA-HELM (a) incorporates natively adapted and human-translated benchmark tasks from a range of SEA languages... (b) created the human-translated SEA-IFEval and SEA-MTBench datasets; and (c) constructed LLM prompt templates in each native language... SEA-HELM includes new datasets we developed for granular linguistic diagnostics (LINDSEA)",
+    "total_languages_claimed": 5,
+    "total_datasets": 26,
+    "dataset_names": [
+      "PH Elections Sentiment",
+      "NusaX",
+      "IndicSentiment",
+      "Wisesight",
+      "UIT-VSFC",
+      "TyDi QA-GoldP",
+      "IndicQA",
+      "XQUAD",
+      "Belebele",
+      "MABL",
+      "XNLI",
+      "IndoNLI",
+      "IndicXNLI",
+      "Balanced COPA",
+      "XCOPA",
+      "XL-Sum",
+      "FLORES",
+      "SEA-IFEval",
+      "SEA-MTBench",
+      "MT-Bench Thai",
+      "LINDSEA",
+      "KALAHI",
+      "MLHSD",
+      "Thai Toxicity Tweet",
+      "ViHSD",
+      "PH Elections Toxicity"
+    ],
+    "task_categories": [
+      "sentiment_analysis",
+      "question_answering",
+      "multiple_choice_qa",
+      "metaphor_understanding",
+      "natural_language_inference",
+      "causal_reasoning",
+      "abstractive_summarisation",
+      "machine_translation",
+      "instruction_following",
+      "multi_turn_chat",
+      "linguistic_diagnostics",
+      "cultural_representation",
+      "toxicity_detection"
+    ],
+    "brief_description": "SEA-HELM (SouthEast Asian Holistic Evaluation of Language Models) is a holistic multilingual and multicultural LLM evaluation suite for Southeast Asian languages, comprising five core pillars: NLP Classics, LLM-Specifics, SEA Linguistics, SEA Culture, and Safety. It currently supports Filipino, Indonesian, Tamil, Thai, and Vietnamese, combining collated native-language and translated datasets with newly created benchmarks (SEA-IFEval, SEA-MTBench, LINDSEA)."
+  },
+  "step2_datasets": {
+    "datasets": [
+      {
+        "dataset_name": "PH Elections Sentiment",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "sentiment_analysis",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Filipino"],
+        "annotation_method": "INSUFFICIENT_INFO: original dataset by Cabasag et al. 2019; annotation method not described in this paper",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Cabasag et al., 2019)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Cabasag et al., 2019",
+        "notes": "Philippine election-related tweets. Natively written in Filipino."
+      },
+      {
+        "dataset_name": "NusaX",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "sentiment_analysis",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Indonesian"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Winata et al., 2023)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Winata et al., 2023",
+        "notes": "Natively written Indonesian sentiment dataset."
+      },
+      {
+        "dataset_name": "IndicSentiment",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "sentiment_analysis",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 1,
+        "language_list": ["Tamil"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Doddapaneni et al., 2023)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Doddapaneni et al., 2023",
+        "notes": "Table 1 marks as Native=N, Translation=Human."
+      },
+      {
+        "dataset_name": "Wisesight",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "sentiment_analysis",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Thai"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Bact' et al., 2019)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Bact' et al., 2019",
+        "notes": "Natively written Thai sentiment dataset from social media."
+      },
+      {
+        "dataset_name": "UIT-VSFC",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "sentiment_analysis",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Nguyen et al., 2018)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Nguyen et al., 2018",
+        "notes": "Vietnamese Students' Feedback Corpus. Natively written."
+      },
+      {
+        "dataset_name": "TyDi QA-GoldP",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Indonesian"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Clark et al., 2020)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Clark et al., 2020",
+        "notes": "Natively written Indonesian QA from TyDi QA Gold Passage subset."
+      },
+      {
+        "dataset_name": "IndicQA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Tamil"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Doddapaneni et al., 2023)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Doddapaneni et al., 2023",
+        "notes": "Table 1 marks as Native=Y. Tamil QA dataset."
+      },
+      {
+        "dataset_name": "XQUAD",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "question_answering",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 2,
+        "language_list": ["Thai", "Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Artetxe et al., 2020)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Artetxe et al., 2020",
+        "notes": "Table 1 marks as Native=N, Translation=Human. Used for Thai and Vietnamese QA."
+      },
+      {
+        "dataset_name": "Belebele",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "multiple_choice_qa",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 1,
+        "language_list": ["Filipino"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Bandarkar et al., 2024)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Bandarkar et al., 2024",
+        "notes": "Table 1 marks as Native=N, Translation=Human. Used for Filipino multiple-choice QA."
+      },
+      {
+        "dataset_name": "MABL",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "metaphor_understanding",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Indonesian"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Kabra et al., 2023)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Kabra et al., 2023",
+        "notes": "Multi-lingual and multi-cultural figurative language understanding. Natively written for Indonesian."
+      },
+      {
+        "dataset_name": "XNLI",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "natural_language_inference",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 3,
+        "language_list": ["Filipino", "Thai", "Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Conneau et al., 2018)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Conneau et al., 2018",
+        "notes": "Table 1 marks as Native=N, Translation=Human."
+      },
+      {
+        "dataset_name": "IndoNLI",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "natural_language_inference",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Indonesian"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Mahendra et al., 2021)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Mahendra et al., 2021",
+        "notes": "A Natural Language Inference Dataset for Indonesian. Natively written."
+      },
+      {
+        "dataset_name": "IndicXNLI",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "natural_language_inference",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "machine_translation",
+        "num_languages": 1,
+        "language_list": ["Tamil"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Aggarwal et al., 2022)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Aggarwal et al., 2022",
+        "notes": "Table 1 marks as Native=N, Translation=Machine. Tamil NLI via machine translation."
+      },
+      {
+        "dataset_name": "Balanced COPA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "causal_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 1,
+        "language_list": ["Filipino"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Kavumba et al., 2019)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Kavumba et al., 2019",
+        "notes": "Table 1 marks as Native=N, Translation=Human. Filipino causal reasoning."
+      },
+      {
+        "dataset_name": "XCOPA",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "causal_reasoning",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 4,
+        "language_list": ["Indonesian", "Tamil", "Thai", "Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Ponti et al., 2020)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Ponti et al., 2020",
+        "notes": "Table 1 marks as Native=N, Translation=Human."
+      },
+      {
+        "dataset_name": "XL-Sum",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "abstractive_summarisation",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 5,
+        "language_list": ["Filipino", "Indonesian", "Tamil", "Thai", "Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Hasan et al., 2021a)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Hasan et al., 2021a",
+        "notes": "Large-scale multilingual abstractive summarization. Natively written content."
+      },
+      {
+        "dataset_name": "FLORES",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "machine_translation",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 5,
+        "language_list": ["Filipino", "Indonesian", "Tamil", "Thai", "Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (NLLB Team et al., 2022)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "NLLB Team et al., 2022",
+        "notes": "Table 1 marks as Native=N, Translation=Human. Used for English-to-native and native-to-English translation evaluation."
+      },
+      {
+        "dataset_name": "SEA-IFEval",
+        "variant_name": null,
+        "variant_notes": "Manually translated and localised version of IF-Eval (Zhou et al., 2023)",
+        "task_type": "instruction_following",
+        "source": "adapted",
+        "source_language": "English",
+        "translation_method": "human_translation_with_localisation",
+        "num_languages": 5,
+        "language_list": ["Filipino", "Indonesian", "Thai", "Tamil", "Vietnamese"],
+        "annotation_method": "Manual translation by native speakers with localisation and cultural adaptation; instructions not applicable to SEA languages were filtered out; some instructions were adapted (e.g., letter-based constraints changed to number-based for non-Latin scripts)",
+        "data_creator_info": {
+          "creator_type": "researchers_and_paid_native_speakers",
+          "creator_affiliation": "AI Singapore, National University of Singapore",
+          "creator_demographics_reported": false,
+          "compensation_reported": true,
+          "evidence": "SEA-HELM is grateful to our Quality Assurance (QA) team, consisting of paid native speakers of SEA languages who worked as translators and annotators... compensation and working hours for all members involved were established in full compliance with the prevailing university guidelines and applicable regulations"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Based on IF-Eval (Zhou et al., 2023)",
+        "notes": "Released under CC-BY-SA 4.0. Filtered and adapted from English IF-Eval to fit SEA linguistic and cultural context. Annotator demographics withheld for anonymity."
+      },
+      {
+        "dataset_name": "SEA-MTBench",
+        "variant_name": null,
+        "variant_notes": "Manually translated and localised version of MT-Bench (Zheng et al., 2023)",
+        "task_type": "multi_turn_chat",
+        "source": "adapted",
+        "source_language": "English",
+        "translation_method": "human_translation_with_localisation",
+        "num_languages": 4,
+        "language_list": ["Filipino", "Indonesian", "Tamil", "Vietnamese"],
+        "annotation_method": "Manual translation by native speakers with localisation",
+        "data_creator_info": {
+          "creator_type": "researchers_and_paid_native_speakers",
+          "creator_affiliation": "AI Singapore, National University of Singapore",
+          "creator_demographics_reported": false,
+          "compensation_reported": true,
+          "evidence": "Same QA team as SEA-IFEval; paid native speakers"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": "Based on MT-Bench (Zheng et al., 2023)",
+        "notes": "Released under CC-BY-SA 4.0. Uses LLM-as-a-Judge paradigm with gpt-4-1106-preview as judge and gpt-3.5-turbo-0125 as reference model."
+      },
+      {
+        "dataset_name": "MT-Bench Thai",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "multi_turn_chat",
+        "source": "translated",
+        "source_language": "English",
+        "translation_method": "human_translation",
+        "num_languages": 1,
+        "language_list": ["Thai"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (ThaiLLM-Leaderboard, 2024)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "ThaiLLM-Leaderboard, 2024",
+        "notes": "Table 1 marks as Native=N, Translation=Human. Thai version of MT-Bench from Thai LLM Leaderboard."
+      },
+      {
+        "dataset_name": "LINDSEA",
+        "variant_name": null,
+        "variant_notes": "LINguistic Diagnostics for SouthEast Asian languages; covers both syntactic and pragmatic phenomena",
+        "task_type": "linguistic_diagnostics",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 2,
+        "language_list": ["Indonesian", "Tamil"],
+        "annotation_method": "Handcrafted from scratch by linguists in collaboration with native speakers; iteratively reviewed for naturalness, semantic coherence, and phenomenon targeting; based on extensive literature survey of linguistic phenomena",
+        "data_creator_info": {
+          "creator_type": "linguists_and_native_speakers",
+          "creator_affiliation": "AI Singapore, National University of Singapore",
+          "creator_demographics_reported": false,
+          "compensation_reported": true,
+          "evidence": "the examples in LINDSEA are handcrafted from scratch by linguists in collaboration with native speakers and reviewed iteratively"
+        },
+        "is_new_in_this_paper": true,
+        "source_reference": null,
+        "notes": "Released under CC-BY-SA 4.0. First linguistic diagnostic dataset for SEA languages. Covers syntactic minimal pairs and pragmatic reasoning. Designed with breadth, depth, and quality principles."
+      },
+      {
+        "dataset_name": "KALAHI",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "cultural_representation",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Filipino"],
+        "annotation_method": "Participatory approach with native Filipino community members; 150 high-quality Filipino-language prompts created in collaboration with native Filipino speakers",
+        "data_creator_info": {
+          "creator_type": "community_members_and_researchers",
+          "creator_affiliation": "INSUFFICIENT_INFO: described in Montalan et al. 2024",
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "the dataset is composed of 150 high-quality Filipino-language prompts created in collaboration with native Filipino speakers"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Montalan et al., 2024",
+        "notes": "Designed using participatory approach to determine if LLMs can provide culturally-relevant responses to culturally-specific situations Filipino people encounter in daily lives."
+      },
+      {
+        "dataset_name": "MLHSD",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "toxicity_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Indonesian"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Ibrohim and Budi, 2019)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Ibrohim and Budi, 2019",
+        "notes": "Multi-label Hate Speech Detection in Indonesian Twitter. Natively written."
+      },
+      {
+        "dataset_name": "Thai Toxicity Tweet",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "toxicity_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Thai"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Sirihattasak et al., 2018)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Sirihattasak et al., 2018",
+        "notes": "Annotation and Classification of Toxicity for Thai Twitter. Natively written."
+      },
+      {
+        "dataset_name": "ViHSD",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "toxicity_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Vietnamese"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Luu et al., 2021)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Luu et al., 2021",
+        "notes": "Large-scale Dataset for Hate Speech Detection on Vietnamese Social Media Texts. Natively written."
+      },
+      {
+        "dataset_name": "PH Elections Toxicity",
+        "variant_name": null,
+        "variant_notes": null,
+        "task_type": "toxicity_detection",
+        "source": "original",
+        "source_language": null,
+        "translation_method": null,
+        "num_languages": 1,
+        "language_list": ["Filipino"],
+        "annotation_method": "INSUFFICIENT_INFO: from external source",
+        "data_creator_info": {
+          "creator_type": "INSUFFICIENT_INFO: from external source (Cabasag et al., 2019)",
+          "creator_affiliation": null,
+          "creator_demographics_reported": false,
+          "compensation_reported": false,
+          "evidence": "External dataset collated into SEA-HELM"
+        },
+        "is_new_in_this_paper": false,
+        "source_reference": "Cabasag et al., 2019",
+        "notes": "Philippine election-related tweets toxicity subset. Natively written in Filipino."
+      }
+    ]
+  },
+  "step3_languages": {
+    "total_languages": 5,
+    "languages": {
+      "Filipino": {
+        "iso_code": "fil",
+        "datasets_present_in": [
+          "PH Elections Sentiment",
+          "Belebele",
+          "XNLI",
+          "Balanced COPA",
+          "XL-Sum",
+          "FLORES",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "KALAHI",
+          "PH Elections Toxicity"
+        ]
+      },
+      "Indonesian": {
+        "iso_code": "ind",
+        "datasets_present_in": [
+          "NusaX",
+          "TyDi QA-GoldP",
+          "MABL",
+          "IndoNLI",
+          "XCOPA",
+          "XL-Sum",
+          "FLORES",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "LINDSEA",
+          "MLHSD"
+        ]
+      },
+      "Tamil": {
+        "iso_code": "tam",
+        "datasets_present_in": [
+          "IndicSentiment",
+          "IndicQA",
+          "IndicXNLI",
+          "XCOPA",
+          "XL-Sum",
+          "FLORES",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "LINDSEA"
+        ]
+      },
+      "Thai": {
+        "iso_code": "tha",
+        "datasets_present_in": [
+          "Wisesight",
+          "XQUAD",
+          "XNLI",
+          "XCOPA",
+          "XL-Sum",
+          "FLORES",
+          "SEA-IFEval",
+          "MT-Bench Thai",
+          "Thai Toxicity Tweet"
+        ]
+      },
+      "Vietnamese": {
+        "iso_code": "vie",
+        "datasets_present_in": [
+          "UIT-VSFC",
+          "XQUAD",
+          "XNLI",
+          "XCOPA",
+          "XL-Sum",
+          "FLORES",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "ViHSD"
+        ]
+      }
+    }
+  },
+  "step4_assessments": {
+    "assessments": {
+      "PH Elections Sentiment": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: Original dataset by Cabasag et al. 2019; annotator details not described in this paper", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Data from Philippine election-related tweets, inherently grounded in Filipino political/social context", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "NusaX": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Winata et al. 2023", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Indonesian local language sentiment dataset; natively written", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "IndicSentiment": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Doddapaneni et al. 2023", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from another language; cultural grounding not indicated", "confidence": "medium"},
+        "annotation_quality_notes": "Human-translated; external dataset"
+      },
+      "Wisesight": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Bact' et al. 2019", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Thai social media sentiment; natively written content", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "UIT-VSFC": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Nguyen et al. 2018", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Vietnamese Students' Feedback Corpus; natively written in Vietnamese", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "TyDi QA-GoldP": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Clark et al. 2020", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "TyDi QA collects questions from native speakers in typologically diverse languages; natively written", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "IndicQA": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Doddapaneni et al. 2023", "confidence": "low"},
+        "culturally_grounded": {"value": null, "evidence": "INSUFFICIENT_INFO: Natively written but cultural grounding specifics not discussed", "confidence": "low"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "XQUAD": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Artetxe et al. 2020", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English SQuAD; inherits English-centric content", "confidence": "high"},
+        "annotation_quality_notes": "Human-translated from English"
+      },
+      "Belebele": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Bandarkar et al. 2024", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Parallel reading comprehension translated from English; not culturally adapted", "confidence": "medium"},
+        "annotation_quality_notes": "Human-translated from English"
+      },
+      "MABL": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Kabra et al. 2023", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Multi-lingual and multi-cultural figurative language understanding; metaphors are culturally embedded", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "XNLI": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Conneau et al. 2018", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English MultiNLI; inherits English-centric content", "confidence": "high"},
+        "annotation_quality_notes": "Human-translated from English"
+      },
+      "IndoNLI": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Mahendra et al. 2021", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Natural Language Inference Dataset specifically created for Indonesian; natively written", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "IndicXNLI": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Machine", "confidence": "high"},
+        "native_annotators": {"value": false, "evidence": "Machine-translated; no human annotators for translation", "confidence": "high"},
+        "culturally_grounded": {"value": false, "evidence": "Machine-translated from English XNLI; no cultural adaptation", "confidence": "high"},
+        "annotation_quality_notes": "Machine-translated; highest risk of translationese artifacts"
+      },
+      "Balanced COPA": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Kavumba et al. 2019", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English COPA; inherits English-centric causal scenarios", "confidence": "medium"},
+        "annotation_quality_notes": "Human-translated from English"
+      },
+      "XCOPA": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Ponti et al. 2020", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translated from English COPA; inherits English-centric causal scenarios", "confidence": "medium"},
+        "annotation_quality_notes": "Human-translated from English"
+      },
+      "XL-Sum": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Hasan et al. 2021a", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Native language news articles and summaries; content reflects local news and topics", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "FLORES": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by NLLB Team et al. 2022", "confidence": "low"},
+        "culturally_grounded": {"value": false, "evidence": "Translation benchmark with English source; not culturally grounded in target languages", "confidence": "medium"},
+        "annotation_quality_notes": "Human-translated from English; serves as translation evaluation benchmark"
+      },
+      "SEA-IFEval": {
+        "translated": {"value": true, "evidence": "SEA-IFEval is an instruction-following benchmark we created collaboratively with native speakers. It was manually translated from the English IF-Eval benchmark and, crucially, localised to fit the linguistic and cultural nuances of SEA languages.", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "SEA-HELM is grateful to our Quality Assurance (QA) team, consisting of paid native speakers of SEA languages who worked as translators and annotators", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Manual translations ensured faithful and accurate linguistic representation, while localisation ensured cultural authenticity and removed any unintended or inherent biases.", "confidence": "high"},
+        "annotation_quality_notes": "Manually translated and localised by paid native speakers. Instructions inapplicable to SEA languages were filtered out. University IRB approved. Released under CC-BY-SA 4.0."
+      },
+      "SEA-MTBench": {
+        "translated": {"value": true, "evidence": "SEA-MTBench is a manually translated and localised version of the popular MT-Bench dataset", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "Same QA team of paid native speakers as SEA-IFEval", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Manually translated and localised for SEA linguistic and cultural context", "confidence": "medium"},
+        "annotation_quality_notes": "Manually translated and localised by paid native speakers. Released under CC-BY-SA 4.0."
+      },
+      "MT-Bench Thai": {
+        "translated": {"value": true, "evidence": "Table 1: Native=N, Translation=Human", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by ThaiLLM-Leaderboard, 2024", "confidence": "low"},
+        "culturally_grounded": {"value": null, "evidence": "INSUFFICIENT_INFO: Translated from MT-Bench; extent of cultural localisation not described", "confidence": "low"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "LINDSEA": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y. 'the examples in LINDSEA are handcrafted from scratch by linguists in collaboration with native speakers'", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "the examples in LINDSEA are handcrafted from scratch by linguists in collaboration with native speakers and reviewed iteratively", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "Designed specifically for Indonesian and Tamil linguistic phenomena based on extensive literature survey; first linguistic diagnostic dataset for SEA languages", "confidence": "high"},
+        "annotation_quality_notes": "Handcrafted by linguists with native speakers. Iteratively reviewed. Based on extensive literature survey. Released under CC-BY-SA 4.0."
+      },
+      "KALAHI": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": true, "evidence": "the dataset is composed of 150 high-quality Filipino-language prompts created in collaboration with native Filipino speakers", "confidence": "high"},
+        "culturally_grounded": {"value": true, "evidence": "KALAHI dataset is designed to determine if LLMs can provide culturally-relevant responses to culturally-specific situations that Filipino people can reasonably encounter in their daily lives", "confidence": "high"},
+        "annotation_quality_notes": "Participatory approach with native Filipino community members. 150 high-quality prompts."
+      },
+      "MLHSD": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Ibrohim and Budi, 2019", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Indonesian Twitter hate speech data; reflects local social media discourse", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "Thai Toxicity Tweet": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Sirihattasak et al. 2018", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Thai Twitter toxicity data; reflects local social media discourse", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "ViHSD": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Luu et al. 2021", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Vietnamese social media hate speech data; reflects local social media discourse", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      },
+      "PH Elections Toxicity": {
+        "translated": {"value": false, "evidence": "Table 1: Native=Y, Translation=-", "confidence": "high"},
+        "native_annotators": {"value": null, "evidence": "INSUFFICIENT_INFO: External dataset by Cabasag et al. 2019", "confidence": "low"},
+        "culturally_grounded": {"value": true, "evidence": "Philippine election-related tweets; reflects local political/social discourse", "confidence": "medium"},
+        "annotation_quality_notes": "External dataset; no quality details provided in this paper"
+      }
+    }
+  },
+  "step5_cultural": {
+    "cultural_flags": {
+      "datasets_from_scratch_no_english_source": {
+        "list": [
+          "PH Elections Sentiment",
+          "NusaX",
+          "Wisesight",
+          "UIT-VSFC",
+          "TyDi QA-GoldP",
+          "IndicQA",
+          "MABL",
+          "IndoNLI",
+          "XL-Sum",
+          "LINDSEA",
+          "KALAHI",
+          "MLHSD",
+          "Thai Toxicity Tweet",
+          "ViHSD",
+          "PH Elections Toxicity"
+        ],
+        "evidence": "Table 1 marks these datasets as Native=Y with no translation source. Paper states: 'We selected datasets that comprised of data originally written in the native language as far as possible.'"
+      },
+      "datasets_translated_from_english": {
+        "list": [
+          "IndicSentiment",
+          "XQUAD",
+          "Belebele",
+          "XNLI",
+          "IndicXNLI",
+          "Balanced COPA",
+          "XCOPA",
+          "FLORES",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "MT-Bench Thai"
+        ],
+        "evidence": "Table 1 marks these as Native=N. IndicXNLI is machine-translated; all others are human-translated. SEA-IFEval and SEA-MTBench are additionally localised for cultural context."
+      },
+      "datasets_with_cultural_grounding": {
+        "list": [
+          "KALAHI",
+          "LINDSEA",
+          "SEA-IFEval",
+          "SEA-MTBench",
+          "PH Elections Sentiment",
+          "NusaX",
+          "Wisesight",
+          "UIT-VSFC",
+          "TyDi QA-GoldP",
+          "IndoNLI",
+          "MABL",
+          "XL-Sum",
+          "MLHSD",
+          "Thai Toxicity Tweet",
+          "ViHSD",
+          "PH Elections Toxicity"
+        ],
+        "details": {
+          "KALAHI": "Explicitly participatory approach with native Filipino community; designed to test culturally-specific situations Filipinos encounter in daily lives",
+          "LINDSEA": "Handcrafted linguistic diagnostics for Indonesian and Tamil, grounded in extensive literature on these languages' specific phenomena",
+          "SEA-IFEval": "Translated from English but culturally localised to remove biases and ensure cultural authenticity",
+          "SEA-MTBench": "Translated from English but manually localised for SEA cultural context",
+          "native_datasets": "Remaining native datasets reflect local contexts (social media, news, elections, etc.)"
+        }
+      },
+      "all_annotators_native_speakers": {
+        "value": "partially: for SEA-HELM's own datasets (SEA-IFEval, SEA-MTBench, LINDSEA), native speakers were involved; for collated external datasets, annotator info is not provided in this paper",
+        "evidence": "consisting of paid native speakers of SEA languages who worked as translators and annotators... We deliberately incorporate community participation by involving native speakers of the SEA languages at each stage of the dataset planning and construction"
+      },
+      "annotator_workforce": {
+        "creator_types_across_datasets": [
+          "paid_native_speaker_QA_team",
+          "linguists",
+          "community_members",
+          "researchers"
+        ],
+        "total_annotators_reported": null,
+        "affiliations": [
+          "AI Singapore",
+          "National University of Singapore",
+          "Center for Research on Foundation Models (CRFM), Stanford University"
+        ],
+        "demographics_reported": false,
+        "compensation_reported": true,
+        "compensation_details": "compensation and working hours for all members involved were established in full compliance with the prevailing university guidelines and applicable regulations. QA team was recruited through public advertisements that clearly outlined the estimated workload and hourly pay.",
+        "irb_ethics_review": true,
+        "evidence": "The SEA-HELM project has received full and official approval from our university's internal review board after undergoing a rigorous review process. The team is composed predominantly of students at local universities and members of the public. Annotator demographics are not included in this paper for anonymity."
+      },
+      "english_centricity_notes": "The paper explicitly acknowledges English-centricity as a problem: 'translated datasets often contain elements of translationese which can differ significantly from natively written text.' 11 of 26 datasets are translated from English. The paper prioritises native datasets where possible and localises translated content. IndicXNLI is the only machine-translated dataset. Prompt templates are in native languages rather than English.",
+      "geographic_representation": {
+        "primary_region": "Southeast Asia",
+        "sub_regions": [
+          "Philippines (Filipino)",
+          "Indonesia (Indonesian)",
+          "Singapore (Tamil as official language)",
+          "Thailand (Thai)",
+          "Vietnam (Vietnamese)"
+        ],
+        "also_represented": [
+          "South Asia (Tamil is also spoken in India, Sri Lanka, Malaysia)"
+        ],
+        "notably_excluded": [
+          "Myanmar/Burma (Burmese)",
+          "Cambodia (Khmer)",
+          "Laos (Lao)",
+          "Malaysia (Malay)",
+          "Brunei (Malay)",
+          "Timor-Leste (Tetum)"
+        ],
+        "evidence": "SEA-HELM currently supports Filipino, Indonesian, Tamil, Thai, and Vietnamese. Paper acknowledges plans to expand to Khmer, Lao, Burmese, etc. The SEA region is home to nearly 700 million speakers across more than 1,000 languages. Currently covers 5 of 11 SEA countries."
+      }
+    }
+  }
+}

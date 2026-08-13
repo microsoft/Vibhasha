@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The entire dataset is constructed from English source data. Basic Questions were first created in English, then translated to 22 other languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MaXIFE"],
+      "evidence": "After completing the English version data expansion, we translated the data into 22 other languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "The benchmark tests instruction-following mechanics (format, keywords, length, repetition, punctuation, citation, emoji, style, tone, content, language_switch) rather than culturally-grounded knowledge. While translations were checked for naturalness and language-specific features (e.g., Bengali numerals, CJK full-width punctuation), the tasks themselves are not culturally grounded."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes_for_translation_and_QC",
+      "evidence": "All personnel we hired for instruction data translation and dataset quality control were native speakers of their respective languages, and they possessed near-native English proficiency. We invited native speakers to review instructions in each language, ensuring expressions adhered to language conventions."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "native speakers", "linguistics experts"],
+      "total_annotators_reported": 31,
+      "affiliations": ["Waseda University", "OPPO AI Center, Shenzhen, China"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "The translations were carried out by internal research team members as part of their responsibilities, thus no additional compensation was involved.",
+      "irb_ethics_review": null,
+      "evidence": "The total number of questionnaire participants was 31 people, of which 19 were male, 12 were female, most people's age distribution was 21-39 years old, and all respondents had high-frequency usage habits of LLMs."
+    },
+    "english_centricity_notes": "The benchmark is entirely English-centric in construction: all Basic Questions and Instructions were created in English first and then translated. The evaluation framework extends IFEval (an English-only benchmark) to 23 languages. While language-specific evaluation rules were developed (e.g., for word counting, keyword matching, punctuation), the underlying task design and content originate from English.",
+    "geographic_representation": {
+      "primary_region": "Global (23 languages across multiple continents)",
+      "sub_regions": ["East Asia", "Southeast Asia", "South Asia", "Europe", "Central Asia", "Southern Africa", "East Africa", "South America"],
+      "also_represented": ["Scandinavia (Swedish)", "Iberia/Latin America (Portuguese)", "Caucasus (Armenian, Georgian)"],
+      "notably_excluded": ["Middle East/Arabic-speaking regions", "Most of Africa beyond Zulu and Malagasy", "Indigenous languages of North America and Australia", "Most Slavic languages"],
+      "evidence": "MaXIFE covers 23 languages spanning Indo-European (8), Austronesian (4), Dravidian (2), Turkic (2), Sino-Tibetan (1), Japonic (1), Koreanic (1), Kartvelian (1), Niger-Congo (1), and Quechuan (1) families."
+    }
+  }
+}

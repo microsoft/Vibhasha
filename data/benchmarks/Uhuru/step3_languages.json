@@ -1,0 +1,29 @@
+{
+  "total_languages": 6,
+  "languages": {
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["Uhura-ARC-Easy", "Uhura-TruthfulQA"]
+    }
+  }
+}

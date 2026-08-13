@@ -1,0 +1,21 @@
+{
+  "total_languages": 4,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["M-IFEval"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["M-IFEval"]
+    }
+  }
+}

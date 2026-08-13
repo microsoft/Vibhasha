@@ -1,0 +1,733 @@
+{
+  "AfroBench": {
+    "canonical_name": "AfroBench",
+    "paper_url": "https://aclanthology.org/2025.findings-acl.976.pdf",
+    "arxiv_id": null,
+    "paper_title": "AfroBench: A Comprehensive Multilingual Benchmark for African Languages",
+    "year": 2025,
+    "venue": "Findings of ACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.findings-acl.976_afrobench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/afrobench_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.findings-acl.976_afrobench.txt",
+    "category": "Regional"
+  },
+  "Aya_Evaluation_Suite": {
+    "canonical_name": "Aya_Evaluation_Suite",
+    "paper_url": "https://arxiv.org/abs/2402.06619",
+    "arxiv_id": null,
+    "paper_title": "Aya Evaluation Suite",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/Aya Eval suite.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/Aya_Evaluation_Suite.json",
+    "text_file_path": "papers_metadata/texts/Aya Eval suite.txt",
+    "aliases": [
+      "Aya Eval Suite"
+    ],
+    "category": "Multitask"
+  },
+  "BHASA": {
+    "canonical_name": "BHASA",
+    "paper_url": "https://arxiv.org/abs/2309.06085",
+    "arxiv_id": "2309.06085",
+    "paper_title": "BHASA: A Holistic Southeast Asian Linguistic and Cultural Evaluation Suite",
+    "year": 2023,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2309.06085v2_bhasa.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/bhasa_extracted.json",
+    "text_file_path": "papers_metadata/texts/2309.06085v2_bhasa.txt",
+    "category": "Regional"
+  },
+  "BUFFET": {
+    "canonical_name": "BUFFET",
+    "paper_url": "https://aclanthology.org/2024.naacl-long.100/",
+    "arxiv_id": null,
+    "paper_title": "BUFFET: Benchmarking Large Language Models for Few-shot Cross-lingual Transfer",
+    "year": 2024,
+    "venue": null,
+    "bibtex_key": "asai2024buffet",
+    "paper_pdf_path": "papers_metadata/papers/manan/BUFFET.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/BUFFET.json",
+    "text_file_path": "papers_metadata/texts/BUFFET.txt"
+  },
+  "BeMyCheese": {
+    "canonical_name": "BeMyCheese",
+    "paper_url": "https://arxiv.org/abs/2602.04729",
+    "arxiv_id": "2602.04729",
+    "paper_title": "BeMyCheese: A Large-Scale Human Evaluation Benchmark for Multilingual LLMs",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2602.04729v1_bemycheese.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/bemycheese_extracted.json",
+    "text_file_path": "papers_metadata/texts/2602.04729v1_bemycheese.txt",
+    "aliases": [
+      "Be My Cheese (to be released)"
+    ],
+    "excel_alternate_link": "https://arxiv.org/pdf/2602.04729",
+    "category": "Culture"
+  },
+  "Belebele": {
+    "canonical_name": "Belebele",
+    "paper_url": "https://arxiv.org/abs/2308.16884",
+    "arxiv_id": "2308.16884",
+    "paper_title": "The Belebele Benchmark: a Parallel Reading Comprehension Dataset in 122 Language Variants",
+    "year": 2023,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2024.acl-long.44.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/Belebele.json",
+    "text_file_path": "papers_metadata/texts/2024.acl-long.44.txt",
+    "excel_alternate_link": "https://aclanthology.org/2024.acl-long.44.pdf",
+    "category": "Commonsense Reasoning"
+  },
+  "BenchMAX": {
+    "canonical_name": "BenchMAX",
+    "paper_url": "https://aclanthology.org/2025.findings-emnlp.909/",
+    "arxiv_id": null,
+    "paper_title": "BenchMAX: A Multilingual Benchmark for Evaluating LLMs Across Languages",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/BenchMAX.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/BenchMAX.json",
+    "text_file_path": "papers_metadata/texts/BenchMAX.txt",
+    "category": "Multitask"
+  },
+  "BhashaBench_V1": {
+    "canonical_name": "BhashaBench_V1",
+    "paper_url": "https://arxiv.org/abs/2510.25409",
+    "arxiv_id": null,
+    "paper_title": "BhashaBench V1",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/BhashaBench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/BhashaBench_V1.json",
+    "text_file_path": "papers_metadata/texts/BhashaBench.txt",
+    "aliases": [
+      "BhashaBench-V1"
+    ],
+    "category": "MCQ"
+  },
+  "BoolQ": {
+    "canonical_name": "BoolQ",
+    "paper_url": "https://arxiv.org/abs/1905.10044",
+    "arxiv_id": "1905.10044",
+    "paper_title": "BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions",
+    "year": 2019,
+    "venue": "NAACL 2019",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/N19-1300.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/BoolQ.json",
+    "text_file_path": "papers_metadata/texts/N19-1300.txt",
+    "aliases": [
+      "BOOLQ-IN"
+    ],
+    "excel_alternate_link": "https://aclanthology.org/N19-1300.pdf",
+    "category": "LowResource Multilingual"
+  },
+  "CL-IFEval": {
+    "canonical_name": "CL-IFEval",
+    "paper_url": "https://arxiv.org/abs/2506.20793",
+    "arxiv_id": "2506.20793",
+    "paper_title": "Multi-lingual Functional Evaluation for Large Language Models",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2506.20793v2_CLIFEval.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/clifeval_extracted.json",
+    "text_file_path": "papers_metadata/texts/2506.20793v2_CLIFEval.txt",
+    "category": "Instruction Following"
+  },
+  "CulturalBench": {
+    "canonical_name": "CulturalBench",
+    "paper_url": "https://aclanthology.org/2025.acl-long.1247.pdf",
+    "arxiv_id": null,
+    "paper_title": "CulturalBench: A Benchmark for Evaluating Cultural Knowledge of LLMs",
+    "year": 2025,
+    "venue": "ACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.acl-long.1247_culturalbench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/culturalbench_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.acl-long.1247_culturalbench.txt",
+    "category": "Culture"
+  },
+  "FLORES-101": {
+    "canonical_name": "FLORES-101",
+    "paper_url": "https://arxiv.org/abs/2106.03193",
+    "arxiv_id": "2106.03193",
+    "paper_title": "The FLORES-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation",
+    "year": 2022,
+    "venue": "TACL",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/tacl_a_00474.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/FLORES-101.json",
+    "text_file_path": "papers_metadata/texts/tacl_a_00474.txt",
+    "aliases": [
+      "Flores-IN"
+    ],
+    "excel_alternate_link": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00474/110993/The-Flores-101-Evaluation-Benchmark-for-Low",
+    "category": "LowResource Multilingual"
+  },
+  "FluidQA": {
+    "canonical_name": "FluidQA",
+    "paper_url": "https://aclanthology.org/2025.emnlp-main.1540.pdf",
+    "arxiv_id": null,
+    "paper_title": "FluidQA: Question Answering for Fluid Intelligence",
+    "year": 2025,
+    "venue": "EMNLP 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.emnlp-main.1540_fluidqa.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/fluidqa_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.emnlp-main.1540_fluidqa.txt",
+    "aliases": [
+      "FLUID QA"
+    ],
+    "category": "Culture"
+  },
+  "GSM8K": {
+    "canonical_name": "GSM8K",
+    "paper_url": "https://arxiv.org/abs/2110.14168",
+    "arxiv_id": "2110.14168",
+    "paper_title": "Training Verifiers to Solve Math Word Problems",
+    "year": 2021,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2110.14168v2.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/GSM8K.json",
+    "text_file_path": "papers_metadata/texts/2110.14168v2.txt",
+    "aliases": [
+      "GSM-8K-IN"
+    ],
+    "excel_alternate_link": "https://arxiv.org/pdf/2110.14168",
+    "category": "LowResource Multilingual"
+  },
+  "INDIC-DIALECT": {
+    "canonical_name": "INDIC-DIALECT",
+    "paper_url": "https://arxiv.org/abs/2601.10388",
+    "arxiv_id": "2601.10388",
+    "paper_title": "INDIC-DIALECT: Multilingual Dialectal Benchmark for Indian Languages",
+    "year": 2026,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2601.10388v1_indicdialect.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/indicdialect_extracted.json",
+    "text_file_path": "papers_metadata/texts/2601.10388v1_indicdialect.txt",
+    "aliases": [
+      "INDIC DIALECT"
+    ],
+    "category": "Regional"
+  },
+  "IberoBench": {
+    "canonical_name": "IberoBench",
+    "paper_url": "http://aclanthology.org/2025.coling-main.699.pdf",
+    "arxiv_id": null,
+    "paper_title": "IberoBench: A Benchmark for Evaluating NLP in Iberian Languages",
+    "year": 2025,
+    "venue": "COLING 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.coling-main.699_iberobench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/iberobench_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.coling-main.699_iberobench.txt",
+    "category": "Regional"
+  },
+  "IndiSentiment140": {
+    "canonical_name": "IndiSentiment140",
+    "paper_url": "https://aclanthology.org/2024.naacl-long.425.pdf",
+    "arxiv_id": null,
+    "paper_title": "IndiSentiment140",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2024.naacl-long.425.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/IndiSentiment140.json",
+    "text_file_path": "papers_metadata/texts/2024.naacl-long.425.txt",
+    "aliases": [
+      "IndicSentiment"
+    ],
+    "category": "LowResource Multilingual"
+  },
+  "IndicIFEval": {
+    "canonical_name": "IndicIFEval",
+    "paper_url": "https://arxiv.org/abs/2602.22125",
+    "arxiv_id": "2602.22125",
+    "paper_title": "IndicIFEval: A Benchmark for Verifiable Instruction-Following in Indic Languages",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2602.22125v1_IndicIFEval.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/indicifeval_extracted.json",
+    "text_file_path": "papers_metadata/texts/2602.22125v1_IndicIFEval.txt",
+    "category": "Instruction Following"
+  },
+  "IndicMMLU-Pro": {
+    "canonical_name": "IndicMMLU-Pro",
+    "paper_url": "https://arxiv.org/pdf/2501.15747",
+    "arxiv_id": null,
+    "paper_title": "IndicMMLU-Pro",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2501.15747v2.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/IndicMMLU-Pro.json",
+    "text_file_path": "papers_metadata/texts/2501.15747v2.txt",
+    "category": "LowResource Multilingual"
+  },
+  "IndicNLG": {
+    "canonical_name": "IndicNLG",
+    "paper_url": "https://arxiv.org/abs/2203.05437",
+    "arxiv_id": null,
+    "paper_title": "IndicNLG Suite: Multilingual Datasets for Diverse NLG Tasks in Indic Languages",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2305.05858v1.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/IndicNLG.json",
+    "text_file_path": "papers_metadata/texts/2305.05858v1.txt",
+    "additional_pdf_paths": [
+      "papers_metadata/papers/manan/IndicNLG.pdf"
+    ],
+    "aliases": [
+      "IndicHeadlineGeneration",
+      "IndicQuestionGeneration"
+    ],
+    "category": "NLG"
+  },
+  "IndicNLPSuite": {
+    "canonical_name": "IndicNLPSuite",
+    "paper_url": "https://aclanthology.org/2020.findings-emnlp.445.pdf",
+    "arxiv_id": null,
+    "paper_title": "IndicNLPSuite: Monolingual Corpora, Evaluation Benchmarks and Pre-trained Multilingual Language Models for Indian Languages",
+    "year": 2020,
+    "venue": "Findings of EMNLP 2020",
+    "bibtex_key": "kakwani2020indicnlpsuite",
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2020.findings-emnlp.445.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/IndicNLPSuite.json",
+    "text_file_path": "papers_metadata/texts/2020.findings-emnlp.445.txt",
+    "aliases": [
+      "IndicGLUE"
+    ],
+    "category": "LowResource Multilingual"
+  },
+  "IndicParam": {
+    "canonical_name": "IndicParam",
+    "paper_url": "https://arxiv.org/abs/2512.00333",
+    "arxiv_id": "2512.00333",
+    "paper_title": "IndicParam: Benchmark to Evaluate LLMs on Low-resource Indic Languages",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2512.00333v2_indicparam.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/indicparam_extracted.json",
+    "text_file_path": "papers_metadata/texts/2512.00333v2_indicparam.txt",
+    "category": "Regional"
+  },
+  "IndicXTREME": {
+    "canonical_name": "IndicXTREME",
+    "paper_url": "https://arxiv.org/abs/2212.05409",
+    "arxiv_id": null,
+    "paper_title": "IndicXTREME: A Multi-Task Benchmark For Evaluating Indic Languages",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/IndicXtreme.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/IndicXTREME.json",
+    "text_file_path": "papers_metadata/texts/IndicXtreme.txt",
+    "category": "NLU"
+  },
+  "IrokoBench": {
+    "canonical_name": "IrokoBench",
+    "paper_url": "https://aclanthology.org/2025.naacl-long.139/",
+    "arxiv_id": null,
+    "paper_title": "IrokoBench: A New Benchmark for African Languages in the Age of Large Language Models",
+    "year": 2025,
+    "venue": "NAACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.naacl-long.139_irokobench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/irokobench_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.naacl-long.139_irokobench.txt",
+    "category": "Regional"
+  },
+  "JailNewsBench": {
+    "canonical_name": "JailNewsBench",
+    "paper_url": "https://arxiv.org/abs/2603.01291",
+    "arxiv_id": "2603.01291",
+    "paper_title": "JailNewsBench: A Multilingual Jailbreak and News Safety Benchmark",
+    "year": 2026,
+    "venue": "ICLR 2026",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2603.01291v1)_jailnewsbench.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/jailnewsbench_extracted.json",
+    "text_file_path": "papers_metadata/texts/2603.01291v1)_jailnewsbench.txt",
+    "category": "Safety"
+  },
+  "LinguaSafe": {
+    "canonical_name": "LinguaSafe",
+    "paper_url": "https://arxiv.org/abs/2508.12733",
+    "arxiv_id": "2508.12733",
+    "paper_title": "LinguaSafe: A Comprehensive Multilingual Safety Benchmark for Large Language Models",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2508.12733v2_linguasafe.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/linguasafe_extracted.json",
+    "text_file_path": "papers_metadata/texts/2508.12733v2_linguasafe.txt"
+  },
+  "M-IFEval": {
+    "canonical_name": "M-IFEval",
+    "paper_url": "https://aclanthology.org/2025.findings-naacl.344/",
+    "arxiv_id": null,
+    "paper_title": "M-IFEval: Multilingual Instruction Following Evaluation",
+    "year": 2025,
+    "venue": "Findings of NAACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.findings-naacl.344_MIFEval.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/mifeval_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.findings-naacl.344_MIFEval.txt",
+    "category": "Instruction Following"
+  },
+  "M3Exam": {
+    "canonical_name": "M3Exam",
+    "paper_url": "https://arxiv.org/pdf/2306.05179",
+    "arxiv_id": null,
+    "paper_title": "M3Exam: A Multilingual, Multimodal, Multilevel Benchmark for Examining Large Language Models",
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "bibtex_key": "zhang2023m3exam",
+    "paper_pdf_path": "papers_metadata/papers/manan/M3Exam.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/M3Exam.json",
+    "text_file_path": "papers_metadata/texts/M3Exam.txt",
+    "category": "General Knowledge, Reasoning & Multitask Benchmarks"
+  },
+  "MAKIEVAL": {
+    "canonical_name": "MAKIEVAL",
+    "paper_url": "https://arxiv.org/abs/2505.21693",
+    "arxiv_id": "2505.21693",
+    "paper_title": "MAKIEVAL: A Multilingual Automatic WikiData-based Framework for Evaluation",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2505.21693v3_makieval.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/makieval_extracted.json",
+    "text_file_path": "papers_metadata/texts/2505.21693v3_makieval.txt",
+    "aliases": [
+      "MakiEval"
+    ],
+    "category": "Culture"
+  },
+  "MATH": {
+    "canonical_name": "MATH",
+    "paper_url": "https://arxiv.org/abs/2103.03874",
+    "arxiv_id": "2103.03874",
+    "paper_title": "Measuring Mathematical Problem Solving With the MATH Dataset",
+    "year": 2021,
+    "venue": "NeurIPS 2021",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/NeurIPS Datasets and Benchmarks-2021-measuring-mathematical-problem-solving-with-the-math-dataset-Paper-round2.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/MATH.json",
+    "text_file_path": "papers_metadata/texts/NeurIPS Datasets and Benchmarks-2021-measuring-mathematical-problem-solving-with-the-math-dataset-Paper-round2.txt"
+  },
+  "MEGA": {
+    "canonical_name": "MEGA",
+    "paper_url": "https://aclanthology.org/2023.emnlp-main.258/",
+    "arxiv_id": null,
+    "paper_title": "MEGA: Multilingual Evaluation of Generative AI",
+    "year": 2023,
+    "venue": "EMNLP 2023",
+    "bibtex_key": "ahuja-etal-2023-mega",
+    "paper_pdf_path": "papers_metadata/papers/manan/MEGA.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/MEGA.json",
+    "text_file_path": "papers_metadata/texts/MEGA.txt",
+    "category": "Multitask"
+  },
+  "MILU": {
+    "canonical_name": "MILU",
+    "paper_url": "https://aclanthology.org/2025.naacl-long.507.pdf",
+    "arxiv_id": null,
+    "paper_title": "MILU: A Multi-task Indic Language Understanding Benchmark",
+    "year": 2025,
+    "venue": "NAACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2025.naacl-long.507.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/MILU.json",
+    "text_file_path": "papers_metadata/texts/2025.naacl-long.507_MILU.txt",
+    "additional_pdf_paths": [
+      "papers_metadata/papers/prashant/2025.naacl-long.507_MILU.pdf"
+    ],
+    "category": "Regional"
+  },
+  "MMLU-ProX": {
+    "canonical_name": "MMLU-ProX",
+    "paper_url": "https://aclanthology.org/2025.emnlp-main.79/",
+    "arxiv_id": null,
+    "paper_title": "MMLU-ProX: Multilingual MMLU-Pro",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/MMLU-ProX.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/MMLU-ProX.json",
+    "text_file_path": "papers_metadata/texts/MMLU-ProX.txt",
+    "category": "Multitask"
+  },
+  "MMTEB": {
+    "canonical_name": "MMTEB",
+    "paper_url": "https://arxiv.org/abs/2502.13595",
+    "arxiv_id": null,
+    "paper_title": "MMTEB: Massive Multilingual Text Embedding Benchmark",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2502.13595v4_MMTEB.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/mmteb_extracted.json",
+    "text_file_path": "papers_metadata/texts/2502.13595v4_MMTEB.txt",
+    "category": "Specialized"
+  },
+  "MUCH": {
+    "canonical_name": "MUCH",
+    "paper_url": "https://arxiv.org/abs/2511.17081",
+    "arxiv_id": null,
+    "paper_title": "MUCH: Multilingual Understanding and Cultural Handling Benchmark",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2511.17081v2_MUCH.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/much_extracted.json",
+    "text_file_path": "papers_metadata/texts/2511.17081v2_MUCH.txt",
+    "category": "Specialized"
+  },
+  "MUG_Eval": {
+    "canonical_name": "MUG_Eval",
+    "paper_url": "https://aclanthology.org/2025.findings-emnlp.1061/",
+    "arxiv_id": null,
+    "paper_title": "MUG_Eval: Multilingual Generation Evaluation",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/MUG-EVAL.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/MUG_Eval.json",
+    "text_file_path": "papers_metadata/texts/MUG-EVAL.txt",
+    "aliases": [
+      "MUG-Eval"
+    ],
+    "category": "Multitask"
+  },
+  "MaXIFE": {
+    "canonical_name": "MaXIFE",
+    "paper_url": "https://aclanthology.org/2025.acl-long.698/",
+    "arxiv_id": null,
+    "paper_title": "MaXIFE: Massively Multilingual Instruction-Following Evaluation",
+    "year": 2025,
+    "venue": "ACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.acl-long.698_MAXIFE.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/maxife_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.acl-long.698_MAXIFE.txt",
+    "category": "Instruction Following"
+  },
+  "MultiJail": {
+    "canonical_name": "MultiJail",
+    "paper_url": "https://arxiv.org/abs/2310.06474",
+    "arxiv_id": "2310.06474",
+    "paper_title": "MultiJail: A Multilingual Jailbreak Benchmark",
+    "year": 2024,
+    "venue": "ICLR 2024",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2310.06474v3_multijail.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/multijail_extracted.json",
+    "text_file_path": "papers_metadata/texts/2310.06474v3_multijail.txt",
+    "category": "Safety"
+  },
+  "Naamapadam": {
+    "canonical_name": "Naamapadam",
+    "paper_url": "https://arxiv.org/pdf/2212.10168",
+    "arxiv_id": null,
+    "paper_title": "Naamapadam: A Large-Scale Named Entity Recognition Dataset for Indian Languages",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2212.10168v2.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/Naamapadam.json",
+    "text_file_path": "papers_metadata/texts/2212.10168v2.txt",
+    "aliases": [
+      "IndicNER"
+    ],
+    "category": "LowResource Multilingual"
+  },
+  "PTP": {
+    "canonical_name": "PTP",
+    "paper_url": "https://arxiv.org/abs/2405.09373",
+    "arxiv_id": "2405.09373",
+    "paper_title": "PTP: Parallel Translation Probing",
+    "year": 2024,
+    "venue": "COLM 2024",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2405.09373v3_PTP.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/ptp_extracted.json",
+    "text_file_path": "papers_metadata/texts/2405.09373v3_PTP.txt"
+  },
+  "SeaHELM": {
+    "canonical_name": "SeaHELM",
+    "paper_url": "https://aclanthology.org/2025.findings-acl.636/",
+    "arxiv_id": null,
+    "paper_title": "SeaHELM: A Holistic Evaluation of Southeast Asian Languages in LLMs",
+    "year": 2025,
+    "venue": "Findings of ACL 2025",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2025.findings-acl.636_seahelm.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/seahelm_extracted.json",
+    "text_file_path": "papers_metadata/texts/2025.findings-acl.636_seahelm.txt",
+    "aliases": [
+      "SEA-HELM"
+    ],
+    "category": "Regional"
+  },
+  "TUMLU": {
+    "canonical_name": "TUMLU",
+    "paper_url": "https://arxiv.org/abs/2502.11020",
+    "arxiv_id": "2502.11020",
+    "paper_title": "TUMLU: Turkish Multilingual Understanding Benchmark",
+    "year": 2025,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2502.11020v2_tumlu.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/tumlu_extracted.json",
+    "text_file_path": "papers_metadata/texts/2502.11020v2_tumlu.txt",
+    "excel_alternate_link": "https://arxiv.org/pdf/2502.11020",
+    "category": "Regional"
+  },
+  "TriviaQA": {
+    "canonical_name": "TriviaQA",
+    "paper_url": "https://arxiv.org/abs/1705.03551",
+    "arxiv_id": "1705.03551",
+    "paper_title": "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension",
+    "year": 2017,
+    "venue": "ACL 2017",
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/P17-1147.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/TriviaQA.json",
+    "text_file_path": "papers_metadata/texts/P17-1147.txt",
+    "aliases": [
+      "TriviaQA-IN"
+    ],
+    "excel_alternate_link": "https://aclanthology.org/P17-1147.pdf",
+    "category": "LowResource Multilingual"
+  },
+  "Uhuru": {
+    "canonical_name": "Uhuru",
+    "paper_url": "https://arxiv.org/abs/2412.00948",
+    "arxiv_id": "2412.00948",
+    "paper_title": "Uhuru: A Benchmark for Evaluating Scientific Question Answering",
+    "year": 2024,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/prashant/2412.00948v1_uhuru.pdf",
+    "extracted_json_path": "papers_metadata/extracted/prashant/uhuru_extracted.json",
+    "text_file_path": "papers_metadata/texts/2412.00948v1_uhuru.txt",
+    "aliases": [
+      "Uhura"
+    ],
+    "excel_alternate_link": "https://arxiv.org/pdf/2412.00948",
+    "category": "Regional"
+  },
+  "XGLUE": {
+    "canonical_name": "XGLUE",
+    "paper_url": "https://aclanthology.org/2020.emnlp-main.484/",
+    "arxiv_id": null,
+    "paper_title": "XGLUE: A New Benchmark Dataset for Cross-lingual Pre-training, Understanding and Generation",
+    "year": 2020,
+    "venue": "EMNLP 2020",
+    "bibtex_key": "liang-etal-2020-xglue",
+    "paper_pdf_path": "papers_metadata/papers/manan/XGLUE.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/XGLUE.json",
+    "text_file_path": "papers_metadata/texts/XGLUE.txt"
+  },
+  "XNLI": {
+    "canonical_name": "XNLI",
+    "paper_url": "https://aclanthology.org/D18-1269.pdf",
+    "arxiv_id": null,
+    "paper_title": "XNLI: Evaluating Cross-lingual Sentence Representations",
+    "year": 2018,
+    "venue": "EMNLP 2018",
+    "bibtex_key": "conneau-etal-2018-xnli",
+    "paper_pdf_path": "papers_metadata/papers/manan/XNLI.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/XNLI.json",
+    "text_file_path": "papers_metadata/texts/XNLI.txt",
+    "category": "Commonsense Reasoning"
+  },
+  "XORQA": {
+    "canonical_name": "XORQA",
+    "paper_url": "https://aclanthology.org/2021.naacl-main.46.pdf",
+    "arxiv_id": null,
+    "paper_title": "XOR QA: Cross-lingual Open-Retrieval Question Answering",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2021.naacl-main.46.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/XORQA.json",
+    "text_file_path": "papers_metadata/texts/2021.naacl-main.46.txt",
+    "aliases": [
+      "XorQA-IN"
+    ],
+    "category": "LowResource Multilingual"
+  },
+  "XQuAD": {
+    "canonical_name": "XQuAD",
+    "paper_url": "https://aclanthology.org/2020.acl-main.421.pdf",
+    "arxiv_id": null,
+    "paper_title": "On the Cross-lingual Transferability of Monolingual Representations",
+    "year": 2020,
+    "venue": "ACL 2020",
+    "bibtex_key": "artetxe-etal-2020-cross",
+    "paper_pdf_path": "papers_metadata/papers/himanshu/2020.acl-main.421.pdf",
+    "extracted_json_path": "papers_metadata/extracted/himanshu/XQuAD.json",
+    "text_file_path": "papers_metadata/texts/2020.acl-main.421.txt",
+    "aliases": [
+      "XQuAD-IN"
+    ],
+    "category": "LowResource Multilingual"
+  },
+  "XTREME": {
+    "canonical_name": "XTREME",
+    "paper_url": "https://arxiv.org/abs/2003.11080",
+    "arxiv_id": null,
+    "paper_title": "XTREME: A Massively Multilingual Multi-task Benchmark for Evaluating Cross-lingual Generalisation",
+    "year": 2020,
+    "venue": "ICML 2020",
+    "bibtex_key": "hu2020xtreme",
+    "paper_pdf_path": "papers_metadata/papers/manan/XTREME.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/XTREME.json",
+    "text_file_path": "papers_metadata/texts/XTREME.txt"
+  },
+  "XTREME-R": {
+    "canonical_name": "XTREME-R",
+    "paper_url": "https://aclanthology.org/2021.emnlp-main.802/",
+    "arxiv_id": null,
+    "paper_title": "XTREME-R: Towards More Challenging and Nuanced Multilingual Evaluation",
+    "year": 2021,
+    "venue": "EMNLP 2021",
+    "bibtex_key": "ruder-etal-2021-xtreme",
+    "paper_pdf_path": "papers_metadata/papers/manan/XTREME-R.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/XTREME-R.json",
+    "text_file_path": "papers_metadata/texts/XTREME-R.txt"
+  },
+  "XTREME_UP": {
+    "canonical_name": "XTREME_UP",
+    "paper_url": "https://aclanthology.org/2023.findings-emnlp.125.pdf",
+    "arxiv_id": null,
+    "paper_title": "XTREME-UP: A User-Centric Scarce-Data Benchmark for Under-Represented Languages",
+    "year": null,
+    "venue": null,
+    "bibtex_key": null,
+    "paper_pdf_path": "papers_metadata/papers/manan/XTREME-UP.pdf",
+    "extracted_json_path": "papers_metadata/extracted/manan/XTREME_UP.json",
+    "text_file_path": "papers_metadata/texts/XTREME-UP.txt",
+    "aliases": [
+      "XTREME-UP"
+    ],
+    "category": "Multitask"
+  }
+}

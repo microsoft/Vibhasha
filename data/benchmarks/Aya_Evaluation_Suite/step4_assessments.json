@@ -1,0 +1,58 @@
+{
+  "assessments": {
+    "aya-human-annotated": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts' and 'aya-human-annotated test set... The test set of the Aya Dataset contains 1,750 of the total instances (250 instances from 7 languages), selected at random from original annotations.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 2.1: 'Inputs from fluent speakers of each language ensure that the dataset is more likely to be organic, fluent, and representative of the speakers' cultures.' Section 1: 'We worked with fluent speakers of languages from around the world to collect natural instances of instructions and completions.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts.' Section 2.2.1: 'This task aims to encourage annotators to submit fresh samples that are representative of their language, culture, literature, history, and region.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Peer-reviewed via Aya Score quality mechanism. Average approval ratio for Aya original annotations was ~0.81 (highest among all data groups). Contributors were community volunteers, not professionally compensated. Some language-specific annotator skew exists: for 12 languages, the 5 most active annotators contributed all examples."
+    },
+    "dolly-machine-translated": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 6: 'We automatically translate the prompts with NLLB into 101 languages and their dialects that are captured by NLLB.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Section 6: Prompts are from English Dolly dataset, selected by two (English-speaking) reviewers, then machine-translated. No native speakers involved in translation. 'We automatically translate the prompts with NLLB into 101 languages.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 6: 'Our aim with this selection was to exclude any culturally or geographically specific prompts and completions.' Prompts were specifically chosen for cross-cultural universality; culturally-specific English content was removed, but the source remains English-centric Dolly dataset.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Paper warns: 'the expressiveness of a translated evaluation set is limited by the quality of the translation model and may adversely impact an estimate of ability in languages where translations are not adequate.' Standard Arabic in Latin script and Minangkabau in Arabic script were excluded due to significant translation errors. Mean ChrF++ translation quality is 48.17 (min: 10.9, max: 69.6)."
+    },
+    "dolly-human-edited": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 6: 'The automatic translation process may introduce errors in the prompts... To enhance the reliability of testing on these prompts, we therefore enlist professional human annotators to post-edit the examples.' Appendix F.3 instructions: 'The prompts are originally machine-translated from English.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Appendix F.1: 'The primary demographic make-up of the participants in the evaluations was recruited based on their proficiency in the language groups. The proficiency was self-reported, and our requirements were natively proficient or professionally proficient in the specific languages needed for the project.'",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 6: The source prompts are from English Dolly with culturally-specific content removed. Post-editing corrects translation quality but does not add cultural grounding. 'some prompts, even when translated correctly, might still not transfer well into other languages—which is the main difference between a translated English-centric set like this and an evaluation set originally written in each target language like aya-human-annotated.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional annotators paid 30 CAD/hour. Each translation post-edited by one annotator, then verified by a second annotator. 3-4 annotators per language. Post-editing effort varied significantly: Russian had highest HTER (37.43), French lowest (5.56). At least 41% of prompts were edited in all languages, indicating common translation errors."
+    }
+  }
+}

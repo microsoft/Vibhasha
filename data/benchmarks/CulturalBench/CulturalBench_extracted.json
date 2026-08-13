@@ -1,0 +1,122 @@
+{
+  "benchmark_name": "CulturalBench",
+  "paper_id": "2025.acl-long.1247",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce CULTURALBENCH: a set of 1,696 human-written and human-verified questions to assess LMs' cultural knowledge",
+  "total_languages_claimed": 1,
+  "total_datasets": 1,
+  "dataset_names": ["CulturalBench"],
+  "task_categories": ["cultural knowledge QA", "multiple-choice QA", "binary classification (True/False)"],
+  "brief_description": "CulturalBench is an English-only benchmark of 1,696 human-written and human-verified multiple-choice questions assessing LMs' cultural knowledge across 45 global regions and 17 cultural topics. It includes two evaluation setups: CulturalBench-Easy (multiple-choice) and CulturalBench-Hard (True/False binary for each option, yielding 6,784 questions).",
+  "datasets": [
+    {
+      "dataset_name": "CulturalBench",
+      "variant_name": null,
+      "variant_notes": "The benchmark has two evaluation setups: CulturalBench-Easy (1,696 multiple-choice questions with 4 options each) and CulturalBench-Hard (6,784 binary True/False questions derived from the same 1,696 questions, 4 per original question). These are evaluation formats of the same underlying data, not separate datasets.",
+      "task_type": "cultural knowledge QA (multiple-choice and binary True/False)",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "Human-AI red-teaming (CulturalTeaming): human annotators brainstorm culturally relevant scenarios from personal experience, AI helper formulates structured questions, humans verify and revise to challenge models. Full dataset then verified by 5 independent annotators per region via Prolific. Questions filtered by majority vote threshold (>=4 out of 5 annotators).",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "University of Washington, University of British Columbia, Vector Institute for AI, McGill University, Mila, University of Copenhagen, Stanford University; annotators recruited via Prolific platform",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethical Considerations (Sec.): 'We pay annotators according to our vendor (Prolific)'s guidance, which is higher than the local wage requirement.' Table 9 reports annotator demographics (ethnicity, age group, sex, student status) across all 14 sub-continent regions."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "English-only benchmark covering 45 countries/regions across 14 sub-continents. 17 cultural topics under 3 overarching categories (Daily Life, Social Etiquette, Wider Society). Over 3,600 questions initially collected, filtered to ~3,000 after removing non-cultural questions, then to 1,696 after majority-vote filtering. Two question types: Single-mode (one correct answer, N=1554) and Multi-mode (multiple correct answers, N=142)."
+    }
+  ],
+  "total_languages": 1,
+  "languages": {
+    "English": {
+      "iso_code": null,
+      "datasets_present_in": ["CulturalBench"]
+    }
+  },
+  "assessments": {
+    "CulturalBench": {
+      "translated": {
+        "value": false,
+        "evidence": "Limitations section: 'We develop an English-only benchmark as the initial step in evaluating models' cultural knowledge.' Questions are human-written via red-teaming, not translated from another source. A small supplementary multilingual experiment (Appendix A) translated questions to Chinese/Cantonese for 3 regions but this is not part of the benchmark itself.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 2.2: 'We set two main criteria to ensure that the recruited annotators have a deep understanding of the culture of the targeted country or region – (1) Nationality (2) Primary residence before age 18.' and 'we recruited five annotators for each region through the Prolific platform.' Initial question writers also brainstorm 'culturally relevant scenarios based on their personal experiences of their cultures' (Section 2.1).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Abstract: 'a set of 1,696 human-written and human-verified questions to assess LMs' cultural knowledge, covering 45 global regions including underrepresented ones like Bangladesh, Zimbabwe, and Peru. Questions are each verified by five independent annotators and span 17 diverse topics ranging from food preferences to greeting etiquette.' Section 3.2: 'we adopted a discovery-based approach by encouraging human annotators to brainstorm cultural concepts from their personal experiences.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Strict quality control: 5 independent annotators per region, majority vote threshold of >=4/5, multiple-label format allowing multiple correct answers. Questions without majority votes were filtered out. Internal filtering by researchers removed ~200 non-cultural questions. Over 3,600 questions initially collected, filtered to 1,696. IRB-reviewed process."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["CulturalBench"],
+      "evidence": "CulturalBench is natively authored in English. Questions are human-written via CulturalTeaming pipeline based on annotators' personal cultural experiences, not translated from any other source. Section 2.1: 'humans provide diverse cultural scenarios based on their daily observations and unique cultural knowledge.'"
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets translated from English. A small supplementary multilingual experiment (Appendix A) translated questions to Simplified Chinese, Traditional Chinese, and Cantonese, but this is not part of the main benchmark."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["CulturalBench"],
+      "details": {
+        "CulturalBench": "The entire benchmark is designed for cultural knowledge evaluation. Covers 45 countries/regions across 14 sub-continents, 17 cultural topics under 3 categories (Daily Life, Social Etiquette, Wider Society). Questions are grounded in annotators' personal cultural experiences and verified by 5 native cultural experts per region."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "true — annotators are native to the target culture, but all questions in English",
+      "evidence": "Section 2.2: 'We set two main criteria to ensure that the recruited annotators have a deep understanding of the culture of the targeted country or region – (1) Nationality (2) Primary residence before age 18.' For specific groups (e.g., US, UK): 'we try to have more fine-grain selection to find the target group such as ethnicity (e.g. African American), and place of residence (e.g., Wales).' Note: Benchmark is English-only; annotators are culturally native but questions are in English."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["crowdworkers", "researchers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Prolific platform (crowdworkers for data collection and verification)", "University of Washington", "University of British Columbia", "Vector Institute for AI", "McGill University", "Mila", "University of Copenhagen", "Stanford University"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "Ethical Considerations: 'We pay annotators according to our vendor (Prolific)'s guidance, which is higher than the local wage requirement.'",
+      "irb_ethics_review": true,
+      "evidence": "Ethical Considerations: 'Our data collection has been reviewed by the university's IRB board to ensure it has no harm on human annotators.' Table 9 reports detailed annotator demographics (ethnicity, age group, sex, student status) by sub-continent. Annotators recruited via Prolific with 5 per region for verification. Minimum 10 active annotators on Prolific required per region."
+    },
+    "english_centricity_notes": "CulturalBench is intentionally English-only by design. Limitations section: 'We develop an English-only benchmark as the initial step in evaluating models' cultural knowledge. This approach facilitates fair comparisons of cultural understanding across different regions.' The authors acknowledge this limitation but argue it avoids confounding cultural knowledge with language proficiency, especially for underrepresented regions. The benchmark evaluates multicultural knowledge through English, not multilingual capability.",
+    "geographic_representation": {
+      "primary_region": "Global (45 countries/regions across 14 sub-continents)",
+      "sub_regions": [
+        "North Africa (Morocco, Egypt)",
+        "South Africa (Zimbabwe, South Africa)",
+        "West Africa (Nigeria)",
+        "North America (United States, Canada)",
+        "South America (Chile, Mexico, Brazil, Peru, Argentina)",
+        "East Asia (South Korea, Japan, Taiwan, Hong Kong, China)",
+        "South Asia (India, Bangladesh, Nepal, Pakistan)",
+        "Southeast Asia (Vietnam, Malaysia, Philippines, Indonesia, Singapore, Thailand)",
+        "Middle East/West Asia (Iran, Israel, Lebanon, Saudi Arabia, Turkey)",
+        "East Europe (Ukraine, Czech Republic, Romania, Poland)",
+        "North Europe (United Kingdom, Russia)",
+        "South Europe (Spain, Italy)",
+        "West Europe (Netherlands, France, Germany)",
+        "Oceania (New Zealand, Australia)"
+      ],
+      "also_represented": [],
+      "notably_excluded": ["Central Asia", "Central Africa", "East Africa", "Caribbean", "Central America", "Pacific Islands"],
+      "evidence": "Tables 7 and 8 (Appendix C) list all 45 countries with question counts. Coverage spans 14 sub-continental regions. 'Our benchmark covers a wide range of global regions, spanning 45 countries and regions, including underrepresented regions such as Bangladesh, Zimbabwe, and Peru.' (Section 3.1). Limited by Prolific annotator availability (minimum 10 active annotators per region, per Appendix A)."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "CulturalBench is an English-only multicultural benchmark (not multilingual). It covers 45 countries/regions but only 1 language (English). The benchmark evaluates cultural knowledge, not language capability. Two evaluation formats (Easy=MCQ, Hard=binary T/F) share the same underlying 1,696 questions."
+  }
+}

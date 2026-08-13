@@ -1,0 +1,184 @@
+{
+  "assessments": {
+    "IFEval": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate IFEval from English to other languages (Section 3.2). Step 1: Translating data from English to selected non-English languages by machine translation systems. (Section 3.3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Each sample is given to three native annotators who are proficient in English and their native language. (Section 3.3, Step 2)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "BenchMAX focuses on language-agnostic capabilities. These capabilities are language-agnostic. The numerical outcome remains consistent regardless of whether one learns the arithmetic expression 1 + 1 = 2 in English or Chinese. (Section 1). All content is translated from English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multi-round annotation with rule-based verifiers (constraint satisfaction) and model-based verifiers (Qwen2.5-72B with GEMBA-SQM scoring). At least 3 iterations per dataset. Score threshold of 90 for first two iterations. Annotators verify translated keywords appear in translated instructions."
+    },
+    "m-ArenaHard": {
+      "translated": {
+        "value": true,
+        "evidence": "Ten of the sixteen languages required have been provided by m-ArenaHard, which has translated the original dataset into 22 languages using Google Translate. Based on m-ArenaHard, we further translate the English data into six other languages via Google Translate. (Appendix B.2)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Subsequently, we ask human annotators to review and edit the translated instructions in all 16 languages. (Appendix B.2)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content originates from English-language Arena-Hard real-world instructions translated to other languages. Focuses on language-agnostic instruction following capability.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Original m-ArenaHard used machine translation without manual annotation. BenchMAX adds human post-editing for all 16 non-English languages."
+    },
+    "HumanEval+": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate Humaneval+ and LiveCodeBench_v4 from English to other languages. (Section 3.2). We instruct GPT-4o to complete this translation task with well-designed prompts. (Appendix B.3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "A human post-editing process is employed to refine the quality of the generated translation. (Appendix B.3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Python code generation tasks are language-agnostic by design. Only docstrings/comments are translated from English.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "GPT-4o used for initial translation to preserve code structure. Only natural text in function comments is translated; function names and code syntax preserved."
+    },
+    "LiveCodeBench_v4": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate Humaneval+ and LiveCodeBench_v4 from English to other languages. (Section 3.2). We employ GPT-4o to translate the English problems into other 16 languages. (Appendix B.4)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Human review is also used to ensure the overall quality of the translated texts. (Appendix B.4)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Coding problems from competition platforms, translated from English. Code input/output and syntax not translated.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "GPT-4o used for initial translation to distinguish translatable vs non-translatable parts. Human review follows."
+    },
+    "MGSM": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Given that the MGSM examples are written in ten languages we need, we only translate the English version into the remaining six languages via Google Translate. This is also followed by a manual checking procedure. (Appendix B.5). Existing languages: en, bn, de, es, fr, ja, ru, sw, te, th, zh. Newly translated: ar, cs, hu, ko, vi, sr. (Table 13)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "10 existing languages from original MGSM (human-annotated by original authors). 6 new languages translated from English via Google Translate followed by manual checking. (Appendix B.5)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Grade-school math word problems originally in English. Focuses on language-agnostic mathematical reasoning capability.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Original MGSM already supported 10 of the needed languages with human annotation. Only 6 new languages were translated and manually checked."
+    },
+    "GPQA": {
+      "translated": {
+        "value": true,
+        "evidence": "We expand GPQA to 17 languages (Section 3.2). The question and the four options of each sample are translated into 16 other languages by Google Translate. (Appendix B.6)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Annotators are required to hold at least a Bachelor's degree (Section 3.3, Step 2). Post-editing by native annotators follows machine translation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Graduate-level science questions in biology, physics, and chemistry, originally created in English by domain experts. Translated to other languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Specialized annotators required (Bachelor's degree minimum) due to scientific content. Questions and options concatenated with option markers before translation, then extracted post-translation."
+    },
+    "RULER": {
+      "translated": {
+        "value": true,
+        "evidence": "We build this task based on RULER, and translate haystacks, needles, and QA pairs. (Section 3.2). For haystacks and QA pairs in Question Answering dataset, we only extend languages by machine translation. We do not post-edit the long context data mainly due to the high cost in money and time. (Appendix B)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "We do not post-edit the long context data mainly due to the high cost in money and time. (Appendix B)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Synthetic long-context test sets with translated haystacks (from UN corpus), needles, and QA pairs. No cultural adaptation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Only machine-translated, no human post-editing. Haystacks from UN parallel corpus. QA pairs from XQUAD. UUIDs used as keys/values in needles to avoid translation issues."
+    },
+    "Nexus": {
+      "translated": {
+        "value": true,
+        "evidence": "We translate the queries in Nexus to other languages, but leave the APIs in English. (Section 3.2). We only translate the user queries from English into other languages. (Appendix B.8)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The user queries are initially translated by Google Translate and subsequently adjusted by human annotators. (Appendix B.8)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Function calling queries translated from English. API/tool descriptions kept in English. Focuses on language-agnostic tool use capability.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "English parameters preserved via placeholder replacement during translation. Only user queries are multilingual; function definitions remain in English."
+    },
+    "FLORES+TED+WMT24": {
+      "translated": {
+        "value": false,
+        "evidence": "General domain data are composed of Flores-200, TED and WMT24 testsets. In BenchMAX, we include parallel data from 17 selected languages. (Appendix A). These are existing parallel corpora, not translated for this paper.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: These are existing parallel corpora included as-is. No additional annotation by BenchMAX authors. Original annotation quality depends on source datasets.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Standard parallel translation test sets. Not culturally adapted for specific regions.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Existing standard translation evaluation datasets. Quality governed by original dataset creation processes (FLORES-200: professionally translated; TED: crowd-aligned talks; WMT24: competition test sets)."
+    },
+    "BenchMAX Domain Translation": {
+      "translated": {
+        "value": true,
+        "evidence": "Domain translation data is a by-product of the BenchMAX construction process, encompassing a 17-way parallel task across diverse domains. (Appendix A). All source content originates from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "The domain translation data is derived from the human-post-edited translations of other BenchMAX tasks. Each sample is given to three native annotators. (Section 3.3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "By-product of translating English-origin task data (instruction following, reasoning, code, tool use) into other languages. Inherits English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality inherits from the post-editing process of constituent tasks. Challenges models with domain-specific terminology and determining whether segments (code, formulas) should be translated."
+    }
+  }
+}

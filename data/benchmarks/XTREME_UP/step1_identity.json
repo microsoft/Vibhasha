@@ -1,0 +1,32 @@
+{
+  "benchmark_name": "XTREME-UP",
+  "paper_id": "2023.findings-emnlp.125",
+  "year": 2023,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We create new datasets for OCR, autocomplete, question answering, semantic parsing, and transliteration, and build on and refine existing datasets for other tasks.",
+  "total_languages_claimed": 88,
+  "total_datasets": 9,
+  "dataset_names": [
+    "FLEURS (ASR)",
+    "UL-OCR",
+    "Autocomplete (Universal Dependencies)",
+    "Dakshina Transliteration",
+    "FLORES-101 (MT)",
+    "TyDi QA / XOR QA (In-language QA)",
+    "TyDi QA / XOR QA (Cross-language QA)",
+    "MasakhaNER-X",
+    "MTOP++ (Semantic Parsing)"
+  ],
+  "task_categories": [
+    "automatic_speech_recognition",
+    "optical_character_recognition",
+    "autocomplete",
+    "transliteration",
+    "machine_translation",
+    "question_answering",
+    "information_retrieval",
+    "named_entity_recognition",
+    "semantic_parsing"
+  ],
+  "brief_description": "XTREME-UP is a multilingual benchmark focusing on user-centric tasks in a scarce-data setting for 88 under-represented languages across 9 key technologies including ASR, OCR, MT, and information access tasks. It standardizes multilingual in-language fine-tuning based on realistic annotation costs (8 hours per language)."
+}

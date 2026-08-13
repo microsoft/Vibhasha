@@ -1,0 +1,48 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["aya-human-annotated"],
+      "evidence": "Section 6: 'The first set represents culturally-grounded and original prompts.' Section 2.2.1: 'This task facilitates the inclusion of human-generated organic content by allowing annotators to submit original prompt-completion pairs in their language... aims to encourage annotators to submit fresh samples that are representative of their language, culture, literature, history, and region.'"
+    },
+    "datasets_translated_from_english": {
+      "list": ["dolly-machine-translated", "dolly-human-edited"],
+      "evidence": "Section 6: 'We separate a curated subset of 200 Dolly prompts... We automatically translate the prompts with NLLB into 101 languages.' dolly-human-edited is post-edited from the same English-sourced machine translations."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["aya-human-annotated"],
+      "details": {
+        "aya-human-annotated": "Original prompts written by fluent speakers in 7 languages, representing their language, culture, literature, history, and region. Section 6: 'The first set represents culturally-grounded and original prompts.'"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "mixed",
+      "evidence": "aya-human-annotated: fluent speakers of each language (community volunteers). dolly-machine-translated: no native speakers involved (machine translation). dolly-human-edited: 'natively proficient or professionally proficient' annotators (Appendix F.1). Overall: mixed across the three subsets."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "community_volunteers (aya-human-annotated: 2,997 registered users from 119 countries)",
+        "researchers (dolly-machine-translated: prompt selection by reviewers)",
+        "professional_annotators (dolly-human-edited: Cohere annotators, 3-4 per language)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Cohere For AI Community (aya-human-annotated)",
+        "Databricks (original Dolly prompts)",
+        "Cohere (dolly-human-edited post-editors)"
+      ],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "aya-human-annotated: No financial compensation; volunteers motivated by community, identity, and social justice (Section 7). dolly-human-edited: Professional annotators paid 30 CAD per hour (Appendix F.1).",
+      "irb_ethics_review": null,
+      "evidence": "Section 7: 'The motivations of contributors were not based on financial remuneration but on ideals of community, identity, and social justice.' Appendix F.1: 'The annotators were paid 30 CAD per hour.' Demographics for Aya community volunteers reported in Figure 3 (age, gender distribution). For dolly-human-edited annotators: 'We do not ask any annotators to share or report any of these statistical pieces of information in a formal way.'"
+    },
+    "english_centricity_notes": "2 of 3 subsets (dolly-machine-translated and dolly-human-edited) are derived from English Dolly prompts. The paper explicitly acknowledges this limitation: 'some prompts, even when translated correctly, might still not transfer well into other languages—which is the main difference between a translated English-centric set like this and an evaluation set originally written in each target language like aya-human-annotated.' The aya-human-annotated subset (7 languages) is the only fully non-English-centric component. The paper recommends pairing translated sets with aya-human-annotated or dolly-human-edited for more reliable evaluation.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["Asia", "Africa", "Europe", "Latin America"],
+      "also_represented": ["Oceania (via Samoan, Maori)"],
+      "notably_excluded": ["Indigenous Americas", "most Oceanic languages"],
+      "evidence": "Figure 4: 'more than half of all contributions for the Aya project came from Asia with 58.8%, followed by the African region with 27.4%. Europe, Latin America, and other regions account for the remaining 13.8% of the contributions.' The evaluation suite covers 101 languages spanning multiple continents but is concentrated in languages with NLLB/mT5 support. Figure 2 shows contributors from 119 countries with India having the highest number (346/2,997)."
+    }
+  }
+}

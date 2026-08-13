@@ -1,0 +1,72 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "Naamapadam",
+      "variant_name": "Naamapadam-train",
+      "variant_notes": "Training and dev splits created automatically via annotation projection from English NER tags onto Indic language sentences in the Samanantar parallel corpus. Contains 5.7M sentences and 9.4M entities across 11 languages.",
+      "task_type": "Named Entity Recognition",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "Annotation projection from English NER tags to Indic language words using word alignments (Awesome-align) on the Samanantar English-Indic parallel corpus. The underlying Indic text is original parallel corpus text, not machine-translated.",
+      "num_languages": 11,
+      "language_list": [
+        "Assamese",
+        "Bengali",
+        "Gujarati",
+        "Hindi",
+        "Kannada",
+        "Malayalam",
+        "Marathi",
+        "Odia",
+        "Punjabi",
+        "Tamil",
+        "Telugu"
+      ],
+      "annotation_method": "Automatic annotation projection: English sentences in Samanantar parallel corpus are tagged with BERT-base-NER, then NER tags are projected onto aligned Indic language words via bidirectional word alignment (Awesome-align). Sentences are filtered by alignment quality score, retaining top 30-40%.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "IIT Madras, AI4Bharat, Microsoft India, IBM Research India",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Automatic pipeline created by the research team; no human annotators involved in training data creation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Entity categories limited to PER, LOC, ORG. MISC tags from the English NER tagger are ignored. Uses Samanantar parallel corpus (Ramesh et al., 2022) as the source of parallel sentences."
+    },
+    {
+      "dataset_name": "Naamapadam",
+      "variant_name": "Naamapadam-test",
+      "variant_notes": "Manually annotated test sets for 9 languages (500-1000 sentences per language). Assamese and Odia test sets are silver-standard (projections not yet manually verified).",
+      "task_type": "Named Entity Recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": "Annotators were provided sentences with projected NER annotations and asked to verify/correct them following CoNLL 2003 annotation guidelines. The underlying text comes from the Samanantar parallel corpus.",
+      "num_languages": 11,
+      "language_list": [
+        "Assamese",
+        "Bengali",
+        "Gujarati",
+        "Hindi",
+        "Kannada",
+        "Malayalam",
+        "Marathi",
+        "Odia",
+        "Punjabi",
+        "Tamil",
+        "Telugu"
+      ],
+      "annotation_method": "Human annotation: Annotators verified and corrected automatically projected NER annotations on sentences, following CoNLL 2003 annotation guidelines. 9 languages have manually annotated test sets; Assamese and Odia have silver-standard test sets.",
+      "data_creator_info": {
+        "creator_type": "volunteers_and_paid_experts",
+        "creator_affiliation": "Native language speaker volunteers and paid language experts",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "The human annotations were contributed by volunteers who are native language speakers. The volunteers were not made any payment and worked pro bono. Some annotators were paid for their services. These language experts were paid a competitive monthly salary to help with the task."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Inter-annotator agreement (Cohen's kappa) computed for all 9 manually annotated languages, ranging from 0.69 (Punjabi) to 0.95 (Hindi). Annotators named in acknowledgements: Archana Mhaske, Anil Mhaske, Sangeeta Rajagopal, Vindhya DS, Nitin Kedia, Yash Madhani, Kabir Ahuja, Shallu Rani, Armin Virk and Gowtham Ramesh."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "GSM8K",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "mathematical_reasoning",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["English"],
+      "annotation_method": "human_authored",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Upwork freelance contractors and Surge AI (NLP data labeling platform)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We initially collected a starting set of a thousand problems and natural language solutions by hiring freelance contractors on Upwork (upwork.com). We then worked with Surge AI (surgehq.ai), an NLP data labeling platform, to scale up our data collection."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "7.5K training problems and 1K test problems. Problems take 2-8 steps to solve using basic arithmetic (+, -, ×, ÷). Seed questions were auto-generated from a few-shot prompted 175B GPT-3 model and provided to contractors as optional inspiration. Quality control via re-solving by different workers with ~1.7% disagreement rate."
+    }
+  ]
+}

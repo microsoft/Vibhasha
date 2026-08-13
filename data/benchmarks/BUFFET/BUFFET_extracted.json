@@ -1,0 +1,910 @@
+{
+  "benchmark_name": "BUFFET",
+  "paper_id": "asai-etal-2024-buffet",
+  "year": 2024,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "we introduce BUFFET: Benchmark of Unified Format FEw-shot Transfer Evaluation... BUFFET curates a diverse mix of tasks: 15 different tasks... across 54 languages",
+  "total_languages_claimed": 54,
+  "total_datasets": 15,
+  "dataset_names": [
+    "XLSUM",
+    "TyDiQA-QG",
+    "XNLI",
+    "AmericasNLI",
+    "ParsiNLU-Entailment",
+    "OCNLI",
+    "KLUE-NLI",
+    "PAWS-X",
+    "IndicNLU-Sentiment",
+    "Amazon Review",
+    "XCOPA",
+    "XWinograd",
+    "TyDiQA-GoldP",
+    "WikiANN",
+    "MasakhaNER"
+  ],
+  "task_categories": [
+    "Summarization",
+    "Question Generation",
+    "Natural Language Inference",
+    "Paraphrase Detection",
+    "Sentiment Analysis",
+    "Commonsense Reasoning",
+    "Question Answering",
+    "Named Entity Recognition"
+  ],
+  "brief_description": "BUFFET (Benchmark of Unified Format Few-shot Transfer Evaluation) is a benchmark for few-shot cross-lingual transfer that unifies 15 diverse NLP tasks across 54 typologically diverse languages in a sequence-to-sequence format, providing fixed few-shot examples and instructions for rigorous comparisons of multilingual language models using both fine-tuning and in-context learning.",
+  "datasets": [
+    {
+      "dataset_name": "XLSUM",
+      "variant_name": null,
+      "variant_notes": "Sampled 1,000 test instances per language; languages filtered to those in other BUFFET datasets",
+      "task_type": "Summarization",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 12,
+      "language_list": ["Tamil", "Vietnamese", "Indonesian", "Turkish", "Japanese", "Thai", "Bengali", "Arabic", "Spanish", "Persian", "Chinese", "Swahili"],
+      "annotation_method": "automatically aligned from BBC news articles in each language",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XLSUM is a news article summarization dataset automatically curated from BBC. Table 1 lists data curation as 'aligned'."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Hasan et al., 2021",
+      "notes": "News domain. k=1 shot for training due to context window limits."
+    },
+    {
+      "dataset_name": "TyDiQA-GoldP",
+      "variant_name": "TyDiQA-QG",
+      "variant_notes": "Converted from TyDiQA-GoldP into a question generation task: given a passage and answer, generate the question",
+      "task_type": "Question Generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 8,
+      "language_list": ["Arabic", "Belarusian", "Finnish", "Indonesian", "Swahili", "Korean", "Russian", "Telugu"],
+      "annotation_method": "in-language annotation by native speakers",
+      "data_creator_info": {
+        "creator_type": "crowdworkers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "TyDiQA is described as 'in-language' annotation (Table 1). The original TyDiQA paper uses information-seeking questions from native speakers."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020",
+      "notes": "Wikipedia domain. k=8 shots. The QG reformulation is new in this paper but the underlying data is from TyDiQA."
+    },
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 14,
+      "language_list": ["Arabic", "Bulgarian", "German", "Modern Greek", "Spanish", "French", "Hindi", "Russian", "Swahili", "Thai", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "translation from English MultiNLI",
+      "data_creator_info": {
+        "creator_type": "human_professional",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "XNLI is classified as 'translation' in Table 1. Created by translating English MNLI premises and hypotheses."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al., 2018",
+      "notes": "Miscellaneous domain. k=16 per class. English also included in original but BUFFET counts 14 target languages."
+    },
+    {
+      "dataset_name": "AmericasNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 10,
+      "language_list": ["Aymara", "Bribri", "Asháninka", "Guarani", "Wixarika", "Nahuatl", "Otomí", "Quechua", "Shipibo-Konibo", "Rarámuri"],
+      "annotation_method": "translation from XNLI/English NLI by native speakers and linguists",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'translation'. AmericasNLI evaluates 'zero-shot natural language understanding of pretrained multilingual models in truly low-resource languages' (Ebrahimi et al., 2022)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Ebrahimi et al., 2022",
+      "notes": "Miscellaneous domain. k=16 per class. Covers indigenous languages of the Americas."
+    },
+    {
+      "dataset_name": "ParsiNLU-Entailment",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Persian"],
+      "annotation_method": "in-language annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. ParsiNLU is 'A Suite of Language Understanding Challenges for Persian' (Khashabi et al., 2021)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Khashabi et al., 2021",
+      "notes": "Miscellaneous domain. k=16 per class."
+    },
+    {
+      "dataset_name": "OCNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Chinese"],
+      "annotation_method": "in-language annotation",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. OCNLI is 'Original Chinese Natural Language Inference' (Hu et al., 2020a)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Hu et al., 2020a",
+      "notes": "Miscellaneous domain. k=16 per class."
+    },
+    {
+      "dataset_name": "KLUE-NLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": ["Korean"],
+      "annotation_method": "in-language annotation",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. KLUE is 'Korean Language Understanding Evaluation' (Park et al., 2021)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Park et al., 2021",
+      "notes": "Miscellaneous domain. k=16 per class."
+    },
+    {
+      "dataset_name": "PAWS-X",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Paraphrase Detection",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 6,
+      "language_list": ["German", "Spanish", "French", "Japanese", "Korean", "Chinese"],
+      "annotation_method": "translated and aligned from English PAWS",
+      "data_creator_info": {
+        "creator_type": "human_professional",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. PAWS-X is 'A cross-lingual adversarial dataset for paraphrase identification' created from PAWS (Yang et al., 2019)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Yang et al., 2019",
+      "notes": "Wikipedia domain. k=7 per class (16 total). Paper classifies as 'aligned' rather than 'translation'."
+    },
+    {
+      "dataset_name": "IndicNLU-Sentiment",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Analysis",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 14,
+      "language_list": ["Assamese", "Bengali", "Boro", "Gujarati", "Hindi", "Kannada", "Maithili", "Malayalam", "Marathi", "Oriya", "Panjabi", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "translation from English sentiment analysis data",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Section A.1: 'INDICNLU-SENTIMENT is created by translating English sentiment analysis data into diverse Indic languages.' Table 1 marks data curation as 'translation'."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Aggarwal et al., 2022",
+      "notes": "E-commerce domain. k=16 per class."
+    },
+    {
+      "dataset_name": "Amazon Review",
+      "variant_name": "Multilingual Amazon Review Dataset",
+      "variant_notes": "Converted to binary classification by discarding neutral reviews (score 3) and mapping scores 4-5 to positive, 1-2 to negative",
+      "task_type": "Sentiment Analysis",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": ["German", "Spanish", "French", "Japanese", "Chinese"],
+      "annotation_method": "in-language: natively authored product reviews by users",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": "Amazon",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. Reviews are natively authored by Amazon users in each language (Keung et al., 2020). Sampled 2,000 test instances."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Keung et al., 2020",
+      "notes": "E-commerce domain. k=16 per class."
+    },
+    {
+      "dataset_name": "XCOPA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 11,
+      "language_list": ["Estonian", "Haitian", "Italian", "Indonesian", "Quechua", "Swahili", "Chinese", "Tamil", "Thai", "Turkish", "Vietnamese"],
+      "annotation_method": "translation from English COPA by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'translation'. XCOPA is 'A multilingual dataset for causal commonsense reasoning' translated from English (Ponti et al., 2020)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Ponti et al., 2020",
+      "notes": "Miscellaneous domain. k=16 total."
+    },
+    {
+      "dataset_name": "XWinograd",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["Japanese", "Portuguese", "Russian", "Chinese"],
+      "annotation_method": "translation from English",
+      "data_creator_info": {
+        "creator_type": null,
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'translation'. XWinograd referenced as part of Muennighoff et al. (2023)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Muennighoff et al., 2023",
+      "notes": "Miscellaneous domain. k=8 total."
+    },
+    {
+      "dataset_name": "TyDiQA-GoldP",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Question Answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 8,
+      "language_list": ["Arabic", "Belarusian", "Finnish", "Indonesian", "Swahili", "Korean", "Russian", "Telugu"],
+      "annotation_method": "in-language annotation by information-seeking native speakers",
+      "data_creator_info": {
+        "creator_type": "crowdworkers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. 'the data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon' (Section A.1)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Clark et al., 2020",
+      "notes": "Wikipedia domain. k=8. Span extraction QA."
+    },
+    {
+      "dataset_name": "WikiANN",
+      "variant_name": null,
+      "variant_notes": "Sampled 1,000 test instances per language; reduced to 3 entity types (location, person, organization); filtered to languages in other BUFFET datasets",
+      "task_type": "Named Entity Recognition",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 33,
+      "language_list": ["Tamil", "French", "Italian", "Japanese", "Vietnamese", "Quechua", "Belarusian", "Gujarati", "Estonian", "Thai", "Oriya", "Kannada", "Finnish", "Guarani", "Russian", "Modern Greek", "Urdu", "Spanish", "Hindi", "Telugu", "Assamese", "Swahili", "Panjabi", "Bulgarian", "Malayalam", "Turkish", "Persian", "Indonesian", "Korean", "Marathi", "German", "Arabic", "Bengali", "Chinese"],
+      "annotation_method": "automatically curated from Wikipedia using cross-lingual links",
+      "data_creator_info": {
+        "creator_type": "automated",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. 'WIKIANN is automatically curated and exhibit alignment errors' (Section A.1)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Pan et al., 2017",
+      "notes": "Wikipedia domain. k=32 total. Known alignment errors (Yu et al., 2022)."
+    },
+    {
+      "dataset_name": "MasakhaNER",
+      "variant_name": null,
+      "variant_notes": "Reduced to 3 entity types and merged BIO tags for consistency with WikiANN",
+      "task_type": "Named Entity Recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["Amharic", "Hausa", "Igbo", "Kinyarwanda", "Luo", "Nigerian Pidgin", "Swahili", "Wolof", "Yoruba"],
+      "annotation_method": "in-language annotation by native speakers",
+      "data_creator_info": {
+        "creator_type": "community_volunteers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. MasakhaNER is 'Named Entity Recognition for African Languages' (Adelani et al., 2021)."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Adelani et al., 2021",
+      "notes": "News domain. k=32 total."
+    }
+  ],
+  "total_languages": 54,
+  "languages": {
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM"]
+    },
+    "Assamese": {
+      "iso_code": "as",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Aymara": {
+      "iso_code": "aym",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Belarusian": {
+      "iso_code": "be",
+      "datasets_present_in": ["TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Bengali": {
+      "iso_code": "bn",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN", "XLSUM"]
+    },
+    "Boro": {
+      "iso_code": "brx",
+      "datasets_present_in": ["IndicNLU-Sentiment"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI", "WikiANN"]
+    },
+    "Bribri": {
+      "iso_code": "bzd",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI", "OCNLI", "PAWS-X", "Amazon Review", "XCOPA", "XWinograd", "WikiANN", "XLSUM"]
+    },
+    "Asháninka": {
+      "iso_code": "cni",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Estonian": {
+      "iso_code": "et",
+      "datasets_present_in": ["XCOPA", "WikiANN"]
+    },
+    "Finnish": {
+      "iso_code": "fi",
+      "datasets_present_in": ["TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN"]
+    },
+    "Guarani": {
+      "iso_code": "gn",
+      "datasets_present_in": ["AmericasNLI", "WikiANN"]
+    },
+    "Gujarati": {
+      "iso_code": "gu",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Haitian": {
+      "iso_code": "ht",
+      "datasets_present_in": ["XCOPA"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Wixarika": {
+      "iso_code": "hch",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI", "IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["XCOPA", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["XCOPA", "WikiANN"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PAWS-X", "Amazon Review", "XWinograd", "WikiANN", "XLSUM"]
+    },
+    "Kannada": {
+      "iso_code": "kn",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["KLUE-NLI", "PAWS-X", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Maithili": {
+      "iso_code": "mai",
+      "datasets_present_in": ["IndicNLU-Sentiment"]
+    },
+    "Malayalam": {
+      "iso_code": "ml",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Marathi": {
+      "iso_code": "mr",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Modern Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI", "WikiANN"]
+    },
+    "Nahuatl": {
+      "iso_code": "nah",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Oriya": {
+      "iso_code": "or",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Otomí": {
+      "iso_code": "oto",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Panjabi": {
+      "iso_code": "pa",
+      "datasets_present_in": ["IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Nigerian Pidgin": {
+      "iso_code": "pcm",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Persian": {
+      "iso_code": "fa",
+      "datasets_present_in": ["ParsiNLU-Entailment", "WikiANN", "XLSUM"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["XWinograd"]
+    },
+    "Quechua": {
+      "iso_code": "qu",
+      "datasets_present_in": ["AmericasNLI", "XCOPA", "WikiANN"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI", "XWinograd", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Shipibo-Konibo": {
+      "iso_code": "shp",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI", "PAWS-X", "Amazon Review", "WikiANN", "XLSUM"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI", "XCOPA", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN", "XLSUM", "MasakhaNER"]
+    },
+    "Tamil": {
+      "iso_code": "ta",
+      "datasets_present_in": ["IndicNLU-Sentiment", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Rarámuri": {
+      "iso_code": "tar",
+      "datasets_present_in": ["AmericasNLI"]
+    },
+    "Telugu": {
+      "iso_code": "te",
+      "datasets_present_in": ["IndicNLU-Sentiment", "TyDiQA-GoldP", "TyDiQA-QG", "WikiANN"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI", "IndicNLU-Sentiment", "WikiANN"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI", "XCOPA", "WikiANN", "XLSUM"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["MasakhaNER"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["MasakhaNER"]
+    }
+  },
+  "assessments": {
+    "XLSUM": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. XLSUM consists of BBC news articles natively written in each language (Hasan et al., 2021). Not translated from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "XLSUM is automatically curated from BBC news; no human annotators involved in dataset creation. Articles written by journalists in each language but the dataset itself is automatically constructed.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "News articles are originally produced in each language's BBC service, reflecting local news topics and cultural context. Domain is 'News' (Table 1).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Automatically aligned dataset. BUFFET samples 1,000 test instances per language."
+    },
+    "TyDiQA-QG": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. Converted from TyDiQA-GoldP which is 'annotated in each language' (Section A.1).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TyDiQA 'data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon' (Section A.1). Questions from information-seeking native speakers (Clark et al., 2020).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions reflect native speakers' genuine information needs in each language, annotated on Wikipedia articles in the target language (Section A.1).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The QG task reformulation is new in BUFFET but underlying data quality is from TyDiQA."
+    },
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. XNLI is created by translating English MNLI data (Conneau et al., 2018). Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI)'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for XNLI. The original XNLI paper used professional translators.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 3.1: 'Those datasets might exhibit undesired biases, such as translation artifacts or unnatural topic distributions.' XNLI inherits English-centric content from MNLI.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper explicitly acknowledges translation artifacts and biases in translated datasets like XNLI."
+    },
+    "AmericasNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. AmericasNLI is translated from XNLI (Ebrahimi et al., 2022).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail the translators for AmericasNLI. The original paper used native speakers and linguists.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content is translated from English via XNLI/MNLI, not natively authored. The paper notes translation-based datasets 'might exhibit undesired biases, such as translation artifacts or unnatural topic distributions' (Section 3.1).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Covers truly low-resource indigenous languages of the Americas. All models struggle on this dataset."
+    },
+    "ParsiNLU-Entailment": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. ParsiNLU is a suite of language understanding challenges created natively for Persian (Khashabi et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "ParsiNLU is 'annotated in each language' (Table 1 'in-language' curation), created as a native Persian benchmark.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for Persian language understanding, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "OCNLI": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. OCNLI stands for 'Original Chinese Natural Language Inference' (Hu et al., 2020a).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "OCNLI is 'Original Chinese Natural Language Inference' — created natively in Chinese (Hu et al., 2020a). Table 1 marks as 'in-language'.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively in Chinese, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "KLUE-NLI": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. KLUE is 'Korean Language Understanding Evaluation' created natively in Korean (Park et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "KLUE is a Korean-native benchmark. Table 1 marks as 'in-language'.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for Korean language understanding, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'aligned'. PAWS-X was created by translating English PAWS data into target languages (Yang et al., 2019). Wikipedia domain.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for PAWS-X.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content translated/aligned from English PAWS, inheriting English-centric Wikipedia topics.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Paper classifies as 'aligned' rather than 'translation', suggesting automatic alignment was involved."
+    },
+    "IndicNLU-Sentiment": {
+      "translated": {
+        "value": true,
+        "evidence": "Section A.1: 'INDICNLU-SENTIMENT is created by translating English sentiment analysis data into diverse Indic languages.' Table 1 marks data curation as 'translation'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for IndicNLU-Sentiment.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English sentiment analysis data. Content reflects English-language product reviews, not native Indic cultural content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "Amazon Review": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. The Multilingual Amazon Review Dataset contains natively authored product reviews in each language (Keung et al., 2020).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Reviews are written by actual Amazon customers in each language. In-language content, not translated.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Reviews are natively authored, but the Amazon e-commerce platform and product selection may reflect global rather than locally-specific cultural context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "BUFFET converts to binary classification, discarding neutral (score 3) reviews. 2,000 test instances sampled."
+    },
+    "XCOPA": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI; Conneau et al. 2018, XCOPA; Ponti et al. 2020).'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the XCOPA translations. The original XCOPA paper describes translation and validation by native speakers.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English COPA. Section 3.1 notes such datasets 'might exhibit undesired biases, such as translation artifacts or unnatural topic distributions'.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "XWinograd": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not provide details about who performed the XWinograd translations.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English Winograd examples.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. Section A.1: 'the data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section A.1: 'the data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon.' TyDiQA uses information-seeking questions from native speakers (Clark et al., 2020).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions reflect genuine information-seeking behavior of native speakers in each language, asked about Wikipedia passages in their own language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "WikiANN": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. WikiANN is automatically curated from Wikipedia, not translated. Section A.1: 'WIKIANN is automatically curated and exhibit alignment errors'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "'WIKIANN is automatically curated and exhibit alignment errors (Yu et al., 2022)' (Section A.1). No human annotators involved.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Entities come from each language's Wikipedia, so entity names are language-appropriate, but the automatic curation process introduces alignment errors and the approach is not linguistically grounded.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Known alignment errors. The paper explicitly notes quality issues citing Yu et al. (2022)."
+    },
+    "MasakhaNER": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. MasakhaNER provides 'Named Entity Recognition for African Languages' with native annotation (Adelani et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "MasakhaNER is an in-language annotated dataset for African languages (Table 1 'in-language'). Created by native speakers as part of the Masakhane community effort.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for African languages by the Masakhane community. News content from African sources in each language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "BUFFET reduces entity types to 3 (location, person, organization) and merges BIO tags for consistency with WikiANN."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["ParsiNLU-Entailment", "OCNLI", "KLUE-NLI", "Amazon Review", "TyDiQA-GoldP", "TyDiQA-QG", "MasakhaNER"],
+      "evidence": "Table 1 marks these datasets as 'in-language' for data curation: annotated directly in each target language, not translated from English. XLSUM and WikiANN are 'aligned' (automatically curated) but also not translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "AmericasNLI", "IndicNLU-Sentiment", "XCOPA", "XWinograd", "PAWS-X"],
+      "evidence": "Table 1 marks XNLI, AmericasNLI, IndicNLU-Sentiment, XCOPA, XWinograd as 'translation' for data curation. PAWS-X is marked 'aligned' but created by translating English PAWS. Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI; Conneau et al. 2018, XCOPA; Ponti et al. 2020). Those datasets might exhibit undesired biases, such as translation artifacts or unnatural topic distributions.'"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TyDiQA-GoldP", "TyDiQA-QG", "ParsiNLU-Entailment", "OCNLI", "KLUE-NLI", "MasakhaNER", "XLSUM"],
+      "details": {
+        "TyDiQA-GoldP": "Questions from native speakers reflecting genuine information needs in each language",
+        "TyDiQA-QG": "Same underlying data as TyDiQA-GoldP, in-language questions",
+        "ParsiNLU-Entailment": "Natively created Persian NLI benchmark",
+        "OCNLI": "Original Chinese NLI, natively authored",
+        "KLUE-NLI": "Korean-native language understanding benchmark",
+        "MasakhaNER": "Annotated by native speakers on African language news",
+        "XLSUM": "News articles natively produced in each language by BBC language services"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "BUFFET includes both in-language annotated datasets and automatically curated/translated datasets. For in-language datasets (TyDiQA, ParsiNLU, OCNLI, KLUE, MasakhaNER), annotators are native speakers. For translated datasets, translator details are not provided in this paper. WikiANN has no human annotators (automated). Section A.1: TyDiQA is 'annotated in each language, better reflecting native speakers' interests.' BUFFET instructions were translated by NLLB machine translation and manually translated by volunteers for 5 languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "crowdworkers", "community_volunteers", "automated", "human_professional"],
+      "total_annotators_reported": null,
+      "affiliations": ["University of Washington", "Google DeepMind", "Allen Institute for AI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "BUFFET itself is an aggregation benchmark; the authors curated and unified existing datasets. The paper authors are from UW and Google DeepMind. Manual instruction translations were 'performed by volunteers' (Section 3.2.1 footnote 3). Manual evaluation of generations was 'conducted by the authors with native or bilingual proficiency' in English and Telugu. No compensation or demographics details reported for constituent dataset annotators. Ethics statement notes they 'manually assessed sampled questions to see the quality of data as well as potential privacy risks'."
+    },
+    "english_centricity_notes": "BUFFET explicitly addresses English-centricity as a design concern. Section 3.1 Design Principles include 'Beyond evaluations on translated data' noting biases in translation-based datasets. However, 6 of 15 datasets are translated from English. All instructions are originally in English, with translations provided by NLLB machine translation. English data is used as source for fine-tuning baselines. The paper's evaluation framework itself centers on English as the high-resource source language for cross-lingual transfer.",
+    "geographic_representation": {
+      "primary_region": "Global",
+      "sub_regions": ["South Asia", "East Asia", "Southeast Asia", "Europe", "Sub-Saharan Africa", "Americas", "Middle East"],
+      "also_represented": ["Central Asia", "Oceania-adjacent"],
+      "notably_excluded": ["Oceania", "Central Asia", "Northern Africa"],
+      "evidence": "Table 5 lists 54 languages from 25 language families. Includes Indo-European, Afro-Asiatic, Dravidian, Niger-Congo, Sino-Tibetan, Turkic, Kra-Dai, Austronesian, Austroasiatic, Japonic, Koreanic, Uralic, and several indigenous American families (Aymaran, Chibchan, Arawakan, Tupian, Uto-Aztecan, Oto-Manguean, Panoan). Section 3.1: '36 out of 54 languages are not Indo-European languages.' Strong representation of Indic languages (14 via IndicNLU-Sentiment) and African languages (9 via MasakhaNER). Limitations section notes: 'we do not specifically focus on finer-grained language varieties and dialects'."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": "Paper ID likely corresponds to ACL Anthology ID 'asai-etal-2024-buffet'. NAACL 2024, pages 1771-1800. ISO codes are reported in the paper (Table 5). Quechua appears as 'qu' in most datasets but 'quy' (Ayacucho Quechua) in AmericasNLI; treated as one language per Table 5. Swahili appears as 'sw' in most datasets and 'swa' in MasakhaNER (ISO 639-1 vs 639-3); same language."
+  }
+}

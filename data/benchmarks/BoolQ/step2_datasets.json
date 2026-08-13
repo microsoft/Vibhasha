@@ -1,0 +1,28 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "BoolQ",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Yes/No Question Answering",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 1,
+      "language_list": [
+        "English"
+      ],
+      "annotation_method": "Human annotators label question/article pairs in a three-step process: (1) decide if question is good (comprehensible, unambiguous, factual), (2) find a passage within the Wikipedia document containing enough information to answer the question, (3) mark whether the answer is yes or no. Questions sourced from anonymized Google search queries filtered for yes/no questions.",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Google AI Language / University of Washington",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Paper states 'We gather data using the pipeline from NQ (Kwiatkowski et al., 2019)' and refers to 'a human annotator' and 'annotators' but does not specify annotator type (crowdworker, professional, etc.) or demographics. Three of the paper authors performed quality assessment on 110 examples. Questions are from Google search users; annotation follows the NQ pipeline."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "16,000 total examples (13k new + 3k from Natural Questions). Split: 9.4k train, 3.2k dev, 3.2k test. 62.31% 'yes' answers in train set. Average question length 8.9 tokens, average passage length 108 tokens. Human accuracy: 90%."
+    }
+  ]
+}

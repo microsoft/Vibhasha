@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "Uhura",
+  "paper_id": "2412.00948v1",
+  "year": 2024,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "we present Uhura—a new benchmark that focuses on two tasks in six typologically-diverse African languages, created via human translation of existing English benchmarks.",
+  "total_languages_claimed": 6,
+  "total_datasets": 2,
+  "dataset_names": [
+    "Uhura-ARC-Easy",
+    "Uhura-TruthfulQA"
+  ],
+  "task_categories": [
+    "Science Question Answering",
+    "Truthfulness Evaluation"
+  ],
+  "brief_description": "Uhura is a benchmark for evaluating scientific question answering and truthfulness in six low-resource African languages (Amharic, Hausa, Northern Sotho, Swahili, Yoruba, Zulu), created via professional human translation of ARC-Easy and TruthfulQA from English."
+}

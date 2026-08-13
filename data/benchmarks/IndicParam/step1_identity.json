@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "IndicParam",
+  "paper_id": "2512.00333v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present IndicParam, a human-curated benchmark of over 13,000 multiple-choice questions covering 11 such languages",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": [
+    "IndicParam"
+  ],
+  "task_categories": [
+    "multiple-choice QA",
+    "language understanding",
+    "general knowledge"
+  ],
+  "brief_description": "A human-curated benchmark of over 13,000 multiple-choice questions covering 11 low- and extremely low-resource Indic languages, sourced from UGC-NET graduate-level examinations administered by the Government of India. Questions are classified as language understanding or general knowledge, and annotated with six question types (MCQ, assertion & reason, list matching, fill in the blanks, identify incorrect statement, ordering)."
+}
