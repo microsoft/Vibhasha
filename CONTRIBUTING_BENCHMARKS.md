@@ -60,7 +60,7 @@ Once merged, the deployment workflow regenerates the dashboard data from the rev
   "benchmark_name": "BenchmarkName",
   "paper_id": "arxiv or ACL anthology ID (optional)",
   "year": 2025,
-  "benchmark_type": "single | mixed | aggregation",
+  "benchmark_type": "single_dataset | mixed | aggregation",
   "total_languages_claimed": 64,
   "total_datasets": 22,
   "dataset_names": ["Dataset1", "Dataset2", "..."],
@@ -69,7 +69,7 @@ Once merged, the deployment workflow regenerates the dashboard data from the rev
 }
 ```
 
-- `benchmark_type`: `"single"` = one dataset, `"mixed"` = multiple original datasets, `"aggregation"` = collection of existing datasets
+- `benchmark_type`: `"single_dataset"` = one dataset, `"mixed"` = multiple original datasets, `"aggregation"` = collection of existing datasets
 - `dataset_names`: Use canonical dataset names (e.g., "XNLI" not "AfriXNLI") for deduplication
 
 ### step2_datasets.json
@@ -80,7 +80,7 @@ Once merged, the deployment workflow regenerates the dashboard data from the rev
     {
       "dataset_name": "DatasetName",
       "task_type": "Named Entity Recognition",
-      "source": "original | translated | hybrid | unknown",
+      "source": "original | translated | adapted | mixed | unknown",
       "source_language": null,
       "annotation_method": "How was the data created/annotated?",
       "num_languages": 20,
@@ -99,7 +99,7 @@ Once merged, the deployment workflow regenerates the dashboard data from the rev
 }
 ```
 
-- `source`: Where the data originates — `"original"` (created natively), `"translated"` (from English or another language), `"hybrid"` (mix), `"unknown"`
+- `source`: Where the data originates — `"original"` (created natively), `"translated"` (translated from another language), `"adapted"` (derived from an existing dataset), `"mixed"` (multiple origins), `"unknown"`
 - `source_language`: If translated, from which language? (e.g., `"English"`)
 
 ### step3_languages.json
@@ -151,16 +151,20 @@ Once merged, the deployment workflow regenerates the dashboard data from the rev
 
 ```json
 {
-  "geographic_representation": {
-    "regions_covered": ["Sub-Saharan Africa", "South Asia"],
-    "notes": "Context about geographic scope"
-  },
-  "datasets_from_scratch": ["Dataset1", "Dataset3"],
-  "datasets_translated_from_english": ["Dataset2"],
-  "annotator_workforce": {
-    "all_native_speakers": true,
-    "annotators_from_target_regions": true,
-    "evidence": "Quote from paper"
+  "cultural_flags": {
+    "geographic_representation": {
+      "primary_region": "Sub-Saharan Africa",
+      "sub_regions": ["West Africa", "East Africa"],
+      "evidence": "Quote from paper"
+    },
+    "datasets_from_scratch_no_english_source": {
+      "list": ["Dataset1", "Dataset3"],
+      "evidence": "Quote from paper"
+    },
+    "datasets_translated_from_english": {
+      "list": ["Dataset2"],
+      "evidence": "Quote from paper"
+    }
   }
 }
 ```

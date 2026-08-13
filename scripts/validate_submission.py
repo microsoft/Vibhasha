@@ -28,7 +28,10 @@ STEP2_REQUIRED_FIELDS = ["datasets"]
 STEP2_DATASET_FIELDS = ["dataset_name", "task_type", "source", "num_languages"]
 STEP3_REQUIRED_FIELDS = ["total_languages", "languages"]
 STEP4_REQUIRED_FIELDS = ["assessments"]
-STEP5_REQUIRED_FIELDS = ["geographic_representation"]
+STEP5_REQUIRED_FIELDS = ["cultural_flags"]
+
+BENCHMARK_TYPES = ("single_dataset", "mixed", "aggregation")
+DATASET_SOURCES = ("original", "translated", "adapted", "mixed", "unknown")
 
 
 def validate_json_loadable(path: Path) -> tuple[bool, str]:
@@ -48,8 +51,8 @@ def validate_step1(data: dict) -> list[str]:
     for field in STEP1_REQUIRED_FIELDS:
         if field not in data:
             errors.append(f"step1: missing required field '{field}'")
-    if "benchmark_type" in data and data["benchmark_type"] not in ("single", "mixed", "aggregation"):
-        errors.append(f"step1: benchmark_type must be 'single', 'mixed', or 'aggregation', got '{data['benchmark_type']}'")
+    if "benchmark_type" in data and data["benchmark_type"] not in BENCHMARK_TYPES:
+        errors.append(f"step1: benchmark_type must be one of {BENCHMARK_TYPES}, got '{data['benchmark_type']}'")
     if "dataset_names" in data and not isinstance(data["dataset_names"], list):
         errors.append("step1: dataset_names must be a list")
     return errors
@@ -68,16 +71,17 @@ def validate_step2(data: dict) -> list[str]:
         for field in STEP2_DATASET_FIELDS:
             if field not in ds:
                 errors.append(f"step2: dataset[{i}] missing required field '{field}'")
-        if "source" in ds and ds["source"] not in ("original", "translated", "hybrid", "unknown"):
-            errors.append(f"step2: dataset[{i}] source must be 'original', 'translated', 'hybrid', or 'unknown'")
+        if "source" in ds and ds["source"] not in DATASET_SOURCES:
+            errors.append(f"step2: dataset[{i}] source must be one of {DATASET_SOURCES}")
     return errors
 
 
 def validate_step3(data: dict) -> list[str]:
     errors = []
-    for field in STEP3_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"step3: missing required field '{field}'")
+    if "total_languages" not in data:
+        errors.append("step3: missing required field 'total_languages'")
+    if "languages" not in data and "constructed_benchmarks" not in data:
+        errors.append("step3: missing 'languages' or aggregation field 'constructed_benchmarks'")
     if "languages" in data:
         if not isinstance(data["languages"], dict):
             errors.append("step3: 'languages' must be a dict mapping language names to objects")
@@ -106,6 +110,12 @@ def validate_step5(data: dict) -> list[str]:
     for field in STEP5_REQUIRED_FIELDS:
         if field not in data:
             errors.append(f"step5: missing required field '{field}'")
+    cultural_flags = data.get("cultural_flags")
+    if cultural_flags is not None:
+        if not isinstance(cultural_flags, dict):
+            errors.append("step5: 'cultural_flags' must be an object")
+        elif "geographic_representation" not in cultural_flags:
+            errors.append("step5: cultural_flags missing 'geographic_representation'")
     return errors
 
 
@@ -148,18 +158,20 @@ def validate_benchmark(benchmark_dir: Path) -> list[str]:
     with open(benchmark_dir / "step5_cultural.json", encoding="utf-8") as f:
         errors.extend(validate_step5(json.load(f)))
 
-    # Cross-step consistency: dataset names in step1 should match step2
-    with open(benchmark_dir / "step1_identity.json", encoding="utf-8") as f:
-        step1 = json.load(f)
+    # Cross-step consistency: reject duplicate dataset variants. A canonical
+    # dataset may have multiple rows when each row names a distinct variant.
     with open(benchmark_dir / "step2_datasets.json", encoding="utf-8") as f:
         step2 = json.load(f)
 
-    if "dataset_names" in step1 and "datasets" in step2 and isinstance(step2["datasets"], list):
-        step1_names = set(step1["dataset_names"])
-        step2_names = {ds["dataset_name"] for ds in step2["datasets"] if "dataset_name" in ds}
-        missing_in_step2 = step1_names - step2_names
-        if missing_in_step2:
-            errors.append(f"Datasets listed in step1 but missing from step2: {sorted(missing_in_step2)}")
+    if "datasets" in step2 and isinstance(step2["datasets"], list):
+        dataset_keys = [
+            (ds["dataset_name"], ds.get("variant_name"))
+            for ds in step2["datasets"]
+            if "dataset_name" in ds
+        ]
+        duplicates = sorted({key for key in dataset_keys if dataset_keys.count(key) > 1})
+        if duplicates:
+            errors.append(f"Duplicate (dataset_name, variant_name) values in step2: {duplicates}")
 
     return errors
 
