@@ -1,9 +1,9 @@
 {
   "metadata": {
     "description": "V2 master language registry — single source of truth.",
-    "generated_at": "2026-08-13T06:46:01.235316+00:00",
+    "generated_at": "2026-08-18T05:42:56.775972+00:00",
     "design_principle": "Only language names from extraction; all metadata from Glottolog/CLDR/Joshi.",
-    "num_languages": 219,
+    "num_languages": 220,
     "joshi_level_scale": {
       "0": "Left-Behinds",
       "1": "Scraping-Bys",
@@ -1152,7 +1152,6 @@
         "Aya_Evaluation_Suite",
         "Belebele",
         "BenchMAX",
-        "BhashaBench_V1",
         "BoolQ",
         "CL-IFEval",
         "CulturalBench",
@@ -1181,7 +1180,26 @@
         "XTREME",
         "XTREME-R"
       ],
-      "num_benchmarks": 31
+      "num_benchmarks": 30
+    },
+    "English (Indian)": {
+      "iso_code": "eng",
+      "glottocode": "stan1293",
+      "family": "Indo-European",
+      "script": "Latin",
+      "macroarea": "Africa;Eurasia;South America",
+      "continent": "South Asia",
+      "joshi_level": 5,
+      "joshi_level_name": "Winners",
+      "joshi_source": "dialect",
+      "joshi_rationale": "Indian English variety",
+      "glottolog_source": "override",
+      "aliases": [],
+      "benchmarks": [
+        "BhashaBench_V1"
+      ],
+      "num_benchmarks": 1,
+      "dialect_of": "English"
     },
     "Esperanto": {
       "iso_code": "epo",

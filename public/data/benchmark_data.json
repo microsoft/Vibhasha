@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "generated_at": "2026-08-13T06:46:05.537787+00:00",
+    "generated_at": "2026-08-18T05:44:14.647285+00:00",
     "schema_version": "2.0",
     "design_principle": "Flat (dataset, language) rows — deduplicated across benchmarks.",
     "num_benchmarks": 51,
-    "num_unique_languages": 219,
+    "num_unique_languages": 220,
     "num_unique_datasets": 242,
     "num_dataset_language_rows": 2444
   },
   "insights": {
     "total_benchmarks": 51,
-    "total_languages": 219,
+    "total_languages": 220,
     "total_families": 29,
     "total_scripts": 29,
     "total_continents": 10,
     "total_task_categories": 15,
-    "single_benchmark_languages": 82,
-    "single_benchmark_pct": 37.4,
+    "single_benchmark_languages": 83,
+    "single_benchmark_pct": 37.7,
     "total_translated_entries": 1374,
     "total_native_entries": 880,
     "total_grounded_entries": 907,
@@ -156,6 +156,181 @@
       }
     },
     {
+      "name": "BHASA",
+      "num_languages": 4,
+      "num_tasks": 24,
+      "n_translated": 6,
+      "n_native": 18,
+      "n_grounded": 7,
+      "all_native_annotators": false,
+      "benchmark_type": "mixed",
+      "year": 2023,
+      "description": "BHASA is a holistic linguistic and cultural evaluation suite for LLMs in Southeast Asian languages, comprising an NLP benchmark (8 tasks across NLU, NLG, NLR), LINDSEA (a handcrafted linguistic diagnostic toolkit covering syntax, semantics, and pragmatics), and cultural diagnostics (cultural representation and sensitivity). It currently covers Indonesian, Vietnamese, Thai, and Tamil for the NLP benchmark, and Indonesian and Tamil for LINDSEA and cultural diagnostics.",
+      "families": [
+        "Austroasiatic",
+        "Austronesian",
+        "Dravidian",
+        "Tai-Kadai"
+      ],
+      "scripts": [
+        "Latin",
+        "Tamil",
+        "Thai"
+      ],
+      "continents": [
+        "South Asia",
+        "Southeast Asia"
+      ],
+      "task_categories": [
+        "Linguistic Probing",
+        "Math / Reasoning",
+        "NER",
+        "NLI / Inference",
+        "QA / Knowledge",
+        "Safety / Toxicity",
+        "Sentiment / Classification",
+        "Summarization",
+        "Translation"
+      ],
+      "citation": {
+        "paper_title": "BHASA: A Holistic Southeast Asian Linguistic and Cultural Evaluation Suite",
+        "authors": "",
+        "year": 2023,
+        "venue": "",
+        "paper_url": "https://arxiv.org/abs/2309.06085",
+        "arxiv_id": "2309.06085"
+      }
+    },
+    {
+      "name": "BUFFET",
+      "num_languages": 54,
+      "num_tasks": 15,
+      "n_translated": 6,
+      "n_native": 9,
+      "n_grounded": 7,
+      "all_native_annotators": false,
+      "benchmark_type": "aggregation",
+      "year": 2024,
+      "description": "BUFFET (Benchmark of Unified Format Few-shot Transfer Evaluation) is a benchmark for few-shot cross-lingual transfer that unifies 15 diverse NLP tasks across 54 typologically diverse languages in a sequence-to-sequence format, providing fixed few-shot examples and instructions for rigorous comparisons of multilingual language models using both fine-tuning and in-context learning.",
+      "families": [
+        "Afro-Asiatic",
+        "Arawakan",
+        "Atlantic-Congo",
+        "Austroasiatic",
+        "Austronesian",
+        "Aymaran",
+        "Chibchan",
+        "Dravidian",
+        "Indo-European",
+        "Japonic",
+        "Koreanic",
+        "Nilotic",
+        "Otomanguean",
+        "Pano-Tacanan",
+        "Quechuan",
+        "Sino-Tibetan",
+        "Tai-Kadai",
+        "Tupian",
+        "Turkic",
+        "Uralic",
+        "Uto-Aztecan"
+      ],
+      "scripts": [
+        "Arabic",
+        "Bengali",
+        "Cyrillic",
+        "Devanagari",
+        "Ethiopic",
+        "Greek",
+        "Gujarati",
+        "Gurmukhi",
+        "Japanese",
+        "Kannada",
+        "Korean",
+        "Latin",
+        "Malayalam",
+        "Odia",
+        "Simplified Chinese",
+        "Tamil",
+        "Telugu",
+        "Thai"
+      ],
+      "continents": [
+        "Americas",
+        "East Asia",
+        "Europe",
+        "Middle East & North Africa",
+        "South Asia",
+        "Southeast Asia",
+        "Sub-Saharan Africa"
+      ],
+      "task_categories": [
+        "NER",
+        "NLI / Inference",
+        "QA / Knowledge",
+        "Sentiment / Classification",
+        "Summarization"
+      ],
+      "citation": {
+        "paper_title": "BUFFET: Benchmarking Large Language Models for Few-shot Cross-lingual Transfer",
+        "authors": "",
+        "year": 2024,
+        "venue": "",
+        "paper_url": "",
+        "arxiv_id": ""
+      }
+    },
+    {
+      "name": "BeMyCheese",
+      "num_languages": 15,
+      "num_tasks": 1,
+      "n_translated": 1,
+      "n_native": 0,
+      "n_grounded": 1,
+      "all_native_annotators": true,
+      "benchmark_type": "single_dataset",
+      "year": 2025,
+      "description": "A large-scale human evaluation benchmark for assessing cultural localisation in machine translation by multilingual LLMs. Evaluates 7 LLMs across 15 target languages with 5 native-speaker raters per language on both full-text translations and segment-level culturally nuanced language (idioms, puns, holidays, cultural concepts) on a 0-3 ordinal quality scale.",
+      "families": [
+        "Afro-Asiatic",
+        "Atlantic-Congo",
+        "Indo-European",
+        "Japonic",
+        "Koreanic",
+        "Sino-Tibetan"
+      ],
+      "scripts": [
+        "Arabic",
+        "Cyrillic",
+        "Devanagari",
+        "Hebrew",
+        "Japanese",
+        "Korean",
+        "Latin",
+        "Simplified Chinese",
+        "Traditional Chinese"
+      ],
+      "continents": [
+        "Americas",
+        "East Asia",
+        "Europe",
+        "Middle East & North Africa",
+        "South Asia",
+        "Sub-Saharan Africa"
+      ],
+      "task_categories": [
+        "Sentiment / Classification"
+      ],
+      "citation": {
+        "paper_title": "BeMyCheese: A Large-Scale Human Evaluation Benchmark for Multilingual LLMs",
+        "authors": "",
+        "year": 2025,
+        "venue": "",
+        "paper_url": "https://arxiv.org/abs/2602.04729",
+        "arxiv_id": "2602.04729"
+      }
+    },
+    {
       "name": "Belebele",
       "num_languages": 121,
       "num_tasks": 1,
@@ -239,56 +414,6 @@
       }
     },
     {
-      "name": "BeMyCheese",
-      "num_languages": 15,
-      "num_tasks": 1,
-      "n_translated": 1,
-      "n_native": 0,
-      "n_grounded": 1,
-      "all_native_annotators": true,
-      "benchmark_type": "single_dataset",
-      "year": 2025,
-      "description": "A large-scale human evaluation benchmark for assessing cultural localisation in machine translation by multilingual LLMs. Evaluates 7 LLMs across 15 target languages with 5 native-speaker raters per language on both full-text translations and segment-level culturally nuanced language (idioms, puns, holidays, cultural concepts) on a 0-3 ordinal quality scale.",
-      "families": [
-        "Afro-Asiatic",
-        "Atlantic-Congo",
-        "Indo-European",
-        "Japonic",
-        "Koreanic",
-        "Sino-Tibetan"
-      ],
-      "scripts": [
-        "Arabic",
-        "Cyrillic",
-        "Devanagari",
-        "Hebrew",
-        "Japanese",
-        "Korean",
-        "Latin",
-        "Simplified Chinese",
-        "Traditional Chinese"
-      ],
-      "continents": [
-        "Americas",
-        "East Asia",
-        "Europe",
-        "Middle East & North Africa",
-        "South Asia",
-        "Sub-Saharan Africa"
-      ],
-      "task_categories": [
-        "Sentiment / Classification"
-      ],
-      "citation": {
-        "paper_title": "BeMyCheese: A Large-Scale Human Evaluation Benchmark for Multilingual LLMs",
-        "authors": "",
-        "year": 2025,
-        "venue": "",
-        "paper_url": "https://arxiv.org/abs/2602.04729",
-        "arxiv_id": "2602.04729"
-      }
-    },
-    {
       "name": "BenchMAX",
       "num_languages": 17,
       "num_tasks": 10,
@@ -347,52 +472,6 @@
       }
     },
     {
-      "name": "BHASA",
-      "num_languages": 4,
-      "num_tasks": 24,
-      "n_translated": 6,
-      "n_native": 18,
-      "n_grounded": 7,
-      "all_native_annotators": false,
-      "benchmark_type": "mixed",
-      "year": 2023,
-      "description": "BHASA is a holistic linguistic and cultural evaluation suite for LLMs in Southeast Asian languages, comprising an NLP benchmark (8 tasks across NLU, NLG, NLR), LINDSEA (a handcrafted linguistic diagnostic toolkit covering syntax, semantics, and pragmatics), and cultural diagnostics (cultural representation and sensitivity). It currently covers Indonesian, Vietnamese, Thai, and Tamil for the NLP benchmark, and Indonesian and Tamil for LINDSEA and cultural diagnostics.",
-      "families": [
-        "Austroasiatic",
-        "Austronesian",
-        "Dravidian",
-        "Tai-Kadai"
-      ],
-      "scripts": [
-        "Latin",
-        "Tamil",
-        "Thai"
-      ],
-      "continents": [
-        "South Asia",
-        "Southeast Asia"
-      ],
-      "task_categories": [
-        "Linguistic Probing",
-        "Math / Reasoning",
-        "NER",
-        "NLI / Inference",
-        "QA / Knowledge",
-        "Safety / Toxicity",
-        "Sentiment / Classification",
-        "Summarization",
-        "Translation"
-      ],
-      "citation": {
-        "paper_title": "BHASA: A Holistic Southeast Asian Linguistic and Cultural Evaluation Suite",
-        "authors": "",
-        "year": 2023,
-        "venue": "",
-        "paper_url": "https://arxiv.org/abs/2309.06085",
-        "arxiv_id": "2309.06085"
-      }
-    },
-    {
       "name": "BhashaBench_V1",
       "num_languages": 2,
       "num_tasks": 4,
@@ -411,7 +490,6 @@
         "Latin"
       ],
       "continents": [
-        "Europe",
         "South Asia"
       ],
       "task_categories": [
@@ -456,85 +534,6 @@
         "venue": "NAACL 2019",
         "paper_url": "https://arxiv.org/abs/1905.10044",
         "arxiv_id": "1905.10044"
-      }
-    },
-    {
-      "name": "BUFFET",
-      "num_languages": 54,
-      "num_tasks": 15,
-      "n_translated": 6,
-      "n_native": 9,
-      "n_grounded": 7,
-      "all_native_annotators": false,
-      "benchmark_type": "aggregation",
-      "year": 2024,
-      "description": "BUFFET (Benchmark of Unified Format Few-shot Transfer Evaluation) is a benchmark for few-shot cross-lingual transfer that unifies 15 diverse NLP tasks across 54 typologically diverse languages in a sequence-to-sequence format, providing fixed few-shot examples and instructions for rigorous comparisons of multilingual language models using both fine-tuning and in-context learning.",
-      "families": [
-        "Afro-Asiatic",
-        "Arawakan",
-        "Atlantic-Congo",
-        "Austroasiatic",
-        "Austronesian",
-        "Aymaran",
-        "Chibchan",
-        "Dravidian",
-        "Indo-European",
-        "Japonic",
-        "Koreanic",
-        "Nilotic",
-        "Otomanguean",
-        "Pano-Tacanan",
-        "Quechuan",
-        "Sino-Tibetan",
-        "Tai-Kadai",
-        "Tupian",
-        "Turkic",
-        "Uralic",
-        "Uto-Aztecan"
-      ],
-      "scripts": [
-        "Arabic",
-        "Bengali",
-        "Cyrillic",
-        "Devanagari",
-        "Ethiopic",
-        "Greek",
-        "Gujarati",
-        "Gurmukhi",
-        "Japanese",
-        "Kannada",
-        "Korean",
-        "Latin",
-        "Malayalam",
-        "Odia",
-        "Simplified Chinese",
-        "Tamil",
-        "Telugu",
-        "Thai"
-      ],
-      "continents": [
-        "Americas",
-        "East Asia",
-        "Europe",
-        "Middle East & North Africa",
-        "South Asia",
-        "Southeast Asia",
-        "Sub-Saharan Africa"
-      ],
-      "task_categories": [
-        "NER",
-        "NLI / Inference",
-        "QA / Knowledge",
-        "Sentiment / Classification",
-        "Summarization"
-      ],
-      "citation": {
-        "paper_title": "BUFFET: Benchmarking Large Language Models for Few-shot Cross-lingual Transfer",
-        "authors": "",
-        "year": 2024,
-        "venue": "",
-        "paper_url": "",
-        "arxiv_id": ""
       }
     },
     {
@@ -758,6 +757,42 @@
       }
     },
     {
+      "name": "INDIC-DIALECT",
+      "num_languages": 13,
+      "num_tasks": 3,
+      "n_translated": 3,
+      "n_native": 0,
+      "n_grounded": 0,
+      "all_native_annotators": true,
+      "benchmark_type": "single_dataset",
+      "year": 2026,
+      "description": "A human-curated parallel corpus of 13,000 sentence pairs spanning 11 Indian dialects and 2 standard languages (Hindi and Odia) from three Indian states (Himachal Pradesh, Uttar Pradesh, Odisha), used to construct a multi-task benchmark evaluating dialect classification, multiple-choice question answering, and machine translation between dialects and their corresponding standard languages.",
+      "families": [
+        "Bookkeeping",
+        "Indo-European"
+      ],
+      "scripts": [
+        "Devanagari",
+        "Odia"
+      ],
+      "continents": [
+        "South Asia"
+      ],
+      "task_categories": [
+        "QA / Knowledge",
+        "Sentiment / Classification",
+        "Translation"
+      ],
+      "citation": {
+        "paper_title": "INDIC-DIALECT: Multilingual Dialectal Benchmark for Indian Languages",
+        "authors": "",
+        "year": 2026,
+        "venue": "",
+        "paper_url": "https://arxiv.org/abs/2601.10388",
+        "arxiv_id": "2601.10388"
+      }
+    },
+    {
       "name": "IberoBench",
       "num_languages": 5,
       "num_tasks": 62,
@@ -797,39 +832,47 @@
       }
     },
     {
-      "name": "INDIC-DIALECT",
-      "num_languages": 13,
-      "num_tasks": 3,
-      "n_translated": 3,
+      "name": "IndiSentiment140",
+      "num_languages": 22,
+      "num_tasks": 1,
+      "n_translated": 1,
       "n_native": 0,
       "n_grounded": 0,
-      "all_native_annotators": true,
+      "all_native_annotators": false,
       "benchmark_type": "single_dataset",
-      "year": 2026,
-      "description": "A human-curated parallel corpus of 13,000 sentence pairs spanning 11 Indian dialects and 2 standard languages (Hindi and Odia) from three Indian states (Himachal Pradesh, Uttar Pradesh, Odisha), used to construct a multi-task benchmark evaluating dialect classification, multiple-choice question answering, and machine translation between dialects and their corresponding standard languages.",
+      "year": 2024,
+      "description": "IndiSentiment140 is a sentiment analysis dataset for 22 Indian languages created by machine-translating the English Sentiment140 Twitter corpus (1.6M tweets) into each language using Google Translate, preserving the original binary sentiment labels (positive/negative).",
       "families": [
-        "Bookkeeping",
-        "Indo-European"
+        "Dravidian",
+        "Indo-European",
+        "Sino-Tibetan"
       ],
       "scripts": [
+        "Arabic",
+        "Bengali",
         "Devanagari",
-        "Odia"
+        "Gujarati",
+        "Gurmukhi",
+        "Kannada",
+        "Malayalam",
+        "Odia",
+        "Sinhala",
+        "Tamil",
+        "Telugu"
       ],
       "continents": [
         "South Asia"
       ],
       "task_categories": [
-        "QA / Knowledge",
-        "Sentiment / Classification",
-        "Translation"
+        "Sentiment / Classification"
       ],
       "citation": {
-        "paper_title": "INDIC-DIALECT: Multilingual Dialectal Benchmark for Indian Languages",
+        "paper_title": "IndiSentiment140",
         "authors": "",
-        "year": 2026,
+        "year": null,
         "venue": "",
-        "paper_url": "https://arxiv.org/abs/2601.10388",
-        "arxiv_id": "2601.10388"
+        "paper_url": "",
+        "arxiv_id": ""
       }
     },
     {
@@ -1082,50 +1125,6 @@
       ],
       "citation": {
         "paper_title": "IndicXTREME: A Multi-Task Benchmark For Evaluating Indic Languages",
-        "authors": "",
-        "year": null,
-        "venue": "",
-        "paper_url": "",
-        "arxiv_id": ""
-      }
-    },
-    {
-      "name": "IndiSentiment140",
-      "num_languages": 22,
-      "num_tasks": 1,
-      "n_translated": 1,
-      "n_native": 0,
-      "n_grounded": 0,
-      "all_native_annotators": false,
-      "benchmark_type": "single_dataset",
-      "year": 2024,
-      "description": "IndiSentiment140 is a sentiment analysis dataset for 22 Indian languages created by machine-translating the English Sentiment140 Twitter corpus (1.6M tweets) into each language using Google Translate, preserving the original binary sentiment labels (positive/negative).",
-      "families": [
-        "Dravidian",
-        "Indo-European",
-        "Sino-Tibetan"
-      ],
-      "scripts": [
-        "Arabic",
-        "Bengali",
-        "Devanagari",
-        "Gujarati",
-        "Gurmukhi",
-        "Kannada",
-        "Malayalam",
-        "Odia",
-        "Sinhala",
-        "Tamil",
-        "Telugu"
-      ],
-      "continents": [
-        "South Asia"
-      ],
-      "task_categories": [
-        "Sentiment / Classification"
-      ],
-      "citation": {
-        "paper_title": "IndiSentiment140",
         "authors": "",
         "year": null,
         "venue": "",
@@ -1420,65 +1419,6 @@
         "venue": "NeurIPS 2021",
         "paper_url": "https://arxiv.org/abs/2103.03874",
         "arxiv_id": "2103.03874"
-      }
-    },
-    {
-      "name": "MaXIFE",
-      "num_languages": 23,
-      "num_tasks": 1,
-      "n_translated": 1,
-      "n_native": 0,
-      "n_grounded": 0,
-      "all_native_annotators": false,
-      "benchmark_type": "single_dataset",
-      "year": 2025,
-      "description": "MaXIFE is a multilingual and cross-lingual instruction-following evaluation benchmark covering 23 languages with 1667 verifiable instruction tasks across 47 instruction subcategories, combining rule-based and model-based evaluation strategies.",
-      "families": [
-        "Atlantic-Congo",
-        "Austronesian",
-        "Dravidian",
-        "Indo-European",
-        "Japonic",
-        "Kartvelian",
-        "Koreanic",
-        "Quechuan",
-        "Sino-Tibetan",
-        "Turkic"
-      ],
-      "scripts": [
-        "Armenian",
-        "Bengali",
-        "Cyrillic",
-        "Devanagari",
-        "Georgian",
-        "Japanese",
-        "Korean",
-        "Latin",
-        "Simplified Chinese",
-        "Tamil",
-        "Telugu"
-      ],
-      "continents": [
-        "Americas",
-        "Central Asia",
-        "East Asia",
-        "Eurasia",
-        "Europe",
-        "Middle East & North Africa",
-        "South Asia",
-        "Southeast Asia",
-        "Sub-Saharan Africa"
-      ],
-      "task_categories": [
-        "Instruction Following"
-      ],
-      "citation": {
-        "paper_title": "MaXIFE: Massively Multilingual Instruction-Following Evaluation",
-        "authors": "",
-        "year": 2025,
-        "venue": "ACL 2025",
-        "paper_url": "",
-        "arxiv_id": ""
       }
     },
     {
@@ -1778,6 +1718,65 @@
       }
     },
     {
+      "name": "MaXIFE",
+      "num_languages": 23,
+      "num_tasks": 1,
+      "n_translated": 1,
+      "n_native": 0,
+      "n_grounded": 0,
+      "all_native_annotators": false,
+      "benchmark_type": "single_dataset",
+      "year": 2025,
+      "description": "MaXIFE is a multilingual and cross-lingual instruction-following evaluation benchmark covering 23 languages with 1667 verifiable instruction tasks across 47 instruction subcategories, combining rule-based and model-based evaluation strategies.",
+      "families": [
+        "Atlantic-Congo",
+        "Austronesian",
+        "Dravidian",
+        "Indo-European",
+        "Japonic",
+        "Kartvelian",
+        "Koreanic",
+        "Quechuan",
+        "Sino-Tibetan",
+        "Turkic"
+      ],
+      "scripts": [
+        "Armenian",
+        "Bengali",
+        "Cyrillic",
+        "Devanagari",
+        "Georgian",
+        "Japanese",
+        "Korean",
+        "Latin",
+        "Simplified Chinese",
+        "Tamil",
+        "Telugu"
+      ],
+      "continents": [
+        "Americas",
+        "Central Asia",
+        "East Asia",
+        "Eurasia",
+        "Europe",
+        "Middle East & North Africa",
+        "South Asia",
+        "Southeast Asia",
+        "Sub-Saharan Africa"
+      ],
+      "task_categories": [
+        "Instruction Following"
+      ],
+      "citation": {
+        "paper_title": "MaXIFE: Massively Multilingual Instruction-Following Evaluation",
+        "authors": "",
+        "year": 2025,
+        "venue": "ACL 2025",
+        "paper_url": "",
+        "arxiv_id": ""
+      }
+    },
+    {
       "name": "MultiJail",
       "num_languages": 10,
       "num_tasks": 1,
@@ -1954,38 +1953,6 @@
       }
     },
     {
-      "name": "TriviaQA",
-      "num_languages": 1,
-      "num_tasks": 1,
-      "n_translated": 0,
-      "n_native": 1,
-      "n_grounded": 0,
-      "all_native_annotators": false,
-      "benchmark_type": "single_dataset",
-      "year": 2017,
-      "description": "TriviaQA is a large-scale reading comprehension dataset containing over 650K question-answer-evidence triples, with 95K question-answer pairs authored by trivia enthusiasts and independently gathered evidence documents from Wikipedia and the Web. It tests complex compositional questions, lexical/syntactic variability, and multi-sentence reasoning.",
-      "families": [
-        "Indo-European"
-      ],
-      "scripts": [
-        "Latin"
-      ],
-      "continents": [
-        "Europe"
-      ],
-      "task_categories": [
-        "QA / Knowledge"
-      ],
-      "citation": {
-        "paper_title": "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension",
-        "authors": "Joshi et al.",
-        "year": 2017,
-        "venue": "ACL 2017",
-        "paper_url": "https://arxiv.org/abs/1705.03551",
-        "arxiv_id": "1705.03551"
-      }
-    },
-    {
       "name": "TUMLU",
       "num_languages": 9,
       "num_tasks": 2,
@@ -2018,6 +1985,38 @@
         "venue": "",
         "paper_url": "https://arxiv.org/abs/2502.11020",
         "arxiv_id": "2502.11020"
+      }
+    },
+    {
+      "name": "TriviaQA",
+      "num_languages": 1,
+      "num_tasks": 1,
+      "n_translated": 0,
+      "n_native": 1,
+      "n_grounded": 0,
+      "all_native_annotators": false,
+      "benchmark_type": "single_dataset",
+      "year": 2017,
+      "description": "TriviaQA is a large-scale reading comprehension dataset containing over 650K question-answer-evidence triples, with 95K question-answer pairs authored by trivia enthusiasts and independently gathered evidence documents from Wikipedia and the Web. It tests complex compositional questions, lexical/syntactic variability, and multi-sentence reasoning.",
+      "families": [
+        "Indo-European"
+      ],
+      "scripts": [
+        "Latin"
+      ],
+      "continents": [
+        "Europe"
+      ],
+      "task_categories": [
+        "QA / Knowledge"
+      ],
+      "citation": {
+        "paper_title": "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension",
+        "authors": "Joshi et al.",
+        "year": 2017,
+        "venue": "ACL 2017",
+        "paper_url": "https://arxiv.org/abs/1705.03551",
+        "arxiv_id": "1705.03551"
       }
     },
     {
@@ -5287,7 +5286,7 @@
       "continents": [
         "Europe"
       ],
-      "num_benchmarks": 29,
+      "num_benchmarks": 28,
       "benchmarks": [
         {
           "benchmark": "MATH",
@@ -5313,11 +5312,6 @@
           "benchmark": "BenchMAX",
           "translated": "Translated",
           "culturally_grounded": false
-        },
-        {
-          "benchmark": "BhashaBench_V1",
-          "translated": "Native",
-          "culturally_grounded": true
         },
         {
           "benchmark": "BoolQ",
@@ -5473,7 +5467,6 @@
         "multiple-choice QA (10 options) with chain-of-thought reasoning",
         "multiple-choice QA (cloze-style figurative expression selection in multi-turn dialogue)",
         "multiple-choice question answering",
-        "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
         "multiple-choice reading comprehension",
         "named entity recognition",
         "natural language inference",
@@ -5507,8 +5500,39 @@
         "Translation"
       ],
       "translated_count": 30,
-      "native_count": 34,
-      "grounded_count": 31
+      "native_count": 30,
+      "grounded_count": 27
+    },
+    {
+      "name": "English (Indian)",
+      "family": "Indo-European",
+      "script": "Latin",
+      "resource_level": "Winners",
+      "joshi_level": 5,
+      "joshi_level_name": "Winners",
+      "iso_code": "eng",
+      "glottocode": "stan1293",
+      "dialect_of": null,
+      "continents": [
+        "South Asia"
+      ],
+      "num_benchmarks": 1,
+      "benchmarks": [
+        {
+          "benchmark": "BhashaBench_V1",
+          "translated": "Native",
+          "culturally_grounded": true
+        }
+      ],
+      "tasks": [
+        "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)"
+      ],
+      "task_categories": [
+        "QA / Knowledge"
+      ],
+      "translated_count": 0,
+      "native_count": 4,
+      "grounded_count": 4
     },
     {
       "name": "Esperanto",
@@ -16205,7 +16229,7 @@
     "long_tail": [
       {
         "count": 1,
-        "languages": 82
+        "languages": 83
       },
       {
         "count": 2,
@@ -16292,14 +16316,14 @@
         "languages": 1
       },
       {
-        "count": 29,
+        "count": 28,
         "languages": 1
       }
     ],
     "families": [
       {
         "family": "Indo-European",
-        "count": 83
+        "count": 84
       },
       {
         "family": "Atlantic-Congo",
@@ -16417,7 +16441,7 @@
     "scripts": [
       {
         "script": "Latin",
-        "count": 118
+        "count": 119
       },
       {
         "script": "Arabic",
@@ -16535,7 +16559,7 @@
     "resource_levels": [
       {
         "level": "Winners",
-        "count": 10
+        "count": 11
       },
       {
         "level": "Underdogs",
@@ -16569,7 +16593,7 @@
       },
       {
         "continent": "South Asia",
-        "count": 43
+        "count": 44
       },
       {
         "continent": "Southeast Asia",
@@ -16603,7 +16627,7 @@
     "task_categories": [
       {
         "category": "QA / Knowledge",
-        "count": 156
+        "count": 157
       },
       {
         "category": "Translation",
@@ -16667,17 +16691,17 @@
     "translation_by_region": [
       {
         "region": "Europe",
-        "native": 256,
+        "native": 252,
         "translated": 357,
         "unknown": 82,
-        "total": 695
+        "total": 691
       },
       {
         "region": "South Asia",
-        "native": 243,
+        "native": 247,
         "translated": 347,
         "unknown": 46,
-        "total": 636
+        "total": 640
       },
       {
         "region": "Sub-Saharan Africa",
@@ -16739,15 +16763,15 @@
     "grounding_by_region": [
       {
         "region": "Europe",
-        "grounded": 262,
+        "grounded": 258,
         "not_grounded": 433,
-        "total": 695
+        "total": 691
       },
       {
         "region": "South Asia",
-        "grounded": 298,
+        "grounded": 302,
         "not_grounded": 338,
-        "total": 636
+        "total": 640
       },
       {
         "region": "Sub-Saharan Africa",
@@ -16803,7 +16827,7 @@
         "Sentiment / Classification": 98,
         "NLI / Inference": 54,
         "Other": 1,
-        "QA / Knowledge": 174,
+        "QA / Knowledge": 178,
         "Translation": 47,
         "Math / Reasoning": 11,
         "Instruction Following": 43,
@@ -16818,7 +16842,7 @@
       },
       "Europe": {
         "Math / Reasoning": 38,
-        "QA / Knowledge": 134,
+        "QA / Knowledge": 130,
         "NLI / Inference": 29,
         "Sentiment / Classification": 30,
         "Other": 22,
