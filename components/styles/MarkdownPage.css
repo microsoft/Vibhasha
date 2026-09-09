@@ -308,7 +308,7 @@
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: var(--muted, #6a737d);
+    color: var(--muted, #646d76);
     letter-spacing: 0.5px;
 }
 

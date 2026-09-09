@@ -149,7 +149,7 @@ details.admonition > .admonition-content {
   --admonition-title-bg: #FFE4BE;
 }
 .admonition-warning .admonition-title {
-  color: #AE5606;
+  color: #A55105;
 }
 
 /* ── Green — Positive ── */
@@ -205,7 +205,7 @@ details.admonition > .admonition-content {
 .admonition-danger .admonition-title,
 .admonition-failure .admonition-title,
 .admonition-bug .admonition-title {
-  color: #AE5606;
+  color: #A55105;
 }
 
 /* ==========================================================================

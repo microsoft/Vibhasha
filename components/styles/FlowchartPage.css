@@ -15,12 +15,12 @@
   --fc-shadow-lg: 0 8px 30px rgba(0,0,0,.12);
 
   /* node palette */
-  --fc-start: #10b981;
-  --fc-end: #ef4444;
+  --fc-start: #0A855C;
+  --fc-end: #D73C3C;
   --fc-decision: #f59e0b;
   --fc-strategy: var(--color-header-bg, #312A9A);
-  --fc-process: #0891b2;
-  --fc-iterate: #8b5cf6;
+  --fc-process: #057B98;
+  --fc-iterate: #8457E9;
 }
 
 /* ── Page layout ───────────────────────────── */
@@ -505,8 +505,8 @@
   border-radius: 6px;
 }
 
-.fc-tag-direct     { background: #dbeafe; color: #2563eb; }
-.fc-tag-pretranslate { background: #ccfbf1; color: #0d9488; }
+.fc-tag-direct     { background: #dbeafe; color: #235EDF; }
+.fc-tag-pretranslate { background: #ccfbf1; color: #09776D; }
 .fc-tag-finetune   { background: #ede9fe; color: #7c3aed; }
 
 /* two-column layout */

@@ -2,6 +2,9 @@
 
 /* ---------- Layout ---------- */
 .evals-dashboard {
+  --evals-text-muted: #666;
+  --evals-text-success: #15803d;
+  --evals-text-danger: #b91c1c;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px 64px;
@@ -97,7 +100,7 @@
   background: none;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #888;
+  color: var(--evals-text-muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
   margin-bottom: -2px;
@@ -265,7 +268,7 @@
   color: #991b1b;
 }
 .long-tail-callout strong {
-  color: #dc2626;
+  color: inherit;
 }
 
 /* ---------- Chart Legend ---------- */
@@ -354,11 +357,11 @@
 }
 .benchmark-table thead th .sort-arrow {
   margin-left: 4px;
-  opacity: 0.4;
   font-size: 0.7rem;
+  color: var(--evals-text-muted);
 }
 .benchmark-table thead th .sort-arrow.active {
-  opacity: 1;
+  color: var(--color-header-bg, #312A9A);
 }
 .benchmark-table tbody tr {
   border-bottom: 1px solid #f0f0f0;
@@ -444,9 +447,9 @@
   color: var(--color-header-bg, #312A9A);
   border: 1px solid rgba(49, 42, 154, 0.1);
 }
-.tag.translated { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
-.tag.native { background: #f0fdf4; color: #16a34a; border-color: #bbf7d0; }
-.tag.grounded { background: #f0fdf4; color: #16a34a; border-color: #bbf7d0; }
+.tag.translated { background: #fef2f2; color: var(--evals-text-danger); border-color: #fecaca; }
+.tag.native { background: #f0fdf4; color: var(--evals-text-success); border-color: #bbf7d0; }
+.tag.grounded { background: #f0fdf4; color: var(--evals-text-success); border-color: #bbf7d0; }
 
 /* ---------- Language Lookup ---------- */
 .language-lookup {
@@ -507,17 +510,17 @@
 }
 .bench-chip.native-chip {
   background: #f0fdf4;
-  color: #16a34a;
+  color: var(--evals-text-success);
   border: 1px solid #bbf7d0;
 }
 .bench-chip.translated-chip {
   background: #fef2f2;
-  color: #dc2626;
+  color: var(--evals-text-danger);
   border: 1px solid #fecaca;
 }
 .bench-chip.unknown-chip {
   background: #f5f5f5;
-  color: #888;
+  color: var(--evals-text-muted);
   border: 1px solid #e5e7eb;
 }
 
@@ -591,12 +594,7 @@
   padding: 4px 2px;
   border-radius: 3px;
   font-size: 0.72rem;
-  color: white;
   font-weight: 600;
-}
-.heatmap-cell.empty {
-  background: #f5f5f5;
-  color: #ccc;
 }
 
 /* ---------- Pillar nav ---------- */
@@ -633,7 +631,7 @@
 }
 .pillar-btn .pillar-desc {
   font-size: 0.78rem;
-  color: #888;
+  color: var(--evals-text-muted);
 }
 
 /* ---------- Clickable Stat Cards ---------- */
@@ -712,7 +710,7 @@
 }
 .stat-modal-item-count {
   font-size: 0.78rem;
-  color: #888;
+  color: var(--evals-text-muted);
   white-space: nowrap;
 }
 .stat-modal-item-detail {
@@ -732,7 +730,7 @@
   display: flex;
   gap: 6px;
   font-size: 0.78rem;
-  color: #888;
+  color: var(--evals-text-muted);
   margin-top: 2px;
 }
 .stat-modal-item-badges {
@@ -762,7 +760,7 @@
 .click-hint {
   text-align: center;
   font-size: 0.82rem;
-  color: #888;
+  color: var(--evals-text-muted);
   padding: 12px;
   margin-top: 8px;
   border-top: 1px solid #e5e7eb;
@@ -818,7 +816,7 @@
 .drilldown-count {
   padding: 6px 24px;
   font-size: 0.82rem;
-  color: #888;
+  color: var(--evals-text-muted);
   font-weight: 600;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -873,7 +871,7 @@
 }
 .cite-stats {
   font-size: 0.75rem;
-  color: #888;
+  color: var(--evals-text-muted);
   white-space: nowrap;
 }
 .cite-title {
@@ -903,7 +901,7 @@
 }
 .cite-venue {
   font-style: italic;
-  color: #888;
+  color: var(--evals-text-muted);
 }
 .cite-badges {
   display: flex;
@@ -919,11 +917,11 @@
 }
 .cite-badge.native {
   background: #f0fdf4;
-  color: #16a34a;
+  color: var(--evals-text-success);
 }
 .cite-badge.translated {
   background: #fef2f2;
-  color: #dc2626;
+  color: var(--evals-text-danger);
 }
 .cite-badge.grounded {
   background: #eff6ff;
@@ -934,7 +932,7 @@
   font-size: 0.78rem;
 }
 .cite-langs-label {
-  color: #888;
+  color: var(--evals-text-muted);
   font-weight: 500;
   display: block;
   margin-bottom: 4px;
@@ -943,7 +941,7 @@
 /* ---------- Chip year ---------- */
 .chip-year {
   font-size: 0.68rem;
-  color: #999;
+  color: var(--evals-text-muted);
   font-weight: 400;
 }
 
@@ -981,7 +979,7 @@
 }
 .lang-ref-meta {
   font-size: 0.72rem;
-  color: #888;
+  color: var(--evals-text-muted);
 }
 
 /* ---------- Responsive ---------- */

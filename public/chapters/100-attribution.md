@@ -67,6 +67,7 @@ We welcome contributions, corrections, and suggestions to improve this playbook.
 If you use this playbook in your research or projects, please cite it using one of the formats below:
 
 <div class="citation-container" style="margin: 1.5rem 0;">
+  <label for="citation-format" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Citation format</label>
   <select id="citation-format" onchange="document.querySelectorAll('.citation-block').forEach(b => b.style.display = 'none'); document.getElementById(this.value).style.display = 'block';" style="padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--color-border, rgba(16,24,40,0.12)); background: var(--color-surface, #fff); font-size: 0.95rem; margin-bottom: 1rem; cursor: pointer;">
     <option value="cite-bibtex">BibTeX</option>
     <option value="cite-apa">APA Style</option>

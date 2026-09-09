@@ -10,11 +10,18 @@ const RESOURCE_CSS = {
   'Winners': 'winners', 'Underdogs': 'underdogs', 'Rising Stars': 'rising-stars',
   'Hopefuls': 'hopefuls', 'Scraping-Bys': 'scraping-bys', 'Left-Behinds': 'left-behinds',
 }
-const HEAT_SCALE = ['#f0f0f0', '#c7d2fe', '#818cf8', '#6366f1', '#4338ca', '#312A9A']
-function heatColor(val, max) {
-  if (!val) return HEAT_SCALE[0]
-  const idx = Math.min(Math.floor((val / max) * (HEAT_SCALE.length - 1)) + 1, HEAT_SCALE.length - 1)
-  return HEAT_SCALE[idx]
+const HEAT_STYLES = [
+  { background: '#f0f0f0', color: 'var(--evals-text-muted)' },
+  { background: '#c7d2fe', color: '#262626' },
+  { background: '#818cf8', color: '#262626' },
+  { background: '#4f46e5', color: '#fff' },
+  { background: '#4338ca', color: '#fff' },
+  { background: '#312A9A', color: '#fff' },
+]
+function heatStyle(val, max) {
+  if (!val) return HEAT_STYLES[0]
+  const idx = Math.min(Math.floor((val / max) * (HEAT_STYLES.length - 1)) + 1, HEAT_STYLES.length - 1)
+  return HEAT_STYLES[idx]
 }
 
 // ─── Filtering helpers ──────────────────────────────────────────
@@ -551,7 +558,7 @@ export default function EvalsDashboard() {
             />
             <div className="lang-results">
               {langSearch.length >= 2 && filteredLangs.length === 0 && (
-                <p style={{ color: '#888', fontStyle: 'italic' }}>No languages found matching &ldquo;{langSearch}&rdquo;</p>
+                <p style={{ color: 'var(--evals-text-muted)', fontStyle: 'italic' }}>No languages found matching &ldquo;{langSearch}&rdquo;</p>
               )}
               {filteredLangs.map(lang => (
                 <LanguageCard key={lang.name} lang={lang} benchmarkData={data.benchmarks} />
@@ -637,7 +644,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
                 )
               })}
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#999', marginTop: 4 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--evals-text-muted)', marginTop: 4 }}>
               <span>1 benchmark</span>
               <span>{distributions.long_tail[distributions.long_tail.length - 1]?.count} benchmarks</span>
             </div>
@@ -655,7 +662,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
             labelWidth={180}
             onBarClick={(d) => openDrillDown('family', d._key, `Family: ${d._key}`, `${d.value} languages from the ${d._key} family`, benchmarksForFamily(data, d._key))}
           />
-          {distributions.families.length > 20 && <p style={{ fontSize: '0.82rem', color: '#888', marginTop: 8 }}>+{distributions.families.length - 20} more families</p>}
+          {distributions.families.length > 20 && <p style={{ fontSize: '0.82rem', color: 'var(--evals-text-muted)', marginTop: 8 }}>+{distributions.families.length - 20} more families</p>}
         </div>
       )}
 
@@ -688,7 +695,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
       {coverageTab === 'resources' && (
         <div className="chart-container">
           <h3>Resource Level Distribution (Joshi et al. Taxonomy)</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: 16 }}>Click any bar to see composing benchmarks.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Click any bar to see composing benchmarks.</p>
           <div className="bar-chart resource-bars">
             {distributions.resource_levels.map((d, i) => (
               <div
@@ -712,7 +719,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
       {coverageTab === 'tasks' && (
         <div className="chart-container">
           <h3>Task Category Distribution</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: 16 }}>Click a bar to see benchmarks.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Click a bar to see benchmarks.</p>
           <HBar
             data={distributions.task_categories.map(d => ({ label: d.category, value: d.count, _key: d.category }))}
             maxVal={taskMax}
@@ -757,7 +764,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
       {repTab === 'translation' && (
         <div className="chart-container">
           <h3>Translation Status by Region</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: 12 }}>Click any row to see benchmarks for that region.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks for that region.</p>
           <ChartLegend items={[{ label: 'Native', color: '#22c55e' }, { label: 'Translated', color: '#ef4444' }, { label: 'Unknown', color: '#d1d5db' }]} />
           <div className="bar-chart stacked-bar-chart">
             {transByRegion.map((d, i) => (
@@ -779,7 +786,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
       {repTab === 'cultural' && (
         <div className="chart-container">
           <h3>Cultural Grounding by Region</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: 12 }}>Click any row to see benchmarks covering that region.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks covering that region.</p>
           <ChartLegend items={[{ label: 'Culturally Grounded', color: '#22c55e' }, { label: 'Not Grounded', color: '#ef4444' }]} />
           <div className="bar-chart stacked-bar-chart">
             {groundByRegion.map((d, i) => (
@@ -801,7 +808,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
       {repTab === 'taskheat' && (
         <div className="chart-container">
           <h3>Task Categories × Regions Heatmap</h3>
-          <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: 12 }}>Click any cell to see composing benchmarks.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any cell to see composing benchmarks.</p>
           <div className="heatmap-wrap">
             <table className="heatmap-table">
               <thead>
@@ -829,7 +836,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
                             openDrillDown('heatmap', { region, task: tc }, `${region} × ${tc}`, `${val} language entries`, matches)
                           } : undefined}
                         >
-                          <span className={`heatmap-cell${val === 0 ? ' empty' : ''}`} style={{ background: heatColor(val, heatMax) }} title={`${region} × ${tc}: ${val}`}>
+                          <span className={`heatmap-cell${val === 0 ? ' empty' : ''}`} style={heatStyle(val, heatMax)} title={`${region} × ${tc}: ${val}`}>
                             {val > 0 ? val : '—'}
                           </span>
                         </td>
@@ -922,7 +929,7 @@ function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField
           })}
         </tbody>
       </table>
-      {benchmarks.length === 0 && <p style={{ textAlign: 'center', padding: 24, color: '#888' }}>No benchmarks match your filters.</p>}
+      {benchmarks.length === 0 && <p style={{ textAlign: 'center', padding: 24, color: 'var(--evals-text-muted)' }}>No benchmarks match your filters.</p>}
     </div>
   )
 }
@@ -953,7 +960,7 @@ function BenchmarkDetail({ benchmark, languageData }) {
           <h4>📋 Description</h4>
           <p style={{ fontSize: '0.85rem', color: '#444', margin: 0, lineHeight: 1.5 }}>{benchmark.description}</p>
           {(benchmark.year || benchmark.benchmark_type) && (
-            <div style={{ marginTop: 8, fontSize: '0.8rem', color: '#888', display: 'flex', gap: 16 }}>
+            <div style={{ marginTop: 8, fontSize: '0.8rem', color: 'var(--evals-text-muted)', display: 'flex', gap: 16 }}>
               {benchmark.year && <span>📅 {benchmark.year}</span>}
               {benchmark.benchmark_type && <span>🏷️ {benchmark.benchmark_type}</span>}
             </div>
@@ -1012,8 +1019,8 @@ function LanguageCard({ lang, benchmarkData }) {
         {lang.dialect_of && <span>💬 Dialect of {lang.dialect_of}</span>}
       </div>
       <div style={{ display: 'flex', gap: 16, marginBottom: 12, fontSize: '0.85rem' }}>
-        <span style={{ color: '#22c55e', fontWeight: 600 }}>✓ {lang.native_count} native</span>
-        <span style={{ color: '#ef4444', fontWeight: 600 }}>↗ {lang.translated_count} translated</span>
+        <span style={{ color: 'var(--evals-text-success)', fontWeight: 600 }}>✓ {lang.native_count} native</span>
+        <span style={{ color: 'var(--evals-text-danger)', fontWeight: 600 }}>↗ {lang.translated_count} translated</span>
         <span style={{ color: '#0f766e', fontWeight: 600 }}>☆ {lang.grounded_count} culturally grounded</span>
       </div>
       <div className="lang-benchmarks">
