@@ -29,6 +29,35 @@ import {
   resetScrollDedup,
 } from '../lib/telemetry.js';
 
+const accessibleOneLight = {
+  ...oneLight,
+  comment: { ...oneLight.comment, color: '#737378' },
+  prolog: { ...oneLight.prolog, color: '#737378' },
+  cdata: { ...oneLight.cdata, color: '#737378' },
+  '.language-markdown .token.blockquote.punctuation': {
+    ...oneLight['.language-markdown .token.blockquote.punctuation'],
+    color: '#737378',
+  },
+  '.language-markdown .token.hr.punctuation': {
+    ...oneLight['.language-markdown .token.hr.punctuation'],
+    color: '#737378',
+  },
+  'attr-name': { ...oneLight['attr-name'], color: '#A45F00' },
+  'class-name': { ...oneLight['class-name'], color: '#A45F00' },
+  boolean: { ...oneLight.boolean, color: '#A45F00' },
+  constant: { ...oneLight.constant, color: '#A45F00' },
+  number: { ...oneLight.number, color: '#A45F00' },
+  atrule: { ...oneLight.atrule, color: '#A45F00' },
+  '.language-json .token.null.keyword': {
+    ...oneLight['.language-json .token.null.keyword'],
+    color: '#A45F00',
+  },
+  '.language-markdown .token.bold .token.content': {
+    ...oneLight['.language-markdown .token.bold .token.content'],
+    color: '#A45F00',
+  },
+};
+
 /**
  * Preprocess markdown content to transform MkDocs Material syntax
  * This runs before react-markdown parses the content
@@ -435,7 +464,7 @@ export default function MarkdownPage({ filePath }) {
           </div>
           <div className="code-block-body">
             <SyntaxHighlighter
-              style={oneLight}
+              style={accessibleOneLight}
               language={language}
               PreTag="div"
               className="code-block"
