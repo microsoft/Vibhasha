@@ -3,20 +3,27 @@ import './styles/EvalsDashboard.css'
 
 // ─── Color helpers ──────────────────────────────────────────────
 const RESOURCE_COLORS = {
-  'Winners': '#166534', 'Underdogs': '#16a34a', 'Rising Stars': '#86efac',
-  'Hopefuls': '#fbbf24', 'Scraping-Bys': '#f97316', 'Left-Behinds': '#dc2626',
+  'Winners': '#3f6f78', 'Underdogs': '#4f8a76', 'Rising Stars': '#7d9a6a',
+  'Hopefuls': '#b39543', 'Scraping-Bys': '#c27d42', 'Left-Behinds': '#b86560',
 }
 const RESOURCE_CSS = {
   'Winners': 'winners', 'Underdogs': 'underdogs', 'Rising Stars': 'rising-stars',
   'Hopefuls': 'hopefuls', 'Scraping-Bys': 'scraping-bys', 'Left-Behinds': 'left-behinds',
 }
+const CHART_COLORS = {
+  native: '#4f83b8',
+  translated: '#b86560',
+  unknown: '#a2a8a6',
+  grounded: '#4f8a76',
+  notGrounded: '#b86560',
+}
 const HEAT_STYLES = [
-  { background: '#f0f0f0', color: 'var(--evals-text-muted)' },
-  { background: '#c7d2fe', color: '#262626' },
-  { background: '#818cf8', color: '#262626' },
-  { background: '#4f46e5', color: '#fff' },
-  { background: '#4338ca', color: '#fff' },
-  { background: '#312A9A', color: '#fff' },
+  { background: '#f0f2f1', color: 'var(--evals-text-muted)' },
+  { background: '#d5e4e2', color: '#2f3a39' },
+  { background: '#a9cbc7', color: '#243231' },
+  { background: '#78aaa7', color: '#172927' },
+  { background: '#4f8587', color: '#fff' },
+  { background: '#2f646c', color: '#fff' },
 ]
 function heatStyle(val, max) {
   if (!val) return HEAT_STYLES[0]
@@ -57,7 +64,7 @@ function StatCard({ number, label, onClick }) {
     <div className={`stat-card${onClick ? ' stat-card-clickable' : ''}`} onClick={onClick}>
       <div className="number">{number}</div>
       <div className="label">{label}</div>
-      {onClick && <div className="stat-click-hint">Click to view</div>}
+      {onClick && <div className="stat-click-hint">View details</div>}
     </div>
   )
 }
@@ -422,6 +429,7 @@ export default function EvalsDashboard() {
   const [expandedBench, setExpandedBench] = useState(null)
   const [regionFilter, setRegionFilter] = useState('')
   const [langSearch, setLangSearch] = useState('')
+  const [taskFilter, setTaskFilter] = useState('')
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/benchmark_data.json')
@@ -453,15 +461,22 @@ export default function EvalsDashboard() {
     return list
   }, [data, searchTerm, regionFilter, sortField, sortDir])
 
-  const filteredLangs = useMemo(() => {
-    if (!data || !langSearch || langSearch.length < 2) return []
-    const q = langSearch.toLowerCase()
-    return data.languages.filter(l =>
-      l.name.toLowerCase().includes(q) ||
-      (l.iso_code && l.iso_code.toLowerCase().includes(q)) ||
-      (l.family && l.family.toLowerCase().includes(q))
-    ).slice(0, 20)
-  }, [data, langSearch])
+  const matchingLangs = useMemo(() => {
+    if (!data) return []
+    const q = langSearch.trim().toLowerCase()
+    if (!q && !taskFilter) return []
+
+    return data.languages.filter(l => {
+      const matchesLanguage = !q ||
+        l.name.toLowerCase().includes(q) ||
+        (l.iso_code && l.iso_code.toLowerCase().includes(q)) ||
+        (l.family && l.family.toLowerCase().includes(q))
+      const matchesTask = !taskFilter || l.task_categories.includes(taskFilter)
+      return matchesLanguage && matchesTask
+    })
+  }, [data, langSearch, taskFilter])
+
+  const filteredLangs = matchingLangs.slice(0, 50)
 
   const handleSort = useCallback((field) => {
     setSortField(prev => {
@@ -476,11 +491,14 @@ export default function EvalsDashboard() {
 
   const { insights, distributions, cross_tabs } = data
   const allRegions = distributions.continents.map(c => c.continent)
+  const allTaskCategories = distributions.task_categories.map(c => c.category)
+  const hasLookupFilter = Boolean(langSearch.trim() || taskFilter)
 
   return (
     <div className="evals-dashboard">
       <div className="evals-hero">
-        <h1>Multilingual Evaluation Benchmark Survey</h1>
+        <div className="evals-kicker">Evaluation landscape</div>
+        <h1>Multilingual Evaluation Benchmarks</h1>
         <p className="subtitle">
           A systematic, data-driven audit of {insights.total_benchmarks} multilingual benchmarks
           spanning {insights.total_languages} languages — examining coverage, representativeness, and rigor.
@@ -497,18 +515,21 @@ export default function EvalsDashboard() {
 
       <div className="pillar-nav">
         {[
-          { id: 'coverage', icon: '🗺️', title: 'Coverage', desc: 'Which languages, families, scripts, and tasks are represented?' },
-          { id: 'representativeness', icon: '⚖️', title: 'Representativeness', desc: 'Native vs. translated? Culturally grounded?' },
-          { id: 'explorer', icon: '🔍', title: 'Benchmark Explorer', desc: 'Browse and filter all benchmarks interactively' },
-          { id: 'lookup', icon: '🌐', title: 'Language Lookup', desc: 'Search any language to see its benchmark coverage' },
-        ].map(p => (
+          { id: 'coverage', title: 'Coverage', desc: 'Which languages, families, scripts, and tasks are represented?' },
+          { id: 'representativeness', title: 'Representativeness', desc: 'Native vs. translated? Culturally grounded?' },
+          { id: 'explorer', title: 'Benchmark Explorer', desc: 'Browse and filter all benchmarks interactively' },
+          { id: 'lookup', title: 'Task + Language Lookup', desc: 'Filter by task, language, or combine both' },
+        ].map((p, index) => (
           <button
             key={p.id}
             className={`pillar-btn${activePillar === p.id ? ' active' : ''}`}
             onClick={() => setActivePillar(p.id)}
           >
-            <div className="pillar-title">{p.icon} {p.title}</div>
-            <div className="pillar-desc">{p.desc}</div>
+            <span className="pillar-index">0{index + 1}</span>
+            <span className="pillar-copy">
+              <span className="pillar-title">{p.title}</span>
+              <span className="pillar-desc">{p.desc}</span>
+            </span>
           </button>
         ))}
       </div>
@@ -523,7 +544,7 @@ export default function EvalsDashboard() {
 
       {activePillar === 'explorer' && (
         <div className="evals-section">
-          <h2><span className="section-icon">🔍</span> Benchmark Explorer</h2>
+          <h2>Benchmark Explorer</h2>
           <p className="section-desc">Click any benchmark to expand details. Click column headers to sort.</p>
           <div className="benchmark-controls">
             <input className="benchmark-search" placeholder="Search benchmarks..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
@@ -546,22 +567,54 @@ export default function EvalsDashboard() {
 
       {activePillar === 'lookup' && (
         <div className="evals-section">
-          <h2><span className="section-icon">🌐</span> Language Lookup</h2>
-          <p className="section-desc">Search for any language to see which benchmarks include it, how it's evaluated, and its resource level.</p>
+          <h2>Task + Language Lookup</h2>
+          <p className="section-desc">Filter by a task category, search for a language, or combine both to narrow the benchmark coverage.</p>
           <div className="language-lookup">
-            <input
-              className="benchmark-search"
-              placeholder="Search by language name, ISO code, or family... (min 2 characters)"
-              value={langSearch}
-              onChange={e => setLangSearch(e.target.value)}
-              style={{ maxWidth: 500 }}
-            />
+            <div className="lookup-controls">
+              <label className="lookup-field">
+                <span>Language</span>
+                <input
+                  className="benchmark-search"
+                  placeholder="Name, ISO code, or family"
+                  value={langSearch}
+                  onChange={e => setLangSearch(e.target.value)}
+                />
+              </label>
+              <label className="lookup-field">
+                <span>Task category</span>
+                <select className="filter-select" value={taskFilter} onChange={e => setTaskFilter(e.target.value)}>
+                  <option value="">All tasks</option>
+                  {allTaskCategories.map(task => <option key={task} value={task}>{task}</option>)}
+                </select>
+              </label>
+              {hasLookupFilter && (
+                <button
+                  type="button"
+                  className="lookup-clear"
+                  onClick={() => {
+                    setLangSearch('')
+                    setTaskFilter('')
+                  }}
+                >
+                  Clear filters
+                </button>
+              )}
+            </div>
             <div className="lang-results">
-              {langSearch.length >= 2 && filteredLangs.length === 0 && (
-                <p style={{ color: 'var(--evals-text-muted)', fontStyle: 'italic' }}>No languages found matching &ldquo;{langSearch}&rdquo;</p>
+              {!hasLookupFilter && (
+                <p className="lookup-empty">Search for a language, choose a task, or use both filters together.</p>
+              )}
+              {hasLookupFilter && matchingLangs.length === 0 && (
+                <p className="lookup-empty">No languages match the selected filters.</p>
+              )}
+              {matchingLangs.length > 0 && (
+                <p className="lookup-status" aria-live="polite">
+                  {matchingLangs.length} language{matchingLangs.length !== 1 ? 's' : ''} found
+                  {matchingLangs.length > filteredLangs.length && ` · showing the first ${filteredLangs.length}`}
+                </p>
               )}
               {filteredLangs.map(lang => (
-                <LanguageCard key={lang.name} lang={lang} benchmarkData={data.benchmarks} />
+                <LanguageCard key={lang.name} lang={lang} benchmarkData={data.benchmarks} taskFilter={taskFilter} />
               ))}
             </div>
           </div>
@@ -577,7 +630,7 @@ export default function EvalsDashboard() {
       )}
 
       {(activePillar === 'coverage' || activePillar === 'representativeness') && !drillDown && (
-        <div className="click-hint">💡 Click any bar or cell to see composing benchmarks with citations</div>
+        <div className="click-hint">Click any bar or cell to see composing benchmarks with citations</div>
       )}
     </div>
   )
@@ -598,7 +651,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
 
   return (
     <div className="evals-section">
-      <h2><span className="section-icon">🗺️</span> Coverage Analysis</h2>
+      <h2>Coverage Analysis</h2>
       <p className="section-desc">How well do current benchmarks cover the world's languages?</p>
 
       <div className="evals-tabs">
@@ -747,7 +800,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 
   return (
     <div className="evals-section">
-      <h2><span className="section-icon">⚖️</span> Representativeness Analysis</h2>
+      <h2>Representativeness Analysis</h2>
       <p className="section-desc">Are benchmarks natively created or translated from English? Do they reflect the cultures they evaluate?</p>
 
       <div className="evals-tabs">
@@ -765,7 +818,11 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
         <div className="chart-container">
           <h3>Translation Status by Region</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks for that region.</p>
-          <ChartLegend items={[{ label: 'Native', color: '#22c55e' }, { label: 'Translated', color: '#ef4444' }, { label: 'Unknown', color: '#d1d5db' }]} />
+          <ChartLegend items={[
+            { label: 'Native', color: CHART_COLORS.native },
+            { label: 'Translated', color: CHART_COLORS.translated },
+            { label: 'Unknown', color: CHART_COLORS.unknown },
+          ]} />
           <div className="bar-chart stacked-bar-chart">
             {transByRegion.map((d, i) => (
               <div
@@ -787,7 +844,10 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
         <div className="chart-container">
           <h3>Cultural Grounding by Region</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks covering that region.</p>
-          <ChartLegend items={[{ label: 'Culturally Grounded', color: '#22c55e' }, { label: 'Not Grounded', color: '#ef4444' }]} />
+          <ChartLegend items={[
+            { label: 'Culturally Grounded', color: CHART_COLORS.grounded },
+            { label: 'Not Grounded', color: CHART_COLORS.notGrounded },
+          ]} />
           <div className="bar-chart stacked-bar-chart">
             {groundByRegion.map((d, i) => (
               <div
@@ -854,13 +914,13 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
         <div className="chart-container">
           <h3>Key Findings</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div className="long-tail-callout" style={{ borderLeftColor: '#ef4444', background: '#fef2f2' }}>
+            <div className="long-tail-callout finding-risk">
               <strong>{insights.pct_translated}%</strong> of all language-benchmark entries are translated from English, rather than natively authored.
             </div>
-            <div className="long-tail-callout" style={{ borderLeftColor: '#22c55e', background: '#f0fdf4', color: '#166534' }}>
+            <div className="long-tail-callout finding-positive">
               <strong>{insights.total_grounded_entries}</strong> language-benchmark entries are culturally grounded.
             </div>
-            <div className="long-tail-callout" style={{ borderLeftColor: '#f97316', background: '#fff7ed', color: '#9a3412' }}>
+            <div className="long-tail-callout finding-caution">
               <strong>{insights.single_benchmark_pct}%</strong> of all surveyed languages appear in only 1 benchmark.
             </div>
           </div>
@@ -915,8 +975,8 @@ function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField
                   <td>
                     {total > 0 && (
                       <div className="mini-bar" title={`${b.n_native} native / ${b.n_translated} translated`}>
-                        <div className="mini-seg" style={{ width: `${(b.n_native / total) * 100}%`, background: '#22c55e' }} />
-                        <div className="mini-seg" style={{ width: `${(b.n_translated / total) * 100}%`, background: '#ef4444' }} />
+                        <div className="mini-seg" style={{ width: `${(b.n_native / total) * 100}%`, background: CHART_COLORS.native }} />
+                        <div className="mini-seg" style={{ width: `${(b.n_translated / total) * 100}%`, background: CHART_COLORS.translated }} />
                       </div>
                     )}
                   </td>
@@ -942,7 +1002,7 @@ function BenchmarkDetail({ benchmark, languageData }) {
     <div className="detail-grid">
       {c && c.paper_title && (
         <div className="detail-card" style={{ gridColumn: '1 / -1' }}>
-          <h4>📄 Paper</h4>
+          <h4>Paper</h4>
           <div className="cite-title" style={{ marginBottom: 4 }}>
             {c.paper_url ? <a href={c.paper_url} target="_blank" rel="noopener noreferrer">{c.paper_title}</a>
             : c.arxiv_id ? <a href={`https://arxiv.org/abs/${c.arxiv_id}`} target="_blank" rel="noopener noreferrer">{c.paper_title}</a>
@@ -957,12 +1017,12 @@ function BenchmarkDetail({ benchmark, languageData }) {
       )}
       {benchmark.description && (
         <div className="detail-card" style={{ gridColumn: '1 / -1' }}>
-          <h4>📋 Description</h4>
-          <p style={{ fontSize: '0.85rem', color: '#444', margin: 0, lineHeight: 1.5 }}>{benchmark.description}</p>
+          <h4>Description</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text)', margin: 0, lineHeight: 1.5 }}>{benchmark.description}</p>
           {(benchmark.year || benchmark.benchmark_type) && (
             <div style={{ marginTop: 8, fontSize: '0.8rem', color: 'var(--evals-text-muted)', display: 'flex', gap: 16 }}>
-              {benchmark.year && <span>📅 {benchmark.year}</span>}
-              {benchmark.benchmark_type && <span>🏷️ {benchmark.benchmark_type}</span>}
+              {benchmark.year && <span>Year: {benchmark.year}</span>}
+              {benchmark.benchmark_type && <span>Type: {benchmark.benchmark_type}</span>}
             </div>
           )}
         </div>
@@ -1000,51 +1060,60 @@ function BenchmarkDetail({ benchmark, languageData }) {
 // ═══════════════════════════════════════════════════════════════
 // Language Card (with citation info)
 // ═══════════════════════════════════════════════════════════════
-function LanguageCard({ lang, benchmarkData }) {
+function LanguageCard({ lang, benchmarkData, taskFilter }) {
   const benchLookup = useMemo(() => {
     const m = {}
     for (const b of benchmarkData) m[b.name] = b
     return m
   }, [benchmarkData])
 
+  const visibleBenchmarks = useMemo(() => {
+    if (!taskFilter) return lang.benchmarks
+    return lang.benchmarks.filter(bl => benchLookup[bl.benchmark]?.task_categories.includes(taskFilter))
+  }, [benchLookup, lang.benchmarks, taskFilter])
+
+  const nativeCount = visibleBenchmarks.filter(bl => bl.translated === 'Native').length
+  const translatedCount = visibleBenchmarks.filter(bl => bl.translated === 'Translated').length
+  const groundedCount = visibleBenchmarks.filter(bl => bl.culturally_grounded).length
+
   return (
     <div className="lang-card">
       <h3>{lang.name}</h3>
       <div className="lang-meta">
-        <span>🏷️ {lang.family || 'Unknown family'}</span>
-        <span>✍️ {lang.script || 'Unknown script'}</span>
-        <span>📊 {lang.resource_level || 'Unknown'} (Level {lang.joshi_level ?? '?'})</span>
-        {lang.iso_code && <span>🔤 {lang.iso_code}</span>}
-        {lang.continents.length > 0 && <span>🌍 {lang.continents.join(', ')}</span>}
-        {lang.dialect_of && <span>💬 Dialect of {lang.dialect_of}</span>}
+        <span>Family: {lang.family || 'Unknown'}</span>
+        <span>Script: {lang.script || 'Unknown'}</span>
+        <span>Resource level: {lang.resource_level || 'Unknown'} ({lang.joshi_level ?? '?'})</span>
+        {lang.iso_code && <span>ISO: {lang.iso_code}</span>}
+        {lang.continents.length > 0 && <span>Regions: {lang.continents.join(', ')}</span>}
+        {lang.dialect_of && <span>Dialect of {lang.dialect_of}</span>}
       </div>
       <div style={{ display: 'flex', gap: 16, marginBottom: 12, fontSize: '0.85rem' }}>
-        <span style={{ color: 'var(--evals-text-success)', fontWeight: 600 }}>✓ {lang.native_count} native</span>
-        <span style={{ color: 'var(--evals-text-danger)', fontWeight: 600 }}>↗ {lang.translated_count} translated</span>
-        <span style={{ color: '#0f766e', fontWeight: 600 }}>☆ {lang.grounded_count} culturally grounded</span>
+        <span style={{ color: 'var(--evals-text-success)', fontWeight: 600 }}>{nativeCount} native</span>
+        <span style={{ color: 'var(--evals-text-danger)', fontWeight: 600 }}>{translatedCount} translated</span>
+        <span style={{ color: 'var(--evals-text-grounded)', fontWeight: 600 }}>{groundedCount} culturally grounded</span>
       </div>
       <div className="lang-benchmarks">
-        <h4>Appears in {lang.num_benchmarks} benchmark{lang.num_benchmarks !== 1 ? 's' : ''}:</h4>
+        <h4>Appears in {visibleBenchmarks.length} matching benchmark{visibleBenchmarks.length !== 1 ? 's' : ''}:</h4>
         <div className="lang-bench-list">
-          {lang.benchmarks.map((bl, i) => {
+          {visibleBenchmarks.map((bl, i) => {
             const cls = bl.translated === 'Native' ? 'native-chip' : bl.translated === 'Translated' ? 'translated-chip' : 'unknown-chip'
             const cite = benchLookup[bl.benchmark]?.citation
             const tooltip = [bl.translated, bl.culturally_grounded ? 'Culturally Grounded' : '', cite?.year ? `(${cite.year})` : '', cite?.venue || ''].filter(Boolean).join(' · ')
             return (
               <span className={`bench-chip ${cls}`} key={i} title={tooltip}>
-                {bl.benchmark}{bl.culturally_grounded && ' ☆'}{cite?.year && <span className="chip-year"> ({cite.year})</span>}
+                {bl.benchmark}{bl.culturally_grounded && ' · grounded'}{cite?.year && <span className="chip-year"> ({cite.year})</span>}
               </span>
             )
           })}
         </div>
       </div>
-      {lang.benchmarks.some(bl => benchLookup[bl.benchmark]?.citation?.paper_title) && (
+      {visibleBenchmarks.some(bl => benchLookup[bl.benchmark]?.citation?.paper_title) && (
         <details className="lang-refs" style={{ marginTop: 10 }}>
-          <summary style={{ fontSize: '0.82rem', color: 'var(--color-header-bg, #312A9A)', cursor: 'pointer', fontWeight: 600 }}>
-            📚 References ({lang.benchmarks.filter(bl => benchLookup[bl.benchmark]?.citation?.paper_title).length})
+          <summary style={{ fontSize: '0.82rem', color: 'var(--evals-accent-strong)', cursor: 'pointer', fontWeight: 600 }}>
+            References ({visibleBenchmarks.filter(bl => benchLookup[bl.benchmark]?.citation?.paper_title).length})
           </summary>
           <div className="lang-ref-list">
-            {lang.benchmarks.map((bl, i) => {
+            {visibleBenchmarks.map((bl, i) => {
               const cite = benchLookup[bl.benchmark]?.citation
               if (!cite?.paper_title) return null
               const url = cite.paper_url || (cite.arxiv_id ? `https://arxiv.org/abs/${cite.arxiv_id}` : null)
@@ -1062,7 +1131,9 @@ function LanguageCard({ lang, benchmarkData }) {
       {lang.task_categories.length > 0 && (
         <div style={{ marginTop: 10 }}>
           <h4 style={{ fontSize: '0.82rem', color: '#444', margin: '0 0 4px' }}>Tasks evaluated:</h4>
-          <div className="tag-list">{lang.task_categories.map(tc => <span className="tag" key={tc}>{tc}</span>)}</div>
+          <div className="tag-list">
+            {lang.task_categories.map(tc => <span className={`tag${taskFilter === tc ? ' selected' : ''}`} key={tc}>{tc}</span>)}
+          </div>
         </div>
       )}
     </div>

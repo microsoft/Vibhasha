@@ -13,6 +13,9 @@
     "sync-docs": "node scripts/generate-doc-wrappers.js",
     "sync-index": "node scripts/sync-index.js",
     "sync-routes": "node scripts/sync-routes-sidebar.js",
+    "validate-evals": "python scripts/validate_submission.py --all",
+    "update-evals": "python scripts/update_evals_data.py",
+    "check-evals": "python scripts/update_evals_data.py --check",
     "start": "serve -s dist",
     "preview": "vite preview"
   },

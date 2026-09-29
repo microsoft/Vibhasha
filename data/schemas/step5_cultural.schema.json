@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha benchmark cultural metadata",
+  "description": "Benchmark-level cultural representation and annotator metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cultural_flags"
+  ],
+  "properties": {
+    "cultural_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datasets_from_scratch_no_english_source",
+        "datasets_translated_from_english",
+        "datasets_with_cultural_grounding",
+        "all_annotators_native_speakers",
+        "annotator_workforce",
+        "english_centricity_notes",
+        "geographic_representation"
+      ],
+      "properties": {
+        "datasets_from_scratch_no_english_source": {
+          "$ref": "#/$defs/evidencedDatasetList"
+        },
+        "datasets_translated_from_english": {
+          "$ref": "#/$defs/evidencedDatasetList"
+        },
+        "datasets_with_cultural_grounding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "list",
+            "details"
+          ],
+          "properties": {
+            "list": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "details": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "all_annotators_native_speakers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "evidence"
+          ],
+          "properties": {
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence": {
+              "type": "string"
+            }
+          }
+        },
+        "annotator_workforce": {
+          "$ref": "#/$defs/annotatorWorkforce"
+        },
+        "english_centricity_notes": {
+          "type": "string"
+        },
+        "geographic_representation": {
+          "$ref": "#/$defs/geographicRepresentation"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "evidencedDatasetList": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "list",
+        "evidence"
+      ],
+      "properties": {
+        "list": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    },
+    "annotatorWorkforce": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "creator_types_across_datasets",
+        "total_annotators_reported",
+        "affiliations",
+        "demographics_reported",
+        "compensation_reported",
+        "compensation_details",
+        "irb_ethics_review",
+        "evidence"
+      ],
+      "properties": {
+        "creator_types_across_datasets": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "total_annotators_reported": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "affiliations": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "demographics_reported": {
+          "type": "boolean"
+        },
+        "compensation_reported": {
+          "type": "boolean"
+        },
+        "compensation_details": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "irb_ethics_review": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    },
+    "geographicRepresentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_region",
+        "sub_regions",
+        "also_represented",
+        "notably_excluded",
+        "evidence"
+      ],
+      "properties": {
+        "primary_region": {
+          "type": "string"
+        },
+        "sub_regions": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "also_represented": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "notably_excluded": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "evidence": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

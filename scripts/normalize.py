@@ -316,7 +316,7 @@ def process_all_benchmarks(registry, alias_to_canonical):
     log_lines = []
     stats = Counter()
 
-    for bm_dir in sorted(V2_EXTRACTED_DIR.iterdir()):
+    for bm_dir in sorted(V2_EXTRACTED_DIR.iterdir(), key=lambda path: path.name):
         if not bm_dir.is_dir():
             continue
 

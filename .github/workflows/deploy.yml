@@ -32,9 +32,7 @@ jobs:
       - name: Generate dashboard data
         run: |
           pip install -r scripts/requirements.txt
-          python scripts/build_language_registry.py
-          python scripts/normalize.py
-          python scripts/generate_web_data.py
+          python scripts/update_evals_data.py
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

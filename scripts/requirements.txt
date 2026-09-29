@@ -1,1 +1,2 @@
 langcodes>=0.3
+jsonschema>=4.23,<5

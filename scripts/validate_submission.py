@@ -1,211 +1,184 @@
 """
-Validate a benchmark submission directory.
+Validate benchmark source files against the formal JSON Schemas.
 
-Checks that all required step files exist and conform to the expected schema.
-Used in CI to validate pull requests adding new benchmarks.
+The validator also applies consistency checks that span multiple step files.
+It is used locally and by pull request CI.
 
 Usage:
     python scripts/validate_submission.py data/benchmarks/<BenchmarkName>
-    python scripts/validate_submission.py --all   # validate all benchmarks
+    python scripts/validate_submission.py --all
 """
 
+import argparse
 import json
 import sys
+from functools import lru_cache
 from pathlib import Path
 
-REQUIRED_STEPS = [
-    "step1_identity.json",
-    "step2_datasets.json",
-    "step3_languages.json",
-    "step4_assessments.json",
-    "step5_cultural.json",
-]
-
-# ─── Schema checks ───────────────────────────────────────────────────────────
-
-STEP1_REQUIRED_FIELDS = ["benchmark_name", "benchmark_type", "total_languages_claimed", "total_datasets", "dataset_names"]
-STEP2_REQUIRED_FIELDS = ["datasets"]
-STEP2_DATASET_FIELDS = ["dataset_name", "task_type", "source", "num_languages"]
-STEP3_REQUIRED_FIELDS = ["total_languages", "languages"]
-STEP4_REQUIRED_FIELDS = ["assessments"]
-STEP5_REQUIRED_FIELDS = ["cultural_flags"]
-
-BENCHMARK_TYPES = ("single_dataset", "mixed", "aggregation")
-DATASET_SOURCES = ("original", "translated", "adapted", "mixed", "unknown")
+from jsonschema import Draft202012Validator
 
 
-def validate_json_loadable(path: Path) -> tuple[bool, str]:
-    """Check file is valid JSON."""
+ROOT = Path(__file__).resolve().parent.parent
+BENCHMARKS_DIR = ROOT / "data" / "benchmarks"
+SCHEMAS_DIR = ROOT / "data" / "schemas"
+
+STEP_SCHEMAS = {
+    "step1_identity.json": "step1_identity.schema.json",
+    "step2_datasets.json": "step2_datasets.schema.json",
+    "step3_languages.json": "step3_languages.schema.json",
+    "step4_assessments.json": "step4_assessments.schema.json",
+    "step5_cultural.json": "step5_cultural.schema.json",
+}
+
+
+@lru_cache(maxsize=None)
+def load_validator(schema_name: str) -> Draft202012Validator:
+    schema_path = SCHEMAS_DIR / schema_name
+    with schema_path.open(encoding="utf-8") as schema_file:
+        schema = json.load(schema_file)
+    Draft202012Validator.check_schema(schema)
+    return Draft202012Validator(schema)
+
+
+def load_json(path: Path) -> tuple[object | None, str | None]:
     try:
-        with open(path, encoding="utf-8") as f:
-            json.load(f)
-        return True, ""
-    except json.JSONDecodeError as e:
-        return False, f"Invalid JSON: {e}"
-    except Exception as e:
-        return False, f"Error reading file: {e}"
+        with path.open(encoding="utf-8") as source_file:
+            return json.load(source_file), None
+    except json.JSONDecodeError as error:
+        return None, f"invalid JSON at line {error.lineno}, column {error.colno}: {error.msg}"
+    except OSError as error:
+        return None, f"could not read file: {error}"
 
 
-def validate_step1(data: dict) -> list[str]:
-    errors = []
-    for field in STEP1_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"step1: missing required field '{field}'")
-    if "benchmark_type" in data and data["benchmark_type"] not in BENCHMARK_TYPES:
-        errors.append(f"step1: benchmark_type must be one of {BENCHMARK_TYPES}, got '{data['benchmark_type']}'")
-    if "dataset_names" in data and not isinstance(data["dataset_names"], list):
-        errors.append("step1: dataset_names must be a list")
-    return errors
-
-
-def validate_step2(data: dict) -> list[str]:
-    errors = []
-    for field in STEP2_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"step2: missing required field '{field}'")
-            return errors
-    if not isinstance(data["datasets"], list):
-        errors.append("step2: 'datasets' must be a list")
-        return errors
-    for i, ds in enumerate(data["datasets"]):
-        for field in STEP2_DATASET_FIELDS:
-            if field not in ds:
-                errors.append(f"step2: dataset[{i}] missing required field '{field}'")
-        if "source" in ds and ds["source"] not in DATASET_SOURCES:
-            errors.append(f"step2: dataset[{i}] source must be one of {DATASET_SOURCES}")
-    return errors
-
-
-def validate_step3(data: dict) -> list[str]:
-    errors = []
-    if "total_languages" not in data:
-        errors.append("step3: missing required field 'total_languages'")
-    if "languages" not in data and "constructed_benchmarks" not in data:
-        errors.append("step3: missing 'languages' or aggregation field 'constructed_benchmarks'")
-    if "languages" in data:
-        if not isinstance(data["languages"], dict):
-            errors.append("step3: 'languages' must be a dict mapping language names to objects")
+def format_json_path(file_name: str, path_parts) -> str:
+    location = file_name
+    for part in path_parts:
+        if isinstance(part, int):
+            location += f"[{part}]"
         else:
-            for lang_name, lang_data in data["languages"].items():
-                if "datasets_present_in" not in lang_data:
-                    errors.append(f"step3: language '{lang_name}' missing 'datasets_present_in'")
-                elif not isinstance(lang_data["datasets_present_in"], list):
-                    errors.append(f"step3: language '{lang_name}' datasets_present_in must be a list")
-    return errors
+            location += f".{part}"
+    return location
 
 
-def validate_step4(data: dict) -> list[str]:
+def validate_schema(
+    file_name: str,
+    schema_name: str,
+    data: object,
+) -> list[str]:
+    validator = load_validator(schema_name)
+    schema_errors = sorted(
+        validator.iter_errors(data),
+        key=lambda error: format_json_path(file_name, error.absolute_path),
+    )
+    return [
+        f"{format_json_path(file_name, error.absolute_path)}: {error.message}"
+        for error in schema_errors
+    ]
+
+
+def validate_cross_file_consistency(documents: dict[str, object]) -> list[str]:
     errors = []
-    for field in STEP4_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"step4: missing required field '{field}'")
-            return errors
-    if not isinstance(data["assessments"], (list, dict)):
-        errors.append("step4: 'assessments' must be a list or dict")
-    return errors
+    step2 = documents.get("step2_datasets.json")
+    if not isinstance(step2, dict):
+        return errors
 
+    datasets = step2.get("datasets")
+    if not isinstance(datasets, list):
+        return errors
 
-def validate_step5(data: dict) -> list[str]:
-    errors = []
-    for field in STEP5_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"step5: missing required field '{field}'")
-    cultural_flags = data.get("cultural_flags")
-    if cultural_flags is not None:
-        if not isinstance(cultural_flags, dict):
-            errors.append("step5: 'cultural_flags' must be an object")
-        elif "geographic_representation" not in cultural_flags:
-            errors.append("step5: cultural_flags missing 'geographic_representation'")
+    first_index_by_key = {}
+    for index, dataset in enumerate(datasets):
+        if not isinstance(dataset, dict) or "dataset_name" not in dataset:
+            continue
+        key = (dataset["dataset_name"], dataset.get("variant_name"))
+        if key in first_index_by_key:
+            first_index = first_index_by_key[key]
+            errors.append(
+                "step2_datasets.json.datasets"
+                f"[{index}]: duplicate (dataset_name, variant_name) also used at index {first_index}: {key}"
+            )
+        else:
+            first_index_by_key[key] = index
+
     return errors
 
 
 def validate_benchmark(benchmark_dir: Path) -> list[str]:
-    """Validate a single benchmark directory. Returns list of error strings."""
-    errors = []
-
     if not benchmark_dir.is_dir():
-        return [f"Not a directory: {benchmark_dir}"]
+        return [f"not a directory: {benchmark_dir}"]
 
-    # Check all required files exist
-    for step_file in REQUIRED_STEPS:
-        path = benchmark_dir / step_file
-        if not path.exists():
-            errors.append(f"Missing required file: {step_file}")
+    errors = []
+    documents = {}
+
+    for file_name, schema_name in STEP_SCHEMAS.items():
+        source_path = benchmark_dir / file_name
+        if not source_path.exists():
+            errors.append(f"{file_name}: missing required file")
             continue
 
-        ok, msg = validate_json_loadable(path)
-        if not ok:
-            errors.append(f"{step_file}: {msg}")
+        data, load_error = load_json(source_path)
+        if load_error is not None:
+            errors.append(f"{file_name}: {load_error}")
             continue
 
-    # If any files are missing/unreadable, skip deeper validation
-    if errors:
-        return errors
+        documents[file_name] = data
+        errors.extend(validate_schema(file_name, schema_name, data))
 
-    # Load and validate each step
-    with open(benchmark_dir / "step1_identity.json", encoding="utf-8") as f:
-        errors.extend(validate_step1(json.load(f)))
-
-    with open(benchmark_dir / "step2_datasets.json", encoding="utf-8") as f:
-        errors.extend(validate_step2(json.load(f)))
-
-    with open(benchmark_dir / "step3_languages.json", encoding="utf-8") as f:
-        errors.extend(validate_step3(json.load(f)))
-
-    with open(benchmark_dir / "step4_assessments.json", encoding="utf-8") as f:
-        errors.extend(validate_step4(json.load(f)))
-
-    with open(benchmark_dir / "step5_cultural.json", encoding="utf-8") as f:
-        errors.extend(validate_step5(json.load(f)))
-
-    # Cross-step consistency: reject duplicate dataset variants. A canonical
-    # dataset may have multiple rows when each row names a distinct variant.
-    with open(benchmark_dir / "step2_datasets.json", encoding="utf-8") as f:
-        step2 = json.load(f)
-
-    if "datasets" in step2 and isinstance(step2["datasets"], list):
-        dataset_keys = [
-            (ds["dataset_name"], ds.get("variant_name"))
-            for ds in step2["datasets"]
-            if "dataset_name" in ds
-        ]
-        duplicates = sorted({key for key in dataset_keys if dataset_keys.count(key) > 1})
-        if duplicates:
-            errors.append(f"Duplicate (dataset_name, variant_name) values in step2: {duplicates}")
+    if len(documents) == len(STEP_SCHEMAS):
+        errors.extend(validate_cross_file_consistency(documents))
 
     return errors
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python validate_submission.py <benchmark_dir> | --all")
-        sys.exit(1)
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Validate Vibhasha benchmark source files."
+    )
+    parser.add_argument(
+        "benchmark_dirs",
+        nargs="*",
+        type=Path,
+        help="One or more benchmark directories to validate.",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Validate every directory under data/benchmarks.",
+    )
+    args = parser.parse_args(argv)
 
-    root = Path(__file__).resolve().parent.parent
-    benchmarks_dir = root / "data" / "benchmarks"
+    if args.all and args.benchmark_dirs:
+        parser.error("use either --all or explicit benchmark directories, not both")
+    if not args.all and not args.benchmark_dirs:
+        parser.error("provide at least one benchmark directory or use --all")
 
-    if sys.argv[1] == "--all":
-        dirs = sorted(d for d in benchmarks_dir.iterdir() if d.is_dir())
+    return args
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    if args.all:
+        benchmark_dirs = sorted(
+            (path for path in BENCHMARKS_DIR.iterdir() if path.is_dir()),
+            key=lambda path: path.name,
+        )
     else:
-        dirs = [Path(sys.argv[1]).resolve()]
+        benchmark_dirs = [path.resolve() for path in args.benchmark_dirs]
 
     total_errors = 0
-    for benchmark_dir in dirs:
+    for benchmark_dir in benchmark_dirs:
         errors = validate_benchmark(benchmark_dir)
         if errors:
-            print(f"\n✗ {benchmark_dir.name} ({len(errors)} errors):")
-            for e in errors:
-                print(f"  - {e}")
+            print(f"\n[FAIL] {benchmark_dir.name} ({len(errors)} errors)")
+            for error in errors:
+                print(f"  - {error}")
             total_errors += len(errors)
         else:
-            print(f"✓ {benchmark_dir.name}")
+            print(f"[OK] {benchmark_dir.name}")
 
-    print(f"\n{'='*60}")
-    print(f"  Validated: {len(dirs)} benchmarks | Errors: {total_errors}")
-    print(f"{'='*60}")
-
-    sys.exit(1 if total_errors > 0 else 0)
+    print(f"\nValidated: {len(benchmark_dirs)} benchmarks | Errors: {total_errors}")
+    return 1 if total_errors else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

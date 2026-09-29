@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "V2 master language registry — single source of truth.",
-    "generated_at": "2026-08-18T05:42:56.775972+00:00",
+    "generated_at": "2026-09-28T13:37:34.635271+00:00",
     "design_principle": "Only language names from extraction; all metadata from Glottolog/CLDR/Joshi.",
     "num_languages": 220,
     "joshi_level_scale": {

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha benchmark identity",
+  "description": "Identity and headline metadata for one evaluation benchmark.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_name",
+    "paper_id",
+    "year",
+    "benchmark_type",
+    "benchmark_type_evidence",
+    "total_languages_claimed",
+    "total_datasets",
+    "dataset_names",
+    "task_categories",
+    "brief_description"
+  ],
+  "properties": {
+    "benchmark_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "paper_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900
+    },
+    "benchmark_type": {
+      "enum": [
+        "single_dataset",
+        "mixed",
+        "aggregation"
+      ]
+    },
+    "benchmark_type_evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "total_languages_claimed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_datasets": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "dataset_names": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "task_categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "brief_description": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

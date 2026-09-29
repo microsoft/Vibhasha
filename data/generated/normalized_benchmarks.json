@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-08-18T05:44:14.647285+00:00",
+    "generated_at": "2026-09-28T13:37:34.966296+00:00",
     "schema_version": "2.0",
     "design_principle": "Flat (dataset, language) rows — deduplicated across benchmarks.",
     "num_benchmarks": 51,
