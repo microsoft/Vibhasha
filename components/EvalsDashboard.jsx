@@ -523,26 +523,42 @@ export default function EvalsDashboard() {
           <StatCard number={insights.total_continents} label="Regions" onClick={() => setStatModal('regions')} />
           <StatCard number={insights.total_task_categories} label="Task Types" onClick={() => setStatModal('tasks')} />
         </div>
-        <div className="data-scope-note">
-          <div><strong>Benchmark suite</strong><span>An audited evaluation collection or publication that can contain multiple datasets.</span></div>
-          <div><strong>Dataset</strong><span>A distinct evaluation dataset, deduplicated by name across benchmark suites.</span></div>
-          <div><strong>Dataset-language entry</strong><span>One dataset evaluated in one language; the unit used in representativeness analyses.</span></div>
-        </div>
+        <aside className="dashboard-glossary" aria-labelledby="dashboard-glossary-title">
+          <div className="dashboard-glossary-heading">
+            <span>Dashboard glossary</span>
+            <h2 id="dashboard-glossary-title">How to read the counts</h2>
+            <p>These three units are used throughout the analysis.</p>
+          </div>
+          <dl>
+            <div>
+              <dt>Benchmark suite</dt>
+              <dd>An audited evaluation collection or publication that can contain multiple datasets.</dd>
+            </div>
+            <div>
+              <dt>Dataset</dt>
+              <dd>A distinct evaluation dataset, deduplicated by name across benchmark suites.</dd>
+            </div>
+            <div>
+              <dt>Dataset-language entry</dt>
+              <dd>One dataset evaluated in one language; the unit used in representativeness analyses.</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
 
       <div className="pillar-nav">
         {[
-          { id: 'coverage', title: 'Coverage', desc: 'Language coverage across benchmark suites and task categories' },
-          { id: 'representativeness', title: 'Representativeness', desc: 'Dataset-level translation and cultural grounding' },
-          { id: 'explorer', title: 'Benchmark Suite Explorer', desc: 'Browse the 51 audited benchmark suites' },
-          { id: 'lookup', title: 'Language Lookup', desc: 'Compare benchmark-suite and dataset coverage by language' },
+          { id: 'coverage', icon: '🗺️', title: 'Coverage', desc: 'Language coverage across benchmark suites and task categories' },
+          { id: 'representativeness', icon: '⚖️', title: 'Representativeness', desc: 'Dataset-level translation and cultural grounding' },
+          { id: 'explorer', icon: '🔍', title: 'Benchmark Suite Explorer', desc: 'Browse the 51 audited benchmark suites' },
+          { id: 'lookup', icon: '🌐', title: 'Language Lookup', desc: 'Compare benchmark-suite and dataset coverage by language' },
         ].map(p => (
           <button
             key={p.id}
             className={`pillar-btn${activePillar === p.id ? ' active' : ''}`}
             onClick={() => setActivePillar(p.id)}
           >
-            <div className="pillar-title">{p.title}</div>
+            <div className="pillar-title">{p.icon} {p.title}</div>
             <div className="pillar-desc">{p.desc}</div>
           </button>
         ))}
@@ -558,7 +574,7 @@ export default function EvalsDashboard() {
 
       {activePillar === 'explorer' && (
         <div className="evals-section">
-          <h2>Benchmark Suite Explorer</h2>
+          <h2><span className="section-icon">🔍</span> Benchmark Suite Explorer</h2>
           <p className="section-desc">
             Each row is an audited benchmark suite; dataset columns count its constituent datasets.
             Reused datasets appear in each relevant suite here but count once in the unique-dataset total.
@@ -584,7 +600,7 @@ export default function EvalsDashboard() {
 
       {activePillar === 'lookup' && (
         <div className="evals-section">
-          <h2>Language Lookup</h2>
+          <h2><span className="section-icon">🌐</span> Language Lookup</h2>
           <p className="section-desc">Search for any language to compare its benchmark-suite coverage, unique datasets, evaluation origins, and resource level.</p>
           <div className="language-lookup">
             <input
@@ -636,7 +652,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
 
   return (
     <div className="evals-section">
-      <h2>Coverage Analysis</h2>
+      <h2><span className="section-icon">🗺️</span> Coverage Analysis</h2>
       <p className="section-desc">How broadly do the audited benchmark suites and their datasets cover the world's languages?</p>
       <p className="analysis-unit">
         <strong>Unit of analysis:</strong> unique languages. The benchmark-reach view groups each language by the number of benchmark suites that include it.
@@ -788,7 +804,7 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 
   return (
     <div className="evals-section">
-      <h2>Representativeness Analysis</h2>
+      <h2><span className="section-icon">⚖️</span> Representativeness Analysis</h2>
       <p className="section-desc">Are evaluation datasets natively created or translated from English? Do they reflect the cultures they evaluate?</p>
       <p className="analysis-unit">
         <strong>Unit of analysis:</strong> dataset-language entries. Each of the {insights.total_dataset_language_entries} entries represents one unique dataset evaluated in one language; a benchmark suite can contribute many entries.

@@ -22,9 +22,12 @@ Usage:
 
 import csv
 import json
+import sys
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+
+from jsonschema import Draft202012Validator
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
@@ -39,6 +42,8 @@ REFERENCE_DIR = DATA_DIR / "reference"
 GLOTTOLOG_LANGUAGES_CSV = REFERENCE_DIR / "glottolog_languages.csv"
 GLOTTOLOG_NAMES_CSV = REFERENCE_DIR / "glottolog_names.csv"
 CLDR_LANGUAGE_DATA_JSON = REFERENCE_DIR / "cldr_languageData.json"
+OVERRIDES_PATH = REFERENCE_DIR / "language_metadata_overrides.json"
+OVERRIDES_SCHEMA_PATH = DATA_DIR / "schemas" / "language_metadata_overrides.schema.json"
 
 # ─── Joshi level names ────────────────────────────────────────────────────────
 JOSHI_LEVEL_NAMES = {
@@ -436,7 +441,27 @@ CONTINENT_OVERRIDES = {
 # Step 1: Collect unique language names from V2 step3 files
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def collect_language_names():
+def load_overrides():
+    """Load and validate contributor-maintained language metadata exceptions."""
+    with open(OVERRIDES_PATH, encoding="utf-8") as f:
+        overrides = json.load(f)
+    with open(OVERRIDES_SCHEMA_PATH, encoding="utf-8") as f:
+        schema = json.load(f)
+
+    validator = Draft202012Validator(schema)
+    errors = sorted(validator.iter_errors(overrides), key=lambda error: list(error.absolute_path))
+    if errors:
+        details = "\n".join(
+            f"  - {'.'.join(str(part) for part in error.absolute_path) or '<root>'}: {error.message}"
+            for error in errors
+        )
+        raise ValueError(
+            f"Invalid language metadata override file: {OVERRIDES_PATH.relative_to(ROOT)}\n{details}"
+        )
+    return overrides
+
+
+def collect_language_names(external_aliases):
     """Scan all V2 step3 files and collect unique canonical language names.
 
     Returns:
@@ -457,7 +482,7 @@ def collect_language_names():
         with open(step3, encoding="utf-8") as f:
             data = json.load(f)
         for raw_name in data.get("languages", {}):
-            canonical = SEED_ALIASES.get(raw_name, raw_name)
+            canonical = external_aliases.get(raw_name, SEED_ALIASES.get(raw_name, raw_name))
             raw_to_canonical[raw_name] = canonical
             name_to_benchmarks[canonical].add(bm_dir.name)
 
@@ -497,7 +522,14 @@ def load_glottolog():
     return langs_by_id, name_to_id, altname_to_ids, family_names
 
 
-def resolve_glottolog(canonical_names, langs_by_id, name_to_id, altname_to_ids, family_names):
+def resolve_glottolog(
+    canonical_names,
+    langs_by_id,
+    name_to_id,
+    altname_to_ids,
+    family_names,
+    language_overrides,
+):
     """Resolve each canonical name to a Glottolog entry.
 
     Returns:
@@ -514,7 +546,11 @@ def resolve_glottolog(canonical_names, langs_by_id, name_to_id, altname_to_ids, 
         source = None
 
         # 1. Override
-        if name in GLOTTOLOG_OVERRIDES:
+        external_glottocode = language_overrides.get(name, {}).get("glottocode")
+        if external_glottocode:
+            glottocode = external_glottocode
+            source = "metadata_override"
+        elif name in GLOTTOLOG_OVERRIDES:
             glottocode = GLOTTOLOG_OVERRIDES[name]
             source = "override"
 
@@ -724,6 +760,132 @@ def resolve_continents(resolved):
             entry["continent"] = "Unknown"
 
 
+def apply_metadata_overrides(resolved, language_overrides):
+    """Apply reviewed secondary metadata exceptions after automatic resolution."""
+    for name, override in language_overrides.items():
+        entry = resolved.get(name)
+        if entry is None:
+            continue
+        if "script" in override:
+            entry["script"] = override["script"]
+            entry["script_source"] = "metadata_override"
+        if "continent" in override:
+            entry["continent"] = override["continent"]
+            entry["continent_source"] = "metadata_override"
+        if "joshi_level" in override:
+            level = override["joshi_level"]
+            entry["joshi_level"] = level
+            entry["joshi_level_name"] = JOSHI_LEVEL_NAMES[level]
+            entry["joshi_source"] = "metadata_override"
+            entry["joshi_rationale"] = override["rationale"]
+        if "dialect_of" in override:
+            entry["dialect_of"] = override["dialect_of"]
+
+
+def validate_metadata(
+    canonical_names,
+    resolved,
+    unresolved,
+    ambiguous,
+    duplicates,
+    overrides,
+    name_to_benchmarks,
+):
+    """Return actionable fatal errors for incomplete language metadata."""
+    errors = []
+    language_overrides = overrides["languages"]
+
+    for name in sorted(unresolved):
+        errors.append({
+            "language": name,
+            "problem": "No exact or unambiguous Glottolog language match was found.",
+            "action": (
+                "Add the verified glottocode under languages."
+                f"{name}.glottocode in data/reference/language_metadata_overrides.json."
+            ),
+        })
+
+    for name, candidates in sorted(ambiguous.items()):
+        errors.append({
+            "language": name,
+            "problem": f"Glottolog name resolution is ambiguous: {', '.join(candidates)}.",
+            "action": (
+                "Select the correct candidate and add it under languages."
+                f"{name}.glottocode in data/reference/language_metadata_overrides.json."
+            ),
+        })
+
+    required_fields = {
+        "glottocode": "a verified Glottocode",
+        "iso_code": "an ISO 639-3 code",
+        "family": "a language family",
+        "script": "a script",
+        "continent": "a region",
+        "joshi_level": "an explicit Joshi resource level",
+        "joshi_level_name": "a Joshi resource-level label",
+    }
+    for name, entry in sorted(resolved.items()):
+        for field, description in required_fields.items():
+            value = entry.get(field)
+            if value is None or value == "" or value == "Unknown":
+                errors.append({
+                    "language": name,
+                    "problem": f"Missing {description} ({field}).",
+                    "action": (
+                        f"Add a reviewed {field} override for languages.{name} in "
+                        "data/reference/language_metadata_overrides.json."
+                    ),
+                })
+        if entry.get("joshi_source") == "fallback":
+            errors.append({
+                "language": name,
+                "problem": "No Joshi taxonomy match or explicit reviewed resource-level override exists.",
+                "action": (
+                    f"Add languages.{name}.joshi_level and a rationale in "
+                    "data/reference/language_metadata_overrides.json."
+                ),
+            })
+
+    unknown_overrides = sorted(set(language_overrides) - set(canonical_names))
+    for name in unknown_overrides:
+        errors.append({
+            "language": name,
+            "problem": "The override does not correspond to any language in benchmark step3 files.",
+            "action": "Remove the stale override or correct the submitted language name.",
+        })
+
+    duplicate_exceptions = overrides["duplicate_glottocode_exceptions"]
+    for glottocode, names in sorted(duplicates.items()):
+        exception = duplicate_exceptions.get(glottocode)
+        if exception is None or set(exception["languages"]) != set(names):
+            errors.append({
+                "language": ", ".join(sorted(names)),
+                "problem": f"Unreviewed duplicate Glottocode {glottocode}.",
+                "action": (
+                    "Merge true aliases or add an exact, justified entry under "
+                    "duplicate_glottocode_exceptions in "
+                    "data/reference/language_metadata_overrides.json."
+                ),
+            })
+
+    for glottocode in sorted(set(duplicate_exceptions) - set(duplicates)):
+        errors.append({
+            "language": ", ".join(duplicate_exceptions[glottocode]["languages"]),
+            "problem": f"Stale duplicate-Glottocode exception {glottocode}.",
+            "action": "Remove or update the exception to match the generated duplicate group.",
+        })
+
+    for error in errors:
+        error["benchmarks"] = sorted(
+            {
+                benchmark
+                for name in error["language"].split(", ")
+                for benchmark in name_to_benchmarks.get(name, set())
+            }
+        )
+    return errors
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # Step 6: Detect duplicates (different canonical names → same glottocode)
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -776,8 +938,17 @@ def build_registry(resolved, raw_to_canonical, name_to_benchmarks):
     return registry
 
 
-def write_review_report(unresolved, ambiguous, duplicates, joshi_unmatched,
-                        script_missing, resolved, langs_by_id, name_to_benchmarks):
+def write_review_report(
+    unresolved,
+    ambiguous,
+    duplicates,
+    joshi_unmatched,
+    script_missing,
+    resolved,
+    langs_by_id,
+    name_to_benchmarks,
+    metadata_errors,
+):
     """Write the human review report."""
     lines = []
     lines.append("=" * 70)
@@ -795,7 +966,23 @@ def write_review_report(unresolved, ambiguous, duplicates, joshi_unmatched,
     lines.append(f"  Joshi unmatched:              {len(joshi_unmatched)}")
     lines.append(f"  CLDR script missing:          {len(script_missing)}")
     lines.append(f"  Duplicate glottocodes:         {len(duplicates)}")
+    lines.append(f"  Fatal metadata errors:        {len(metadata_errors)}")
     lines.append("")
+
+    lines.append("-" * 70)
+    lines.append("  FATAL METADATA ERRORS")
+    lines.append("-" * 70)
+    if metadata_errors:
+        for error in metadata_errors:
+            lines.append(f"  Language: {error['language']}")
+            if error["benchmarks"]:
+                lines.append(f"    Benchmarks: {', '.join(error['benchmarks'])}")
+            lines.append(f"    Problem: {error['problem']}")
+            lines.append(f"    How to fix: {error['action']}")
+            lines.append("")
+    else:
+        lines.append("  (none)")
+        lines.append("")
 
     # UNRESOLVED NAMES
     lines.append("-" * 70)
@@ -889,20 +1076,54 @@ def write_review_report(unresolved, ambiguous, duplicates, joshi_unmatched,
     print(f"  Review report: {REVIEW_PATH}")
 
 
+def write_json_atomic(path, document):
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    with open(temporary_path, "w", encoding="utf-8") as f:
+        json.dump(document, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    temporary_path.replace(path)
+
+
+def print_metadata_errors(errors):
+    print(f"\n[FAIL] Language metadata validation failed with {len(errors)} error(s).")
+    for error in errors:
+        print(f"\nLanguage: {error['language']}")
+        if error["benchmarks"]:
+            print(f"Benchmarks: {', '.join(error['benchmarks'])}")
+        print(f"Problem: {error['problem']}")
+        print(f"How to fix: {error['action']}")
+    print("\nAfter correcting the source metadata, run:")
+    print("  npm run update-evals")
+    print("  npm run check-evals")
+
+
 def main():
     print("=" * 60)
     print("  Build Language Registry V2")
     print("=" * 60)
 
+    try:
+        overrides = load_overrides()
+    except (OSError, json.JSONDecodeError, ValueError) as error:
+        print(f"\n[FAIL] {error}", file=sys.stderr)
+        return 1
+
     # Step 1: Collect names
     print("\n[1/5] Collecting language names from V2 step3 files...")
-    canonical_names, raw_to_canonical, name_to_benchmarks = collect_language_names()
+    canonical_names, raw_to_canonical, name_to_benchmarks = collect_language_names(
+        overrides["aliases"]
+    )
 
     # Step 2: Glottolog resolution
     print("\n[2/5] Resolving via Glottolog...")
     langs_by_id, name_to_id, altname_to_ids, family_names = load_glottolog()
     resolved, unresolved, ambiguous = resolve_glottolog(
-        canonical_names, langs_by_id, name_to_id, altname_to_ids, family_names
+        canonical_names,
+        langs_by_id,
+        name_to_id,
+        altname_to_ids,
+        family_names,
+        overrides["languages"],
     )
     print(f"  Resolved: {len(resolved)}, Unresolved: {len(unresolved)}, "
           f"Ambiguous: {len(ambiguous)}")
@@ -919,9 +1140,28 @@ def main():
     # Step 5: Continents
     print("\n[5/5] Resolving continents...")
     resolve_continents(resolved)
+    apply_metadata_overrides(resolved, overrides["languages"])
+
+    joshi_unmatched = [
+        name for name in joshi_unmatched
+        if resolved.get(name, {}).get("joshi_source") == "fallback"
+    ]
+    script_missing = [
+        name for name in script_missing
+        if not resolved.get(name, {}).get("script")
+    ]
 
     # Find duplicates
     duplicates = find_duplicates(resolved)
+    metadata_errors = validate_metadata(
+        canonical_names,
+        resolved,
+        unresolved,
+        ambiguous,
+        duplicates,
+        overrides,
+        name_to_benchmarks,
+    )
 
     # Build output
     registry = build_registry(resolved, raw_to_canonical, name_to_benchmarks)
@@ -937,15 +1177,20 @@ def main():
         "languages": registry,
     }
 
-    with open(REGISTRY_PATH, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f"\n  Wrote registry: {REGISTRY_PATH} ({len(registry)} languages)")
-
     # Write review report
     write_review_report(
         unresolved, ambiguous, duplicates, joshi_unmatched,
-        script_missing, resolved, langs_by_id, name_to_benchmarks
+        script_missing, resolved, langs_by_id, name_to_benchmarks,
+        metadata_errors,
     )
+
+    if metadata_errors:
+        print_metadata_errors(metadata_errors)
+        print("\nThe existing language registry was left unchanged.")
+        return 1
+
+    write_json_atomic(REGISTRY_PATH, output)
+    print(f"\n  Wrote registry: {REGISTRY_PATH} ({len(registry)} languages)")
 
     print(f"\n{'=' * 60}")
     print(f"  SUMMARY")
@@ -956,7 +1201,8 @@ def main():
     print(f"  Missing CLDR script:    {len(script_missing)}")
     print(f"  Duplicate glottocodes:  {len(duplicates)}")
     print(f"{'=' * 60}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

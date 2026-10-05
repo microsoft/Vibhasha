@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-09-28T13:37:34.966296+00:00",
+    "generated_at": "2026-10-05T16:44:05.290739+00:00",
     "schema_version": "2.0",
     "design_principle": "Flat (dataset, language) rows — deduplicated across benchmarks.",
     "num_benchmarks": 51,
@@ -10955,7 +10955,7 @@
     {
       "name": "Asháninka",
       "family": "Arawakan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -12341,7 +12341,7 @@
     {
       "name": "Bribri",
       "family": "Chibchan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -13245,7 +13245,7 @@
     {
       "name": "Chokwe",
       "family": "Atlantic-Congo",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -13652,7 +13652,7 @@
     {
       "name": "Desia",
       "family": "Bookkeeping",
-      "script": null,
+      "script": "Odia",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -13692,7 +13692,7 @@
     {
       "name": "Dinka",
       "family": "Nilotic",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Scraping-Bys",
       "joshi_level": 1,
       "joshi_level_name": "Scraping-Bys",
@@ -15163,7 +15163,7 @@
     {
       "name": "Fula",
       "family": "Atlantic-Congo",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Scraping-Bys",
       "joshi_level": 1,
       "joshi_level_name": "Scraping-Bys",
@@ -15210,7 +15210,7 @@
     {
       "name": "Fulfulde",
       "family": "Atlantic-Congo",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -16932,7 +16932,7 @@
     {
       "name": "Huichol",
       "family": "Uto-Aztecan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -18220,7 +18220,7 @@
     {
       "name": "Kabiye",
       "family": "Atlantic-Congo",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -19143,7 +19143,7 @@
     {
       "name": "Konkani",
       "family": "Indo-European",
-      "script": null,
+      "script": "Devanagari",
       "resource_level": "Hopefuls",
       "joshi_level": 2,
       "joshi_level_name": "Hopefuls",
@@ -19443,7 +19443,7 @@
     {
       "name": "Kulluvi",
       "family": "Indo-European",
-      "script": null,
+      "script": "Devanagari",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -20126,7 +20126,7 @@
     {
       "name": "Lugbara",
       "family": "Central Sudanic",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -20957,7 +20957,7 @@
     {
       "name": "Mandyali",
       "family": "Indo-European",
-      "script": null,
+      "script": "Devanagari",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -21382,7 +21382,7 @@
     {
       "name": "Mesopotamian Arabic",
       "family": "Afro-Asiatic",
-      "script": null,
+      "script": "Arabic",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -21811,7 +21811,7 @@
     {
       "name": "Nahuatl",
       "family": "Uto-Aztecan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Scraping-Bys",
       "joshi_level": 1,
       "joshi_level_name": "Scraping-Bys",
@@ -22796,7 +22796,7 @@
     {
       "name": "Otomí",
       "family": "Otomanguean",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -22832,7 +22832,7 @@
     {
       "name": "Pashto",
       "family": "Indo-European",
-      "script": null,
+      "script": "Arabic",
       "resource_level": "Scraping-Bys",
       "joshi_level": 1,
       "joshi_level_name": "Scraping-Bys",
@@ -23596,7 +23596,7 @@
     {
       "name": "Rajasthani",
       "family": "Indo-European",
-      "script": null,
+      "script": "Devanagari",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -24064,7 +24064,7 @@
     {
       "name": "Sambalpuri",
       "family": "Indo-European",
-      "script": null,
+      "script": "Odia",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -24178,7 +24178,7 @@
     {
       "name": "Sanskrit",
       "family": "Indo-European",
-      "script": null,
+      "script": "Devanagari",
       "resource_level": "Hopefuls",
       "joshi_level": 2,
       "joshi_level_name": "Hopefuls",
@@ -24509,7 +24509,7 @@
     {
       "name": "Shipibo-Konibo",
       "family": "Pano-Tacanan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -26073,7 +26073,7 @@
     {
       "name": "Tamashek",
       "family": "Afro-Asiatic",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -26409,7 +26409,7 @@
     {
       "name": "Tarahumara",
       "family": "Uto-Aztecan",
-      "script": null,
+      "script": "Latin",
       "resource_level": "Left-Behinds",
       "joshi_level": 0,
       "joshi_level_name": "Left-Behinds",
@@ -29412,15 +29412,15 @@
     "scripts": [
       {
         "script": "Latin",
-        "count": 119
-      },
-      {
-        "script": "Arabic",
-        "count": 16
+        "count": 133
       },
       {
         "script": "Devanagari",
-        "count": 14
+        "count": 19
+      },
+      {
+        "script": "Arabic",
+        "count": 18
       },
       {
         "script": "Cyrillic",
@@ -29432,7 +29432,7 @@
       },
       {
         "script": "Odia",
-        "count": 3
+        "count": 5
       },
       {
         "script": "Ethiopic",

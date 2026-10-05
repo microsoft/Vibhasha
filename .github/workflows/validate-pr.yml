@@ -23,6 +23,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
+      - name: Test evals validation
+        run: npm run test-evals
+
       - name: Validate sources and generated analysis
         run: python scripts/update_evals_data.py --check
 

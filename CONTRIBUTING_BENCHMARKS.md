@@ -48,6 +48,33 @@ normalized dataset-language rows, review reports, dashboard summaries, distribut
 cross-tabulations, and insights. Commit the updated files under `data/generated/` and
 `public/data/` with your source changes. Do not edit generated files directly.
 
+#### Adding a new language
+
+The language name in `step3_languages.json` is resolved against the repository's
+Glottolog, CLDR, and Joshi taxonomy references. The pipeline requires a
+Glottocode, ISO 639-3 code, family, script, region, and reviewed resource level
+for every language. It fails instead of substituting `Unknown` metadata or
+silently treating a missing resource level as level 0.
+
+Use the standard English language name and include an ISO 639-3 code when the
+paper or an authoritative lookup makes it unambiguous. If `npm run update-evals`
+reports an unresolved, ambiguous, or incomplete language:
+
+1. Read the language, benchmark, problem, and candidate information in the error.
+2. Add only the necessary reviewed exception to
+   `data/reference/language_metadata_overrides.json`.
+3. Add a non-empty rationale for every manual metadata decision.
+4. Validate the file against
+   `data/schemas/language_metadata_overrides.schema.json`.
+5. Rerun `npm run update-evals` and `npm run check-evals`.
+
+Use `aliases` for spelling or naming variants and a language entry for a verified
+Glottocode, script, region, resource level, or dialect relationship. A resource
+level of 0 must be an explicit reviewed decision; it is never a missing-data
+fallback. If multiple submitted names intentionally share a Glottocode, document
+the exact group under `duplicate_glottocode_exceptions`. Never edit
+`data/generated/language_registry.json` or `registry_review.txt` by hand.
+
 ### 5. Open a Pull Request
 
 - Title: `Add benchmark: <BenchmarkName>` or `Update benchmark: <BenchmarkName>`
@@ -245,6 +272,8 @@ Formal schema: `data/schemas/step5_cultural.schema.json`
 - **Extract only what the paper says** — don't infer or guess. If information isn't available, use `null`.
 - **Use canonical dataset names** — if a dataset appears in multiple benchmarks (e.g., XNLI, FLORES), use the same name so deduplication works.
 - **Evidence is critical** — for subjective assessments (step4), always include a supporting quote from the paper.
+- **Resolve every language completely** — unresolved names, ambiguous Glottolog matches, missing scripts or regions, unreviewed resource levels, and unreviewed duplicate Glottocodes fail the pipeline.
+- **Keep overrides reviewable** — add the smallest verified exception and explain every manual metadata decision in `data/reference/language_metadata_overrides.json`.
 - **One benchmark per PR** — makes review easier.
 
 ## Questions?

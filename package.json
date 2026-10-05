@@ -14,6 +14,7 @@
     "sync-index": "node scripts/sync-index.js",
     "sync-routes": "node scripts/sync-routes-sidebar.js",
     "validate-evals": "python scripts/validate_submission.py --all",
+    "test-evals": "python -m unittest discover -s scripts/tests -p \"test_*.py\" -v",
     "update-evals": "python scripts/update_evals_data.py",
     "check-evals": "python scripts/update_evals_data.py --check",
     "start": "serve -s dist",

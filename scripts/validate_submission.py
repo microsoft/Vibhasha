@@ -17,6 +17,8 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
+from normalize import build_step2_lookup, resolve_step2, resolve_step4
+
 
 ROOT = Path(__file__).resolve().parent.parent
 BENCHMARKS_DIR = ROOT / "data" / "benchmarks"
@@ -99,6 +101,79 @@ def validate_cross_file_consistency(documents: dict[str, object]) -> list[str]:
             )
         else:
             first_index_by_key[key] = index
+
+    step1 = documents.get("step1_identity.json")
+    step3 = documents.get("step3_languages.json")
+    step4 = documents.get("step4_assessments.json")
+    step5 = documents.get("step5_cultural.json")
+    step2_lookup = build_step2_lookup(step2)
+    assessments = step4.get("assessments", {}) if isinstance(step4, dict) else {}
+    is_partial_aggregation = (
+        isinstance(step1, dict)
+        and step1.get("benchmark_type") == "aggregation"
+        and isinstance(step1.get("total_datasets"), int)
+        and step1["total_datasets"] > len(datasets)
+    )
+
+    def validate_dataset_reference(location: str, dataset_name: object) -> None:
+        if not isinstance(dataset_name, str):
+            return
+        if resolve_step2(dataset_name, step2_lookup) is None:
+            errors.append(
+                f"{location}: dataset {dataset_name!r} does not resolve to any "
+                "step2_datasets.json entry. Use the canonical dataset or variant name, "
+                "or add an intentional resolver mapping in scripts/normalize.py."
+            )
+
+    if isinstance(step1, dict) and not is_partial_aggregation:
+        for index, dataset_name in enumerate(step1.get("dataset_names", [])):
+            validate_dataset_reference(
+                f"step1_identity.json.dataset_names[{index}]",
+                dataset_name,
+            )
+
+    languages = step3.get("languages", {}) if isinstance(step3, dict) else {}
+    if isinstance(languages, dict) and not is_partial_aggregation:
+        for language_name, language in languages.items():
+            if not isinstance(language, dict):
+                continue
+            for index, dataset_name in enumerate(language.get("datasets_present_in", [])):
+                validate_dataset_reference(
+                    "step3_languages.json.languages"
+                    f"[{language_name!r}].datasets_present_in[{index}]",
+                    dataset_name,
+                )
+                if isinstance(assessments, dict) and resolve_step4(dataset_name, assessments) is None:
+                    errors.append(
+                        "step3_languages.json.languages"
+                        f"[{language_name!r}].datasets_present_in[{index}]: "
+                        f"dataset {dataset_name!r} has no matching assessment in "
+                        "step4_assessments.json."
+                    )
+
+    if isinstance(assessments, dict) and not is_partial_aggregation:
+        for dataset_name in assessments:
+            validate_dataset_reference(
+                f"step4_assessments.json.assessments[{dataset_name!r}]",
+                dataset_name,
+            )
+
+    cultural_flags = step5.get("cultural_flags", {}) if isinstance(step5, dict) else {}
+    if isinstance(cultural_flags, dict) and not is_partial_aggregation:
+        cultural_lists = (
+            ("datasets_from_scratch_no_english_source", "list"),
+            ("datasets_translated_from_english", "list"),
+            ("datasets_with_cultural_grounding", "list"),
+        )
+        for section, list_key in cultural_lists:
+            value = cultural_flags.get(section, {})
+            if not isinstance(value, dict):
+                continue
+            for index, dataset_name in enumerate(value.get(list_key, [])):
+                validate_dataset_reference(
+                    f"step5_cultural.json.cultural_flags.{section}.{list_key}[{index}]",
+                    dataset_name,
+                )
 
     return errors
 

@@ -34,6 +34,7 @@ DATA_DIR = ROOT / "data"
 V2_EXTRACTED_DIR = DATA_DIR / "benchmarks"
 OUTPUT_DIR = DATA_DIR / "generated"
 REGISTRY_PATH = OUTPUT_DIR / "language_registry.json"
+OVERRIDES_PATH = DATA_DIR / "reference" / "language_metadata_overrides.json"
 OUTPUT_PATH = OUTPUT_DIR / "normalized_benchmarks.json"
 LOG_PATH = OUTPUT_DIR / "normalization_log.txt"
 
@@ -75,19 +76,45 @@ SEED_ALIASES = {
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def load_registry():
-    """Load language_registry_v2.json and build alias → canonical lookup."""
+    """Load the complete language registry and build alias → canonical lookup."""
     with open(REGISTRY_PATH, encoding="utf-8") as f:
         data = json.load(f)
     registry = data["languages"]
+    with open(OVERRIDES_PATH, encoding="utf-8") as f:
+        external_aliases = json.load(f)["aliases"]
 
     alias_to_canonical = {}
+    errors = []
+    required_fields = (
+        "iso_code",
+        "glottocode",
+        "family",
+        "script",
+        "continent",
+        "joshi_level",
+        "joshi_level_name",
+    )
     for canonical, entry in registry.items():
+        missing = [
+            field for field in required_fields
+            if entry.get(field) is None or entry.get(field) == "" or entry.get(field) == "Unknown"
+        ]
+        if missing:
+            errors.append(f"{canonical}: missing {', '.join(missing)}")
         alias_to_canonical[canonical] = canonical
         for alias in entry.get("aliases", []):
             alias_to_canonical[alias] = canonical
     # Also add SEED_ALIASES
     for raw, canonical in SEED_ALIASES.items():
         alias_to_canonical[raw] = canonical
+    for raw, canonical in external_aliases.items():
+        alias_to_canonical[raw] = canonical
+
+    if errors:
+        raise ValueError(
+            "Language registry is incomplete. Run `npm run update-evals` after resolving:\n  - "
+            + "\n  - ".join(errors)
+        )
 
     print(f"  Registry: {len(registry)} languages, {len(alias_to_canonical)} alias mappings")
     return registry, alias_to_canonical
@@ -405,6 +432,14 @@ def process_all_benchmarks(registry, alias_to_canonical):
             for lang_raw_name in ds_languages:
                 canonical = alias_to_canonical.get(lang_raw_name, lang_raw_name)
                 reg_entry = registry.get(canonical)
+                if reg_entry is None:
+                    raise ValueError(
+                        f"{bm_name}/step3_languages.json: language {lang_raw_name!r} "
+                        f"(canonical name {canonical!r}) is missing from "
+                        "data/generated/language_registry.json. Resolve it in "
+                        "data/reference/language_metadata_overrides.json and run "
+                        "`npm run update-evals`."
+                    )
 
                 dl_key = (ds_name, canonical)
 
@@ -415,13 +450,13 @@ def process_all_benchmarks(registry, alias_to_canonical):
                     continue
 
                 # Language metadata from registry
-                iso_code = reg_entry["iso_code"] if reg_entry else None
-                family = reg_entry["family"] if reg_entry else "Unknown"
-                script = reg_entry["script"] if reg_entry else "Unknown"
-                continent = reg_entry["continent"] if reg_entry else "Unknown"
-                joshi_level = reg_entry["joshi_level"] if reg_entry else 0
-                joshi_level_name = reg_entry["joshi_level_name"] if reg_entry else "Left-Behinds"
-                glottocode = reg_entry["glottocode"] if reg_entry else None
+                iso_code = reg_entry["iso_code"]
+                family = reg_entry["family"]
+                script = reg_entry["script"]
+                continent = reg_entry["continent"]
+                joshi_level = reg_entry["joshi_level"]
+                joshi_level_name = reg_entry["joshi_level_name"]
+                glottocode = reg_entry["glottocode"]
 
                 row = {
                     "dataset": ds_name,
@@ -560,12 +595,20 @@ def main():
     print("=" * 60)
 
     print("\n[1/4] Loading language registry...")
-    registry, alias_to_canonical = load_registry()
+    try:
+        registry, alias_to_canonical = load_registry()
+    except (OSError, json.JSONDecodeError, ValueError) as error:
+        print(f"\n[FAIL] {error}", file=sys.stderr)
+        return 1
 
     print("\n[2/4] Processing benchmarks...")
-    benchmarks_list, flat_rows, log_lines = process_all_benchmarks(
-        registry, alias_to_canonical
-    )
+    try:
+        benchmarks_list, flat_rows, log_lines = process_all_benchmarks(
+            registry, alias_to_canonical
+        )
+    except ValueError as error:
+        print(f"\n[FAIL] {error}", file=sys.stderr)
+        return 1
 
     print("\n[3/4] Building summary...")
     summary = build_summary(benchmarks_list, flat_rows)
@@ -604,7 +647,8 @@ def main():
     print(f"  Unique datasets:        {m['num_unique_datasets']}")
     print(f"  (dataset, language) rows: {m['num_dataset_language_rows']}")
     print(f"{'=' * 60}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

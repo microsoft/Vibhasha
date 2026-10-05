@@ -9,6 +9,9 @@ Describe the benchmark being added or changed and link to the supporting paper o
 - [ ] I updated all applicable files under `data/benchmarks/<BenchmarkName>/`.
 - [ ] Subjective assessments include evidence from the source.
 - [ ] Dataset and language names are consistent across the five step files.
+- [ ] Every new language resolves to complete Glottolog, ISO, family, script, region, and resource-level metadata.
+- [ ] Any language metadata override is minimal, verified, and includes a rationale.
+- [ ] Any intentional duplicate Glottocode group is documented.
 
 ### Generated analysis
 
@@ -18,4 +21,5 @@ Describe the benchmark being added or changed and link to the supporting paper o
 - [ ] I ran `npm run check-evals`.
 
 CI validates the formal schemas and rejects the pull request if any derived `/evals`
-analysis is stale.
+analysis is stale or any language metadata is unresolved, ambiguous, incomplete,
+or silently defaulted.

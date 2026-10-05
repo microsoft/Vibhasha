@@ -1,15 +1,21 @@
 ======================================================================
   V2 LANGUAGE REGISTRY — HUMAN REVIEW REPORT
-  Generated: 2026-09-28T13:37:34.649704+00:00
+  Generated: 2026-10-05T16:44:05.200703+00:00
 ======================================================================
 
   Total unique canonical names: 220
   Resolved via Glottolog:       220
   Unresolved:                   0
   Ambiguous:                    0
-  Joshi unmatched:              3
-  CLDR script missing:          23
+  Joshi unmatched:              0
+  CLDR script missing:          0
   Duplicate glottocodes:         14
+  Fatal metadata errors:        0
+
+----------------------------------------------------------------------
+  FATAL METADATA ERRORS
+----------------------------------------------------------------------
+  (none)
 
 ----------------------------------------------------------------------
   UNRESOLVED NAMES
@@ -83,37 +89,13 @@
   JOSHI UNMATCHED (resolved in Glottolog but not in Joshi taxonomy)
   Action: Add to LANG2TAX_OVERRIDES or confirm level 0 default
 ----------------------------------------------------------------------
-  Achinese [family=Austronesian, iso=ace]
-  Ngaju [family=Austronesian, iso=nij]
-  Toba Batak [family=Austronesian, iso=bbc]
+  (none)
 
 ----------------------------------------------------------------------
   CLDR SCRIPT MISSING (valid ISO code but no script in CLDR)
   Action: Add manual script entry or leave as null
 ----------------------------------------------------------------------
-  Asháninka [iso=cni, family=Arawakan]
-  Bribri [iso=bzd, family=Chibchan]
-  Chokwe [iso=cjk, family=Atlantic-Congo]
-  Desia [iso=dso, family=Bookkeeping]
-  Dinka [iso=dip, family=Nilotic]
-  Fula [iso=fuh, family=Atlantic-Congo]
-  Fulfulde [iso=fuh, family=Atlantic-Congo]
-  Huichol [iso=hch, family=Uto-Aztecan]
-  Kabiye [iso=kbp, family=Atlantic-Congo]
-  Konkani [iso=gom, family=Indo-European]
-  Kulluvi [iso=kfx, family=Indo-European]
-  Lugbara [iso=lgg, family=Central Sudanic]
-  Mandyali [iso=mjl, family=Indo-European]
-  Mesopotamian Arabic [iso=acm, family=Afro-Asiatic]
-  Nahuatl [iso=nhn, family=Uto-Aztecan]
-  Otomí [iso=ote, family=Otomanguean]
-  Pashto [iso=pst, family=Indo-European]
-  Rajasthani [iso=rwr, family=Indo-European]
-  Sambalpuri [iso=spv, family=Indo-European]
-  Sanskrit [iso=san, family=Indo-European]
-  Shipibo-Konibo [iso=shp, family=Pano-Tacanan]
-  Tamashek [iso=taq, family=Afro-Asiatic]
-  Tarahumara [iso=tar, family=Uto-Aztecan]
+  (none)
 
 ======================================================================
   END OF REVIEW REPORT

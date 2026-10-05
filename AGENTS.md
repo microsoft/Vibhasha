@@ -99,6 +99,14 @@ Rules while extracting:
 - Use standard, capitalized English language names in `step3.languages` keys
   (e.g., `"Amharic"`, `"Hindi"`), with `iso_code` in ISO 639-3 whenever the
   paper or a quick lookup makes it unambiguous.
+- Language metadata is resolved from Glottolog, CLDR, and the Joshi taxonomy.
+  If generation reports an unresolved, ambiguous, or incomplete language, do
+  not accept an `Unknown` or implicit level-0 fallback. Add the smallest
+  verified exception to `data/reference/language_metadata_overrides.json`,
+  include a non-empty rationale, and follow
+  `data/schemas/language_metadata_overrides.schema.json`. Use aliases for name
+  variants and document intentional duplicate Glottocodes in
+  `duplicate_glottocode_exceptions`.
 - For `step5_cultural.json`, only populate lists (`datasets_from_scratch_no_english_source`,
   `datasets_translated_from_english`, etc.) with datasets you can support with
   a quote — leave a list empty with honest `evidence` text (e.g., "not
@@ -126,6 +134,12 @@ npm run update-evals
 This regenerates the language registry, normalized dataset-language rows,
 review reports, dashboard summaries, distributions, cross-tabulations, and
 insights under `data/generated/` and `public/data/`. Then run:
+
+If language metadata validation fails, use the emitted language, benchmark,
+candidate, and remediation information to update
+`data/reference/language_metadata_overrides.json`. Do not continue until the
+registry reports zero fatal metadata errors, zero unresolved names, zero
+ambiguous names, zero missing scripts, and zero unreviewed resource levels.
 
 ```
 npm run check-evals
@@ -157,4 +171,7 @@ template in `.github/PULL_REQUEST_TEMPLATE/benchmark-update.md`).
   field `null`/low confidence and say so in your summary.
 - Never edit files under `data/generated/` or `public/data/` by hand — only
   via `npm run update-evals`.
+- Never treat missing language metadata as `Unknown` or silently classify it as
+  `Left-Behinds`; resolve it from authoritative references or add a reviewed
+  override with rationale.
 - Never merge or push directly — this workflow only prepares local changes.
