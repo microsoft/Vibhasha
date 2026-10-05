@@ -3,27 +3,20 @@ import './styles/EvalsDashboard.css'
 
 // ─── Color helpers ──────────────────────────────────────────────
 const RESOURCE_COLORS = {
-  'Winners': '#3f6f78', 'Underdogs': '#4f8a76', 'Rising Stars': '#7d9a6a',
-  'Hopefuls': '#b39543', 'Scraping-Bys': '#c27d42', 'Left-Behinds': '#b86560',
+  'Winners': '#166534', 'Underdogs': '#16a34a', 'Rising Stars': '#86efac',
+  'Hopefuls': '#fbbf24', 'Scraping-Bys': '#f97316', 'Left-Behinds': '#dc2626',
 }
 const RESOURCE_CSS = {
   'Winners': 'winners', 'Underdogs': 'underdogs', 'Rising Stars': 'rising-stars',
   'Hopefuls': 'hopefuls', 'Scraping-Bys': 'scraping-bys', 'Left-Behinds': 'left-behinds',
 }
-const CHART_COLORS = {
-  native: '#4f83b8',
-  translated: '#b86560',
-  unknown: '#a2a8a6',
-  grounded: '#4f8a76',
-  notGrounded: '#b86560',
-}
 const HEAT_STYLES = [
-  { background: '#f0f2f1', color: 'var(--evals-text-muted)' },
-  { background: '#d5e4e2', color: '#2f3a39' },
-  { background: '#a9cbc7', color: '#243231' },
-  { background: '#78aaa7', color: '#172927' },
-  { background: '#4f8587', color: '#fff' },
-  { background: '#2f646c', color: '#fff' },
+  { background: '#f0f0f0', color: 'var(--evals-text-muted)' },
+  { background: '#c7d2fe', color: '#262626' },
+  { background: '#818cf8', color: '#262626' },
+  { background: '#4f46e5', color: '#fff' },
+  { background: '#4338ca', color: '#fff' },
+  { background: '#312A9A', color: '#fff' },
 ]
 function heatStyle(val, max) {
   if (!val) return HEAT_STYLES[0]
@@ -64,7 +57,7 @@ function StatCard({ number, label, onClick }) {
     <div className={`stat-card${onClick ? ' stat-card-clickable' : ''}`} onClick={onClick}>
       <div className="number">{number}</div>
       <div className="label">{label}</div>
-      {onClick && <div className="stat-click-hint">View details</div>}
+      {onClick && <div className="stat-click-hint">Click to view</div>}
     </div>
   )
 }
@@ -78,7 +71,7 @@ function StatModal({ statType, data, onClose }) {
 
   switch (statType) {
     case 'benchmarks': {
-      title = `All ${data.benchmarks.length} Benchmarks`
+      title = `All ${data.benchmarks.length} Benchmark Suites Audited`
       const sorted = [...data.benchmarks].sort((a, b) => b.num_languages - a.num_languages)
       content = (
         <div className="stat-modal-list">
@@ -88,7 +81,7 @@ function StatModal({ statType, data, onClose }) {
               <div key={b.name} className="stat-modal-item">
                 <div className="stat-modal-item-header">
                   <span className="stat-modal-item-name">{b.name}</span>
-                  <span className="stat-modal-item-count">{b.num_languages} lang · {b.num_tasks} tasks</span>
+                  <span className="stat-modal-item-count">{b.num_languages} languages · {b.num_datasets} datasets</span>
                 </div>
                 {c && c.paper_title && (
                   <div className="stat-modal-item-detail">
@@ -100,13 +93,40 @@ function StatModal({ statType, data, onClose }) {
                   </div>
                 )}
                 <div className="stat-modal-item-badges">
-                  <span className="cite-badge native">{b.n_native} native</span>
-                  <span className="cite-badge translated">{b.n_translated} translated</span>
-                  <span className="cite-badge grounded">{b.n_grounded} grounded</span>
+                  <span className="cite-badge native">{b.n_native} native datasets</span>
+                  <span className="cite-badge translated">{b.n_translated} translated datasets</span>
+                  <span className="cite-badge grounded">{b.n_grounded} grounded datasets</span>
                 </div>
               </div>
             )
           })}
+        </div>
+      )
+      break
+    }
+    case 'datasets': {
+      title = `All ${data.datasets.length} Unique Datasets`
+      const sorted = [...data.datasets].sort((a, b) =>
+        b.num_languages - a.num_languages || a.name.localeCompare(b.name)
+      )
+      content = (
+        <div className="stat-modal-list">
+          {sorted.map(dataset => (
+            <div key={dataset.name} className="stat-modal-item">
+              <div className="stat-modal-item-header">
+                <span className="stat-modal-item-name">{dataset.name}</span>
+                <span className="stat-modal-item-count">
+                  {dataset.num_languages} language{dataset.num_languages !== 1 ? 's' : ''} · {dataset.num_benchmarks} benchmark suite{dataset.num_benchmarks !== 1 ? 's' : ''}
+                </span>
+              </div>
+              {dataset.task_categories.length > 0 && (
+                <div className="stat-modal-item-detail">{dataset.task_categories.join(', ')}</div>
+              )}
+              <div className="stat-modal-item-meta">
+                <span>Included in: {dataset.benchmarks.join(', ')}</span>
+              </div>
+            </div>
+          ))}
         </div>
       )
       break
@@ -120,7 +140,9 @@ function StatModal({ statType, data, onClose }) {
             <div key={l.name} className="stat-modal-item stat-modal-item-compact">
               <div className="stat-modal-item-header">
                 <span className="stat-modal-item-name">{l.name}</span>
-                <span className="stat-modal-item-count">{l.num_benchmarks} benchmark{l.num_benchmarks !== 1 ? 's' : ''}</span>
+                <span className="stat-modal-item-count">
+                  {l.num_benchmarks} benchmark suite{l.num_benchmarks !== 1 ? 's' : ''} · {l.num_datasets} dataset{l.num_datasets !== 1 ? 's' : ''}
+                </span>
               </div>
               <div className="stat-modal-item-meta">
                 {l.family && <span>{l.family}</span>}
@@ -194,10 +216,10 @@ function StatModal({ statType, data, onClose }) {
               <div key={r.continent} className="stat-modal-item">
                 <div className="stat-modal-item-header">
                   <span className="stat-modal-item-name">{r.continent}</span>
-                  <span className="stat-modal-item-count">{r.count} languages · {benchmarks.length} benchmarks</span>
+                  <span className="stat-modal-item-count">{r.count} languages · {benchmarks.length} benchmark suites</span>
                 </div>
                 <div className="stat-modal-item-detail" style={{ marginTop: 4 }}>
-                  <strong>Benchmarks:</strong> {benchmarks.map(b => b.name).join(', ')}
+                  <strong>Benchmark suites:</strong> {benchmarks.map(b => b.name).join(', ')}
                 </div>
               </div>
             )
@@ -217,7 +239,7 @@ function StatModal({ statType, data, onClose }) {
               <div key={t.category} className="stat-modal-item">
                 <div className="stat-modal-item-header">
                   <span className="stat-modal-item-name">{t.category}</span>
-                  <span className="stat-modal-item-count">{t.count} languages · {benchmarks.length} benchmarks</span>
+                  <span className="stat-modal-item-count">{t.count} languages · {benchmarks.length} benchmark suites</span>
                 </div>
                 <div className="tag-list" style={{ marginTop: 4 }}>
                   {benchmarks.map(b => <span className="tag" key={b.name}>{b.name}</span>)}
@@ -314,7 +336,7 @@ function BenchmarkCitationCard({ benchmark, languages }) {
       <div className="cite-header">
         <span className="cite-name">{benchmark.name}</span>
         <span className="cite-stats">
-          {benchmark.num_languages} langs · {benchmark.num_tasks} tasks
+          {benchmark.num_languages} languages · {benchmark.num_datasets} datasets
         </span>
       </div>
       {c && c.paper_title && (
@@ -336,9 +358,9 @@ function BenchmarkCitationCard({ benchmark, languages }) {
         </div>
       )}
       <div className="cite-badges">
-        <span className="cite-badge native">{benchmark.n_native} native</span>
-        <span className="cite-badge translated">{benchmark.n_translated} translated</span>
-        <span className="cite-badge grounded">{benchmark.n_grounded} grounded</span>
+        <span className="cite-badge native">{benchmark.n_native} native datasets</span>
+        <span className="cite-badge translated">{benchmark.n_translated} translated datasets</span>
+        <span className="cite-badge grounded">{benchmark.n_grounded} grounded datasets</span>
       </div>
       {relevantLangs.length > 0 && relevantLangs.length <= 30 && (
         <div className="cite-langs">
@@ -399,7 +421,7 @@ function DrillDownPanel({ selection, data, onClose }) {
           <button className="drilldown-close" onClick={onClose} aria-label="Close">✕</button>
         </div>
         <div className="drilldown-count">
-          {filteredBenchmarks.length} benchmark{filteredBenchmarks.length !== 1 ? 's' : ''}
+          {filteredBenchmarks.length} related benchmark suite{filteredBenchmarks.length !== 1 ? 's' : ''}
         </div>
         <div className="drilldown-body">
           {filteredBenchmarks.map(b => (
@@ -429,7 +451,6 @@ export default function EvalsDashboard() {
   const [expandedBench, setExpandedBench] = useState(null)
   const [regionFilter, setRegionFilter] = useState('')
   const [langSearch, setLangSearch] = useState('')
-  const [taskFilter, setTaskFilter] = useState('')
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/benchmark_data.json')
@@ -461,22 +482,15 @@ export default function EvalsDashboard() {
     return list
   }, [data, searchTerm, regionFilter, sortField, sortDir])
 
-  const matchingLangs = useMemo(() => {
-    if (!data) return []
-    const q = langSearch.trim().toLowerCase()
-    if (!q && !taskFilter) return []
-
-    return data.languages.filter(l => {
-      const matchesLanguage = !q ||
-        l.name.toLowerCase().includes(q) ||
-        (l.iso_code && l.iso_code.toLowerCase().includes(q)) ||
-        (l.family && l.family.toLowerCase().includes(q))
-      const matchesTask = !taskFilter || l.task_categories.includes(taskFilter)
-      return matchesLanguage && matchesTask
-    })
-  }, [data, langSearch, taskFilter])
-
-  const filteredLangs = matchingLangs.slice(0, 50)
+  const filteredLangs = useMemo(() => {
+    if (!data || !langSearch || langSearch.length < 2) return []
+    const q = langSearch.toLowerCase()
+    return data.languages.filter(l =>
+      l.name.toLowerCase().includes(q) ||
+      (l.iso_code && l.iso_code.toLowerCase().includes(q)) ||
+      (l.family && l.family.toLowerCase().includes(q))
+    ).slice(0, 20)
+  }, [data, langSearch])
 
   const handleSort = useCallback((field) => {
     setSortField(prev => {
@@ -491,45 +505,45 @@ export default function EvalsDashboard() {
 
   const { insights, distributions, cross_tabs } = data
   const allRegions = distributions.continents.map(c => c.continent)
-  const allTaskCategories = distributions.task_categories.map(c => c.category)
-  const hasLookupFilter = Boolean(langSearch.trim() || taskFilter)
 
   return (
     <div className="evals-dashboard">
       <div className="evals-hero">
-        <div className="evals-kicker">Evaluation landscape</div>
-        <h1>Multilingual Evaluation Benchmarks</h1>
+        <h1>Multilingual Evaluation Benchmark Survey</h1>
         <p className="subtitle">
-          A systematic, data-driven audit of {insights.total_benchmarks} multilingual benchmarks
-          spanning {insights.total_languages} languages — examining coverage, representativeness, and rigor.
+          A systematic, data-driven audit of {insights.total_benchmarks} multilingual benchmark suites,
+          comprising {insights.total_datasets} unique datasets across {insights.total_languages} languages.
         </p>
         <div className="stats-grid">
-          <StatCard number={insights.total_benchmarks} label="Benchmarks" onClick={() => setStatModal('benchmarks')} />
+          <StatCard number={insights.total_benchmarks} label="Benchmark Suites Audited" onClick={() => setStatModal('benchmarks')} />
+          <StatCard number={insights.total_datasets} label="Unique Datasets" onClick={() => setStatModal('datasets')} />
           <StatCard number={insights.total_languages} label="Languages" onClick={() => setStatModal('languages')} />
           <StatCard number={insights.total_families} label="Language Families" onClick={() => setStatModal('families')} />
           <StatCard number={insights.total_scripts} label="Scripts" onClick={() => setStatModal('scripts')} />
           <StatCard number={insights.total_continents} label="Regions" onClick={() => setStatModal('regions')} />
           <StatCard number={insights.total_task_categories} label="Task Types" onClick={() => setStatModal('tasks')} />
         </div>
+        <div className="data-scope-note">
+          <div><strong>Benchmark suite</strong><span>An audited evaluation collection or publication that can contain multiple datasets.</span></div>
+          <div><strong>Dataset</strong><span>A distinct evaluation dataset, deduplicated by name across benchmark suites.</span></div>
+          <div><strong>Dataset-language entry</strong><span>One dataset evaluated in one language; the unit used in representativeness analyses.</span></div>
+        </div>
       </div>
 
       <div className="pillar-nav">
         {[
-          { id: 'coverage', title: 'Coverage', desc: 'Which languages, families, scripts, and tasks are represented?' },
-          { id: 'representativeness', title: 'Representativeness', desc: 'Native vs. translated? Culturally grounded?' },
-          { id: 'explorer', title: 'Benchmark Explorer', desc: 'Browse and filter all benchmarks interactively' },
-          { id: 'lookup', title: 'Task + Language Lookup', desc: 'Filter by task, language, or combine both' },
-        ].map((p, index) => (
+          { id: 'coverage', title: 'Coverage', desc: 'Language coverage across benchmark suites and task categories' },
+          { id: 'representativeness', title: 'Representativeness', desc: 'Dataset-level translation and cultural grounding' },
+          { id: 'explorer', title: 'Benchmark Suite Explorer', desc: 'Browse the 51 audited benchmark suites' },
+          { id: 'lookup', title: 'Language Lookup', desc: 'Compare benchmark-suite and dataset coverage by language' },
+        ].map(p => (
           <button
             key={p.id}
             className={`pillar-btn${activePillar === p.id ? ' active' : ''}`}
             onClick={() => setActivePillar(p.id)}
           >
-            <span className="pillar-index">0{index + 1}</span>
-            <span className="pillar-copy">
-              <span className="pillar-title">{p.title}</span>
-              <span className="pillar-desc">{p.desc}</span>
-            </span>
+            <div className="pillar-title">{p.title}</div>
+            <div className="pillar-desc">{p.desc}</div>
           </button>
         ))}
       </div>
@@ -544,10 +558,13 @@ export default function EvalsDashboard() {
 
       {activePillar === 'explorer' && (
         <div className="evals-section">
-          <h2>Benchmark Explorer</h2>
-          <p className="section-desc">Click any benchmark to expand details. Click column headers to sort.</p>
+          <h2>Benchmark Suite Explorer</h2>
+          <p className="section-desc">
+            Each row is an audited benchmark suite; dataset columns count its constituent datasets.
+            Reused datasets appear in each relevant suite here but count once in the unique-dataset total.
+          </p>
           <div className="benchmark-controls">
-            <input className="benchmark-search" placeholder="Search benchmarks..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+            <input className="benchmark-search" placeholder="Search benchmark suites..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
             <select className="filter-select" value={regionFilter} onChange={e => setRegionFilter(e.target.value)}>
               <option value="">All regions</option>
               {allRegions.map(r => <option key={r} value={r}>{r}</option>)}
@@ -567,54 +584,22 @@ export default function EvalsDashboard() {
 
       {activePillar === 'lookup' && (
         <div className="evals-section">
-          <h2>Task + Language Lookup</h2>
-          <p className="section-desc">Filter by a task category, search for a language, or combine both to narrow the benchmark coverage.</p>
+          <h2>Language Lookup</h2>
+          <p className="section-desc">Search for any language to compare its benchmark-suite coverage, unique datasets, evaluation origins, and resource level.</p>
           <div className="language-lookup">
-            <div className="lookup-controls">
-              <label className="lookup-field">
-                <span>Language</span>
-                <input
-                  className="benchmark-search"
-                  placeholder="Name, ISO code, or family"
-                  value={langSearch}
-                  onChange={e => setLangSearch(e.target.value)}
-                />
-              </label>
-              <label className="lookup-field">
-                <span>Task category</span>
-                <select className="filter-select" value={taskFilter} onChange={e => setTaskFilter(e.target.value)}>
-                  <option value="">All tasks</option>
-                  {allTaskCategories.map(task => <option key={task} value={task}>{task}</option>)}
-                </select>
-              </label>
-              {hasLookupFilter && (
-                <button
-                  type="button"
-                  className="lookup-clear"
-                  onClick={() => {
-                    setLangSearch('')
-                    setTaskFilter('')
-                  }}
-                >
-                  Clear filters
-                </button>
-              )}
-            </div>
+            <input
+              className="benchmark-search"
+              placeholder="Search by language name, ISO code, or family... (min 2 characters)"
+              value={langSearch}
+              onChange={e => setLangSearch(e.target.value)}
+              style={{ maxWidth: 500 }}
+            />
             <div className="lang-results">
-              {!hasLookupFilter && (
-                <p className="lookup-empty">Search for a language, choose a task, or use both filters together.</p>
-              )}
-              {hasLookupFilter && matchingLangs.length === 0 && (
-                <p className="lookup-empty">No languages match the selected filters.</p>
-              )}
-              {matchingLangs.length > 0 && (
-                <p className="lookup-status" aria-live="polite">
-                  {matchingLangs.length} language{matchingLangs.length !== 1 ? 's' : ''} found
-                  {matchingLangs.length > filteredLangs.length && ` · showing the first ${filteredLangs.length}`}
-                </p>
+              {langSearch.length >= 2 && filteredLangs.length === 0 && (
+                <p style={{ color: 'var(--evals-text-muted)', fontStyle: 'italic' }}>No languages found matching &ldquo;{langSearch}&rdquo;</p>
               )}
               {filteredLangs.map(lang => (
-                <LanguageCard key={lang.name} lang={lang} benchmarkData={data.benchmarks} taskFilter={taskFilter} />
+                <LanguageCard key={lang.name} lang={lang} benchmarkData={data.benchmarks} />
               ))}
             </div>
           </div>
@@ -630,7 +615,7 @@ export default function EvalsDashboard() {
       )}
 
       {(activePillar === 'coverage' || activePillar === 'representativeness') && !drillDown && (
-        <div className="click-hint">Click any bar or cell to see composing benchmarks with citations</div>
+        <div className="click-hint">Click any bar or cell to see related benchmark suites with citations.</div>
       )}
     </div>
   )
@@ -652,11 +637,14 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
   return (
     <div className="evals-section">
       <h2>Coverage Analysis</h2>
-      <p className="section-desc">How well do current benchmarks cover the world's languages?</p>
+      <p className="section-desc">How broadly do the audited benchmark suites and their datasets cover the world's languages?</p>
+      <p className="analysis-unit">
+        <strong>Unit of analysis:</strong> unique languages. The benchmark-reach view groups each language by the number of benchmark suites that include it.
+      </p>
 
       <div className="evals-tabs">
         {[
-          { id: 'longtail', label: 'Language Long Tail' },
+          { id: 'longtail', label: 'Benchmark Reach' },
           { id: 'families', label: 'Families' },
           { id: 'scripts', label: 'Scripts' },
           { id: 'regions', label: 'Regions' },
@@ -671,9 +659,9 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
 
       {coverageTab === 'longtail' && (
         <div className="chart-container">
-          <h3>How Many Benchmarks Cover Each Language?</h3>
+          <h3>How Many Benchmark Suites Include Each Language?</h3>
           <div className="long-tail-callout">
-            <strong>{insights.single_benchmark_languages} languages ({insights.single_benchmark_pct}%)</strong> appear in only 1 benchmark.
+            <strong>{insights.single_benchmark_languages} languages ({insights.single_benchmark_pct}%)</strong> appear in only one benchmark suite.
           </div>
           <div className="long-tail-chart">
             <div className="long-tail-bars">
@@ -687,19 +675,19 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
                     style={{ height: `${h}%` }}
                     onClick={() => openDrillDown(
                       'long_tail', d.count,
-                      `Languages in exactly ${d.count} benchmark${d.count > 1 ? 's' : ''}`,
-                      `${d.languages} languages appear in exactly ${d.count} benchmark${d.count > 1 ? 's' : ''}`,
+                      `Languages in exactly ${d.count} benchmark suite${d.count !== 1 ? 's' : ''}`,
+                      `${d.languages} languages appear in exactly ${d.count} benchmark suite${d.count !== 1 ? 's' : ''}`,
                       benchmarksForLongTail(data, d.count)
                     )}
                   >
-                    <div className="lt-tooltip">{d.languages} lang{d.languages > 1 ? 's' : ''} in {d.count} benchmark{d.count > 1 ? 's' : ''} — click for details</div>
+                    <div className="lt-tooltip">{d.languages} language{d.languages !== 1 ? 's' : ''} in {d.count} benchmark suite{d.count !== 1 ? 's' : ''} — click for details</div>
                   </div>
                 )
               })}
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--evals-text-muted)', marginTop: 4 }}>
-              <span>1 benchmark</span>
-              <span>{distributions.long_tail[distributions.long_tail.length - 1]?.count} benchmarks</span>
+              <span>1 benchmark suite</span>
+              <span>{distributions.long_tail[distributions.long_tail.length - 1]?.count} benchmark suites</span>
             </div>
           </div>
         </div>
@@ -748,7 +736,7 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
       {coverageTab === 'resources' && (
         <div className="chart-container">
           <h3>Resource Level Distribution (Joshi et al. Taxonomy)</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Click any bar to see composing benchmarks.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Counts are unique languages. Click any bar to see related benchmark suites.</p>
           <div className="bar-chart resource-bars">
             {distributions.resource_levels.map((d, i) => (
               <div
@@ -771,14 +759,14 @@ function CoveragePillar({ data, distributions, insights, openDrillDown }) {
 
       {coverageTab === 'tasks' && (
         <div className="chart-container">
-          <h3>Task Category Distribution</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Click a bar to see benchmarks.</p>
+          <h3>Languages per Task Category</h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 16 }}>Counts are unique languages. Click a bar to see related benchmark suites.</p>
           <HBar
             data={distributions.task_categories.map(d => ({ label: d.category, value: d.count, _key: d.category }))}
             maxVal={taskMax}
             colorClass="indigo"
             labelWidth={180}
-            onBarClick={(d) => openDrillDown('task_category', d._key, `Task: ${d._key}`, `${d.value} languages evaluated on ${d._key}`, benchmarksForTaskCategory(data, d._key))}
+            onBarClick={(d) => openDrillDown('task_category', d._key, `Task: ${d._key}`, `${d.value} unique languages evaluated on ${d._key}`, benchmarksForTaskCategory(data, d._key))}
           />
         </div>
       )}
@@ -801,7 +789,10 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
   return (
     <div className="evals-section">
       <h2>Representativeness Analysis</h2>
-      <p className="section-desc">Are benchmarks natively created or translated from English? Do they reflect the cultures they evaluate?</p>
+      <p className="section-desc">Are evaluation datasets natively created or translated from English? Do they reflect the cultures they evaluate?</p>
+      <p className="analysis-unit">
+        <strong>Unit of analysis:</strong> dataset-language entries. Each of the {insights.total_dataset_language_entries} entries represents one unique dataset evaluated in one language; a benchmark suite can contribute many entries.
+      </p>
 
       <div className="evals-tabs">
         {[
@@ -816,24 +807,20 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 
       {repTab === 'translation' && (
         <div className="chart-container">
-          <h3>Translation Status by Region</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks for that region.</p>
-          <ChartLegend items={[
-            { label: 'Native', color: CHART_COLORS.native },
-            { label: 'Translated', color: CHART_COLORS.translated },
-            { label: 'Unknown', color: CHART_COLORS.unknown },
-          ]} />
+          <h3>Dataset Translation Status by Region</h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Counts are dataset-language entries. Click any row to see related benchmark suites.</p>
+          <ChartLegend items={[{ label: 'Native', color: '#22c55e' }, { label: 'Translated', color: '#ef4444' }, { label: 'Unknown', color: '#d1d5db' }]} />
           <div className="bar-chart stacked-bar-chart">
             {transByRegion.map((d, i) => (
               <div
                 className="bar-row clickable"
                 key={i}
-                style={{ gridTemplateColumns: '200px 1fr 60px' }}
-                onClick={() => openDrillDown('region_translation', d.region, `Translation Status: ${d.region}`, `${d.native} native, ${d.translated} translated, ${d.unknown} unknown entries`, benchmarksForRegion(data, d.region))}
+                style={{ gridTemplateColumns: '200px 1fr 100px' }}
+                onClick={() => openDrillDown('region_translation', d.region, `Translation Status: ${d.region}`, `${d.native} native, ${d.translated} translated, ${d.unknown} unknown dataset-language entries`, benchmarksForRegion(data, d.region))}
               >
                 <span className="bar-label">{d.region}</span>
                 <StackedBar data={d} total={d.total} segments={[{ key: 'native', css: 'native', label: 'Native' }, { key: 'translated', css: 'translated', label: 'Translated' }, { key: 'unknown', css: 'unknown', label: 'Unknown' }]} />
-                <span className="bar-value" style={{ fontSize: '0.75rem' }}>n={d.total}</span>
+                <span className="bar-value" style={{ fontSize: '0.75rem' }}>n={d.total} entries</span>
               </div>
             ))}
           </div>
@@ -842,23 +829,20 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 
       {repTab === 'cultural' && (
         <div className="chart-container">
-          <h3>Cultural Grounding by Region</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any row to see benchmarks covering that region.</p>
-          <ChartLegend items={[
-            { label: 'Culturally Grounded', color: CHART_COLORS.grounded },
-            { label: 'Not Grounded', color: CHART_COLORS.notGrounded },
-          ]} />
+          <h3>Dataset Cultural Grounding by Region</h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Counts are dataset-language entries. Click any row to see related benchmark suites.</p>
+          <ChartLegend items={[{ label: 'Culturally Grounded', color: '#22c55e' }, { label: 'Not Grounded', color: '#ef4444' }]} />
           <div className="bar-chart stacked-bar-chart">
             {groundByRegion.map((d, i) => (
               <div
                 className="bar-row clickable"
                 key={i}
-                style={{ gridTemplateColumns: '200px 1fr 60px' }}
-                onClick={() => openDrillDown('region_grounding', d.region, `Cultural Grounding: ${d.region}`, `${d.grounded} grounded, ${d.not_grounded} not grounded entries`, benchmarksForRegion(data, d.region))}
+                style={{ gridTemplateColumns: '200px 1fr 100px' }}
+                onClick={() => openDrillDown('region_grounding', d.region, `Cultural Grounding: ${d.region}`, `${d.grounded} grounded and ${d.not_grounded} not grounded dataset-language entries`, benchmarksForRegion(data, d.region))}
               >
                 <span className="bar-label">{d.region}</span>
                 <StackedBar data={d} total={d.total} segments={[{ key: 'grounded', css: 'grounded', label: 'Grounded' }, { key: 'not_grounded', css: 'not-grounded', label: 'Not Grounded' }]} />
-                <span className="bar-value" style={{ fontSize: '0.75rem' }}>n={d.total}</span>
+                <span className="bar-value" style={{ fontSize: '0.75rem' }}>n={d.total} entries</span>
               </div>
             ))}
           </div>
@@ -867,8 +851,8 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 
       {repTab === 'taskheat' && (
         <div className="chart-container">
-          <h3>Task Categories × Regions Heatmap</h3>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Click any cell to see composing benchmarks.</p>
+          <h3>Dataset-Language Entries by Task Category and Region</h3>
+          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text-muted)', marginBottom: 12 }}>Each cell counts dataset-language entries. Click any cell to see related benchmark suites.</p>
           <div className="heatmap-wrap">
             <table className="heatmap-table">
               <thead>
@@ -893,10 +877,10 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
                           className={val > 0 ? 'heatmap-clickable' : ''}
                           onClick={val > 0 ? () => {
                             const matches = data.benchmarks.filter(b => b.continents.includes(region) && b.task_categories.includes(tc))
-                            openDrillDown('heatmap', { region, task: tc }, `${region} × ${tc}`, `${val} language entries`, matches)
+                            openDrillDown('heatmap', { region, task: tc }, `${region} × ${tc}`, `${val} dataset-language entries`, matches)
                           } : undefined}
                         >
-                          <span className={`heatmap-cell${val === 0 ? ' empty' : ''}`} style={heatStyle(val, heatMax)} title={`${region} × ${tc}: ${val}`}>
+                          <span className={`heatmap-cell${val === 0 ? ' empty' : ''}`} style={heatStyle(val, heatMax)} title={`${region} × ${tc}: ${val} dataset-language entries`}>
                             {val > 0 ? val : '—'}
                           </span>
                         </td>
@@ -914,14 +898,14 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
         <div className="chart-container">
           <h3>Key Findings</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div className="long-tail-callout finding-risk">
-              <strong>{insights.pct_translated}%</strong> of all language-benchmark entries are translated from English, rather than natively authored.
+            <div className="long-tail-callout" style={{ borderLeftColor: '#ef4444', background: '#fef2f2' }}>
+              <strong>{insights.pct_translated}%</strong> of dataset-language entries with known translation status are translated from English, rather than natively authored.
             </div>
-            <div className="long-tail-callout finding-positive">
-              <strong>{insights.total_grounded_entries}</strong> language-benchmark entries are culturally grounded.
+            <div className="long-tail-callout" style={{ borderLeftColor: '#22c55e', background: '#f0fdf4', color: '#166534' }}>
+              <strong>{insights.total_grounded_entries}</strong> dataset-language entries are culturally grounded.
             </div>
-            <div className="long-tail-callout finding-caution">
-              <strong>{insights.single_benchmark_pct}%</strong> of all surveyed languages appear in only 1 benchmark.
+            <div className="long-tail-callout" style={{ borderLeftColor: '#f97316', background: '#fff7ed', color: '#9a3412' }}>
+              <strong>{insights.single_benchmark_pct}%</strong> of all surveyed languages appear in only one benchmark suite.
             </div>
           </div>
         </div>
@@ -935,12 +919,12 @@ function RepresentativenessPillar({ data, cross_tabs, insights, openDrillDown })
 // ═══════════════════════════════════════════════════════════════
 function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField, sortDir, onSort, languageData }) {
   const cols = [
-    { key: 'name', label: 'Benchmark' },
+    { key: 'name', label: 'Benchmark Suite' },
     { key: 'num_languages', label: 'Languages' },
-    { key: 'num_tasks', label: 'Tasks' },
-    { key: 'n_native', label: 'Native' },
-    { key: 'n_translated', label: 'Translated' },
-    { key: 'n_grounded', label: 'Grounded' },
+    { key: 'num_datasets', label: 'Datasets' },
+    { key: 'n_native', label: 'Native Datasets' },
+    { key: 'n_translated', label: 'Translated Datasets' },
+    { key: 'n_grounded', label: 'Grounded Datasets' },
   ]
 
   return (
@@ -956,7 +940,7 @@ function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField
                 </span>
               </th>
             ))}
-            <th>Translation Ratio</th>
+            <th>Dataset Translation Ratio</th>
           </tr>
         </thead>
         <tbody>
@@ -968,15 +952,15 @@ function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField
                 <tr className={isExpanded ? 'expanded' : ''} onClick={() => setExpandedBench(isExpanded ? null : b.name)}>
                   <td><div className="name-cell"><span className={`expand-icon${isExpanded ? ' open' : ''}`}>▶</span>{b.name}</div></td>
                   <td>{b.num_languages}</td>
-                  <td>{b.num_tasks}</td>
+                  <td>{b.num_datasets}</td>
                   <td>{b.n_native}</td>
                   <td>{b.n_translated}</td>
                   <td>{b.n_grounded}</td>
                   <td>
                     {total > 0 && (
-                      <div className="mini-bar" title={`${b.n_native} native / ${b.n_translated} translated`}>
-                        <div className="mini-seg" style={{ width: `${(b.n_native / total) * 100}%`, background: CHART_COLORS.native }} />
-                        <div className="mini-seg" style={{ width: `${(b.n_translated / total) * 100}%`, background: CHART_COLORS.translated }} />
+                      <div className="mini-bar" title={`${b.n_native} native datasets / ${b.n_translated} translated datasets`}>
+                        <div className="mini-seg" style={{ width: `${(b.n_native / total) * 100}%`, background: '#22c55e' }} />
+                        <div className="mini-seg" style={{ width: `${(b.n_translated / total) * 100}%`, background: '#ef4444' }} />
                       </div>
                     )}
                   </td>
@@ -989,7 +973,7 @@ function BenchmarkTable({ benchmarks, expandedBench, setExpandedBench, sortField
           })}
         </tbody>
       </table>
-      {benchmarks.length === 0 && <p style={{ textAlign: 'center', padding: 24, color: 'var(--evals-text-muted)' }}>No benchmarks match your filters.</p>}
+      {benchmarks.length === 0 && <p style={{ textAlign: 'center', padding: 24, color: 'var(--evals-text-muted)' }}>No benchmark suites match your filters.</p>}
     </div>
   )
 }
@@ -1018,7 +1002,7 @@ function BenchmarkDetail({ benchmark, languageData }) {
       {benchmark.description && (
         <div className="detail-card" style={{ gridColumn: '1 / -1' }}>
           <h4>Description</h4>
-          <p style={{ fontSize: '0.85rem', color: 'var(--evals-text)', margin: 0, lineHeight: 1.5 }}>{benchmark.description}</p>
+          <p style={{ fontSize: '0.85rem', color: '#444', margin: 0, lineHeight: 1.5 }}>{benchmark.description}</p>
           {(benchmark.year || benchmark.benchmark_type) && (
             <div style={{ marginTop: 8, fontSize: '0.8rem', color: 'var(--evals-text-muted)', display: 'flex', gap: 16 }}>
               {benchmark.year && <span>Year: {benchmark.year}</span>}
@@ -1027,6 +1011,20 @@ function BenchmarkDetail({ benchmark, languageData }) {
           )}
         </div>
       )}
+      <div className="detail-card" style={{ gridColumn: '1 / -1' }}>
+        <h4>Datasets ({benchmark.datasets.length})</h4>
+        <div className="tag-list">
+          {benchmark.datasets.map(dataset => (
+            <span
+              className="tag"
+              key={dataset.name}
+              title={[dataset.task_category, dataset.translated, `${dataset.num_languages} language${dataset.num_languages !== 1 ? 's' : ''}`].filter(Boolean).join(' · ')}
+            >
+              {dataset.name}
+            </span>
+          ))}
+        </div>
+      </div>
       <div className="detail-card">
         <h4>Regions ({benchmark.continents.length})</h4>
         <div className="tag-list">{benchmark.continents.map(c => <span className="tag" key={c}>{c}</span>)}</div>
@@ -1047,9 +1045,10 @@ function BenchmarkDetail({ benchmark, languageData }) {
         <div className="tag-list">
           {benchLangs.map(l => {
             const entry = l.benchmarks.find(bl => bl.benchmark === benchmark.name)
-            const status = entry?.translated || 'Unknown'
+            const status = entry?.translation_status || 'Unknown'
             const cls = status === 'Native' ? 'native' : status === 'Translated' ? 'translated' : ''
-            return <span className={`tag ${cls}`} key={l.name} title={`${l.name} — ${l.family || '?'} — ${status}`}>{l.name}</span>
+            const datasetCount = entry?.num_datasets || 0
+            return <span className={`tag ${cls}`} key={l.name} title={`${l.name} · ${datasetCount} dataset${datasetCount !== 1 ? 's' : ''} · ${status}`}>{l.name}</span>
           })}
         </div>
       </div>
@@ -1060,21 +1059,12 @@ function BenchmarkDetail({ benchmark, languageData }) {
 // ═══════════════════════════════════════════════════════════════
 // Language Card (with citation info)
 // ═══════════════════════════════════════════════════════════════
-function LanguageCard({ lang, benchmarkData, taskFilter }) {
+function LanguageCard({ lang, benchmarkData }) {
   const benchLookup = useMemo(() => {
     const m = {}
     for (const b of benchmarkData) m[b.name] = b
     return m
   }, [benchmarkData])
-
-  const visibleBenchmarks = useMemo(() => {
-    if (!taskFilter) return lang.benchmarks
-    return lang.benchmarks.filter(bl => benchLookup[bl.benchmark]?.task_categories.includes(taskFilter))
-  }, [benchLookup, lang.benchmarks, taskFilter])
-
-  const nativeCount = visibleBenchmarks.filter(bl => bl.translated === 'Native').length
-  const translatedCount = visibleBenchmarks.filter(bl => bl.translated === 'Translated').length
-  const groundedCount = visibleBenchmarks.filter(bl => bl.culturally_grounded).length
 
   return (
     <div className="lang-card">
@@ -1082,38 +1072,47 @@ function LanguageCard({ lang, benchmarkData, taskFilter }) {
       <div className="lang-meta">
         <span>Family: {lang.family || 'Unknown'}</span>
         <span>Script: {lang.script || 'Unknown'}</span>
-        <span>Resource level: {lang.resource_level || 'Unknown'} ({lang.joshi_level ?? '?'})</span>
-        {lang.iso_code && <span>ISO: {lang.iso_code}</span>}
+        <span>Resource level: {lang.resource_level || 'Unknown'} (Level {lang.joshi_level ?? '?'})</span>
+        {lang.iso_code && <span>ISO code: {lang.iso_code}</span>}
         {lang.continents.length > 0 && <span>Regions: {lang.continents.join(', ')}</span>}
-        {lang.dialect_of && <span>Dialect of {lang.dialect_of}</span>}
+        {lang.dialect_of && <span>Dialect of: {lang.dialect_of}</span>}
       </div>
       <div style={{ display: 'flex', gap: 16, marginBottom: 12, fontSize: '0.85rem' }}>
-        <span style={{ color: 'var(--evals-text-success)', fontWeight: 600 }}>{nativeCount} native</span>
-        <span style={{ color: 'var(--evals-text-danger)', fontWeight: 600 }}>{translatedCount} translated</span>
-        <span style={{ color: 'var(--evals-text-grounded)', fontWeight: 600 }}>{groundedCount} culturally grounded</span>
+        <span style={{ color: 'var(--evals-text-success)', fontWeight: 600 }}>{lang.native_count} native dataset-language entries</span>
+        <span style={{ color: 'var(--evals-text-danger)', fontWeight: 600 }}>{lang.translated_count} translated dataset-language entries</span>
+        <span style={{ color: '#0f766e', fontWeight: 600 }}>{lang.grounded_count} culturally grounded dataset-language entries</span>
       </div>
       <div className="lang-benchmarks">
-        <h4>Appears in {visibleBenchmarks.length} matching benchmark{visibleBenchmarks.length !== 1 ? 's' : ''}:</h4>
+        <h4>
+          Appears in {lang.num_benchmarks} benchmark suite{lang.num_benchmarks !== 1 ? 's' : ''} across {lang.num_datasets} unique dataset{lang.num_datasets !== 1 ? 's' : ''}:
+        </h4>
         <div className="lang-bench-list">
-          {visibleBenchmarks.map((bl, i) => {
-            const cls = bl.translated === 'Native' ? 'native-chip' : bl.translated === 'Translated' ? 'translated-chip' : 'unknown-chip'
+          {lang.benchmarks.map((bl, i) => {
+            const cls = bl.translation_status === 'Native' ? 'native-chip' : bl.translation_status === 'Translated' ? 'translated-chip' : 'unknown-chip'
             const cite = benchLookup[bl.benchmark]?.citation
-            const tooltip = [bl.translated, bl.culturally_grounded ? 'Culturally Grounded' : '', cite?.year ? `(${cite.year})` : '', cite?.venue || ''].filter(Boolean).join(' · ')
+            const tooltip = [
+              `${bl.num_datasets} dataset${bl.num_datasets !== 1 ? 's' : ''}`,
+              `${bl.native_count} native`,
+              `${bl.translated_count} translated`,
+              `${bl.grounded_count} culturally grounded`,
+              cite?.year ? `(${cite.year})` : '',
+              cite?.venue || '',
+            ].filter(Boolean).join(' · ')
             return (
               <span className={`bench-chip ${cls}`} key={i} title={tooltip}>
-                {bl.benchmark}{bl.culturally_grounded && ' · grounded'}{cite?.year && <span className="chip-year"> ({cite.year})</span>}
+                {bl.benchmark}{cite?.year && <span className="chip-year"> ({cite.year})</span>}
               </span>
             )
           })}
         </div>
       </div>
-      {visibleBenchmarks.some(bl => benchLookup[bl.benchmark]?.citation?.paper_title) && (
+      {lang.benchmarks.some(bl => benchLookup[bl.benchmark]?.citation?.paper_title) && (
         <details className="lang-refs" style={{ marginTop: 10 }}>
-          <summary style={{ fontSize: '0.82rem', color: 'var(--evals-accent-strong)', cursor: 'pointer', fontWeight: 600 }}>
-            References ({visibleBenchmarks.filter(bl => benchLookup[bl.benchmark]?.citation?.paper_title).length})
+          <summary style={{ fontSize: '0.82rem', color: 'var(--color-header-bg, #312A9A)', cursor: 'pointer', fontWeight: 600 }}>
+            References ({lang.benchmarks.filter(bl => benchLookup[bl.benchmark]?.citation?.paper_title).length})
           </summary>
           <div className="lang-ref-list">
-            {visibleBenchmarks.map((bl, i) => {
+            {lang.benchmarks.map((bl, i) => {
               const cite = benchLookup[bl.benchmark]?.citation
               if (!cite?.paper_title) return null
               const url = cite.paper_url || (cite.arxiv_id ? `https://arxiv.org/abs/${cite.arxiv_id}` : null)
@@ -1131,9 +1130,7 @@ function LanguageCard({ lang, benchmarkData, taskFilter }) {
       {lang.task_categories.length > 0 && (
         <div style={{ marginTop: 10 }}>
           <h4 style={{ fontSize: '0.82rem', color: '#444', margin: '0 0 4px' }}>Tasks evaluated:</h4>
-          <div className="tag-list">
-            {lang.task_categories.map(tc => <span className={`tag${taskFilter === tc ? ' selected' : ''}`} key={tc}>{tc}</span>)}
-          </div>
+          <div className="tag-list">{lang.task_categories.map(tc => <span className="tag" key={tc}>{tc}</span>)}</div>
         </div>
       )}
     </div>

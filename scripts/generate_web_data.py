@@ -3,7 +3,8 @@ Generate compact JSON data for the Vibhasha Evals Dashboard (V2).
 Reads normalized_benchmarks.json and produces a web-friendly summary.
 
 The V2 normalized data uses flat (dataset, language) rows with richer fields.
-Output schema is backward-compatible with V1 so the EvalsDashboard still works.
+The web payload keeps benchmark suites, datasets, languages, and
+dataset-language analyses as separate concepts.
 """
 
 import json
@@ -40,6 +41,7 @@ def run():
     for b in benchmarks_raw:
         bname = b["benchmark"]
         sm = summary_map.get(bname, {})
+        benchmark_datasets = []
         families = set()
         scripts = set()
         continents = set()
@@ -47,6 +49,14 @@ def run():
         all_native = True
 
         for ds in b.get("datasets", []):
+            benchmark_datasets.append({
+                "name": ds["dataset_name"],
+                "task_type": ds.get("task_type"),
+                "task_category": ds.get("task_category"),
+                "translated": ds.get("translated", "Unknown"),
+                "culturally_grounded": ds.get("culturally_grounded", False),
+                "num_languages": ds.get("num_languages", len(ds.get("languages", []))),
+            })
             for row in _rows_for(rows, bname, ds["dataset_name"]):
                 if row.get("family"):
                     families.add(row["family"])
@@ -64,7 +74,7 @@ def run():
         benchmark_summaries.append({
             "name": bname,
             "num_languages": sm.get("num_languages_resolved", b.get("total_languages_resolved", 0)),
-            "num_tasks": sm.get("num_datasets", b.get("total_datasets", 0)),
+            "num_datasets": sm.get("num_datasets", b.get("total_datasets", 0)),
             "n_translated": sm.get("n_datasets_translated", 0),
             "n_native": sm.get("n_datasets_native", 0),
             "n_grounded": sm.get("n_datasets_grounded", 0),
@@ -76,6 +86,7 @@ def run():
             "scripts": sorted(scripts),
             "continents": sorted(continents),
             "task_categories": sorted(task_cats),
+            "datasets": sorted(benchmark_datasets, key=lambda dataset: dataset["name"].casefold()),
             "citation": {
                 "paper_title": cite.get("paper_title", ""),
                 "authors": cite.get("authors", ""),
@@ -86,15 +97,62 @@ def run():
             } if cite else None,
         })
 
-    # ---------- 2. Language index ----------
+    # ---------- 2. Dataset summaries ----------
+    dataset_index = defaultdict(lambda: {
+        "languages": set(),
+        "benchmarks": set(),
+        "task_types": set(),
+        "task_categories": set(),
+        "sources": set(),
+        "translation_statuses": set(),
+        "culturally_grounded": False,
+    })
+
+    for r in rows:
+        dataset = dataset_index[r["dataset"]]
+        dataset["languages"].add(r["language"])
+        dataset["benchmarks"].update(_benchmarks_containing(r))
+        if r.get("task_type"):
+            dataset["task_types"].add(r["task_type"])
+        if r.get("task_category"):
+            dataset["task_categories"].add(r["task_category"])
+        if r.get("source"):
+            dataset["sources"].add(r["source"])
+        if r.get("translated"):
+            dataset["translation_statuses"].add(r["translated"])
+        if r.get("culturally_grounded"):
+            dataset["culturally_grounded"] = True
+
+    dataset_summaries = []
+    for name, dataset in sorted(dataset_index.items(), key=lambda item: item[0].casefold()):
+        dataset_summaries.append({
+            "name": name,
+            "num_languages": len(dataset["languages"]),
+            "num_benchmarks": len(dataset["benchmarks"]),
+            "benchmarks": sorted(dataset["benchmarks"]),
+            "task_types": sorted(dataset["task_types"]),
+            "task_categories": sorted(dataset["task_categories"]),
+            "sources": sorted(dataset["sources"]),
+            "translation_statuses": sorted(dataset["translation_statuses"]),
+            "culturally_grounded": dataset["culturally_grounded"],
+        })
+
+    expected_dataset_count = raw.get("metadata", {}).get("num_unique_datasets")
+    if expected_dataset_count is not None and expected_dataset_count != len(dataset_summaries):
+        raise ValueError(
+            "Generated dataset count does not match normalized metadata: "
+            f"{len(dataset_summaries)} != {expected_dataset_count}"
+        )
+
+    # ---------- 3. Language index ----------
     # Build from flat rows — group by canonical language name
     lang_index = defaultdict(lambda: {
         "family": None, "script": None, "resource_level": None,
-        "joshi_level": None, "joshi_level_name": None,
-        "continents": set(), "benchmarks": [], "tasks": set(),
+        "joshi_level": None, "joshi_level_name": None, "continents": set(),
+        "benchmarks": {}, "datasets": [], "tasks": set(),
         "task_categories": set(), "translated_count": 0, "native_count": 0,
         "grounded_count": 0, "iso_code": None, "glottocode": None,
-        "dialect_of": None, "_bench_set": set(),
+        "dialect_of": None, "_dataset_set": set(),
     })
 
     for r in rows:
@@ -116,17 +174,40 @@ def run():
         if r.get("task_category"):
             entry["task_categories"].add(r["task_category"])
 
-        # Track per-benchmark (deduplicate by benchmark name)
-        bench = r["home_benchmark"]
-        if bench not in entry["_bench_set"]:
-            entry["_bench_set"].add(bench)
-            entry["benchmarks"].append({
-                "benchmark": bench,
+        dataset_name = r["dataset"]
+        benchmarks = _benchmarks_containing(r)
+        if dataset_name not in entry["_dataset_set"]:
+            entry["_dataset_set"].add(dataset_name)
+            entry["datasets"].append({
+                "dataset": dataset_name,
+                "benchmarks": benchmarks,
+                "task_type": r.get("task_type"),
+                "task_category": r.get("task_category"),
                 "translated": r.get("translated", "Unknown"),
                 "culturally_grounded": r.get("culturally_grounded", False),
             })
 
-        # Count translation/grounding per (language, dataset, benchmark) row
+            for benchmark in benchmarks:
+                benchmark_entry = entry["benchmarks"].setdefault(benchmark, {
+                    "benchmark": benchmark,
+                    "_datasets": set(),
+                    "native_count": 0,
+                    "translated_count": 0,
+                    "partial_count": 0,
+                    "grounded_count": 0,
+                })
+                benchmark_entry["_datasets"].add(dataset_name)
+                translated = r.get("translated", "Unknown")
+                if translated == "Native":
+                    benchmark_entry["native_count"] += 1
+                elif translated == "Translated":
+                    benchmark_entry["translated_count"] += 1
+                elif translated == "Partial":
+                    benchmark_entry["partial_count"] += 1
+                if r.get("culturally_grounded"):
+                    benchmark_entry["grounded_count"] += 1
+
+        # Count translation/grounding per unique (language, dataset) row.
         t = r.get("translated", "Unknown")
         if t == "Native":
             entry["native_count"] += 1
@@ -138,6 +219,27 @@ def run():
     # Convert to sorted list
     languages_list = []
     for name, entry in sorted(lang_index.items()):
+        benchmarks = []
+        for benchmark_name, benchmark in sorted(entry["benchmarks"].items()):
+            num_datasets = len(benchmark["_datasets"])
+            if benchmark["native_count"] == num_datasets:
+                translation_status = "Native"
+            elif benchmark["translated_count"] == num_datasets:
+                translation_status = "Translated"
+            elif benchmark["native_count"] or benchmark["translated_count"] or benchmark["partial_count"]:
+                translation_status = "Mixed"
+            else:
+                translation_status = "Unknown"
+            benchmarks.append({
+                "benchmark": benchmark_name,
+                "num_datasets": num_datasets,
+                "native_count": benchmark["native_count"],
+                "translated_count": benchmark["translated_count"],
+                "partial_count": benchmark["partial_count"],
+                "grounded_count": benchmark["grounded_count"],
+                "translation_status": translation_status,
+            })
+
         languages_list.append({
             "name": name,
             "family": entry["family"],
@@ -149,8 +251,9 @@ def run():
             "glottocode": entry["glottocode"],
             "dialect_of": entry.get("dialect_of"),
             "continents": sorted(entry["continents"]),
-            "num_benchmarks": len(entry["benchmarks"]),
-            "benchmarks": entry["benchmarks"],
+            "num_benchmarks": len(benchmarks),
+            "num_datasets": len(entry["datasets"]),
+            "benchmarks": benchmarks,
             "tasks": sorted(entry["tasks"]),
             "task_categories": sorted(entry["task_categories"]),
             "translated_count": entry["translated_count"],
@@ -158,7 +261,7 @@ def run():
             "grounded_count": entry["grounded_count"],
         })
 
-    # ---------- 3. Distributions ----------
+    # ---------- 4. Distributions ----------
     bench_counts = Counter(l["num_benchmarks"] for l in languages_list)
     long_tail = [{"count": k, "languages": v} for k, v in sorted(bench_counts.items())]
 
@@ -184,7 +287,7 @@ def run():
             tc_counter[tc] += 1
     task_dist = [{"category": tc, "count": n} for tc, n in tc_counter.most_common()]
 
-    # ---------- 4. Cross-tabulations (from flat rows) ----------
+    # ---------- 5. Cross-tabulations (from flat rows) ----------
     trans_by_region = defaultdict(lambda: {"native": 0, "translated": 0, "unknown": 0, "total": 0})
     cg_by_region = defaultdict(lambda: {"grounded": 0, "not_grounded": 0, "total": 0})
     task_by_region = defaultdict(lambda: defaultdict(int))
@@ -221,7 +324,7 @@ def run():
     ]
     task_region_matrix = {reg: dict(cats) for reg, cats in task_by_region.items()}
 
-    # ---------- 5. Insights ----------
+    # ---------- 6. Insights ----------
     total_langs = len(languages_list)
     single_bench = sum(1 for l in languages_list if l["num_benchmarks"] == 1)
     pct_single = round(100 * single_bench / total_langs, 1)
@@ -234,6 +337,8 @@ def run():
 
     insights = {
         "total_benchmarks": len(benchmarks_raw),
+        "total_datasets": len(dataset_summaries),
+        "total_dataset_language_entries": len(rows),
         "total_languages": total_langs,
         "total_families": len(family_counter),
         "total_scripts": len(script_counter),
@@ -253,6 +358,7 @@ def run():
         "metadata": raw["metadata"],
         "insights": insights,
         "benchmarks": benchmark_summaries,
+        "datasets": dataset_summaries,
         "languages": languages_list,
         "distributions": {
             "long_tail": long_tail,
@@ -275,14 +381,24 @@ def run():
 
     print(f"Wrote {DST}")
     print(f"  {len(benchmark_summaries)} benchmarks")
+    print(f"  {len(dataset_summaries)} unique datasets")
     print(f"  {len(languages_list)} languages")
     print(f"  {len(rows)} dataset-language rows processed")
     print(f"  File size: {DST.stat().st_size / 1024:.1f} KB")
 
 
+def _benchmarks_containing(row):
+    """Return every benchmark suite that includes a normalized dataset row."""
+    benchmarks = row.get("benchmarks_containing") or [row["home_benchmark"]]
+    return sorted(set(benchmarks))
+
+
 def _rows_for(rows, benchmark, dataset):
-    """Get all rows matching a specific benchmark + dataset."""
-    return [r for r in rows if r["home_benchmark"] == benchmark and r["dataset"] == dataset]
+    """Get dataset rows associated with a benchmark suite."""
+    return [
+        row for row in rows
+        if row["dataset"] == dataset and benchmark in _benchmarks_containing(row)
+    ]
 
 
 if __name__ == "__main__":
