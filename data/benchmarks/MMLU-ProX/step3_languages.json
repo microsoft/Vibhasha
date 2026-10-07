@@ -1,0 +1,121 @@
+{
+  "total_languages": 29,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Spanish": {
+      "iso_code": "spa",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Arabic": {
+      "iso_code": "ara",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Nepali": {
+      "iso_code": "nep",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["MMLU-ProX"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["MMLU-ProX"]
+    }
+  }
+}

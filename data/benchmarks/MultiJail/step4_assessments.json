@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "MultiJail": {
+      "translated": {
+        "value": true,
+        "evidence": "we carefully gather English harmful queries and manually translate them by native speakers into 9 non-English languages, ranging from high-resource to low-resource. This leads us to the creation of the first multilingual jailbreak dataset called MultiJail.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "we incorporate native speakers for human translation. All translators are instructed to translate the English dataset into the target language while preserving the original meaning. To ensure the quality of these human translations, we randomly select a subset of translations and have a separate group of native speakers verify their quality. We aim for a pass rate of over 97%.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "All prompts originate from English sources (GPT-4 report and Anthropic red-teaming dataset) and are translated into target languages. There is no mention of cultural adaptation or localization of content for target language communities.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Translations verified by a separate group of native speakers with a target pass rate of over 97%. Safety evaluation conducted via GPT-4 automated evaluation with human verification; Cohen's kappa score of 0.86 between human annotators and GPT-4 evaluator."
+    }
+  }
+}

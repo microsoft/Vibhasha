@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "XQuAD",
+  "paper_id": "2020.acl-main.421",
+  "year": 2020,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we create a new Cross-lingual Question Answering Dataset (XQuAD). XQuAD consists of a subset of 240 paragraphs and 1190 question-answer pairs from the development set of SQuAD v1.1 together with their translations into ten languages",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": ["XQuAD"],
+  "task_categories": ["extractive_question_answering"],
+  "brief_description": "XQuAD is a cross-lingual extractive question answering benchmark consisting of 240 paragraphs and 1190 question-answer pairs from the SQuAD v1.1 development set, professionally translated from English into 10 languages (Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, Hindi)."
+}

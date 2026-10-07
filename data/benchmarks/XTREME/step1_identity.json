@@ -1,0 +1,27 @@
+{
+  "benchmark_name": "XTREME",
+  "paper_id": "2003.11080",
+  "year": 2020,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "we introduce the Cross-lingual TRansfer Evaluation of Multilingual Encoders (XTREME) benchmark, a multi-task benchmark for evaluating the cross-lingual generalization capabilities of multilingual representations across 40 languages and 9 tasks",
+  "total_languages_claimed": 40,
+  "total_datasets": 9,
+  "dataset_names": [
+    "XNLI",
+    "PAWS-X",
+    "Universal Dependencies POS",
+    "WikiANN",
+    "XQuAD",
+    "MLQA",
+    "TyDiQA-GoldP",
+    "BUCC",
+    "Tatoeba"
+  ],
+  "task_categories": [
+    "classification",
+    "structured_prediction",
+    "question_answering",
+    "sentence_retrieval"
+  ],
+  "brief_description": "XTREME (Cross-lingual TRansfer Evaluation of Multilingual Encoders) is a multi-task benchmark for evaluating the cross-lingual generalization capabilities of multilingual representations. It covers 40 typologically diverse languages spanning 12 language families and includes 9 tasks across classification, structured prediction, question answering, and sentence retrieval."
+}

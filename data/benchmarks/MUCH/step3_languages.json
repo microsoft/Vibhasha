@@ -1,0 +1,21 @@
+{
+  "total_languages": 4,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["MUCH"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["MUCH"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["MUCH"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["MUCH"]
+    }
+  }
+}

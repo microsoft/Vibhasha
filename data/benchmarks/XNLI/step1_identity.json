@@ -1,0 +1,16 @@
+{
+  "benchmark_name": "XNLI",
+  "paper_id": "EMNLP-2018-XNLI",
+  "year": 2018,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we construct an evaluation set for XLU by extending the development and test sets of the Multi-Genre Natural Language Inference Corpus (MultiNLI) to 15 languages",
+  "total_languages_claimed": 15,
+  "total_datasets": 1,
+  "dataset_names": [
+    "XNLI"
+  ],
+  "task_categories": [
+    "Natural Language Inference"
+  ],
+  "brief_description": "XNLI is a cross-lingual natural language inference evaluation corpus consisting of 7500 human-annotated development and test examples translated from English MultiNLI data into 14 other languages (15 total), covering three-way NLI classification (entailment, contradiction, neutral)."
+}

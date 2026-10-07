@@ -1,0 +1,144 @@
+{
+  "benchmark_name": "XQuAD",
+  "paper_id": "2020.acl-main.421",
+  "year": 2020,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we create a new Cross-lingual Question Answering Dataset (XQuAD). XQuAD consists of a subset of 240 paragraphs and 1190 question-answer pairs from the development set of SQuAD v1.1 together with their translations into ten languages",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": ["XQuAD"],
+  "task_categories": ["extractive_question_answering"],
+  "brief_description": "XQuAD is a cross-lingual extractive question answering benchmark consisting of 240 paragraphs and 1190 question-answer pairs from the SQuAD v1.1 development set, professionally translated from English into 10 languages (Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, Hindi).",
+  "datasets": [
+    {
+      "dataset_name": "XQuAD",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "extractive_question_answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional_human_translation",
+      "num_languages": 11,
+      "language_list": ["English", "Spanish", "German", "Greek", "Russian", "Turkish", "Arabic", "Vietnamese", "Thai", "Chinese", "Hindi"],
+      "annotation_method": "professional_human_translation_with_answer_span_placeholders",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Gengo (professional translation service)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The translations were done by professional human translators through the Gengo service. The translation workload was divided into 10 batches for each language, which were submitted separately to Gengo."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "SQuAD v1.1 (Rajpurkar et al., 2016)",
+      "notes": "240 paragraphs and 1190 question-answer pairs selected from the SQuAD v1.1 development set (5 context paragraphs at random from each of the 48 documents). Translators were instructed to transliterate named entities following Wikipedia conventions. Answer spans were marked with placeholder symbols for translators to preserve in their translations."
+    }
+  ],
+  "total_languages": 11,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XQuAD"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XQuAD"]
+    }
+  },
+  "assessments": {
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "XQuAD consists of a subset of 240 paragraphs and 1190 question-answer pairs from the development set of SQuAD v1.1 together with their translations into ten languages: Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi. Both the context paragraphs and the questions are translated by professional human translators from Gengo.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The paper states translations were done by 'professional human translators through the Gengo service' but does not explicitly confirm whether translators were native speakers of each target language. Gengo typically uses native-speaker translators, but this is not stated in the paper.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The dataset is a direct translation of English SQuAD v1.1 content, which is sourced from English Wikipedia articles. The content, topics, and questions are entirely English-centric in origin. Translators were instructed to transliterate named entities following Wikipedia conventions, not to adapt content culturally.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translators from Gengo were used. Translation workload divided into 10 batches per language. All paragraphs and questions from the same document were submitted in the same batch for consistency. Answer spans were marked with placeholder symbols that translators preserved, and an online validator was available to verify output format. However, no inter-annotator agreement or quality metrics are reported."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "XQuAD is entirely translated from English SQuAD v1.1. No dataset in this paper was created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XQuAD"],
+      "evidence": "XQuAD consists of a subset of 240 paragraphs and 1190 question-answer pairs from the development set of SQuAD v1.1 together with their translations into ten languages by professional translators."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper states translations were done by 'professional human translators through the Gengo service' but does not explicitly state they are native speakers of the target languages.",
+      "evidence": "The translations were done by professional human translators through the Gengo service."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_translators"],
+      "total_annotators_reported": null,
+      "affiliations": ["Gengo"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The translations were done by professional human translators through the Gengo service. The translation workload was divided into 10 batches for each language, which were submitted separately to Gengo. As a consequence, different parts of the dataset might have been translated by different translators."
+    },
+    "english_centricity_notes": "XQuAD is entirely derived from English SQuAD v1.1, which is sourced from English Wikipedia. All content, topics, questions, and cultural context originate from English. The benchmark evaluates cross-lingual transfer from English fine-tuning, reinforcing English as the central training language. Named entities were transliterated following English Wikipedia conventions.",
+    "geographic_representation": {
+      "primary_region": "Western/English-speaking",
+      "sub_regions": [],
+      "also_represented": ["Europe", "Middle East", "South Asia", "East Asia", "Southeast Asia"],
+      "notably_excluded": ["Africa", "Oceania", "Indigenous Americas", "Central Asia"],
+      "evidence": "Languages covered are Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi—representing Europe, Middle East, South/East/Southeast Asia. However, all content originates from English Wikipedia, so geographic diversity is limited to language coverage rather than content diversity."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

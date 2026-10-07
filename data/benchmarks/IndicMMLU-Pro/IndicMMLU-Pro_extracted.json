@@ -1,0 +1,143 @@
+{
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  },
+  "benchmark_name": "IndicMMLU-Pro",
+  "paper_id": "2501.15747v2",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce IndicMMLU-Pro, a comprehensive benchmark designed to evaluate Large Language Models (LLMs) across Indic languages, building upon the MMLU Pro (Massive Multitask Language Understanding) framework.",
+  "total_languages_claimed": 9,
+  "total_datasets": 1,
+  "dataset_names": ["IndicMMLU-Pro"],
+  "task_categories": ["multiple-choice question answering", "multi-task language understanding"],
+  "brief_description": "IndicMMLU-Pro is a machine-translated adaptation of the English MMLU-Pro benchmark into 9 Indic languages (Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Urdu, Kannada, Punjabi), covering 14 subject categories for evaluating LLM multi-task language understanding. Translation was performed using IndicTrans2 and validated via back-translation metrics and expert proofreading by 13 native-speaker reviewers.",
+  "datasets": [
+    {
+      "dataset_name": "IndicMMLU-Pro",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 9,
+      "language_list": ["Hindi", "Bengali", "Telugu", "Marathi", "Tamil", "Gujarati", "Urdu", "Kannada", "Punjabi"],
+      "annotation_method": "Machine translation of MMLU-Pro using IndicTrans2 (1B parameters), with quality assurance via back-translation metrics and expert proofreading by 13 native-speaker reviewers across 9,000 sentence pairs.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "University of South Carolina, Rochester Institute of Technology, Independent Researchers, Meta AI, Amazon Gen AI, Amazon",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Authors are from multiple institutions. 13 expert proofreaders were native speakers who 'generously volunteered their time and expertise' — explicitly unpaid volunteers."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Wang et al. 2024 (MMLU-Pro by Tiger Labs)",
+      "notes": "The dataset retains the original 14 categories and task types from MMLU-Pro. Translation was done with IndicTrans2 consistently across all 9 languages (1B parameters, no quantization, batch size 8). Back-translation quality metrics (chrF++, BLEU, METEOR, TER, SacreBLEU) were reported for 3 of 9 languages (Hindi, Gujarati, Tamil). Cosine similarity via LaBSE embeddings was reported for all 9 languages."
+    }
+  ],
+  "total_languages": 9,
+  "languages": {
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["IndicMMLU-Pro"]
+    }
+  },
+  "assessments": {
+    "IndicMMLU-Pro": {
+      "translated": {
+        "value": true,
+        "evidence": "We used IndicTrans2, a state-of-the-art machine translation model specifically designed for Indic languages... we use IndicTrans2 to convert the questions and corresponding options from the original English MMLU Pro dataset into each of the target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "13 native-speaker experts reviewed 9,000 sentence pairs for quality (semantic accuracy, fluency, linguistic style), but the dataset itself was machine-translated, not natively authored. 'The participating experts were native speakers of their respective languages, with fluency in English and formal education in their native languages.' Experts performed proofreading/evaluation, not authoring.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The dataset is a direct machine translation of the English MMLU-Pro benchmark. 'The resulting IndicMMLU-Pro dataset maintains the same structure as the original MMLU-Pro dataset... The dataset retains the original categories and task types from MMLU Pro.' No cultural adaptation of content was performed; only linguistic translation.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality was assessed via: (1) back-translation metrics (chrF++, BLEU, METEOR, TER, SacreBLEU) for 3 of 9 languages, (2) LaBSE cosine similarity for all 9 languages (scores 0.91-0.93), (3) expert proofreading of 9,000 sentence pairs by 13 native-speaker reviewers on a 5-point scale across 3 criteria. However, full back-translation metrics for 6 languages (Bengali, Punjabi, Kannada, Telugu, Urdu, Marathi) were not reported in the paper."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "IndicMMLU-Pro is entirely translated from the English MMLU-Pro dataset. No datasets were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["IndicMMLU-Pro"],
+      "evidence": "we use IndicTrans2 to convert the questions and corresponding options from the original English MMLU Pro dataset into each of the target languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes_for_proofreading_only",
+      "evidence": "The participating experts were native speakers of their respective languages, with fluency in English and formal education in their native languages. However, these 13 experts only performed proofreading/quality evaluation, not content creation. The actual dataset was machine-translated."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "expert_proofreaders"],
+      "total_annotators_reported": 13,
+      "affiliations": [
+        "University of South Carolina",
+        "Rochester Institute of Technology",
+        "Independent Researchers",
+        "Meta AI",
+        "Amazon Gen AI",
+        "Amazon"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Experts were unpaid volunteers. Paper states: 'We extend our deepest gratitude to the experts who volunteered their time and effort' and 'generously volunteering their time and expertise to support this research endeavor.'",
+      "irb_ethics_review": null,
+      "evidence": "13 expert proofreaders, each a native speaker of one of the 9 languages, reviewed 9,000 sentence pairs (1,000 per language). Each language had at least one expert, four languages had two. No IRB or ethics review process is mentioned in the paper."
+    },
+    "english_centricity_notes": "The entire benchmark is a direct machine translation of the English MMLU-Pro. All 14 subject categories and question content originate from an English-centric source. The paper acknowledges this is an adaptation approach: 'IndicMMLU-Pro adapts the robust multi-task principles to the unique context of Indic languages.' No cultural adaptation of content was performed beyond linguistic translation.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India"],
+      "also_represented": ["Pakistan (Urdu, Punjabi)"],
+      "notably_excluded": ["Other South Asian countries with Indic language speakers"],
+      "evidence": "The benchmark targets 9 Indic languages spoken primarily in the Indian subcontinent: Hindi, Bengali, Telugu, Marathi, Tamil, Gujarati, Urdu, Kannada, and Punjabi. Authors note: 'Known by more than 1.5 billion people in the Indian subcontinent.' Experts listed are associated with Indian names/institutions, though content is translated from English and not region-specific."
+    }
+  }
+}

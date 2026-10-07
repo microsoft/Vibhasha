@@ -1,0 +1,113 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "PH Elections Sentiment",
+        "NusaX",
+        "Wisesight",
+        "UIT-VSFC",
+        "TyDi QA-GoldP",
+        "IndicQA",
+        "MABL",
+        "IndoNLI",
+        "XL-Sum",
+        "LINDSEA",
+        "KALAHI",
+        "MLHSD",
+        "Thai Toxicity Tweet",
+        "ViHSD",
+        "PH Elections Toxicity"
+      ],
+      "evidence": "Table 1 marks these datasets as Native=Y with no translation source. Paper states: 'We selected datasets that comprised of data originally written in the native language as far as possible.' LINDSEA: 'handcrafted from scratch by linguists in collaboration with native speakers'. KALAHI: '150 high-quality Filipino-language prompts created in collaboration with native Filipino speakers'."
+    },
+    "datasets_translated_from_english": {
+      "list": [
+        "IndicSentiment",
+        "XQUAD",
+        "Belebele",
+        "XNLI",
+        "IndicXNLI",
+        "Balanced COPA",
+        "XCOPA",
+        "FLORES",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "MT-Bench Thai"
+      ],
+      "evidence": "Table 1 marks these datasets as Native=N with Translation=Human or Machine. SEA-IFEval: 'manually translated from the English IF-Eval benchmark'. SEA-MTBench: 'manually translated and localised version of the popular MT-Bench dataset'. IndicXNLI is the only machine-translated dataset; all others are human-translated."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [
+        "KALAHI",
+        "LINDSEA",
+        "SEA-IFEval",
+        "SEA-MTBench",
+        "PH Elections Sentiment",
+        "NusaX",
+        "Wisesight",
+        "UIT-VSFC",
+        "TyDi QA-GoldP",
+        "IndoNLI",
+        "MABL",
+        "XL-Sum",
+        "MLHSD",
+        "Thai Toxicity Tweet",
+        "ViHSD",
+        "PH Elections Toxicity"
+      ],
+      "details": {
+        "KALAHI": "Explicitly participatory approach with native Filipino community; designed to test culturally-specific situations Filipinos encounter in daily lives",
+        "LINDSEA": "Handcrafted linguistic diagnostics for Indonesian and Tamil, grounded in extensive literature on these languages' specific phenomena",
+        "SEA-IFEval": "Translated from English but culturally localised: 'localisation ensured cultural authenticity and removed any unintended or inherent biases'",
+        "SEA-MTBench": "Translated from English but manually localised for SEA cultural context",
+        "native_datasets": "PH Elections Sentiment, NusaX, Wisesight, UIT-VSFC, TyDi QA-GoldP, IndoNLI, MABL, XL-Sum, MLHSD, Thai Toxicity Tweet, ViHSD, PH Elections Toxicity are natively written and reflect local contexts (social media, news, elections, etc.)"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partially: for SEA-HELM's own datasets (SEA-IFEval, SEA-MTBench, LINDSEA), native speakers were involved; for collated external datasets, annotator info is not provided in this paper",
+      "evidence": "SEA-HELM is grateful to our Quality Assurance (QA) team, consisting of paid native speakers of SEA languages who worked as translators and annotators... We deliberately incorporate community participation by involving native speakers of the SEA languages at each stage of the dataset planning and construction to ensure linguistic accuracy and cultural authenticity. Annotator demographics are not included in this paper for anonymity, demographics can be provided upon request."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "paid_native_speaker_QA_team",
+        "linguists",
+        "community_members",
+        "researchers"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "AI Singapore",
+        "National University of Singapore",
+        "Center for Research on Foundation Models (CRFM), Stanford University"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "compensation and working hours for all members involved were established in full compliance with the prevailing university guidelines and applicable regulations in the country where this research is conducted. QA team was recruited through public advertisements that clearly outlined the estimated workload and hourly pay.",
+      "irb_ethics_review": true,
+      "evidence": "The SEA-HELM project has received full and official approval from our university's internal review board after undergoing a rigorous review process. The team is composed predominantly of students at local universities and members of the public, all of whom are adults who satisfy the legal age requirements for employment. Annotator demographics are not included in this paper for anonymity."
+    },
+    "english_centricity_notes": "The paper explicitly acknowledges English-centricity as a problem: 'translated datasets often contain elements of translationese which can differ significantly from natively written text.' 11 of 26 datasets are translated from English. The paper prioritises native datasets where possible: 'We selected datasets that comprised of data originally written in the native language as far as possible. Otherwise, existing datasets in English were carefully translated by native speakers.' The translated datasets (SEA-IFEval, SEA-MTBench) are adapted/localised rather than directly translated. IndicXNLI is the only machine-translated dataset. FLORES is inherently a translation benchmark. Prompt templates are in native languages rather than English.",
+    "geographic_representation": {
+      "primary_region": "Southeast Asia",
+      "sub_regions": [
+        "Philippines (Filipino)",
+        "Indonesia (Indonesian)",
+        "Singapore (Tamil as official language)",
+        "Thailand (Thai)",
+        "Vietnam (Vietnamese)"
+      ],
+      "also_represented": [
+        "South Asia (Tamil is also spoken in India, Sri Lanka, Malaysia)"
+      ],
+      "notably_excluded": [
+        "Myanmar/Burma (Burmese)",
+        "Cambodia (Khmer)",
+        "Laos (Lao)",
+        "Malaysia (Malay)",
+        "Brunei (Malay)",
+        "Timor-Leste (Tetum)"
+      ],
+      "evidence": "SEA-HELM currently supports Filipino, Indonesian, Tamil, Thai, and Vietnamese. Paper notes: 'It can be used as a base for future extensions covering other SEA languages, e.g. Khmer, Lao, Burmese, etc., which we intend to expand on in a future work.' The SEA region is home to nearly 700 million speakers across more than 1,000 languages. Currently covers 5 of 11 SEA countries."
+    }
+  }
+}

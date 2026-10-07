@@ -1,0 +1,81 @@
+{
+  "total_languages": 19,
+  "languages": {
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["UDPOS", "MLQA", "XNLI"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["UDPOS", "XNLI"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["CoNLL NER", "UDPOS", "NC", "MLQA", "XNLI", "PAWS-X", "QADSM", "WPR", "QAM", "QG", "NTG"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["UDPOS", "XNLI"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["CoNLL NER", "UDPOS", "NC", "MLQA", "XNLI", "PAWS-X", "QADSM", "WPR", "QAM", "QG", "NTG"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["CoNLL NER", "UDPOS", "NC", "MLQA", "XNLI", "PAWS-X", "WPR", "QG", "NTG"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["UDPOS", "NC", "XNLI", "PAWS-X", "QADSM", "WPR", "QAM", "QG", "NTG"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["UDPOS", "MLQA", "XNLI"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["UDPOS", "WPR", "QG"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["CoNLL NER", "UDPOS"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["UDPOS"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["UDPOS", "WPR", "QG"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["UDPOS", "NC", "XNLI", "NTG"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["UDPOS", "XNLI"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["UDPOS", "XNLI"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["UDPOS", "XNLI"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["UDPOS", "MLQA", "XNLI"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["UDPOS", "MLQA", "XNLI", "WPR"]
+    }
+  }
+}

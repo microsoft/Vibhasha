@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "TriviaQA": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions were collected from 14 trivia and quiz-league websites authored by trivia enthusiasts in English. Evidence documents gathered from English Wikipedia and English web search results. No translation involved.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "INSUFFICIENT_INFO: The paper does not report whether the trivia enthusiasts who authored the questions or the human annotator who verified the subset are native English speakers.",
+        "evidence": "The paper describes questions authored by 'trivia enthusiasts' from trivia/quiz-league websites and a single 'human annotator' for verification, but does not specify language nativeness.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Questions cover general trivia topics (history, geography, entertainment, science, etc.) sourced from English-language trivia websites. The dataset is not designed to be culturally grounded in any specific culture; it reflects the broad interests of English-speaking trivia enthusiasts.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "A human annotator verified 1,975 question-document-answer triples (297+584 Wikipedia, 322+733 Web for dev+test). Evidence documents contain answers for 79.7% (Wikipedia) and 75.4% (Web) of questions. Error analysis on 100 BiDAF predictions found 19% lacked evidence, 3% had incorrect ground truth, and 3% had valid but unlisted answers."
+    }
+  }
+}

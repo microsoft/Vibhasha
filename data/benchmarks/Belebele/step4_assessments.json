@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "Belebele": {
+      "translated": {
+        "value": true,
+        "evidence": "We opted to create multiple-choice questions and answers in English and then translate, as opposed to creating resources natively in each language. (Section 3); For all languages included in the corpus, the context passages were taken directly from the FLORES-200 dataset (Section 3.3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "BELEBELE was created end-to-end without the use of machine translation technology, relying solely on experts fluent in English and the target language. (Section 3.3); The [FLORES-200] translations were performed by native speakers with high English fluency and translation experience. (Section 2.4); All translations were proofread and edited by an additional annotator. (Section 3.3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "by-design the samples collected do not capture language- and culture-specific phenomena such as formality, values, and aboutness. While conscious of this Western-centrism, BELEBELE was designed to prioritize comparability across languages. (Ethics Statement)",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Extensive 5-iteration QA process with LSP. Programmatic quality checks using lexical featurization to filter overly easy questions (~20% filtered in final iteration). Statistical t-tests confirm no bias toward correct answer patterns (p-value 0.81). Human performance established at 97.6% accuracy on English split. Logistic regression baseline achieves only 0.28 accuracy (near random 0.25). Licensed under CC-BY-SA."
+    }
+  }
+}

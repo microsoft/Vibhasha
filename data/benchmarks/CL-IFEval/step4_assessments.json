@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "CL-IFEval": {
+      "translated": {
+        "value": true,
+        "evidence": "We construct multi-lingual functional benchmarks by translating... the 541 English IFEval prompts each containing at least one verifiable instruction into French, Spanish, Yoruba, Hindi, and Arabic. Initial translations are produced with Google Translate. (Section 3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Initial translations are produced with Google Translate. We then conduct native-speaker validation of all translated... IFEval prompts. For each language, we recruited at least two native speakers volunteers to validate translations. Validators were recruited primarily from students studying at a US-based university. For Yoruba, we additionally recruited a native speaker based in Nigeria to ensure dialectal and cultural appropriateness in a low-resource setting. (Section 3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is translated from English IFEval prompts via Google Translate with native-speaker validation. The paper itself acknowledges that 'The use of direct translation for many of these benchmarks has been critiqued by some as being devoid of realistic cultural context' (Section 2). The Limitations section notes: 'We use automated translation tools like Google Translate in constructing CL-IFEval and CL-GSMSym. While these tools offer broad language coverage and facilitate large-scale data generation, they introduce potential inaccuracies, particularly for lower resourced languages like Yoruba' (Section 6, Limitations).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Validation followed a structured rubric (Appendix G.1). Validators compared each translated prompt against the English source to ensure fidelity to meaning, intent, and constraint strength, and to verify that instruction realizations remained valid in the target language. 170 prompts (541 → 371) were filtered out due to script-dependent constraints (e.g., uppercase/lowercase) not applicable in Arabic and Hindi scripts."
+    },
+    "CL-GSM Symbolic": {
+      "translated": {
+        "value": true,
+        "evidence": "We construct multi-lingual functional benchmarks by translating (a) the 100 English GSM-Symbolic templates... into French, Spanish, Yoruba, Hindi, and Arabic. Initial translations are produced with Google Translate. (Section 3)",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "We then conduct native-speaker validation of all translated GSM-Symbolic templates... before any GSM-Symbolic item instantiation. For each language, we recruited at least two native speakers volunteers to validate translations. (Section 3)",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Templates are translated from English GSM-Symbolic. Validation rubric (Appendix G.2) explicitly instructs validators to preserve English units and structure: 'if English uses 6 inches, 10-foot shark, 12 inches/foot, the translation must also use imperial units, not metric. If the translation converted units (e.g. inches → cm, feet → meters), revert to the English units.' Content and context remain English-centric by design.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Validation followed a structured rubric (Appendix G.2) with line-by-line comparison of English and translated templates. Validators checked template markup preservation, math and unit consistency, computation span integrity, and meta-section integrity. All 100 templates validated per language."
+    }
+  }
+}

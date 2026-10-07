@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MAKIEVAL",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "open-ended text generation for cultural awareness evaluation",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 13,
+      "language_list": [
+        "Arabic",
+        "English",
+        "German",
+        "Hindi",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Persian",
+        "Simplified Chinese",
+        "Spanish",
+        "Thai",
+        "Traditional Chinese",
+        "Turkish"
+      ],
+      "annotation_method": "Prompt templates designed by researchers and validated by 15 native speakers (at least one per language). Entity extraction from model outputs performed automatically by GPT-4o-mini. Entity linking to Wikidata is fully automatic. Manual evaluation of extraction quality conducted by native speakers on sampled data (50 sentences × 6 topics × 4 languages).",
+      "data_creator_info": {
+        "creator_type": "researchers_and_native_speaker_validators",
+        "creator_affiliation": "MaiNLP, Center for Information and Language Processing, LMU Munich; Munich Center for Machine Learning (MCML)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "15 native speakers participated in prompt validation (at least one per language). Native speakers who validated prompts and annotated extraction quality include speakers of German, Spanish (Spain & Mexico), English (American & British), Turkish, Persian, Arabic, Hindi, Japanese, Korean, Traditional Chinese (Taiwan), Thai, Chinese (Mainland), and Italian. All annotators were native speakers with graduate-level education background."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "MAKIEVAL is a framework rather than a static benchmark. It uses template-based prompts (Neutral, Explicit, Implicit) across 6 topics (food, beverages, clothing, books, music, transportation) and 19 countries/regions. Each prompt generates 500 responses per model. Total: 1,716 unique prompts, over 85.8 million generated texts across 7 evaluated models, 24,042 matched Wikidata cultural entities. Hausa and Yoruba were explored but excluded due to poor generation quality from open-source models."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "XQuAD is entirely translated from English SQuAD v1.1. No dataset in this paper was created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XQuAD"],
+      "evidence": "XQuAD consists of a subset of 240 paragraphs and 1190 question-answer pairs from the development set of SQuAD v1.1 together with their translations into ten languages by professional translators."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper states translations were done by 'professional human translators through the Gengo service' but does not explicitly state they are native speakers of the target languages.",
+      "evidence": "The translations were done by professional human translators through the Gengo service."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_translators"],
+      "total_annotators_reported": null,
+      "affiliations": ["Gengo"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The translations were done by professional human translators through the Gengo service. The translation workload was divided into 10 batches for each language, which were submitted separately to Gengo. As a consequence, different parts of the dataset might have been translated by different translators."
+    },
+    "english_centricity_notes": "XQuAD is entirely derived from English SQuAD v1.1, which is sourced from English Wikipedia. All content, topics, questions, and cultural context originate from English. The benchmark evaluates cross-lingual transfer from English fine-tuning, reinforcing English as the central training language. Named entities were transliterated following English Wikipedia conventions.",
+    "geographic_representation": {
+      "primary_region": "Western/English-speaking",
+      "sub_regions": [],
+      "also_represented": ["Europe", "Middle East", "South Asia", "East Asia", "Southeast Asia"],
+      "notably_excluded": ["Africa", "Oceania", "Indigenous Americas", "Central Asia"],
+      "evidence": "Languages covered are Spanish, German, Greek, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, and Hindi—representing Europe, Middle East, South/East/Southeast Asia. However, all content originates from English Wikipedia, so geographic diversity is limited to language coverage rather than content diversity."
+    }
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "benchmark_name": "IrokoBench",
+  "paper_id": "2025.naacl-long.139",
+  "year": 2025,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "We introduce IrokoBench—a human-translated benchmark dataset for 17 typologically-diverse low-resource African languages covering three tasks: natural language inference (AfriXNLI), mathematical reasoning (AfriMGSM), and multi-choice knowledge-based question answering (AfriMMLU).",
+  "total_languages_claimed": 17,
+  "total_datasets": 3,
+  "dataset_names": [
+    "AfriXNLI",
+    "AfriMMLU",
+    "AfriMGSM"
+  ],
+  "task_categories": [
+    "natural language inference",
+    "multi-choice knowledge QA",
+    "mathematical reasoning"
+  ],
+  "brief_description": "IrokoBench is a human-translated benchmark for 17 typologically-diverse low-resource African languages, comprising three tasks: natural language inference (AfriXNLI, from XNLI), multi-choice knowledge QA (AfriMMLU, from MMLU), and mathematical reasoning (AfriMGSM, from MGSM). It evaluates LLMs on complex reasoning and knowledge-intensive tasks for African languages.",
+  "datasets": [
+    {
+      "dataset_name": "XNLI",
+      "variant_name": "AfriXNLI",
+      "variant_notes": "Human translation of a subset of the English portion of XNLI into 15 African languages (excluding Swahili, which was already in XNLI). Each language has 450 DEV and 600 test instances, sampled equally from the 10 XNLI domains. Ewe, Lingala, and Wolof were translated from French rather than English.",
+      "task_type": "natural language inference",
+      "source": "translated",
+      "source_language": "English (French for Ewe, Lingala, Wolof)",
+      "translation_method": "human_professional",
+      "num_languages": 18,
+      "language_list": [
+        "English", "French", "Amharic", "Ewe", "Hausa", "Igbo", "Kinyarwanda",
+        "Lingala", "Luganda", "Oromo", "chiShona", "Sesotho", "Swahili",
+        "Twi", "Wolof", "isiXhosa", "Yoruba", "isiZulu"
+      ],
+      "annotation_method": "Professional human translation with language coordinator review and AfriCOMET QE quality estimation",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Masakhane NLP; language coordinators recruited professional translators for each of the 16 African languages and French; a logistics company in Kenya managed recruitment and payments",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Each translator received an appropriate remuneration for their work. We recruited a logistic company in Kenya that managed all recruitment and payments—each country has different rates. For example, we paid $549.78 for the translation of 1020 XNLI samples in South Africa, $355.86 in Nigeria."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "XNLI (Conneau et al., 2018)",
+      "notes": "15 African languages newly translated; Swahili was already in the original XNLI. Translators received payment only after quality control review by language coordinators."
+    },
+    {
+      "dataset_name": "MMLU",
+      "variant_name": "AfriMMLU",
+      "variant_notes": "Human translation of a 5-subject subset of MMLU (elementary mathematics, high-school geography, high-school microeconomics, international law, global facts) into 16 African languages and French. 608 question-answer pairs total: 25 train, 83 dev, 500 test. Subjects chosen for cultural neutrality and translatability. Ewe, Lingala, and Wolof translated from French (which was first translated from English).",
+      "task_type": "multi-choice knowledge QA",
+      "source": "translated",
+      "source_language": "English (French for Ewe, Lingala, Wolof)",
+      "translation_method": "human_professional",
+      "num_languages": 18,
+      "language_list": [
+        "English", "French", "Amharic", "Ewe", "Hausa", "Igbo", "Kinyarwanda",
+        "Lingala", "Luganda", "Oromo", "chiShona", "Sesotho", "Swahili",
+        "Twi", "Wolof", "isiXhosa", "Yoruba", "isiZulu"
+      ],
+      "annotation_method": "Professional human translation with language coordinator review",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Masakhane NLP; language coordinators recruited professional translators; logistics company in Kenya managed recruitment and payments",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Each translator received an appropriate remuneration for their work. We recruited a logistic company in Kenya that managed all recruitment and payments—each country has different rates."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "MMLU (Hendrycks et al., 2021a)",
+      "notes": "Only 5 of MMLU's 57 subjects were selected for translation, chosen as 'culturally unbiased (or international)' and simpler to translate since many STEM subjects are taught only in English or French in African countries."
+    },
+    {
+      "dataset_name": "MGSM",
+      "variant_name": "AfriMGSM",
+      "variant_notes": "Human translation of the MGSM dataset (grade school math word problems) to 15 additional African languages plus Vai. Original MGSM already included Swahili. 8 training examples for few-shot/chain-of-thought prompting and 250 test instances. Ewe, Lingala, and Wolof translated from French.",
+      "task_type": "mathematical reasoning",
+      "source": "translated",
+      "source_language": "English (French for Ewe, Lingala, Wolof)",
+      "translation_method": "human_professional",
+      "num_languages": 19,
+      "language_list": [
+        "English", "French", "Amharic", "Ewe", "Hausa", "Igbo", "Kinyarwanda",
+        "Lingala", "Luganda", "Oromo", "chiShona", "Sesotho", "Swahili",
+        "Twi", "Vai", "Wolof", "isiXhosa", "Yoruba", "isiZulu"
+      ],
+      "annotation_method": "Professional human translation with language coordinator review",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Masakhane NLP; language coordinators recruited professional translators; Vai translator facilitated via Charles Riley",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Each translator received an appropriate remuneration for their work. We extend our gratitude to Charles Riley for facilitating our connection with the Vai translator for the MGSM data translation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "MGSM (Shi et al., 2023)",
+      "notes": "Swahili was already in the original MGSM (11 languages). Vai is included only in AfriMGSM, not in the other two IrokoBench datasets."
+    }
+  ],
+  "total_languages": 19,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Ewe": {
+      "iso_code": "ewe",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Luganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Oromo": {
+      "iso_code": "orm",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "chiShona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Sesotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Swahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Twi": {
+      "iso_code": "twi",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Vai": {
+      "iso_code": "vai",
+      "datasets_present_in": ["AfriMGSM"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "isiXhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    },
+    "isiZulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["AfriXNLI", "AfriMMLU", "AfriMGSM"]
+    }
+  },
+  "assessments": {
+    "AfriXNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "The datasets were created by human translating a subset of English cross-lingual NLI (XNLI) ... into each of the 16 languages using professional translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators to translate the sentences. Most of the translators translated from English except for Ewe, Lingala and Wolof translators that translated from French since they are from the Francophone region of Africa.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is human-translated which may include some translationese effects, it would have been better if they are all generated in the native African languages. The source content (XNLI) is English-centric with domains like 'oxford university press', 'slate', 'nineeleven'.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Quality controlled by language coordinators who reviewed and corrected poorly translated sentences. AfriCOMET QE scores showed most translations scored 0.7-1.0 except Lingala, Twi, and Wolof (~0.5), though the metric may be unreliable for those languages."
+    },
+    "AfriMMLU": {
+      "translated": {
+        "value": true,
+        "evidence": "The datasets were created by human translating ... Massive Multitask Language Understanding (MMLU) evaluation datasets into each of the 16 languages using professional translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators. Many of the Francophone translators understand French and English but are more fluent in French.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Original MMLU was curated from freely available online sources by undergraduate and graduate students in the USA. The authors focus on five subjects that they believe are 'culturally unbiased (or international)' but the content still originates from a US/Western context.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Subjects selected for cultural neutrality: elementary mathematics, high-school geography, high-school microeconomics, international law, global facts. Translation quality controlled by language coordinators."
+    },
+    "AfriMGSM": {
+      "translated": {
+        "value": true,
+        "evidence": "AfriMGSM expands the original MGSM dataset (Shi et al., 2023), which contains 250 QA pairs and 11 languages (including Swahili), to 15 more languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators. We extend our gratitude to Charles Riley for facilitating our connection with the Vai translator for the MGSM data translation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MGSM consists of grade school mathematical word problems created by human problem writers (in English). The content is mathematical and potentially less culturally biased, but the scenarios described in the word problems originate from an English-language context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Translation quality controlled by language coordinators. Mathematical content is relatively more language-neutral than other tasks."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All three datasets (AfriXNLI, AfriMMLU, AfriMGSM) are human translations of existing English-source benchmarks (XNLI, MMLU, MGSM). None were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["AfriXNLI", "AfriMMLU", "AfriMGSM"],
+      "evidence": "The datasets were created by human translating a subset of English cross-lingual NLI (XNLI), English Multilingual Grade School Math (MGSM), and Massive Multitask Language Understanding (MMLU) evaluation datasets into each of the 16 languages using professional translators. Ewe, Lingala, and Wolof were translated from French (itself translated from English for AfriMMLU)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "We recruited language coordinators for each of the 16 African languages and French, and asked them to recruit professional translators to translate the sentences. Most of the translators translated from English except for Ewe, Lingala and Wolof translators that translated from French since they are from the Francophone region of Africa. Many of the Francophone translators understand French and English but are more fluent in French."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["professional_annotators"],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Masakhane NLP community",
+        "Language coordinators for each of 16 African languages and French",
+        "Logistics company in Kenya managed recruitment and payments"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Each translator received appropriate remuneration. A logistics company in Kenya managed all recruitment and payments with country-specific rates. Example rates: $549.78 for 1020 XNLI samples in South Africa, $355.86 in Nigeria. Translators received payment only after quality control review by language coordinators.",
+      "irb_ethics_review": null,
+      "evidence": "We recruited a logistic company in Kenya that managed all recruitment and payments—each country has different rates. For example, we paid $549.78 for the translation of 1020 XNLI samples in South Africa, $355.86 in Nigeria. Translators received payment only after this phase to ensure the quality of translations."
+    },
+    "english_centricity_notes": "The entire benchmark is built by translating English-source datasets. The paper explicitly acknowledges this limitation: 'The benchmark is human-translated which may include some translationese effects, it would have been better if they are all generated in the native African languages.' For AfriMMLU, subjects were selected for cultural neutrality but the questions themselves originate from US academic contexts. The benchmark inherently measures ability to handle English-derived content in African languages rather than natively-conceived reasoning in those languages.",
+    "geographic_representation": {
+      "primary_region": "Africa",
+      "sub_regions": [
+        "West Africa",
+        "East Africa",
+        "Southern Africa",
+        "Central Africa"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "North Africa",
+        "Nilo-Saharan language family",
+        "Austronesian languages in Africa",
+        "Khoisan language family"
+      ],
+      "evidence": "17 diverse and widely spoken African languages are from four regions of Africa: seven from West Africa (Ewe, Hausa, Igbo, Twi, Vai, Wolof, Yoruba), five from East Africa (Amharic, Kinyarwanda, Luganda, Swahili, and Oromo), four from Southern Africa (chiShona, isiXhosa, isiZulu, and Sesotho), and Central Africa (Lingala). These languages are from three language families in Africa: one from Mande, three from Afro-Asiatic and 13 from the Niger-Congo family. Limitations note: 'Nilo-Saharan, Austronesian, and Khoisan language groups are missing'."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "source_file": "papers_metadata/texts/2025.naacl-long.139_irokobench.txt"
+  }
+}

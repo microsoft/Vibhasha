@@ -1,0 +1,246 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "CoNLL NER",
+      "variant_name": "XGLUE-NER",
+      "variant_notes": "Subset of CoNLL-2002 NER and CoNLL-2003 NER covering 4 languages and 4 entity types",
+      "task_type": "Named Entity Recognition",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 4,
+      "language_list": ["English", "German", "Spanish", "Dutch"],
+      "annotation_method": "human annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "CoNLL shared task organizers",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We select a subset of the following two NER tasks, CoNLL-2002 NER (Sang, 2002) and CoNLL-2003 NER (Sang and De Meulder, 2003)"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Sang (2002); Sang and De Meulder (2003)",
+      "notes": "Data sourced from ECI Multilingual Text Corpus. Training set only in English (15K instances)."
+    },
+    {
+      "dataset_name": "UDPOS",
+      "variant_name": "XGLUE-POS",
+      "variant_notes": "Subset of Universal Dependencies Treebanks v2.5 covering 18 languages",
+      "task_type": "POS Tagging",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 18,
+      "language_list": ["Arabic", "Bulgarian", "German", "Greek", "English", "Spanish", "French", "Hindi", "Italian", "Dutch", "Polish", "Portuguese", "Russian", "Thai", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "expert annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Universal Dependencies community",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Following (Kim et al., 2017), we select a subset of Universal Dependencies (UD) Treebanks (v2.5) (Zeman et al., 2019), which covers 18 languages."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Zeman et al. (2019); Kim et al. (2017)",
+      "notes": "Training set only in English (25.4K instances)."
+    },
+    {
+      "dataset_name": "NC",
+      "variant_name": null,
+      "variant_notes": "News Classification from Microsoft News (MSN)",
+      "task_type": "News Classification",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": ["English", "Spanish", "French", "German", "Russian"],
+      "annotation_method": "automatic labels from MSN website, reviewed by human",
+      "data_creator_info": {
+        "creator_type": "industry",
+        "creator_affiliation": "Microsoft (MSN)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we directly use the category label on MSN website. All the category label on MSN is review by human."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "10 news categories. Crawled from Microsoft News (MSN). Training set only in English (100K instances)."
+    },
+    {
+      "dataset_name": "MLQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Machine Reading Comprehension / Extractive QA",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": ["English", "Arabic", "German", "Spanish", "Hindi", "Vietnamese", "Chinese"],
+      "annotation_method": "crowdsourced annotation",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The MLQA (Lewis et al., 2019b) is a multilingual machine reading comprehension task, which contains QA annotations labeled in 7 languages"
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Lewis et al. (2019b)",
+      "notes": "Data sourced from Wikipedia. Training set only in English (87.6K instances)."
+    },
+    {
+      "dataset_name": "XNLI",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional human translation",
+      "num_languages": 15,
+      "language_list": ["Arabic", "Bulgarian", "German", "Greek", "English", "Spanish", "French", "Hindi", "Russian", "Swahili", "Thai", "Turkish", "Urdu", "Vietnamese", "Chinese"],
+      "annotation_method": "human annotation (original English), professional translation for other languages",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We reuse the original XNLI dataset (Conneau et al., 2018) in XGLUE."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Conneau et al. (2018)",
+      "notes": "Data sourced from MultiNLI Corpus, translated to 14 other languages. Training set only in English (433K instances)."
+    },
+    {
+      "dataset_name": "PAWS-X",
+      "variant_name": "XGLUE-PAWS-X",
+      "variant_notes": "4-language subset of the original PAWS-X dataset",
+      "task_type": "Paraphrase Identification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human translation",
+      "num_languages": 4,
+      "language_list": ["English", "Spanish", "French", "German"],
+      "annotation_method": "human annotation (original English), translation for other languages",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": null,
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The PAWS-X (Yang et al., 2019a) is a paraphrase identification dataset, which extends the Wikipedia portion of the PAWS (Zhang et al., 2019) evaluation to more languages. We select 4 languages, including English, Spanish, French and German, from the original dataset."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Yang et al. (2019a); Zhang et al. (2019)",
+      "notes": "Data sourced from Wikipedia. Training set only in English (49.4K instances). Subset of the original PAWS-X which includes more languages."
+    },
+    {
+      "dataset_name": "QADSM",
+      "variant_name": null,
+      "variant_notes": "Query-Ad Matching from Bing",
+      "task_type": "Query-Ad Matching",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 3,
+      "language_list": ["English", "French", "German"],
+      "annotation_method": "crowdsourced annotation on Microsoft internal platform, 3 annotators per sample, majority vote",
+      "data_creator_info": {
+        "creator_type": "industry crowdsourcing",
+        "creator_affiliation": "Microsoft (Bing)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we label the data on an Microsoft internal crowdsourcing platform. Each labeler must learn the guideline and pass the labeling test. Each sample is labeled by three labeler. We only keep the samples with two or three labeler have same label."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Binary classification (Good/Bad). Training set only in English (100K instances). Data from Bing search."
+    },
+    {
+      "dataset_name": "WPR",
+      "variant_name": null,
+      "variant_notes": "Web Page Ranking from Bing",
+      "task_type": "Web Page Ranking",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 7,
+      "language_list": ["English", "German", "French", "Spanish", "Italian", "Portuguese", "Chinese"],
+      "annotation_method": "crowdsourced annotation on Microsoft internal platform, 3 annotators per sample, majority vote",
+      "data_creator_info": {
+        "creator_type": "industry crowdsourcing",
+        "creator_affiliation": "Microsoft (Bing)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we label the data on an Microsoft internal crowdsourcing platform. Each labeler must learn the guideline and pass the labeling test. Each sample is labeled by three labeler. We only keep the samples with two or three labeler have same label."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "5-level relevance rating (Perfect/Excellent/Good/Fair/Bad). nDCG metric. Training set only in English (100K instances). Data from Bing search."
+    },
+    {
+      "dataset_name": "QAM",
+      "variant_name": null,
+      "variant_notes": "QA Matching from Bing",
+      "task_type": "QA Matching",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 3,
+      "language_list": ["English", "French", "German"],
+      "annotation_method": "crowdsourced annotation on Microsoft internal platform, 3 annotators per sample, majority vote",
+      "data_creator_info": {
+        "creator_type": "industry crowdsourcing",
+        "creator_affiliation": "Microsoft (Bing)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "we label the data on an Microsoft internal crowdsourcing platform. Each labeler must learn the guideline and pass the labeling test. Each sample is labeled by three labeler. We only keep the samples with two or three labeler have same label."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Binary classification (answer/not answer). Training set only in English (100K instances). Data from Bing search."
+    },
+    {
+      "dataset_name": "QG",
+      "variant_name": null,
+      "variant_notes": "Question Generation from Bing",
+      "task_type": "Question Generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 6,
+      "language_list": ["English", "French", "German", "Spanish", "Italian", "Portuguese"],
+      "annotation_method": "mixed: human annotation for en/fr/de; in-house QA ranker for es/it/pt (80+% accuracy)",
+      "data_creator_info": {
+        "creator_type": "industry crowdsourcing + automated",
+        "creator_affiliation": "Microsoft (Bing)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "All these 6 new tasks with * are labeled by human, except es, it and pt datasets in QG (80+% accuracy) are obtained by an in-house QA ranker."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "BLEU-4 metric. Training set only in English (100K instances). Data collected from Bing. es/it/pt labels generated by automated ranker, not human annotators."
+    },
+    {
+      "dataset_name": "NTG",
+      "variant_name": null,
+      "variant_notes": "News Title Generation from Microsoft News (MSN)",
+      "task_type": "News Title Generation",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 5,
+      "language_list": ["German", "English", "French", "Spanish", "Russian"],
+      "annotation_method": "automatic labels from MSN website, reviewed by human",
+      "data_creator_info": {
+        "creator_type": "industry",
+        "creator_affiliation": "Microsoft (MSN)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We collect <news body, news title> pairs from Microsoft News (MSN). For tasks NC and NTG, we directly use the category label on MSN website. All the category label on MSN is review by human."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "BLEU-4 metric. Training set only in English (300K instances). News body-title pairs from MSN."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha benchmark datasets",
+  "description": "Dataset-level metadata for one evaluation benchmark.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "datasets"
+  ],
+  "properties": {
+    "datasets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dataset"
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "creatorInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "creator_type",
+        "creator_affiliation",
+        "creator_demographics_reported",
+        "compensation_reported",
+        "evidence"
+      ],
+      "properties": {
+        "creator_type": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "creator_affiliation": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "creator_demographics_reported": {
+          "type": "boolean"
+        },
+        "compensation_reported": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_name",
+        "variant_name",
+        "variant_notes",
+        "task_type",
+        "source",
+        "source_language",
+        "translation_method",
+        "num_languages",
+        "language_list",
+        "annotation_method",
+        "data_creator_info",
+        "is_new_in_this_paper",
+        "source_reference",
+        "notes"
+      ],
+      "properties": {
+        "dataset_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "variant_name": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "variant_notes": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "task_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "enum": [
+            "original",
+            "translated",
+            "adapted",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "source_language": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "translation_method": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "num_languages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "language_list": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/stringArray"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "annotation_method": {
+          "type": "string"
+        },
+        "data_creator_info": {
+          "$ref": "#/$defs/creatorInfo"
+        },
+        "is_new_in_this_paper": {
+          "type": "boolean"
+        },
+        "source_reference": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "notes": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+======================================================================
+  V2 NORMALIZATION LOG
+  Generated: 2026-10-05T16:44:05.342230+00:00
+======================================================================
+
+  Benchmarks processed: 51
+  Flat (dataset, language) rows: 2444
+  Unique languages: 220
+  Unique datasets: 242
+
+  Task category distribution (dataset-language rows):
+    QA / Knowledge: 528
+    Translation: 354
+    Sentiment / Classification: 258
+    NER: 160
+    Speech: 154
+    Generation: 153
+    Instruction Following: 130
+    NLI / Inference: 125
+    Embedding / Retrieval: 112
+    Math / Reasoning: 102
+    Safety / Toxicity: 94
+    Linguistic Probing: 83
+    Coding: 81
+    Summarization: 81
+    Other: 29
+
+  Translation status:
+    Translated: 1374
+    Native: 880
+    Partial: 190
+
+  (no dataset name resolution issues)
+
+======================================================================

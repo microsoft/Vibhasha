@@ -1,0 +1,97 @@
+{
+  "total_languages": 23,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Malagasy": {
+      "iso_code": "mlg",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Quechua": {
+      "iso_code": "que",
+      "datasets_present_in": ["MaXIFE"]
+    }
+  }
+}

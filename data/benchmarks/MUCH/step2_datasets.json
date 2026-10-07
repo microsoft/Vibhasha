@@ -1,0 +1,31 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MUCH",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "claim-level factuality classification (binary: factual / non-factual)",
+      "source": "adapted",
+      "source_language": null,
+      "translation_method": "Questions sourced from the multilingual Mu-SHROOM test set (already available in all 4 languages); LLM responses generated natively in each language by multilingual instruction-tuned models. No translation step applied.",
+      "num_languages": 4,
+      "language_list": [
+        "English",
+        "French",
+        "Spanish",
+        "German"
+      ],
+      "annotation_method": "Automated annotation using GPT-4o (gpt-4o-2024-11-20) and GPT-4.1 (gpt-4.1-2025-04-14) independently; only samples where both models agree on all claim labels are retained (4,873 of 6,448 samples). A 200-sample subset (50 per language, 867 claims) was independently double-annotated by two human annotators for quality verification.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "LIX (École Polytechnique, IP Paris, CNRS), LIPN (Sorbonne Paris Nord), Crédit Agricole SA",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Two human annotators fluent in all four languages independently annotated 200 samples for quality verification. No demographic or compensation details reported."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Questions from Mu-SHROOM (Vázquez et al., 2025, SemEval-2025 Task 3), released under CC-BY-4.0 license.",
+      "notes": "4,873 LLM-generated responses containing 20,751 binary claim annotations. Generated using 4 instruction-tuned models (Llama 3.1 8B, Llama 3.2 3B, Ministral 8B, Gemma 3 4B) at 2 temperatures (0.7 and 1.0), yielding 8 generations per question. 24 logits per generated token are provided. Claim segmentation performed by much_segmenter, a deterministic rule-based algorithm. Total annotation cost ~USD 50 using GPT APIs."
+    }
+  ]
+}

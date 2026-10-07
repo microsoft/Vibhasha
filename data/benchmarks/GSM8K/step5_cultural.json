@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["GSM8K"],
+      "evidence": "GSM8K is an original English-language dataset created from scratch by human problem writers. It is not a translation or adaptation of any prior dataset."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No translation is involved; the dataset exists only in English."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper does not report annotator language backgrounds.",
+      "evidence": "Workers were hired from Upwork and Surge AI. No information on native language status is provided."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["crowdworkers", "data_company"],
+      "total_annotators_reported": null,
+      "affiliations": ["Upwork (freelance contractors)", "Surge AI (NLP data labeling platform)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We initially collected a starting set of a thousand problems and natural language solutions by hiring freelance contractors on Upwork (upwork.com). We then worked with Surge AI (surgehq.ai), an NLP data labeling platform, to scale up our data collection."
+    },
+    "english_centricity_notes": "GSM8K is an English-only dataset. The paper makes no mention of multilingual considerations. All problems, solutions, and evaluation are conducted exclusively in English.",
+    "geographic_representation": {
+      "primary_region": "INSUFFICIENT_INFO: Not reported",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The paper does not report any geographic information about the annotators or the problem content's geographic context."
+    }
+  }
+}

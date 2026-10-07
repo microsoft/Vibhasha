@@ -1,0 +1,36 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "M3Exam",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": [
+        "English",
+        "Chinese",
+        "Italian",
+        "Portuguese",
+        "Vietnamese",
+        "Thai",
+        "Swahili",
+        "Afrikaans",
+        "Javanese"
+      ],
+      "annotation_method": "Native speakers from each country collected official exam papers; annotators performed OCR, checked text, fixed errors, transformed into unified format with multiple rounds of quality checks",
+      "data_creator_info": {
+        "creator_type": "paid_annotators_and_native_speakers",
+        "creator_affiliation": "Alibaba DAMO Academy data management and annotation team, with annotators from various linguistic and cultural backgrounds",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We extend our gratitude to the data management and annotation team at Alibaba DAMO Academy, particularly Yanyan Zheng, Tantong Champaiboon, Nguyen Ngoc Yen Nhi, and Andila Putri Susanti. Their kind assistance in coordinating the annotators, processing the data, and conducting quality checks has been important to our work. We would also like to thank the annotators from various linguistic and cultural backgrounds who collaborated to contribute to this unique multilingual dataset."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Questions sourced from real official human exams (435 exam papers from 9 countries). 12,317 total questions: 9,501 text-only and 2,816 requiring images. Covers 3 educational levels (low/primary, mid/middle school, high/high school) and 4 subject categories (language, math, social science, natural science). Swahili and Javanese only have low and mid levels. Released under CC BY-NC-SA License."
+    }
+  ]
+}

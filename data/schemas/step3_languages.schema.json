@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha benchmark languages",
+  "description": "Language-to-dataset coverage for one evaluation benchmark.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "total_languages"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "languages"
+      ]
+    },
+    {
+      "required": [
+        "constructed_benchmarks"
+      ]
+    }
+  ],
+  "properties": {
+    "total_languages": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "languages": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/language"
+      }
+    },
+    "note": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "language_families_represented": {
+      "$ref": "#/$defs/stringArray"
+    },
+    "scripts_represented": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/$defs/stringArray"
+        }
+      ]
+    },
+    "top_languages_by_task_count": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "family",
+          "tasks"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "family": {
+            "type": "string",
+            "minLength": 1
+          },
+          "tasks": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "constructed_benchmarks": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tasks",
+          "languages"
+        ],
+        "properties": {
+          "tasks": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "languages": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "language": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "iso_code",
+        "datasets_present_in"
+      ],
+      "properties": {
+        "iso_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "datasets_present_in": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    }
+  }
+}

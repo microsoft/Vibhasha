@@ -1,0 +1,202 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "IndicSentiment",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Sentiment Classification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 13,
+      "language_list": ["Assamese", "Bodo", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "Annotators created synthetic product reviews in English based on curated product aspects, then manually translated them into 13 Indic languages.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "AI4Bharat / IIT Madras",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethics Statement: 'All the annotators were native speakers of the respective languages and from the Indian subcontinent.' 'Annotators who participated in the annotation and/or verification task are paid a competitive monthly salary.' 2 annotators per language."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "13-way parallel dataset. Reviews are synthetic (written by annotators for real products) not collected from real user reviews. 156 dev instances, 1000 test instances per language."
+    },
+    {
+      "dataset_name": "IndicXNLI",
+      "variant_name": null,
+      "variant_notes": "Based on XNLI; machine translated by Aggarwal et al. (2022) with ongoing human verification by this paper's authors.",
+      "task_type": "Natural Language Inference",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 12,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "Machine translated from XNLI English by Aggarwal et al. (2022). This paper performs ongoing manual verification and correction of translations. Human verification is in progress (see Appendix I).",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "Originally by Aggarwal et al. (2022); verification by AI4Bharat / IIT Madras",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Original IndicXNLI by Aggarwal et al. 2022 used machine translation. This paper notes ongoing human verification. No demographic info for original translators reported."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Aggarwal et al. 2022 (IndicXNLI); originally from Conneau et al. 2018 (XNLI)",
+      "notes": "2490 dev, 5010 test instances per language. Human verification is in progress; partial corrections have been made (see Appendix I, Table 9). Footnote states 'Human verification is in progress'."
+    },
+    {
+      "dataset_name": "IndicCOPA",
+      "variant_name": null,
+      "variant_notes": "Manual translation of the English COPA test set into 18 Indic languages.",
+      "task_type": "Commonsense Reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 18,
+      "language_list": ["Assamese", "Bengali", "Konkani", "Gujarati", "Hindi", "Kannada", "Maithili", "Malayalam", "Marathi", "Nepali", "Odia", "Punjabi", "Sanskrit", "Santali", "Sindhi", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "Manually translated from the English COPA test set. Premises and choices were randomized and assigned to translators to avoid bias, then re-grouped after translation.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "AI4Bharat / IIT Madras",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethics Statement: 'All the annotators were native speakers of the respective languages and from the Indian subcontinent.' 'paid a competitive monthly salary'"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Roemmele et al. 2011 (COPA)",
+      "notes": "Test-only (500 instances per language). Fine-tuning uses English Social IQA (Sap et al. 2019)."
+    },
+    {
+      "dataset_name": "IndicXParaphrase",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Paraphrase Detection",
+      "source": "mixed",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 10,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Telugu"],
+      "annotation_method": "1001 English sentences were machine-translated into 10 languages using IndicTrans, then verified and corrected by human annotators. Annotators then manually created paraphrases and non-paraphrases for each translated sentence in the target language.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "AI4Bharat / IIT Madras",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethics Statement: 'All the annotators were native speakers of the respective languages and from the Indian subcontinent.' 'paid a competitive monthly salary.' 2 annotators per language."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Source sentences from Kumar et al. 2022 (IndicNLG Suite)",
+      "notes": "Test-only (2002 instances per language). Results in 1001-way parallel <sentence, paraphrase, non-paraphrase> triplets. Source sentences are translated but paraphrases are natively created."
+    },
+    {
+      "dataset_name": "MASSIVE-Intent",
+      "variant_name": "MASSIVE (Intent Classification subset for 7 Indic languages)",
+      "variant_notes": "Subset of 7 Indic languages from the MASSIVE dataset used for intent classification.",
+      "task_type": "Intent Classification",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": ["Bengali", "Hindi", "Kannada", "Malayalam", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "Professionally translated from English user queries collected by Amazon Alexa. Contains 60 intents.",
+      "data_creator_info": {
+        "creator_type": "data_company",
+        "creator_affiliation": "Amazon",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "INSUFFICIENT_INFO: Original MASSIVE dataset by FitzGerald et al. 2022. This paper does not report annotator demographics or compensation for the MASSIVE dataset."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "FitzGerald et al. 2022",
+      "notes": "2033 dev, 2974 test instances per language. English train and validation sets used for fine-tuning. Full MASSIVE dataset covers 51 languages; only 7 Indic languages used here."
+    },
+    {
+      "dataset_name": "Naamapadam",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Named Entity Recognition",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 9,
+      "language_list": ["Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "For English-Indic parallel sentence pairs, English sentences were NER-tagged using an off-the-shelf model, tags were automatically projected to Indic sentences via word alignments, then verified and corrected by human annotators. IOB2 format.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "AI4Bharat",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "INSUFFICIENT_INFO: Naamapadam was proposed in Mhaske et al. (2022). This paper does not detail annotator demographics or compensation for Naamapadam specifically."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Mhaske et al. 2022",
+      "notes": "Dev sizes vary (52-13460), test sizes vary (607-1080) per language. Training uses CoNLL-2003 English data."
+    },
+    {
+      "dataset_name": "MASSIVE-SlotFill",
+      "variant_name": "MASSIVE (Slot Filling subset for 7 Indic languages)",
+      "variant_notes": "Subset of 7 Indic languages from the MASSIVE dataset used for slot filling.",
+      "task_type": "Slot Filling",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 7,
+      "language_list": ["Bengali", "Hindi", "Kannada", "Malayalam", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "Professionally translated from English user queries collected by Amazon Alexa. Contains 55 slot types.",
+      "data_creator_info": {
+        "creator_type": "data_company",
+        "creator_affiliation": "Amazon",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "INSUFFICIENT_INFO: Original MASSIVE dataset by FitzGerald et al. 2022. This paper does not report annotator demographics or compensation for the MASSIVE dataset."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "FitzGerald et al. 2022",
+      "notes": "Same underlying data as MASSIVE-Intent but evaluated as a separate task. 2033 dev, 2974 test instances per language."
+    },
+    {
+      "dataset_name": "IndicQA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "Question Answering (Span Extraction)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 11,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Malayalam", "Marathi", "Odia", "Punjabi", "Tamil", "Telugu"],
+      "annotation_method": "Manually curated cloze-style reading comprehension dataset. Context paragraphs chosen from Wikipedia articles on topics related to Indic culture, history, etc. Questions created in Indic languages by annotators. Two-phase process: (1) context translated to English, annotators create questions from translated context to reduce lexical overlap, (2) original Indic context presented to different annotators to mark answer spans.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "AI4Bharat / IIT Madras",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "Ethics Statement: 'All the annotators were native speakers of the respective languages and from the Indian subcontinent.' 'paid a competitive monthly salary.' 2-3 annotators per language. Annotations done on Haystack tool."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "18,579 total questions (13,283 answerable, 5,292 unanswerable). Created from scratch without translation from English sources. Context paragraphs are from Indic-language Wikipedia on culturally relevant topics. Fine-tuning uses English SQuAD."
+    },
+    {
+      "dataset_name": "FLORES",
+      "variant_name": "FLORES-101/200 (Indic subset for sentence retrieval)",
+      "variant_notes": "Indic language subset of FLORES-101/200 used as a sentence retrieval task.",
+      "task_type": "Sentence Retrieval",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "human_professional",
+      "num_languages": 18,
+      "language_list": ["Assamese", "Bengali", "Gujarati", "Hindi", "Kannada", "Kashmiri", "Maithili", "Malayalam", "Manipuri", "Marathi", "Nepali", "Odia", "Punjabi", "Sanskrit", "Santali", "Tamil", "Telugu", "Urdu"],
+      "annotation_method": "N-way parallel dataset with sentences manually translated by professional translators.",
+      "data_creator_info": {
+        "creator_type": "professional_annotators",
+        "creator_affiliation": "Meta AI / NLLB project",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "INSUFFICIENT_INFO: FLORES is from Goyal et al. 2022 and Costa-jussà et al. 2022. This paper does not report FLORES annotator details."
+      },
+      "is_new_in_this_paper": false,
+      "source_reference": "Goyal et al. 2022 (FLORES-101); Costa-jussà et al. 2022 (FLORES-200 / No Language Left Behind)",
+      "notes": "1012 test sentences per language. No fine-tuning performed; mean-pooled representations from the model's final layer are used for retrieval."
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "assessments": {
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "XNLI (Conneau et al., 2018) is a dataset for cross-lingual Natural Language Inference, which consists of professional translations of the MNLI corpus into 14 languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Professional translators translated from English; not natively authored in target languages. The original English data was created by crowdworkers.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English MultiNLI corpus; content reflects English-language contexts and cultural references.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translation quality. One of the most widely used multilingual NLI benchmarks."
+    },
+    "Indic-XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "IndicXNLI (Aggarwal et al., 2022) that translates the XNLI dataset into 11 Indic languages by using Machine Translation, followed by validation by native speakers.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Machine translation with validation by native speakers; native speakers validated but did not create the content.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English-origin XNLI data; inherits English cultural context despite being in Indic languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Machine translation followed by native speaker validation. Quality depends on MT system and validation thoroughness."
+    },
+    "GLUECoS NLI": {
+      "translated": {
+        "value": false,
+        "evidence": "GLUECoS-NLI (Khanuja et al., 2020a) is a code-mixed NLI dataset in Hindi-English, consisting of Bollywood (Hindi) movie conversations as premises, with manually created hypotheses.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Code-mixed data from Bollywood movie conversations with manually created hypotheses, implying native Hindi-English bilingual speakers.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Premises are from Bollywood (Hindi) movie conversations, reflecting Indian cultural context and natural code-switching patterns.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Naturally occurring code-mixed data from Bollywood movies with manually created hypotheses."
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "PAWS-X (Yang et al., 2019b) is a paraphrase identification dataset professionally translated from the PAWS dataset into six typologically diverse languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Professional translators translated from English PAWS; original content created in English.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English PAWS dataset derived from Wikipedia and Quora; content reflects English-language sources.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translation quality."
+    },
+    "XCOPA": {
+      "translated": {
+        "value": true,
+        "evidence": "XCOPA (Ponti et al., 2020) is a commonsense reasoning dataset, which is a translation of the COPA dataset into 11 typologically diverse languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Translation by native speakers/translators of target languages, but content originated in English.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English COPA; commonsense reasoning scenarios reflect English/Western cultural context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Includes very low-resource languages such as Eastern Apurímac Quechua and Haitian Creole."
+    },
+    "XStoryCloze": {
+      "translated": {
+        "value": true,
+        "evidence": "XStoryCloze (Lin et al., 2022b) is created by translating the English StoryCloze dataset using professional translators into 10 typologically diverse languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Professional translators translated from English; original content authored in English.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English StoryCloze; story scenarios reflect English/American cultural contexts.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translation quality."
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "TyDiQA (Clark et al., 2020) is a QA dataset covering 11 typologically diverse languages. Natively collected by information-seeking speakers.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Questions were natively created by speakers of each target language performing information-seeking tasks.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Natively collected from speakers in each language community; questions reflect genuine information needs in those languages.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Gold standard QA dataset with natively authored questions. MEGA evaluates on Gold-P subtask."
+    },
+    "MLQA": {
+      "translated": {
+        "value": true,
+        "evidence": "MLQA (Lewis et al., 2020) is an extractive QA dataset translated into 7 languages by professional translators.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Professional translators translated from English; original QA pairs in English.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English sources; content and questions reflect English Wikipedia context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Professional translation with answer alignment via attention scores for translate-test splits."
+    },
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "XQuAD (Artetxe et al., 2020) consists of professional translations of a subset of the SQuaD dataset into 10 languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Professional translators translated from English SQuAD; original content authored in English.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English SQuAD based on English Wikipedia articles.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional translation of SQuAD subset. Only validation data publicly available."
+    },
+    "IndicQA": {
+      "translated": {
+        "value": false,
+        "evidence": "IndicQA (Doddapaneni et al., 2022) is a manually curated cloze-style reading comprehension dataset... context paragraphs are chosen from Wikipedia articles whose topics are closely related to Indic culture, history, etc.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Manually curated by creators; context from Wikipedia articles on Indic topics, suggesting native speaker involvement.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Context paragraphs are chosen from Wikipedia articles whose topics are closely related to Indic culture, history, etc.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Manually curated cloze-style dataset. Part of IndicXTREME."
+    },
+    "UDPOS": {
+      "translated": {
+        "value": false,
+        "evidence": "UDPOS is based on Universal Dependencies treebanks containing natively-sourced text in each language with expert POS annotations.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Universal Dependencies treebanks are annotated by expert linguists, typically native or highly proficient speakers of each language.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Text sources vary by language; many are from native-language sources (news, literature, web), but some may use parallel or translated text.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Expert linguistic annotation following Universal Dependencies guidelines. Quality and consistency vary across languages."
+    },
+    "WikiANN": {
+      "translated": {
+        "value": false,
+        "evidence": "PANX (Pan et al., 2017) or WikiANN is a Named Entity Recognition dataset consisting of Wikipedia sentences tagged with Person, Organization and Location.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Annotations created via cross-lingual annotation projection, not by native speaker annotators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Wikipedia text is in the native language, but entity annotations are projected cross-lingually and may not reflect culturally appropriate entity categorization.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Automatic cross-lingual annotation projection from Wikipedia. Quality varies significantly across languages."
+    },
+    "WinoMT": {
+      "translated": {
+        "value": "partial",
+        "evidence": "The WinoMT dataset consists of 3888 English sentences... We perform zero-shot monolingual prompting of all sentences in the dataset to translate them in 8 target languages.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "English source sentences from existing datasets; translation is performed by LLMs as part of the evaluation task.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "English-centric gender bias evaluation based on English occupational stereotypes (WinoGender + WinoBias).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Gender bias evaluation via MT. English source with LLM translation to target languages. Gender accuracy measured on translations."
+    },
+    "EN-ES-CS": {
+      "translated": {
+        "value": false,
+        "evidence": "The EN-ES-CS Sentiment Analysis dataset consisting of English-Spanish Tweets, naturally occurring code-mixed data.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Tweets are naturally produced by bilingual speakers; sentiment annotation was done automatically using SentiStrength.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Naturally occurring code-mixed English-Spanish tweets reflecting bilingual community language use.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Sentiment labels assigned automatically via SentiStrength tool, not human annotation."
+    },
+    "Jigsaw": {
+      "translated": {
+        "value": "partial",
+        "evidence": "The Jigsaw dataset contains online comments sourced from Wikipedia. The training data, which is in English, contains labels pertaining to the toxicity of the comment. Test data in 6 languages.",
+        "confidence": "medium"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The MEGA paper does not specify whether annotation of multilingual test data involved native speakers.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Training data in English from Wikipedia; multilingual test data sourced from Wikipedia in target languages but toxicity framework is English-centric.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Crowdsourced toxicity labels. English training data with multilingual test sets."
+    },
+    "XLSum": {
+      "translated": {
+        "value": false,
+        "evidence": "The XLSum dataset contains article-summary pairs across 44 typologically diverse languages. Natively authored BBC news content.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "BBC journalists write articles and summaries in each language for their respective language services.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "BBC news articles are written for specific language communities by journalists serving those communities; content reflects local and regional topics.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Professional journalism quality. Naturally occurring article-summary pairs from BBC services in 44 languages."
+    }
+  }
+}

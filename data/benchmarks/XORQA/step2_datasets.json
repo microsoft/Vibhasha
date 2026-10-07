@@ -1,0 +1,34 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "XOR-TYDI QA",
+      "variant_name": "v1.1",
+      "variant_notes": "After initial release in November 2020, the data was modified and released as XOR-TYDI QA (v1.1). All results in the paper are based on v1.1.",
+      "task_type": "cross-lingual open-retrieval question answering",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": "Questions are inherited from TyDi QA (written by native speakers in target languages, not translated from English). Questions were then translated to English by professional translators (Gengo) for annotation purposes. Answers were annotated in English by crowdworkers and then professionally translated back to target languages by Gengo translators for evaluation sets.",
+      "num_languages": 7,
+      "language_list": [
+        "Arabic",
+        "Bengali",
+        "Finnish",
+        "Japanese",
+        "Korean",
+        "Russian",
+        "Telugu"
+      ],
+      "annotation_method": "Multi-step pipeline: (1) Unanswerable questions selected from TyDi QA; (2) Questions professionally translated to English via Gengo; (3) Answers annotated by Amazon Mechanical Turk crowdworkers using a collaborative model-in-the-loop framework with Google Search and a BERT paragraph ranker; (4) Answers verified by trained undergraduate students (native English speakers); (5) Answers translated back to target languages by Gengo professional translators.",
+      "data_creator_info": {
+        "creator_type": "crowdsourced (Amazon Mechanical Turk) + professional translators (Gengo)",
+        "creator_affiliation": "University of Washington, Google Research, UT Austin, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Each HIT contains 5 questions with a reward ranging from 1.5 to 2.5 USD. Qualified annotators generally spend 1-2 minutes to answer each question. We give special rewards to annotators who actively search additional paragraphs or articles; the amounts of the rewards are calculated based on the numbers of the HITs they have submitted, resulting in 5-10 USD for each payment."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Built on top of TyDi QA (Clark et al., 2020)",
+      "notes": "The dataset has two components: cross-lingual data (newly annotated questions from TyDi QA that were originally unanswerable) and in-language data (taken directly from answerable questions in TyDi QA). Three tasks of increasing complexity: XOR-Retrieve (retrieve English paragraphs), XOR-EnglishSpan (extract answer span from English), XOR-Full (generate answer in target language from multilingual Wikipedia). Over 200 crowdworkers participated in calibration, ~40 qualified, 24 actively worked on the final dataset."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "Aya Evaluation Suite",
+  "paper_id": "2402.06619",
+  "year": 2024,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "It consists of 250 human-written prompts for each of 7 languages, 200 automatically translated but human-selected prompts for 101 languages (114 dialects), and human-edited prompts of the latter for 6 languages, and the English originals.",
+  "total_languages_claimed": 101,
+  "total_datasets": 3,
+  "dataset_names": [
+    "aya-human-annotated",
+    "dolly-machine-translated",
+    "dolly-human-edited"
+  ],
+  "task_categories": [
+    "open-ended generation"
+  ],
+  "brief_description": "A multilingual evaluation suite for assessing open-ended generation quality of LLMs, consisting of 25,750 prompts: 250 original human-curated prompts in each of 7 languages, 200 machine-translated prompts from English Dolly in 101 languages (114 dialects), and human post-edited translations of those prompts in 6 languages."
+}

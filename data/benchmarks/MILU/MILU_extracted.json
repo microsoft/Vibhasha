@@ -1,0 +1,174 @@
+{
+  "benchmark_name": "MILU",
+  "paper_id": "2025.naacl-long.507",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce MILU—Multi-task Indic Language Understanding Benchmark—a comprehensive evaluation benchmark designed to address this gap. MILU spans 8 domains and 41 subjects across 11 Indic languages, reflecting both general and culturally specific knowledge.",
+  "total_languages_claimed": 11,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MILU"
+  ],
+  "task_categories": [
+    "multiple-choice question answering"
+  ],
+  "brief_description": "MILU (Multi-task Indic Language Understanding Benchmark) is a comprehensive evaluation benchmark covering 8 domains and 41 subjects across 11 Indic languages (including English), with ~79,617 multiple-choice questions sourced from Indian national, state, and regional competitive examinations. It emphasizes India-centric, culturally relevant knowledge alongside standard academic subjects.",
+  "datasets": [
+    {
+      "dataset_name": "MILU",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering",
+      "source": "mixed",
+      "source_language": "English (for translated portion)",
+      "translation_method": "GPT-4o was used to translate English questions into target languages for subjects with insufficient native questions. Approximately 25% (19,915 out of 79,617) of questions are translated from English; the remaining 75% are in their original source languages.",
+      "num_languages": 11,
+      "language_list": [
+        "Bengali",
+        "English",
+        "Gujarati",
+        "Hindi",
+        "Kannada",
+        "Malayalam",
+        "Marathi",
+        "Odia",
+        "Punjabi",
+        "Tamil",
+        "Telugu"
+      ],
+      "annotation_method": "Questions were scraped from online exam portals offering previously released question papers from over 40 types of Indian national and state-level competitive examinations. Subject experts on these portals ensured answer accuracy. Manual review and automated cleaning (language identification via IndicLID and Unicode-based filtering, duplicate removal) were applied. Untagged questions were translated to English and GPT-4o-mini assigned topic labels, which were then clustered and manually merged into 41 subjects.",
+      "data_creator_info": {
+        "creator_type": "exam-body authored questions scraped from public portals, with cleaning and curation by researchers",
+        "creator_affiliation": "AI4Bharat (Nilekani Centre at Indian Institute of Technology, Madras) and IBM Research, India",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Questions sourced from various national, state, and regional exams conducted by organizations like Union Public Service Commission, Staff Selection Commission, various state Public Service Commissions, Railway Recruitment Board, and state police departments. AI4Bharat team volunteers conducted manual audits."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Total of ~79,617 questions across 41 subjects in 8 domains. Each subject-language pair capped at 500 questions for feasible evaluations. A separate validation set of ~9,000 questions was maintained for few-shot evaluation. Per-language translated question counts: Bengali 1601, Gujarati 2755, Hindi 115, Kannada 1522, Malayalam 3354, Marathi 1235, Odia 3100, Punjabi 3411, Tamil 1524, Telugu 1298."
+    }
+  ],
+  "total_languages": 11,
+  "languages": {
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["MILU"]
+    },
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["MILU"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["MILU"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["MILU"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["MILU"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["MILU"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["MILU"]
+    },
+    "Odia": {
+      "iso_code": "ory",
+      "datasets_present_in": ["MILU"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["MILU"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["MILU"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["MILU"]
+    }
+  },
+  "assessments": {
+    "MILU": {
+      "translated": {
+        "value": "partial",
+        "evidence": "Of the total 79K questions, only 25% of questions are translated from English, with the remainder preserved in their original source languages. For subjects with insufficient questions, we sampled questions from the English set from that subject and translated them into the required language using GPT-4O.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Questions were sourced from Indian competitive exams written in regional languages by exam bodies, so the original (non-translated) portion was authored by native speakers. The paper mentions 'We are also immensely grateful to the volunteers from the AI4Bharat team for their motivation and meticulous efforts in conducting manual audits.' However, specific annotator demographics are not reported.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "We designed MILU with an India-first perspective by collecting questions from various national, state, and regional exams. These questions include culturally relevant subjects such as local history, arts, festivals, and laws, alongside traditional academic subjects like science. Regional state exams are particularly valuable as they cover various state-level topics and emphasize the official language of each state.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Multiple layers of manual and automated cleaning filters were applied. Reading comprehension, image-based, and >4-option questions were excluded. IndicLID and Unicode-based filtering ensured correct language labeling. Duplicates were removed. Manual verification of samples from each language was performed as a final step. Subject experts on exam portals ensured answer accuracy."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["MILU (75% native portion)"],
+      "evidence": "75% of the ~79,617 questions were preserved in their original source languages, scraped from Indian competitive exam portals. These were natively authored for Indian exams in regional languages, not derived from English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MILU (25% translated portion)"],
+      "evidence": "Approximately 25% (19,915 of 79,617) questions were translated from English using GPT-4o to fill gaps where subjects had fewer than 100 questions in a given language."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["MILU"],
+      "details": {
+        "MILU": "India-centric design incorporating material from regional and state-level examinations, covering topics such as local history, arts, festivals, laws, Ayurveda, government schemes (e.g., Pradhan Mantri Kisan Samman Nidhi, FASTag, Make in India), alongside standard academic subjects. Content varies by state and language, reflecting India's cultural mosaic."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "The original exam questions (75%) were authored by Indian exam bodies in respective regional languages, implying native speakers created them. The AI4Bharat team (based in India) conducted manual audits. However, the paper does not explicitly confirm all annotators/auditors were native speakers of each specific language."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "exam-body authors (original questions from Indian competitive exams)",
+        "researchers (curation, cleaning, quality control)",
+        "volunteers (AI4Bharat team manual audits)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "AI4Bharat / Nilekani Centre at IIT Madras",
+        "IBM Research, India"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We are also immensely grateful to the volunteers from the AI4Bharat team for their motivation and meticulous efforts in conducting manual audits. All data described in this work was scraped from publicly available resources. The datasets used in this paper will be made available under permissible licenses."
+    },
+    "english_centricity_notes": "The benchmark explicitly addresses English-centricity by creating India-specific content rather than translating English benchmarks. However, 25% of questions are still translated from English to fill coverage gaps. English is included as one of the 11 languages because English exam questions in India often address India-specific cultural content. The paper notes: 'In contrast, MILU addresses this limitation by centering on India-specific topics and questions, providing a more culturally relevant and context-aware evaluation.'",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": [
+        "India (nationwide, with state-level coverage)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Other South Asian countries (Pakistan, Bangladesh, Sri Lanka, Nepal)",
+        "All non-South Asian regions"
+      ],
+      "evidence": "Questions sourced from national exams (Union Public Service Commission, Staff Selection Commission, Railway Recruitment Board, etc.) and state-level exams across multiple Indian states including Punjab, Telangana, Tamil Nadu, Odisha, Karnataka, Madhya Pradesh, Delhi, West Bengal, Bihar, Maharashtra, Rajasthan, Uttar Pradesh, Haryana, Andhra Pradesh, Chhattisgarh, Jammu & Kashmir, Himachal Pradesh, and Jharkhand."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

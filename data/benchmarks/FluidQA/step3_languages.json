@@ -1,0 +1,17 @@
+{
+  "total_languages": 3,
+  "languages": {
+    "English": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    },
+    "Korean": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    },
+    "Chinese": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    }
+  }
+}

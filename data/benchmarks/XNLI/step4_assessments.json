@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "we create the full XNLI corpus by employing professional translators to translate it into our ten target languages; we hire translators to translate the resulting sentences into 15 languages using the One Hour Translation platform. We translate the premises and hypotheses separately... and simply copy the labels from the English source text.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "The English portion was annotated by the MultiNLI crowdsourcing worker pool. The 14 other languages were produced by professional translators, not native-speaker annotators generating original content. There is no mention of native speakers creating or validating NLI judgments in target languages.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "One of the limitations of the XNLI corpus is that it does not capture these differences, since it was obtained by translation. The paper explicitly acknowledges that translation does not capture cultural differences, citing Mohammad et al. (2016) and Smith et al. (2016) on cultural differences affecting sentiment and classification.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "93% of English data achieved three-vote consensus among 5 annotators. Bilingual annotators re-annotated 100 examples each in English and French: recovered English consensus label 85% of the time on English data and 83% on translated French, suggesting semantic relationships were largely preserved in translation. One example found where Chinese translation changed entailment to contradiction ('upright' translated as 'sitting upright')."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "BoolQ": {
+      "translated": {
+        "value": false,
+        "evidence": "Questions are gathered from anonymized, aggregated queries to the Google search engine (Section 3.1). Passages are from Wikipedia. No translation is involved.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper states 'We gather data using the pipeline from NQ' and refers to 'a human annotator' and 'annotators' (Section 3.1) but does not specify whether annotators are native English speakers. Three authors (affiliated with Google AI Language and University of Washington) labeled 110 examples for quality assessment (Section 3.3).",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Questions are naturally occurring Google search queries and passages are from English Wikipedia. The dataset reflects general English-language internet users' questions and Wikipedia content, not designed with specific cultural grounding in mind (Section 3.1, Section 3.4).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Three authors labeled 110 randomly chosen examples as gold standard. Answer annotations reached 90% accuracy compared to gold-standard labels. Of the 10% disagreements, six were ambiguous/debatable cases and five were annotator errors. Singly-annotated examples used for train/dev/test sets (Section 3.3)."
+    }
+  }
+}

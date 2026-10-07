@@ -1,0 +1,47 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["NC", "QADSM", "WPR", "QAM", "QG", "NTG"],
+      "evidence": "6 new tasks are constructed from Bing and MSN data natively sourced in each language without translating from English. Additionally, CoNLL NER, UDPOS, and MLQA are existing datasets with native-language data."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "PAWS-X"],
+      "evidence": "XNLI is translated from English MultiNLI corpus (Conneau et al., 2018). PAWS-X extends English PAWS data to other languages via translation (Yang et al., 2019a)."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["NC", "QADSM", "WPR", "QAM", "QG", "NTG", "CoNLL NER", "UDPOS"],
+      "details": {
+        "NC": "News articles crawled from MSN in each language, reflecting region-specific news topics",
+        "QADSM": "Search queries and ads from Bing in each language, reflecting real user behavior",
+        "WPR": "Web pages and queries from Bing in each language",
+        "QAM": "Question-passage pairs from Bing in each language",
+        "QG": "Passage-question pairs from Bing in each language",
+        "NTG": "News body-title pairs from MSN in each language",
+        "CoNLL NER": "Native-language text from ECI Multilingual Text Corpus",
+        "UDPOS": "Native-language treebanks from Universal Dependencies"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO",
+      "evidence": "The paper states labeling was done on 'an Microsoft internal crowdsourcing platform' with guidelines and tests, but does not specify whether annotators are native speakers of each target language."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["industry crowdsourcing (Microsoft internal platform)", "researchers (CoNLL, UD, MLQA, XNLI, PAWS-X original papers)", "automated (QG es/it/pt via in-house QA ranker)"],
+      "total_annotators_reported": null,
+      "affiliations": ["Microsoft"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "For tasks QADSM, WPR, QAM and QG, we label the data on an Microsoft internal crowdsourcing platform. Each labeler must learn the guideline and pass the labeling test. Each sample is labeled by three labeler. We only keep the samples with two or three labeler have same label. For tasks NC and NTG, we directly use the category label on MSN website. All the category label on MSN is review by human."
+    },
+    "english_centricity_notes": "The benchmark is inherently English-centric by design: for all 11 tasks, training data is ONLY available in English. Models must learn from English training data and transfer to other languages (zero-shot cross-lingual transfer). 2 of 11 datasets (XNLI, PAWS-X) are direct translations from English. The benchmark explicitly frames cross-lingual evaluation as transferring English-learned skills to other languages.",
+    "geographic_representation": {
+      "primary_region": "Europe",
+      "sub_regions": ["Western Europe", "Southern Europe", "Eastern Europe"],
+      "also_represented": ["East Asia", "South Asia", "Southeast Asia", "Middle East", "East Africa"],
+      "notably_excluded": ["Sub-Saharan Africa (except Swahili in XNLI only)", "Oceania", "Indigenous Americas", "Central Asia", "Northern Africa"],
+      "evidence": "19 languages total. Heavy concentration on European languages (de, es, fr, it, nl, pl, pt, ru, bg, el = 10/19). East/Southeast Asian: zh, vi, th, ja (3-4/19). South Asian: hi, ur (2/19). Middle East: ar (1/19). East Africa: sw (1/19, only in XNLI). No coverage of indigenous, Oceanic, or most African languages."
+    }
+  }
+}

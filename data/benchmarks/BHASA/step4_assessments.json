@@ -1,0 +1,436 @@
+{
+  "assessments": {
+    "NER-Grit": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks NER-Grit as 'Native' under Translation column. Section 3.3.1: individual monolingual NER benchmark dataset.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references IndoNLU benchmark [61] but does not describe annotator details for this specific dataset.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Wikipedia-sourced NER data; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "VLSP2018": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks VLSP2018 as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [62] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "News domain NER data; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "ThaiNERv2": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks ThaiNERv2 as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [63] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "News domain NER data; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Naamapadam": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks Naamapadam as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references Mhaske et al. (2023) [65] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "General domain NER data; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks TyDiQA as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references Clark et al. (2020) [68]; TyDiQA is known to use native speakers for question creation but BHASA paper does not explicitly state this.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Wikipedia-sourced QA data; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "XQuAD": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks XQuAD as 'PT' (Professionally Translated). Section 3.3: 'where translated datasets were used, we ensured that they were translated by professional translators'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Professionally translated but paper does not describe translator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English SQuAD; inherits English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "IndicQA": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks IndicQA as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [70] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Wikipedia-sourced QA data; no cultural grounding described. Paper notes quality issues: 'some questions were not phrased correctly or their answers were inaccurate' (Section 3.6.2).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Paper found quality issues: incorrect facts in ground truth, ambiguous questions, and inaccurate answers in the IndicQA Tamil dataset (Section 3.6.2)."
+    },
+    "NusaX": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks NusaX as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [71] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Social media data natively sourced in Indonesian, reflecting local context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "UIT-VSFC": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks UIT-VSFC as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [72] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Vietnamese student feedback reviews, natively sourced.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Wisesight": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks Wisesight as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [73] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Thai social media data natively sourced. Includes a 'Question' class specific to the Thai social media context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "IndicSentiment": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks IndicSentiment as 'PT' (Professionally Translated).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Professionally translated, but paper does not describe translator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated reviews; no cultural grounding described.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "1 sentence had no label and was dropped (Section 3.4.3)."
+    },
+    "MLHSD": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks MLHSD as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [75] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 3.3.4: toxicity detection requires 'a good understanding of the cultures associated with the language' as 'toxicity triggers can differ between Western and Eastern contexts'. Native Twitter data.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Labels remapped from multi-label to multi-class for cross-language consistency."
+    },
+    "ViHSD": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks ViHSD as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [76] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Native Vietnamese social media data; toxicity detection inherently culture-dependent.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "Thai Toxicity Tweet": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks Thai Toxicity Tweet as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [77] but does not describe annotator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Native Thai Twitter data; described as 'designed to be challenging by including polysemous words that may be innocuous or abusive depending on context' (Section 3.6.4).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "1140 tweets dropped due to missing labels or TWEET_NOT_FOUND text (Section 3.4.3)."
+    },
+    "FLORES-200": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks FLORES as 'PT' (Professionally Translated). Section 3.3.5: 'Stringent processes were put in place for quality control and for the selection of translators and reviewers'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references NLLB Team et al. (2022) [79]; describes quality control but does not detail individual translators.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English news; paper explicitly notes errors in reference translations (Table 22, Section 3.6.5).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Paper found original translation errors in FLORES-200 dataset (Table 22): missing words, mistranslations (e.g. 'plant' translated as living plants instead of factory), inaccurate transliterations."
+    },
+    "XLSum": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks XLSum as 'Native' under Translation column.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Paper references [80] but does not describe annotator details; BBC news articles.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Native news articles in each language from BBC, but paper found 'many of the reference summaries contained additional information not included in the article' (Section 3.6.6). Possible data leakage detected (Section 3.6.9).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Reference summaries contain information not present in articles. Paper found evidence of data leakage from GPT-4 training data (Section 3.6.9, Table 28)."
+    },
+    "IndoNLI": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 2 marks IndoNLI as 'Native' under Translation column. Section 3.3.7: 'the IndoNLI lay-authored dataset'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 3.3.7: 'IndoNLI lay-authored dataset [83]' — lay-authored implies native authorship. Paper notes human performance of 85.1% (Table 25).",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Natively authored in Indonesian from Wikipedia and News domains.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks XNLI as 'PT' (Professionally Translated).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Professionally translated but paper does not describe translator details.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English MultiNLI; inherits English-centric content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "IndicXNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks IndicXNLI as 'AT' (Auto-Translated). This is the only auto-translated dataset in the benchmark.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "Table 2 marks as 'AT' (Auto-Translated), meaning machine-translated with no native human annotators involved in translation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Auto-translated from English XNLI; no cultural grounding.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Only auto-translated (AT) dataset in the benchmark; all others are either native or professionally translated."
+    },
+    "XCOPA": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 2 marks XCOPA as 'PT' (Professionally Translated). Section 3.3.8: 'multilingual XCOPA dataset [87]'. Described as 'professionally translated and had near perfect inter-annotator agreement' (Section 3.4.3).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Professionally translated with quality control, but BHASA paper does not detail translator demographics.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English COPA. Paper found significant mislabelling errors (Section 3.4.3, Table 11): 'an alarming number of mislabelled sentences' including all 500 Thai instances having wrong cause/effect labels.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Authors discovered mislabelled cause/effect questions in 5 out of 11 language datasets. Thai dataset had all 500 instances mislabelled. These were corrected before evaluation. (Section 3.4.3, Table 11)"
+    },
+    "LINDSEA (Indonesian)": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 4.3: 'our linguists did literature reviews, selected appropriate and relevant phenomena for testing, created the data manually with the help of native speakers'. Natively created for Indonesian.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 4.3.1: data created by linguists with native speakers. Section 4.3.2: 'three native speakers for each language rated a sample of the dataset'. Appendix A confirms native speaker involvement in creation and validation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 4.1: designed to cover linguistic phenomena specific to SEA languages. Includes idiomatic expressions, classiﬁers, and culture-specific linguistic features. Section 4.2.2: translation tests include reduplication and idiomatic expressions.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous validation: inter-annotator agreement of 94.89% (Krippendorff's alpha), 100% accuracy against ground truth, 96.15% (75/78) sentence pairs with full agreement. Only 2 categories discarded."
+    },
+    "LINDSEA (Tamil)": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 4.3: data created manually by linguists with native speakers for Tamil. Natively created.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 4.3: created by linguists with native speakers. Section 4.3.2: validated by 3 native speakers. Appendix A: Hamsawardhini Rengarajan managed Tamil data, Kengatharaiyer Sarveswaran (University of Jaffna) validated Tamil minimal pairs.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Covers Tamil-specific linguistic phenomena including complex predicates, case markers, subject-verb agreement, scrambling, and complementizers. Includes culture-specific idiomatic expressions and emphatic taan.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Early version, still undergoing iterative validation. Only categories with full agreement across all 3 raters included (100% inter-annotator agreement and accuracy for released categories)."
+    },
+    "Cultural Representation Dataset": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 5.1.1: questions designed by authors who are native speakers, based on surveyed literature on Indonesian and Tamil culture. Natively created.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 5.1.1: 'We then surveyed relevant literature on Indonesian and Tamil culture and consulted with native speakers to derive a set of basic knowledge questions'. 'The authors of this paper who are native speakers evaluated the responses'.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 5.1.1: explicitly probes cultural knowledge across 4 categories: language (proverbs), literature (poetry, folklore/fables), history (historical figures), and customs (traditional customs and games). Content sourced from Indonesian and Tamil cultural traditions.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Scoring scale 0-2. Short generations scored across 3 runs and averaged. Longer generations scored once due to cost."
+    },
+    "Cultural Sensitivity Dataset": {
+      "translated": {
+        "value": false,
+        "evidence": "Section 5.2.1: questions designed by authors covering gender and social norms in Indonesian and Singaporean Tamil culture. Natively created.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section 5.2.1: '3 volunteer Indonesian raters and 3 volunteer Singaporean Tamil raters who are personally acquainted with some of our co-authors'. Ratings on naturalness, helpfulness, social appropriateness.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Section 5.2.1: 'we limit our focus to issues broadly related to gender and social norms in Indonesian and Singaporean Tamil culture'. Questions designed to probe cultural sensitivity.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Small-scale pilot study with convenience sample. Not statistically representative. Only 6 questions. Likert scale 1-5 for naturalness, helpfulness, social appropriateness."
+    }
+  }
+}

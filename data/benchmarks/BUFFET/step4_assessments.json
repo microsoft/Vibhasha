@@ -1,0 +1,274 @@
+{
+  "assessments": {
+    "XLSUM": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. XLSUM consists of BBC news articles natively written in each language (Hasan et al., 2021). Not translated from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "XLSUM is automatically curated from BBC news; no human annotators involved in dataset creation. Articles written by journalists in each language but the dataset itself is automatically constructed.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "News articles are originally produced in each language's BBC service, reflecting local news topics and cultural context. Domain is 'News' (Table 1).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Automatically aligned dataset. BUFFET samples 1,000 test instances per language."
+    },
+    "TyDiQA-QG": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. Converted from TyDiQA-GoldP which is 'annotated in each language' (Section A.1).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "TyDiQA 'data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon' (Section A.1). Questions from information-seeking native speakers (Clark et al., 2020).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions reflect native speakers' genuine information needs in each language, annotated on Wikipedia articles in the target language (Section A.1).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The QG task reformulation is new in BUFFET but underlying data quality is from TyDiQA."
+    },
+    "XNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. XNLI is created by translating English MNLI data (Conneau et al., 2018). Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI)'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for XNLI. The original XNLI paper used professional translators.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Section 3.1: 'Those datasets might exhibit undesired biases, such as translation artifacts or unnatural topic distributions.' XNLI inherits English-centric content from MNLI.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper explicitly acknowledges translation artifacts and biases in translated datasets like XNLI."
+    },
+    "AmericasNLI": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. AmericasNLI is translated from XNLI (Ebrahimi et al., 2022).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail the translators for AmericasNLI. The original paper used native speakers and linguists.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content is translated from English via XNLI/MNLI, not natively authored. The paper notes translation-based datasets 'might exhibit undesired biases, such as translation artifacts or unnatural topic distributions' (Section 3.1).",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Covers truly low-resource indigenous languages of the Americas. All models struggle on this dataset."
+    },
+    "ParsiNLU-Entailment": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. ParsiNLU is a suite of language understanding challenges created natively for Persian (Khashabi et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "ParsiNLU is 'annotated in each language' (Table 1 'in-language' curation), created as a native Persian benchmark.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for Persian language understanding, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "OCNLI": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. OCNLI stands for 'Original Chinese Natural Language Inference' (Hu et al., 2020a).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "OCNLI is 'Original Chinese Natural Language Inference' — created natively in Chinese (Hu et al., 2020a). Table 1 marks as 'in-language'.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively in Chinese, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "KLUE-NLI": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. KLUE is 'Korean Language Understanding Evaluation' created natively in Korean (Park et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "KLUE is a Korean-native benchmark. Table 1 marks as 'in-language'.",
+        "confidence": "medium"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for Korean language understanding, not translated from English.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": null
+    },
+    "PAWS-X": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'aligned'. PAWS-X was created by translating English PAWS data into target languages (Yang et al., 2019). Wikipedia domain.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for PAWS-X.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Content translated/aligned from English PAWS, inheriting English-centric Wikipedia topics.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Paper classifies as 'aligned' rather than 'translation', suggesting automatic alignment was involved."
+    },
+    "IndicNLU-Sentiment": {
+      "translated": {
+        "value": true,
+        "evidence": "Section A.1: 'INDICNLU-SENTIMENT is created by translating English sentiment analysis data into diverse Indic languages.' Table 1 marks data curation as 'translation'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the translations for IndicNLU-Sentiment.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English sentiment analysis data. Content reflects English-language product reviews, not native Indic cultural content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "Amazon Review": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. The Multilingual Amazon Review Dataset contains natively authored product reviews in each language (Keung et al., 2020).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Reviews are written by actual Amazon customers in each language. In-language content, not translated.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Reviews are natively authored, but the Amazon e-commerce platform and product selection may reflect global rather than locally-specific cultural context.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "BUFFET converts to binary classification, discarding neutral (score 3) reviews. 2,000 test instances sampled."
+    },
+    "XCOPA": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'. Section 3.1: 'Prior few- or zero-shot evaluations were often conducted on datasets translated from English (e.g., XNLI; Conneau et al. 2018, XCOPA; Ponti et al. 2020).'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not detail who performed the XCOPA translations. The original XCOPA paper describes translation and validation by native speakers.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English COPA. Section 3.1 notes such datasets 'might exhibit undesired biases, such as translation artifacts or unnatural topic distributions'.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "XWinograd": {
+      "translated": {
+        "value": true,
+        "evidence": "Table 1 marks data curation as 'translation'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: The BUFFET paper does not provide details about who performed the XWinograd translations.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Translated from English Winograd examples.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "TyDiQA-GoldP": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. Section A.1: 'the data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "Section A.1: 'the data is annotated in each language, better reflecting native speakers' interests and linguistic phenomenon.' TyDiQA uses information-seeking questions from native speakers (Clark et al., 2020).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Questions reflect genuine information-seeking behavior of native speakers in each language, asked about Wikipedia passages in their own language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": null
+    },
+    "WikiANN": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'aligned'. WikiANN is automatically curated from Wikipedia, not translated. Section A.1: 'WIKIANN is automatically curated and exhibit alignment errors'.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "'WIKIANN is automatically curated and exhibit alignment errors (Yu et al., 2022)' (Section A.1). No human annotators involved.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Entities come from each language's Wikipedia, so entity names are language-appropriate, but the automatic curation process introduces alignment errors and the approach is not linguistically grounded.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Known alignment errors. The paper explicitly notes quality issues citing Yu et al. (2022)."
+    },
+    "MasakhaNER": {
+      "translated": {
+        "value": false,
+        "evidence": "Table 1 marks data curation as 'in-language'. MasakhaNER provides 'Named Entity Recognition for African Languages' with native annotation (Adelani et al., 2021).",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "MasakhaNER is an in-language annotated dataset for African languages (Table 1 'in-language'). Created by native speakers as part of the Masakhane community effort.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "Created natively for African languages by the Masakhane community. News content from African sources in each language.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "BUFFET reduces entity types to 3 (location, person, organization) and merges BIO tags for consistency with WikiANN."
+    }
+  }
+}

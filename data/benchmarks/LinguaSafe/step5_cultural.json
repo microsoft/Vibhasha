@@ -1,0 +1,63 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The native data portion is sourced from non-English web content (online forums, social media) in target languages, but the benchmark as a whole also includes translated and transcreated data from English sources. The native data component is organically generated in target languages, not derived from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "A portion of the LinguaSafe dataset is translated or transcreated from English safety datasets (including Do-Not-Answer, SafeText, red-teaming datasets). However, the benchmark also includes substantial native data, making the overall dataset mixed-source rather than purely translated."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["LinguaSafe (partial)"],
+      "details": {
+        "LinguaSafe": "Native data and transcreated data are culturally grounded. The TATER framework ensures cultural adaptation: localization of names, addresses, currency, dates to target cultures; replacement of idioms with culturally equivalent expressions; reference to local laws and regulations. Native data collected with native speakers and language experts for culturally specific content. Translated data portion is less culturally adapted."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes, for annotation and review tasks",
+      "evidence": "Transcreators must be native speakers of the target language or with near-native proficiency with expertise in cultural nuances. The initial annotation phase requires native speakers with verified cultural competency. We also cooperate with native speakers and language experts to identify and collect relevant data."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "researchers",
+        "native_speaker_annotators",
+        "language_experts",
+        "certified_ethics_specialists"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "Shanghai Artificial Intelligence Laboratory",
+        "Shanghai Jiao Tong University",
+        "Tsinghua University",
+        "Fudan University"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "individuals were compensated fairly and provided with ongoing psychological support, including access to mental health resources and regular check-ins",
+      "irb_ethics_review": true,
+      "evidence": "For data annotation, we engage annotators with different cultural and academic backgrounds. The annotation process involved researchers with specialized expertise in AI safety. To safeguard annotator well-being, individuals were compensated fairly and provided with ongoing psychological support. AI-driven classifiers initially screen raw data for compliance with ethical and legal norms, followed by a secondary review conducted by three certified ethics specialists to mitigate implicit biases. A continuous monitoring system is in place to evaluate societal implications."
+    },
+    "english_centricity_notes": "The benchmark explicitly addresses English-centricity concerns: it notes that existing benchmarks have 'overdependence on translated data' and that 'simply translating a malicious prompt into a low-resource language can bypass safety alignment.' LinguaSafe mitigates this by including native data and culturally-adapted transcreated data, but the translated and transcreated portions still originate from English safety datasets (Do-Not-Answer, SafeText, red-teaming data). English is included as a high-resource language and serves as the source for translated/transcreated content.",
+    "geographic_representation": {
+      "primary_region": "East Asia and Southeast Asia",
+      "sub_regions": [
+        "East Asia (Chinese, Korean)",
+        "Southeast Asia (Vietnamese, Thai, Malay)",
+        "South Asia (Bengali)",
+        "Middle East (Arabic)",
+        "Eastern Europe (Russian, Czech, Serbian, Hungarian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Sub-Saharan Africa",
+        "Latin America",
+        "Oceania",
+        "Indigenous languages",
+        "Western Europe (except English)",
+        "Central Asia"
+      ],
+      "evidence": "LinguaSafe spans 12 languages: High-resource (English, Russian, Chinese, Vietnamese, Czech), Medium-resource (Arabic, Korean, Thai, Hungarian, Serbian), Low-resource (Malay, Bengali). The paper acknowledges: 'One main limitation is the lack of broader coverage of languages in the dataset. Compare to common multilingual benchmarks, LinguaSafe covers 12 languages which is relatively limited.'"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MILU",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering",
+      "source": "mixed",
+      "source_language": "English (for translated portion)",
+      "translation_method": "GPT-4o was used to translate English questions into target languages for subjects with insufficient native questions. Approximately 25% (19,915 out of 79,617) of questions are translated from English; the remaining 75% are in their original source languages.",
+      "num_languages": 11,
+      "language_list": [
+        "Bengali",
+        "English",
+        "Gujarati",
+        "Hindi",
+        "Kannada",
+        "Malayalam",
+        "Marathi",
+        "Odia",
+        "Punjabi",
+        "Tamil",
+        "Telugu"
+      ],
+      "annotation_method": "Questions were scraped from online exam portals offering previously released question papers from over 40 types of Indian national and state-level competitive examinations. Subject experts on these portals ensured answer accuracy. Manual review and automated cleaning (language identification via IndicLID and Unicode-based filtering, duplicate removal) were applied. Untagged questions were translated to English and GPT-4o-mini assigned topic labels, which were then clustered and manually merged into 41 subjects.",
+      "data_creator_info": {
+        "creator_type": "exam-body authored questions scraped from public portals, with cleaning and curation by researchers",
+        "creator_affiliation": "AI4Bharat (Nilekani Centre at Indian Institute of Technology, Madras) and IBM Research, India",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Questions sourced from various national, state, and regional exams conducted by organizations like Union Public Service Commission, Staff Selection Commission, various state Public Service Commissions, Railway Recruitment Board, and state police departments. AI4Bharat team volunteers conducted manual audits."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Total of ~79,617 questions across 41 subjects in 8 domains. Each subject-language pair capped at 500 questions for feasible evaluations. A separate validation set of ~9,000 questions was maintained for few-shot evaluation. Per-language translated question counts: Bengali 1601, Gujarati 2755, Hindi 115, Kannada 1522, Malayalam 3354, Marathi 1235, Odia 3100, Punjabi 3411, Tamil 1524, Telugu 1298."
+    }
+  ]
+}

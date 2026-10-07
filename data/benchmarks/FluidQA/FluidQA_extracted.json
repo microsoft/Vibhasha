@@ -1,0 +1,160 @@
+{
+  "benchmark_name": "FLUID QA",
+  "paper_id": "2025.emnlp-main.1540",
+  "year": 2025,
+  "benchmark_type": "mixed",
+  "benchmark_type_evidence": "We introduce FLUID QA, the first multilingual benchmark that evaluates figurative usage in dialogue... To aid interpretation of usage-level failures, we additionally present FLUTE-bi, a sentence-level diagnostic task targeting sentence-level recognition.",
+  "total_languages_claimed": 3,
+  "total_datasets": 2,
+  "dataset_names": ["FLUID QA", "FLUTE-bi"],
+  "task_categories": [
+    "figurative language understanding",
+    "dialogue-based multiple-choice QA",
+    "binary classification"
+  ],
+  "brief_description": "FLUID QA is the first multilingual benchmark evaluating figurative language usage in dialogue across English, Korean, and Chinese, covering four rhetorical categories (idiom, metaphor, simile, sarcasm). It is accompanied by FLUTE-bi, a sentence-level binary classification diagnostic task for figurative recognition.",
+  "datasets": [
+    {
+      "dataset_name": "FLUID QA",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice QA (cloze-style figurative expression selection in multi-turn dialogue)",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 3,
+      "language_list": ["English", "Korean", "Chinese"],
+      "annotation_method": "LLM-generated (GPT-4o with teacher-style prompting) then manually post-edited by native-speaking authors; Korean/Chinese translated via GPT-4o cultural adaptation prompting then manually reviewed and post-edited by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Yonsei University, South Korea",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Authors are listed as Yonsei University affiliates. 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility' (Section 3.1). 'all outputs were post-edited for fluency and coherence' (Section 3.2)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "FLUTE (Chakrabarty et al., 2022)",
+      "notes": "800 QA items per language (EN, KO, ZH), 200 per rhetorical category (idiom, metaphor, simile, sarcasm), yielding 2,400 parallel instances total. Built on sampled FLUTE instances. English items generated from FLUTE annotations via GPT-4o; Korean and Chinese produced via culturally adaptive GPT-4o translation with manual post-editing. GPT family excluded from evaluation due to GPT-4o's role in data generation."
+    },
+    {
+      "dataset_name": "FLUTE-bi",
+      "variant_name": null,
+      "variant_notes": "Reformulated from the original FLUTE NLI-style paired-sentence task into a single-sentence binary classification task",
+      "task_type": "binary classification (figurative vs. literal sentence-level recognition)",
+      "source": "adapted",
+      "source_language": "English",
+      "translation_method": "machine",
+      "num_languages": 3,
+      "language_list": ["English", "Korean", "Chinese"],
+      "annotation_method": "Adapted from FLUTE dataset; reformulated as single-sentence binary classification. Korean/Chinese translated via GPT-4o cultural adaptation prompting then manually reviewed and post-edited by native speakers",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Yonsei University, South Korea",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Same authorship team and process as FLUID QA. 'all translations were manually reviewed and post-edited by native-speaking authors' (Section 3.1)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "FLUTE (Chakrabarty et al., 2022)",
+      "notes": "800 sentence pairs per language (EN, KO, ZH), 200 per category, yielding 2,400 parallel labeled instances. Each sentence labeled as figurative or literal. Serves as a diagnostic baseline for interpreting FLUID QA results."
+    }
+  ],
+  "total_languages": 3,
+  "languages": {
+    "English": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    },
+    "Korean": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    },
+    "Chinese": {
+      "iso_code": null,
+      "datasets_present_in": ["FLUID QA", "FLUTE-bi"]
+    }
+  },
+  "assessments": {
+    "FLUID QA": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3: 'we build on the FLUTE dataset, which offers high-quality English examples across rhetorical types.' Section 3.1: 'we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' English items are constructed from English FLUTE data; Korean and Chinese are machine-translated with cultural adaptation from English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'As a final step to ensure the highest quality, all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' Section 3.2: 'all outputs were post-edited for fluency and coherence.' Initial generation was LLM-based (GPT-4o); native-speaking authors performed post-editing only.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'To ensure cross-linguistic validity, we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' 'For idioms... we replaced them with culturally equivalent idioms in Korean and Chinese to preserve both semantic and pragmatic meaning.' Cultural adaptation was applied to translations, but the source content originates from the English FLUTE dataset.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Bradley-Terry pairwise preference evaluation showed culturally adapted translations statistically significantly preferred over literal translations (p < 0.001). Models performed better on culturally adapted versions. All outputs post-edited by native-speaking authors. GPT family excluded from evaluation due to potential contamination from GPT-4o's role in data generation (Appendix D)."
+    },
+    "FLUTE-bi": {
+      "translated": {
+        "value": true,
+        "evidence": "Section 3.3: 'Adapted from the original FLUTE dataset.' Section 3.1 describes the same culturally adaptive GPT-4o translation pipeline for Korean and Chinese. English sentences come from the original English FLUTE dataset; Korean and Chinese are translated with cultural adaptation.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Section 3.1: 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' Same post-editing process as FLUID QA; original content is from FLUTE, translations are LLM-generated then post-edited.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": "partial",
+        "evidence": "Same cultural adaptation pipeline as FLUID QA (Section 3.1). Culturally adaptive prompting and idiom replacement applied, but source content is English FLUTE.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Appendix C reports that literal translations produced lower F1 scores compared to culturally adapted versions, confirming the value of the cultural adaptation step. Same quality assurance process as FLUID QA."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "Both FLUID QA and FLUTE-bi are built on the English FLUTE dataset (Chakrabarty et al., 2022). Section 3: 'Instead of creating new data from scratch, we build on the FLUTE dataset.'"
+    },
+    "datasets_translated_from_english": {
+      "list": ["FLUID QA", "FLUTE-bi"],
+      "evidence": "Section 3.1: 'we adopted a culturally adaptive prompting strategy using GPT-4o for Korean and Chinese translations.' English source from FLUTE; Korean and Chinese versions are machine-translated with cultural adaptation and human post-editing."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["FLUID QA", "FLUTE-bi"],
+      "details": {
+        "FLUID QA": "Partial cultural grounding via culturally adaptive translation prompting (Section 3.1). Idioms replaced with culturally equivalent idioms in Korean and Chinese. Cultural adaptation strategies include localization, globalization, transformation. However, underlying content structure and scenarios originate from English FLUTE.",
+        "FLUTE-bi": "Same cultural adaptation pipeline as FLUID QA. Partial grounding through adapted translations but English-sourced content."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "Section 3.1: 'all translations were manually reviewed and post-edited by native-speaking authors for syntactic fluency and cultural compatibility.' The native-speaking authors performed post-editing, but initial data generation and translation were done by GPT-4o. The paper authors are affiliated with Yonsei University, South Korea."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "automated"],
+      "total_annotators_reported": null,
+      "affiliations": ["Yonsei University, South Korea"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "INSUFFICIENT_INFO: No explicit mention of IRB/ethics review, total annotator count, or compensation. The paper lists 7 authors from Yonsei University who served as both researchers and post-editors. Data generation used GPT-4o. Section 3.1: 'native speakers participated in the evaluation' for Bradley-Terry preference comparison, but no further workforce details provided. Acknowledgments mention Yonsei University Research Fund of 2024 (2024-22-0317)."
+    },
+    "english_centricity_notes": "The benchmark is fundamentally English-centric in origin: both datasets derive from the English FLUTE dataset. Section 3: 'Instead of creating new data from scratch, we build on the FLUTE dataset, which offers high-quality English examples across rhetorical types. We sample 200 instances per category... to construct parallel data.' Korean and Chinese versions are translations (with cultural adaptation) rather than natively authored content. The evaluation results show English consistently outperforms other languages, suggesting the English-source design advantages English performance. Section 8 (Limitations): 'Our benchmark focuses exclusively on four rhetorical categories and three languages, limiting its generalizability.'",
+    "geographic_representation": {
+      "primary_region": "East Asia",
+      "sub_regions": ["South Korea", "China"],
+      "also_represented": ["English-speaking regions (via FLUTE source data)"],
+      "notably_excluded": ["All other regions and language communities"],
+      "evidence": "The benchmark covers only English, Korean, and Chinese. Authors are from Yonsei University, South Korea. Cultural adaptation targets Korean and Chinese cultural contexts specifically. Section 8 acknowledges the limitation to three languages."
+    }
+  },
+  "extraction_metadata": {
+    "extraction_version": "2.0",
+    "extraction_date": "2026-03-27",
+    "extractor": "copilot-subagent",
+    "notes": null
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "JailNewsBench": {
+      "translated": {
+        "value": "partial",
+        "evidence": "The English templates are authored by the authors and translated into each target language by native speakers. News articles are sourced in local languages from the babel-briefings multilingual news dataset. Seed instructions are written in the same language as the regional news articles. The template-based prompts were translated from English, but the news content itself is natively sourced per region.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": true,
+        "evidence": "We hired cloud workers who were born and raised in the target regions and are native speakers of the target languages on Upwork. Three native annotators per language performed the annotation for meta-evaluation. The test set is manually verified by native speakers of each language.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "The benchmark is explicitly designed around region-specific news: 'fake news varies across languages and regions that anchor political, social, and cultural contexts.' News articles are sampled from local media in each region's language. Seed instructions are grounded in region-specific factual articles with motivations (Financial, Political, Social, Psychological) tailored to each article and region. 34 regions are covered with region-specific content.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Inter-annotator agreement on a pre-sampled set of 32 instances averaged 83% across languages. Meta-evaluation used 128 instances per language with 3 native annotators per language performing pairwise comparison. Crowdsourcing was reviewed and approved by the affiliated organization prior to implementation."
+    }
+  }
+}

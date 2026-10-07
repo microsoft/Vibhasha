@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "XOR QA",
+  "paper_id": "2021.naacl-main.46",
+  "year": 2021,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We construct a large-scale dataset built on 40K information-seeking questions across 7 diverse non-English languages... we introduce a task framework, called Cross-lingual Open-Retrieval Question Answering (XOR QA), that consists of three new tasks involving cross-lingual document retrieval",
+  "total_languages_claimed": 7,
+  "total_datasets": 1,
+  "dataset_names": [
+    "XOR-TYDI QA"
+  ],
+  "task_categories": [
+    "cross-lingual document retrieval",
+    "cross-lingual open-retrieval question answering",
+    "extractive question answering"
+  ],
+  "brief_description": "XOR QA is a cross-lingual open-retrieval question answering benchmark built on 40K information-seeking questions across 7 typologically diverse non-English languages (inherited from TyDi QA's unanswerable questions). It defines three tasks of increasing complexity: XOR-Retrieve (cross-lingual paragraph retrieval), XOR-EnglishSpan (L-to-English open-retrieval QA), and XOR-Full (round-trip answer generation in the target language)."
+}

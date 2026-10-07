@@ -1,0 +1,55 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["CulturalBench"],
+      "evidence": "CulturalBench is natively authored in English. Questions are human-written via CulturalTeaming pipeline based on annotators' personal cultural experiences, not translated from any other source. Section 2.1: 'humans provide diverse cultural scenarios based on their daily observations and unique cultural knowledge.'"
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets translated from English. A small supplementary multilingual experiment (Appendix A) translated questions to Simplified Chinese, Traditional Chinese, and Cantonese, but this is not part of the main benchmark."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["CulturalBench"],
+      "details": {
+        "CulturalBench": "The entire benchmark is designed for cultural knowledge evaluation. Covers 45 countries/regions across 14 sub-continents, 17 cultural topics under 3 categories (Daily Life, Social Etiquette, Wider Society). Questions are grounded in annotators' personal cultural experiences and verified by 5 native cultural experts per region."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "true — annotators are native to the target culture, but all questions in English",
+      "evidence": "Section 2.2: 'We set two main criteria to ensure that the recruited annotators have a deep understanding of the culture of the targeted country or region – (1) Nationality (2) Primary residence before age 18.' For specific groups (e.g., US, UK): 'we try to have more fine-grain selection to find the target group such as ethnicity (e.g. African American), and place of residence (e.g., Wales).' Note: Benchmark is English-only; annotators are culturally native but questions are in English."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["crowdworkers", "researchers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Prolific platform (crowdworkers for data collection and verification)", "University of Washington", "University of British Columbia", "Vector Institute for AI", "McGill University", "Mila", "University of Copenhagen", "Stanford University"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "Ethical Considerations: 'We pay annotators according to our vendor (Prolific)'s guidance, which is higher than the local wage requirement.'",
+      "irb_ethics_review": true,
+      "evidence": "Ethical Considerations: 'Our data collection has been reviewed by the university's IRB board to ensure it has no harm on human annotators.' Table 9 reports detailed annotator demographics (ethnicity, age group, sex, student status) by sub-continent. Annotators recruited via Prolific with 5 per region for verification. Minimum 10 active annotators on Prolific required per region."
+    },
+    "english_centricity_notes": "CulturalBench is intentionally English-only by design. Limitations section: 'We develop an English-only benchmark as the initial step in evaluating models' cultural knowledge. This approach facilitates fair comparisons of cultural understanding across different regions.' The authors acknowledge this limitation but argue it avoids confounding cultural knowledge with language proficiency, especially for underrepresented regions. The benchmark evaluates multicultural knowledge through English, not multilingual capability.",
+    "geographic_representation": {
+      "primary_region": "Global (45 countries/regions across 14 sub-continents)",
+      "sub_regions": [
+        "North Africa (Morocco, Egypt)",
+        "South Africa (Zimbabwe, South Africa)",
+        "West Africa (Nigeria)",
+        "North America (United States, Canada)",
+        "South America (Chile, Mexico, Brazil, Peru, Argentina)",
+        "East Asia (South Korea, Japan, Taiwan, Hong Kong, China)",
+        "South Asia (India, Bangladesh, Nepal, Pakistan)",
+        "Southeast Asia (Vietnam, Malaysia, Philippines, Indonesia, Singapore, Thailand)",
+        "Middle East/West Asia (Iran, Israel, Lebanon, Saudi Arabia, Turkey)",
+        "East Europe (Ukraine, Czech Republic, Romania, Poland)",
+        "North Europe (United Kingdom, Russia)",
+        "South Europe (Spain, Italy)",
+        "West Europe (Netherlands, France, Germany)",
+        "Oceania (New Zealand, Australia)"
+      ],
+      "also_represented": [],
+      "notably_excluded": ["Central Asia", "Central Africa", "East Africa", "Caribbean", "Central America", "Pacific Islands"],
+      "evidence": "Tables 7 and 8 (Appendix C) list all 45 countries with question counts. Coverage spans 14 sub-continental regions. 'Our benchmark covers a wide range of global regions, spanning 45 countries and regions, including underrepresented regions such as Bangladesh, Zimbabwe, and Peru.' (Section 3.1). Limited by Prolific annotator availability (minimum 10 active annotators per region, per Appendix A)."
+    }
+  }
+}

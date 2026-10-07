@@ -1,0 +1,58 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "MMLU-ProX",
+      "variant_name": "Full",
+      "variant_notes": "11,829 questions per language across 29 languages (~342,200 total questions). 70 validation questions used for few-shot prompt construction; actual evaluation on 11,759 questions per language.",
+      "task_type": "multiple-choice QA (10 options) with chain-of-thought reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Semi-automated four-stage LLM-driven pipeline: (I) Initial translation by Claude Sonnet 3.7 with domain-specific prompts, (II) Self-reflection by Claude Sonnet 3.7 reviewing its own translation, (III) Improvement stage incorporating self-reflection feedback, (IV) External examination by OpenAI O3 (for low-resource African languages: Swahili, Zulu, Yoruba, Wolof) and GPT-4.1 (for all others) to flag significant discrepancies. Followed by expert verification with native-speaker professional translators.",
+      "num_languages": 29,
+      "language_list": [
+        "English", "Chinese", "Japanese", "Korean", "French", "German", "Spanish",
+        "Portuguese", "Arabic", "Thai", "Hindi", "Bengali", "Swahili", "Afrikaans",
+        "Czech", "Hungarian", "Indonesian", "Italian", "Marathi", "Nepali", "Russian",
+        "Serbian", "Telugu", "Ukrainian", "Urdu", "Vietnamese", "Wolof", "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Source data curated from MMLU-Pro by four interdisciplinary specialists (~20 hours) fixing duplicates, grammatical issues, and inconsistencies. Translation via four-stage LLM pipeline. Expert verification by two native-speaker professional translators per language on 15 selected languages, rating accuracy/fluency/completeness on 1-5 scale. Total expert annotation effort exceeded 400 hours across 30+ experts.",
+      "data_creator_info": {
+        "creator_type": "researchers and professional translators",
+        "creator_affiliation": "Multi-institutional: The University of Tokyo, Duke-NUS Medical School, Waseda University, Northwestern University, Carnegie Mellon University, Yale University, University College Dublin, Nanyang Technological University, Smartor LLC, UC Berkeley, UNSW, Singapore Management University, NYU, Polytechnique Montréal, University of Geneva, University of Alberta",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We ensured that all expert annotators were compensated at rates above the minimum hourly wage in their respective countries."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Built upon MMLU-Pro (Wang et al., 2024a/b)",
+      "notes": "Total development cost approached $80,000 at market rates. Data curation involved deduplication, grammatical correction, and consistency fixes before translation. Categories where both translators scored below 3 were fully retranslated; only the law category in Yoruba required this."
+    },
+    {
+      "dataset_name": "MMLU-ProX",
+      "variant_name": "Lite",
+      "variant_notes": "658 questions per language (20 items randomly sampled from each of 14 disciplines) across 29 languages. 70 validation questions for few-shot construction; actual evaluation on 588 questions per language. Average performance difference from Full version is only 1.14%.",
+      "task_type": "multiple-choice QA (10 options) with chain-of-thought reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Same as Full version (subset of the full translated dataset)",
+      "num_languages": 29,
+      "language_list": [
+        "English", "Chinese", "Japanese", "Korean", "French", "German", "Spanish",
+        "Portuguese", "Arabic", "Thai", "Hindi", "Bengali", "Swahili", "Afrikaans",
+        "Czech", "Hungarian", "Indonesian", "Italian", "Marathi", "Nepali", "Russian",
+        "Serbian", "Telugu", "Ukrainian", "Urdu", "Vietnamese", "Wolof", "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Subset of Full version; same annotation pipeline applies.",
+      "data_creator_info": {
+        "creator_type": "researchers and professional translators",
+        "creator_affiliation": "Same as Full version",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Same as Full version"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Subset of MMLU-ProX Full, itself built upon MMLU-Pro (Wang et al., 2024a/b)",
+      "notes": "Designed for efficient evaluation. Preserves relative model rankings almost perfectly compared to Full version."
+    }
+  ]
+}

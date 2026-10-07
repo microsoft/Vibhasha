@@ -1,0 +1,40 @@
+{
+  "assessments": {
+    "MATH": {
+      "translated": {
+        "value": false,
+        "evidence": "Problems sourced from US mathematics competitions (AMC 10, AMC 12, AIME) originally written in English, collected from aops.com. Not translated from another language.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Problems are from US math competitions and solutions are in LaTeX, but the paper does not describe who specifically wrote or verified the step-by-step solutions or whether they are native English speakers.",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "MATH consists of abstract mathematical competition problems (algebra, geometry, number theory, etc.) that are culture-neutral by nature. The problems assess mathematical reasoning, not cultural knowledge.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Problems sourced from established US math competitions with decades of history. Answers are normalized with explicit formatting rules for exact-match evaluation. Human evaluation reported: CS PhD student ~40%, IMO gold medalist ~90%."
+    },
+    "AMPS": {
+      "translated": {
+        "value": false,
+        "evidence": "Khan Academy problems pulled from English-language Khan Academy platform; Mathematica problems generated from hand-designed scripts by the authors. Not translated.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": null,
+        "evidence": "INSUFFICIENT_INFO: Khan Academy content is professionally created but annotator details not given. Mathematica scripts designed by the paper authors (UC Berkeley/UChicago).",
+        "confidence": "low"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "AMPS is a pretraining corpus of algorithmically generated or curated mathematical exercises. Problems are abstract math, not culturally situated.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Khan Academy subset uses exercises from an established educational platform (693 exercise types). Mathematica subset generated from 100 hand-designed scripts covering diverse math topics. Total 23 GB."
+    }
+  }
+}

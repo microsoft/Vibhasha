@@ -1,0 +1,264 @@
+{
+  "benchmark_name": "PolygloToxicityPrompts (PTP)",
+  "paper_id": "2405.09373v3",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce PolygloToxicityPrompts (PTP), the first large-scale multilingual toxicity evaluation benchmark of 425K naturally occurring prompts spanning 17 languages.",
+  "total_languages_claimed": 17,
+  "total_datasets": 2,
+  "dataset_names": [
+    "PolygloToxicityPrompts (PTP)",
+    "PTPSmall"
+  ],
+  "task_categories": [
+    "toxicity evaluation",
+    "toxic degeneration evaluation"
+  ],
+  "brief_description": "A large-scale multilingual benchmark of 425K naturally occurring prompts across 17 languages for evaluating neural toxic degeneration in LLMs, created by scraping over 100M web-text documents from mC4 and The Pile corpora and scoring them with Perspective API. PTPSmall is a stratified 5K-per-language subset for lower-cost benchmarking.",
+  "datasets": [
+    {
+      "dataset_name": "PolygloToxicityPrompts (PTP)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "toxicity evaluation / toxic degeneration evaluation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": "Approximately 83.2% naturally occurring (scraped from web-text). ~16.8% (~70K prompts across 9 languages) translated from toxic English/other-language samples using NLLB-3.3B model to supplement low-toxicity languages (ar, cs, fr, ko, id, it, nl, pl, sv).",
+      "num_languages": 17,
+      "language_list": [
+        "Arabic",
+        "Chinese",
+        "Czech",
+        "Dutch",
+        "English",
+        "French",
+        "German",
+        "Hindi",
+        "Indonesian",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese",
+        "Russian",
+        "Spanish",
+        "Swedish"
+      ],
+      "annotation_method": "Automated: documents scraped from mC4 and The Pile corpora (100M+ documents), scored for toxicity using Perspective API. Documents split in half to form prompts and continuations. 6250 documents sampled from each of 4 equal-width toxicity levels ([0, 0.25), [0.25, 0.5), [0.5, 0.75), [0.75, 1]) per language, yielding 25K prompts per language (425K total).",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Carnegie Mellon University, University of Virginia, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Dataset was created automatically by the research team via web scraping and automated toxicity scoring. No human annotators involved in dataset creation."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "mC4 (Xue et al., 2021) and The Pile (Gao et al., 2020) corpora; Pile Curse subset for English.",
+      "notes": "Prompts are much longer than RealToxicityPrompts (~400 GPT-4 tokens average). For 9 languages with very low toxicity rates (<0.01% in mC4), synthetic high-toxicity data was added via machine translation."
+    },
+    {
+      "dataset_name": "PTPSmall",
+      "variant_name": "Stratified subset of PTP",
+      "variant_notes": "A stratified sample of 5K prompts per language from the full PTP dataset, designed for benchmarking models with limited computational resources.",
+      "task_type": "toxicity evaluation / toxic degeneration evaluation",
+      "source": "mixed",
+      "source_language": null,
+      "translation_method": "Same as PTP (stratified subsample of PTP).",
+      "num_languages": 17,
+      "language_list": [
+        "Arabic",
+        "Chinese",
+        "Czech",
+        "Dutch",
+        "English",
+        "French",
+        "German",
+        "Hindi",
+        "Indonesian",
+        "Italian",
+        "Japanese",
+        "Korean",
+        "Polish",
+        "Portuguese",
+        "Russian",
+        "Spanish",
+        "Swedish"
+      ],
+      "annotation_method": "Stratified random sample from PTP; same toxicity scoring methodology via Perspective API.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Carnegie Mellon University, University of Virginia, Allen Institute for AI",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "Subset automatically sampled from PTP."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Stratified subset of PolygloToxicityPrompts.",
+      "notes": "5K prompts per language (85K total). Used for the actual 62-model benchmarking due to computational constraints."
+    }
+  ],
+  "total_languages": 17,
+  "languages": {
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Czech": {
+      "iso_code": "cs",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Dutch": {
+      "iso_code": "nl",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Indonesian": {
+      "iso_code": "id",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Italian": {
+      "iso_code": "it",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Japanese": {
+      "iso_code": "ja",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Korean": {
+      "iso_code": "ko",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Polish": {
+      "iso_code": "pl",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Portuguese": {
+      "iso_code": "pt",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    },
+    "Swedish": {
+      "iso_code": "sv",
+      "datasets_present_in": ["PolygloToxicityPrompts (PTP)", "PTPSmall"]
+    }
+  },
+  "assessments": {
+    "PolygloToxicityPrompts (PTP)": {
+      "translated": {
+        "value": "partially",
+        "evidence": "Approximately 83.2% of the dataset is naturally occurring (scraped from web-text corpora). ~16.8% (~70K translated prompts across 9 languages: ar, cs, fr, ko, id, it, nl, pl, sv) were translated from toxic samples using the NLLB-3.3B model because these languages had <0.01% toxicity rates in the source corpora.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "not_applicable",
+        "evidence": "No human annotators were involved in dataset creation. The dataset was constructed entirely automatically via web scraping and Perspective API scoring.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The data is scraped from general web-text without cultural grounding design. It relies on Perspective API (a universal tool) rather than culturally-informed annotation. The paper acknowledges Perspective API has biases against some languages (e.g., German).",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Toxicity scores are generated automatically using Perspective API, an industry-standard but imperfect tool. The paper acknowledges: (1) toxicity is subjective, (2) Perspective API overestimates toxicity for text containing minority identity mentions, (3) it may be biased against certain languages like German. No human validation was performed."
+    },
+    "PTPSmall": {
+      "translated": {
+        "value": "partially",
+        "evidence": "PTPSmall is a stratified subset of PTP, so it inherits the same mixed naturally-occurring/translated composition.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "not_applicable",
+        "evidence": "Same automated creation process as PTP—no human annotators.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "Subset of PTP; same lack of cultural grounding design.",
+        "confidence": "medium"
+      },
+      "annotation_quality_notes": "Same as PTP—automated Perspective API scoring without human validation."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["PolygloToxicityPrompts (PTP) — naturally occurring portion (~83.2%)"],
+      "evidence": "The majority of PTP was scraped from naturally occurring web-text in each target language from mC4 and The Pile corpora, not translated from English. However, ~16.8% was machine-translated to augment high-toxicity data for low-toxicity languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["PolygloToxicityPrompts (PTP) — translated portion (~16.8%, ~70K prompts)"],
+      "evidence": "For 9 languages (ar, cs, fr, ko, id, it, nl, pl, sv) with very low toxicity rates in mC4, toxic samples were translated from English/other languages using NLLB-3.3B."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "PTP does not include culturally-grounded design. Although the authors argue naturally occurring web-text captures more authentic toxicity than translated benchmarks, there was no deliberate cultural adaptation or region-specific content creation."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "not_applicable",
+      "evidence": "No human annotators were used in dataset creation. The entire pipeline is automated."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["automated_pipeline"],
+      "total_annotators_reported": null,
+      "affiliations": ["Carnegie Mellon University", "University of Virginia", "Allen Institute for AI"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "The dataset was created entirely through automated web scraping and Perspective API scoring by the research team. No human annotators were involved. The research was partly funded by Jigsaw."
+    },
+    "english_centricity_notes": "The benchmark is limited to 17 languages supported by Perspective API, all relatively high-resource. The authors acknowledge: 'our testbed does not extend to low-resource languages due to the lack of toxicity detection tools.' Perspective API is trained primarily on English data with known biases. The paper explicitly advocates for non-translated, naturally occurring data as superior to English-translated benchmarks.",
+    "geographic_representation": {
+      "primary_region": "Global (web-text coverage)",
+      "sub_regions": [
+        "Europe (Czech, Dutch, French, German, Italian, Polish, Portuguese, Russian, Spanish, Swedish)",
+        "East Asia (Chinese, Japanese, Korean)",
+        "South Asia (Hindi)",
+        "Southeast Asia (Indonesian)",
+        "Middle East/North Africa (Arabic)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "African languages",
+        "Indigenous/First Nations languages",
+        "South/Southeast Asian languages beyond Hindi and Indonesian",
+        "Central Asian languages",
+        "Oceanic/Pacific languages"
+      ],
+      "evidence": "The 17 languages are constrained by Perspective API's language support. The paper acknowledges: 'our testbed does not extend to low-resource languages due to the lack of toxicity detection tools.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

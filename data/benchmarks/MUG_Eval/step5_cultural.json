@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "All three tasks are adapted from English-origin benchmarks: Things dataset (English words), Belebele (translated from English), HumanEvalExplain (English Python code)."
+    },
+    "datasets_translated_from_english": {
+      "list": ["Easy Twenty Questions"],
+      "evidence": "Easy Twenty Questions directly translates 140 English words into 30 languages via Google Translate. MCQ Conversation uses Belebele which was professionally translated from English. Code Reconstruction uses English code with LLM-generated target-language descriptions."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "None of the three tasks include culturally grounded content. All source data originates from English/Western contexts. The paper acknowledges: 'the Code Reconstruction task employs Latin script for code, with variable and function names following English naming conventions. These factors may introduce systematic biases against non-Latin script languages and low-resource language contexts.'"
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "not_applicable_for_benchmark_construction",
+      "evidence": "The benchmark framework does not require human annotators for construction or evaluation. For validation-only human evaluation (not part of the benchmark itself), 12 native-speaker annotators were recruited: 'We recruit 12 annotators—primarily university students in South Korea—each a native speaker of their assigned language(s).'"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "automated_translation"],
+      "total_annotators_reported": 12,
+      "affiliations": ["KAIST", "Trillion Labs"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "30,000 KRW (approximately 21.76 USD as of September 2025) per annotator for a two-hour session; this was for the validation human evaluation study, not for benchmark construction",
+      "irb_ethics_review": true,
+      "evidence": "Our human evaluation study was conducted with approval from the Institutional Review Board (IRB), ensuring all procedures adhered to established ethical research standards. All participants recruited for the annotation task were compensated for their time at a rate of 30,000 KRW (approximately 21.76 USD as of September 2025). The 12 annotators were primarily university students in South Korea, each a native speaker of their assigned language(s). Note: these annotators were for the human evaluation validation study (Section C.6), not for benchmark construction."
+    },
+    "english_centricity_notes": "The framework has several English-centric aspects acknowledged by the authors: (1) English instructional prompts are used for all conversational scenarios due to difficulty of translating prompts to low-resource languages; (2) Easy Twenty Questions source words are English common nouns; (3) Code Reconstruction uses English-named Python code with Latin script; (4) MCQ Conversation source data (Belebele) was translated from English; (5) the paper finds that 'English is not always the optimal substitute language, particularly for low-resource languages', suggesting English-centricity can degrade evaluation quality.",
+    "geographic_representation": {
+      "primary_region": "Global (diverse language selection)",
+      "sub_regions": ["East Asia", "South Asia", "Southeast Asia", "Middle East", "Europe", "Sub-Saharan Africa", "Central Asia"],
+      "also_represented": [],
+      "notably_excluded": ["Indigenous Americas", "Oceania", "most of Africa beyond 4 languages"],
+      "evidence": "30 languages selected across high/mid/low resource categories covering diverse language families and writing systems including Latin, Cyrillic, Devanagari, Arabic, CJK, Ethiopic, Bengali, Greek, Hebrew, Hangul, Sinhala, Telugu, Thai scripts. Languages span Africa (Amharic, Hausa, Igbo, Somali, Swahili, Yoruba), South Asia (Bengali, Hindi, Nepali, Sinhala, Telugu), East Asia (Chinese, Japanese, Korean), Southeast Asia (Indonesian, Malay, Thai), Central Asia (Kyrgyz), Middle East (Arabic, Hebrew), and Europe (German, English, French, Greek, Italian, Lithuanian, Portuguese, Romanian, Spanish, Ukrainian)."
+    }
+  }
+}

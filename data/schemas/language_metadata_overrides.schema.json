@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha language metadata overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "aliases",
+    "languages",
+    "duplicate_glottocode_exceptions"
+  ],
+  "properties": {
+    "aliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rationale"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "glottocode"
+            ]
+          },
+          {
+            "required": [
+              "script"
+            ]
+          },
+          {
+            "required": [
+              "continent"
+            ]
+          },
+          {
+            "required": [
+              "joshi_level"
+            ]
+          },
+          {
+            "required": [
+              "dialect_of"
+            ]
+          }
+        ],
+        "properties": {
+          "glottocode": {
+            "type": "string",
+            "pattern": "^[a-z0-9]{8}$"
+          },
+          "script": {
+            "type": "string",
+            "minLength": 1
+          },
+          "continent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "joshi_level": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "dialect_of": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "duplicate_glottocode_exceptions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "languages",
+          "rationale"
+        ],
+        "properties": {
+          "languages": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

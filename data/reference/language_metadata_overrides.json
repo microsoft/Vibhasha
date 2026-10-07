@@ -1,0 +1,217 @@
+{
+  "aliases": {},
+  "languages": {
+    "Achinese": {
+      "joshi_level": 0,
+      "rationale": "Explicitly reviewed as level 0 because Achinese is absent from the Joshi taxonomy."
+    },
+    "Asháninka": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Bribri": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Chokwe": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Desia": {
+      "script": "Odia",
+      "rationale": "Desia is represented using the Odia script."
+    },
+    "Dinka": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Fula": {
+      "script": "Latin",
+      "rationale": "The benchmark representation uses the Latin-script Fula orthography."
+    },
+    "Fulfulde": {
+      "script": "Latin",
+      "rationale": "The benchmark representation uses the Latin-script Fulfulde orthography."
+    },
+    "Huichol": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Kabiye": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Konkani": {
+      "script": "Devanagari",
+      "rationale": "The canonical Konkani entry uses its official Devanagari orthography."
+    },
+    "Kulluvi": {
+      "script": "Devanagari",
+      "rationale": "The benchmark representation uses Devanagari."
+    },
+    "Lugbara": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Mandyali": {
+      "script": "Devanagari",
+      "rationale": "The benchmark representation uses Devanagari."
+    },
+    "Mesopotamian Arabic": {
+      "script": "Arabic",
+      "rationale": "Primary orthography uses the Arabic script."
+    },
+    "Nahuatl": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Ngaju": {
+      "joshi_level": 0,
+      "rationale": "Explicitly reviewed as level 0 because Ngaju is absent from the Joshi taxonomy."
+    },
+    "Otomí": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Pashto": {
+      "script": "Arabic",
+      "rationale": "Primary orthography uses the Arabic script."
+    },
+    "Rajasthani": {
+      "script": "Devanagari",
+      "rationale": "The canonical Rajasthani entry uses Devanagari."
+    },
+    "Sambalpuri": {
+      "script": "Odia",
+      "rationale": "The benchmark representation uses the Odia script."
+    },
+    "Sanskrit": {
+      "script": "Devanagari",
+      "rationale": "The benchmark representation uses Devanagari."
+    },
+    "Shipibo-Konibo": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Tamashek": {
+      "script": "Latin",
+      "rationale": "The benchmark representation uses the Latin-script Tamashek orthography."
+    },
+    "Tarahumara": {
+      "script": "Latin",
+      "rationale": "Primary modern orthography uses the Latin script."
+    },
+    "Toba Batak": {
+      "joshi_level": 0,
+      "rationale": "Explicitly reviewed as level 0 because Toba Batak is absent from the Joshi taxonomy."
+    }
+  },
+  "duplicate_glottocode_exceptions": {
+    "akan1250": {
+      "languages": [
+        "Akan",
+        "Twi"
+      ],
+      "rationale": "The survey preserves the benchmark labels for the macrolanguage and its Twi variety."
+    },
+    "bamb1269": {
+      "languages": [
+        "Bambara",
+        "NKo"
+      ],
+      "rationale": "NKo is retained as a benchmark-specific language label distinct from Bambara."
+    },
+    "beng1280": {
+      "languages": [
+        "Bengali",
+        "Bengali (Romanized)"
+      ],
+      "rationale": "Native-script and romanized benchmark variants are analyzed separately."
+    },
+    "cusc1236": {
+      "languages": [
+        "Cusco Quechua",
+        "Quechua"
+      ],
+      "rationale": "The survey preserves the broad benchmark label and the explicitly named regional variety."
+    },
+    "hind1269": {
+      "languages": [
+        "Bhatnair",
+        "Bilaspuri",
+        "Hindi",
+        "Hindi (Romanized)",
+        "Meeruti",
+        "Muzaffarnagar",
+        "Sirmouri"
+      ],
+      "rationale": "Benchmark-specific Hindi dialect and romanized labels are intentionally analyzed separately."
+    },
+    "nepa1254": {
+      "languages": [
+        "Nepali",
+        "Nepali (Romanized)"
+      ],
+      "rationale": "Native-script and romanized benchmark variants are analyzed separately."
+    },
+    "oriy1255": {
+      "languages": [
+        "Baleswari",
+        "Ganjami",
+        "Odia"
+      ],
+      "rationale": "Benchmark-specific Odia dialect labels are intentionally analyzed separately."
+    },
+    "port1283": {
+      "languages": [
+        "Brazilian Portuguese",
+        "Mozambican Portuguese",
+        "Portuguese"
+      ],
+      "rationale": "Regional benchmark varieties are intentionally analyzed separately from the broad language label."
+    },
+    "sinh1246": {
+      "languages": [
+        "Sinhala",
+        "Sinhala (Romanized)"
+      ],
+      "rationale": "Native-script and romanized benchmark variants are analyzed separately."
+    },
+    "stan1288": {
+      "languages": [
+        "Latin American Spanish",
+        "Spanish"
+      ],
+      "rationale": "The regional benchmark variety is intentionally analyzed separately from the broad language label."
+    },
+    "stan1293": {
+      "languages": [
+        "English",
+        "English (Indian)"
+      ],
+      "rationale": "Indian English is an explicit benchmark variety and is intentionally analyzed separately."
+    },
+    "stan1318": {
+      "languages": [
+        "Arabic",
+        "Modern Standard Arabic (Romanized)",
+        "Standard Arabic"
+      ],
+      "rationale": "Broad, standard, and romanized benchmark labels are intentionally analyzed separately."
+    },
+    "urdu1245": {
+      "languages": [
+        "Urdu",
+        "Urdu (Romanized)"
+      ],
+      "rationale": "Native-script and romanized benchmark variants are analyzed separately."
+    },
+    "west2454": {
+      "languages": [
+        "Fula",
+        "Fulfulde"
+      ],
+      "rationale": "Both benchmark labels are retained because the source suites use them independently."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "BeMyCheese",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "machine translation cultural localisation evaluation",
+      "source": "original",
+      "source_language": "English",
+      "translation_method": null,
+      "num_languages": 15,
+      "language_list": [
+        "Afrikaans",
+        "Arabic",
+        "Brazilian Portuguese",
+        "Cantonese",
+        "Czech",
+        "Dutch",
+        "Hebrew",
+        "Hindi",
+        "Japanese",
+        "Korean",
+        "Mandarin",
+        "Russian",
+        "Spanish",
+        "Swahili",
+        "Urdu"
+      ],
+      "annotation_method": "Human evaluation by 5 native-speaker raters per language (N=75 total) scoring on a 0-3 ordinal scale for full-text criteria (content fidelity, style fidelity, audience appropriateness, overall quality) and segment-level cultural nuance ratings with NA option for untranslated segments. Produced 13,125 segment-specific annotations.",
+      "data_creator_info": {
+        "creator_type": "researchers",
+        "creator_affiliation": "Appen",
+        "creator_demographics_reported": true,
+        "compensation_reported": false,
+        "evidence": "Authors are from Appen (a data annotation company). Rater demographics (age, gender, education) reported in Appendix B1. No mention of compensation. Ratings collected via 'our proprietary data annotation software (redacted for anonymity)' (Section 3.5)."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Source texts are 5 English e-commerce marketing emails adapted from authentic commercial campaigns. Each email contains puns, holiday-specific phrases, idiomatic expressions, culturally specific references, and brand voice. 25 culturally nuanced segments extracted (13 cultural concepts, 4 idioms, 4 holidays, 4 puns). 7 LLMs generated translations that were then human-evaluated. Builds on a pilot study of 87 translations across 20 languages (Anonymous, 2025)."
+    }
+  ]
+}

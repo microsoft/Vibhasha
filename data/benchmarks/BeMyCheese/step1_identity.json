@@ -1,0 +1,17 @@
+{
+  "benchmark_name": "BeMyCheese",
+  "paper_id": "2602.04729v1",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce the first multilingual, human-annotated benchmark designed explicitly to evaluate cultural nuance and resonance in machine translation",
+  "total_languages_claimed": 15,
+  "total_datasets": 1,
+  "dataset_names": [
+    "BeMyCheese"
+  ],
+  "task_categories": [
+    "machine translation evaluation",
+    "cultural localisation evaluation"
+  ],
+  "brief_description": "A large-scale human evaluation benchmark for assessing cultural localisation in machine translation by multilingual LLMs. Evaluates 7 LLMs across 15 target languages with 5 native-speaker raters per language on both full-text translations and segment-level culturally nuanced language (idioms, puns, holidays, cultural concepts) on a 0-3 ordinal quality scale."
+}

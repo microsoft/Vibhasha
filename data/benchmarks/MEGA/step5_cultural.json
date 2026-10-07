@@ -1,0 +1,52 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["TyDiQA-GoldP", "IndicQA", "UDPOS", "XLSum", "GLUECoS NLI", "EN-ES-CS"],
+      "evidence": "TyDiQA-GoldP is natively collected by information-seeking speakers in each language. IndicQA is manually curated from Wikipedia articles on Indic topics. UDPOS uses natively-sourced Universal Dependencies treebank text. XLSum consists of BBC news articles natively authored in 44 languages. GLUECoS NLI uses Bollywood movie conversations. EN-ES-CS uses naturally occurring code-mixed tweets."
+    },
+    "datasets_translated_from_english": {
+      "list": ["XNLI", "Indic-XNLI", "PAWS-X", "XCOPA", "XStoryCloze", "MLQA", "XQuAD"],
+      "evidence": "XNLI: 'professional translations of the MNLI corpus into 14 languages'. Indic-XNLI: 'translates the XNLI dataset into 11 Indic languages by using Machine Translation'. PAWS-X: 'professionally translated from the PAWS dataset'. XCOPA: 'a translation of the COPA dataset into 11 typologically diverse languages'. XStoryCloze: 'translating the English StoryCloze dataset using professional translators'. MLQA: 'extractive QA dataset translated into 7 languages by professional translators'. XQuAD: 'professional translations of a subset of the SQuAD dataset'."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["TyDiQA-GoldP", "IndicQA", "XLSum", "GLUECoS NLI", "EN-ES-CS"],
+      "details": {
+        "TyDiQA-GoldP": "Natively collected information-seeking QA reflecting genuine needs of speakers in each language community.",
+        "IndicQA": "Context paragraphs chosen from Wikipedia articles closely related to Indic culture, history, etc.",
+        "XLSum": "BBC news articles natively authored for specific language communities by local journalists.",
+        "GLUECoS NLI": "Bollywood movie conversations reflecting Indian bilingual cultural context.",
+        "EN-ES-CS": "Naturally occurring English-Spanish code-mixed tweets from bilingual communities."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "varies_by_dataset",
+      "evidence": "MEGA aggregates 16 existing datasets; annotator profiles vary. TyDiQA-GoldP uses native speakers. XLSum uses native-language journalists. XNLI, PAWS-X, XCOPA, XStoryCloze, MLQA, XQuAD use professional translators (may or may not be native). WikiANN uses automatic annotation projection. Indic-XNLI uses MT with native speaker validation. The MEGA paper does not provide unified annotator information."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "professional_translators",
+        "native_speakers",
+        "expert_linguists",
+        "crowdsource_workers",
+        "professional_journalists",
+        "automatic_systems",
+        "researchers"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": ["Microsoft Corporation", "University of Washington", "Carnegie Mellon University", "Johns Hopkins University"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "MEGA is an aggregation benchmark; the MEGA paper authors are from Microsoft Corporation, University of Washington, CMU, and JHU. Individual dataset annotator details are in the respective original papers, not in the MEGA paper."
+    },
+    "english_centricity_notes": "MEGA reveals significant English-centricity in multilingual LLM evaluation: (1) All prompt templates are written in English regardless of target language. (2) 7 of 16 datasets are translated from English sources. (3) GPT models show strong English performance bias with significant disparity for low-resource, non-Latin script languages. (4) Translate-test strategy (translating inputs to English) often improves performance, especially for low-resource languages, highlighting models' English-centric capabilities. (5) The paper notes 'there is a significant disparity between the performance of LLMs in English vs non-English languages'. (6) Even with possible test data contamination inflating scores, LLMs 'still vastly underperform on (especially low-resource) non-English languages'.",
+    "geographic_representation": {
+      "primary_region": "Global (but heavily Indo-European and South Asian)",
+      "sub_regions": ["South Asia", "Europe", "East Asia", "Southeast Asia"],
+      "also_represented": ["Sub-Saharan Africa", "Middle East/North Africa", "Central Asia", "Caribbean", "South America (Quechua)"],
+      "notably_excluded": ["Indigenous Americas (beyond Quechua)", "Oceania/Pacific Islands", "Most of Africa (limited to Swahili, Yoruba, Hausa, Igbo, Amharic, Oromo, Kirundi, Wolof, Nigerian Pidgin, Somali)"],
+      "evidence": "MEGA encompasses 70 languages covering 21 different language families, with Indo-Aryan and Afro-Asiatic languages in the majority (Figure 1b). The paper acknowledges: 'there is very little representation from African languages, Indigenous languages of the Americas etc. in any of the evaluation benchmarks available today.'"
+    }
+  }
+}

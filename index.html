@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+    <!-- Start Single Page App redirect for GitHub Pages -->
+    <script>
+      // Restore the real URL from the query-string redirect performed by 404.html
+      // See: https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + (l.hash ? '#' + l.hash.slice(1) : '')
+          );
+        }
+      }(window.location));
+    </script>
+    <!-- End Single Page App redirect for GitHub Pages -->
+  </head>
+  <body>
+    <div id="root">
+      <noscript>
+        This application requires JavaScript to run. Please enable JavaScript in your browser.
+      </noscript>
+    </div>
+    <!-- During development Vite expects the entry at /src/main.jsx -->
+    <script type="module" src="/main.jsx"></script>
+  </body>
+</html>

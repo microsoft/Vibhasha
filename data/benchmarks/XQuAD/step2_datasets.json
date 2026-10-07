@@ -1,0 +1,26 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "XQuAD",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "extractive_question_answering",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "professional_human_translation",
+      "num_languages": 11,
+      "language_list": ["English", "Spanish", "German", "Greek", "Russian", "Turkish", "Arabic", "Vietnamese", "Thai", "Chinese", "Hindi"],
+      "annotation_method": "professional_human_translation_with_answer_span_placeholders",
+      "data_creator_info": {
+        "creator_type": "professional_translators",
+        "creator_affiliation": "Gengo (professional translation service)",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "The translations were done by professional human translators through the Gengo service. The translation workload was divided into 10 batches for each language, which were submitted separately to Gengo."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "SQuAD v1.1 (Rajpurkar et al., 2016)",
+      "notes": "240 paragraphs and 1190 question-answer pairs selected from the SQuAD v1.1 development set (5 context paragraphs at random from each of the 48 documents). Translators were instructed to transliterate named entities following Wikipedia conventions. Answer spans were marked with placeholder symbols for translators to preserve in their translations."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [
+        "TriviaQA"
+      ],
+      "evidence": "Questions and answers were originally authored in English by trivia enthusiasts on trivia/quiz-league websites. Evidence documents are English Wikipedia and English web pages. The dataset is natively English, not translated from another language."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "TriviaQA is a monolingual English dataset with no translation component."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "The dataset covers broad trivia topics but is not designed for cultural grounding in any specific culture or region."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "INSUFFICIENT_INFO: The paper does not report the native language of the trivia enthusiasts or the human annotator.",
+      "evidence": "Questions were gathered from 14 English-language trivia and quiz-league websites. A single human annotator verified a subset. No demographic or language background information is provided."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "trivia enthusiasts (questions/answers)",
+        "automated retrieval (evidence documents)",
+        "expert annotator (verification)"
+      ],
+      "total_annotators_reported": null,
+      "affiliations": [
+        "University of Washington",
+        "Allen Institute for AI"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": null,
+      "irb_ethics_review": null,
+      "evidence": "We collected a large dataset to support the reading comprehension task described above. First we gathered question-answer pairs from 14 trivia and quiz-league websites. The paper mentions 'a human annotator' for verification but provides no demographic, compensation, or ethics review details."
+    },
+    "english_centricity_notes": "TriviaQA is an English-only dataset. All questions, answers, and evidence documents are in English. The trivia questions originate from English-language trivia websites and evidence is gathered from English Wikipedia and English web search results via Bing.",
+    "geographic_representation": {
+      "primary_region": "INSUFFICIENT_INFO: Not explicitly stated, but the dataset draws from English-language trivia websites and covers global trivia topics.",
+      "sub_regions": [],
+      "also_represented": [],
+      "notably_excluded": [],
+      "evidence": "The paper does not discuss geographic representation. Questions cover diverse topics (history, geography, entertainment, science) but the geographic distribution of topics is not analyzed."
+    }
+  }
+}

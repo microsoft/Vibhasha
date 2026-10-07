@@ -1,0 +1,65 @@
+{
+  "total_languages": 15,
+  "languages": {
+    "English": {
+      "iso_code": "en",
+      "datasets_present_in": ["XNLI"]
+    },
+    "French": {
+      "iso_code": "fr",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Spanish": {
+      "iso_code": "es",
+      "datasets_present_in": ["XNLI"]
+    },
+    "German": {
+      "iso_code": "de",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Greek": {
+      "iso_code": "el",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Bulgarian": {
+      "iso_code": "bg",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Russian": {
+      "iso_code": "ru",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Turkish": {
+      "iso_code": "tr",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Arabic": {
+      "iso_code": "ar",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Vietnamese": {
+      "iso_code": "vi",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Thai": {
+      "iso_code": "th",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Chinese": {
+      "iso_code": "zh",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Hindi": {
+      "iso_code": "hi",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Swahili": {
+      "iso_code": "sw",
+      "datasets_present_in": ["XNLI"]
+    },
+    "Urdu": {
+      "iso_code": "ur",
+      "datasets_present_in": ["XNLI"]
+    }
+  }
+}

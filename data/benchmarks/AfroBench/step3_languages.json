@@ -1,0 +1,269 @@
+{
+  "total_languages": 64,
+  "languages": {
+    "Algerian Arabic": {
+      "iso_code": "arq",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128"]
+    },
+    "Egyptian Arabic": {
+      "iso_code": "arz",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy"]
+    },
+    "Kabyle": {
+      "iso_code": "kab",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Oromo": {
+      "iso_code": "orm",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128"]
+    },
+    "Moroccan Arabic": {
+      "iso_code": "ary",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "XLSum"]
+    },
+    "Tamasheq": {
+      "iso_code": "taq",
+      "datasets_present_in": ["SIB-200"]
+    },
+    "Tamazight": {
+      "iso_code": "tzm",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Tigrinya": {
+      "iso_code": "tir",
+      "datasets_present_in": ["AfriSenti", "Injongo-Intent", "SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "AfriMGSM"]
+    },
+    "Tunisian Arabic": {
+      "iso_code": "aeb",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Akan": {
+      "iso_code": "aka",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Bambara": {
+      "iso_code": "bam",
+      "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"]
+    },
+    "Bemba": {
+      "iso_code": "bem",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128", "SALT"]
+    },
+    "Chichewa": {
+      "iso_code": "nya",
+      "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "chiShona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["AfriHate", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128"]
+    },
+    "Chokwe": {
+      "iso_code": "cjk",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Dyula": {
+      "iso_code": "dyu",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Éwé": {
+      "iso_code": "ewe",
+      "datasets_present_in": ["AfriHate", "AfriXNLI", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND"]
+    },
+    "Fon": {
+      "iso_code": "fon",
+      "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "SIB-200", "FLORES-200", "MAFAND", "AfriADR"]
+    },
+    "Nigerian Fulfulde": {
+      "iso_code": "fuv",
+      "datasets_present_in": ["SIB-200"]
+    },
+    "Ghomálá'": {
+      "iso_code": "bbj",
+      "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriADR"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "AfriADR"]
+    },
+    "isiXhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "Uhura-Arc-Easy", "XLSum", "AfriXNLI"]
+    },
+    "isiZulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "Uhura-Arc-Easy", "XLSum", "AfriXNLI", "AfriHate"]
+    },
+    "Kabiyè": {
+      "iso_code": "kbp",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kamba": {
+      "iso_code": "kam",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kikongo": {
+      "iso_code": "kon",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kikuyu": {
+      "iso_code": "kik",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kimbundu": {
+      "iso_code": "kmb",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kinyarwanda": {
+      "iso_code": "kin",
+      "datasets_present_in": ["AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "XLSum"]
+    },
+    "Kiswahili": {
+      "iso_code": "swa",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "NollySenti"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "AfriMGSM", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128"]
+    },
+    "Luba-Kasai": {
+      "iso_code": "lua",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Luganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["AfriHate", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128", "SALT", "XLSum"]
+    },
+    "Lugbara": {
+      "iso_code": "lgg",
+      "datasets_present_in": ["SALT"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"]
+    },
+    "Mossi": {
+      "iso_code": "mos",
+      "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "N'Ko": {
+      "iso_code": "nqo",
+      "datasets_present_in": ["SIB-200"]
+    },
+    "Rundi": {
+      "iso_code": "run",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Runyankole": {
+      "iso_code": "nyn",
+      "datasets_present_in": ["SALT"]
+    },
+    "Sango": {
+      "iso_code": "sag",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Setswana": {
+      "iso_code": "tsn",
+      "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Southern Sotho": {
+      "iso_code": "sot",
+      "datasets_present_in": ["AfriXNLI", "Injongo-Intent", "SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Swati": {
+      "iso_code": "ssw",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Twi": {
+      "iso_code": "twi",
+      "datasets_present_in": ["AfriSenti", "AfriXNLI", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMMLU", "FLORES-200", "MAFAND", "NTREX-128", "AfriMGSM"]
+    },
+    "Tumbuka": {
+      "iso_code": "tum",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Umbundu": {
+      "iso_code": "umb",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Xitsonga": {
+      "iso_code": "tso",
+      "datasets_present_in": ["AfriSenti", "SIB-200", "FLORES-200"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "Injongo-Intent", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "FLORES-200", "MAFAND", "NTREX-128", "AfriADR", "AfriMMLU"]
+    },
+    "Yorùbá": {
+      "iso_code": "yor",
+      "datasets_present_in": ["AfriHate", "AfriSenti", "AfriXNLI", "Injongo-Intent", "NollySenti", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "SIB-200", "AfriMGSM", "AfriMMLU", "AfriQA", "Belebele", "NaijaRC", "FLORES-200", "MAFAND", "NTREX-128", "XLSum", "Uhura-Arc-Easy", "AfriADR"]
+    },
+    "Acholi": {
+      "iso_code": "ach",
+      "datasets_present_in": ["SALT"]
+    },
+    "Ateso": {
+      "iso_code": "teo",
+      "datasets_present_in": ["SALT"]
+    },
+    "Dinka": {
+      "iso_code": "dik",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Kanuri": {
+      "iso_code": "knc",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Luo (Kenya)": {
+      "iso_code": "luo",
+      "datasets_present_in": ["MasakhaNER-X", "MasakhaPOS", "SIB-200", "FLORES-200", "MAFAND"]
+    },
+    "Nuer": {
+      "iso_code": "nus",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Malagasy": {
+      "iso_code": "plt",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["SIB-200", "FLORES-200", "NTREX-128"]
+    },
+    "Mozambican Portuguese": {
+      "iso_code": "pt-MZ",
+      "datasets_present_in": ["SIB-200"]
+    },
+    "Nigerian Pidgin": {
+      "iso_code": "pcm",
+      "datasets_present_in": ["AfriSenti", "AfriXNLI", "MasakhaNEWS", "MasakhaNER-X", "MasakhaPOS", "Belebele", "NaijaRC"]
+    },
+    "Kabuverdianu": {
+      "iso_code": "kea",
+      "datasets_present_in": ["SIB-200", "FLORES-200"]
+    },
+    "Northern Ndebele": {
+      "iso_code": "nde",
+      "datasets_present_in": ["Belebele"]
+    },
+    "Venda": {
+      "iso_code": "ven",
+      "datasets_present_in": ["Belebele"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "benchmark_name": "FLORES-101",
+  "paper_id": "tacl_a_00474",
+  "year": 2022,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We present the FLORES-101 benchmark, consisting of 3001 sentences sampled from various topics in English Wikipedia and professionally translated in 101 languages.",
+  "total_languages_claimed": 101,
+  "total_datasets": 1,
+  "dataset_names": ["FLORES-101"],
+  "task_categories": ["machine_translation"],
+  "brief_description": "A high-quality evaluation benchmark for multilingual machine translation consisting of 3001 English Wikipedia sentences professionally translated into 101 languages, enabling many-to-many evaluation of 10,100 translation directions."
+}

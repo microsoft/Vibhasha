@@ -1,0 +1,40 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["IndicParam"],
+      "evidence": "Questions sourced from UGC-NET graduate-level examinations natively authored in each Indic language by the National Testing Agency, Government of India. Not translated from English."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "No datasets in IndicParam are translated from English. All questions originate from UGC-NET examination papers in the target languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["IndicParam"],
+      "details": {
+        "IndicParam": "Questions cover language-specific linguistics, literature, grammar, and culturally grounded general knowledge drawn from Indian graduate-level UGC-NET examinations. Topics include Indian literature, history, and cultural knowledge relevant to each language's speakers."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "Annotation was carried out by native speakers having expertise in the target language and having prior experience reading graduate-level exam material."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["native speaker experts", "senior reviewers"],
+      "total_annotators_reported": null,
+      "affiliations": ["Indian Institute of Management Indore", "BharatGen"],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Annotators were compensated at a rate of $1 per 10 questions.",
+      "irb_ethics_review": false,
+      "evidence": "As the dataset is built exclusively from existing public materials and involves no new data collection from human participants, no formal review by an Institutional Review Board (IRB) or equivalent ethics committee was required or conducted. Instead, the authors performed an internal assessment of data provenance, potential societal impacts, licensing considerations, and responsible use."
+    },
+    "english_centricity_notes": "The benchmark explicitly targets low- and extremely low-resource Indic languages that are underserved by existing benchmarks. It does not rely on English sources. A Sanskrit-English code-mixed variant is included as a separate evaluation set. The evaluation prompt is in English, but the questions and options are in the native languages.",
+    "geographic_representation": {
+      "primary_region": "South Asia",
+      "sub_regions": ["India", "Nepal"],
+      "also_represented": [],
+      "notably_excluded": ["Dravidian languages (e.g. Tamil, Telugu, Kannada)", "High-resource Indo-Aryan languages (e.g. Hindi, Bengali, Punjabi)"],
+      "evidence": "These languages are spoken by approximately 280 million people across the Indian subcontinent. 10 languages are recognized as scheduled languages in the Indian Constitution. Rajasthani, though not a scheduled language, is spoken by roughly 25 million people. The paper explicitly focuses on low- and extremely low-resource Indic languages that are underrepresented in existing benchmarks."
+    }
+  }
+}

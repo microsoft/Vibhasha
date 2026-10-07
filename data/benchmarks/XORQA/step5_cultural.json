@@ -1,0 +1,62 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": ["XOR-TYDI QA"],
+      "evidence": "Questions are inherited from TyDi QA and were originally written by native speakers of each language, not translated from English. 'since all questions are inherited from TYDI QA, they are information-seeking questions written by native speakers, and better reflect native speakers' interests and their own linguistic phenomena. This distinguishes XOR-TYDI QA from translation-based datasets such as MLQA and MKQA.' However, the answer annotation pipeline involves English as a pivot language for cross-lingual data."
+    },
+    "datasets_translated_from_english": {
+      "list": [],
+      "evidence": "Questions are NOT translated from English. The paper explicitly contrasts itself with translation-based datasets: 'Questions in most recent multilingual QA datasets are translated from English, which leads to English-centric questions.' Answers for cross-lingual data are annotated in English Wikipedia and translated back to target languages, but this is part of the annotation pipeline, not a wholesale translation of an English benchmark."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["XOR-TYDI QA"],
+      "details": {
+        "XOR-TYDI QA": "Questions come from native speakers reflecting their actual information needs. Examples include questions about local topics: average wage in Krasnodar (Russian), silk-reeling techniques in Japan, French prime ministers from Korean speakers. The paper argues this represents real-world applications for non-English speakers."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partially",
+      "evidence": "Questions were written by native speakers (via TyDi QA). Question translation done by professional translators (Gengo) with native speaker quality assessment. Answer annotation in English was done by English-speaking MTurk workers located in English-speaking countries. Answer verification by native English-speaking undergraduates. Answer back-translation by Gengo professional translators. Not all annotators in the pipeline are native speakers of the target languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": [
+        "professional translators (Gengo)",
+        "crowdworkers (Amazon Mechanical Turk)",
+        "trained undergraduate students"
+      ],
+      "total_annotators_reported": "Over 200 participated in calibration; ~40 qualified; 24 actively worked on final dataset (for QA annotation). Separate pool of professional translators via Gengo.",
+      "affiliations": [
+        "University of Washington",
+        "Google Research",
+        "University of Texas at Austin",
+        "Allen Institute for AI"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "Each HIT contains 5 questions with a reward ranging from 1.5 to 2.5 USD. Qualified annotators generally spend 1-2 minutes per question. Special rewards of 5-10 USD for annotators who actively search additional paragraphs or articles.",
+      "irb_ethics_review": null,
+      "evidence": "Crowdworkers consented through the Amazon Mechanical Turk Participation Agreement. Detailed legal and ethical considerations section included in paper. No explicit mention of IRB review."
+    },
+    "english_centricity_notes": "The benchmark is explicitly designed to address English-centricity in multilingual QA. Questions come from native speakers, not English translations. However, the annotation pipeline uses English Wikipedia as the primary answer source for cross-lingual data, and answer annotation is performed by English-speaking workers. English serves as the pivot language for the cross-lingual retrieval task. The paper acknowledges: 'this dataset still covers a very limited subset of languages in the world.'",
+    "geographic_representation": {
+      "primary_region": "Cross-regional (Middle East, South Asia, Northern Europe, East Asia, Eastern Europe)",
+      "sub_regions": [
+        "Middle East (Arabic)",
+        "South Asia (Bengali, Telugu)",
+        "Northern Europe (Finnish)",
+        "East Asia (Japanese, Korean)",
+        "Eastern Europe (Russian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Sub-Saharan Africa",
+        "Latin America",
+        "Southeast Asia",
+        "Central Asia",
+        "Oceania",
+        "Indigenous languages"
+      ],
+      "evidence": "7 languages chosen based on cost and availability of translators from 10 non-English TyDi QA languages: Arabic, Bengali, Finnish, Japanese, Korean, Russian, Telugu. 'The cost of translations depends on the number of available translators, and the estimated translation cost for the other three non-English languages was considerably higher.'"
+    }
+  }
+}

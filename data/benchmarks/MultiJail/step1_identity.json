@@ -1,0 +1,17 @@
+{
+  "benchmark_name": "MultiJail",
+  "paper_id": "2310.06474v3",
+  "year": 2024,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we have obtained a multilingual jailbreak dataset named MultiJail. It comprises a total of 3150 samples, with 315 samples in English and parallel samples in nine other diverse non-English languages. To the best of our knowledge, this is the first multilingual jailbreak dataset available.",
+  "total_languages_claimed": 10,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MultiJail"
+  ],
+  "task_categories": [
+    "safety evaluation",
+    "jailbreak detection"
+  ],
+  "brief_description": "A multilingual jailbreak dataset comprising 3150 samples across 10 languages (English plus 9 non-English), designed to evaluate LLM safety under two scenarios: unintentional (non-English users inadvertently bypassing safety) and intentional (malicious users combining multilingual prompts with jailbreak instructions)."
+}

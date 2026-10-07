@@ -1,0 +1,38 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "Both CL-IFEval and CL-GSM Symbolic are translated from English source benchmarks (IFEval and GSM-Symbolic respectively). 'We create multi-lingual functional benchmarks by translating existing functional benchmark templates from English to five additional languages.' (Section 1)"
+    },
+    "datasets_translated_from_english": {
+      "list": ["CL-IFEval", "CL-GSM Symbolic"],
+      "evidence": "We construct multi-lingual functional benchmarks by translating (a) the 100 English GSM-Symbolic templates and (b) the 541 English IFEval prompts... into French, Spanish, Yoruba, Hindi, and Arabic. Initial translations are produced with Google Translate. (Section 3)"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {}
+    },
+    "all_annotators_native_speakers": {
+      "value": "Validators were native speakers; translations were automated (Google Translate)",
+      "evidence": "For each language, we recruited at least two native speakers volunteers to validate translations. Validators were recruited primarily from students studying at a US-based university. For Yoruba, we additionally recruited a native speaker based in Nigeria to ensure dialectal and cultural appropriateness in a low-resource setting. (Section 3)"
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "students"],
+      "total_annotators_reported": null,
+      "affiliations": ["Brown University", "University of California, Berkeley", "Native speaker based in Nigeria (Yoruba)"],
+      "demographics_reported": false,
+      "compensation_reported": false,
+      "compensation_details": "INSUFFICIENT_INFO: Paper describes validators as 'volunteers' suggesting no monetary compensation, but no explicit details provided",
+      "irb_ethics_review": null,
+      "evidence": "For each language, we recruited at least two native speakers volunteers to validate translations. Validators were recruited primarily from students studying at a US-based university. For Yoruba, we additionally recruited a native speaker based in Nigeria. No mention of IRB or ethics review process. Acknowledgments mention support from MacArthur Foundation, Mozilla Foundation, and Heising-Simons Foundation. (Section 3, Acknowledgments)"
+    },
+    "english_centricity_notes": "Both benchmarks are direct translations from English source benchmarks via Google Translate. The paper itself acknowledges that translation-based benchmarks are critiqued for being 'devoid of realistic cultural context' (Section 2). The CL-GSM Symbolic validation rubric explicitly requires preserving English measurement units (imperial) rather than adapting to local conventions. The Limitations section notes: 'We use automated translation tools like Google Translate... they introduce potential inaccuracies, particularly for lower resourced languages like Yoruba, and when dealing with conversions across metric and imperial measurement systems.' (Section 6, Limitations). CL-IFEval prompts are English-authored instructions tested in translation rather than natively constructed multilingual tasks.",
+    "geographic_representation": {
+      "primary_region": "Global (languages selected to span resource levels)",
+      "sub_regions": ["Western Europe", "South Asia", "Middle East/North Africa", "West Africa"],
+      "also_represented": ["Americas (via Spanish)"],
+      "notably_excluded": ["East Asia", "Southeast Asia", "Central Asia", "Oceania", "Americas (indigenous languages)"],
+      "evidence": "Following Bang et al. (2023); Lai et al. (2023b), we refer to languages by ISO 639-1 codes and select them to span resource levels based on CommonCrawl coverage: English (43.37%), French (4.52%), Spanish (4.64%), Arabic (0.66%), Hindi (0.20%), Yoruba (0.0009%). (Table 3, Section 3)"
+    }
+  }
+}

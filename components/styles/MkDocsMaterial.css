@@ -1,0 +1,660 @@
+/**
+ * MkDocs Material Theme Styles
+ * 
+ * Provides styling for MkDocs Material-specific components:
+ * - Admonitions (note, info, tip, success, warning, danger, etc.)
+ * - Grid layouts and cards
+ * - Button-styled links
+ * - Material Design icons
+ */
+
+/* ==========================================================================
+   Admonitions - Base Styles
+   ========================================================================== */
+
+.admonition {
+  margin: 1.5rem 0;
+  padding: 0;
+  border-left: 4px solid;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--admonition-bg, #f8f9fa);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.admonition-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--admonition-title-bg, rgba(0, 0, 0, 0.03));
+}
+
+.admonition-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.admonition-content {
+  padding: 0.75rem 1rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.admonition-content > *:first-child {
+  margin-top: 0;
+}
+
+.admonition-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested elements inside admonitions */
+.admonition-content p {
+  margin: 0.75rem 0;
+}
+
+.admonition-content ul,
+.admonition-content ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.admonition-content code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.admonition-content pre {
+  margin: 0.75rem 0;
+  padding: 1rem;
+  background: var(--surface-secondary, #f6f8fa);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.admonition-content pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.admonition-content table {
+  margin: 0.75rem 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Admonitions - Collapsible (details/summary)
+   ========================================================================== */
+
+details.admonition {
+  cursor: pointer;
+}
+
+details.admonition > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+details.admonition > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.admonition > summary::before {
+  content: '▶';
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+}
+
+details.admonition[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+details.admonition > .admonition-content {
+  cursor: default;
+}
+
+/* ==========================================================================
+   Admonition Types - Vibhasha 3-Category Color Scheme
+   
+   Only three semantic categories are used:
+     Blue  (info)    — informational, definitions, context, principles
+     Amber (warning) — challenges, risks, limitations, cautions
+     Green (success) — opportunities, best practices, tips, checklists
+   Legacy types are aliased to these three as a safety net.
+   ========================================================================== */
+
+/* ── Blue — Informational ── */
+.admonition-info {
+  border-color: #8F8FFF;
+  --admonition-bg: #EAEAFF;
+  --admonition-title-bg: #D1D1FF;
+}
+.admonition-info .admonition-title {
+  color: #312A9A;
+}
+
+/* ── Amber — Cautionary ── */
+.admonition-warning {
+  border-color: #FFB357;
+  --admonition-bg: #FFF3E2;
+  --admonition-title-bg: #FFE4BE;
+}
+.admonition-warning .admonition-title {
+  color: #A55105;
+}
+
+/* ── Green — Positive ── */
+.admonition-success {
+  border-color: #88E06C;
+  --admonition-bg: #EDFDE6;
+  --admonition-title-bg: #C8F5B7;
+}
+.admonition-success .admonition-title {
+  color: #197123;
+}
+
+/* ── Legacy type aliases (safety net for any un-migrated markdown) ── */
+
+/* note, abstract, quote, example, question, important → Blue (info) */
+.admonition-note,
+.admonition-abstract,
+.admonition-quote,
+.admonition-example,
+.admonition-question,
+.admonition-important {
+  border-color: #8F8FFF;
+  --admonition-bg: #EAEAFF;
+  --admonition-title-bg: #D1D1FF;
+}
+.admonition-note .admonition-title,
+.admonition-abstract .admonition-title,
+.admonition-quote .admonition-title,
+.admonition-example .admonition-title,
+.admonition-question .admonition-title,
+.admonition-important .admonition-title {
+  color: #312A9A;
+}
+
+/* tip → Green (success) */
+.admonition-tip {
+  border-color: #88E06C;
+  --admonition-bg: #EDFDE6;
+  --admonition-title-bg: #C8F5B7;
+}
+.admonition-tip .admonition-title {
+  color: #197123;
+}
+
+/* danger, failure, bug → Amber (warning) */
+.admonition-danger,
+.admonition-failure,
+.admonition-bug {
+  border-color: #FFB357;
+  --admonition-bg: #FFF3E2;
+  --admonition-title-bg: #FFE4BE;
+}
+.admonition-danger .admonition-title,
+.admonition-failure .admonition-title,
+.admonition-bug .admonition-title {
+  color: #A55105;
+}
+
+/* ==========================================================================
+   Dark Mode - Admonitions
+   ========================================================================== */
+
+[data-theme="dark"] .admonition {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .admonition-content code {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode — 3 canonical types */
+[data-theme="dark"] .admonition-info {
+  --admonition-bg: rgba(143, 143, 255, 0.15);
+  --admonition-title-bg: rgba(143, 143, 255, 0.25);
+}
+[data-theme="dark"] .admonition-info .admonition-title { color: #B8B8FF; }
+
+[data-theme="dark"] .admonition-warning {
+  --admonition-bg: rgba(255, 179, 87, 0.15);
+  --admonition-title-bg: rgba(255, 179, 87, 0.25);
+}
+[data-theme="dark"] .admonition-warning .admonition-title { color: #FFD19A; }
+
+[data-theme="dark"] .admonition-success {
+  --admonition-bg: rgba(136, 224, 108, 0.15);
+  --admonition-title-bg: rgba(136, 224, 108, 0.25);
+}
+[data-theme="dark"] .admonition-success .admonition-title { color: #A8F09A; }
+
+/* Dark mode — legacy aliases → Blue (info) */
+[data-theme="dark"] .admonition-note,
+[data-theme="dark"] .admonition-abstract,
+[data-theme="dark"] .admonition-quote,
+[data-theme="dark"] .admonition-example,
+[data-theme="dark"] .admonition-question,
+[data-theme="dark"] .admonition-important {
+  --admonition-bg: rgba(143, 143, 255, 0.15);
+  --admonition-title-bg: rgba(143, 143, 255, 0.25);
+}
+[data-theme="dark"] .admonition-note .admonition-title,
+[data-theme="dark"] .admonition-abstract .admonition-title,
+[data-theme="dark"] .admonition-quote .admonition-title,
+[data-theme="dark"] .admonition-example .admonition-title,
+[data-theme="dark"] .admonition-question .admonition-title,
+[data-theme="dark"] .admonition-important .admonition-title { color: #B8B8FF; }
+
+/* Dark mode — legacy alias → Green (success) */
+[data-theme="dark"] .admonition-tip {
+  --admonition-bg: rgba(136, 224, 108, 0.15);
+  --admonition-title-bg: rgba(136, 224, 108, 0.25);
+}
+[data-theme="dark"] .admonition-tip .admonition-title { color: #A8F09A; }
+
+/* Dark mode — legacy aliases → Amber (warning) */
+[data-theme="dark"] .admonition-danger,
+[data-theme="dark"] .admonition-failure,
+[data-theme="dark"] .admonition-bug {
+  --admonition-bg: rgba(255, 179, 87, 0.15);
+  --admonition-title-bg: rgba(255, 179, 87, 0.25);
+}
+[data-theme="dark"] .admonition-danger .admonition-title,
+[data-theme="dark"] .admonition-failure .admonition-title,
+[data-theme="dark"] .admonition-bug .admonition-title { color: #FFD19A; }
+
+/* ==========================================================================
+   Grid Layouts
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.grid.cards {
+  gap: 1.25rem;
+}
+
+/* Grid cards - styled list items */
+.grid.cards > ul {
+  display: contents;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid.cards > ul > li,
+.grid.cards > * {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.grid.cards > ul > li:hover,
+.grid.cards > *:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Cards can contain admonitions - remove margin */
+.grid > .admonition {
+  margin: 0;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode cards */
+[data-theme="dark"] .grid.cards > ul > li,
+[data-theme="dark"] .grid.cards > * {
+  --card-bg: #1e1e1e;
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Button Links
+   ========================================================================== */
+
+.md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6em 1.2em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid var(--color-header-bg, #0078d4);
+  color: var(--color-header-bg, #0078d4);
+  background: transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.md-button:hover {
+  background: var(--color-header-bg, #0078d4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.md-button--primary {
+  background: var(--color-header-bg, #0078d4);
+  color: #ffffff;
+  border-color: var(--color-header-bg, #0078d4);
+}
+
+.md-button--primary:hover {
+  background: var(--color-header-bg-hover, #106ebe);
+  border-color: var(--color-header-bg-hover, #106ebe);
+}
+
+/* Dark mode buttons */
+[data-theme="dark"] .md-button {
+  border-color: var(--color-header-bg, #4da6ff);
+  color: var(--color-header-bg, #4da6ff);
+}
+
+[data-theme="dark"] .md-button:hover {
+  background: var(--color-header-bg, #4da6ff);
+  color: #1e1e1e;
+}
+
+[data-theme="dark"] .md-button--primary {
+  background: var(--color-header-bg, #4da6ff);
+  color: #1e1e1e;
+}
+
+/* ==========================================================================
+   Material Design Icons
+   ========================================================================== */
+
+.md-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.md-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.md-icon.lg {
+  width: 2em;
+  height: 2em;
+}
+
+.md-icon.middle {
+  vertical-align: middle;
+}
+
+/* Icons in card headers */
+.grid.cards .md-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-header-bg, #0078d4);
+}
+
+/* ==========================================================================
+   Code Block Enhancements
+   ========================================================================== */
+
+/* Line numbers support */
+.markdown-body pre code {
+  counter-reset: line;
+}
+
+.markdown-body pre code.linenums .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  margin-right: 1em;
+  text-align: right;
+  color: #666;
+  border-right: 1px solid #444;
+  padding-right: 0.5em;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .admonition {
+    margin: 1rem 0;
+  }
+  
+  .admonition-title {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .admonition-content {
+    padding: 0.6rem 0.75rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .md-button {
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   Content Tabs - MkDocs Material Style
+   ========================================================================== */
+
+.content-tabs {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color, #e1e4e8);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface-primary, #fff);
+}
+
+.content-tabs-nav-wrapper {
+  position: relative;
+  background: var(--surface-secondary, #f6f8fa);
+  border-bottom: 1px solid var(--border-color, #e1e4e8);
+}
+
+.content-tabs-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+}
+
+.content-tabs-nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Scroll buttons for horizontal navigation */
+.content-tabs-scroll-btn {
+  position: absolute;
+  top: 0;
+  bottom: 1px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--surface-secondary, #f6f8fa) 60%, transparent);
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  color: var(--muted, #6a737d);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.content-tabs-scroll-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.content-tabs-scroll-btn:hover {
+  color: var(--foreground, #24292e);
+}
+
+.content-tabs-scroll-btn.scroll-left {
+  left: 0;
+  background: linear-gradient(to right, var(--surface-secondary, #f6f8fa) 60%, transparent);
+}
+
+.content-tabs-scroll-btn.scroll-right {
+  right: 0;
+  background: linear-gradient(to left, var(--surface-secondary, #f6f8fa) 60%, transparent);
+}
+
+.content-tab-btn {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--muted, #6a737d);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.content-tab-btn:hover {
+  color: var(--foreground, #24292e);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.content-tab-btn.active {
+  color: var(--color-header-bg, #0969da);
+  border-bottom-color: var(--color-header-bg, #0969da);
+  background: var(--surface-primary, #fff);
+}
+
+.content-tabs-panels {
+  padding: 0;
+}
+
+.content-tab-panel {
+  padding: 1rem 1.25rem;
+  display: none;
+}
+
+.content-tab-panel.active {
+  display: block;
+}
+
+.content-tab-panel[hidden] {
+  display: none;
+}
+
+.content-tab-panel > *:first-child {
+  margin-top: 0;
+}
+
+.content-tab-panel > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Tab panel content styling */
+.content-tab-panel p {
+  margin: 0.75rem 0;
+}
+
+.content-tab-panel ul,
+.content-tab-panel ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.content-tab-panel strong {
+  font-weight: 600;
+}
+
+/* Dark mode adjustments for tabs */
+[data-theme="dark"] .content-tabs {
+  border-color: var(--border-color, #30363d);
+  background: var(--surface-primary, #0d1117);
+}
+
+[data-theme="dark"] .content-tabs-nav-wrapper {
+  background: var(--surface-secondary, #161b22);
+  border-color: var(--border-color, #30363d);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn {
+  color: var(--muted, #8b949e);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn.scroll-left {
+  background: linear-gradient(to right, var(--surface-secondary, #161b22) 60%, transparent);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn.scroll-right {
+  background: linear-gradient(to left, var(--surface-secondary, #161b22) 60%, transparent);
+}
+
+[data-theme="dark"] .content-tabs-scroll-btn:hover {
+  color: var(--foreground, #c9d1d9);
+}
+
+[data-theme="dark"] .content-tab-btn {
+  color: var(--muted, #8b949e);
+}
+
+[data-theme="dark"] .content-tab-btn:hover {
+  color: var(--foreground, #c9d1d9);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .content-tab-btn.active {
+  background: var(--surface-primary, #0d1117);
+}
+
+/* Responsive tabs */
+@media (max-width: 600px) {
+  .content-tabs {
+    margin: 1rem 0;
+  }
+  
+  .content-tab-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .content-tab-panel {
+    padding: 0.75rem 1rem;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "MAKIEVAL": {
+      "translated": {
+        "value": "partial",
+        "evidence": "The prompt templates are parallel constructions across 13 languages (structurally equivalent templates). However, 'we invited native speakers to review and validate the prompts. A total of 15 native speakers participated in this validation process, with at least one annotator per language.' The evaluation methodology itself avoids translation entirely, using Wikidata as a cross-lingual anchor: 'enabling scalable, language-agnostic evaluation without manual annotation or translation.'",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "15 native speakers validated prompt templates (at least one per language). Manual evaluation of entity extraction was done by native speakers with graduate-level education (one per language for Arabic, Chinese, English, Hindi; later extended to 13 languages in Table 8). However, the core entity extraction is automated via GPT-4o-mini, not manual native annotation.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": true,
+        "evidence": "The entire framework is designed to evaluate cultural awareness. Prompts reference 19 specific countries/regions across 6 culturally salient topics (food, beverages, clothing, books, music, transportation). Evaluation metrics include Culture Specificity (whether entities are aligned with the target culture) and Culture Consensus (cross-lingual agreement). The paper states: 'MAKIEVAL evaluates open-ended text generation, capturing how models express culturally grounded knowledge in natural language.'",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Entity extraction by GPT-4o-mini was manually evaluated across 13 languages with F1 scores ranging from 90.38% (Persian) to 96.50% (German). Domain-specific F1 ranges from 91.4% (Beverages) to 97.4% (Books). Wikidata matching has 26-36% missing QIDs per topic, partly due to model hallucination of non-existent entities. The framework includes disambiguation procedures for ambiguous Wikidata labels."
+    }
+  }
+}

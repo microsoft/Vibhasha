@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vibhasha benchmark assessments",
+  "description": "Evidence-backed translation, annotation, and cultural assessments by dataset.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assessments"
+  ],
+  "properties": {
+    "assessments": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/assessment"
+      }
+    }
+  },
+  "$defs": {
+    "judgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "evidence",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "boolean",
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      }
+    },
+    "assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "translated",
+        "native_annotators",
+        "culturally_grounded",
+        "annotation_quality_notes"
+      ],
+      "properties": {
+        "translated": {
+          "$ref": "#/$defs/judgment"
+        },
+        "native_annotators": {
+          "$ref": "#/$defs/judgment"
+        },
+        "culturally_grounded": {
+          "$ref": "#/$defs/judgment"
+        },
+        "annotation_quality_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

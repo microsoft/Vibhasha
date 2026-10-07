@@ -1,0 +1,40 @@
+{
+  "benchmark_name": "MEGA",
+  "paper_id": "EMNLP-2023-MEGA",
+  "year": 2023,
+  "benchmark_type": "aggregation",
+  "benchmark_type_evidence": "We present the first comprehensive benchmarking of generative LLMs - MEGA, which evaluates models on standard NLP benchmarks, covering 16 NLP datasets across 70 typologically diverse languages.",
+  "total_languages_claimed": 70,
+  "total_datasets": 16,
+  "dataset_names": [
+    "XNLI",
+    "Indic-XNLI",
+    "GLUECoS NLI",
+    "PAWS-X",
+    "XCOPA",
+    "XStoryCloze",
+    "TyDiQA-GoldP",
+    "MLQA",
+    "XQuAD",
+    "IndicQA",
+    "UDPOS",
+    "PAN-X (WikiANN)",
+    "WinoMT",
+    "EN-ES-CS",
+    "Jigsaw",
+    "XLSum"
+  ],
+  "task_categories": [
+    "Natural Language Inference",
+    "Paraphrase Identification",
+    "Commonsense Reasoning",
+    "Question Answering",
+    "Part of Speech Tagging",
+    "Named Entity Recognition",
+    "Summarization",
+    "Sentiment Analysis",
+    "Toxicity Classification",
+    "Gender Bias in Machine Translation"
+  ],
+  "brief_description": "MEGA (Multilingual Evaluation of Generative AI) is the first large-scale benchmarking of generative LLMs across multilingual settings, evaluating GPT-3.5, GPT-4, and BLOOMZ on 16 existing NLP datasets spanning 70 typologically diverse languages covering 21 language families, with analysis of prompting strategies, performance disparities across languages, and test data contamination."
+}

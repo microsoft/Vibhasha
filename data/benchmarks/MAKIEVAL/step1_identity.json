@@ -1,0 +1,18 @@
+{
+  "benchmark_name": "MAKIEVAL",
+  "paper_id": "2505.21693",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We introduce MAKIEVAL, an automatic multilingual framework for evaluating cultural awareness in LLMs across languages, regions, and topics.",
+  "total_languages_claimed": 13,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MAKIEVAL"
+  ],
+  "task_categories": [
+    "open-ended text generation",
+    "cultural awareness evaluation",
+    "entity extraction and linking"
+  ],
+  "brief_description": "MAKIEVAL is an automatic multilingual framework for evaluating cultural awareness in LLMs through open-ended text generation, leveraging Wikidata as a cross-lingual anchor to extract and link cultural entities without translation. It evaluates 7 LLMs across 13 languages, 19 countries/regions, and 6 culturally salient topics using four metrics: granularity, diversity, culture specificity, and culture consensus."
+}

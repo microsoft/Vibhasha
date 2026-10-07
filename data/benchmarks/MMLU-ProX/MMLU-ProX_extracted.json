@@ -1,0 +1,188 @@
+{
+  "benchmark_name": "MMLU-ProX",
+  "paper_id": "2503.10497",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MMLU-ProX, a comprehensive benchmark covering 29 languages, built on an English benchmark. Each language version consists of 11,829 identical questions",
+  "total_languages_claimed": 29,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MMLU-ProX"
+  ],
+  "task_categories": [
+    "multiple-choice QA",
+    "chain-of-thought reasoning"
+  ],
+  "brief_description": "MMLU-ProX is a multilingual benchmark extending MMLU-Pro to 29 typologically diverse languages, containing 11,829 parallel multiple-choice questions (10 options) per language across 57 subjects and 14 disciplines. It uses a semi-automated LLM translation pipeline with expert verification to enable direct cross-linguistic comparison of LLM reasoning capabilities.",
+  "datasets": [
+    {
+      "dataset_name": "MMLU-ProX",
+      "variant_name": "Full",
+      "variant_notes": "11,829 questions per language across 29 languages (~342,200 total questions). 70 validation questions used for few-shot prompt construction; actual evaluation on 11,759 questions per language.",
+      "task_type": "multiple-choice QA (10 options) with chain-of-thought reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Semi-automated four-stage LLM-driven pipeline: (I) Initial translation by Claude Sonnet 3.7 with domain-specific prompts, (II) Self-reflection by Claude Sonnet 3.7 reviewing its own translation, (III) Improvement stage incorporating self-reflection feedback, (IV) External examination by OpenAI O3 (for low-resource African languages: Swahili, Zulu, Yoruba, Wolof) and GPT-4.1 (for all others) to flag significant discrepancies. Followed by expert verification with native-speaker professional translators.",
+      "num_languages": 29,
+      "language_list": [
+        "English", "Chinese", "Japanese", "Korean", "French", "German", "Spanish",
+        "Portuguese", "Arabic", "Thai", "Hindi", "Bengali", "Swahili", "Afrikaans",
+        "Czech", "Hungarian", "Indonesian", "Italian", "Marathi", "Nepali", "Russian",
+        "Serbian", "Telugu", "Ukrainian", "Urdu", "Vietnamese", "Wolof", "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Source data curated from MMLU-Pro by four interdisciplinary specialists (~20 hours) fixing duplicates, grammatical issues, and inconsistencies. Translation via four-stage LLM pipeline. Expert verification by two native-speaker professional translators per language on 15 selected languages, rating accuracy/fluency/completeness on 1-5 scale. Total expert annotation effort exceeded 400 hours across 30+ experts.",
+      "data_creator_info": {
+        "creator_type": "researchers and professional translators",
+        "creator_affiliation": "Multi-institutional: The University of Tokyo, Duke-NUS Medical School, Waseda University, Northwestern University, Carnegie Mellon University, Yale University, University College Dublin, Nanyang Technological University, Smartor LLC, UC Berkeley, UNSW, Singapore Management University, NYU, Polytechnique Montréal, University of Geneva, University of Alberta",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "We ensured that all expert annotators were compensated at rates above the minimum hourly wage in their respective countries."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Built upon MMLU-Pro (Wang et al., 2024a/b)",
+      "notes": "Total development cost approached $80,000 at market rates. Data curation involved deduplication, grammatical correction, and consistency fixes before translation. Categories where both translators scored below 3 were fully retranslated; only the law category in Yoruba required this."
+    },
+    {
+      "dataset_name": "MMLU-ProX",
+      "variant_name": "Lite",
+      "variant_notes": "658 questions per language (20 items randomly sampled from each of 14 disciplines) across 29 languages. 70 validation questions for few-shot construction; actual evaluation on 588 questions per language. Average performance difference from Full version is only 1.14%.",
+      "task_type": "multiple-choice QA (10 options) with chain-of-thought reasoning",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Same as Full version (subset of the full translated dataset)",
+      "num_languages": 29,
+      "language_list": [
+        "English", "Chinese", "Japanese", "Korean", "French", "German", "Spanish",
+        "Portuguese", "Arabic", "Thai", "Hindi", "Bengali", "Swahili", "Afrikaans",
+        "Czech", "Hungarian", "Indonesian", "Italian", "Marathi", "Nepali", "Russian",
+        "Serbian", "Telugu", "Ukrainian", "Urdu", "Vietnamese", "Wolof", "Yoruba", "Zulu"
+      ],
+      "annotation_method": "Subset of Full version; same annotation pipeline applies.",
+      "data_creator_info": {
+        "creator_type": "researchers and professional translators",
+        "creator_affiliation": "Same as Full version",
+        "creator_demographics_reported": false,
+        "compensation_reported": true,
+        "evidence": "Same as Full version"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": "Subset of MMLU-ProX Full, itself built upon MMLU-Pro (Wang et al., 2024a/b)",
+      "notes": "Designed for efficient evaluation. Preserves relative model rankings almost perfectly compared to Full version."
+    }
+  ],
+  "total_languages": 29,
+  "languages": {
+    "English": { "iso_code": "eng", "datasets_present_in": ["MMLU-ProX"] },
+    "Chinese": { "iso_code": "zho", "datasets_present_in": ["MMLU-ProX"] },
+    "Japanese": { "iso_code": "jpn", "datasets_present_in": ["MMLU-ProX"] },
+    "Korean": { "iso_code": "kor", "datasets_present_in": ["MMLU-ProX"] },
+    "French": { "iso_code": "fra", "datasets_present_in": ["MMLU-ProX"] },
+    "German": { "iso_code": "deu", "datasets_present_in": ["MMLU-ProX"] },
+    "Spanish": { "iso_code": "spa", "datasets_present_in": ["MMLU-ProX"] },
+    "Portuguese": { "iso_code": "por", "datasets_present_in": ["MMLU-ProX"] },
+    "Arabic": { "iso_code": "ara", "datasets_present_in": ["MMLU-ProX"] },
+    "Thai": { "iso_code": "tha", "datasets_present_in": ["MMLU-ProX"] },
+    "Hindi": { "iso_code": "hin", "datasets_present_in": ["MMLU-ProX"] },
+    "Bengali": { "iso_code": "ben", "datasets_present_in": ["MMLU-ProX"] },
+    "Swahili": { "iso_code": "swa", "datasets_present_in": ["MMLU-ProX"] },
+    "Afrikaans": { "iso_code": "afr", "datasets_present_in": ["MMLU-ProX"] },
+    "Czech": { "iso_code": "ces", "datasets_present_in": ["MMLU-ProX"] },
+    "Hungarian": { "iso_code": "hun", "datasets_present_in": ["MMLU-ProX"] },
+    "Indonesian": { "iso_code": "ind", "datasets_present_in": ["MMLU-ProX"] },
+    "Italian": { "iso_code": "ita", "datasets_present_in": ["MMLU-ProX"] },
+    "Marathi": { "iso_code": "mar", "datasets_present_in": ["MMLU-ProX"] },
+    "Nepali": { "iso_code": "nep", "datasets_present_in": ["MMLU-ProX"] },
+    "Russian": { "iso_code": "rus", "datasets_present_in": ["MMLU-ProX"] },
+    "Serbian": { "iso_code": "srp", "datasets_present_in": ["MMLU-ProX"] },
+    "Telugu": { "iso_code": "tel", "datasets_present_in": ["MMLU-ProX"] },
+    "Ukrainian": { "iso_code": "ukr", "datasets_present_in": ["MMLU-ProX"] },
+    "Urdu": { "iso_code": "urd", "datasets_present_in": ["MMLU-ProX"] },
+    "Vietnamese": { "iso_code": "vie", "datasets_present_in": ["MMLU-ProX"] },
+    "Wolof": { "iso_code": "wol", "datasets_present_in": ["MMLU-ProX"] },
+    "Yoruba": { "iso_code": "yor", "datasets_present_in": ["MMLU-ProX"] },
+    "Zulu": { "iso_code": "zul", "datasets_present_in": ["MMLU-ProX"] }
+  },
+  "assessments": {
+    "MMLU-ProX": {
+      "translated": {
+        "value": true,
+        "evidence": "we introduce MMLU-ProX, a comprehensive benchmark covering 29 languages, built on an English benchmark. Each language version consists of 11,829 identical questions... we deploy a translation agent to maintain translation quality standards... we select the SOTA Claude model, Claude Sonnet 3.7 as our primary translation model",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "Expert verification involved native speakers: 'each language evaluated by two professional translators who are native speakers of the target language and proficient in English.' However, they verified LLM translations rather than creating content from scratch. Verification covered 15 of 29 languages. The underlying content originates from English MMLU-Pro curated by 4 interdisciplinary specialists.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is a direct translation of English MMLU-Pro content. Translation prompts mention 'Ensuring cultural appropriateness for {target_lang} speakers' and the paper states translations 'ensure accurate expression, consistent terminology, and cultural relevance.' However, the underlying questions, knowledge domains, and subject matter originate from an English-centric benchmark (MMLU-Pro). The cultural adaptation is at the linguistic/terminological level, not at the content/question design level.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Rigorous quality control: four-stage LLM translation pipeline (initial translation, self-reflection, improvement, external examination by different LLMs). Expert verification on 15 languages by 2 native-speaker professional translators per language rating accuracy, fluency, completeness on 1-5 scale. Mean scores above 4 across all dimensions. Categories scoring below 3 were fully retranslated (only law in Yoruba required this). Total annotation effort exceeded 400 hours across 30+ experts. Total cost ~$80,000."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "MMLU-ProX is entirely built upon English MMLU-Pro through translation. No datasets were created from scratch without an English source."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MMLU-ProX"],
+      "evidence": "MMLU-ProX extends the challenging MMLU-Pro benchmark to encompass 29 typologically diverse languages... By carefully translating the same set of questions across all languages"
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "Translation prompts instruct 'Ensuring cultural appropriateness for {target_lang} speakers' and mention 'cultural relevance,' but the underlying content (questions, subjects, knowledge domains) is inherited from English MMLU-Pro. Cultural adaptation is limited to linguistic/terminological level (e.g., measurement unit conventions), not content-level grounding."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "partial",
+      "evidence": "Expert verification involved native speakers: 'each language evaluated by two professional translators who are native speakers of the target language and proficient in English.' However, verification was conducted for only 15 of 29 languages. The initial data curation (4 interdisciplinary specialists) and translation (LLM-based) did not involve native speakers of all target languages."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "professional translators", "LLM-based translation"],
+      "total_annotators_reported": "30+",
+      "affiliations": [
+        "The University of Tokyo", "Duke-NUS Medical School", "Waseda University",
+        "Northwestern University", "Carnegie Mellon University", "Yale University",
+        "University College Dublin", "Nanyang Technological University", "Smartor LLC",
+        "UC Berkeley", "University of New South Wales", "Singapore Management University",
+        "New York University", "Polytechnique Montréal", "University of Geneva",
+        "University of Alberta"
+      ],
+      "demographics_reported": false,
+      "compensation_reported": true,
+      "compensation_details": "We ensured that all expert annotators were compensated at rates above the minimum hourly wage in their respective countries.",
+      "irb_ethics_review": null,
+      "evidence": "we engage over 30 experts to verify the data quality, with a total labor effort exceeding 400 hours... For English data curation, we engage four interdisciplinary specialists, with a total labor investment of approximately 20 hours"
+    },
+    "english_centricity_notes": "MMLU-ProX is fundamentally English-centric in design: all content originates from English MMLU-Pro and is translated to 28 other languages. The questions, subjects (57 subjects across 14 disciplines), answer options, and knowledge domains all reflect English/Western academic traditions. The paper explicitly acknowledges this as a translated benchmark enabling 'direct cross-linguistic comparisons' by having 'identical questions' — meaning the same English-origin content across all languages. The translation pipeline preserves LaTeX, code, currency symbols ($) without localization.",
+    "geographic_representation": {
+      "primary_region": "Global (29 languages across multiple regions)",
+      "sub_regions": [
+        "Western Europe (English, French, German, Spanish, Portuguese, Italian)",
+        "South Asia (Hindi, Bengali, Urdu, Telugu, Marathi, Nepali)",
+        "East Asia & Southeast Asia (Chinese, Japanese, Korean, Vietnamese, Thai, Indonesian)",
+        "Africa (Arabic, Afrikaans, Swahili, Wolof, Yoruba, Zulu)",
+        "Eastern Europe (Russian, Ukrainian, Serbian, Czech, Hungarian)"
+      ],
+      "also_represented": [],
+      "notably_excluded": [
+        "Indigenous languages of the Americas",
+        "Oceanic/Pacific languages",
+        "Central Asian languages (e.g., Kazakh, Uzbek)",
+        "Nordic/Scandinavian languages",
+        "Many Southeast Asian languages (e.g., Burmese, Khmer, Lao)",
+        "Many African languages beyond the 4 included"
+      ],
+      "evidence": "The paper groups languages into 5 geographic regions: Western Europe, South Asia, East Asia & Southeast Asia, Africa, and Eastern Europe. Coverage spans 29 languages but the authors acknowledge: 'One limitation lies in the coverage of languages due to budget constraints... expanding to include additional languages, particularly extremely low-resource ones, remains a future goal.'"
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

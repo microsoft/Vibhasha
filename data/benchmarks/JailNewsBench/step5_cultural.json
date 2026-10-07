@@ -1,0 +1,61 @@
+{
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The news articles are natively sourced from local media in each region's language via the babel-briefings dataset, but the seed instruction templates were authored in English and translated into target languages. The benchmark is thus not fully from-scratch without English source; it is a hybrid where content is regionally sourced but the instruction framework originates in English."
+    },
+    "datasets_translated_from_english": {
+      "list": ["JailNewsBench (instruction templates only)"],
+      "evidence": "the English templates are authored by the authors and translated into each target language by native speakers. The news articles themselves are sourced in local languages, not translated from English."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": ["JailNewsBench"],
+      "details": {
+        "JailNewsBench": "Benchmark uses region-specific news articles from 34 regions, with motivations (Financial, Political, Social, Psychological) grounded in each article's regional context. Regions selected based on legal, political stability, and ethical criteria. News topics reflect local political, social, and cultural contexts."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes",
+      "evidence": "We hired cloud workers who were born and raised in the target regions and are native speakers of the target languages on Upwork. Three native annotators per language performed the meta-evaluation annotation."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "crowdworkers"],
+      "total_annotators_reported": null,
+      "affiliations": ["MBZUAI (researchers)", "Upwork (crowdworkers)"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "$20 USD per hour via Upwork; workers' educational backgrounds were undergraduate or graduate students",
+      "irb_ethics_review": true,
+      "evidence": "The crowdsourcing involving human participants was reviewed and approved by our affiliated organization prior to its implementation. We hired cloud workers who were born and raised in the target regions and are native speakers of the target languages on Upwork, at a rate of $20 USD per hour. Although the information about the workers is anonymized, we obtained their consent to disclose in the paper that their educational backgrounds were either undergraduate or graduate students."
+    },
+    "english_centricity_notes": "The paper explicitly identifies English-centricity as a key finding: 'for English and U.S.-related topics, the defensive performance of typical multi-lingual LLMs was significantly lower than for other regions, highlighting substantial imbalances in safety across languages and regions.' The instruction templates originate in English and are translated. The benchmark is designed to highlight that most existing fake news and jailbreak benchmarks are restricted to U.S.-based news and English. However, the benchmark itself concentrates on mostly European developed regions due to ethical/legal constraints on data release.",
+    "geographic_representation": {
+      "primary_region": "Europe",
+      "sub_regions": [
+        "Western Europe",
+        "Northern Europe",
+        "Southern Europe",
+        "Central Europe",
+        "Eastern Europe"
+      ],
+      "also_represented": [
+        "East Asia (Japan, South Korea, Taiwan)",
+        "Southeast Asia (Indonesia, Malaysia)",
+        "South America (Argentina, Brazil, Mexico)",
+        "Oceania (Australia, New Zealand)",
+        "Southern Africa (South Africa)",
+        "North America (Canada, United States)"
+      ],
+      "notably_excluded": [
+        "Middle East",
+        "South Asia",
+        "Central Asia",
+        "Most of Africa",
+        "Caribbean",
+        "Central America",
+        "Pacific Islands"
+      ],
+      "evidence": "Most qualifying locations are concentrated in developed regions. This distribution reflects broader legal, political, and ethical constraints on the public release of fake-news data, rather than a deliberate limitation of linguistic or cultural scope. Regions excluded due to: Special Fake-News Legislation, Political Stability (Fragile States Index), and restriction to older news. 34 regions covered across 22 languages."
+    }
+  }
+}

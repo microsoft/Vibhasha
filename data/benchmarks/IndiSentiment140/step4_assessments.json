@@ -1,0 +1,22 @@
+{
+  "assessments": {
+    "IndiSentiment140": {
+      "translated": {
+        "value": true,
+        "evidence": "We generate parallel corpora, known as IndiSentiment140, by translating it into 22 Indian languages supported by Google Translate. The entire dataset is machine-translated from the English Sentiment140 corpus using Google Translate.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": false,
+        "evidence": "No human annotation was performed. The dataset was created entirely through automated machine translation of English tweets. Sentiment labels were inherited from the source Sentiment140 dataset (which used distant supervision via emoticons, not human annotation).",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The source data consists of English tweets from Twitter (Sentiment140). The content reflects English-language social media culture and was mechanically translated without any cultural adaptation. The paper acknowledges 'socio-cultural and language specific sentiment indicators' as important but does not address cultural grounding in the translated dataset itself.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "The paper evaluates translation quality using BLEU scores against parallel corpora (Flores-200, PMIndia, IndicSentiment). Low-resource languages like Assamese, Bhojpuri, Dogri, Mizo, Maithili, Manipuri, Sanskrit, and Sinhala have relatively low BLEU scores. Untranslated English words remain in the dataset (ranging from 1.37% for Urdu to 78% for Mizo which uses Roman script). The Limitations section acknowledges noise from untranslated English words and the absence of a human-translated benchmark for comparison."
+    }
+  }
+}

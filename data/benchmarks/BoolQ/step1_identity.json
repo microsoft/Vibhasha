@@ -1,0 +1,17 @@
+{
+  "benchmark_name": "BoolQ",
+  "paper_id": "N19-1300",
+  "year": 2019,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "We build a reading comprehension dataset, BoolQ, of such questions",
+  "total_languages_claimed": 1,
+  "total_datasets": 1,
+  "dataset_names": [
+    "BoolQ"
+  ],
+  "task_categories": [
+    "Yes/No Question Answering",
+    "Reading Comprehension"
+  ],
+  "brief_description": "BoolQ is a reading comprehension dataset of 16,000 naturally occurring yes/no questions paired with Wikipedia passages. Questions are gathered from anonymized Google search queries and annotated by humans following the Natural Questions pipeline."
+}

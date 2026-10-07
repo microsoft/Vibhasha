@@ -1,0 +1,222 @@
+{
+  "benchmark_name": "MaXIFE",
+  "paper_id": "2025.acl-long.698",
+  "year": 2025,
+  "benchmark_type": "single_dataset",
+  "benchmark_type_evidence": "we introduce MaXIFE: a comprehensive evaluation benchmark designed to assess instruction-following capabilities across 23 different languages with 1667 verifiable instruction tasks.",
+  "total_languages_claimed": 23,
+  "total_datasets": 1,
+  "dataset_names": [
+    "MaXIFE"
+  ],
+  "task_categories": [
+    "instruction following"
+  ],
+  "brief_description": "MaXIFE is a multilingual and cross-lingual instruction-following evaluation benchmark covering 23 languages with 1667 verifiable instruction tasks across 47 instruction subcategories, combining rule-based and model-based evaluation strategies.",
+  "datasets": [
+    {
+      "dataset_name": "MaXIFE",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "instruction following",
+      "source": "translated",
+      "source_language": "English",
+      "translation_method": "Basic Questions: LLM-based translation (GPT-4o and Claude-3.5 Sonnet) followed by native speaker review and correction. Instructions (47 items): professional human translation by native speakers proficient in English. Both underwent multi-round human quality control.",
+      "num_languages": 23,
+      "language_list": [
+        "English",
+        "Swedish",
+        "Portuguese",
+        "French",
+        "Italian",
+        "Chinese",
+        "Japanese",
+        "Filipino",
+        "Romanian",
+        "Indonesian",
+        "Malay",
+        "Turkish",
+        "Korean",
+        "Bengali",
+        "Hindi",
+        "Kyrgyz",
+        "Armenian",
+        "Georgian",
+        "Malagasy",
+        "Zulu",
+        "Tamil",
+        "Telugu",
+        "Quechua"
+      ],
+      "annotation_method": "Data collected via questionnaire from 31 respondents (researchers, native speakers, linguistics experts), then expanded using GPT-4o and Claude-3.5 Sonnet. 795 Basic Questions combined with 47 templatized Instructions (1-3 per question) to form 18,285 parallel evaluation entries.",
+      "data_creator_info": {
+        "creator_type": "researchers and native speakers",
+        "creator_affiliation": "Waseda University and OPPO AI Center, Shenzhen, China",
+        "creator_demographics_reported": true,
+        "compensation_reported": true,
+        "evidence": "The total number of questionnaire participants was 31 people, of which 19 were male, 12 were female, most people's age distribution was 21-39 years old, and all respondents had high-frequency usage habits of LLMs. The translations were carried out by internal research team members as part of their responsibilities, thus no additional compensation was involved."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Each of the 23 languages has 795 parallel data points with 1667 total instructions. Evaluation combines Rule-Based (32 instruction subcategories across 7 categories) and Model-Based (15 instruction subcategories across 4 categories) approaches."
+    }
+  ],
+  "total_languages": 23,
+  "languages": {
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Portuguese": {
+      "iso_code": "por",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Chinese": {
+      "iso_code": "zho",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Filipino": {
+      "iso_code": "fil",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Malagasy": {
+      "iso_code": "mlg",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["MaXIFE"]
+    },
+    "Quechua": {
+      "iso_code": "que",
+      "datasets_present_in": ["MaXIFE"]
+    }
+  },
+  "assessments": {
+    "MaXIFE": {
+      "translated": {
+        "value": true,
+        "evidence": "After completing the English version data expansion, we translated the data into 22 other languages. For Basic Questions, given the large volume of 795 items, we used LLM-based translation with GPT-4o and Claude-3.5 Sonnet, followed by native speaker review and correction. For the 47 Instructions, we used professional human translators who were native speakers of the target languages and proficient in English.",
+        "confidence": "high"
+      },
+      "native_annotators": {
+        "value": "partial",
+        "evidence": "All personnel we hired for instruction data translation and dataset quality control were native speakers of their respective languages, and they possessed near-native English proficiency. Original data collected via questionnaire from 31 respondents including researchers, native speakers, and linguistics experts. However, Basic Questions were LLM-translated with native speaker review, not fully natively authored.",
+        "confidence": "high"
+      },
+      "culturally_grounded": {
+        "value": false,
+        "evidence": "The benchmark is translated from English and focuses on instruction-following mechanics (format, keywords, length, punctuation, etc.) rather than culturally-specific content. The Basic Questions were originally collected in English and expanded using English-language LLMs. While translations were reviewed for naturalness, the tasks test format compliance rather than cultural knowledge.",
+        "confidence": "high"
+      },
+      "annotation_quality_notes": "Three-round quality control: (1) content rationality and accuracy, (2) language expression naturalness reviewed by native speakers, (3) parallel consistency across language versions. Human-model evaluation consistency rates: 97.3% (high-resource), 95.2% (medium-resource), 94.6% (low-resource)."
+    }
+  },
+  "cultural_flags": {
+    "datasets_from_scratch_no_english_source": {
+      "list": [],
+      "evidence": "The entire dataset is constructed from English source data. Basic Questions were first created in English, then translated to 22 other languages."
+    },
+    "datasets_translated_from_english": {
+      "list": ["MaXIFE"],
+      "evidence": "After completing the English version data expansion, we translated the data into 22 other languages."
+    },
+    "datasets_with_cultural_grounding": {
+      "list": [],
+      "details": {
+        "notes": "The benchmark tests instruction-following mechanics (format, keywords, length, repetition, punctuation, citation, emoji, style, tone, content, language_switch) rather than culturally-grounded knowledge. While translations were checked for naturalness and language-specific features (e.g., Bengali numerals, CJK full-width punctuation), the tasks themselves are not culturally grounded."
+      }
+    },
+    "all_annotators_native_speakers": {
+      "value": "yes_for_translation_and_QC",
+      "evidence": "All personnel we hired for instruction data translation and dataset quality control were native speakers of their respective languages, and they possessed near-native English proficiency. We invited native speakers to review instructions in each language, ensuring expressions adhered to language conventions."
+    },
+    "annotator_workforce": {
+      "creator_types_across_datasets": ["researchers", "native speakers", "linguistics experts"],
+      "total_annotators_reported": 31,
+      "affiliations": ["Waseda University", "OPPO AI Center, Shenzhen, China"],
+      "demographics_reported": true,
+      "compensation_reported": true,
+      "compensation_details": "The translations were carried out by internal research team members as part of their responsibilities, thus no additional compensation was involved.",
+      "irb_ethics_review": null,
+      "evidence": "The total number of questionnaire participants was 31 people, of which 19 were male, 12 were female, most people's age distribution was 21-39 years old, and all respondents had high-frequency usage habits of LLMs."
+    },
+    "english_centricity_notes": "The benchmark is entirely English-centric in construction: all Basic Questions and Instructions were created in English first and then translated. The evaluation framework extends IFEval (an English-only benchmark) to 23 languages. While language-specific evaluation rules were developed (e.g., for word counting, keyword matching, punctuation), the underlying task design and content originate from English.",
+    "geographic_representation": {
+      "primary_region": "Global (23 languages across multiple continents)",
+      "sub_regions": ["East Asia", "Southeast Asia", "South Asia", "Europe", "Central Asia", "Southern Africa", "East Africa", "South America"],
+      "also_represented": ["Scandinavia (Swedish)", "Iberia/Latin America (Portuguese)", "Caucasus (Armenian, Georgian)"],
+      "notably_excluded": ["Middle East/Arabic-speaking regions", "Most of Africa beyond Zulu and Malagasy", "Indigenous languages of North America and Australia", "Most Slavic languages"],
+      "evidence": "MaXIFE covers 23 languages spanning Indo-European (8), Austronesian (4), Dravidian (2), Turkic (2), Sino-Tibetan (1), Japonic (1), Koreanic (1), Kartvelian (1), Niger-Congo (1), and Quechuan (1) families."
+    }
+  },
+  "extraction_metadata": {
+    "version": "2.0",
+    "date": "2026-03-27",
+    "extractor": "copilot-subagent"
+  }
+}

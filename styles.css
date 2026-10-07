@@ -1,0 +1,45 @@
+:root {
+  --bg: #f7fbff;
+  --surface: #ffffff;
+  --text: #0f172a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Segoe UI Variable', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(180deg, #f0f7ff, #ffffff 60%);
+  color: var(--color-page-text);
+}
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  background: var(--color-page-bg);
+  color: var(--color-page-text);
+}
+
+/* Ensure the root fills the viewport so footers sit at the bottom when content is short */
+html, body, #root {
+  height: 100%;
+}
+
+.app-root {
+  min-height: 100vh;
+}
+
+.btn-primary {
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer
+}
+
+.btn-primary[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6
+}

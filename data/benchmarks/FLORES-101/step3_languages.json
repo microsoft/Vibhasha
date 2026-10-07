@@ -1,0 +1,413 @@
+{
+  "total_languages": 101,
+  "languages": {
+    "Afrikaans": {
+      "iso_code": "afr",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Amharic": {
+      "iso_code": "amh",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Arabic": {
+      "iso_code": "ara",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Armenian": {
+      "iso_code": "hye",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Assamese": {
+      "iso_code": "asm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Asturian": {
+      "iso_code": "ast",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Azerbaijani": {
+      "iso_code": "azj",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Belarusian": {
+      "iso_code": "bel",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bengali": {
+      "iso_code": "ben",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bosnian": {
+      "iso_code": "bos",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Bulgarian": {
+      "iso_code": "bul",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Burmese": {
+      "iso_code": "mya",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Catalan": {
+      "iso_code": "cat",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Cebuano": {
+      "iso_code": "ceb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Chinese (Simplified)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Chinese (Traditional)": {
+      "iso_code": "zho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Croatian": {
+      "iso_code": "hrv",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Czech": {
+      "iso_code": "ces",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Danish": {
+      "iso_code": "dan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Dutch": {
+      "iso_code": "nld",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "English": {
+      "iso_code": "eng",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Estonian": {
+      "iso_code": "est",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Filipino (Tagalog)": {
+      "iso_code": "tgl",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Finnish": {
+      "iso_code": "fin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "French": {
+      "iso_code": "fra",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Fula": {
+      "iso_code": "ful",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Galician": {
+      "iso_code": "glg",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Ganda": {
+      "iso_code": "lug",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Georgian": {
+      "iso_code": "kat",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "German": {
+      "iso_code": "deu",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Greek": {
+      "iso_code": "ell",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Gujarati": {
+      "iso_code": "guj",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hausa": {
+      "iso_code": "hau",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hebrew": {
+      "iso_code": "heb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hindi": {
+      "iso_code": "hin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Hungarian": {
+      "iso_code": "hun",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Icelandic": {
+      "iso_code": "isl",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Igbo": {
+      "iso_code": "ibo",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Indonesian": {
+      "iso_code": "ind",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Irish": {
+      "iso_code": "gle",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Italian": {
+      "iso_code": "ita",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Japanese": {
+      "iso_code": "jpn",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Javanese": {
+      "iso_code": "jav",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kabuverdianu": {
+      "iso_code": "kea",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kamba": {
+      "iso_code": "kam",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kannada": {
+      "iso_code": "kan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kazakh": {
+      "iso_code": "kaz",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Khmer": {
+      "iso_code": "khm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Korean": {
+      "iso_code": "kor",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Kyrgyz": {
+      "iso_code": "kir",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lao": {
+      "iso_code": "lao",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Latvian": {
+      "iso_code": "lav",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lingala": {
+      "iso_code": "lin",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Lithuanian": {
+      "iso_code": "lit",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Luo": {
+      "iso_code": "luo",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Luxembourgish": {
+      "iso_code": "ltz",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Macedonian": {
+      "iso_code": "mkd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Malay": {
+      "iso_code": "msa",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Malayalam": {
+      "iso_code": "mal",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Maltese": {
+      "iso_code": "mlt",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Maori": {
+      "iso_code": "mri",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Marathi": {
+      "iso_code": "mar",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Mongolian": {
+      "iso_code": "mon",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Nepali": {
+      "iso_code": "npi",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Northern Sotho": {
+      "iso_code": "nso",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Norwegian": {
+      "iso_code": "nob",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Nyanja": {
+      "iso_code": "nya",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Occitan": {
+      "iso_code": "oci",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Oriya": {
+      "iso_code": "ory",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Oromo": {
+      "iso_code": "orm",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Pashto": {
+      "iso_code": "pus",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Persian": {
+      "iso_code": "fas",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Polish": {
+      "iso_code": "pol",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Portuguese (Brazil)": {
+      "iso_code": "por",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Punjabi": {
+      "iso_code": "pan",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Romanian": {
+      "iso_code": "ron",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Russian": {
+      "iso_code": "rus",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Serbian": {
+      "iso_code": "srp",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Shona": {
+      "iso_code": "sna",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Sindhi": {
+      "iso_code": "snd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Slovak": {
+      "iso_code": "slk",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Slovenian": {
+      "iso_code": "slv",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Somali": {
+      "iso_code": "som",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Sorani Kurdish": {
+      "iso_code": "ckb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Spanish (Latin America)": {
+      "iso_code": "spa",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Swahili": {
+      "iso_code": "swh",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Swedish": {
+      "iso_code": "swe",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Tajik": {
+      "iso_code": "tgk",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Tamil": {
+      "iso_code": "tam",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Telugu": {
+      "iso_code": "tel",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Thai": {
+      "iso_code": "tha",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Turkish": {
+      "iso_code": "tur",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Ukrainian": {
+      "iso_code": "ukr",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Umbundu": {
+      "iso_code": "umb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Urdu": {
+      "iso_code": "urd",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Uzbek": {
+      "iso_code": "uzb",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Vietnamese": {
+      "iso_code": "vie",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Welsh": {
+      "iso_code": "cym",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Wolof": {
+      "iso_code": "wol",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Xhosa": {
+      "iso_code": "xho",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Yoruba": {
+      "iso_code": "yor",
+      "datasets_present_in": ["FLORES-101"]
+    },
+    "Zulu": {
+      "iso_code": "zul",
+      "datasets_present_in": ["FLORES-101"]
+    }
+  }
+}

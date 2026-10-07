@@ -1,0 +1,92 @@
+{
+  "datasets": [
+    {
+      "dataset_name": "BhashaBench Krishi (BBK)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing. We acknowledge the significant contributions of BharatGen's consortium members, including IIT Bombay and IIM Indore, for their expertise in data curation, validation, and domain-specific guidance"
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Agriculture domain; 15,405 questions; 25 subdomains including Agronomy, Agricultural Biotechnology, Soil Science, etc. Questions sourced from ICAR, ASRB NET, IBPS AFO, and other agricultural examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Finance (BBF)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Finance domain; 19,433 questions; 30 subdomains including Problem Solving, Mathematics for Finance, Banking Services, etc. Questions sourced from RBI, SBI, IBPS, ICAI, ICMAI, and other financial examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Legal (BBL)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Legal domain; 14,963 questions; 20 subdomains including Civil Litigation & Procedure, Constitutional Law, Criminal Law & Justice, etc. Questions sourced from CLAT, AILET, Bar Council, Delhi Judicial Service, and other legal examinations."
+    },
+    {
+      "dataset_name": "BhashaBench Ayurveda (BBA)",
+      "variant_name": null,
+      "variant_notes": null,
+      "task_type": "multiple-choice question answering (MCQ, assertion/reasoning, fill in the blanks, match the column, reading comprehension, rearrange the sequence)",
+      "source": "original",
+      "source_language": null,
+      "translation_method": null,
+      "num_languages": 2,
+      "language_list": ["English", "Hindi"],
+      "annotation_method": "Curated from authentic government and professional examination papers; OCR extraction via Surya OCR; structured extraction via GPT-OSS-120B; multi-stage manual validation by domain experts",
+      "data_creator_info": {
+        "creator_type": "mixed",
+        "creator_affiliation": "BharatGen Team (IIT Bombay TIH), consortium members including IIT Bombay and IIM Indore",
+        "creator_demographics_reported": false,
+        "compensation_reported": false,
+        "evidence": "We are also immensely grateful to our colleagues from the BharatGen team for their motivation and meticulous efforts in conducting manual validation and data sourcing."
+      },
+      "is_new_in_this_paper": true,
+      "source_reference": null,
+      "notes": "Ayurveda (traditional Indian medicine) domain; 24,365 questions; 16 subdomains including Kayachikitsa, Dravyaguna, Panchakarma, Sharir, etc. Questions sourced from AIAPGET and other Ayurveda examinations."
+    }
+  ]
+}
